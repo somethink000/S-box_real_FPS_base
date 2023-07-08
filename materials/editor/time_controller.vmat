@@ -1,0 +1,14 @@
+// THIS FILE IS AUTO-GENERATED
+
+Layer0
+{
+	shader "shaders/tools_sprite.shader_c"
+
+	F_TEXTURED 1
+	F_WORLD_SPACE_SIZE 1 // Size In World Space
+
+	g_flUniformPointSize "20.000"
+
+	//---- Color ----
+	TextureColor "materials/editor/time_controller.tga"
+}
