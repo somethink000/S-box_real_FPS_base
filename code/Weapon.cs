@@ -1,12 +1,12 @@
 ﻿using Sandbox;
 using System.Collections.Generic;
 
-public partial class Weapon : BaseWeapon, IUse
+public abstract partial class Weapon : BaseWeapon, IUse
 {
 	public virtual float ReloadTime => 3.0f;
 
+	public virtual int MagazinSize => 10;
 	
-	public int MagazinSize;
 	[Net, Predicted]
 	public int InMagazin { get; set; }
 
@@ -26,6 +26,8 @@ public partial class Weapon : BaseWeapon, IUse
 	{
 		base.Spawn();
 
+		InMagazin = MagazinSize;
+
 		PickupTrigger = new PickupTrigger
 		{
 			Parent = this,
@@ -36,7 +38,7 @@ public partial class Weapon : BaseWeapon, IUse
 
 		PickupTrigger.PhysicsBody.AutoSleep = false;
 
-		InMagazin = MagazinSize;
+		
 	}
 
 	public override void ActiveStart( Entity ent )
@@ -44,10 +46,14 @@ public partial class Weapon : BaseWeapon, IUse
 		base.ActiveStart( ent );
 
 		TimeSinceDeployed = 0;
+		
 	}
 
 	public override void Reload()
 	{
+		if ( InMagazin >= MagazinSize )
+			return;
+
 		if ( IsReloading )
 			return;
 
@@ -58,7 +64,7 @@ public partial class Weapon : BaseWeapon, IUse
 
 		StartReloadEffects();
 
-		InMagazin = MagazinSize;
+		
 	}
 
 	public override void Simulate( IClient owner )
@@ -79,7 +85,9 @@ public partial class Weapon : BaseWeapon, IUse
 
 	public virtual void OnReloadFinish()
 	{
+		InMagazin = MagazinSize;
 		IsReloading = false;
+		
 	}
 
 	[ClientRpc]
@@ -174,6 +182,20 @@ public partial class Weapon : BaseWeapon, IUse
 		//
 	}
 
+
+
+
+	public bool TakeAmmo( int amount )
+	{
+		if ( InMagazin <= 0)
+			return false;
+
+		InMagazin -= amount;
+			return true;
+	}
+
+
+
 	public IEnumerable<TraceResult> TraceMelee( Vector3 start, Vector3 end, float radius = 2.0f )
 	{
 		var trace = Trace.Ray( start, end )
@@ -213,6 +235,7 @@ public partial class Weapon : BaseWeapon, IUse
 		// ShootBullet is coded in a way where we can have bullets pass through shit
 		// or bounce off shit, in which case it'll return multiple results
 		//
+		
 		foreach ( var tr in TraceBullet( pos, pos + forward * 5000, bulletSize ) )
 		{
 			tr.Surface.DoBulletImpact( tr );

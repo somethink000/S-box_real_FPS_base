@@ -1,7 +1,7 @@
 {
   "Title": "Real FPS base",
   "Type": "game",
-  "Org": "local",
+  "Org": "evilinc",
   "Ident": "real_fps_base",
   "Tags": null,
   "Schema": 1,
@@ -24,6 +24,7 @@
     "RankType": "None",
     "PerMapRanking": false,
     "LeaderboardType": "None",
-    "ProjectTemplate": null
+    "ProjectTemplate": null,
+    "CsProjName": ""
   }
 }

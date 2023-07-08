@@ -6,6 +6,8 @@ partial class RPG : Weapon
 {
 	public override string ViewModelPath => "weapons/rust_smg/v_rust_smg.vmdl";
 
+	public override int MagazinSize => 10;
+
 	public override float PrimaryRate => 15.0f;
 	public override float SecondaryRate => 1.0f;
 	public override float ReloadTime => 5.0f;

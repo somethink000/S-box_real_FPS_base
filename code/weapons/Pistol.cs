@@ -8,10 +8,10 @@ partial class Pistol : Weapon
 	public override float PrimaryRate => 15.0f;
 	public override float SecondaryRate => 1.0f;
 
-	public int MagazinSize => 16;
-	public int InMagazin { get; set; }
 
 
+
+	public override int MagazinSize => 10;
 
 	public TimeSince TimeSinceDischarge { get; set; }
 
@@ -25,6 +25,7 @@ partial class Pistol : Weapon
 		SetBodyGroup( "barrel", 1 );
 		SetBodyGroup( "sights", 1 );
 		LocalScale = 2f; // todo - this doesn't work when bone merged! we should make it multiply!
+		
 	}
 	public override void CreateViewModel()
 	{
@@ -51,8 +52,8 @@ partial class Pistol : Weapon
 		base.Reload();
 
 		ViewModelEntity?.SetAnimParameter( "b_reload", true );
-
 		
+
 	}
 
 	public override bool CanPrimaryAttack()
@@ -62,6 +63,15 @@ partial class Pistol : Weapon
 
 	public override void AttackPrimary()
 	{
+
+			if ( !TakeAmmo(1) )
+				{
+					//PlaySound( "pistol.dryfire" );
+					return;
+				}
+
+		//return;
+
 		TimeSincePrimaryAttack = 0;
 		TimeSinceSecondaryAttack = 0;
 
@@ -71,6 +81,8 @@ partial class Pistol : Weapon
 		ShootEffects();
 		PlaySound( "rust_pistol.shoot" );
 		ShootBullet( 0.05f, 1.5f, 9.0f, 3.0f );
+		
+		
 	}
 
 	private void Discharge()
