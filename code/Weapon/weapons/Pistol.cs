@@ -58,8 +58,15 @@ partial class Pistol : Weapon
 		if ( InMagazin >= MagazinSize )
 			return;
 
-		base.Reload();
 
+		if ( Owner is FPSPlayer player && player.AmmoCount( AmmoType ) <= 0 )
+		{
+			return;
+
+		}
+
+		base.Reload();
+		PlaySound( "magout" );
 		ViewModelEntity?.SetAnimParameter( "b_reload", true );
 
 
@@ -79,7 +86,7 @@ partial class Pistol : Weapon
 					return;
 				}
 
-		//return;
+		
 
 		TimeSincePrimaryAttack = 0;
 		TimeSinceSecondaryAttack = 0;

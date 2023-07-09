@@ -38,7 +38,7 @@ public class Ammo : Panel
 
 
 		var inv = weapon.AvailableAmmo();
-		PlayerAmmo.Text = $"/ {inv}";
+		PlayerAmmo.Text = $" / {inv}";
 		PlayerAmmo.SetClass( "active", inv >= 0 );
 
 

@@ -63,11 +63,7 @@ public abstract partial class Weapon : BaseWeapon, IUse
 
 		
 
-		if ( Owner is FPSPlayer player && player.AmmoCount( AmmoType ) <= 0 )
-		{
-					return;
-
-		}
+		
 
 
 		TimeSinceReload = 0;

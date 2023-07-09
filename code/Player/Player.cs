@@ -13,6 +13,7 @@ namespace FPSGame
 
 		private DamageInfo lastDamage;
 
+
 		//[Net, Predicted]
 		//public bool ThirdPersonCamera { get; set; }
 

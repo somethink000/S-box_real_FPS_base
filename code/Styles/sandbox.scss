@@ -8,20 +8,7 @@
 Health {
     position: absolute;
     left: 100px;
-    bottom: 48px;
-    font-size: 30px;
-    color: rgba(190, 0, 0,1);
-    padding: 5px 20px;
-    align-items: center;
-    font-family: Poppins;
-    background-color: rgba(0, 0, 0,0.4);
-    border-bottom: 1px, white;
-    border-radius: 3px;
-}
-Ammo {
-    position: absolute;
-    right: 100px;
-    bottom: 48px;
+    bottom: 10%;
     font-size: 30px;
     color: white;
     padding: 5px 20px;
@@ -32,6 +19,34 @@ Ammo {
     border-radius: 3px;
 }
 
+Ammo {
+    position: absolute;
+    right: 100px;
+    bottom: 10%;
+    font-size: 30px;
+    color: white;
+    padding: 5px 20px;
+    align-items: center;
+    font-family: Poppins;
+    background-color: rgba(0, 0, 0,0.4);
+    border-bottom: 1px, white;
+    border-radius: 3px;
+}
+
+
+//DELETE ME
+Template {
+    position: absolute;
+    left: 10px;
+    bottom: 20%;
+    font-size: 30px;
+    color: rgba(255, 255, 255, 0.5);
+    padding: 5px 20px;
+    align-items: center;
+    font-family: Poppins;
+}
+
+//DELETE ME
 
 
 /*CurrentTool {
