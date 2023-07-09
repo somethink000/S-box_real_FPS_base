@@ -1,12 +1,16 @@
-﻿using Sandbox;
+﻿using FPSGame;
+using Sandbox;
 using System.Collections.Generic;
 
 public abstract partial class Weapon : BaseWeapon, IUse
 {
 	public virtual float ReloadTime => 3.0f;
 
+	public virtual AmmoType AmmoType => AmmoType.Pistol;
 	public virtual int MagazinSize => 10;
-	
+
+	public virtual int Damage => 10;
+
 	[Net, Predicted]
 	public int InMagazin { get; set; }
 
@@ -21,7 +25,11 @@ public abstract partial class Weapon : BaseWeapon, IUse
 
 	[Net, Predicted]
 	public TimeSince TimeSinceDeployed { get; set; }
-
+	public int AvailableAmmo()
+	{
+		if ( Owner is not FPSPlayer owner ) return 0;
+		return owner.AmmoCount( AmmoType );
+	}
 	public override void Spawn()
 	{
 		base.Spawn();
@@ -51,11 +59,16 @@ public abstract partial class Weapon : BaseWeapon, IUse
 
 	public override void Reload()
 	{
-		if ( InMagazin >= MagazinSize )
-			return;
+		
 
-		if ( IsReloading )
-			return;
+		
+
+		if ( Owner is FPSPlayer player && player.AmmoCount( AmmoType ) <= 0 )
+		{
+					return;
+
+		}
+
 
 		TimeSinceReload = 0;
 		IsReloading = true;
@@ -85,9 +98,21 @@ public abstract partial class Weapon : BaseWeapon, IUse
 
 	public virtual void OnReloadFinish()
 	{
-		InMagazin = MagazinSize;
-		IsReloading = false;
 		
+		IsReloading = false;
+
+		if ( Owner is FPSPlayer player )
+		{
+			
+				var ammo = player.TakeAmmo( AmmoType, MagazinSize - InMagazin );
+
+				if ( ammo == 0 )
+					return;
+
+				InMagazin += ammo;
+			
+		}
+
 	}
 
 	[ClientRpc]

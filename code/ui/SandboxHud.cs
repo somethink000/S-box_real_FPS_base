@@ -19,5 +19,11 @@ public partial class SandboxHud : HudEntity<RootPanel>
 		RootPanel.AddChild<Health>();
 		RootPanel.AddChild<InventoryBar>();
 		RootPanel.AddChild<Crosshair>();
+		RootPanel.AddChild<Ammo>();
+
+
+		//DELETE ME
+		RootPanel.AddChild<Template>();
+		//DELETE ME
 	}
 }

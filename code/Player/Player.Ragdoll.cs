@@ -1,5 +1,5 @@
 ﻿using Sandbox;
-
+namespace FPSGame { 
 partial class FPSPlayer
 {
 	[ClientRpc]
@@ -70,4 +70,5 @@ partial class FPSPlayer
 
 		ent.DeleteAsync( 10.0f );
 	}
+}
 }

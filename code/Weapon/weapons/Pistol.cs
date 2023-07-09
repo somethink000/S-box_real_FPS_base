@@ -1,17 +1,19 @@
-﻿using Sandbox;
+﻿using FPSGame;
+using Sandbox;
 
 [Spawnable]
 [Library( "weapon_pistol", Title = "Pistol" )]
 partial class Pistol : Weapon
 {
 	public override float ReloadTime => 1.5f;
-	public override float PrimaryRate => 15.0f;
+	public override float PrimaryRate => 7.0f;
 	public override float SecondaryRate => 1.0f;
 
-
-
+	public override int Damage => 10;
+	public override AmmoType AmmoType => AmmoType.Pistol;
 
 	public override int MagazinSize => 10;
+
 
 	public TimeSince TimeSinceDischarge { get; set; }
 
@@ -49,10 +51,17 @@ partial class Pistol : Weapon
 	}
 	public override void Reload()
 	{
+		//TODO for you. put it away in parent class if you need that
+		if ( IsReloading )
+			return;
+
+		if ( InMagazin >= MagazinSize )
+			return;
+
 		base.Reload();
 
 		ViewModelEntity?.SetAnimParameter( "b_reload", true );
-		
+
 
 	}
 
@@ -80,7 +89,7 @@ partial class Pistol : Weapon
 
 		ShootEffects();
 		PlaySound( "rust_pistol.shoot" );
-		ShootBullet( 0.05f, 1.5f, 9.0f, 3.0f );
+		ShootBullet( 0.05f, 1.5f, Damage , 3.0f );
 		
 		
 	}

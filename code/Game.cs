@@ -2,6 +2,7 @@
 using System.Linq;
 using System.Threading.Tasks;
 
+namespace FPSGame { 
 partial class FPSGame : GameManager
 {
 	public FPSGame()
@@ -36,4 +37,5 @@ partial class FPSGame : GameManager
 	}
 
 	
+}
 }
