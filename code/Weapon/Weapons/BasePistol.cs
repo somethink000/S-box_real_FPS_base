@@ -14,6 +14,9 @@ public partial class BasePistol : Weapon
 	public override float Spreed => 0.1f;
 	public override float PrimaryRate => 2.5f;
 
+	
+
+
 	[ClientRpc]
 	protected virtual void ShootEffects()
 	{
@@ -21,14 +24,15 @@ public partial class BasePistol : Weapon
 
 		Particles.Create( "particles/pistol_muzzleflash.vpcf", EffectEntity, "muzzle" );
 
-		Pawn.SetAnimParameter( "b_attack", true );
+		Player.SetAnimParameter( "b_attack", true );
 		ViewModelEntity?.SetAnimParameter( "fire", true );
 	}
 
 	public override void PrimaryAttack()
 	{
+		
 		ShootEffects();
-		Pawn.PlaySound( "rust_pistol.shoot" );
+		Player.PlaySound( "rust_pistol.shoot" );
 		ShootBullet( Spreed, 100, Damage, 2 );
 		if ( !TakeAmmo( 1 ) )
 		{
@@ -39,9 +43,19 @@ public partial class BasePistol : Weapon
 	}
 
 	
+	public override void SecondaryAttack()
+	{
+		
+	}
+
+
 
 	protected override void Animate()
 	{
-		Pawn.SetAnimParameter( "holdtype", (int)CitizenAnimationHelper.HoldTypes.Pistol );
+		Player.SetAnimParameter( "holdtype", (int)CitizenAnimationHelper.HoldTypes.Pistol );
 	}
+
+
+
+
 }

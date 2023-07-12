@@ -6,6 +6,9 @@ public partial class WeaponViewModel : BaseViewModel
 {
 	protected Weapon Weapon { get; init; }
 
+	
+
+
 	public WeaponViewModel( Weapon weapon )
 	{
 		Weapon = weapon;
@@ -13,7 +16,10 @@ public partial class WeaponViewModel : BaseViewModel
 		EnableViewmodelRendering = true;
 	}
 
-	public override void PlaceViewmodel()
+		
+
+
+public override void PlaceViewmodel()
 	{
 		base.PlaceViewmodel();
 

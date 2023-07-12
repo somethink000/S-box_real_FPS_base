@@ -8,7 +8,7 @@ public partial class Weapon : AnimatedEntity
 {
 	//Objects
 	public WeaponViewModel ViewModelEntity { get; protected set; }
-	public Player Pawn => Owner as Player;
+	public Player Player => Owner as Player;
 	public AnimatedEntity EffectEntity => Camera.FirstPersonViewer == Owner ? ViewModelEntity : this;
 	public virtual string ViewModelPath => null;
 	public virtual string ModelPath => null;
@@ -25,12 +25,10 @@ public partial class Weapon : AnimatedEntity
 	[Net, Predicted] public bool IsReloading { get; set; }
 
 
-
 	//Stats
 	public virtual float Spreed => 0.5f;
 	public virtual int Damage => 10;
 	public virtual float PrimaryRate => 5.0f;
-
 
 
 
@@ -57,6 +55,7 @@ public partial class Weapon : AnimatedEntity
 		}
 
 		InMagazin = MagazinSize;
+	
 	}
 
 
@@ -121,7 +120,13 @@ public partial class Weapon : AnimatedEntity
 		if ( CanSecondaryAttack() )
 		{
 			SecondaryAttack();
+		
 		}
+		
+		
+
+		
+		
 
 
 		if ( CanReload() )
@@ -151,7 +156,7 @@ public partial class Weapon : AnimatedEntity
 /// <returns></returns>
 public virtual bool CanPrimaryAttack()
 	{
-		if ( !Owner.IsValid() || !Input.Down( "attack1" ) || InMagazin <= 0 || IsReloading ) return false;
+		if ( !Owner.IsValid() || !Input.Down( "attack1" ) || InMagazin <= 0 || IsReloading) return false;
 
 		var rate = PrimaryRate;
 		if ( rate <= 0 ) return true;

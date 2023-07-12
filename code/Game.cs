@@ -1,8 +1,13 @@
 ﻿
+using MyGame;
 using Sandbox;
+using Sandbox.UI;
+using Sandbox.UI.Construct;
 using System;
+using System.IO;
 using System.Linq;
-using System.Numerics;
+using System.Threading.Tasks;
+
 
 //
 // You don't need to put things in a namespace, but it doesn't hurt.
@@ -25,7 +30,7 @@ public partial class MyGame : GameManager
 	{
 		if ( Game.IsClient )
 		{
-			Game.RootPanel = new Hud();
+		_ = new Hud();
 		}
 	}
 
@@ -41,7 +46,7 @@ public partial class MyGame : GameManager
 
 		// Create a pawn for this client to play with
 		var player = new Player();
-		player.Respawn();
+	//	player.Respawn();
 		cl.Pawn = player;
 		player.Respawn();
 		player.DressFromClient( cl );

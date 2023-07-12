@@ -3,9 +3,11 @@ using System.ComponentModel;
 using MyGame.Weapons;
 using System.Collections.Generic;
 
-namespace MyGame { 
+namespace MyGame {
 
-public partial class Player : AnimatedEntity
+
+	
+	public partial class Player : AnimatedEntity
 {
 	[Net, Predicted] public Weapon ActiveWeapon { get; set; }
 	[ClientInput] public Vector3 InputDirection { get; set; }
@@ -80,8 +82,11 @@ public partial class Player : AnimatedEntity
 		EnableShadowInFirstPerson = true;
 
 		base.Spawn();
-		CreateHull();
-	}
+
+
+			//without this line you will not be able to deal\take damage
+			Tags.Add( "player" );
+		}
 
 	public void SetActiveWeapon( Weapon weapon )
 	{
