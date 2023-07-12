@@ -2,7 +2,7 @@
 
 namespace MyGame.Weapons;
 
-public partial class Fists : Weapon
+public partial class Light : Weapon
 {
 	public override string ModelPath => "weapons/rust_pistol/rust_pistol.vmdl";
 	public override string ViewModelPath => "weapons/rust_pistol/v_rust_pistol.vmdl";

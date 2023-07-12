@@ -2,17 +2,17 @@
 
 namespace MyGame.Weapons;
 
-public partial class Fists : Weapon
+public partial class BasePistol : Weapon
 {
 	public override string ModelPath => "weapons/rust_pistol/rust_pistol.vmdl";
 	public override string ViewModelPath => "weapons/rust_pistol/v_rust_pistol.vmdl";
 
-	public override AmmoType AmmoType => AmmoType.None;
+	public override AmmoType AmmoType => AmmoType.Pistol;
 	public override float ReloadTime => 3.0f;
 	public override int MagazinSize => 9;
 	public override int Damage => 10;
 	public override float Spreed => 0.1f;
-	public override float PrimaryRate => 10.0f;
+	public override float PrimaryRate => 2.5f;
 
 	[ClientRpc]
 	protected virtual void ShootEffects()
@@ -38,7 +38,7 @@ public partial class Fists : Weapon
 
 	}
 
-
+	
 
 	protected override void Animate()
 	{

@@ -1,90 +1,136 @@
-﻿using FPSGame;
 using Sandbox;
 using System.Collections.Generic;
+using System.Numerics;
 
-public abstract partial class Weapon : BaseWeapon, IUse
+namespace MyGame.Weapons;
+
+public partial class Weapon : AnimatedEntity
 {
-	public virtual float ReloadTime => 3.0f;
+	//Objects
+	public WeaponViewModel ViewModelEntity { get; protected set; }
+	public Player Pawn => Owner as Player;
+	public AnimatedEntity EffectEntity => Camera.FirstPersonViewer == Owner ? ViewModelEntity : this;
+	public virtual string ViewModelPath => null;
+	public virtual string ModelPath => null;
 
+
+
+	//Ammo
 	public virtual AmmoType AmmoType => AmmoType.Pistol;
-	public virtual int MagazinSize => 10;
+	
+	public virtual int MagazinSize => 15;
+	public virtual float ReloadTime => 5.0f;
+	[Net, Predicted] public TimeSince TimeSinceReload { get; set; }
+	[Net, Predicted] public int InMagazin { get; set; }
+	[Net, Predicted] public bool IsReloading { get; set; }
 
+
+
+	//Stats
+	public virtual float Spreed => 0.5f;
 	public virtual int Damage => 10;
-
-	[Net, Predicted]
-	public int InMagazin { get; set; }
+	public virtual float PrimaryRate => 5.0f;
 
 
-	public PickupTrigger PickupTrigger { get; protected set; }
 
-	[Net, Predicted]
-	public TimeSince TimeSinceReload { get; set; }
 
-	[Net, Predicted]
-	public bool IsReloading { get; set; }
 
-	[Net, Predicted]
-	public TimeSince TimeSinceDeployed { get; set; }
+	[Net, Predicted] public TimeSince TimeSincePrimaryAttack { get; set; }
+
+
 	public int AvailableAmmo()
 	{
-		if ( Owner is not FPSPlayer owner ) return 0;
+		if ( Owner is not Player owner ) return 0;
 		return owner.AmmoCount( AmmoType );
 	}
+
+
 	public override void Spawn()
 	{
-		base.Spawn();
+		EnableHideInFirstPerson = true;
+		EnableShadowInFirstPerson = true;
+		EnableDrawing = false;
+
+		if ( ModelPath != null )
+		{
+			SetModel( ModelPath );
+		}
 
 		InMagazin = MagazinSize;
-
-		PickupTrigger = new PickupTrigger
-		{
-			Parent = this,
-			Position = Position,
-			EnableTouch = true,
-			EnableSelfCollisions = false
-		};
-
-		PickupTrigger.PhysicsBody.AutoSleep = false;
-
-		
 	}
 
-	public override void ActiveStart( Entity ent )
-	{
-		base.ActiveStart( ent );
 
-		TimeSinceDeployed = 0;
-		
+
+	public virtual void StartReloadEffects()
+	{
+		ViewModelEntity?.SetAnimParameter( "reload", true );
 	}
 
-	public override void Reload()
+
+
+	public void OnEquip( Player pawn )
 	{
-		
+		Owner = pawn;
+		SetParent( pawn, true );
+		EnableDrawing = true;
+		CreateViewModel( To.Single( pawn ) );
 
-		
-
-		
-
-
-		TimeSinceReload = 0;
-		IsReloading = true;
-
-		(Owner as AnimatedEntity)?.SetAnimParameter( "b_reload", true );
-
-		StartReloadEffects();
-
-		
 	}
 
-	public override void Simulate( IClient owner )
+	/// <summary>
+	/// Called when the weapon is either removed from the player, or holstered.
+	/// </summary>
+	public void OnHolster()
 	{
-		if ( TimeSinceDeployed < 0.6f )
-			return;
+		EnableDrawing = false;
+		DestroyViewModel( To.Single( Owner ) );
+	}
+
+
+
+
+
+
+
+
+	/// <summary>
+	/// Called from <see cref="Player.Simulate(IClient)"/>.
+	/// </summary>
+	/// <param name="player"></param>
+	public override void Simulate( IClient player )
+	{
+		Animate();
+
 
 		if ( !IsReloading )
 		{
-			base.Simulate( owner );
+			base.Simulate( player );
 		}
+
+
+
+		if ( CanPrimaryAttack() )
+		{
+			using ( LagCompensation() )
+			{
+				TimeSincePrimaryAttack = 0;
+				PrimaryAttack();
+			}
+		}
+
+		if ( CanSecondaryAttack() )
+		{
+			SecondaryAttack();
+		}
+
+
+		if ( CanReload() )
+		{
+			Reload();
+		}
+
+
+
 
 		if ( IsReloading && TimeSinceReload > ReloadTime )
 		{
@@ -92,214 +138,130 @@ public abstract partial class Weapon : BaseWeapon, IUse
 		}
 	}
 
-	public virtual void OnReloadFinish()
+
+
+
+
+
+//INPUTS
+
+/// <summary>
+/// Called every <see cref="Simulate(IClient)"/> to see if we can shoot our gun.
+/// </summary>
+/// <returns></returns>
+public virtual bool CanPrimaryAttack()
 	{
+		if ( !Owner.IsValid() || !Input.Down( "attack1" ) || InMagazin <= 0 || IsReloading ) return false;
+
+		var rate = PrimaryRate;
+		if ( rate <= 0 ) return true;
+
+		return TimeSincePrimaryAttack > (1 / rate);
+	}
+
+	public virtual bool CanSecondaryAttack()
+	{
+		if ( !Owner.IsValid() || !Input.Down( "attack2" ) ) return false;
+
+		return true;
+	}
+	public virtual bool CanReload()
+	{
+		if ( !Owner.IsValid() || !Input.Down( "reload" ) ) return false;
+		if ( IsReloading || AvailableAmmo() <= 0 || InMagazin >= MagazinSize ) return false;
 		
-		IsReloading = false;
-
-		if ( Owner is FPSPlayer player )
-		{
-			
-				var ammo = player.TakeAmmo( AmmoType, MagazinSize - InMagazin );
-
-				if ( ammo == 0 )
-					return;
-
-				InMagazin += ammo;
-			
-		}
-
-	}
-
-	[ClientRpc]
-	public virtual void StartReloadEffects()
-	{
-		ViewModelEntity?.SetAnimParameter( "reload", true );
-
-		// TODO - player third person model reload
-	}
-
-	public override void CreateViewModel()
-	{
-		Game.AssertClient();
-
-		if ( string.IsNullOrEmpty( ViewModelPath ) )
-			return;
-
-		ViewModelEntity = new ViewModel
-		{
-			Position = Position,
-			Owner = Owner,
-			EnableViewmodelRendering = true
-		};
-
-		ViewModelEntity.SetModel( ViewModelPath );
-	}
-
-	public bool OnUse( Entity user )
-	{
-		if ( Owner != null )
-			return false;
-
-		if ( !user.IsValid() )
-			return false;
-
-		user.StartTouch( this );
-
-		return false;
-	}
-
-	public virtual bool IsUsable( Entity user )
-	{
-		var player = user as Player;
-		if ( Owner != null ) return false;
-
-		if ( player.Inventory is Inventory inventory )
-		{
-			return inventory.CanAdd( this );
-		}
 
 		return true;
 	}
 
-	public void Remove()
+
+
+	//ACTIONS
+
+
+
+
+	/// <summary>
+	/// Called when your gun shoots.
+	/// </summary>
+	public virtual void PrimaryAttack(){}
+
+	public virtual void SecondaryAttack(){}
+
+	public virtual void Reload()
 	{
-		Delete();
+
+		TimeSinceReload = 0;
+		IsReloading = true;
+
+		(Owner as AnimatedEntity)?.SetAnimParameter( "b_reload", true );
+
+		StartReloadEffects();
 	}
 
-	[ClientRpc]
-	protected virtual void ShootEffects()
+
+
+	public virtual void OnReloadFinish()
 	{
-		Game.AssertClient();
 
-		Particles.Create( "particles/pistol_muzzleflash.vpcf", EffectEntity, "muzzle" );
+		IsReloading = false;
 
-		ViewModelEntity?.SetAnimParameter( "fire", true );
+		if ( Owner is Player player )
+		{
+			var ammo = player.TakeAmmo( AmmoType, MagazinSize - InMagazin );
+
+			if ( ammo == 0 )
+				return;
+
+			InMagazin += ammo;
+		}
 	}
 
-	public override IEnumerable<TraceResult> TraceBullet( Vector3 start, Vector3 end, float radius = 2.0f )
-	{
-		bool underWater = Trace.TestPoint( start, "water" );
-
-		var trace = Trace.Ray( start, end )
-				.UseHitboxes()
-				.WithAnyTags( "solid", "player", "npc", "glass" )
-				.Ignore( this )
-				.Size( radius );
-
-		//
-		// If we're not underwater then we can hit water
-		//
-		if ( !underWater )
-			trace = trace.WithAnyTags( "water" );
-
-		var tr = trace.Run();
-
-		if ( tr.Hit )
-			yield return tr;
-
-		//
-		// Another trace, bullet going through thin material, penetrating water surface?
-		//
-	}
 
 
 
 
 	public bool TakeAmmo( int amount )
 	{
-		if ( InMagazin <= 0)
+		if ( InMagazin <= 0 )
 			return false;
 
 		InMagazin -= amount;
-			return true;
+		return true;
 	}
 
 
 
-	public IEnumerable<TraceResult> TraceMelee( Vector3 start, Vector3 end, float radius = 2.0f )
-	{
-		var trace = Trace.Ray( start, end )
-				.UseHitboxes()
-				.WithAnyTags( "solid", "player", "npc", "glass" )
-				.Ignore( this );
 
-		var tr = trace.Run();
+	//VIEW MODEL
 
-		if ( tr.Hit )
-		{
-			yield return tr;
-		}
-		else
-		{
-			trace = trace.Size( radius );
-
-			tr = trace.Run();
-
-			if ( tr.Hit )
-			{
-				yield return tr;
-			}
-		}
-	}
 
 	/// <summary>
-	/// Shoot a single bullet
+	/// Useful for setting anim parameters based off the current weapon.
 	/// </summary>
-	public virtual void ShootBullet( Vector3 pos, Vector3 dir, float spread, float force, float damage, float bulletSize )
+	protected virtual void Animate()
 	{
-		var forward = dir;
-		forward += (Vector3.Random + Vector3.Random + Vector3.Random + Vector3.Random) * spread * 0.25f;
-		forward = forward.Normal;
+	}
 
-		//
-		// ShootBullet is coded in a way where we can have bullets pass through shit
-		// or bounce off shit, in which case it'll return multiple results
-		//
-		
-		foreach ( var tr in TraceBullet( pos, pos + forward * 5000, bulletSize ) )
+	
+
+	[ClientRpc]
+	public void CreateViewModel()
+	{
+		if ( ViewModelPath == null ) return;
+
+		var vm = new WeaponViewModel( this );
+		vm.Model = Model.Load( ViewModelPath );
+		ViewModelEntity = vm;
+	}
+
+	[ClientRpc]
+	public void DestroyViewModel()
+	{
+		if ( ViewModelEntity.IsValid() )
 		{
-			tr.Surface.DoBulletImpact( tr );
-
-			if ( !Game.IsServer ) continue;
-			if ( !tr.Entity.IsValid() ) continue;
-
-			//
-			// We turn predictiuon off for this, so any exploding effects don't get culled etc
-			//
-			using ( Prediction.Off() )
-			{
-				var damageInfo = DamageInfo.FromBullet( tr.EndPosition, forward * 100 * force, damage )
-					.UsingTraceResult( tr )
-					.WithAttacker( Owner )
-					.WithWeapon( this );
-
-				tr.Entity.TakeDamage( damageInfo );
-			}
+			ViewModelEntity.Delete();
 		}
 	}
 
-	/// <summary>
-	/// Shoot a single bullet from owners view point
-	/// </summary>
-	public virtual void ShootBullet( float spread, float force, float damage, float bulletSize )
-	{
-		Game.SetRandomSeed( Time.Tick );
-
-		var ray = Owner.AimRay;
-		ShootBullet( ray.Position, ray.Forward, spread, force, damage, bulletSize );
-	}
-
-	/// <summary>
-	/// Shoot a multiple bullets from owners view point
-	/// </summary>
-	public virtual void ShootBullets( int numBullets, float spread, float force, float damage, float bulletSize )
-	{
-		var ray = Owner.AimRay;
-
-		for ( int i = 0; i < numBullets; i++ )
-		{
-			ShootBullet( ray.Position, ray.Forward, spread, force / numBullets, damage, bulletSize );
-		}
-	}
 }

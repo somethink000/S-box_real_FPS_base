@@ -1,41 +1,68 @@
-﻿using Sandbox;
+﻿
+using Sandbox;
+using System;
 using System.Linq;
-using System.Threading.Tasks;
+using System.Numerics;
 
-namespace FPSGame { 
-partial class FPSGame : GameManager
+//
+// You don't need to put things in a namespace, but it doesn't hurt.
+//
+namespace MyGame;
+
+/// <summary>
+/// This is your game class. This is an entity that is created serverside when
+/// the game starts, and is replicated to the client. 
+/// 
+/// You can use this to create things like HUDs and declare which player class
+/// to use for spawned players.
+/// </summary>
+public partial class MyGame : GameManager
 {
-	public FPSGame()
+	/// <summary>
+	/// Called when the game is created (on both the server and client)
+	/// </summary>
+	public MyGame()
 	{
-		if ( Game.IsServer )
+		if ( Game.IsClient )
 		{
-			// Create the HUD
-			_ = new SandboxHud();
+			Game.RootPanel = new Hud();
 		}
 	}
 
+	/// <summary>
+	/// A client has joined the server. Make them a pawn to play with
+	/// </summary>
+	/// 
+
+	
 	public override void ClientJoined( IClient cl )
 	{
 		base.ClientJoined( cl );
-		var player = new FPSPlayer( cl );
+
+		// Create a pawn for this client to play with
+		var player = new Player();
 		player.Respawn();
-
 		cl.Pawn = player;
-	}
+		player.Respawn();
+		player.DressFromClient( cl );
 
-	protected override void OnDestroy()
-	{
-		base.OnDestroy();
-	}
 
-	
-	
-	[ClientRpc]
-	public override void OnKilledMessage( long leftid, string left, long rightid, string right, string method )
-	{
-		KillFeed.Current?.AddEntry( leftid, left, rightid, right, method );
-	}
 
-	
+
+
+		// Get all of the spawnpoints
+		var spawnpoints = Entity.All.OfType<SpawnPoint>();
+
+		// chose a random one
+		var randomSpawnPoint = spawnpoints.OrderBy( x => Guid.NewGuid() ).FirstOrDefault();
+
+		// if it exists, place the pawn there
+		if ( randomSpawnPoint != null )
+		{
+			var tx = randomSpawnPoint.Transform;
+			tx.Position = tx.Position + Vector3.Up * 50.0f; // raise it up
+			player.Transform = tx;
+		}
+	}
 }
-}
+

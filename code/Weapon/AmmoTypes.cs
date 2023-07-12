@@ -1,4 +1,4 @@
-﻿namespace FPSGame
+﻿namespace MyGame.Weapons
 
 {
 	public enum AmmoType
@@ -7,6 +7,6 @@
 		Pistol,
 		SMG,
 		Shotgun,
-		
+
 	}
 }

@@ -25,6 +25,7 @@
     "PerMapRanking": false,
     "LeaderboardType": "None",
     "ProjectTemplate": null,
-    "CsProjName": ""
+    "CsProjName": "",
+    "TickRate": 50
   }
 }
