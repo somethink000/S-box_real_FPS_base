@@ -1,0 +1,43 @@
+﻿﻿@using System;
+@using Sandbox;
+@using Sandbox.UI;
+
+@using System.Collections.Generic;
+
+@namespace FPSGame.UI
+@attribute [StyleSheet( "/ui/Hud.scss" )]
+@inherits RootPanel
+
+@{
+    var player = Game.LocalPawn as Player;
+}
+<root>
+
+
+		<div class="active-weapon">
+			<label @ref="Weapon" class="weapon"></label>
+			<label @ref="Inventory" class="inventory"></label>
+
+		</div>
+
+</root>
+
+@code
+{
+
+	public Label Weapon { get; set; }
+	public Label Inventory { get; set; }
+
+	public override void Tick()
+	{
+		var player = Game.LocalPawn as Player;
+		if (player is null)
+		{
+			Log.Info("fuck");
+		}
+		Weapon.Text = $"/ ∞";
+		Inventory.Text = $"/ ∞";
+
+	}
+   
+}
