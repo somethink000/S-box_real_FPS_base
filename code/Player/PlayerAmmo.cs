@@ -1,11 +1,11 @@
-﻿using MyGame.Weapons;
+﻿using FPSGame.Weapons;
 using Sandbox;
 using System;
 using System.Collections.Generic;
 
-namespace MyGame
+namespace FPSGame
 {
-	public partial class Player
+	public partial class FPSPlayer
 	{
 		[Net] public IList<int> Ammo { get; set; }
 

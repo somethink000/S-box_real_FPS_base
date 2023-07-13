@@ -1,6 +1,5 @@
 using Sandbox;
-
-namespace MyGame.Weapons;
+namespace FPSGame.Weapons;
 
 public partial class WeaponViewModel : BaseViewModel
 {
@@ -25,4 +24,5 @@ public override void PlaceViewmodel()
 
 		Camera.Main.SetViewModelCamera( 80f, 1, 500 );
 	}
+	
 }

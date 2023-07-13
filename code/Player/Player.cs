@@ -1,13 +1,14 @@
 ﻿using Sandbox;
 using System.ComponentModel;
-using MyGame.Weapons;
+using FPSGame.Weapons;
 using System.Collections.Generic;
 
-namespace MyGame {
+namespace FPSGame
+{
 
 
 	
-	public partial class Player : AnimatedEntity
+	public partial class FPSPlayer : AnimatedEntity
 {
 	[Net, Predicted] public Weapon ActiveWeapon { get; set; }
 	[ClientInput] public Vector3 InputDirection { get; set; }
@@ -62,7 +63,7 @@ namespace MyGame {
 	public override Ray AimRay => new Ray( EyePosition, EyeRotation.Forward );
 
 
-	public Player()
+	public FPSPlayer()
 	{
 		
 		Ammo = new List<int>();

@@ -1,9 +1,10 @@
 ﻿using Sandbox;
 using System;
 
-namespace MyGame { 
+namespace FPSGame
+{ 
 
-public class PlayerAnimator : EntityComponent<Player>, ISingletonComponent
+public class PlayerAnimator : EntityComponent<FPSPlayer>, ISingletonComponent
 {
 	public void Simulate()
 	{

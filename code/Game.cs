@@ -1,19 +1,16 @@
-﻿
-using MyGame;
-using Sandbox;
+﻿using Sandbox;
 using Sandbox.UI;
 using Sandbox.UI.Construct;
 using System;
 using System.IO;
 using System.Linq;
-using System.Threading.Tasks;
 using FPSGame.UI;
 
+using FPSGame.Weapons;
 
-//
-// You don't need to put things in a namespace, but it doesn't hurt.
-//
-namespace MyGame;
+
+
+namespace FPSGame { 
 
 /// <summary>
 /// This is your game class. This is an entity that is created serverside when
@@ -46,7 +43,7 @@ public partial class MyGame : GameManager
 		base.ClientJoined( cl );
 
 		// Create a pawn for this client to play with
-		var player = new Player();
+		var player = new FPSPlayer();
 	//	player.Respawn();
 		cl.Pawn = player;
 		player.Respawn();
@@ -72,3 +69,4 @@ public partial class MyGame : GameManager
 	}
 }
 
+}

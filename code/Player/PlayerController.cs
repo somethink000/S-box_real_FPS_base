@@ -2,9 +2,10 @@
 using System;
 using System.Collections.Generic;
 
-namespace MyGame { 
+namespace FPSGame
+{ 
 
-public class PlayerController : EntityComponent<Player>
+public class PlayerController : EntityComponent<FPSPlayer>
 {
 	public int StepSize => 24;
 	public int GroundAngle => 45;

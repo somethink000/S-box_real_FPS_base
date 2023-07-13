@@ -1,14 +1,15 @@
 using Sandbox;
 using System.Collections.Generic;
 using System.Numerics;
+using FPSGame;
 
-namespace MyGame.Weapons;
+namespace FPSGame.Weapons;
 
 public partial class Weapon : AnimatedEntity
 {
 	//Objects
 	public WeaponViewModel ViewModelEntity { get; protected set; }
-	public Player Player => Owner as Player;
+	public FPSPlayer Player => Owner as FPSPlayer;
 	public AnimatedEntity EffectEntity => Camera.FirstPersonViewer == Owner ? ViewModelEntity : this;
 	public virtual string ViewModelPath => null;
 	public virtual string ModelPath => null;
@@ -38,7 +39,7 @@ public partial class Weapon : AnimatedEntity
 
 	public int AvailableAmmo()
 	{
-		if ( Owner is not Player owner ) return 0;
+		if ( Owner is not FPSPlayer owner ) return 0;
 		return owner.AmmoCount( AmmoType );
 	}
 
@@ -67,7 +68,7 @@ public partial class Weapon : AnimatedEntity
 
 
 
-	public void OnEquip( Player pawn )
+	public void OnEquip( FPSPlayer pawn )
 	{
 		Owner = pawn;
 		SetParent( pawn, true );
@@ -93,7 +94,7 @@ public partial class Weapon : AnimatedEntity
 
 
 	/// <summary>
-	/// Called from <see cref="Player.Simulate(IClient)"/>.
+	/// Called from <see cref="FPSPlayer.Simulate(IClient)"/>.
 	/// </summary>
 	/// <param name="player"></param>
 	public override void Simulate( IClient player )
@@ -211,7 +212,7 @@ public virtual bool CanPrimaryAttack()
 
 		IsReloading = false;
 
-		if ( Owner is Player player )
+		if ( Owner is FPSPlayer player )
 		{
 			var ammo = player.TakeAmmo( AmmoType, MagazinSize - InMagazin );
 
@@ -268,5 +269,5 @@ public virtual bool CanPrimaryAttack()
 			ViewModelEntity.Delete();
 		}
 	}
-
+	
 }

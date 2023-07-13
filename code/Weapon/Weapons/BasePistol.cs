@@ -1,6 +1,6 @@
 ﻿using Sandbox;
 
-namespace MyGame.Weapons;
+namespace FPSGame.Weapons;
 
 public partial class BasePistol : Weapon
 {

@@ -1,7 +1,7 @@
 ﻿using Sandbox;
 using System.Collections.Generic;
 //It doesn't matter why it's here. I just love SOLID ;)
-namespace MyGame.Weapons
+namespace FPSGame.Weapons
 {
 	public partial class Weapon
 	{
@@ -30,7 +30,7 @@ namespace MyGame.Weapons
 			if ( tr.Hit )
 				yield return tr;
 		}
-
+		
 		/// <summary>
 		/// Shoot a single bullet
 		/// </summary>
