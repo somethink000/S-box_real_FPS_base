@@ -18,20 +18,23 @@ public partial class Weapon : AnimatedEntity
 
 	//Ammo
 	public virtual AmmoType AmmoType => AmmoType.Pistol;
-	
+
 	public virtual int MagazinSize => 15;
 	public virtual float ReloadTime => 5.0f;
 	[Net, Predicted] public TimeSince TimeSinceReload { get; set; }
 	[Net, Predicted] public int InMagazin { get; set; }
 	[Net, Predicted] public bool IsReloading { get; set; }
 
-
+	public bool IsAiming { get; set; }
+	public bool wasAiming { get; set; }
 	//Stats
+	public virtual float AimSpeed => 3f;
 	public virtual float Spreed => 0.5f;
 	public virtual int Damage => 10;
 	public virtual float PrimaryRate => 5.0f;
+	public virtual bool CanDrop => false;
 
-
+	public Vector3 aimingOffset { get; set; }
 
 
 	[Net, Predicted] public TimeSince TimeSincePrimaryAttack { get; set; }
@@ -56,7 +59,7 @@ public partial class Weapon : AnimatedEntity
 		}
 
 		InMagazin = MagazinSize;
-	
+
 	}
 
 
@@ -87,9 +90,14 @@ public partial class Weapon : AnimatedEntity
 	}
 
 
-
-
-
+	
+	public virtual void UpdateCamera()
+	{
+		if ( ViewModelEntity is WeaponViewModel viewModel )
+		{
+			viewModel.UpdateCamera();
+		}
+	}
 
 
 
@@ -101,6 +109,7 @@ public partial class Weapon : AnimatedEntity
 	{
 		Animate();
 
+		UpdateCamera();
 
 		if ( !IsReloading )
 		{
@@ -118,16 +127,17 @@ public partial class Weapon : AnimatedEntity
 			}
 		}
 
-		if ( CanSecondaryAttack() )
+		/*if ( CanSecondaryAttack() )
 		{
 			SecondaryAttack();
 		
-		}
-		
-		
+		}*/
 
-		
-		
+	
+
+
+
+
 
 
 		if ( CanReload() )
@@ -142,6 +152,25 @@ public partial class Weapon : AnimatedEntity
 		{
 			OnReloadFinish();
 		}
+
+
+
+
+
+
+		IsAiming = Input.Down( "attack2" ) && !IsReloading;
+
+		if ( !wasAiming && IsAiming )
+		{
+			OnZoomStart();
+		}
+
+		if ( wasAiming && !IsAiming )
+		{
+			OnZoomEnd();
+		}
+
+		wasAiming = IsAiming;
 	}
 
 
@@ -149,13 +178,15 @@ public partial class Weapon : AnimatedEntity
 
 
 
-//INPUTS
+	public virtual void OnZoomStart() {  }
+	public virtual void OnZoomEnd() { }
+	//INPUTS
 
-/// <summary>
-/// Called every <see cref="Simulate(IClient)"/> to see if we can shoot our gun.
-/// </summary>
-/// <returns></returns>
-public virtual bool CanPrimaryAttack()
+	/// <summary>
+	/// Called every <see cref="Simulate(IClient)"/> to see if we can shoot our gun.
+	/// </summary>
+	/// <returns></returns>
+	public virtual bool CanPrimaryAttack()
 	{
 		if ( !Owner.IsValid() || !Input.Down( "attack1" ) || InMagazin <= 0 || IsReloading) return false;
 
@@ -165,12 +196,12 @@ public virtual bool CanPrimaryAttack()
 		return TimeSincePrimaryAttack > (1 / rate);
 	}
 
-	public virtual bool CanSecondaryAttack()
+	/*public virtual bool CanSecondaryAttack()
 	{
 		if ( !Owner.IsValid() || !Input.Down( "attack2" ) ) return false;
 
 		return true;
-	}
+	}*/
 	public virtual bool CanReload()
 	{
 		if ( !Owner.IsValid() || !Input.Down( "reload" ) ) return false;
@@ -192,7 +223,7 @@ public virtual bool CanPrimaryAttack()
 	/// </summary>
 	public virtual void PrimaryAttack(){}
 
-	public virtual void SecondaryAttack(){}
+	/*public virtual void SecondaryAttack(){}*/
 
 	public virtual void Reload()
 	{
@@ -236,7 +267,7 @@ public virtual bool CanPrimaryAttack()
 		return true;
 	}
 
-
+	
 
 
 	//VIEW MODEL
@@ -252,7 +283,7 @@ public virtual bool CanPrimaryAttack()
 	
 
 	[ClientRpc]
-	public void CreateViewModel()
+	public virtual void CreateViewModel()
 	{
 		if ( ViewModelPath == null ) return;
 

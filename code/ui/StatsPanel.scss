@@ -1,0 +1,12 @@
+StatsPanel {
+    position: absolute;
+    flex-direction: column-reverse;
+    bottom: 5%;
+    left: 5%;
+    width: 15%;
+    height: 7%;
+    background-color: rgba(0,0,0,0.3);
+    padding: 20px;
+    border-bottom: 1px, white;
+    border-radius: 2px;
+}

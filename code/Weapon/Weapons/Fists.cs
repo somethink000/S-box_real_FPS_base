@@ -2,10 +2,10 @@
 
 namespace FPSGame.Weapons;
 
-public partial class BasePistol : Weapon
+public partial class Fists : Weapon
 {
-	public override string ModelPath => "weapons/rust_pistol/rust_pistol.vmdl";
-	public override string ViewModelPath => "weapons/rust_pistol/v_rust_pistol.vmdl";
+	//public override string ModelPath => "weapons/rust_pistol/rust_pistol.vmdl";
+	//public override string ViewModelPath => "weapons/rust_pistol/v_rust_pistol.vmdl";
 
 	public override AmmoType AmmoType => AmmoType.Pistol;
 	public override float ReloadTime => 3.0f;
@@ -13,19 +13,15 @@ public partial class BasePistol : Weapon
 	public override int Damage => 10;
 	public override float Spreed => 0.1f;
 	public override float PrimaryRate => 2.5f;
-	public override float AimSpeed => 3f;
 
 
-	public BasePistol()
-	{
-		aimingOffset = new Vector3( -5f, 17f, 3f );
-	}
+
 
 	[ClientRpc]
 	protected virtual void ShootEffects()
 	{
 		Game.AssertClient();
-		
+
 		Particles.Create( "particles/pistol_muzzleflash.vpcf", EffectEntity, "muzzle" );
 
 		Player.SetAnimParameter( "b_attack", true );
@@ -34,7 +30,7 @@ public partial class BasePistol : Weapon
 
 	public override void PrimaryAttack()
 	{
-		
+
 		ShootEffects();
 		Player.PlaySound( "rust_pistol.shoot" );
 		ShootBullet( Spreed, 100, Damage, 2 );
@@ -45,10 +41,6 @@ public partial class BasePistol : Weapon
 		}
 
 	}
-
-	
-	
-
 
 
 	protected override void Animate()

@@ -11,15 +11,27 @@
 
 
 <root>
-    <div class="fill" style="width: @(GetHealth())%"></div>
+	
+    <div class="healthfill" style="width: @(GetHealth())%"></div>
+	
 </root>
 
 @code {
-    public int GetHealth()
-    {
-        var pawn = Game.LocalPawn;
-        if (pawn == null) return 0;
 
-        return (int)pawn.Health;
-    }
+
+	public int GetHealth()
+	{
+		var pawn = Game.LocalPawn as FPSPlayer;
+		if (pawn == null) return 0;
+
+		return (int)pawn.Health;
+	}
+
+
+	protected override int BuildHash()
+	{
+		var currentHealth = GetHealth();
+		return currentHealth.GetHashCode();
+	}
+
 }

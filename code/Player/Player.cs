@@ -2,6 +2,9 @@
 using System.ComponentModel;
 using FPSGame.Weapons;
 using System.Collections.Generic;
+using FPSGame.Items;
+using System;
+using System.Numerics;
 
 namespace FPSGame
 {
@@ -10,110 +13,103 @@ namespace FPSGame
 	
 	public partial class FPSPlayer : AnimatedEntity
 {
-	[Net, Predicted] public Weapon ActiveWeapon { get; set; }
-	[ClientInput] public Vector3 InputDirection { get; set; }
-	[ClientInput] public Angles ViewAngles { get; set; }
 
 	
-	
-	/// <summary>
-	/// Position a player should be looking from in world space.
-	/// </summary>
-	[Browsable( false )]
-	public Vector3 EyePosition
+	[ClientInput] public Vector3 InputDirection { get; set; }
+	[ClientInput] public Angles ViewAngles { get; set; }
+	[Browsable( false )] public Vector3 EyePosition
 	{
 		get => Transform.PointToWorld( EyeLocalPosition );
 		set => EyeLocalPosition = Transform.PointToLocal( value );
 	}
-
-	/// <summary>
-	/// Position a player should be looking from in local to the entity coordinates.
-	/// </summary>
-	[Net, Predicted, Browsable( false )]
-	public Vector3 EyeLocalPosition { get; set; }
-
-	/// <summary>
-	/// Rotation of the entity's "eyes", i.e. rotation for the camera when this entity is used as the view entity.
-	/// </summary>
-	[Browsable( false )]
-	public Rotation EyeRotation
+	[Browsable( false )] public Rotation EyeRotation
 	{
 		get => Transform.RotationToWorld( EyeLocalRotation );
 		set => EyeLocalRotation = Transform.RotationToLocal( value );
 	}
+	[Net, Predicted, Browsable( false )]  public Vector3 EyeLocalPosition { get; set; }
 
-	/// <summary>
-	/// Rotation of the entity's "eyes", i.e. rotation for the camera when this entity is used as the view entity. In local to the entity coordinates.
-	/// </summary>
-	[Net, Predicted, Browsable( false )]
-	public Rotation EyeLocalRotation { get; set; }
-
-	public BBox Hull
-	{
-		get => new
-		(
-			new Vector3( -16, -16, 0 ),
-			new Vector3( 16, 16, 64 )
-		);
-	}
-
-	[BindComponent] public PlayerController Controller { get; }
-	[BindComponent] public PlayerAnimator Animator { get; }
-
+	[Net, Predicted, Browsable( false )]  public Rotation EyeLocalRotation { get; set; }
 	public override Ray AimRay => new Ray( EyePosition, EyeRotation.Forward );
 
 
-	public FPSPlayer()
+
+
+
+
+
+
+	public DamageInfo LastDamage;
+
+	public BBox Hull
 	{
-		
-		Ammo = new List<int>();
+	get => new
+	(
+		new Vector3( -10, -10, 0 ),
+		new Vector3( 16, 16, 64 )
+	);
 	}
+	[BindComponent] public PlayerController Controller { get; }
+	[BindComponent] public PlayerAnimator Animator { get; }
+
+	
 
 
 
-	/// <summary>
-	/// Called when the entity is first created 
-	/// </summary>
-	public override void Spawn()
+
+
+
+	public FPSPlayer( )
+		{
+			Ammo = new List<int>();
+		}
+		
+
+	
+		public override void Spawn()
 	{
-		SetModel( "models/citizen/citizen.vmdl" );
-		LifeState = LifeState.Alive;
-		EnableDrawing = true;
-		EnableHideInFirstPerson = true;
-		EnableShadowInFirstPerson = true;
 
 		base.Spawn();
 
-
-			//without this line you will not be able to deal\take damage
-			Tags.Add( "player" );
-		}
-
-	public void SetActiveWeapon( Weapon weapon )
-	{
-		ActiveWeapon?.OnHolster();
-		ActiveWeapon = weapon;
-		ActiveWeapon.OnEquip( this );
-	}
-
-	public void Respawn()
-	{
-		LifeState = LifeState.Alive;
+		Tags.Add( "player" );
 		Components.Create<PlayerController>();
 		Components.Create<PlayerAnimator>();
-
-		SetActiveWeapon( new BasePistol() );
-		//Inventory.Add( new Pistol() );
-		//Inventory.Add( new Flashlight() );
-		//Inventory.Add( new Fists() );
-		CreateHull();
-
-		GiveAmmo( AmmoType.Pistol, 100 );
-
-
-		Health = 100;
+		
 	}
 
+	
+
+
+		public virtual void Respawn()
+		{
+			SetModel( "models/citizen/citizen.vmdl" );
+			EnableDrawing = true;
+			EnableHideInFirstPerson = true;
+			EnableShadowInFirstPerson = true;
+			EnableAllCollisions = true;
+			Game.AssertServer();
+			Tags.Add( "player" );
+			//Position += new Vector3(0,100,0);
+			LifeState = LifeState.Alive;
+			//Velocity = Vector3.Zero;
+			this.ClearWaterLevel();
+			
+			CreateHull();
+
+			GameManager.Current?.MoveToSpawnpoint( this );
+			ResetInterpolation();
+			
+
+			GiveAmmo( AmmoType.Pistol, 100 );
+			Tags.Add( "player" );
+			FirstWeapon = new BasePistol();
+			SecondWeapon = new Fists();
+			Health = 100;
+		}
+	
+
+
+		
 	public void DressFromClient( IClient cl )
 	{
 		var c = new ClothingContainer();
@@ -121,24 +117,70 @@ namespace FPSGame
 		c.DressEntity( this );
 	}
 
-	public override void Simulate( IClient cl )
+
+
+		TimeSince timeSinceDied;
+		
+		public override void Simulate( IClient cl )
 	{
 		SimulateRotation();
 		Controller?.Simulate( cl );
 		Animator?.Simulate();
 		ActiveWeapon?.Simulate( cl );
 		EyeLocalPosition = Vector3.Up * (64f * Scale);
-	}
+
+			if ( Input.Pressed( "Flashlight" ) )
+			{
+				if ( Game.IsServer )
+				{
+					ShootEnt();
+
+				}
+					
+			}
+			if ( Input.Pressed( "Slot1" ) || Input.Pressed( "Slot1" ) )
+			{
+
+				SwitchWeapon();
+			
+			}
+
+			if ( Input.Pressed( "drop" ) )
+			{
+
+				Log.Info("daw");
+
+			}
+
+			if ( LifeState == LifeState.Dead )
+			{
+				if ( timeSinceDied > 3 && Game.IsServer )
+				{
+					Respawn();
+				}
+
+				return;
+			}
+
+		}
 
 
-	public override void OnKilled()
+		
+
+		public override void OnKilled()
 	{
+
 		GameManager.Current?.OnKilled( this );
 
+		timeSinceDied = 0;
 		LifeState = LifeState.Dead;
+		EnableAllCollisions = false;
+		EnableDrawing = false;
+		base.OnKilled();
+		BecomeRagdollOnClient( LastDamage.Force, LastDamage.BoneIndex );
 
-	}
-	protected virtual void CreateHull()
+		}
+		protected virtual void CreateHull()
 	{
 		SetupPhysicsFromAABB( PhysicsMotionType.Keyframed, new Vector3( -16f, -16f, 0f ), new Vector3( 16f, 16f, 72f ) );
 		EnableHitboxes = true;
@@ -146,8 +188,8 @@ namespace FPSGame
 
 	public override void TakeDamage( DamageInfo info )
 	{
-		
 
+			LastDamage = info;
 		if ( info.Hitbox.HasTag( "head" ) )
 		{
 			info.Damage *= 2f;
@@ -185,44 +227,58 @@ namespace FPSGame
 		ViewAngles = viewAngles.Normal;
 	}
 
-	bool IsThirdPerson { get; set; } = false;
 
-	public override void FrameSimulate( IClient cl )
+		void ShootEnt()
+		{
+			
+			var ent = new BaseItem
+			{
+				Position = EyePosition + EyeRotation.Forward * 50,
+				Rotation = EyeRotation
+
+			};
+			ent.Velocity = EyeRotation.Forward * 500;
+
+		}
+
+		public virtual void DoFallDamage( TimeSince timeSinceFalling, Vector3 velocity )
+		{
+			if ( velocity.z > -600 ) return;
+
+			timeSinceFalling /= 2;
+			velocity /= 12;
+			var damageInfo = new DamageInfo()
+			{
+				Damage = Math.Abs( velocity.z ) * (1 + timeSinceFalling),
+				Force = velocity
+			};
+
+			TakeDamage( damageInfo );
+		}
+
+
+
+
+		
+
+
+
+
+		public override void FrameSimulate( IClient cl )
 	{
-		SimulateRotation();
+			SimulateRotation();
 
+			
 		Camera.Rotation = ViewAngles.ToRotation();
 		Camera.FieldOfView = Screen.CreateVerticalFieldOfView( Game.Preferences.FieldOfView );
 
-		if ( Input.Pressed( "view" ) )
-		{
-			IsThirdPerson = !IsThirdPerson;
-		}
+		
 
-		if ( IsThirdPerson )
-		{
-			Vector3 targetPos;
-			var pos = Position + Vector3.Up * 64;
-			var rot = Camera.Rotation * Rotation.FromAxis( Vector3.Up, -16 );
 
-			float distance = 80.0f * Scale;
-			targetPos = pos + rot.Right * ((CollisionBounds.Mins.x + 50) * Scale);
-			targetPos += rot.Forward * -distance;
 
-			var tr = Trace.Ray( pos, targetPos )
-				.WithAnyTags( "solid" )
-				.Ignore( this )
-				.Radius( 8 )
-				.Run();
-			
-			Camera.FirstPersonViewer = null;
-			Camera.Position = tr.EndPosition;
-		}
-		else
-		{
 			Camera.FirstPersonViewer = this;
 			Camera.Position = EyePosition;
-		}
+		
 	}
 
 	public TraceResult TraceBBox( Vector3 start, Vector3 end, float liftFeet = 0.0f )

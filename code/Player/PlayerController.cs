@@ -1,16 +1,18 @@
 ﻿using Sandbox;
 using System;
 using System.Collections.Generic;
+using FPSGame;
 
 namespace FPSGame
-{ 
+{
 
-public class PlayerController : EntityComponent<FPSPlayer>
+	public class PlayerController : EntityComponent<FPSPlayer>
 {
 	public int StepSize => 24;
 	public int GroundAngle => 45;
 	public int JumpSpeed => 300;
 	public float Gravity => 800f;
+	public float JumpLandVelocityModifier { get; set; } = 1f;
 
 	HashSet<string> ControllerEvents = new( StringComparer.OrdinalIgnoreCase );
 
@@ -19,12 +21,13 @@ public class PlayerController : EntityComponent<FPSPlayer>
 	public void Simulate( IClient cl )
 	{
 		ControllerEvents.Clear();
-
+		
 		var movement = Entity.InputDirection.Normal;
 		var angles = Entity.ViewAngles.WithPitch( 0 );
 		var moveVector = Rotation.From( angles ) * movement * 320f;
 		var groundEntity = CheckForGround();
-
+		if ( Entity.LifeState == LifeState.Dead ) return;
+		CheckFalling();
 		if ( groundEntity.IsValid() )
 		{
 			if ( !Grounded )
@@ -46,7 +49,7 @@ public class PlayerController : EntityComponent<FPSPlayer>
 		{
 			DoJump();
 		}
-
+			
 		var mh = new MoveHelper( Entity.Position, Entity.Velocity );
 		mh.Trace = mh.Trace.Size( Entity.Hull ).Ignore( Entity );
 
@@ -87,7 +90,35 @@ public class PlayerController : EntityComponent<FPSPlayer>
 		return trace.Entity;
 	}
 
-	Vector3 ApplyFriction( Vector3 input, float frictionAmount )
+	public bool IsFalling { get; private set; }
+	public Vector3 FallingVelocity { get; private set; }
+	public TimeSince TimeSinceFalling { get; private set; }
+
+	public virtual void CheckFalling()
+	{
+			if ( CheckForGround() == null )
+			{
+				if ( !IsFalling )
+					TimeSinceFalling = 0;
+
+				IsFalling = true;
+				FallingVelocity = Entity.Velocity;
+			}
+			else if ( CheckForGround() != null && IsFalling )
+			{
+				// Landing on ground
+				IsFalling = false;
+				Entity.Velocity *= 1.0f;
+
+				if ( Game.IsServer )
+				{
+					var player = Entity as FPSPlayer;
+					player.DoFallDamage( TimeSinceFalling, FallingVelocity );
+				}
+			}
+	}
+
+		Vector3 ApplyFriction( Vector3 input, float frictionAmount )
 	{
 		float StopSpeed = 100.0f;
 

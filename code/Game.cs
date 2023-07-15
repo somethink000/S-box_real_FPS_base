@@ -19,6 +19,7 @@ namespace FPSGame {
 /// You can use this to create things like HUDs and declare which player class
 /// to use for spawned players.
 /// </summary>
+/// 
 public partial class MyGame : GameManager
 {
 	/// <summary>
