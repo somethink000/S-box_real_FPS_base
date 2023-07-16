@@ -30,22 +30,20 @@ public partial class WeaponViewModel : BaseViewModel
 		Rotation = player.EyeRotation;
 
 
-	//	finalVectorPos = 
+		//	finalVectorPos = 
 
-
+		Camera.Main.SetViewModelCamera( 80f, 1, 500 );
 
 		var wp = weapon as Gun;
 		
-		Camera.Main.SetViewModelCamera( 80f, 1, 500 );
-
 		if ( wp != null && wp.IsAiming )
 		{
 			currentLocalPosition = Vector3.Lerp( currentLocalPosition, wp.aimingOffset, Time.Delta * wp.AimSpeed );
 			
 		}
-		else
+		else 
 		{
-			currentLocalPosition = Vector3.Lerp( currentLocalPosition, normalOffset, Time.Delta * wp.AimSpeed );
+			currentLocalPosition = Vector3.Lerp( currentLocalPosition, normalOffset, Time.Delta * 0.5f );
 		}
 
 		

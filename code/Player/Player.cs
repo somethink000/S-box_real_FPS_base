@@ -103,7 +103,7 @@ namespace FPSGame
 			GiveAmmo( AmmoType.Pistol, 100 );
 			Tags.Add( "player" );
 			FirstWeapon = new Usp();
-			SecondWeapon = new BasePistol();
+			SecondWeapon = new Fists();
 			Health = 100;
 		}
 	
