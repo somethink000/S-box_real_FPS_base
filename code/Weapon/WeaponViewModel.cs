@@ -22,33 +22,36 @@ public partial class WeaponViewModel : BaseViewModel
 		player = weapon.Owner as FPSPlayer;
 	}
 
-	//Aiming
+	//Aiming and anythink you want for move your view model
 	public void UpdateCamera()
 	{
+		var wp = weapon as Gun;
+		
 		Camera.Main.SetViewModelCamera( 80f, 1, 500 );
 
-		if ( weapon.IsAiming )
+		if ( wp != null && wp.IsAiming )
 		{
-			currentLocalPosition = Vector3.Lerp( currentLocalPosition, weapon.aimingOffset, Time.Delta * weapon.AimSpeed );
+			currentLocalPosition = Vector3.Lerp( currentLocalPosition, wp.aimingOffset, Time.Delta * wp.AimSpeed );
 			
 		}
 		else
 		{
-			currentLocalPosition = Vector3.Lerp( currentLocalPosition, normalOffset, weapon.AimSpeed );
+			currentLocalPosition = Vector3.Lerp( currentLocalPosition, normalOffset, Time.Delta * wp.AimSpeed );
 		}
 
 		Position = player.EyePosition + currentLocalPosition * player.EyeRotation;
 		Rotation =  player.EyeRotation;
 
 	}
-	
 
-	// Dont make that place model if you need aiming
+
+	// Dont make that base.PlaceViewmodel() if you need aiming
 	public override void PlaceViewmodel()
 	{
 		//base.PlaceViewmodel();
+		UpdateCamera();
 
-		
+
 	}
-	
+
 }

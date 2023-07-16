@@ -30,7 +30,7 @@
 		var player = Game.LocalPawn as FPSPlayer;
 		if (player == null) return;
 
-		var wp = player.ActiveWeapon as Weapon;
+		var wp = player.ActiveWeapon as Gun;
 		var isValid = (wp != null);
 
 		if (!isValid) return;
