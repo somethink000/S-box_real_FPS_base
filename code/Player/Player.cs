@@ -102,8 +102,8 @@ namespace FPSGame
 
 			GiveAmmo( AmmoType.Pistol, 100 );
 			Tags.Add( "player" );
-			FirstWeapon = new BasePistol();
-			SecondWeapon = new Fists();
+			FirstWeapon = new Usp();
+			SecondWeapon = new BasePistol();
 			Health = 100;
 		}
 	
@@ -266,18 +266,20 @@ namespace FPSGame
 
 		public override void FrameSimulate( IClient cl )
 	{
-			SimulateRotation();
+		SimulateRotation();
 
-			
-		Camera.Rotation = ViewAngles.ToRotation();
+			if ( ActiveWeapon is Weapon weapon )
+			{
+				weapon.UpdateCamera();
+			}
+
+
+
+			Camera.Rotation = ViewAngles.ToRotation();
 		Camera.FieldOfView = Screen.CreateVerticalFieldOfView( Game.Preferences.FieldOfView );
 
-		
-
-
-
-			Camera.FirstPersonViewer = this;
-			Camera.Position = EyePosition;
+		Camera.FirstPersonViewer = this;
+		Camera.Position = EyePosition;
 		
 	}
 

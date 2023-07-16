@@ -11,7 +11,7 @@ public partial class WeaponViewModel : BaseViewModel
 
 	Vector3 normalOffset = Vector3.Zero;
 	Vector3 currentLocalPosition = Vector3.Zero;
-
+	private Vector3 finalVectorPos;
 
 
 	public WeaponViewModel( Weapon weapon )
@@ -25,6 +25,15 @@ public partial class WeaponViewModel : BaseViewModel
 	//Aiming and anythink you want for move your view model
 	public void UpdateCamera()
 	{
+
+		Position = player.EyePosition + currentLocalPosition * player.EyeRotation;//Vector3.Lerp( Position, finalVectorPos, 2000 * RealTime.Delta );
+		Rotation = player.EyeRotation;
+
+
+	//	finalVectorPos = 
+
+
+
 		var wp = weapon as Gun;
 		
 		Camera.Main.SetViewModelCamera( 80f, 1, 500 );
@@ -39,17 +48,16 @@ public partial class WeaponViewModel : BaseViewModel
 			currentLocalPosition = Vector3.Lerp( currentLocalPosition, normalOffset, Time.Delta * wp.AimSpeed );
 		}
 
-		Position = player.EyePosition + currentLocalPosition * player.EyeRotation;
-		Rotation =  player.EyeRotation;
+		
 
 	}
-
+	
 
 	// Dont make that base.PlaceViewmodel() if you need aiming
 	public override void PlaceViewmodel()
 	{
 		//base.PlaceViewmodel();
-		UpdateCamera();
+		
 
 
 	}

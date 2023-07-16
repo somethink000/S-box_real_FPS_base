@@ -13,12 +13,12 @@ public partial class BasePistol : Gun
 	public override int Damage => 10;
 	public override float Spreed => 0.1f;
 	public override float PrimaryRate => 2.5f;
-	public override float AimSpeed => 3f;
+	public override float AimSpeed => 5f;
 
 
 	public BasePistol()
 	{
-		aimingOffset = new Vector3( -5f, 17f, 3f );
+		aimingOffset = new Vector3( -5f, 16.92f, 2.8f );
 	}
 
 	[ClientRpc]
@@ -55,8 +55,6 @@ public partial class BasePistol : Gun
 	{
 		Player.SetAnimParameter( "holdtype", (int)CitizenAnimationHelper.HoldTypes.Pistol );
 	}
-
-
 
 
 }

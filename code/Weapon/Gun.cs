@@ -1,4 +1,5 @@
 ﻿using Sandbox;
+using System;
 
 namespace FPSGame.Weapons
 {
@@ -24,9 +25,7 @@ namespace FPSGame.Weapons
 
 		public Vector3 aimingOffset { get; set; }
 
-
 		
-
 
 		public int AvailableAmmo()
 		{
@@ -96,14 +95,7 @@ namespace FPSGame.Weapons
 
 
 
-		/*public override bool CanPrimaryAttack()
-		{
-
-			base.CanPrimaryAttack();
-
-			if ( InMagazin <= 0 || IsReloading ) return false;	
-		}*/
-
+	
 
 		public virtual bool CanReload()
 		{
@@ -145,7 +137,18 @@ namespace FPSGame.Weapons
 
 
 
+		public override bool CanPrimaryAttack()
+		{
+			if ( !Owner.IsValid() || !Input.Down( "attack1" ) || IsReloading ) return false;
 
+			var rate = PrimaryRate;
+			if ( rate <= 0 ) return true;
+
+			return TimeSincePrimaryAttack > (1 / rate);
+
+		}
+
+		
 
 		public bool TakeAmmo( int amount )
 		{
@@ -154,6 +157,18 @@ namespace FPSGame.Weapons
 
 			InMagazin -= amount;
 			return true;
+		}
+
+
+		[ClientRpc]
+		public override void CreateViewModel()
+		{
+
+			if ( ViewModelPath == null ) return;
+
+			var vm = new WeaponViewModel( this );
+			vm.Model = Model.Load( ViewModelPath );
+			ViewModelEntity = vm;
 		}
 
 	}

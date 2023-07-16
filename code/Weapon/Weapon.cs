@@ -47,24 +47,21 @@ public partial class Weapon : AnimatedEntity
 
 	}
 
-	/// <summary>
-	/// Called when the weapon is either removed from the player, or holstered.
-	/// </summary>
+
 	public void OnHolster()
 	{
 		EnableDrawing = false;
 		DestroyViewModel( To.Single( Owner ) );
 	}
 
-
-	
-	/*public virtual void UpdateCamera()
+	public virtual void UpdateCamera()
 	{
 		if ( ViewModelEntity is WeaponViewModel viewModel )
 		{
 			viewModel.UpdateCamera();
 		}
-	}*/
+	}
+
 
 
 	public override void Simulate( IClient player )
@@ -108,11 +105,7 @@ public partial class Weapon : AnimatedEntity
 	[ClientRpc]
 	public virtual void CreateViewModel()
 	{
-		if ( ViewModelPath == null ) return;
-
-		var vm = new WeaponViewModel( this );
-		vm.Model = Model.Load( ViewModelPath );
-		ViewModelEntity = vm;
+		
 	}
 
 	[ClientRpc]
