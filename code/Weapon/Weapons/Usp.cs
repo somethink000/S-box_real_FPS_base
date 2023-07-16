@@ -101,6 +101,7 @@ public partial class Usp : Gun
 	public override void PrimaryAttack()
 	{
 
+		base.PrimaryAttack();
 		(Owner as AnimatedEntity)?.SetAnimParameter( "b_attack", true );
 		ViewModelEntity?.SetAnimParameter( "b_attack", true );
 
@@ -108,11 +109,7 @@ public partial class Usp : Gun
 		PlaySound( "rust_pistol.shoot" );
 		ShootBullet( 0.05f, 1.5f, 9.0f, 3.0f );
 
-		if ( !TakeAmmo( 1 ) )
-		{
-			//PlaySound( "pistol.dryfire" );
-			return;
-		}
+	
 
 
 	}

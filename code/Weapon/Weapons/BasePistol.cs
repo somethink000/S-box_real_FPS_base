@@ -34,15 +34,11 @@ public partial class BasePistol : Gun
 
 	public override void PrimaryAttack()
 	{
-		
+		base.PrimaryAttack();
+
 		ShootEffects();
 		Player.PlaySound( "rust_pistol.shoot" );
-		ShootBullet( Spreed, 100, Damage, 2 );
-		if ( !TakeAmmo( 1 ) )
-		{
-			//PlaySound( "pistol.dryfire" );
-			return;
-		}
+		
 
 	}
 

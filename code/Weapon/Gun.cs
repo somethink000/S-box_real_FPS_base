@@ -93,13 +93,26 @@ namespace FPSGame.Weapons
 		public virtual void OnZoomEnd() { }
 
 
-
-
 	
+			public override void PrimaryAttack()
+		{
+
+
+
+			if ( !TakeAmmo( 1 ) )
+			{
+				//PlaySound( "pistol.dryfire" );
+				return;
+			}
+
+
+
+		}
+
 
 		public virtual bool CanReload()
 		{
-			if ( !Owner.IsValid() || !Input.Down( "reload" ) ) return false;
+			if ( !Owner.IsValid() || !Input.Down( "reload" )  ) return false;
 			if ( IsReloading || AvailableAmmo() <= 0 || InMagazin >= MagazinSize ) return false;
 
 
@@ -139,10 +152,12 @@ namespace FPSGame.Weapons
 
 		public override bool CanPrimaryAttack()
 		{
-			if ( !Owner.IsValid() || !Input.Down( "attack1" ) || IsReloading ) return false;
-
-			var rate = PrimaryRate;
+			if ( !Owner.IsValid() || !Input.Down( "attack1" ) || IsReloading || InMagazin <= 0 ) return false;
+					var rate = PrimaryRate;
 			if ( rate <= 0 ) return true;
+
+			
+
 
 			return TimeSincePrimaryAttack > (1 / rate);
 

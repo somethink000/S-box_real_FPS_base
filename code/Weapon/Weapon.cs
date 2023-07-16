@@ -84,7 +84,9 @@ public partial class Weapon : AnimatedEntity
 	
 	public virtual bool CanPrimaryAttack()
 	{
+		
 		if ( !Owner.IsValid() || !Input.Down( "attack1" ) ) return false;
+		
 
 		var rate = PrimaryRate;
 		if ( rate <= 0 ) return true;
