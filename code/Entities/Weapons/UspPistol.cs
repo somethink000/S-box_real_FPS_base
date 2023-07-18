@@ -22,7 +22,7 @@ namespace MyGame
 
 		public UspPistol()
 		{
-			aimingOffset = new Vector3( -2f, 4.8f, 1.1f );
+			aimingOffset = new Vector3( -2f, 4.8f, 1f );
 		}
 
 
@@ -33,7 +33,8 @@ namespace MyGame
 
 			Model = Cloud.Model( "https://asset.party/facepunch/w_usp" );
 			SetBodyGroup( "barrel", 1 );
-			SetBodyGroup( "sights", 1 );
+			//Attach sight from body group
+			SetBodyGroup( "sights", 2 );
 			LocalScale = 1.5f;
 		}
 
@@ -49,7 +50,8 @@ namespace MyGame
 			ViewModelEntity.EnableViewmodelRendering = true;
 			ViewModelEntity.Model = Cloud.Model( "https://asset.party/facepunch/v_usp" );
 			ViewModelEntity.SetBodyGroup( "barrel", 1 );
-			ViewModelEntity.SetBodyGroup( "sights", 1 );
+			//Attach sight from body group
+			ViewModelEntity.SetBodyGroup( "sights", 2 );
 
 
 			ViewModelArms = new AnimatedEntity( "models/first_person/first_person_arms.vmdl" );

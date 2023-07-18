@@ -26,5 +26,9 @@
 </style>
 
 <root class="root"> 
-	<div class="crosshair"></div>
+	@if ((Game.LocalPawn is Player ply) && ply.Inventory.ActiveChild is Weapon gun)
+	{
+		<div class="crosshair"></div>
+	}
+	
 </root> 
