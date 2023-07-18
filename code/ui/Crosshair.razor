@@ -1,19 +1,30 @@
-@using System;
-@using Sandbox;
+﻿@using Sandbox;
 @using Sandbox.UI;
-@using System.Collections.Generic;
+@using Sandbox.UI.Construct; 
+@using System;
+@namespace MyGame
+<style>
+	.root {
+		position:absolute;
+		width: 100%;
+		height: 100%;
+		justify-content: center;
+		align-items: center;
+		pointer-events: none;
+	}
 
-@namespace FPSGame.UI
-@attribute [StyleSheet("/ui/Crosshair.scss")]
-@inherits Sandbox.UI.Panel
-
-
-
-
-<root>
+	.crosshair {
+		pointer-events: none;
+		background-color: white;
+		width: 5px;
+		height: 5px;
+		border-radius: 5px;
+		border-color:black;
+		border-width:1px;
+	}
 	
-</root>
+</style>
 
-@code {
-	
-}
+<root class="root"> 
+	<div class="crosshair"></div>
+</root> 

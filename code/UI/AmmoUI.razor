@@ -1,0 +1,68 @@
+﻿@using Sandbox;
+@using Sandbox.UI;
+@using Sandbox.UI.Construct; 
+@using System;
+
+@namespace MyGame 
+@inherits Sandbox.UI.Panel
+
+
+<style>
+	AmmoUI {
+		position: absolute;
+		right: 5%;
+		bottom: 5%;
+		font-size: 30px;
+		color: white;
+		padding: 5px 20px;
+		align-items: center;
+		font-family: Poppins;
+		background-color: rgba(0, 0, 0,0.4);
+		border-bottom: 1px, white;
+		border-radius: 3px;
+	}
+
+	.InClip {
+	}
+
+	.PlyAmmo {
+	}
+
+</style>
+
+<root>
+
+	<label @ref="InClip" class="weapon"></label>
+	<label @ref="PlyAmmo" class="inventory"></label>
+
+</root>
+
+
+@*<root class="ammo">  
+	
+	@if ((Game.LocalPawn is Player ply) && ply.Inventory.ActiveChild is Weapon wpn ) {
+		<div class="number">@wpn.PrimaryAmmo</div>
+		<div class="number">@ply.Ammo.AmmoCount(wpn.PrimaryAmmoType)</div> 
+	}  
+</root> 
+*@
+@code {
+
+	public Label InClip { get; set; }
+	public Label PlyAmmo { get; set; }
+
+	protected override int BuildHash()
+	{
+		var inMagazin = 0;
+		var plyAmmo = 0;
+		if ((Game.LocalPawn is Player ply) && ply.Inventory.ActiveChild is Gun wpn ) {
+			inMagazin = wpn.InMagazin;
+			plyAmmo = wpn.AvailableAmmo();
+
+			InClip.Text = $"{inMagazin}";
+			PlyAmmo.Text = $" / {plyAmmo}";
+
+		}
+		return HashCode.Combine((Game.LocalPawn as Player).Inventory.ActiveChild, inMagazin, plyAmmo);
+	}
+}
