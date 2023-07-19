@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace MyGame
 {
-	public abstract partial class Item : ModelEntity
+	public abstract partial class Item : AnimatedEntity
 	{
 
 		public virtual string Model => "models/citizen/citizen.vmdl";

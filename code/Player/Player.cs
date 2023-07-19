@@ -226,6 +226,7 @@ partial class Player : AnimatedEntity
 			Rotation = EyeRotation
 
 		};
+
 		ent.Velocity = EyeRotation.Forward * 500;
 
 	}
