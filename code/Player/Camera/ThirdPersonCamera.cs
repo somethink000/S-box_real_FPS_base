@@ -1,5 +1,4 @@
 ﻿using Sandbox;
-
 namespace MyGame;
 
 public class ThirdPersonCamera : CameraComponent
@@ -11,17 +10,15 @@ public class ThirdPersonCamera : CameraComponent
 		// Update rotation every frame, to keep things smooth  
 
 		pl.EyeRotation = pl.ViewAngles.ToRotation();
-		//pl.EyePosition = pl.EyePosition + new Vector3( 0, -40, 0 );
 		Vector3 targetPos;
 		var center = pl.EyePosition; //;
 
 		var pos = center;
 		var rot = pl.ViewAngles.ToRotation();
 
-		float distance = 110.0f * pl.Scale;
-		targetPos = pos;
+		float distance = 100.0f * pl.Scale;
+		targetPos = pos + rot.Right * ((pl.CollisionBounds.Mins.x + 50) * pl.Scale);
 		targetPos += rot.Forward * -distance;
-
 		var tr = Trace.Ray( pos, targetPos )
 			.WithAnyTags( "solid" )
 			.Ignore( pl )

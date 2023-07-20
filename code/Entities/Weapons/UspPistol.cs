@@ -115,7 +115,7 @@ namespace MyGame
 			PlaySound( "rust_pistol.shoot" );
 			ShootBullet( pos, rot.Forward, 0.05f, 1.5f, 9.0f, 3.0f );
 
-			ApplyAbsoluteImpulse( rot.Backward * 200.0f );
+			//ApplyAbsoluteImpulse( rot.Backward * 200.0f );
 		}
 
 		protected override void OnPhysicsCollision( CollisionEventData eventData )
