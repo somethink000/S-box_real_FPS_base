@@ -11,14 +11,14 @@ public class ThirdPersonCamera : CameraComponent
 		// Update rotation every frame, to keep things smooth  
 
 		pl.EyeRotation = pl.ViewAngles.ToRotation();
-
+		//pl.EyePosition = pl.EyePosition + new Vector3( 0, -40, 0 );
 		Vector3 targetPos;
-		var center = pl.EyePosition;
+		var center = pl.EyePosition; //;
 
 		var pos = center;
 		var rot = pl.ViewAngles.ToRotation();
 
-		float distance = 130.0f * pl.Scale;
+		float distance = 110.0f * pl.Scale;
 		targetPos = pos;
 		targetPos += rot.Forward * -distance;
 
