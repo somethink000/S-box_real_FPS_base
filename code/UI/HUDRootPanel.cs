@@ -14,7 +14,9 @@ public class HUDRootPanel : RootPanel
 			Current = this;
 		}
 		Current = this;
+		StyleSheet.Load( "/UI/Style/style.scss" );
 
+		AddChild<Chat>();
 		AddChild<Crosshair>();
 		AddChild<Health>();
 		AddChild<AmmoUI>();
