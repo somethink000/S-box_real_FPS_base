@@ -316,10 +316,7 @@ partial class Player : AnimatedEntity
 		}
 
 
-		if ( Inventory.ActiveChild is Carriable item )
-		{
-			item.UpdateCamera();
-		}
+	
 	}
 	TimeSince timeSinceLastFootstep = 0;
 	public override void OnAnimEventFootstep( Vector3 position, int foot, float volume )
