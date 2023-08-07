@@ -184,7 +184,16 @@ public partial class Gun : Weapon
 
 	public override bool CanPrimaryAttack()
 	{
-		if ( !Owner.IsValid() || Automatic ? !Input.Down( "attack1" ) : !Input.Pressed( "attack1" ) || IsReloading || InMagazin <= 0 ) return false;
+		if (Automatic)
+		{
+			if ( !Owner.IsValid() || !Input.Down( "attack1" ) || IsReloading || InMagazin <= 0 ) return false;
+		}
+		else
+		{
+			if ( !Owner.IsValid() || !Input.Pressed( "attack1" ) || IsReloading || InMagazin <= 0 ) return false;
+		}
+		
+		
 		var rate = PrimaryRate;
 		if ( rate <= 0 ) return true;
 
