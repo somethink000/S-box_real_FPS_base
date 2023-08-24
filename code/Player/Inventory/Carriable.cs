@@ -51,7 +51,9 @@ public partial class Carriable : AnimatedEntity
 
 	/// <summary>
 	/// We're done with the viewmodel - delete it
-	/// </summary>
+	/// </summary
+	/// >
+	[ClientRpc]
 	public virtual void DestroyViewModel()
 	{
 		ViewModelEntity?.Delete();
@@ -82,6 +84,8 @@ public partial class Carriable : AnimatedEntity
 	}
 	public virtual void OnDrop( Entity dropper )
 	{
+		if ( Game.IsClient ) return;
+
 		SetParent( null );
 		Owner = null;
 		PhysicsEnabled = true;

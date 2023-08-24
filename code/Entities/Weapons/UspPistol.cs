@@ -49,9 +49,8 @@ namespace MyGame
 			ViewModelEntity.Owner = Owner;
 			ViewModelEntity.EnableViewmodelRendering = true;
 			ViewModelEntity.Model = Cloud.Model( "https://asset.party/facepunch/v_usp" );
-			ViewModelEntity.SetBodyGroup( "barrel", 1 );
-			//Attach sight from body group
-			ViewModelEntity.SetBodyGroup( "sights", 2 );
+			ViewModelEntity.SetBodyGroup( 2, 1 );
+			ViewModelEntity.SetBodyGroup( 4, 2 );
 
 
 			ViewModelArms = new AnimatedEntity( "models/first_person/first_person_arms.vmdl" );

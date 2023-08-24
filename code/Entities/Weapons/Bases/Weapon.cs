@@ -57,4 +57,8 @@ public partial class Weapon : Carriable
 		base.CreateViewModel();
 	}
 
+	public override void OnActiveStart()
+	{
+		base.OnActiveStart();
+	}
 }

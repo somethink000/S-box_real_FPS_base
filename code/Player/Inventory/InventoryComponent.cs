@@ -1,4 +1,5 @@
 ﻿using Sandbox;
+using System;
 using System.Collections.Generic;
 namespace MyGame;
 public partial class InventoryComponent : SimulatedComponent, ISingletonComponent
@@ -23,9 +24,11 @@ public partial class InventoryComponent : SimulatedComponent, ISingletonComponen
 	}
 	public bool DropItem( Entity item )
 	{
+
 		if ( item is Carriable cr1 )
 		{
 			cr1.OnDrop( Entity );
+			cr1.DestroyViewModel();
 		}
 		if ( ActiveChild == item )
 		{
@@ -35,9 +38,11 @@ public partial class InventoryComponent : SimulatedComponent, ISingletonComponen
 		{
 			ActiveChildInput = null;
 		}
+		
 		Items.Remove( item );
 		return true;
 	}
+
 	/// <summary>
 	/// Get the item in this slot
 	/// </summary>
@@ -80,6 +85,8 @@ public partial class InventoryComponent : SimulatedComponent, ISingletonComponen
 
 		return -1;
 	}
+
+
 	/// <summary>
 	/// Switch to the slot next to the slot we have active.
 	/// </summary>
@@ -104,6 +111,8 @@ public partial class InventoryComponent : SimulatedComponent, ISingletonComponen
 
 		return SetActiveSlot( nextSlot, false );
 	}
+
+	
 
 	public override void Simulate( IClient cl )
 	{

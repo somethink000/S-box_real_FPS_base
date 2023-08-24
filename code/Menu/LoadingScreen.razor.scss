@@ -1,0 +1,102 @@
+
+.loadingpanel
+{
+	background-image: url( "menu/example.jpg" );
+	background-position: center;
+	background-size: cover;
+	background-tint: #555;
+	width: 100%;
+	height: 100%;
+	color: white;
+	padding: 100px;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	font-family: Poppins;
+	pointer-events: all;
+	color: #ccc;
+
+	> .title
+	{
+		font-size: 80px;
+		font-weight: bolder;
+	}
+
+	> .subtitle
+	{
+		font-size: 30px;
+		color: #aaa;
+		font-weight: 200;
+	}
+
+	> .controls
+	{
+		position: absolute;
+		bottom: 100px;
+		right: 200px;
+
+		.button
+		{
+			font-size: 20px;
+			padding: 10px 50px;
+			background-color: #666;
+			color: #111;
+			font-weight: bold;
+			cursor: pointer;
+
+			&:hover
+			{
+				background-color: #888;
+			}
+		}
+	}
+
+	> .progress
+	{
+		margin: 50px 0px;
+		background-color: #0003;
+		width: 500px;
+		border-radius: 5px;
+		overflow: hidden;
+
+		.bar
+		{
+			background-color: #fff1;
+			position: absolute;
+			height: 100%;
+		}
+
+		.text-left
+		{
+			flex-grow: 1;
+			flex-shrink: 0;
+		}
+
+		.text-right
+		{
+			flex-shrink: 0;
+		}
+
+		.text-left, .text-right
+		{
+			padding: 5px 20px;
+			white-space: nowrap;
+			font-weight: bold;
+			opacity: 0.2;
+			font-size: 20px;
+			align-items: flex-end;
+
+			.unit
+			{
+				font-size: 15px;
+				opacity: 0.5;
+			}
+		}
+	}
+}
+
+choosemappage.navigator-body
+{
+	margin: 0;
+	padding: 0;
+}

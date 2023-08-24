@@ -19,13 +19,12 @@ namespace MyGame
 		public override float Spreed => 0.1f;
 		public override float PrimaryRate => 9f;
 		public override float AimSpeed => 8f;
-
 		public override bool Automatic => true;
 
 
 		public MP5()
 		{
-			aimingOffset = new Vector3( -2f, 3.6f, 0.86f );
+			aimingOffset = new Vector3( -2f, 3.5f, 0.86f );
 		}
 
 
@@ -58,6 +57,28 @@ namespace MyGame
 			ViewModelArms.SetParent( ViewModelEntity, true );
 			ViewModelArms.EnableViewmodelRendering = true;
 		}
+
+
+
+
+		public override void OnZoomStart()
+		{
+			base.OnZoomStart();
+			ViewModelEntity?.SetAnimParameter( "attack_hold", 1f);
+			ViewModelEntity?.SetAnimParameter( "ironsights", 1 );
+			ViewModelEntity?.SetAnimParameter( "ironsights_fire_scale", 0.3f );
+		}
+
+		public override void OnZoomEnd()
+		{
+			base.OnZoomEnd();
+			ViewModelEntity?.SetAnimParameter( "attack_hold", 0f );
+			ViewModelEntity?.SetAnimParameter( "ironsights", 0 );
+			ViewModelEntity?.SetAnimParameter( "ironsights_fire_scale", 0.5f );
+		}
+		
+		
+				
 
 
 

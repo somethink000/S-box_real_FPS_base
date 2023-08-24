@@ -17,7 +17,7 @@ partial class Player : AnimatedEntity
 		Velocity = Vector3.Zero;
 		Components.RemoveAll();
 		LifeState = LifeState.Alive;
-		Health = 100;
+		Health = 20;
 
 		SetModel( "models/citizen/citizen.vmdl" );
 		Components.Add( new WalkController() );
@@ -173,6 +173,8 @@ partial class Player : AnimatedEntity
 	}
 	public override void OnKilled()
 	{
+
+
 		if ( Game.IsClient ) return;
 		Event.Run( "Player.PreOnKilled", this );
 		LifeState = LifeState.Dead;
@@ -192,10 +194,14 @@ partial class Player : AnimatedEntity
 			Inventory.Items.Clear();
 			Components.Add( new NoclipController() );
 		}
-
 		timeSinceDied = 0;
-
 		Event.Run( "Player.PostOnKilled", this );
+
+		
+
+		
+
+		
 	}
 
 	//---------------------------------------------// 
