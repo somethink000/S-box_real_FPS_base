@@ -44,7 +44,6 @@ public partial class PlayerViewModel : BaseViewModel
 		player = item.Owner as Player;
 	}
 
-
 	public override void PlaceViewmodel()
 	{
 		if ( !Game.LocalPawn.IsValid() )

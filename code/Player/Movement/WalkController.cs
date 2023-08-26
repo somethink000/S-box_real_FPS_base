@@ -10,6 +10,7 @@ public partial class WalkController : MovementComponent
 	[Net] public float SprintSpeed { get; set; } = 320.0f;
 	[Net] public float WalkSpeed { get; set; } = 150.0f;
 	[Net] public float CrouchSpeed { get; set; } = 80.0f;
+	[Net] public float AimingSpeed { get; set; } = 100.0f;
 	[Net] public float DefaultSpeed { get; set; } = 190.0f;
 	[Net] public float Acceleration { get; set; } = 10.0f;
 	[Net] public float AirAcceleration { get; set; } = 50.0f;
@@ -302,6 +303,7 @@ public partial class WalkController : MovementComponent
 		if ( ws >= 0 ) return ws;
 
 		if ( Input.Down( "Duck" ) || IsDucking ) return CrouchSpeed;
+		if ( Entity.Inventory.ActiveChild is Gun && (Entity.Inventory.ActiveChild as Gun).IsAiming ) return AimingSpeed;
 		if ( Input.Down( "Run" ) ) return SprintSpeed; ;
 		if ( Input.Down( "Walk" ) ) return WalkSpeed;
 

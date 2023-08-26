@@ -174,7 +174,6 @@ partial class Player : AnimatedEntity
 	public override void OnKilled()
 	{
 
-
 		if ( Game.IsClient ) return;
 		Event.Run( "Player.PreOnKilled", this );
 		LifeState = LifeState.Dead;

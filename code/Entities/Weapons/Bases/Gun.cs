@@ -71,7 +71,11 @@ public partial class Gun : Weapon
 
 		base.Simulate( player );
 
-		ViewModelEntity?.SetAnimParameter( "b_grounded", true );
+		if ( (Owner as Player).GroundEntity != null)
+		{
+			ViewModelEntity?.SetAnimParameter( "b_grounded", true );
+		}
+		
 
 		if ( !IsReloading )
 		{
