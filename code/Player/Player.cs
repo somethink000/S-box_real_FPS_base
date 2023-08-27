@@ -17,7 +17,7 @@ partial class Player : AnimatedEntity
 		Velocity = Vector3.Zero;
 		Components.RemoveAll();
 		LifeState = LifeState.Alive;
-		Health = 20;
+		Health = 90;
 
 		SetModel( "models/citizen/citizen.vmdl" );
 		Components.Add( new WalkController() );

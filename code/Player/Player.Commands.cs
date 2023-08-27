@@ -1,4 +1,5 @@
 ﻿using Sandbox;
+using System.Linq;
 
 namespace MyGame;
 public partial class Player
@@ -32,6 +33,12 @@ public partial class Player
 	{
 		if ( ConsoleSystem.Caller.Pawn is Player basePlayer )
 		{
+			basePlayer.Inventory.DropItem( basePlayer.Inventory.ActiveChild );
+			foreach ( var item in basePlayer.Inventory.Items.ToList() )
+			{
+				basePlayer.Inventory.DropItem( item );
+			}
+			basePlayer.Inventory.Items.Clear();
 			basePlayer.Respawn();
 		}
 	}
