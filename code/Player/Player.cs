@@ -40,11 +40,11 @@ partial class Player : AnimatedEntity
 		Predictable = true;
 		EnableHitboxes = true;
 
-
+		Inventory.AddItem( new MP5() );
 		Inventory.AddItem( new UspPistol() );
 		Inventory.AddItem( new Pistol() );
 		Inventory.AddItem( new Fists() );
-		Inventory.AddItem( new MP5() );
+		
 		Ammo.GiveAmmo( AmmoType.Pistol, 50 );
 
 		MoveToSpawnpoint();

@@ -33,7 +33,15 @@ public partial class Player
 	{
 		if ( ConsoleSystem.Caller.Pawn is Player basePlayer )
 		{
-			( basePlayer.Inventory.ActiveChild as Carriable ).DestroyViewModel();
+			var cr = (basePlayer.Inventory.ActiveChild as Carriable);
+			if ( cr != null )
+			{
+				cr.DestroyViewModel();
+				cr.Delete();
+				
+			}
+			
+
 			basePlayer.Inventory.Items.Clear();
 			basePlayer.Respawn();
 		}

@@ -54,13 +54,14 @@ public class FirstPersonCamera : CameraComponent
 		var left = Camera.Rotation.Left;
 		var up = Camera.Rotation.Up;
 
-		if ( Entity.GroundEntity != null )
+		if ( Entity.GroundEntity != null)
 		{
 			walkBob += Time.Delta * 25.0f * speed;
 		}
 
 		Camera.Position += up * MathF.Sin( walkBob ) * speed * 2;
 		Camera.Position += left * MathF.Sin( walkBob * 0.6f ) * speed * 1;
+
 
 		// Camera lean
 		lean = lean.LerpTo( Entity.Velocity.Dot( Camera.Rotation.Right ) * 0.01f, Time.Delta * 15.0f );
@@ -71,8 +72,13 @@ public class FirstPersonCamera : CameraComponent
 
 		speed = (speed - 0.7f).Clamp( 0, 1 ) * 3.0f;
 
-		fov = fov.LerpTo( speed * 20 * MathF.Abs( forwardspeed ), Time.Delta * 4.0f );
+		if( Entity.Inventory.ActiveChild != null )
+		{
+			fov = fov.LerpTo( speed * 20 * MathF.Abs( forwardspeed ), Time.Delta * 4.0f );
 
-		Camera.FieldOfView += fov;
+			Camera.FieldOfView += fov;
+		}
+
+		
 	}
 }
