@@ -33,11 +33,7 @@ public partial class Player
 	{
 		if ( ConsoleSystem.Caller.Pawn is Player basePlayer )
 		{
-			basePlayer.Inventory.DropItem( basePlayer.Inventory.ActiveChild );
-			foreach ( var item in basePlayer.Inventory.Items.ToList() )
-			{
-				basePlayer.Inventory.DropItem( item );
-			}
+			( basePlayer.Inventory.ActiveChild as Carriable ).DestroyViewModel();
 			basePlayer.Inventory.Items.Clear();
 			basePlayer.Respawn();
 		}
