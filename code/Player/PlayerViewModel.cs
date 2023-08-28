@@ -119,7 +119,7 @@ public partial class PlayerViewModel : BaseViewModel
 			var speed = playerVelocity.WithZ( 0 ).Length;
 			speed = speed > 10.0 ? speed : 0.0f;
 
-			if ( wp != null && wp.IsAiming )
+			if ( speed > 0f && wp != null && wp.IsAiming)
 			{
 				speed = 10f;
 			}
