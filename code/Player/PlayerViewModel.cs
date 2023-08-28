@@ -118,6 +118,11 @@ public partial class PlayerViewModel : BaseViewModel
 
 			var speed = playerVelocity.WithZ( 0 ).Length;
 			speed = speed > 10.0 ? speed : 0.0f;
+
+			if ( wp != null && wp.IsAiming )
+			{
+				speed = 10f;
+			}
 			bobSpeed = bobSpeed.LerpTo( speed, Time.Delta * InertiaDamping );
 
 			var offset = CalcSwingOffset( pitchDelta, yawDelta );
