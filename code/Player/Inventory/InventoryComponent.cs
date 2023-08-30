@@ -4,7 +4,7 @@ using System.Collections.Generic;
 namespace MyGame;
 public partial class InventoryComponent : SimulatedComponent, ISingletonComponent
 {
-	[Net, Predicted] public Entity ActiveChild { get; set; }
+	[Net] public Entity ActiveChild { get; set; }
 	[ClientInput] public Entity ActiveChildInput { get; set; }
 	[Net] public List<Entity> Items { get; set; } = new();
 	public static int MaxItems { get; set; } = 32;
