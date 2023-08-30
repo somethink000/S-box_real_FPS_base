@@ -7,39 +7,29 @@
 @inherits Sandbox.UI.Panel
 
 
+
+
 <root>
-
-	<label @ref="InClip" class="weapon"></label>
-	<label @ref="PlyAmmo" class="inventory"></label>
-
+    @if ((Game.LocalPawn is Player ply) && ply.Inventory.ActiveChild is Gun gun)
+    {
+        <div class="weapon">@gun.InMagazin /</div>
+        <div class="inventory">@gun.AvailableAmmo()</div>
+    }
 </root>
 
 
-@*<root class="ammo">  
-	
-	@if ((Game.LocalPawn is Player ply) && ply.Inventory.ActiveChild is Weapon wpn ) {
-		<div class="number">@wpn.PrimaryAmmo</div>
-		<div class="number">@ply.Ammo.AmmoCount(wpn.PrimaryAmmoType)</div> 
-	}  
-</root> 
-*@
+
 @code {
 
-	public Label InClip { get; set; }
-	public Label PlyAmmo { get; set; }
-
-	protected override int BuildHash()
-	{
-		var inMagazin = 0;
-		var plyAmmo = 0;
-		if ((Game.LocalPawn is Player ply) && ply.Inventory.ActiveChild is Gun wpn ) {
-			inMagazin = wpn.InMagazin;
-			plyAmmo = wpn.AvailableAmmo();
-
-			InClip.Text = $"{inMagazin}";
-			PlyAmmo.Text = $" / {plyAmmo}";
-
-		}
-		return HashCode.Combine((Game.LocalPawn as Player).Inventory.ActiveChild, inMagazin, plyAmmo);
-	}
+    protected override int BuildHash()
+    {
+        var inMagazin = 0;
+        var plyAmmo = 0;
+        if ((Game.LocalPawn is Player ply) && ply.Inventory.ActiveChild is Gun wpn)
+        {
+            inMagazin = wpn.InMagazin;
+            plyAmmo = wpn.AvailableAmmo();
+        }
+        return HashCode.Combine((Game.LocalPawn as Player).Inventory.ActiveChild, inMagazin, plyAmmo);
+    }
 }

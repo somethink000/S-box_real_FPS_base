@@ -2,18 +2,16 @@ AmmoUI {
     position: absolute;
     right: 5%;
     bottom: 5%;
-    font-size: 30px;
+    font-size: 25px;
+    font-weight: 800;
     color: white;
-    padding: 5px 20px;
     align-items: center;
-    font-family: Poppins;
-    background-color: rgba(0, 0, 0,0.4);
-    border-bottom: 1px, white;
-    border-radius: 3px;
+    font-family: Arial;
 }
 
-.InClip {
+.weapon {
+    font-size: 42px;
 }
 
-.PlyAmmo {
+.inventory {
 }

@@ -4,29 +4,44 @@
 @using System;
 @namespace MyGame
 <style>
-	.root {
-		position:absolute;
-		width: 100%;
-		height: 100%;
-		justify-content: center;
-		align-items: center;
-		pointer-events: none;
-	}
+    .root {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        justify-content: center;
+        align-items: center;
+        pointer-events: none;
+    }
 
-	.crosshair {
-		pointer-events: none;
-		background-color: white;
-		width: 5px;
-		height: 5px;
-		border-radius: 5px;
-		border-color:black;
-		border-width:1px;
-	}
-	
+    .crosshair {
+        pointer-events: none;
+        background-color: white;
+        width: 5px;
+        height: 5px;
+        border-radius: 5px;
+        border-color: black;
+        border-width: 1px;
+    }
 </style>
 
-<root class="root"> 
-	
-		<div class="crosshair"></div>
-	
-</root> 
+<root class="root">
+    @if ((Game.LocalPawn is Player ply) && ply.Inventory.ActiveChild is Gun gun && gun.IsAiming == false)
+    {
+        <div class="crosshair"></div>
+    }
+</root>
+
+
+@code {
+
+    protected override int BuildHash()
+    {
+        bool aim = false;
+        if ((Game.LocalPawn is Player ply) && ply.Inventory.ActiveChild is Gun gun)
+        {
+            aim = gun.IsAiming;
+        }
+
+        return HashCode.Combine((Game.LocalPawn as Player).Inventory.ActiveChild, aim);
+    }
+}
