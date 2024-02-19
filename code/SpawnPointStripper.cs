@@ -1,6 +1,6 @@
 using Sandbox;
 
-namespace Facepunch.Arena;
+namespace GeneralGame;
 
 [Group( "Arena" )]
 [Title( "Spawn Point Stripper" )]

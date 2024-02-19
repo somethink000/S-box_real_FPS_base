@@ -2,7 +2,7 @@ using Sandbox;
 using Sandbox.Citizen;
 using System.Numerics;
 
-namespace Facepunch.Arena;
+namespace GeneralGame;
 
 public abstract class WeaponComponent : Component
 {
@@ -80,8 +80,8 @@ public abstract class WeaponComponent : Component
 		player.ApplyRecoil( Recoil );
 		
 		var attachment = EffectRenderer.GetAttachment( "muzzle" );
-		var startPos = Scene.Camera.Transform.Position;
-		var direction = Scene.Camera.Transform.Rotation.Forward;
+		var startPos = player.PlyCamera.Transform.Position;
+		var direction = player.PlyCamera.Transform.Rotation.Forward;
 		direction += Vector3.Random * Spread;
 		
 		var endPos = startPos + direction * 10000f;
@@ -146,7 +146,7 @@ public abstract class WeaponComponent : Component
 		if ( !player.IsValid() || IsReloading )
 			return false;
 
-		if ( !player.Ammo.CanTake( AmmoType, ammoToTake, out var taken ) )
+		if ( !player.Ammo.TryTake( AmmoType, ammoToTake, out var taken ) )
 			return false;
 
 		EffectRenderer.Set( "b_reload", true );
@@ -157,18 +157,6 @@ public abstract class WeaponComponent : Component
 			
 		return true;
 	}
-
-	protected virtual void EndReload()
-	{
-		var ammoToTake = ClipSize - AmmoInClip;
-		var player = Components.GetInAncestors<PlayerController>();
-		player.Ammo.TryTake( AmmoType, ammoToTake, out var taken );
-		AmmoInClip += taken;
-		EffectRenderer.Set( "b_empty", false );
-		IsReloading = false;
-	}
-
-
 
 	protected override void OnStart()
 	{
@@ -221,13 +209,17 @@ public abstract class WeaponComponent : Component
 		base.OnAwake();
 	}
 
-	
-
 	protected override void OnUpdate()
 	{
 		if ( !IsProxy && ReloadFinishTime && IsReloading )
 		{
-			EndReload();
+			
+			var ammoToTake = ClipSize - AmmoInClip;
+			var player = Components.GetInAncestors<PlayerController>();
+			player.Ammo.CanTake( AmmoType, ammoToTake, out var taken );
+			AmmoInClip += taken;
+			EffectRenderer.Set( "b_empty", false );
+			IsReloading = false;
 		}
 
 		ReloadSound?.Update( Transform.Position );
@@ -265,7 +257,7 @@ public abstract class WeaponComponent : Component
 		
 		ViewModel = viewModelGameObject.Components.Get<ViewModel>();
 		ViewModel.SetWeaponComponent( this );
-		ViewModel.SetCamera( player.ViewModelCamera );
+		ViewModel.SetCamera( player.PlyCamera );
 		
 		ModelRenderer.Enabled = false;
 	}

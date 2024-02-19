@@ -2,7 +2,7 @@ using System.Linq;
 using Sandbox;
 using Sandbox.Network;
 
-namespace Facepunch.Arena;
+namespace GeneralGame;
 
 [Group( "Arena" )]
 [Title( "Network Manager")]
@@ -23,6 +23,7 @@ public class NetworkManager : Component, Component.INetworkListener
 	void INetworkListener.OnActive( Connection connection )
 	{
 		var player = PlayerPrefab.Clone();
-		player.NetworkSpawn( connection );
+		player.BreakFromPrefab();
+		player.Network.Spawn( connection );
 	}
 }

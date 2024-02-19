@@ -1,8 +1,7 @@
 using System;
 using Sandbox;
-using Sandbox.pickups;
 
-namespace Facepunch.Arena;
+namespace GeneralGame;
 
 [Group( "Arena" )]
 [Title( "Weapon Pickup" )]

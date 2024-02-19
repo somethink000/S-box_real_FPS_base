@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using Sandbox;
 
-namespace Facepunch.Arena;
+namespace GeneralGame;
 
 [Group( "Arena" )]
 [Title( "Ammo Container" )]

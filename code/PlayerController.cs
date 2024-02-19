@@ -4,27 +4,26 @@ using System.Linq;
 using System.Net.Mail;
 using Sandbox;
 using Sandbox.Citizen;
-using Sandbox.pickups;
 using static Sandbox.Component;
 
-namespace Facepunch.Arena;
+namespace GeneralGame;
 
 [Group( "Arena" )]
 [Title( "Player Controller" )]
 public class PlayerController : Component, Component.ITriggerListener, IHealthComponent
 {
 	[Property] public Vector3 Gravity { get; set; } = new ( 0f, 0f, 800f );
-	
-	public CharacterController CharacterController { get; private set; }
-	public SkinnedModelRenderer ModelRenderer { get; private set; }
-	public RagdollController Ragdoll { get; private set; }
-	public List<CitizenAnimationHelper> Animators { get; private set; } = new();
+
+	[Property] public CharacterController CharacterController { get; private set; }
+	[Property] public SkinnedModelRenderer ModelRenderer { get; private set; }
+	[Property] public RagdollController Ragdoll { get; private set; }
+	[Property] public List<CitizenAnimationHelper> Animators { get; private set; } = new();
 	public RealTimeSince LastHitmarkerTime { get; private set; }
 	public Vector3 WishVelocity { get; private set; }
 	
 	[Property] private CitizenAnimationHelper ShadowAnimator { get; set; }
 	[Property] public WeaponContainer Weapons { get; set; }
-	[Property] public CameraComponent ViewModelCamera { get; set; }
+	[Property] public CameraComponent PlyCamera { get; set; }
 	[Property] public GameObject ViewModelRoot { get; set; }
 	[Property] public AmmoContainer Ammo { get; set; }
 	[Property] public GameObject Head { get; set; }
@@ -142,20 +141,16 @@ public class PlayerController : Component, Component.ITriggerListener, IHealthCo
 	{
 		if ( attacker.IsValid() )
 		{
-			var player = attacker.Components.GetInAncestorsOrSelf<PlayerController>();
-			if ( player.IsValid() )
-			{
 				var chat = Scene.GetAllComponents<Chat>().FirstOrDefault();
 
 				if ( chat.IsValid() )
-					chat.AddTextLocal( "💀️", $"{player.Network.OwnerConnection.DisplayName} has killed {Network.OwnerConnection.DisplayName}" );
+					chat.AddTextLocal( "💀️", $"{this.Network.OwnerConnection.DisplayName} has killed {Network.OwnerConnection.DisplayName}" );
 				
-				if ( !player.IsProxy )
+				if ( !this.IsProxy )
 				{
 					// We killed this player.
-					player.Kills++;
+					this.Kills++;
 				}
-			}
 		}
 		
 		if ( IsProxy )
@@ -169,13 +164,14 @@ public class PlayerController : Component, Component.ITriggerListener, IHealthCo
 	protected override void OnAwake()
 	{
 		base.OnAwake();
+
 		
-		ModelRenderer = Components.GetInDescendantsOrSelf<SkinnedModelRenderer>();
-		
-		CharacterController = Components.GetInDescendantsOrSelf<CharacterController>();
+		//ModelRenderer = Components.GetInDescendantsOrSelf<SkinnedModelRenderer>();
+
+		/*CharacterController = Components.GetInDescendantsOrSelf<CharacterController>();
 		CharacterController.IgnoreLayers.Add( "player" );
 		
-		Ragdoll = Components.GetInDescendantsOrSelf<RagdollController>();
+		Ragdoll = Components.GetInDescendantsOrSelf<RagdollController>();*/
 
 		if ( CharacterController.IsValid() )
 		{
@@ -205,7 +201,9 @@ public class PlayerController : Component, Component.ITriggerListener, IHealthCo
 	{
 		if ( !ModelRenderer.IsValid() )
 			return;
-		
+
+		if ( IsProxy ) PlyCamera.Enabled = false;
+
 		var deployedWeapon = Weapons.Deployed;
 		var shadowRenderer = ShadowAnimator.Components.Get<SkinnedModelRenderer>( true );
 		var hasViewModel = deployedWeapon.IsValid() && deployedWeapon.HasViewModel;
@@ -259,7 +257,7 @@ public class PlayerController : Component, Component.ITriggerListener, IHealthCo
 	{
 		base.OnPreRender();
 
-		if ( !Scene.IsValid() || !Scene.Camera.IsValid() )
+		if ( !Scene.IsValid() || !PlyCamera.IsValid() )
 			return;
 
 		UpdateModelVisibility();
@@ -272,8 +270,8 @@ public class PlayerController : Component, Component.ITriggerListener, IHealthCo
 
 		if ( Ragdoll.IsRagdolled )
 		{
-			Scene.Camera.Transform.Position = Scene.Camera.Transform.Position.LerpTo( Eye.Transform.Position, Time.Delta * 32f );
-			Scene.Camera.Transform.Rotation = Rotation.Lerp( Scene.Camera.Transform.Rotation, Eye.Transform.Rotation, Time.Delta * 16f );
+			PlyCamera.Transform.Position = PlyCamera.Transform.Position.LerpTo( Eye.Transform.Position, Time.Delta * 32f );
+			PlyCamera.Transform.Rotation = Rotation.Lerp( PlyCamera.Transform.Rotation, Eye.Transform.Rotation, Time.Delta * 16f );
 			return;
 		}
 
@@ -299,19 +297,19 @@ public class PlayerController : Component, Component.ITriggerListener, IHealthCo
 		var hasViewModel = deployedWeapon.IsValid() && deployedWeapon.HasViewModel;
 
 		if ( hasViewModel )
-			Scene.Camera.Transform.Position = Head.Transform.Position;
+			PlyCamera.Transform.Position = Head.Transform.Position;
 		else
-			Scene.Camera.Transform.Position = trace.Hit ? trace.EndPosition : idealEyePos;
+			PlyCamera.Transform.Position = trace.Hit ? trace.EndPosition : idealEyePos;
 		
 		if ( SicknessMode )
-			Scene.Camera.Transform.Rotation = Rotation.LookAt( Eye.Transform.Rotation.Left ) * Rotation.FromPitch( -10f );
+			PlyCamera.Transform.Rotation = Rotation.LookAt( Eye.Transform.Rotation.Left ) * Rotation.FromPitch( -10f );
 		else
-			Scene.Camera.Transform.Rotation = EyeAngles.ToRotation() * Rotation.FromPitch( -10f );
+			PlyCamera.Transform.Rotation = EyeAngles.ToRotation() * Rotation.FromPitch( -10f );
 
 
-		if ( IsCrouching ) 
+		if ( IsCrouching && hasViewModel ) 
 		{
-			Scene.Camera.Transform.Position = Scene.Camera.Transform.Position + SieatOffset;
+			PlyCamera.Transform.Position = PlyCamera.Transform.Position + SieatOffset;
 			//Scene.Camera.Transform.Position = SieatOffset;
 		} 
 	}
@@ -439,8 +437,8 @@ public class PlayerController : Component, Component.ITriggerListener, IHealthCo
 
 		if ( Input.Down( "use" ) )
 		{
-			var startPos = Scene.Camera.Transform.Position;
-			var direction = Scene.Camera.Transform.Rotation.Forward;
+			var startPos = PlyCamera.Transform.Position;
+			var direction = PlyCamera.Transform.Rotation.Forward;
 
 			var endPos = startPos + direction * 10000f;
 			var trace = Scene.Trace.Ray( startPos, endPos )

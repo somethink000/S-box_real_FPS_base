@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using Sandbox;
 
-namespace Facepunch.Arena;
+namespace GeneralGame;
 
 [GameResource( "Sound Sequence", "sndseq", "A sequence of sounds to play." )]
 public class SoundSequenceData : GameResource

@@ -2,7 +2,7 @@ using Sandbox;
 using System;
 using System.Numerics;
 
-namespace Facepunch.Arena;
+namespace GeneralGame;
 
 [Group( "Arena" )]
 [Title( "View Model")]

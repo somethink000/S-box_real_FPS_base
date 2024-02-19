@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Sandbox;
 
-namespace Facepunch.Arena;
+namespace GeneralGame;
 
 [Group( "Arena" )]
 [Title( "Weapon Container" )]

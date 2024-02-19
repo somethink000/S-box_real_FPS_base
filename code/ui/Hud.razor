@@ -2,7 +2,7 @@
 @using System.Linq
 @using Sandbox;
 @inherits PanelComponent
-@namespace Facepunch.Arena
+@namespace GeneralGame
 
 @if ( !LocalPlayer.IsValid() ) return;
 
@@ -23,10 +23,11 @@
 	}
 	
 	<div class="center">
-		@if (weapon.IsValid() && !LocalPlayer.IsAiming)
+		<div class="crosshair"></div>
+		@* @if (weapon.IsValid() && !LocalPlayer.IsAiming)
 		{
 			<div class="crosshair"></div>
-		}
+		} *@
 	</div>
 </root>
 

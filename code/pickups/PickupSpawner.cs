@@ -1,7 +1,7 @@
 using Sandbox;
 using Sandbox.Network;
 
-namespace Facepunch.Arena;
+namespace GeneralGame;
 
 [Group( "Arena" )]
 [Title( "Pickup Spawner" )]

@@ -1,0 +1,62 @@
+{
+  "RootObject": {
+    "Id": "955d9632-88b8-457d-aaba-c8df0be627fb",
+    "Name": "aksu_loot",
+    "Position": "-126.4144,19.86161,26.94964",
+    "Enabled": true,
+    "Components": [
+      {
+        "__type": "ModelRenderer",
+        "BodyGroups": 9493,
+        "MaterialGroup": null,
+        "MaterialOverride": null,
+        "Model": "models/pm/w/pmm_ref.vmdl",
+        "RenderType": "On",
+        "Tint": "1,1,1,1"
+      },
+      {
+        "__type": "WeaponPickup",
+        "Collider": {
+          "_type": "component",
+          "go": "955d9632-88b8-457d-aaba-c8df0be627fb",
+          "component_type": "SphereCollider"
+        },
+        "PickupSound": "sounds/item.pickup.sound",
+        "WeaponPrefab": {
+          "_type": "gameobject",
+          "prefab": "prefabs/weapons/pm/pm.prefab"
+        }
+      },
+      {
+        "__type": "Rigidbody",
+        "AngularDamping": 0,
+        "Gravity": true,
+        "LinearDamping": 0,
+        "Locking": {},
+        "MassOverride": 0,
+        "RigidbodyFlags": 0,
+        "StartAsleep": false
+      },
+      {
+        "__type": "SphereCollider",
+        "Center": "0,0,0",
+        "IsTrigger": true,
+        "Radius": 10,
+        "Static": false,
+        "Surface": null
+      },
+      {
+        "__type": "BoxCollider",
+        "Center": "0,0,0",
+        "IsTrigger": false,
+        "Scale": "10,10,10",
+        "Static": false,
+        "Surface": null
+      }
+    ]
+  },
+  "ShowInMenu": false,
+  "MenuPath": null,
+  "MenuIcon": null,
+  "__references": []
+}

@@ -2,7 +2,7 @@ using Sandbox;
 using System;
 using System.Linq;
 
-namespace Facepunch.Arena;
+namespace GeneralGame;
 
 [Group( "Arena" )]
 [Title( "Health Effects" )]

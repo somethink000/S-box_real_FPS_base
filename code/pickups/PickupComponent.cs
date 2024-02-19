@@ -1,7 +1,7 @@
 using System;
 using Sandbox;
 
-namespace Facepunch.Arena;
+namespace GeneralGame;
 
 [Hide]
 public abstract class PickupComponent : Component

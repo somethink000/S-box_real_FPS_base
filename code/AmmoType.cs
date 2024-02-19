@@ -1,7 +1,7 @@
-namespace Facepunch.Arena;
+namespace GeneralGame;
 
 public enum AmmoType
 {
 	Pistol,
-	SMG
+	Rifle
 }

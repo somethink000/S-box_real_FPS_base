@@ -1,8 +1,8 @@
 {
   "RootObject": {
-    "Id": "f87db0ca-5d79-42cc-b78f-767bd52b5014",
-    "Name": "baseloot",
-    "Scale": "1.5,1.5,1.5",
+    "Id": "5309f0b3-b500-4aff-a4e2-d3df6f6ed21c",
+    "Name": "pmm_loot",
+    "Position": "-126.4144,-31.07856,24.85281",
     "Enabled": true,
     "Components": [
       {
@@ -10,7 +10,7 @@
         "BodyGroups": 9493,
         "MaterialGroup": null,
         "MaterialOverride": null,
-        "Model": "models/weapons/sbox_pistol_usp/w_usp.vmdl",
+        "Model": "models/aksu/w/ak74u_modern_ak74u_mag_ref.vmdl",
         "RenderType": "On",
         "Tint": "1,1,1,1"
       },
@@ -18,7 +18,7 @@
         "__type": "WeaponPickup",
         "Collider": {
           "_type": "component",
-          "go": "f87db0ca-5d79-42cc-b78f-767bd52b5014",
+          "go": "5309f0b3-b500-4aff-a4e2-d3df6f6ed21c",
           "component_type": "SphereCollider"
         },
         "PickupSound": "sounds/item.pickup.sound",
@@ -53,13 +53,10 @@
         "Static": false,
         "Surface": null
       }
-    ],
-    "Children": []
+    ]
   },
   "ShowInMenu": false,
   "MenuPath": null,
   "MenuIcon": null,
-  "__references": [
-    "facepunch.w_usp"
-  ]
+  "__references": []
 }

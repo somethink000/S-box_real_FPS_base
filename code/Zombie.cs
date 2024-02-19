@@ -3,7 +3,7 @@ using System.Linq;
 using Sandbox;
 using Sandbox.Citizen;
 
-namespace Facepunch.Arena;
+namespace GeneralGame;
 
 public sealed class Zombie : Component, IHealthComponent
 {

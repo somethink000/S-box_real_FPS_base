@@ -2,7 +2,7 @@ using System;
 using System.Linq;
 using Sandbox;
 
-namespace Facepunch.Arena;
+namespace GeneralGame;
 
 [CodeGenerator( CodeGeneratorFlags.Instance | CodeGeneratorFlags.WrapPropertySet, "Facepunch.Arena.ChangeAttribute.OnPropertySet" )]
 public class ChangeAttribute : Attribute

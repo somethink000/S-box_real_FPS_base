@@ -3,7 +3,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Sandbox;
 
-namespace Facepunch.Arena;
+namespace GeneralGame;
 
 public static class Extensions
 {

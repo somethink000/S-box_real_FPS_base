@@ -2,7 +2,7 @@
 using System;
 using Sandbox;
 
-namespace Sandbox.pickups;
+namespace GeneralGame;
 
 public interface IUse
 {

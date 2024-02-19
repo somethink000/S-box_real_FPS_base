@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using Sandbox;
 
-namespace Facepunch.Arena;
+namespace GeneralGame;
 
 public class SoundSequence
 {

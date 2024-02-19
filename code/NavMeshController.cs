@@ -2,7 +2,7 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using Sandbox;
 using Sandbox.Citizen;
-namespace Facepunch.Arena;
+namespace GeneralGame;
 public sealed class NavMeshController : Component
 {
 
