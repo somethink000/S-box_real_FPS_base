@@ -1,0 +1,12 @@
+{
+  "UI": false,
+  "Volume": "0.50,0.60,1",
+  "Pitch": "0.90,1.10,1",
+  "Decibels": 80,
+  "SelectionMode": "Random",
+  "Sounds": [
+    "sounds/guns/f1/ar2_shoot1.vsnd",
+    "sounds/guns/f1/ar2_shoot2.vsnd"
+  ],
+  "__references": []
+}

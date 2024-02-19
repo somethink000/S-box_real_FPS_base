@@ -1,0 +1,12 @@
+{
+  "UI": false,
+  "Volume": "0.30,0.30,0",
+  "Pitch": "0.95,1.05,1",
+  "Decibels": 30,
+  "SelectionMode": "Forward",
+  "Sounds": [
+    "sounds/guns/switch/switch_2.vsnd",
+    "sounds/guns/switch/switch_3.vsnd"
+  ],
+  "__references": []
+}

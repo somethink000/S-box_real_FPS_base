@@ -1,0 +1,36 @@
+{
+  "RootObject": {
+    "Id": "cb9669d3-5b2e-4f40-ae6f-e2b5a6f1b9a1",
+    "Name": "ZombieRagdoll",
+    "Position": "377.1048,-1900.982,639.4165",
+    "Enabled": true,
+    "Components": [
+      {
+        "__type": "SkinnedModelRenderer",
+        "BodyGroups": 341,
+        "BoneMergeTarget": null,
+        "CreateBoneObjects": false,
+        "MaterialGroup": null,
+        "MaterialOverride": "models/citizen/skin/citizen_skin_zombie.vmat",
+        "Model": "models/citizen/citizen.vmdl",
+        "RenderType": "On",
+        "Tint": "1,1,1,1"
+      },
+      {
+        "__type": "ModelPhysics",
+        "Locking": {},
+        "Model": "models/citizen/citizen.vmdl",
+        "Renderer": {
+          "_type": "component",
+          "go": "cb9669d3-5b2e-4f40-ae6f-e2b5a6f1b9a1",
+          "component_type": "SkinnedModelRenderer"
+        },
+        "RigidbodyFlags": 0
+      }
+    ]
+  },
+  "ShowInMenu": false,
+  "MenuPath": null,
+  "MenuIcon": null,
+  "__references": []
+}

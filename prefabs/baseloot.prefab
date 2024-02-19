@@ -1,0 +1,65 @@
+{
+  "RootObject": {
+    "Id": "f87db0ca-5d79-42cc-b78f-767bd52b5014",
+    "Name": "baseloot",
+    "Scale": "1.5,1.5,1.5",
+    "Enabled": true,
+    "Components": [
+      {
+        "__type": "ModelRenderer",
+        "BodyGroups": 9493,
+        "MaterialGroup": null,
+        "MaterialOverride": null,
+        "Model": "models/weapons/sbox_pistol_usp/w_usp.vmdl",
+        "RenderType": "On",
+        "Tint": "1,1,1,1"
+      },
+      {
+        "__type": "WeaponPickup",
+        "Collider": {
+          "_type": "component",
+          "go": "f87db0ca-5d79-42cc-b78f-767bd52b5014",
+          "component_type": "SphereCollider"
+        },
+        "PickupSound": "sounds/item.pickup.sound",
+        "WeaponPrefab": {
+          "_type": "gameobject",
+          "prefab": "prefabs/weapons/aksu/aksu.prefab"
+        }
+      },
+      {
+        "__type": "Rigidbody",
+        "AngularDamping": 0,
+        "Gravity": true,
+        "LinearDamping": 0,
+        "Locking": {},
+        "MassOverride": 0,
+        "RigidbodyFlags": 0,
+        "StartAsleep": false
+      },
+      {
+        "__type": "SphereCollider",
+        "Center": "0,0,0",
+        "IsTrigger": true,
+        "Radius": 10,
+        "Static": false,
+        "Surface": null
+      },
+      {
+        "__type": "BoxCollider",
+        "Center": "0,0,0",
+        "IsTrigger": false,
+        "Scale": "10,10,10",
+        "Static": false,
+        "Surface": null
+      }
+    ],
+    "Children": []
+  },
+  "ShowInMenu": false,
+  "MenuPath": null,
+  "MenuIcon": null,
+  "__references": [
+    "facepunch.w_usp"
+  ]
+}

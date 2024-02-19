@@ -1,0 +1,21 @@
+{
+  "Entries": [
+    {
+      "Sound": "sounds/guns/m1911/reload/m1911.reload.sound",
+      "Duration": 0.5
+    },
+    {
+      "Sound": "sounds/guns/m1911/reload/m1911.reload.out.sound",
+      "Duration": 0.5
+    },
+    {
+      "Sound": "sounds/guns/m1911/reload/m1911.reload.load.sound",
+      "Duration": 0.7
+    },
+    {
+      "Sound": "sounds/guns/m1911/reload/m1911.reload.fow.sound",
+      "Duration": 0.3
+    }
+  ],
+  "__references": []
+}

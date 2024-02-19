@@ -1,0 +1,51 @@
+﻿@using System
+@using System.Linq
+@using Sandbox;
+@inherits PanelComponent
+@namespace Facepunch.Arena
+
+@if ( !LocalPlayer.IsValid() ) return;
+
+<root>
+	@{
+		var weapon = LocalPlayer.Weapons.Deployed;
+	}
+	
+	@if ( weapon.IsValid() && LocalPlayer.LifeState == LifeState.Alive  )
+	{
+		<div class="ammo">
+			@{
+				var totalAmmo = LocalPlayer.Ammo.Get( weapon.AmmoType );
+			}
+			
+			<label class="clip">@weapon.AmmoInClip</label>/<label class="total">@totalAmmo</label>
+		</div>
+	}
+	
+	<div class="center">
+		@if (weapon.IsValid() && !LocalPlayer.IsAiming)
+		{
+			<div class="crosshair"></div>
+		}
+	</div>
+</root>
+
+@code
+{
+	private PlayerController LocalPlayer { get; set; }
+	
+	protected override void OnFixedUpdate()
+	{
+		if ( !LocalPlayer.IsValid() )
+		{
+			LocalPlayer = Scene.GetAllComponents<PlayerController>().FirstOrDefault( p => p.Network.OwnerConnection == Connection.Local );
+		}
+	}
+
+	protected override void OnUpdate()
+	{
+		SetClass( "hitmarker", LocalPlayer.IsValid() && LocalPlayer.LastHitmarkerTime < 0.1f );
+	}
+	
+	protected override int BuildHash() => HashCode.Combine( RealTime.Now );
+}

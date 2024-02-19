@@ -11,6 +11,13 @@ Properties/*
 code/obj/*
 code/Properties/*
 
+# Editor Projects
+code/Editor/obj/*
+code/Editor/Properties/*
+code/Editor/*.sln
+code/Editor/.vs/*
+code/Editor/.vscode/*
+
 # Auto-generated asset related files
 *.generated.*
 *.*_c

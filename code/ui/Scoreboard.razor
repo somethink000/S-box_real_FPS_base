@@ -1,0 +1,56 @@
+﻿@using System
+@using System.Linq
+@using Sandbox;
+@inherits PanelComponent
+@namespace Facepunch.Arena
+
+<root>
+	<div class="table">
+		<div class="table-row heading">
+			<div class="row-item">Name</div>
+			<div class="row-item">Kills</div>
+			<div class="row-item">Deaths</div>
+			<div class="row-item">⏲️</div>
+		</div>
+
+		@foreach ( var entry in Networking.Connections )
+		{
+			var rowClass = string.Empty;
+			var player = Scene.GetAllComponents<PlayerController>().FirstOrDefault( p => p.Network.OwnerConnection == entry );
+			
+			if ( entry == Connection.Local )
+				rowClass = "me";
+
+			<div class="table-row @rowClass">
+				<div class="row-item">
+					@if ( entry.IsHost )
+					{
+						<div>👑</div>
+					}
+
+					@entry.DisplayName
+				</div>
+				<div class="row-item">@( player.IsValid() ? player.Kills : 0)</div>
+				<div class="row-item">@( player.IsValid() ? player.Deaths : 0)</div>
+				<div class="row-item">@GetTime( entry )</div>
+			</div>
+		}
+	</div>
+</root>
+
+@code
+{
+	private string GetTime( Connection c )
+	{
+		var time = DateTime.UtcNow - c.ConnectionTime;
+
+		return time.ToString( time.TotalMinutes < 60f ? @"mm\m\ s\s" : @"hh\h\ \m\m" );
+	}
+
+	protected override void OnUpdate()
+	{
+		SetClass( "hidden", !Input.Down( "score" )  );
+	}
+	
+	protected override int BuildHash() => HashCode.Combine( RealTime.Now.CeilToInt() );
+}

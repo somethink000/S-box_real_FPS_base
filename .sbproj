@@ -26,6 +26,9 @@
     "LeaderboardType": "None",
     "ProjectTemplate": null,
     "CsProjName": "",
-    "TickRate": 50
+    "TickRate": 50,
+    "StartupScene": "scenes/lobby.scene",
+    "MapStartupScene": null,
+    "LaunchMode": "Normal"
   }
 }

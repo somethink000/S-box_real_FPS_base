@@ -1,0 +1,11 @@
+{
+  "UI": false,
+  "Volume": "0.60,0.60,0",
+  "Pitch": "0.95,1.05,1",
+  "Decibels": 30,
+  "SelectionMode": "Random",
+  "Sounds": [
+    "sounds/guns/gun.dryfire.vsnd"
+  ],
+  "__references": []
+}

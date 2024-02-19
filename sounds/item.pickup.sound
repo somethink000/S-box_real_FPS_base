@@ -1,0 +1,14 @@
+{
+  "UI": false,
+  "Volume": "1.00,1.00,0",
+  "Pitch": "1.00,1.00,0",
+  "Decibels": 60,
+  "SelectionMode": "Random",
+  "Sounds": [
+    "sounds/weapon.pickup1.vsnd",
+    "sounds/weapon.pickup2.vsnd",
+    "sounds/weapon.pickup3.vsnd",
+    "sounds/weapon.pickup4.vsnd"
+  ],
+  "__references": []
+}

@@ -1,0 +1,21 @@
+{
+  "Entries": [
+    {
+      "Sound": "sounds/guns/mp5/reload/mp5.move.sound",
+      "Duration": 0.5
+    },
+    {
+      "Sound": "sounds/guns/mp5/reload/mp5.mag.load.sound",
+      "Duration": 0.6
+    },
+    {
+      "Sound": "sounds/guns/mp5/reload/mp5.mag.sound",
+      "Duration": 0.4
+    },
+    {
+      "Sound": "sounds/guns/mp5/reload/mp5.move.sound",
+      "Duration": 0.3
+    }
+  ],
+  "__references": []
+}

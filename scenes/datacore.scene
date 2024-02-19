@@ -1,0 +1,320 @@
+{
+  "Id": "90beacda-210d-4bf3-a7df-9e5c83e1e571",
+  "GameObjects": [
+    {
+      "Id": "b38f3473-f4b9-40d4-985d-519bbcc81deb",
+      "Name": "Spawnpoint",
+      "Position": "-199.6494,7.275564,23.84851",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "SpawnPoint",
+          "Color": "0.8902,0.31765,0.05098,1"
+        }
+      ]
+    },
+    {
+      "Id": "57723daf-6b12-4e32-add9-81a777fe1625",
+      "Name": "Network",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "NetworkManager",
+          "PlayerPrefab": {
+            "_type": "gameobject",
+            "prefab": "prefabs/player.prefab"
+          }
+        }
+      ]
+    },
+    {
+      "Id": "37dee493-7d32-403b-911e-489de472adcf",
+      "Name": "zps1",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "ZombieSpawner",
+          "ZombiePrefab": {
+            "_type": "gameobject",
+            "prefab": "prefabs/zombienavmeshprefab.prefab"
+          }
+        }
+      ]
+    },
+    {
+      "Id": "16ed4ab6-8a51-430c-a43b-402bc1c7d962",
+      "Name": "2D Skybox",
+      "Tags": "skybox",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "SkyBox2D",
+          "SkyMaterial": "materials/sky/atmosphere_sky.vmat",
+          "Tint": "1,1,1,1"
+        }
+      ]
+    },
+    {
+      "Id": "5309f0b3-b500-4aff-a4e2-d3df6f6ed21c",
+      "Name": "baseloot",
+      "Position": "-57.70728,89.80484,19.7858",
+      "Scale": "1.5,1.5,1.5",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "ModelRenderer",
+          "BodyGroups": 9493,
+          "MaterialGroup": null,
+          "MaterialOverride": null,
+          "Model": "models/weapons/sbox_pistol_usp/w_usp.vmdl",
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "WeaponPickup",
+          "Collider": {
+            "_type": "component",
+            "go": "5309f0b3-b500-4aff-a4e2-d3df6f6ed21c",
+            "component_type": "SphereCollider"
+          },
+          "PickupSound": "sounds/item.pickup.sound",
+          "WeaponPrefab": {
+            "_type": "gameobject",
+            "prefab": "prefabs/weapons/aksu/aksu.prefab"
+          }
+        },
+        {
+          "__type": "Rigidbody",
+          "AngularDamping": 0,
+          "Gravity": true,
+          "LinearDamping": 0,
+          "Locking": {},
+          "MassOverride": 0,
+          "RigidbodyFlags": 0,
+          "StartAsleep": false
+        },
+        {
+          "__type": "SphereCollider",
+          "Center": "0,0,0",
+          "IsTrigger": true,
+          "Radius": 10,
+          "Static": false,
+          "Surface": null
+        },
+        {
+          "__type": "BoxCollider",
+          "Center": "0,0,0",
+          "IsTrigger": false,
+          "Scale": "10,10,10",
+          "Static": false,
+          "Surface": null
+        }
+      ]
+    },
+    {
+      "Id": "955d9632-88b8-457d-aaba-c8df0be627fb",
+      "Name": "baseloot (1)",
+      "Position": "-57.70728,-102.1422,19.7858",
+      "Scale": "1.5,1.5,1.5",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "ModelRenderer",
+          "BodyGroups": 9493,
+          "MaterialGroup": null,
+          "MaterialOverride": null,
+          "Model": "models/weapons/sbox_pistol_usp/w_usp.vmdl",
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "WeaponPickup",
+          "Collider": {
+            "_type": "component",
+            "go": "955d9632-88b8-457d-aaba-c8df0be627fb",
+            "component_type": "SphereCollider"
+          },
+          "PickupSound": "sounds/item.pickup.sound",
+          "WeaponPrefab": {
+            "_type": "gameobject",
+            "prefab": "prefabs/weapons/pm/pm.prefab"
+          }
+        },
+        {
+          "__type": "Rigidbody",
+          "AngularDamping": 0,
+          "Gravity": true,
+          "LinearDamping": 0,
+          "Locking": {},
+          "MassOverride": 0,
+          "RigidbodyFlags": 0,
+          "StartAsleep": false
+        },
+        {
+          "__type": "SphereCollider",
+          "Center": "0,0,0",
+          "IsTrigger": true,
+          "Radius": 10,
+          "Static": false,
+          "Surface": null
+        },
+        {
+          "__type": "BoxCollider",
+          "Center": "0,0,0",
+          "IsTrigger": false,
+          "Scale": "10,10,10",
+          "Static": false,
+          "Surface": null
+        }
+      ]
+    },
+    {
+      "Id": "e62cf48b-ed49-4de0-a975-0c76457b0952",
+      "Name": "Sun",
+      "Rotation": "0,0.2626311,0,0.9648963",
+      "Tags": "light_directional,light",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "DirectionalLight",
+          "FogMode": "Enabled",
+          "FogStrength": 1,
+          "LightColor": "0.91373,0.98039,1,1",
+          "Shadows": true,
+          "SkyColor": "0.05882,0.07451,0.08235,1"
+        }
+      ]
+    },
+    {
+      "Id": "10d3c3d3-ca60-4415-9ad4-05454b3dba44",
+      "Name": "Plane (1)",
+      "Position": "318.2671,-436.8308,0",
+      "Scale": "10,10,1",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "ModelRenderer",
+          "BodyGroups": 18446744073709551615,
+          "MaterialGroup": null,
+          "MaterialOverride": null,
+          "Model": "models/dev/plane.vmdl",
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "PlaneCollider",
+          "Center": "0,0,0",
+          "IsTrigger": false,
+          "Scale": "100,100",
+          "Static": true,
+          "Surface": null
+        }
+      ]
+    },
+    {
+      "Id": "caae763f-0f06-40d5-9634-09f2488e37f5",
+      "Name": "Plane (4)",
+      "Position": "318.2671,563.2347,0",
+      "Scale": "10,10,1",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "ModelRenderer",
+          "BodyGroups": 18446744073709551615,
+          "MaterialGroup": null,
+          "MaterialOverride": null,
+          "Model": "models/dev/plane.vmdl",
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "PlaneCollider",
+          "Center": "0,0,0",
+          "IsTrigger": false,
+          "Scale": "100,100",
+          "Static": true,
+          "Surface": null
+        }
+      ]
+    },
+    {
+      "Id": "5db749dc-cbc0-4f51-afa5-bedcb5675863",
+      "Name": "Plane (2)",
+      "Position": "-681.236,-436.8308,0",
+      "Scale": "10,10,1",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "ModelRenderer",
+          "BodyGroups": 18446744073709551615,
+          "MaterialGroup": null,
+          "MaterialOverride": null,
+          "Model": "models/dev/plane.vmdl",
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "PlaneCollider",
+          "Center": "0,0,0",
+          "IsTrigger": false,
+          "Scale": "100,100",
+          "Static": true,
+          "Surface": null
+        }
+      ]
+    },
+    {
+      "Id": "e9a082eb-68e7-4117-92db-275680f72f5f",
+      "Name": "Plane (3)",
+      "Position": "-681.236,563.2347,0",
+      "Scale": "10,10,1",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "ModelRenderer",
+          "BodyGroups": 18446744073709551615,
+          "MaterialGroup": null,
+          "MaterialOverride": null,
+          "Model": "models/dev/plane.vmdl",
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "PlaneCollider",
+          "Center": "0,0,0",
+          "IsTrigger": false,
+          "Scale": "100,100",
+          "Static": true,
+          "Surface": null
+        }
+      ]
+    }
+  ],
+  "SceneProperties": {
+    "FixedUpdateFrequency": 50,
+    "Lerping": true,
+    "MaxFixedUpdates": 5,
+    "NetworkFrequency": 60,
+    "ThreadedAnimation": true,
+    "TimeScale": 1,
+    "UseFixedUpdate": true,
+    "NavMesh": {
+      "Enabled": true,
+      "IncludeStaticBodies": true,
+      "IncludeKeyframedBodies": true,
+      "EditorAutoUpdate": true,
+      "AgentHeight": 64,
+      "AgentRadius": 16,
+      "AgentStepSize": 18,
+      "AgentMaxSlope": 40,
+      "ExcludedBodies": "",
+      "IncludedBodies": ""
+    }
+  },
+  "Title": "minimal",
+  "Description": "",
+  "LastSaved": "2024-02-18T23:37:21.7690899-08:00",
+  "__references": [
+    "facepunch.w_usp"
+  ]
+}

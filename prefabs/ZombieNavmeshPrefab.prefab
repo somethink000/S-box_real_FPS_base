@@ -1,0 +1,123 @@
+{
+  "RootObject": {
+    "Id": "099daaae-e6de-4609-9c58-081402fda764",
+    "Name": "zombienavmeshprefab",
+    "Tags": "bad",
+    "Enabled": true,
+    "Components": [
+      {
+        "__type": "PlayerFootsteps",
+        "ModelRenderer": null
+      },
+      {
+        "__type": "NavMeshAgent",
+        "Acceleration": 500,
+        "Height": 64,
+        "MaxSpeed": 275,
+        "Radius": 16,
+        "Separation": 0,
+        "UpdatePosition": true
+      },
+      {
+        "__type": "CitizenAnimationHelper",
+        "BodyWeight": 1,
+        "EyeSource": {
+          "_type": "gameobject",
+          "go": "d6d93ae7-0515-4a89-86c2-811a5e91c579"
+        },
+        "EyesWeight": 1,
+        "HeadWeight": 1,
+        "Height": 1,
+        "IkLeftFoot": null,
+        "IkLeftHand": null,
+        "IkRightFoot": null,
+        "IkRightHand": null,
+        "LookAt": null,
+        "LookAtEnabled": false,
+        "Target": {
+          "_type": "component",
+          "go": "99d121d7-a5a9-4d76-a936-ce58b049c086",
+          "component_type": "SkinnedModelRenderer"
+        }
+      },
+      {
+        "__type": "Zombie",
+        "animationHelper": {
+          "_type": "component",
+          "go": "099daaae-e6de-4609-9c58-081402fda764",
+          "component_type": "CitizenAnimationHelper"
+        },
+        "body": {
+          "_type": "gameobject",
+          "go": "99d121d7-a5a9-4d76-a936-ce58b049c086"
+        },
+        "eye": {
+          "_type": "gameobject",
+          "go": "d6d93ae7-0515-4a89-86c2-811a5e91c579"
+        },
+        "hitSound": "sounds/impacts/impact-bullet-flesh.sound",
+        "MaxHealth": 100,
+        "ZombieRagedol": {
+          "_type": "gameobject",
+          "prefab": "prefabs/ragdoll.prefab"
+        }
+      }
+    ],
+    "Children": [
+      {
+        "Id": "99d121d7-a5a9-4d76-a936-ce58b049c086",
+        "Name": "body",
+        "Enabled": true,
+        "Components": [
+          {
+            "__type": "SkinnedModelRenderer",
+            "BodyGroups": 341,
+            "BoneMergeTarget": null,
+            "CreateBoneObjects": false,
+            "MaterialGroup": "default",
+            "MaterialOverride": "models/citizen/skin/citizen_skin_zombie.vmat",
+            "Model": "models/citizen/citizen.vmdl",
+            "RenderType": "On",
+            "Tint": "1,1,1,1"
+          },
+          {
+            "__type": "CitizenAnimationHelper",
+            "BodyWeight": 1,
+            "EyeSource": null,
+            "EyesWeight": 1,
+            "HeadWeight": 1,
+            "Height": 1,
+            "IkLeftFoot": null,
+            "IkLeftHand": null,
+            "IkRightFoot": null,
+            "IkRightHand": null,
+            "LookAt": null,
+            "LookAtEnabled": false,
+            "Target": {
+              "_type": "component",
+              "go": "99d121d7-a5a9-4d76-a936-ce58b049c086",
+              "component_type": "SkinnedModelRenderer"
+            }
+          },
+          {
+            "__type": "ModelCollider",
+            "IsTrigger": false,
+            "Model": "models/citizen/citizen.vmdl",
+            "Static": false,
+            "Surface": null
+          }
+        ]
+      },
+      {
+        "Id": "d6d93ae7-0515-4a89-86c2-811a5e91c579",
+        "Name": "eye",
+        "Position": "0,0,64",
+        "Enabled": true
+      }
+    ]
+  },
+  "ShowInMenu": false,
+  "MenuPath": null,
+  "MenuIcon": null,
+  "__references": []
+}

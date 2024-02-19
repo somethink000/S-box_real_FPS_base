@@ -1,0 +1,22 @@
+{
+  "RootObject": {
+    "Id": "37fd146a-ccc0-4c1a-a57b-2952988fb8e5",
+    "Name": "pickup",
+    "Enabled": true,
+    "Components": [
+      {
+        "__type": "PickupSpawner",
+        "PickupPrefab": {
+          "_type": "gameobject",
+          "prefab": "prefabs/baseloot.prefab"
+        },
+        "RespawnTime": 30
+      }
+    ],
+    "Children": []
+  },
+  "ShowInMenu": false,
+  "MenuPath": null,
+  "MenuIcon": null,
+  "__references": []
+}

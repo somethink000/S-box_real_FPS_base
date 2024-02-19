@@ -1,0 +1,94 @@
+﻿@using System.Collections.Generic
+@using Sandbox;
+@using Sandbox.UI;
+@inherits PanelComponent
+@implements Component.INetworkListener
+@namespace Facepunch.Arena
+
+<root>
+	<div class="output">
+		@foreach (var entry in Entries)
+		{
+			<div class="chat_entry">
+				<div class="author">@entry.author</div>
+				<div class="message">@entry.message</div>
+			</div>
+		}
+	</div>
+
+	<div class="input">
+		<TextEntry @ref="InputBox" onsubmit="@ChatFinished"></TextEntry>
+	</div>
+</root>
+
+@code
+{
+	public record Entry( string author, string message, RealTimeSince timeSinceAdded );
+	
+	private List<Entry> Entries { get; set; } = new();
+	private TextEntry InputBox { get; set; }
+
+	public void AddTextLocal( string author, string message )
+	{
+		message = message.Truncate( 300 );
+
+		if ( string.IsNullOrWhiteSpace( message ) )
+			return;
+
+		Log.Info( $"{author}: {message}" );
+
+		Entries.Add( new ( author, message, 0f ) );
+		StateHasChanged();
+	}
+	
+	protected override void OnUpdate()
+	{
+		if ( InputBox is null )
+			return;
+
+		Panel.AcceptsFocus = false;
+
+		if ( Input.Pressed( "chat" ) )
+		{
+			InputBox.Focus();
+		}
+
+		if ( Entries.RemoveAll( x => x.timeSinceAdded > 30f ) > 0 )
+		{
+			StateHasChanged();
+		}
+
+		SetClass( "open", InputBox.HasFocus );
+	}
+
+	private void ChatFinished()
+	{
+		var text = InputBox.Text;
+		InputBox.Text = "";
+
+		if ( string.IsNullOrWhiteSpace( text ) )
+			return;
+
+		SendText( Sandbox.Utility.Steam.PersonaName, text );
+	}
+
+	[Broadcast]
+	private void SendText( string author, string message )
+	{
+		AddTextLocal( author, message );
+	}
+
+	void INetworkListener.OnConnected( Connection channel )
+	{
+		if ( IsProxy ) return;
+
+		SendText( "🛎️", $"{channel.DisplayName} has joined the game" );
+	}
+
+	void INetworkListener.OnDisconnected( Connection channel )
+	{
+		if ( IsProxy ) return;
+
+		SendText(  "💨", $"{channel.DisplayName} has left the game" );
+	}
+}

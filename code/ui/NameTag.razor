@@ -1,0 +1,46 @@
+﻿@using Sandbox;
+@inherits PanelComponent
+@namespace Facepunch.Arena
+
+@if ( Player.IsValid() && Player.LifeState == LifeState.Alive
+	&& Network.OwnerConnection is Connection owner
+	&& owner != Connection.Local )
+{
+	<root>
+		<div class="card">
+			<div class="avatar" style="background-image: url( 'avatar:@owner.SteamId' )"></div>
+			<div class="name">@owner.DisplayName</div>
+			
+			@if ( IsVoicePlaying )
+			{
+				<div class="voice">volume_up</div>
+			}
+		</div>
+	</root>
+}
+
+@code
+{
+	private PlayerController Player { get; set; }
+	private Voice VoiceComponent { get; set; }
+
+	protected override void OnEnabled()
+	{
+		base.OnEnabled();
+		VoiceComponent = GameObject.Root.Components.GetInDescendantsOrSelf<Voice>();
+		Player = GameObject.Root.Components.GetInDescendantsOrSelf<PlayerController>();
+	}
+
+	public bool IsVoicePlaying
+	{
+		get
+		{
+			if ( !VoiceComponent.IsValid() )
+				return false;
+			
+			return VoiceComponent.LastPlayed < 0.5f;
+		}
+	}
+	
+	protected override int BuildHash() => System.HashCode.Combine( Network.OwnerConnection, IsVoicePlaying, Player?.LifeState );
+}
