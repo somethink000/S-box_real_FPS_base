@@ -67,6 +67,10 @@ public sealed class ViewModel : Component
 
 	protected override void OnDestroy()
 	{
+		if ( IsProxy )
+		{
+			return;
+		}
 		if ( PlayerController.IsValid() )
 		{
 			PlayerController.OnJump -= OnPlayerJumped;
@@ -79,7 +83,8 @@ public sealed class ViewModel : Component
 	{
 		if ( IsProxy )
 		{
-			this.Destroy();
+			GameObject.Enabled = false;
+			ModelRenderer.Enabled = false;
 			return;
 		}
 

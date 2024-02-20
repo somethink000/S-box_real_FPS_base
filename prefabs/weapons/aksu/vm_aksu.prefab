@@ -1,6 +1,6 @@
 {
   "RootObject": {
-    "Id": "cfce75d8-0137-4399-9ff1-76a51734e824",
+    "Id": "91af700e-d7fa-4c06-884b-ccdcabb0a095",
     "Name": "vm_aksu",
     "Tags": "viewmodel",
     "Enabled": true,
@@ -9,7 +9,7 @@
         "__type": "ViewModel",
         "ModelRenderer": {
           "_type": "component",
-          "go": "cfce75d8-0137-4399-9ff1-76a51734e824",
+          "go": "91af700e-d7fa-4c06-884b-ccdcabb0a095",
           "component_type": "SkinnedModelRenderer"
         },
         "UseSprintAnimation": false
@@ -29,7 +29,7 @@
     ],
     "Children": [
       {
-        "Id": "ec57cf20-fd51-4d94-8bc1-b0b0623e265b",
+        "Id": "c51c57a0-1212-424e-9ab2-04af9b406019",
         "Name": "Arms",
         "Enabled": true,
         "Components": [
@@ -39,7 +39,7 @@
             "BodyGroups": 21,
             "BoneMergeTarget": {
               "_type": "component",
-              "go": "cfce75d8-0137-4399-9ff1-76a51734e824",
+              "go": "91af700e-d7fa-4c06-884b-ccdcabb0a095",
               "component_type": "SkinnedModelRenderer"
             },
             "CreateBoneObjects": false,

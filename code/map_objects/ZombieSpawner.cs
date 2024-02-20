@@ -31,7 +31,7 @@ public sealed class ZombieSpawner : Component
 	{
 		
 		var zombie = ZombiePrefab.Clone( this.Transform.World );
-
+		zombie.NetworkSpawn();
 	}
 
 	TimeUntil nextSecond = 5f;

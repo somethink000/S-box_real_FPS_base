@@ -1,6 +1,6 @@
 {
   "RootObject": {
-    "Id": "099daaae-e6de-4609-9c58-081402fda764",
+    "Id": "6b7d7ec9-c676-4fd4-9450-935bbd28f249",
     "Name": "zombienavmeshprefab",
     "Tags": "bad",
     "Enabled": true,
@@ -16,14 +16,15 @@
         "MaxSpeed": 275,
         "Radius": 16,
         "Separation": 0,
-        "UpdatePosition": true
+        "UpdatePosition": true,
+        "UpdateRotation": false
       },
       {
         "__type": "CitizenAnimationHelper",
         "BodyWeight": 1,
         "EyeSource": {
           "_type": "gameobject",
-          "go": "d6d93ae7-0515-4a89-86c2-811a5e91c579"
+          "go": "e7ce17d3-1cf8-4614-8b80-fd003861233d"
         },
         "EyesWeight": 1,
         "HeadWeight": 1,
@@ -36,7 +37,7 @@
         "LookAtEnabled": false,
         "Target": {
           "_type": "component",
-          "go": "99d121d7-a5a9-4d76-a936-ce58b049c086",
+          "go": "14f82cd9-9f6e-4f29-8b02-6c143e181e31",
           "component_type": "SkinnedModelRenderer"
         }
       },
@@ -44,16 +45,16 @@
         "__type": "Zombie",
         "animationHelper": {
           "_type": "component",
-          "go": "099daaae-e6de-4609-9c58-081402fda764",
+          "go": "6b7d7ec9-c676-4fd4-9450-935bbd28f249",
           "component_type": "CitizenAnimationHelper"
         },
         "body": {
           "_type": "gameobject",
-          "go": "99d121d7-a5a9-4d76-a936-ce58b049c086"
+          "go": "14f82cd9-9f6e-4f29-8b02-6c143e181e31"
         },
         "eye": {
           "_type": "gameobject",
-          "go": "d6d93ae7-0515-4a89-86c2-811a5e91c579"
+          "go": "e7ce17d3-1cf8-4614-8b80-fd003861233d"
         },
         "hitSound": "sounds/impacts/impact-bullet-flesh.sound",
         "MaxHealth": 100,
@@ -65,12 +66,13 @@
     ],
     "Children": [
       {
-        "Id": "99d121d7-a5a9-4d76-a936-ce58b049c086",
+        "Id": "14f82cd9-9f6e-4f29-8b02-6c143e181e31",
         "Name": "body",
         "Enabled": true,
         "Components": [
           {
             "__type": "SkinnedModelRenderer",
+            "AnimationGraph": null,
             "BodyGroups": 341,
             "BoneMergeTarget": null,
             "CreateBoneObjects": false,
@@ -95,7 +97,7 @@
             "LookAtEnabled": false,
             "Target": {
               "_type": "component",
-              "go": "99d121d7-a5a9-4d76-a936-ce58b049c086",
+              "go": "14f82cd9-9f6e-4f29-8b02-6c143e181e31",
               "component_type": "SkinnedModelRenderer"
             }
           },
@@ -109,7 +111,7 @@
         ]
       },
       {
-        "Id": "d6d93ae7-0515-4a89-86c2-811a5e91c579",
+        "Id": "e7ce17d3-1cf8-4614-8b80-fd003861233d",
         "Name": "eye",
         "Position": "0,0,64",
         "Enabled": true
