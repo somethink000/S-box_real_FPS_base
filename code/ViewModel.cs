@@ -51,6 +51,7 @@ public sealed class ViewModel : Component
 	
 	protected override void OnStart()
 	{
+
 		ModelRenderer.Set( "b_deploy", true );
 
 
@@ -74,6 +75,18 @@ public sealed class ViewModel : Component
 		base.OnDestroy();
 	}
 
+	protected override void OnAwake()
+	{
+		if ( IsProxy )
+		{
+			this.Destroy();
+			return;
+		}
+
+		base.OnAwake();
+	}
+
+
 	protected override void OnUpdate()
 	{
 		
@@ -95,8 +108,8 @@ public sealed class ViewModel : Component
 		Rotation plusRot = Camera.Transform.Rotation;
 
 		
-		
-		
+
+
 
 		CalcShakeMoves();
 

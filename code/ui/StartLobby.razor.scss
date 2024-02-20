@@ -1,4 +1,4 @@
-﻿Lobby
+﻿StartLobby 
 {
 	position: absolute;
 	top: 0px;
@@ -12,34 +12,30 @@
 	font-family: Poppins;
 	color: #ccc;
 
-	.left
-	{
+	.left {
 		margin-top: 64px;
 		flex-direction: column;
 		width: 800px;
 
-		> .title
-		{
+		> .title {
 			font-size: 64px;
 			font-weight: bold;
 			color: orange;
 		}
 
-		> .explanation
-		{
+		> .explanation {
 			color: #aaaa;
 			font-size: 24px;
 			flex-direction: column;
 			width: 100%;
 		}
-		
+
 		> .button-list {
 			margin-top: 64px;
 			flex-direction: column;
 			gap: 16px;
 
-			> .button
-			{
+			> .button {
 				background-color: transparent;
 				color: #aaa;
 				font-size: 32px;
@@ -50,30 +46,26 @@
 				flex-direction: column;
 				transition: all 0.2s ease-out;
 
-				&:hover
-				{
+				&:hover {
 					background-color: #333;
 				}
 			}
 		}
 	}
 
-	.header
-	{
+	.header {
 		font-size: 64px;
 		width: 100%;
 		font-weight: bold;
 		color: white;
 	}
 
-	.lobby-list
-	{
+	.lobby-list {
 		margin-top: 64px;
 		width: 600px;
 		flex-direction: column;
 
-		> label
-		{
+		> label {
 			color: #aaaa;
 			font-size: 24px;
 			flex-direction: column;
@@ -86,9 +78,8 @@
 			overflow: scroll;
 			height: 63%;
 			gap: 16px;
-			
-			> .button
-			{
+
+			> .button {
 				background-color: transparent;
 				color: #aaa;
 				padding: 10px;
@@ -99,35 +90,30 @@
 				transition: all 0.2s ease-out;
 				flex-shrink: 0;
 
-				.title
-				{
+				.title {
 					font-weight: bold;
 					font-size: 20px;
 				}
 
-				.meta
-				{
+				.meta {
 					font-size: 16px;
 
-					.map
-					{
+					.map {
 						flex-grow: 1;
 					}
 
-					.count
-					{
+					.count {
 						white-space: nowrap;
 					}
 				}
 
-				&:hover
-				{
+				&:hover {
 					background-color: #333;
 				}
 			}
 		}
 	}
-	
+
 	.center {
 		position: absolute;
 		width: 100%;

@@ -1,8 +1,8 @@
 {
-  "Title": "Some FPS Base",
+  "Title": "Real FPS base",
   "Type": "game",
   "Org": "evilinc",
-  "Ident": "som_fps_base",
+  "Ident": "real_fps_base",
   "Tags": null,
   "Schema": 1,
   "HasAssets": true,

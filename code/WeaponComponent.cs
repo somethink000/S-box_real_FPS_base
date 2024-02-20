@@ -205,6 +205,7 @@ public abstract class WeaponComponent : Component
 
 	protected override void OnAwake()
 	{
+		
 		ModelRenderer = Components.GetInDescendantsOrSelf<SkinnedModelRenderer>( true );
 		base.OnAwake();
 	}
@@ -247,6 +248,8 @@ public abstract class WeaponComponent : Component
 
 	private void CreateViewModel()
 	{
+
+
 		if ( !ViewModelPrefab.IsValid() )
 			return;
 		
