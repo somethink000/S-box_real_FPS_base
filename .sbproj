@@ -1,14 +1,14 @@
 {
-  "Title": "Real FPS base",
+  "Title": "Some FPS Base",
   "Type": "game",
   "Org": "evilinc",
-  "Ident": "real_fps_base",
+  "Ident": "som_fps_base",
   "Tags": null,
   "Schema": 1,
   "HasAssets": true,
   "AssetsPath": "",
   "Resources": null,
-  "MenuResources": "\nMenu/MainMenu.razor.scss\nMenu/LoadingScreen.razor.scss\nmenu/example.jpg",
+  "MenuResources": "*",
   "HasCode": true,
   "CodePath": "/code/",
   "PackageReferences": [],
@@ -16,6 +16,7 @@
   "Metadata": {
     "MaxPlayers": 64,
     "MinPlayers": 1,
+    "TickRate": 50,
     "GameNetworkType": "Multiplayer",
     "MapSelect": "Unrestricted",
     "MapList": [
@@ -24,10 +25,9 @@
     "RankType": "None",
     "PerMapRanking": false,
     "LeaderboardType": "None",
-    "ProjectTemplate": null,
     "CsProjName": "",
-    "TickRate": 50,
     "StartupScene": "scenes/lobby.scene",
+    "ProjectTemplate": null,
     "MapStartupScene": null,
     "LaunchMode": "Normal"
   }
