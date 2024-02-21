@@ -24,6 +24,6 @@ public class NetworkManager : Component, Component.INetworkListener
 	{
 		var player = PlayerPrefab.Clone();
 		player.BreakFromPrefab();
-		player.Network.Spawn( connection );
+		player.NetworkSpawn( connection );
 	}
 }

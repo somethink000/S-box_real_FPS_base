@@ -4,6 +4,7 @@ using System.Linq;
 using System.Net.Mail;
 using Sandbox;
 using Sandbox.Citizen;
+using Sandbox.VR;
 using static Sandbox.Component;
 
 namespace GeneralGame;
@@ -20,7 +21,6 @@ public class PlayerController : Component, Component.ITriggerListener, IHealthCo
 	[Property] public List<CitizenAnimationHelper> Animators { get; private set; } = new();
 	public RealTimeSince LastHitmarkerTime { get; private set; }
 	public Vector3 WishVelocity { get; private set; }
-	
 	[Property] private CitizenAnimationHelper ShadowAnimator { get; set; }
 	[Property] public WeaponContainer Weapons { get; set; }
 	[Property] public CameraComponent PlyCamera { get; set; }
@@ -345,8 +345,8 @@ public class PlayerController : Component, Component.ITriggerListener, IHealthCo
 			animator.MoveStyle = ( IsRunning && !IsCrouching ) ? CitizenAnimationHelper.MoveStyles.Run : CitizenAnimationHelper.MoveStyles.Walk;
 		}
 	}
-
-	protected virtual void DoCrouchingInput()
+	 
+protected virtual void DoCrouchingInput()
 	{
 		WantsToCrouch = CharacterController.IsOnGround && Input.Down( "Duck" );
 
@@ -491,7 +491,6 @@ public class PlayerController : Component, Component.ITriggerListener, IHealthCo
 		
 
 	}
-
 
 	void ITriggerListener.OnTriggerEnter( Collider other )
 	{

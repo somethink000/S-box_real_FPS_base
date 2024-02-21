@@ -1,6 +1,6 @@
 {
   "RootObject": {
-    "Id": "12c31400-40c8-42af-b4ff-b466b2848ff4",
+    "Id": "885540ed-d9c6-411d-918f-2ee246382fe2",
     "Name": "aksu",
     "Scale": "1.5,1.5,1.5",
     "Enabled": true,
@@ -13,7 +13,7 @@
         "CreateBoneObjects": false,
         "MaterialGroup": null,
         "MaterialOverride": null,
-        "Model": "models/weapons/sbox_pistol_usp/w_usp.vmdl",
+        "Model": "models/aksu/w/ak74u_modern_ak74u_mag_ref.vmdl",
         "RenderType": "On",
         "Tint": "1,1,1,1"
       },
@@ -21,18 +21,21 @@
         "__type": "Pistol",
         "aimPos": "-1,1.92,0.57",
         "aimRotation": "0,0,0,0",
-        "AmmoType": "Pistol",
+        "AmmoType": "Rifle",
         "ClipSize": 30,
         "Damage": 45,
         "DamageForce": 5,
-        "DefaultAmmo": 120,
-        "DeploySound": "sounds/guns/switch/weapon_switch.sound",
+        "DefaultAmmo": 80,
+        "DeploySound": "sounds/weapons/weapon_deploy3.sound",
         "DeployTime": 0.5,
         "DisplayName": "44 Magnum",
-        "EmptyClipSound": "sounds/guns/gun.dryfire.sound",
+        "EmptyClipSound": "sounds/weapons/empty_assaultrifles.sound",
+        "EmptyReloadSoundSequence": "models/aksu/aksu_reload_empty.sndseq",
+        "EmptyReloadTime": 3,
         "FireRate": 9,
         "FireSound": "models/aksu/ak74u_fire1.sound",
-        "HoldType": "Pistol",
+        "HoldType": "Rifle",
+        "HolsterSound": "sounds/weapons/weapon_holster3.sound",
         "idlePos": "-3,0,0",
         "ImpactEffect": "particles/impact.generic.vpcf",
         "IsDeployed": false,
@@ -54,7 +57,5 @@
   "ShowInMenu": false,
   "MenuPath": null,
   "MenuIcon": null,
-  "__references": [
-    "facepunch.w_usp"
-  ]
+  "__references": []
 }

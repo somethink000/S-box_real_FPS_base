@@ -55,36 +55,6 @@
       ]
     },
     {
-      "Id": "37dee493-7d32-403b-911e-489de472adcf",
-      "Name": "zps1",
-      "Position": "-4913.794,4837.437,704.2629",
-      "Enabled": true,
-      "Components": [
-        {
-          "__type": "ZombieSpawner",
-          "ZombiePrefab": {
-            "_type": "gameobject",
-            "prefab": "prefabs/zombienavmeshprefab.prefab"
-          }
-        }
-      ]
-    },
-    {
-      "Id": "cc0e7221-4828-4f58-a9ab-3fedbb8f3830",
-      "Name": "zps1 (2)",
-      "Position": "5387.241,5240.058,305.1045",
-      "Enabled": true,
-      "Components": [
-        {
-          "__type": "ZombieSpawner",
-          "ZombiePrefab": {
-            "_type": "gameobject",
-            "prefab": "prefabs/zombienavmeshprefab.prefab"
-          }
-        }
-      ]
-    },
-    {
       "Id": "3713b0f8-0c68-45a3-911d-eee51fbcd371",
       "Name": "zps1 (1)",
       "Position": "4627.471,-5291.66,407.2516",
@@ -94,104 +64,8 @@
           "__type": "ZombieSpawner",
           "ZombiePrefab": {
             "_type": "gameobject",
-            "prefab": "prefabs/zombienavmeshprefab.prefab"
+            "prefab": "prefabs/zombie.prefab"
           }
-        }
-      ]
-    },
-    {
-      "Id": "ab25e4f4-12c9-475a-ba4a-0158c0410cd9",
-      "Name": "wepanSpawn1",
-      "Position": "2272.717,1418.358,169.6781",
-      "Enabled": true,
-      "Components": [
-        {
-          "__type": "PickupSpawner",
-          "PickupPrefab": {
-            "_type": "gameobject",
-            "prefab": "prefabs/aksu_loot.prefab"
-          },
-          "RespawnTime": 30
-        }
-      ]
-    },
-    {
-      "Id": "0d62f684-9926-4c01-bfe6-6bb846bad3a7",
-      "Name": "wepanSpawn1 (4)",
-      "Position": "-854.4584,701.5579,15.50976",
-      "Enabled": true,
-      "Components": [
-        {
-          "__type": "PickupSpawner",
-          "PickupPrefab": {
-            "_type": "gameobject",
-            "prefab": "prefabs/aksu_loot.prefab"
-          },
-          "RespawnTime": 30
-        }
-      ]
-    },
-    {
-      "Id": "10988396-93f6-4043-89f1-d3e487451634",
-      "Name": "wepanSpawn1 (3)",
-      "Position": "326.4875,-3331.403,20.17708",
-      "Enabled": true,
-      "Components": [
-        {
-          "__type": "PickupSpawner",
-          "PickupPrefab": {
-            "_type": "gameobject",
-            "prefab": "prefabs/aksu_loot.prefab"
-          },
-          "RespawnTime": 30
-        }
-      ]
-    },
-    {
-      "Id": "64468347-67a0-47e3-918e-f12f48149c19",
-      "Name": "wepanSpawn1 (1)",
-      "Position": "2299.653,1325.805,168.5129",
-      "Enabled": true,
-      "Components": [
-        {
-          "__type": "PickupSpawner",
-          "PickupPrefab": {
-            "_type": "gameobject",
-            "prefab": "prefabs/pmm_loot.prefab"
-          },
-          "RespawnTime": 30
-        }
-      ]
-    },
-    {
-      "Id": "c9f95382-cc89-43f8-a624-db2730e27cdd",
-      "Name": "wepanSpawn1 (5)",
-      "Position": "-854.4584,627.6203,15.50976",
-      "Enabled": true,
-      "Components": [
-        {
-          "__type": "PickupSpawner",
-          "PickupPrefab": {
-            "_type": "gameobject",
-            "prefab": "prefabs/pmm_loot.prefab"
-          },
-          "RespawnTime": 30
-        }
-      ]
-    },
-    {
-      "Id": "f30c805c-df83-4754-a2e9-5db35372386f",
-      "Name": "wepanSpawn1 (2)",
-      "Position": "326.4875,-3404.64,20.17708",
-      "Enabled": true,
-      "Components": [
-        {
-          "__type": "PickupSpawner",
-          "PickupPrefab": {
-            "_type": "gameobject",
-            "prefab": "prefabs/pmm_loot.prefab"
-          },
-          "RespawnTime": 30
         }
       ]
     },
@@ -492,6 +366,54 @@
           ]
         }
       ]
+    },
+    {
+      "Id": "89d63f41-0740-4c9d-a2ff-b005cdee1d48",
+      "Name": "aksu_loot",
+      "Position": "2308.258,1425.628,170.733",
+      "Rotation": "-0.008760571,0.0003835987,0.9990042,0.04374444",
+      "Enabled": true,
+      "__Prefab": "prefabs/aksu_loot.prefab"
+    },
+    {
+      "Id": "bf914720-cc78-4b6c-972b-e2f27a7967b9",
+      "Name": "gloc_loot",
+      "Position": "2320.119,1316.78,165.6511",
+      "Rotation": "0.02473733,-0.7061313,0.706674,0.03712666",
+      "Enabled": true,
+      "__Prefab": "prefabs/gloc_loot.prefab"
+    },
+    {
+      "Id": "296e3d2d-aa91-4302-9419-65652b4ebf75",
+      "Name": "aksu_loot (1)",
+      "Position": "-882.7113,609.5717,34.65773",
+      "Rotation": "0.0006307354,0.02090403,-0.03015182,0.9993265",
+      "Enabled": true,
+      "__Prefab": "prefabs/aksu_loot.prefab"
+    },
+    {
+      "Id": "bf55b90b-d86c-4e1b-bd95-c400eb231a30",
+      "Name": "gloc_loot (1)",
+      "Position": "-908.0765,713.175,30.97454",
+      "Rotation": "0.0006307354,0.02090403,-0.03015182,0.9993265",
+      "Enabled": true,
+      "__Prefab": "prefabs/gloc_loot.prefab"
+    },
+    {
+      "Id": "0f170c30-7343-44ec-bb70-2760d55281b1",
+      "Name": "gloc_loot (2)",
+      "Position": "294.6559,-3416.888,18.94781",
+      "Rotation": "-0.00001004338,0.000005717524,1,0.00001715257",
+      "Enabled": true,
+      "__Prefab": "prefabs/gloc_loot.prefab"
+    },
+    {
+      "Id": "284a183a-c6ce-446c-afe7-9919961b7429",
+      "Name": "aksu_loot (2)",
+      "Position": "297.395,-3314.817,23.94669",
+      "Rotation": "-0.00001004338,0.000005717524,1,0.00001715257",
+      "Enabled": true,
+      "__Prefab": "prefabs/aksu_loot.prefab"
     }
   ],
   "SceneProperties": {
@@ -517,6 +439,6 @@
   },
   "Title": "minimal",
   "Description": "",
-  "LastSaved": "2024-02-20T12:36:15.979325-08:00",
+  "LastSaved": "2024-02-21T03:27:30.7910399-08:00",
   "__references": []
 }

@@ -8,6 +8,7 @@ public abstract class WeaponComponent : Component
 {
 	[Property] public string DisplayName { get; set; }
 	[Property] public float ReloadTime { get; set; } = 2f;
+	[Property] public float EmptyReloadTime { get; set; } = 2f;
 	[Property] public float DeployTime { get; set; } = 0.5f;
 	[Property] public float FireRate { get; set; } = 3f;
 	[Property] public float Spread { get; set; } = 0.01f;
@@ -20,9 +21,11 @@ public abstract class WeaponComponent : Component
 	[Property] public int ClipSize { get; set; } = 30;
 	[Property] public CitizenAnimationHelper.HoldTypes HoldType { get; set; } = CitizenAnimationHelper.HoldTypes.Pistol;
 	[Property] public SoundEvent DeploySound { get; set; }
+	[Property] public SoundEvent HolsterSound { get; set; }
 	[Property] public SoundEvent FireSound { get; set; }
 	[Property] public SoundEvent EmptyClipSound { get; set; }
 	[Property] public SoundSequenceData ReloadSoundSequence { get; set; }
+	[Property] public SoundSequenceData EmptyReloadSoundSequence { get; set; }
 	[Property] public ParticleSystem MuzzleFlash { get; set; }
 	[Property] public ParticleSystem ImpactEffect { get; set; }
 	[Property] public ParticleSystem MuzzleSmoke { get; set; }
@@ -100,18 +103,9 @@ public abstract class WeaponComponent : Component
 		if ( trace.Component.IsValid() )
 			damageable = trace.Component.Components.GetInAncestorsOrSelf<IHealthComponent>();
 
+
 		if ( damageable is not null )
 		{
-			/*if ( trace.Hitbox is not null && trace.Hitbox.Tags.Has( "head" ) )
-			{
-				player.DoHitMarker( true );
-				damage *= 3f;
-			}
-			else
-			{
-				player.DoHitMarker( false );
-			}*/
-			
 			damageable.TakeDamage( DamageType.Bullet, damage, trace.EndPosition, trace.Direction * DamageForce, GameObject.Id );
 		}
 		else if ( trace.Hit )
@@ -146,16 +140,25 @@ public abstract class WeaponComponent : Component
 		if ( !player.IsValid() || IsReloading )
 			return false;
 
-		if ( !player.Ammo.TryTake( AmmoType, ammoToTake, out var taken ) )
+		if ( !player.Ammo.CanTake( AmmoType, ammoToTake, out var taken ) )
 			return false;
-
+		
 		EffectRenderer.Set( "b_reload", true );
-		ReloadFinishTime = ReloadTime;
+		ReloadFinishTime = AmmoInClip == 0 ? EmptyReloadTime : ReloadTime;
 		IsReloading = true;
 
 		SendReloadMessage();
 			
 		return true;
+	}
+	protected virtual void onReloadEnd()
+	{
+		var ammoToTake = ClipSize - AmmoInClip;
+		var player = Components.GetInAncestors<PlayerController>();
+		player.Ammo.TryTake( AmmoType, ammoToTake, out var taken );
+		AmmoInClip += taken;
+		EffectRenderer.Set( "b_empty", false );
+		IsReloading = false;
 	}
 
 	protected override void OnStart()
@@ -214,13 +217,7 @@ public abstract class WeaponComponent : Component
 	{
 		if ( !IsProxy && ReloadFinishTime && IsReloading )
 		{
-			
-			var ammoToTake = ClipSize - AmmoInClip;
-			var player = Components.GetInAncestors<PlayerController>();
-			player.Ammo.CanTake( AmmoType, ammoToTake, out var taken );
-			AmmoInClip += taken;
-			EffectRenderer.Set( "b_empty", false );
-			IsReloading = false;
+			onReloadEnd();
 		}
 
 		ReloadSound?.Update( Transform.Position );
@@ -228,7 +225,7 @@ public abstract class WeaponComponent : Component
 
 		base.OnUpdate();
 	}
-
+	
 	protected override void OnDestroy()
 	{
 		if ( IsDeployed )
@@ -273,7 +270,7 @@ public abstract class WeaponComponent : Component
 		
 		ReloadSound?.Stop();
 		
-		ReloadSound = new( ReloadSoundSequence );
+		ReloadSound = new( AmmoInClip == 0 ? EmptyReloadSoundSequence : ReloadSoundSequence );
 		ReloadSound.Start( Transform.Position );
 	}
 

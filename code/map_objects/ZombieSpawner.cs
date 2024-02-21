@@ -12,7 +12,6 @@ public sealed class ZombieSpawner : Component
 		
 	}
 
-
 	protected override void DrawGizmos()
 	{
 		const float boxSize = 4f;
@@ -29,7 +28,6 @@ public sealed class ZombieSpawner : Component
 
 	void SpawnZombie()
 	{
-		
 		var zombie = ZombiePrefab.Clone( this.Transform.World );
 		zombie.NetworkSpawn();
 	}
@@ -42,12 +40,11 @@ public sealed class ZombieSpawner : Component
 			var random = GetRandom();
 			GetRandom();
 
-			if (random >= 60f)
+			if (random >= 90f)
 			{
 				SpawnZombie();
 			}
 			nextSecond = 5;
-			//Log.Info(random);
 		}
 		
 		

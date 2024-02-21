@@ -1,0 +1,62 @@
+{
+  "RootObject": {
+    "Id": "955d9632-88b8-457d-aaba-c8df0be627fb",
+    "Name": "gloc_loot",
+    "Enabled": true,
+    "Components": [
+      {
+        "__type": "ModelRenderer",
+        "BodyGroups": 1,
+        "MaterialGroup": null,
+        "MaterialOverride": null,
+        "Model": "models/glock/w/w_glock20lod0.vmdl",
+        "RenderType": "On",
+        "Tint": "1,1,1,1"
+      },
+      {
+        "__type": "WeaponPickup",
+        "Collider": {
+          "_type": "component",
+          "go": "955d9632-88b8-457d-aaba-c8df0be627fb",
+          "component_type": "SphereCollider"
+        },
+        "PickupSound": "sounds/item.pickup.sound",
+        "WeaponPrefab": {
+          "_type": "gameobject",
+          "prefab": "prefabs/weapons/pm/glock.prefab"
+        }
+      },
+      {
+        "__type": "Rigidbody",
+        "AngularDamping": 0,
+        "Gravity": true,
+        "LinearDamping": 0,
+        "Locking": {},
+        "MassOverride": 0,
+        "RigidbodyFlags": 0,
+        "StartAsleep": false
+      },
+      {
+        "__type": "SphereCollider",
+        "Center": "0,0,0",
+        "IsTrigger": true,
+        "Radius": 10,
+        "Static": false,
+        "Surface": null
+      },
+      {
+        "__type": "BoxCollider",
+        "Center": "0,0,0",
+        "IsTrigger": false,
+        "Scale": "10,10,10",
+        "Static": false,
+        "Surface": null
+      }
+    ],
+    "Children": []
+  },
+  "ShowInMenu": false,
+  "MenuPath": null,
+  "MenuIcon": null,
+  "__references": []
+}

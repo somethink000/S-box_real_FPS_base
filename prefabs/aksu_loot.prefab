@@ -1,8 +1,7 @@
 {
   "RootObject": {
-    "Id": "955d9632-88b8-457d-aaba-c8df0be627fb",
+    "Id": "5309f0b3-b500-4aff-a4e2-d3df6f6ed21c",
     "Name": "aksu_loot",
-    "Position": "-126.4144,19.86161,26.94964",
     "Enabled": true,
     "Components": [
       {
@@ -10,7 +9,7 @@
         "BodyGroups": 9493,
         "MaterialGroup": null,
         "MaterialOverride": null,
-        "Model": "models/pm/w/pmm_ref.vmdl",
+        "Model": "models/aksu/w/ak74u_modern_ak74u_mag_ref.vmdl",
         "RenderType": "On",
         "Tint": "1,1,1,1"
       },
@@ -18,13 +17,13 @@
         "__type": "WeaponPickup",
         "Collider": {
           "_type": "component",
-          "go": "955d9632-88b8-457d-aaba-c8df0be627fb",
+          "go": "5309f0b3-b500-4aff-a4e2-d3df6f6ed21c",
           "component_type": "SphereCollider"
         },
         "PickupSound": "sounds/item.pickup.sound",
         "WeaponPrefab": {
           "_type": "gameobject",
-          "prefab": "prefabs/weapons/pm/pm.prefab"
+          "prefab": "prefabs/weapons/aksu/aksu.prefab"
         }
       },
       {
@@ -53,7 +52,8 @@
         "Static": false,
         "Surface": null
       }
-    ]
+    ],
+    "Children": []
   },
   "ShowInMenu": false,
   "MenuPath": null,
