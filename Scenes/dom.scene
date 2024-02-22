@@ -10,6 +10,7 @@
       "Components": [
         {
           "__type": "SpawnPoint",
+          "__enabled": false,
           "Color": "0.8902,0.31765,0.05098,1"
         }
       ]
@@ -23,6 +24,7 @@
       "Components": [
         {
           "__type": "SpawnPoint",
+          "__enabled": false,
           "Color": "0.8902,0.31765,0.05098,1"
         }
       ]
@@ -57,6 +59,36 @@
     {
       "Id": "3713b0f8-0c68-45a3-911d-eee51fbcd371",
       "Name": "zps1 (1)",
+      "Position": "4627.471,-5291.66,407.2516",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "ZombieSpawner",
+          "ZombiePrefab": {
+            "_type": "gameobject",
+            "prefab": "prefabs/zombie.prefab"
+          }
+        }
+      ]
+    },
+    {
+      "Id": "0634f357-cc89-43c7-8ecd-7d842d61438f",
+      "Name": "zps1 (2)",
+      "Position": "4627.471,-5291.66,407.2516",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "ZombieSpawner",
+          "ZombiePrefab": {
+            "_type": "gameobject",
+            "prefab": "prefabs/zombie.prefab"
+          }
+        }
+      ]
+    },
+    {
+      "Id": "0097a41e-0b2e-4a17-9c40-c25d9c49ade4",
+      "Name": "zps1 (3)",
       "Position": "4627.471,-5291.66,407.2516",
       "Enabled": true,
       "Components": [
@@ -202,7 +234,7 @@
         {
           "Id": "ebea6dae-53ef-4291-b55e-48e8c1abaf6c",
           "Name": "Cube (4)",
-          "Position": "-2429.649,-1392.431,108.796",
+          "Position": "-2429.649,-1392.431,77.30771",
           "Rotation": "0,0,-0.7071069,-0.7071066",
           "Scale": "23.86562,1,4.810962",
           "Enabled": true,
@@ -338,82 +370,44 @@
               "Tint": "1,1,1,1"
             }
           ]
-        },
-        {
-          "Id": "19ce1260-9e72-4f5b-9276-132b78c36e64",
-          "Name": "Plane",
-          "Position": "0,0,-538.7766",
-          "Scale": "74.91355,74.91355,74.91355",
-          "Enabled": true,
-          "Components": [
-            {
-              "__type": "ModelRenderer",
-              "BodyGroups": 18446744073709551615,
-              "MaterialGroup": null,
-              "MaterialOverride": null,
-              "Model": "models/dev/plane.vmdl",
-              "RenderType": "On",
-              "Tint": "1,1,1,1"
-            },
-            {
-              "__type": "PlaneCollider",
-              "Center": "0,0,0",
-              "IsTrigger": false,
-              "Scale": "100,100",
-              "Static": true,
-              "Surface": null
-            }
-          ]
         }
       ]
     },
     {
-      "Id": "89d63f41-0740-4c9d-a2ff-b005cdee1d48",
-      "Name": "aksu_loot",
-      "Position": "2308.258,1425.628,170.733",
-      "Rotation": "-0.008760571,0.0003835987,0.9990042,0.04374444",
-      "Enabled": true,
-      "__Prefab": "prefabs/aksu_loot.prefab"
-    },
-    {
-      "Id": "bf914720-cc78-4b6c-972b-e2f27a7967b9",
-      "Name": "gloc_loot",
-      "Position": "2320.119,1316.78,165.6511",
-      "Rotation": "0.02473733,-0.7061313,0.706674,0.03712666",
-      "Enabled": true,
-      "__Prefab": "prefabs/gloc_loot.prefab"
-    },
-    {
-      "Id": "296e3d2d-aa91-4302-9419-65652b4ebf75",
-      "Name": "aksu_loot (1)",
-      "Position": "-882.7113,609.5717,34.65773",
+      "Id": "80317054-66d1-4f6e-8969-c8d8250eb4d1",
+      "Name": "aksu",
+      "Position": "-982.8096,643.1626,71.4436",
       "Rotation": "0.0006307354,0.02090403,-0.03015182,0.9993265",
+      "Scale": "1.5,1.5,1.5",
       "Enabled": true,
-      "__Prefab": "prefabs/aksu_loot.prefab"
+      "__Prefab": "prefabs/weapons/aksu/aksu.prefab"
     },
     {
-      "Id": "bf55b90b-d86c-4e1b-bd95-c400eb231a30",
-      "Name": "gloc_loot (1)",
-      "Position": "-908.0765,713.175,30.97454",
-      "Rotation": "0.0006307354,0.02090403,-0.03015182,0.9993265",
+      "Id": "732ff047-b00e-468b-b177-0a1363010069",
+      "Name": "glock",
+      "Position": "-976.2396,785.019,74.10767",
+      "Rotation": "-0.000528696,0.01867935,0.02828657,0.9994252",
+      "Scale": "1.5,1.5,1.5",
       "Enabled": true,
-      "__Prefab": "prefabs/gloc_loot.prefab"
+      "__Prefab": "prefabs/weapons/pm/glock.prefab"
     },
     {
-      "Id": "0f170c30-7343-44ec-bb70-2760d55281b1",
-      "Name": "gloc_loot (2)",
-      "Position": "294.6559,-3416.888,18.94781",
-      "Rotation": "-0.00001004338,0.000005717524,1,0.00001715257",
+      "Id": "778e8f33-2c2d-43c1-af1d-03d0fc1cfd4e",
+      "Name": "machette",
+      "Position": "-1023.468,739.7717,68.68025",
+      "Rotation": "-0.4065994,0.5835457,-0.4220876,0.562133",
+      "Scale": "1.5,1.5,1.5",
       "Enabled": true,
-      "__Prefab": "prefabs/gloc_loot.prefab"
+      "__Prefab": "prefabs/weapons/machette/machette.prefab"
     },
     {
-      "Id": "284a183a-c6ce-446c-afe7-9919961b7429",
-      "Name": "aksu_loot (2)",
-      "Position": "297.395,-3314.817,23.94669",
-      "Rotation": "-0.00001004338,0.000005717524,1,0.00001715257",
+      "Id": "3ab71597-e919-4f4d-8a9f-7545ba3206e9",
+      "Name": "m67",
+      "Position": "-1038.818,765.3709,67.47946",
+      "Rotation": "-0.000528696,0.01867935,0.02828657,0.9994252",
+      "Scale": "1.5,1.5,1.5",
       "Enabled": true,
-      "__Prefab": "prefabs/aksu_loot.prefab"
+      "__Prefab": "prefabs/weapons/m67_granade/m67.prefab"
     }
   ],
   "SceneProperties": {
@@ -439,6 +433,6 @@
   },
   "Title": "minimal",
   "Description": "",
-  "LastSaved": "2024-02-21T03:27:30.7910399-08:00",
+  "LastSaved": "2024-02-22T06:10:39.7029475-08:00",
   "__references": []
 }

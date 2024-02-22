@@ -1,6 +1,6 @@
 {
   "RootObject": {
-    "Id": "8024fbd5-e1f4-4456-876c-d80ebbbe5317",
+    "Id": "732ff047-b00e-468b-b177-0a1363010069",
     "Name": "glock",
     "Scale": "1.5,1.5,1.5",
     "Enabled": true,
@@ -18,8 +18,8 @@
         "Tint": "1,1,1,1"
       },
       {
-        "__type": "Pistol",
-        "aimPos": "-1,1.41,0.5",
+        "__type": "BaseGun",
+        "aimPos": "-1,1.43,0.56",
         "aimRotation": "0,0,0,0",
         "AmmoType": "Pistol",
         "ClipSize": 15,
@@ -32,24 +32,50 @@
         "EmptyClipSound": "sounds/weapons/empty_submachineguns.sound",
         "EmptyReloadSoundSequence": "models/glock/glockemptyreload.sndseq",
         "EmptyReloadTime": 3.05,
-        "FireRate": 5,
+        "FireRate": 7,
         "FireSound": "models/glock/glock20_fire1.sound",
         "HoldType": "Pistol",
         "HolsterSound": "sounds/weapons/weapon_holster3.sound",
         "idlePos": "-4,0,0",
         "ImpactEffect": "particles/impact.generic.vpcf",
+        "IsAuto": false,
         "IsDeployed": false,
         "MuzzleFlash": "particles/pistol_muzzleflash.vpcf",
         "MuzzleSmoke": "particles/impact.generic.smokepuff.vpcf",
         "Recoil": "-30,0,0",
         "ReloadSoundSequence": "models/glock/glockreload.sndseq",
         "ReloadTime": 2.7,
-        "runRotation": "0,0,0.1736482,0.9848077",
+        "runRotation": "-0.01513444,0.08583164,0.1729874,0.9810603",
         "Spread": 0.01,
         "ViewModelPrefab": {
           "_type": "gameobject",
           "prefab": "prefabs/weapons/pm/vm_glock.prefab"
         }
+      },
+      {
+        "__type": "SphereCollider",
+        "Center": "0,0,0",
+        "IsTrigger": true,
+        "Radius": 10,
+        "Static": false,
+        "Surface": null
+      },
+      {
+        "__type": "ModelCollider",
+        "IsTrigger": false,
+        "Model": "models/glock/w/w_glock20lod0.vmdl",
+        "Static": false,
+        "Surface": null
+      },
+      {
+        "__type": "Rigidbody",
+        "AngularDamping": 0,
+        "Gravity": true,
+        "LinearDamping": 0,
+        "Locking": {},
+        "MassOverride": 0,
+        "RigidbodyFlags": 0,
+        "StartAsleep": false
       }
     ],
     "Children": []

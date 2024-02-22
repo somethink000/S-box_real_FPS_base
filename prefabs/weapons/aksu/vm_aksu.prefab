@@ -1,6 +1,6 @@
 {
   "RootObject": {
-    "Id": "91af700e-d7fa-4c06-884b-ccdcabb0a095",
+    "Id": "efbfbb2e-90e5-4fce-a88c-44bccfc01351",
     "Name": "vm_aksu",
     "Tags": "viewmodel",
     "Enabled": true,
@@ -9,7 +9,7 @@
         "__type": "ViewModel",
         "ModelRenderer": {
           "_type": "component",
-          "go": "91af700e-d7fa-4c06-884b-ccdcabb0a095",
+          "go": "efbfbb2e-90e5-4fce-a88c-44bccfc01351",
           "component_type": "SkinnedModelRenderer"
         },
         "UseSprintAnimation": false
@@ -25,33 +25,25 @@
         "Model": "models/aksu/v/ak74u_modern_ak74u_mag_ref.vmdl",
         "RenderType": "Off",
         "Tint": "1,1,1,1"
+      },
+      {
+        "__type": "SkinnedModelRenderer",
+        "AnimationGraph": null,
+        "BodyGroups": 18446744073709551615,
+        "BoneMergeTarget": {
+          "_type": "component",
+          "go": "efbfbb2e-90e5-4fce-a88c-44bccfc01351",
+          "component_type": "SkinnedModelRenderer"
+        },
+        "CreateBoneObjects": false,
+        "MaterialGroup": null,
+        "MaterialOverride": null,
+        "Model": "models/handes/pmm_ref_hand_red.vmdl",
+        "RenderType": "Off",
+        "Tint": "1,1,1,1"
       }
     ],
-    "Children": [
-      {
-        "Id": "c51c57a0-1212-424e-9ab2-04af9b406019",
-        "Name": "Arms",
-        "Enabled": true,
-        "Components": [
-          {
-            "__type": "SkinnedModelRenderer",
-            "AnimationGraph": null,
-            "BodyGroups": 21,
-            "BoneMergeTarget": {
-              "_type": "component",
-              "go": "91af700e-d7fa-4c06-884b-ccdcabb0a095",
-              "component_type": "SkinnedModelRenderer"
-            },
-            "CreateBoneObjects": false,
-            "MaterialGroup": null,
-            "MaterialOverride": null,
-            "Model": "models/handes/pmm_ref_hand_red.vmdl",
-            "RenderType": "Off",
-            "Tint": "1,1,1,1"
-          }
-        ]
-      }
-    ]
+    "Children": []
   },
   "ShowInMenu": false,
   "MenuPath": null,

@@ -1,6 +1,6 @@
 {
   "RootObject": {
-    "Id": "885540ed-d9c6-411d-918f-2ee246382fe2",
+    "Id": "02b4246c-42d8-4564-a460-7cd67fbd1c3e",
     "Name": "aksu",
     "Scale": "1.5,1.5,1.5",
     "Enabled": true,
@@ -18,17 +18,17 @@
         "Tint": "1,1,1,1"
       },
       {
-        "__type": "Pistol",
+        "__type": "BaseGun",
         "aimPos": "-1,1.92,0.57",
         "aimRotation": "0,0,0,0",
         "AmmoType": "Rifle",
         "ClipSize": 30,
-        "Damage": 45,
+        "Damage": 40,
         "DamageForce": 5,
-        "DefaultAmmo": 80,
+        "DefaultAmmo": 90,
         "DeploySound": "sounds/weapons/weapon_deploy3.sound",
         "DeployTime": 0.5,
-        "DisplayName": "44 Magnum",
+        "DisplayName": "Ak74U",
         "EmptyClipSound": "sounds/weapons/empty_assaultrifles.sound",
         "EmptyReloadSoundSequence": "models/aksu/aksu_reload_empty.sndseq",
         "EmptyReloadTime": 3,
@@ -38,18 +38,44 @@
         "HolsterSound": "sounds/weapons/weapon_holster3.sound",
         "idlePos": "-3,0,0",
         "ImpactEffect": "particles/impact.generic.vpcf",
+        "IsAuto": true,
         "IsDeployed": false,
         "MuzzleFlash": "particles/pistol_muzzleflash.vpcf",
         "MuzzleSmoke": "particles/impact.generic.smokepuff.vpcf",
         "Recoil": "-30,0,0",
         "ReloadSoundSequence": "models/aksu/aksu_reload.sndseq",
         "ReloadTime": 3,
-        "runRotation": "0,0,0.1736482,0.9848077",
+        "runRotation": "-0.02255756,0.08418597,0.2578342,0.9622502",
         "Spread": 0.01,
         "ViewModelPrefab": {
           "_type": "gameobject",
           "prefab": "prefabs/weapons/aksu/vm_aksu.prefab"
         }
+      },
+      {
+        "__type": "SphereCollider",
+        "Center": "0,0,0",
+        "IsTrigger": true,
+        "Radius": 10,
+        "Static": false,
+        "Surface": null
+      },
+      {
+        "__type": "ModelCollider",
+        "IsTrigger": false,
+        "Model": "models/aksu/w/ak74u_modern_ak74u_mag_ref.vmdl",
+        "Static": false,
+        "Surface": null
+      },
+      {
+        "__type": "Rigidbody",
+        "AngularDamping": 0,
+        "Gravity": true,
+        "LinearDamping": 0,
+        "Locking": {},
+        "MassOverride": 0,
+        "RigidbodyFlags": 0,
+        "StartAsleep": false
       }
     ],
     "Children": []

@@ -4,14 +4,14 @@ using Sandbox;
 
 namespace GeneralGame;
 
-[Group( "Arena" )]
-[Title( "Weapon Container" )]
+
 public sealed class WeaponContainer : Component
 {
 	[Property] public PrefabScene StartingWeapon { get; set; }
 	[Property] public GameObject WeaponBone { get; set; }
 	[Property] public AmmoContainer Ammo { get; set; }
-	
+	[Property] public PlayerController PlayrControl { get; set; }
+
 	public WeaponComponent Deployed => Components.GetAll<WeaponComponent>( FindMode.EverythingInSelfAndDescendants ).FirstOrDefault( c => c.IsDeployed );
 	public IEnumerable<WeaponComponent> All => Components.GetAll<WeaponComponent>( FindMode.EverythingInSelfAndDescendants );
 	public bool HasAny => All.Any();
@@ -45,7 +45,7 @@ public sealed class WeaponContainer : Component
 
 		var weaponGo = prefab.Clone();
 		var weapon = weaponGo.Components.GetInDescendantsOrSelf<WeaponComponent>( true );
-
+		weapon.owner = PlayrControl;
 		if ( !weapon.IsValid() )
 		{
 			weaponGo.DestroyImmediate();
@@ -59,21 +59,25 @@ public sealed class WeaponContainer : Component
 				w.Holster();
 			}
 		}
-		
+
 		weaponGo.SetParent( WeaponBone );
 		weaponGo.Transform.Position = WeaponBone.Transform.Position;
 		weaponGo.Transform.Rotation = WeaponBone.Transform.Rotation;
 
-		weapon.AmmoInClip = weapon.ClipSize;
-		weapon.IsDeployed = !Deployed.IsValid();
+		var nextWeponGo = prefab.Components.GetInDescendantsOrSelf<BaseGun>( true );
+		if ( nextWeponGo.IsValid() ) {
 
-		var ammoToGive = weapon.DefaultAmmo - Ammo.Get( weapon.AmmoType );
+			nextWeponGo.AmmoInClip = nextWeponGo.ClipSize;
+			nextWeponGo.IsDeployed = !Deployed.IsValid();
 
-		if ( ammoToGive > 0 )
-		{
-			Ammo.Give( weapon.AmmoType, ammoToGive );
+			var ammoToGive = nextWeponGo.DefaultAmmo - Ammo.Get( nextWeponGo.AmmoType );
+
+			if ( ammoToGive > 0 )
+			{
+				Ammo.Give( nextWeponGo.AmmoType, ammoToGive );
+			}
 		}
-		
+
 		weaponGo.NetworkSpawn();
 	}
 	

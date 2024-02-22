@@ -4,8 +4,7 @@ using System.Numerics;
 
 namespace GeneralGame;
 
-[Group( "Arena" )]
-[Title( "View Model")]
+
 public sealed class ViewModel : Component
 {
 	[Property] public SkinnedModelRenderer ModelRenderer { get; set; }
@@ -28,8 +27,10 @@ public sealed class ViewModel : Component
 	private float ReturnSpeed => 30.0f;
 	private float MaxOffsetLength => 0.5f;
 	private float BobCycleTime => 5;
+	
 	private Vector3 BobDirection => new Vector3( 0.0f, 0.1f, 0.09f );
-
+	private Rotation CurSmoothRotate { get; set; }
+	private Rotation lastCameraCalc { get; set; }
 
 	public float YawInertia { get; private set; }
 	public float PitchInertia { get; private set; }
@@ -56,9 +57,9 @@ public sealed class ViewModel : Component
 
 
 		Transform.LocalPosition = Vector3.Zero;
-		Transform.LocalRotation = Rotation.Identity;
-		
-
+		CurRotation = Rotation.Identity;
+		CurSmoothRotate = Rotation.Identity;
+		lastCameraCalc = Camera.Transform.Rotation;
 		if ( PlayerController.IsValid() )
 		{
 			PlayerController.OnJump += OnPlayerJumped;
@@ -92,7 +93,7 @@ public sealed class ViewModel : Component
 	}
 
 
-	protected override void OnUpdate()
+	protected override void OnFixedUpdate()
 	{
 		
 		Vector3 plusPos = Vector3.Zero + Weapon.idlePos;
@@ -101,42 +102,69 @@ public sealed class ViewModel : Component
 		if ( PlayerController.IsAiming )
 		{ 
 			CurPos = CurPos.LerpTo( plusPos + Weapon.aimPos, Time.Delta * 10f );
+			//Camera.FieldOfView = Screen.CreateVerticalFieldOfView( 20f );
+			
 		}
 		else
 		{
 			CurPos = CurPos.LerpTo( plusPos, Time.Delta * 10f );
+			//Camera.FieldOfView = Screen.CreateVerticalFieldOfView( Game.Preferences.FieldOfView );
 		}
 		ModelRenderer.Set( "b_aiming", PlayerController.IsAiming );
 		
-		
-
-		Rotation plusRot = Camera.Transform.Rotation;
 
 		
-
-
-
 		CalcShakeMoves();
 
+
+
+		
 		if ( PlayerController.MoveSpeed > 150f )
 		{
-			CurRotation = Rotation.Lerp( CurRotation, plusRot * Rotation.From( 10, 20, 0 ), Time.Delta * 15f );
+			CurRotation = Rotation.Lerp( CurRotation, Rotation.Identity * Weapon.runRotation, Time.Delta * 10f );
 		}
 		else
 		{
-			CurRotation = Rotation.Lerp( CurRotation, plusRot, Time.Delta * 30f );
+			CurRotation = Rotation.Lerp( CurRotation, Rotation.Identity, Time.Delta * 10f );
 		}
 
-		Transform.Rotation = CurRotation;
+		CalcRotateSmooth();
+
+		Transform.LocalRotation = CurRotation;
 		Transform.LocalPosition = CurPos;
 
 		//base.OnUpdate();
 	}
 
-	
+	private void CalcRotateSmooth()
+	{
+		float CurX;
+		float CurY;
+
+		Rotation curCameraCalc = Camera.Transform.Rotation;
+
+
+		CurX = lastCameraCalc.Yaw() - curCameraCalc.Yaw();
+		CurY = lastCameraCalc.Pitch() - curCameraCalc.Pitch();
+
+
+		if ( PlayerController.IsAiming )
+		{
+			CurSmoothRotate = Rotation.From( 0, 0, 0 );
+		}
+		else
+		{
+			CurSmoothRotate = Rotation.From( Math.Clamp( CurY, -1, 1 ), Math.Clamp( CurX, -2, 2 ), 0 );
+		}
+		
+		CurRotation *= CurSmoothRotate;
+
+		lastCameraCalc = Rotation.Lerp( lastCameraCalc, curCameraCalc, Time.Delta * 30f );
+	}
+
 	private void CalcShakeMoves()
 	{
-		var newPitch = CurRotation.Pitch();
+		var newPitch = CurRotation.Pitch(); 
 		var newYaw = CurRotation.Yaw();
 
 		var pitchDelta = Angles.NormalizeAngle( newPitch - lastPitch );
@@ -210,22 +238,6 @@ public sealed class ViewModel : Component
 
 		return offset;
 	}
-
-
-	/*private void ApplyVelocity()
-	{*/
-		/*var moveVel = PlayerController.CharacterController.Velocity;
-		var moveLen = moveVel.Length;
-
-		var wishLook = PlayerController.WishVelocity.Normal * 1f;
-		if ( PlayerController.IsAiming ) wishLook = 0;
-
-		LerpedWishLook = LerpedWishLook.LerpTo( wishLook, Time.Delta * 5.0f );
-
-		CurRotation *= Rotation.From( 0, -LerpedWishLook.y * 50f, 0 );*/
-		//LocalPosition += -LerpedWishLook;
-
-	//}
 
 
 	private void OnPlayerJumped()

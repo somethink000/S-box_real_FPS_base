@@ -1,20 +1,15 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Net.Mail;
 using Sandbox;
 using Sandbox.Citizen;
-using Sandbox.VR;
-using static Sandbox.Component;
 
 namespace GeneralGame;
 
-[Group( "Arena" )]
-[Title( "Player Controller" )]
+
 public class PlayerController : Component, Component.ITriggerListener, IHealthComponent
 {
 	[Property] public Vector3 Gravity { get; set; } = new ( 0f, 0f, 800f );
-
 	[Property] public CharacterController CharacterController { get; private set; }
 	[Property] public SkinnedModelRenderer ModelRenderer { get; private set; }
 	[Property] public RagdollController Ragdoll { get; private set; }
@@ -458,38 +453,34 @@ protected virtual void DoCrouchingInput()
 			}
 		}
 
-
 		var weapon = Weapons.Deployed;
 		if ( !weapon.IsValid() ) return;
 
-		if ( Input.Released( "Reload" ) )
+
+		if ( Input.Pressed( "Reload" ) )
 		{
-			weapon.DoReload();
+			weapon.reloadAction();
+		}
+	
+		if ( Input.Pressed( "Attack1" ) )
+		{
+			weapon.primaryAction();
 		}
 
-		//if ( MoveSpeed < 150f ) return;
-
-		if ( Input.Down( "Attack1" ) )
+		if ( Input.Released( "Attack1" ) )
 		{
-			weapon.DoPrimaryAttack();
+			weapon.primaryActionRelease();
 		}
 
 		if ( Input.Pressed( "Attack2" ) )
 		{
-
-			IsAiming = true;
-			weapon.DoSeccondaryAttack();
+			weapon.seccondaryAction();
 		}
 
 		if ( Input.Released( "Attack2" ) )
 		{
-			IsAiming = false;
+			weapon.seccondaryActionRelease();
 		}
-
-		
-
-		
-
 	}
 
 	void ITriggerListener.OnTriggerEnter( Collider other )

@@ -11,7 +11,7 @@
 		var weapon = LocalPlayer.Weapons.Deployed;
 	}
 	
-	@if ( weapon.IsValid() && LocalPlayer.LifeState == LifeState.Alive  )
+	@* @if ( weapon.IsValid() && LocalPlayer.LifeState == LifeState.Alive  )
 	{
 		<div class="ammo">
 			@{
@@ -20,7 +20,7 @@
 			
 			<label class="clip">@weapon.AmmoInClip</label>/<label class="total">@totalAmmo</label>
 		</div>
-	}
+	} *@
 	
 	<div class="center">
 		<div class="crosshair"></div>

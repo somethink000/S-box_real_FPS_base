@@ -1,0 +1,81 @@
+{
+  "RootObject": {
+    "Id": "778e8f33-2c2d-43c1-af1d-03d0fc1cfd4e",
+    "Name": "machette",
+    "Scale": "1.5,1.5,1.5",
+    "Enabled": true,
+    "Components": [
+      {
+        "__type": "SkinnedModelRenderer",
+        "AnimationGraph": null,
+        "BodyGroups": 1,
+        "BoneMergeTarget": null,
+        "CreateBoneObjects": false,
+        "MaterialGroup": null,
+        "MaterialOverride": null,
+        "Model": "models/machette/w/w_machetelod0.vmdl",
+        "RenderType": "On",
+        "Tint": "1,1,1,1"
+      },
+      {
+        "__type": "BaseMele",
+        "aimPos": "0,0,0",
+        "aimRotation": "0,0,0,0",
+        "AttackSound": "models/machette/machete2.sound",
+        "Damage": 80,
+        "DamageForce": 5,
+        "DeploySound": "sounds/weapons/weapon_deploy3.sound",
+        "DeployTime": 0.5,
+        "DisplayName": "Machette",
+        "FireRate": 2,
+        "HitSound": "models/machette/knife_hit3.sound",
+        "HitWorldSound": "models/machette/knife_hitworld1.sound",
+        "HoldType": "Rifle",
+        "HolsterSound": "sounds/weapons/weapon_holster3.sound",
+        "idlePos": "-14,0,0",
+        "ImpactEffect": "particles/impact.generic.vpcf",
+        "IsDeployed": false,
+        "KillSound": "models/machette/knife_stab.sound",
+        "Punch": 0,
+        "Range": 100,
+        "runRotation": "-0.00007615242,0.008726203,0.008726203,0.9999238",
+        "SeccondaryDamage": 110,
+        "SeccondaryFireRate": 1.5,
+        "ViewModelPrefab": {
+          "_type": "gameobject",
+          "prefab": "prefabs/weapons/machette/vm_machette.prefab"
+        }
+      },
+      {
+        "__type": "SphereCollider",
+        "Center": "0,0,0",
+        "IsTrigger": true,
+        "Radius": 10,
+        "Static": false,
+        "Surface": null
+      },
+      {
+        "__type": "ModelCollider",
+        "IsTrigger": false,
+        "Model": "models/machette/w/w_machetelod0.vmdl",
+        "Static": false,
+        "Surface": null
+      },
+      {
+        "__type": "Rigidbody",
+        "AngularDamping": 0,
+        "Gravity": true,
+        "LinearDamping": 0,
+        "Locking": {},
+        "MassOverride": 0,
+        "RigidbodyFlags": 0,
+        "StartAsleep": false
+      }
+    ],
+    "Children": []
+  },
+  "ShowInMenu": false,
+  "MenuPath": null,
+  "MenuIcon": null,
+  "__references": []
+}
