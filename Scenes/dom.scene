@@ -2,34 +2,6 @@
   "Id": "6c8060eb-af23-47b9-be7e-d60f42ad3f94",
   "GameObjects": [
     {
-      "Id": "b38f3473-f4b9-40d4-985d-519bbcc81deb",
-      "Name": "Spawnpoint",
-      "Position": "2432.016,1389.08,143.0627",
-      "Rotation": "0,0,-1,0.00000008940697",
-      "Enabled": true,
-      "Components": [
-        {
-          "__type": "SpawnPoint",
-          "__enabled": false,
-          "Color": "0.8902,0.31765,0.05098,1"
-        }
-      ]
-    },
-    {
-      "Id": "a9e03212-9aa7-46e8-a7f8-741661b4665c",
-      "Name": "Spawnpoint (2)",
-      "Position": "407.5866,-3339.355,12.30236",
-      "Rotation": "0,0,1,0.0000001947072",
-      "Enabled": true,
-      "Components": [
-        {
-          "__type": "SpawnPoint",
-          "__enabled": false,
-          "Color": "0.8902,0.31765,0.05098,1"
-        }
-      ]
-    },
-    {
       "Id": "083aca3b-13f8-40c0-b6e7-c9832589cb3e",
       "Name": "Spawnpoint (1)",
       "Position": "-784.5682,678.656,20.71458",
@@ -374,40 +346,145 @@
       ]
     },
     {
-      "Id": "80317054-66d1-4f6e-8969-c8d8250eb4d1",
-      "Name": "aksu",
-      "Position": "-982.8096,643.1626,71.4436",
-      "Rotation": "0.0006307354,0.02090403,-0.03015182,0.9993265",
-      "Scale": "1.5,1.5,1.5",
+      "Id": "a645abc0-130b-41bf-8d50-112ec42fe8da",
+      "Name": "\u0027WepanSpawn",
+      "Position": "-1015.168,624.3295,87.00333",
       "Enabled": true,
-      "__Prefab": "prefabs/weapons/aksu/aksu.prefab"
+      "Components": [
+        {
+          "__type": "PickupSpawner",
+          "PickupPrefab": {
+            "_type": "gameobject",
+            "prefab": "prefabs/weapons/aksu/aksu.prefab"
+          },
+          "RespawnTime": 30
+        }
+      ]
     },
     {
-      "Id": "732ff047-b00e-468b-b177-0a1363010069",
-      "Name": "glock",
-      "Position": "-976.2396,785.019,74.10767",
-      "Rotation": "-0.000528696,0.01867935,0.02828657,0.9994252",
-      "Scale": "1.5,1.5,1.5",
+      "Id": "8db7ac28-d16b-432c-8fa4-eae5af17c84a",
+      "Name": "\u0027WepanSpawn (1)",
+      "Position": "-1015.168,697.3281,87.00333",
       "Enabled": true,
-      "__Prefab": "prefabs/weapons/pm/glock.prefab"
+      "Components": [
+        {
+          "__type": "PickupSpawner",
+          "PickupPrefab": {
+            "_type": "gameobject",
+            "prefab": "prefabs/weapons/m67_granade/m67.prefab"
+          },
+          "RespawnTime": 30
+        }
+      ]
     },
     {
-      "Id": "778e8f33-2c2d-43c1-af1d-03d0fc1cfd4e",
-      "Name": "machette",
-      "Position": "-1023.468,739.7717,68.68025",
-      "Rotation": "-0.4065994,0.5835457,-0.4220876,0.562133",
-      "Scale": "1.5,1.5,1.5",
+      "Id": "2c146050-c31d-41a0-9595-c3623c6218b4",
+      "Name": "Spawnpoint (3)",
+      "Position": "1655.749,-592.6552,46.76888",
+      "Rotation": "0,0,-1,0.0000001937151",
       "Enabled": true,
-      "__Prefab": "prefabs/weapons/machette/machette.prefab"
+      "Components": [
+        {
+          "__type": "SpawnPoint",
+          "Color": "0.8902,0.31765,0.05098,1"
+        }
+      ]
     },
     {
-      "Id": "3ab71597-e919-4f4d-8a9f-7545ba3206e9",
-      "Name": "m67",
-      "Position": "-1038.818,765.3709,67.47946",
-      "Rotation": "-0.000528696,0.01867935,0.02828657,0.9994252",
-      "Scale": "1.5,1.5,1.5",
+      "Id": "ad8dfd24-06c3-467b-9070-87c234f1fba0",
+      "Name": "\u0027WepanSpawn (7)",
+      "Position": "1425.149,-534.5111,113.0576",
       "Enabled": true,
-      "__Prefab": "prefabs/weapons/m67_granade/m67.prefab"
+      "Components": [
+        {
+          "__type": "PickupSpawner",
+          "PickupPrefab": {
+            "_type": "gameobject",
+            "prefab": "prefabs/weapons/machette/machette.prefab"
+          },
+          "RespawnTime": 30
+        }
+      ]
+    },
+    {
+      "Id": "7a2c485f-efb9-47ba-858e-3ce744355ceb",
+      "Name": "\u0027WepanSpawn (6)",
+      "Position": "1425.149,-482.2585,113.0576",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "PickupSpawner",
+          "PickupPrefab": {
+            "_type": "gameobject",
+            "prefab": "prefabs/weapons/pm/glock.prefab"
+          },
+          "RespawnTime": 30
+        }
+      ]
+    },
+    {
+      "Id": "af583e63-8abd-49d7-8b9f-171a3e90949c",
+      "Name": "\u0027WepanSpawn (5)",
+      "Position": "1425.149,-646.9817,113.0576",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "PickupSpawner",
+          "PickupPrefab": {
+            "_type": "gameobject",
+            "prefab": "prefabs/weapons/aksu/aksu.prefab"
+          },
+          "RespawnTime": 30
+        }
+      ]
+    },
+    {
+      "Id": "8b94894a-615d-4cbb-b3a6-35bdd16b39b6",
+      "Name": "\u0027WepanSpawn (4)",
+      "Position": "1425.149,-573.983,113.0576",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "PickupSpawner",
+          "PickupPrefab": {
+            "_type": "gameobject",
+            "prefab": "prefabs/weapons/m67_granade/m67.prefab"
+          },
+          "RespawnTime": 30
+        }
+      ]
+    },
+    {
+      "Id": "c308e0a5-d132-4893-9d4a-98f359e88f8c",
+      "Name": "\u0027WepanSpawn (2)",
+      "Position": "-1015.168,736.8001,87.00333",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "PickupSpawner",
+          "PickupPrefab": {
+            "_type": "gameobject",
+            "prefab": "prefabs/weapons/machette/machette.prefab"
+          },
+          "RespawnTime": 30
+        }
+      ]
+    },
+    {
+      "Id": "94701b1c-91a1-4c25-91c6-409597fcd762",
+      "Name": "\u0027WepanSpawn (3)",
+      "Position": "-1015.168,789.0527,87.00333",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "PickupSpawner",
+          "PickupPrefab": {
+            "_type": "gameobject",
+            "prefab": "prefabs/weapons/pm/glock.prefab"
+          },
+          "RespawnTime": 30
+        }
+      ]
     }
   ],
   "SceneProperties": {
@@ -433,6 +510,6 @@
   },
   "Title": "minimal",
   "Description": "",
-  "LastSaved": "2024-02-22T06:10:39.7029475-08:00",
+  "LastSaved": "2024-02-22T06:33:55.5391556-08:00",
   "__references": []
 }

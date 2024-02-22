@@ -40,7 +40,7 @@ public sealed class ZombieSpawner : Component
 			var random = GetRandom();
 			GetRandom();
 
-			if (random >= 70f)
+			if (random >= 65f)
 			{
 				SpawnZombie();
 			}

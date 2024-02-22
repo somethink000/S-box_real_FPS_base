@@ -57,7 +57,12 @@ public class BaseGun : WeaponComponent, IUse
 			GameObject.Destroy();
 		}
 	}
-
+	
+	protected override void OnDeployed()
+	{
+		base.OnDeployed();
+		EffectRenderer.Set( "b_empty", AmmoInClip == 0 );
+	}
 	protected override void OnHolstered()
 	{
 		ReloadSound?.Stop();

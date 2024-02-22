@@ -9,10 +9,10 @@ namespace GeneralGame;
 public class PickupSpawner : Component
 {
 	[Property] public GameObject PickupPrefab { get; set; }
-	[Property] public float RespawnTime { get; set; } = 30f;
+	[Property] public float RespawnTime { get; set; } = 50f;
 	
 	private TimeUntil? TimeUntilRespawn { get; set; }
-	private PickupComponent Pickup { get; set; }
+	private WeaponComponent Pickup { get; set; }
 
 	protected override void DrawGizmos()
 	{
@@ -56,7 +56,7 @@ public class PickupSpawner : Component
 
 		var go = PickupPrefab.Clone();
 			
-		Pickup = go.Components.Get<PickupComponent>();
+		Pickup = go.Components.Get<WeaponComponent>();
 			
 		go.Transform.Position = Transform.Position;
 		go.Transform.Rotation = Transform.Rotation;

@@ -11,23 +11,23 @@
 		var weapon = LocalPlayer.Weapons.Deployed;
 	}
 	
-	@* @if ( weapon.IsValid() && LocalPlayer.LifeState == LifeState.Alive  )
+	@if ( weapon.IsValid() && LocalPlayer.LifeState == LifeState.Alive  )
 	{
-		<div class="ammo">
+		@* <div class="ammo">
 			@{
 				var totalAmmo = LocalPlayer.Ammo.Get( weapon.AmmoType );
 			}
 			
 			<label class="clip">@weapon.AmmoInClip</label>/<label class="total">@totalAmmo</label>
-		</div>
-	} *@
+		</div> *@
+	}
 	
 	<div class="center">
-		<div class="crosshair"></div>
-		@* @if (weapon.IsValid() && !LocalPlayer.IsAiming)
+		@* <div class="crosshair"></div> *@
+		@if (weapon.IsValid() && !LocalPlayer.IsAiming)
 		{
 			<div class="crosshair"></div>
-		} *@
+		}
 	</div>
 </root>
 
