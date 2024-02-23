@@ -24,9 +24,9 @@ public sealed class ViewModel : Component
 	private float bobSpeed;
 
 	private float SwingInfluence => 0.05f;
-	private float ReturnSpeed => 30.0f;
+	private float ReturnSpeed => 20.0f;
 	private float MaxOffsetLength => 0.5f;
-	private float BobCycleTime => 5;
+	private float BobCycleTime => 10;
 	
 	private Vector3 BobDirection => new Vector3( 0.0f, 0.1f, 0.09f );
 	private Rotation CurSmoothRotate { get; set; }

@@ -3,9 +3,6 @@ using Sandbox.Network;
 
 namespace GeneralGame;
 
-[Group( "Arena" )]
-[Title( "Pickup Spawner" )]
-[Icon( "paid" )]
 public class PickupSpawner : Component
 {
 	[Property] public GameObject PickupPrefab { get; set; }

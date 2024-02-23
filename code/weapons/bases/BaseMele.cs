@@ -18,15 +18,6 @@ public class BaseMele : WeaponComponent, IUse
 	[Property] public float Punch { get; set; }
 
 
-	/*var ent = new BaseItem
-	{
-		Position = EyePosition + EyeRotation.Forward * 50,
-		Rotation = EyeRotation
-
-	};
-
-	ent.Velocity = EyeRotation.Forward* 500;*/
-
 	[Broadcast]
 	public virtual void OnUse( Guid pickerId )
 	{

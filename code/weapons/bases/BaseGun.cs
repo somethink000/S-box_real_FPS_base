@@ -17,7 +17,6 @@ public class BaseGun : WeaponComponent, IUse
 	[Property] public SoundSequenceData EmptyReloadSoundSequence { get; set; }
 	[Property] public ParticleSystem MuzzleFlash { get; set; }
 	[Property] public ParticleSystem ImpactEffect { get; set; }
-	[Property] public ParticleSystem MuzzleSmoke { get; set; }
 	[Property] public AmmoType AmmoType { get; set; } = AmmoType.Pistol;
 	[Property] public int DefaultAmmo { get; set; } = 60;
 	[Property] public int ClipSize { get; set; } = 30;
@@ -243,18 +242,6 @@ public class BaseGun : WeaponComponent, IUse
 				p = new( Scene.SceneWorld, MuzzleFlash );
 				p.SetControlPoint( 0, transform.Value );
 				p.PlayUntilFinished( Task );
-			}
-		}
-
-		if ( MuzzleSmoke is not null )
-		{
-			var transform = EffectRenderer.SceneModel.GetAttachment( "muzzle" );
-
-			if ( transform.HasValue )
-			{
-				/*p = new( Scene.SceneWorld, MuzzleSmoke );
-				p.SetControlPoint( 0, transform.Value );
-				p.PlayUntilFinished( Task );*/
 			}
 		}
 

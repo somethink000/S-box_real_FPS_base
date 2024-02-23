@@ -18,7 +18,7 @@ public sealed class WeaponContainer : Component
 
 	public bool Has( GameObject prefab )
 	{
-		return All.Any( w => w.GameObject.Name == prefab.Name );
+		return All.Any( w => w.GameObject.Components.GetInDescendantsOrSelf<WeaponComponent>( true ).DisplayName == prefab.Components.GetInDescendantsOrSelf<WeaponComponent>( true ).DisplayName );
 	}
 
 	public void Clear()
@@ -64,12 +64,12 @@ public sealed class WeaponContainer : Component
 		weaponGo.Transform.Position = WeaponBone.Transform.Position;
 		weaponGo.Transform.Rotation = WeaponBone.Transform.Rotation;
 
-		var nextWeponGo = prefab.Components.GetInDescendantsOrSelf<BaseGun>( true );
+		var nextWeponGo = weaponGo.Components.GetInDescendantsOrSelf<BaseGun>( true );
 		if ( nextWeponGo.IsValid() ) {
-
+			
 			nextWeponGo.AmmoInClip = nextWeponGo.ClipSize;
 			nextWeponGo.IsDeployed = !Deployed.IsValid();
-
+			
 			var ammoToGive = nextWeponGo.DefaultAmmo - Ammo.Get( nextWeponGo.AmmoType );
 
 			if ( ammoToGive > 0 )
