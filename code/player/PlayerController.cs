@@ -6,16 +6,13 @@ using Sandbox.Citizen;
 
 namespace GeneralGame;
 
-
-public class PlayerController : Component, Component.ITriggerListener, IHealthComponent
+public class PlayerController : Component, IHealthComponent
 {
 	[Property] public Vector3 Gravity { get; set; } = new ( 0f, 0f, 800f );
 	[Property] public CharacterController CharacterController { get; private set; }
 	[Property] public SkinnedModelRenderer ModelRenderer { get; private set; }
 	[Property] public RagdollController Ragdoll { get; private set; }
 	[Property] public List<CitizenAnimationHelper> Animators { get; private set; } = new();
-	public RealTimeSince LastHitmarkerTime { get; private set; }
-	public Vector3 WishVelocity { get; private set; }
 	[Property] private CitizenAnimationHelper ShadowAnimator { get; set; }
 	[Property] public WeaponContainer Weapons { get; set; }
 	[Property] public CameraComponent PlyCamera { get; set; }
@@ -26,12 +23,10 @@ public class PlayerController : Component, Component.ITriggerListener, IHealthCo
 	[Property] public CitizenAnimationHelper AnimationHelper { get; set; }
 	[Property] public SoundEvent HurtSound { get; set; }
 	[Property] public bool SicknessMode { get; set; }
-	//[Property] public bool EnableCrouching { get; set; }
 	[Property] public float StandHeight { get; set; } = 64f;
 	[Property] public float DuckHeight { get; set; } = 28f;
 	[Property] public float HealthRegenPerSecond { get; set; } = 10f;
 	[Property] public Action OnJump { get; set; }
-	private Vector3 SieatOffset => new Vector3( 0f, 0f, -40f );
 	[Sync, Property] public float MaxHealth { get; private set; } = 100f;
 	[Sync] public LifeState LifeState { get; private set; } = LifeState.Alive;
 	[Sync] public float Health { get; private set; } = 100f;
@@ -42,7 +37,8 @@ public class PlayerController : Component, Component.ITriggerListener, IHealthCo
 	[Sync] public bool IsCrouching { get; set; }
 	[Sync] public int Deaths { get; private set; }
 	[Sync] public int Kills { get; private set; }
-
+	public Vector3 WishVelocity { get; private set; }
+	private Vector3 SieatOffset => new Vector3( 0f, 0f, -40f );
 	private RealTimeSince LastGroundedTime { get; set; }
 	private RealTimeSince LastUngroundedTime { get; set; }
 	private RealTimeSince TimeSinceDamaged { get; set; }
@@ -56,11 +52,6 @@ public class PlayerController : Component, Component.ITriggerListener, IHealthCo
 		Recoil += recoil;
 	}
 	
-	public void DoHitMarker( bool isHeadshot )
-	{
-		Sound.Play( isHeadshot ? "hitmarker.headshot" : "hitmarker.hit" );
-		LastHitmarkerTime = 0f;
-	}
 
 	public void ResetViewAngles()
 	{
@@ -120,6 +111,7 @@ public class PlayerController : Component, Component.ITriggerListener, IHealthCo
 			LifeState = LifeState.Dead;
 			Ragdoll.Ragdoll( position, force );
 			SendKilledMessage( attackerId );
+			
 		}
 	}
 
@@ -139,7 +131,11 @@ public class PlayerController : Component, Component.ITriggerListener, IHealthCo
 				var chat = Scene.GetAllComponents<Chat>().FirstOrDefault();
 
 				if ( chat.IsValid() )
-					chat.AddTextLocal( "💀️", $"{this.Network.OwnerConnection.DisplayName} has killed {Network.OwnerConnection.DisplayName}" );
+
+					if ( attacker.Network.OwnerConnection.DisplayName != this.Network.OwnerConnection.DisplayName )
+					{
+						chat.AddTextLocal( "💀️", $"{this.Network.OwnerConnection.DisplayName} has killed {attacker.Network.OwnerConnection.DisplayName}" );
+					}
 				
 				if ( !this.IsProxy )
 				{
@@ -151,6 +147,12 @@ public class PlayerController : Component, Component.ITriggerListener, IHealthCo
 		if ( IsProxy )
 			return;
 
+		if ( Weapons.Deployed.IsValid() ) 
+		{
+			Weapons.Deployed.Holster();
+		}
+		
+		
 		RespawnAsync( 3f );
 		
 		Deaths++;
@@ -305,7 +307,6 @@ public class PlayerController : Component, Component.ITriggerListener, IHealthCo
 		if ( IsCrouching && hasViewModel ) 
 		{
 			PlyCamera.Transform.Position = PlyCamera.Transform.Position + SieatOffset;
-			//Scene.Camera.Transform.Position = SieatOffset;
 		} 
 	}
 
@@ -481,17 +482,6 @@ protected virtual void DoCrouchingInput()
 		{
 			weapon.seccondaryActionRelease();
 		}
-	}
-
-	void ITriggerListener.OnTriggerEnter( Collider other )
-	{
-		
-		
-	}
-
-	void ITriggerListener.OnTriggerExit( Collider other )
-	{
-		
 	}
 	
 	private void MoveToSpawnPoint()

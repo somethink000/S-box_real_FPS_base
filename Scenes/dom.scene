@@ -29,51 +29,6 @@
       ]
     },
     {
-      "Id": "3713b0f8-0c68-45a3-911d-eee51fbcd371",
-      "Name": "zps1 (1)",
-      "Position": "4627.471,-5291.66,407.2516",
-      "Enabled": true,
-      "Components": [
-        {
-          "__type": "ZombieSpawner",
-          "ZombiePrefab": {
-            "_type": "gameobject",
-            "prefab": "prefabs/zombie.prefab"
-          }
-        }
-      ]
-    },
-    {
-      "Id": "0634f357-cc89-43c7-8ecd-7d842d61438f",
-      "Name": "zps1 (2)",
-      "Position": "-4905.868,2372.039,498.1115",
-      "Enabled": true,
-      "Components": [
-        {
-          "__type": "ZombieSpawner",
-          "ZombiePrefab": {
-            "_type": "gameobject",
-            "prefab": "prefabs/zombie.prefab"
-          }
-        }
-      ]
-    },
-    {
-      "Id": "0097a41e-0b2e-4a17-9c40-c25d9c49ade4",
-      "Name": "zps1 (3)",
-      "Position": "4627.471,3954.444,198.89",
-      "Enabled": true,
-      "Components": [
-        {
-          "__type": "ZombieSpawner",
-          "ZombiePrefab": {
-            "_type": "gameobject",
-            "prefab": "prefabs/zombie.prefab"
-          }
-        }
-      ]
-    },
-    {
       "Id": "9d4b76af-44c2-4f50-abff-3e62a0e2b753",
       "Name": "MapObjects",
       "Position": "-16.73947,-29.02401,131.4671",
@@ -315,7 +270,7 @@
           "Id": "e62cf48b-ed49-4de0-a975-0c76457b0952",
           "Name": "Sun",
           "Position": "0,0,0",
-          "Rotation": "0,0.258819,0,0.9659258",
+          "Rotation": "0,0.07974215,0,0.9968156",
           "Tags": "light_directional,light",
           "Enabled": true,
           "Components": [
@@ -323,9 +278,9 @@
               "__type": "DirectionalLight",
               "FogMode": "Enabled",
               "FogStrength": 1,
-              "LightColor": "0.91373,0.98039,1,1",
+              "LightColor": "0.57674,0.44476,0.24679,1",
               "Shadows": true,
-              "SkyColor": "0.05882,0.07451,0.08235,1"
+              "SkyColor": "0.06031,0.07282,0.07907,1"
             }
           ]
         },
@@ -485,6 +440,54 @@
           "RespawnTime": 30
         }
       ]
+    },
+    {
+      "Id": "5a7dbb4e-1ae6-4515-8be0-00ca7be0362a",
+      "Name": "ZmbSpawn",
+      "Position": "-3264.152,3951.407,595.3449",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "ZombieSpawner",
+          "RespawnTime": 8,
+          "ZombiePrefab": {
+            "_type": "gameobject",
+            "prefab": "prefabs/zombie.prefab"
+          }
+        }
+      ]
+    },
+    {
+      "Id": "4bc4960e-b688-4c09-887c-16ae09a1f3da",
+      "Name": "ZmbSpawn (1)",
+      "Position": "6106.933,3951.407,518.0339",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "ZombieSpawner",
+          "RespawnTime": 8,
+          "ZombiePrefab": {
+            "_type": "gameobject",
+            "prefab": "prefabs/zombie.prefab"
+          }
+        }
+      ]
+    },
+    {
+      "Id": "d59c81e8-ce0d-4918-a09e-096e8651db03",
+      "Name": "ZmbSpawn (2)",
+      "Position": "3474.125,-4910.982,551.993",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "ZombieSpawner",
+          "RespawnTime": 8,
+          "ZombiePrefab": {
+            "_type": "gameobject",
+            "prefab": "prefabs/zombie.prefab"
+          }
+        }
+      ]
     }
   ],
   "SceneProperties": {
@@ -510,6 +513,6 @@
   },
   "Title": "minimal",
   "Description": "",
-  "LastSaved": "2024-02-23T01:10:56.1427463-08:00",
+  "LastSaved": "2024-02-24T05:56:47.8645768-08:00",
   "__references": []
 }

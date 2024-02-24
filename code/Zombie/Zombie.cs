@@ -95,7 +95,8 @@ public sealed class Zombie : Component, IHealthComponent
 		{
 			LifeState = LifeState.Dead;
 			var zombie = ZombieRagedol.Clone( this.GameObject.Transform.Position, this.GameObject.Transform.Rotation );
-			this.GameObject.Destroy();
+			zombie.NetworkSpawn();
+			GameObject.Destroy();
 		}
 
 	}

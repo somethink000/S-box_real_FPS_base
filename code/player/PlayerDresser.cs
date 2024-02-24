@@ -2,8 +2,6 @@ using Sandbox;
 
 namespace GeneralGame;
 
-[Group( "Arena" )]
-[Title( "Player Dresser" )]
 public sealed class PlayerDresser : Component, Component.INetworkSpawn
 {
 	[Property] public SkinnedModelRenderer BodyRenderer { get; set; }

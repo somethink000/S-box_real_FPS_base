@@ -4,8 +4,6 @@ using System.Linq;
 
 namespace GeneralGame;
 
-[Group( "Arena" )]
-[Title( "Health Effects" )]
 public sealed class HealthEffects : Component
 {
 	[Property] public ColorAdjustments Adjustments { get; set; }

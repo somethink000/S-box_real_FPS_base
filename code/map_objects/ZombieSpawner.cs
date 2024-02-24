@@ -4,13 +4,9 @@ using Sandbox;
 namespace GeneralGame;
 public sealed class ZombieSpawner : Component
 {
-
 	[Property] public GameObject ZombiePrefab { get; set; }
-	public float GetRandom() => Random.Shared.Float(1, 100);
-	protected override void OnUpdate()
-	{
-		
-	}
+	[Property] public float RespawnTime { get; set; } = 50f;
+	private TimeUntil? TimeUntilRespawn { get; set; }
 
 	protected override void DrawGizmos()
 	{
@@ -26,28 +22,32 @@ public sealed class ZombieSpawner : Component
 		Gizmo.Draw.Color = Color.Cyan.WithAlpha( (Gizmo.IsHovered || Gizmo.IsSelected) ? 0.8f : 0.6f );
 	}
 
-	void SpawnZombie()
+	protected override void OnStart()
 	{
-		var zombie = ZombiePrefab.Clone( this.Transform.World );
-		zombie.NetworkSpawn();
+		TimeUntilRespawn = 5f;
+		base.OnStart();
 	}
 
-	TimeUntil nextSecond = 5f;
 	protected override void OnFixedUpdate()
 	{
-		if (nextSecond)
-		{
-			var random = GetRandom();
-			GetRandom();
+		base.OnFixedUpdate();
 
-			if (random >= 65f)
-			{
-				SpawnZombie();
-			}
-			nextSecond = 5;
+		if ( !Networking.IsHost )
+			return;
+
+		if ( !TimeUntilRespawn.HasValue )
+		{
+			TimeUntilRespawn = RespawnTime;
+			return;
 		}
-		
-		
+
+		if ( !TimeUntilRespawn.Value )
+			return;
+
+		var zombie = ZombiePrefab.Clone( this.Transform.World );
+		zombie.NetworkSpawn();
+
+		TimeUntilRespawn = null;
 	}
 
 }

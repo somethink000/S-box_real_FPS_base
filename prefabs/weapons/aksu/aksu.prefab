@@ -1,6 +1,6 @@
 {
   "RootObject": {
-    "Id": "02b4246c-42d8-4564-a460-7cd67fbd1c3e",
+    "Id": "82413b1a-1007-4714-87e1-f6f6db3bd74f",
     "Name": "aksu",
     "Scale": "1.5,1.5,1.5",
     "Enabled": true,
@@ -41,7 +41,6 @@
         "IsAuto": true,
         "IsDeployed": false,
         "MuzzleFlash": "particles/pistol_muzzleflash.vpcf",
-        "MuzzleSmoke": "particles/impact.generic.smokepuff.vpcf",
         "Recoil": "-30,0,0",
         "ReloadSoundSequence": "models/aksu/aksu_reload.sndseq",
         "ReloadTime": 3,
@@ -51,14 +50,6 @@
           "_type": "gameobject",
           "prefab": "prefabs/weapons/aksu/vm_aksu.prefab"
         }
-      },
-      {
-        "__type": "SphereCollider",
-        "Center": "0,0,0",
-        "IsTrigger": true,
-        "Radius": 10,
-        "Static": false,
-        "Surface": null
       },
       {
         "__type": "ModelCollider",

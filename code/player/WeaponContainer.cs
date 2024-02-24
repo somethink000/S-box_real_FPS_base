@@ -18,6 +18,7 @@ public sealed class WeaponContainer : Component
 
 	public bool Has( GameObject prefab )
 	{
+		//TODO make this beter
 		return All.Any( w => w.GameObject.Components.GetInDescendantsOrSelf<WeaponComponent>( true ).DisplayName == prefab.Components.GetInDescendantsOrSelf<WeaponComponent>( true ).DisplayName );
 	}
 
@@ -79,6 +80,8 @@ public sealed class WeaponContainer : Component
 		}
 
 		weaponGo.NetworkSpawn();
+		weaponGo.Components.Get<ModelCollider>().Destroy();
+		weaponGo.Components.Get<Rigidbody>().Destroy();
 	}
 	
 	public void Next()

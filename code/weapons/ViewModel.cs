@@ -138,6 +138,7 @@ public sealed class ViewModel : Component
 
 	private void CalcRotateSmooth()
 	{
+		//TODO make this beter
 		float CurX;
 		float CurY;
 
@@ -154,7 +155,7 @@ public sealed class ViewModel : Component
 		}
 		else
 		{
-			CurSmoothRotate = Rotation.From( Math.Clamp( CurY, -1, 1 ), Math.Clamp( CurX, -2, 2 ), 0 );
+			CurSmoothRotate = Rotation.From( Math.Clamp( CurY, -1, 1 ), Math.Clamp( CurX, -1, 1 ), 0 );
 		}
 		
 		CurRotation *= CurSmoothRotate;
