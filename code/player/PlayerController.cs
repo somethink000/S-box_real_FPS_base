@@ -431,7 +431,7 @@ protected virtual void DoCrouchingInput()
 		else if ( Input.MouseWheel.y < 0 )
 			Weapons.Previous();
 
-		if ( Input.Down( "use" ) )
+		if ( Input.Pressed( "use" ) )
 		{
 			var startPos = PlyCamera.Transform.Position;
 			var direction = PlyCamera.Transform.Rotation.Forward;

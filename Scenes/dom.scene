@@ -335,7 +335,7 @@
     {
       "Id": "2c146050-c31d-41a0-9595-c3623c6218b4",
       "Name": "Spawnpoint (3)",
-      "Position": "1655.749,-592.6552,46.76888",
+      "Position": "1655.749,-1032.395,46.76888",
       "Rotation": "0,0,-1,0.0000001937151",
       "Enabled": true,
       "Components": [
@@ -348,7 +348,7 @@
     {
       "Id": "ad8dfd24-06c3-467b-9070-87c234f1fba0",
       "Name": "\u0027WepanSpawn (7)",
-      "Position": "1425.149,-534.5111,113.0576",
+      "Position": "1425.149,-974.2507,113.0576",
       "Enabled": true,
       "Components": [
         {
@@ -364,7 +364,7 @@
     {
       "Id": "7a2c485f-efb9-47ba-858e-3ce744355ceb",
       "Name": "\u0027WepanSpawn (6)",
-      "Position": "1425.149,-482.2585,113.0576",
+      "Position": "1425.149,-921.9982,113.0576",
       "Enabled": true,
       "Components": [
         {
@@ -380,7 +380,7 @@
     {
       "Id": "af583e63-8abd-49d7-8b9f-171a3e90949c",
       "Name": "\u0027WepanSpawn (5)",
-      "Position": "1425.149,-646.9817,113.0576",
+      "Position": "1425.149,-1086.721,113.0576",
       "Enabled": true,
       "Components": [
         {
@@ -396,7 +396,7 @@
     {
       "Id": "8b94894a-615d-4cbb-b3a6-35bdd16b39b6",
       "Name": "\u0027WepanSpawn (4)",
-      "Position": "1425.149,-573.983,113.0576",
+      "Position": "1425.149,-1013.723,113.0576",
       "Enabled": true,
       "Components": [
         {
@@ -488,6 +488,98 @@
           }
         }
       ]
+    },
+    {
+      "Id": "2e60fe26-0f11-47e5-87c0-1fcbbf3f20c3",
+      "Name": "telephone_box_door",
+      "Position": "166.2057,517.056,27.50138",
+      "Rotation": "0,0,-0.7071067,0.7071068",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "ModelRenderer",
+          "BodyGroups": 1,
+          "MaterialGroup": null,
+          "MaterialOverride": null,
+          "Model": "models/props/trim_sheets/doors/wooden_doors/wooden_door_01c.vmdl",
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "ModelCollider",
+          "IsTrigger": false,
+          "Model": "models/props/trim_sheets/doors/wooden_doors/wooden_door_01c.vmdl",
+          "Static": false,
+          "Surface": null
+        },
+        {
+          "__type": "DoorEntity",
+          "MoveDir": "0,0,0.7071068,0.7071068",
+          "MoveSpeed": 5,
+          "Open": false
+        }
+      ]
+    },
+    {
+      "Id": "26776665-ae23-4790-8522-594cf35c9bdb",
+      "Name": "telephone_box_door (2)",
+      "Position": "-438.49,-661.1033,27.50137",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "ModelRenderer",
+          "BodyGroups": 1,
+          "MaterialGroup": null,
+          "MaterialOverride": null,
+          "Model": "models/props/trim_sheets/doors/wooden_doors/wooden_door_01c.vmdl",
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "ModelCollider",
+          "IsTrigger": false,
+          "Model": "models/props/trim_sheets/doors/wooden_doors/wooden_door_01c.vmdl",
+          "Static": false,
+          "Surface": null
+        },
+        {
+          "__type": "DoorEntity",
+          "MoveDir": "0,0,0.7071068,0.7071068",
+          "MoveSpeed": 5,
+          "Open": false
+        }
+      ]
+    },
+    {
+      "Id": "525ba114-e80f-4524-9937-dd6e45be6f57",
+      "Name": "telephone_box_door (1)",
+      "Position": "72.0349,515.9174,27.50138",
+      "Rotation": "0,0,0.7071067,0.7071068",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "ModelRenderer",
+          "BodyGroups": 1,
+          "MaterialGroup": null,
+          "MaterialOverride": null,
+          "Model": "models/props/trim_sheets/doors/wooden_doors/wooden_door_01c.vmdl",
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "ModelCollider",
+          "IsTrigger": false,
+          "Model": "models/props/trim_sheets/doors/wooden_doors/wooden_door_01c.vmdl",
+          "Static": false,
+          "Surface": null
+        },
+        {
+          "__type": "DoorEntity",
+          "MoveDir": "0,-0,-0.7071068,0.7071068",
+          "MoveSpeed": 5,
+          "Open": false
+        }
+      ]
     }
   ],
   "SceneProperties": {
@@ -513,6 +605,8 @@
   },
   "Title": "minimal",
   "Description": "",
-  "LastSaved": "2024-02-24T05:56:47.8645768-08:00",
-  "__references": []
+  "LastSaved": "2024-03-01T11:22:42.2430989-08:00",
+  "__references": [
+    "facepunch.wooden_door_01c"
+  ]
 }
