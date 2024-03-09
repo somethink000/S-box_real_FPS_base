@@ -4,8 +4,7 @@ using Sandbox.Network;
 
 namespace GeneralGame;
 
-[Group( "Arena" )]
-[Title( "Network Manager")]
+
 public class NetworkManager : Component, Component.INetworkListener
 {
 	[Property] public PrefabScene PlayerPrefab { get; set; }

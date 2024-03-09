@@ -162,14 +162,6 @@ public class PlayerController : Component, IHealthComponent
 	{
 		base.OnAwake();
 
-		
-		//ModelRenderer = Components.GetInDescendantsOrSelf<SkinnedModelRenderer>();
-
-		/*CharacterController = Components.GetInDescendantsOrSelf<CharacterController>();
-		CharacterController.IgnoreLayers.Add( "player" );
-		
-		Ragdoll = Components.GetInDescendantsOrSelf<RagdollController>();*/
-
 		if ( CharacterController.IsValid() )
 		{
 			CharacterController.Height = StandHeight;

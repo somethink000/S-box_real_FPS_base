@@ -1,7 +1,10 @@
 using System;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
+using GeneralGame;
 using Sandbox;
+using Sandbox.Internal;
 
 namespace GeneralGame;
 
@@ -19,59 +22,90 @@ public static class Extensions
 		}
 		catch ( TaskCanceledException )
 		{
-			// Do nothing.
+
 		}
 
 		particles.Delete();
 	}
-	
+
+
+
 	public static void ApplyWithComponent( this ClothingContainer self, SkinnedModelRenderer body )
 	{
+		RuntimeHelpers.EnsureSufficientExecutionStack();
 		self.Reset( body );
-		
-		var skinMaterial = self.Clothing?.Select( x => x?.SkinMaterial ).Where( x => !string.IsNullOrWhiteSpace( x ) ).Select( Material.Load ).FirstOrDefault();
-		var eyesMaterial = self.Clothing?.Select( x => x?.EyesMaterial ).Where( x => !string.IsNullOrWhiteSpace( x ) ).Select( Material.Load ).FirstOrDefault();
-
-		if ( skinMaterial is not null ) body.SetMaterialOverride( skinMaterial, "skin" );
-		if ( eyesMaterial is not null ) body.SetMaterialOverride( eyesMaterial, "eyes" );
-		
-		foreach ( var c in self.Clothing )
+		SkinnedModelRenderer skinnedModelRenderer = null;
+		Material material = (from x in self.Clothing?.Select( ( ClothingContainer.ClothingEntry x ) => x?.Clothing.SkinMaterial )
+							 where !string.IsNullOrWhiteSpace( x )
+							 select Material.Load( x )).FirstOrDefault();
+		Material material2 = (from x in self.Clothing?.Select( ( ClothingContainer.ClothingEntry x ) => x?.Clothing.EyesMaterial )
+							  where !string.IsNullOrWhiteSpace( x )
+							  select Material.Load( x )).FirstOrDefault();
+		if ( material != null )
 		{
-			var modelPath = c.GetModel( self.Clothing.Except( new[] { c } ) );
-
-			if ( string.IsNullOrEmpty( modelPath ) || !string.IsNullOrEmpty( c.SkinMaterial ) )
-				continue;
-
-			var model = Model.Load( modelPath );
-			if ( model is null || model.IsError )
-				continue;
-
-			var go = new GameObject( false, $"Clothing - {c.ResourceName}" )
-			{
-				Parent = body.GameObject
-			};
-
-			var component = go.Components.Create<ClothingComponent>();
-			component.Category = c.Category;
-			
-			go.Tags.Add( "clothing" );
-			
-			var r = go.Components.Create<SkinnedModelRenderer>();
-			r.Model = Model.Load( c.Model );
-			r.BoneMergeTarget = body;
-
-			if ( skinMaterial is not null ) r.SetMaterialOverride( skinMaterial, "skin" );
-			if ( eyesMaterial is not null ) r.SetMaterialOverride( eyesMaterial, "eyes" );
-
-			if ( !string.IsNullOrEmpty( c.MaterialGroup ) )
-				r.MaterialGroup = c.MaterialGroup;
-			
-			go.Enabled = true;
+			body.SetMaterialOverride( material, "skin" );
 		}
-		
+
+		if ( material2 != null )
+		{
+			body.SetMaterialOverride( material2, "eyes" );
+		}
+
+		foreach ( ClothingContainer.ClothingEntry item in self.Clothing )
+		{
+			Clothing clothing = item.Clothing;
+			string model = clothing.GetModel( self.Clothing.Select( ( ClothingContainer.ClothingEntry x ) => x.Clothing ).Except( new Clothing[1] { clothing } ) );
+			if ( !string.IsNullOrEmpty( model ) && string.IsNullOrEmpty( clothing.SkinMaterial ) && !(Model.Load( model )?.IsError ?? true) )
+			{
+				GameObject gameObject = new GameObject( enabled: false, "Clothing - " + clothing.ResourceName );
+				RuntimeHelpers.EnsureSufficientExecutionStack();
+				gameObject.Parent = body.GameObject;
+				RuntimeHelpers.EnsureSufficientExecutionStack();
+				var component = gameObject.Components.Create<ClothingComponent>();
+				component.Category = clothing.Category;
+				gameObject.Tags.Add( "clothing" );
+				SkinnedModelRenderer skinnedModelRenderer2 = gameObject.Components.Create<SkinnedModelRenderer>();
+				RuntimeHelpers.EnsureSufficientExecutionStack();
+				skinnedModelRenderer2.Model = Model.Load( clothing.Model );
+				RuntimeHelpers.EnsureSufficientExecutionStack();
+				skinnedModelRenderer2.BoneMergeTarget = body;
+				if ( material != null )
+				{
+					skinnedModelRenderer2.SetMaterialOverride( material, "skin" );
+				}
+
+				if ( material2 != null )
+				{
+					skinnedModelRenderer2.SetMaterialOverride( material2, "eyes" );
+				}
+
+				if ( !string.IsNullOrEmpty( clothing.MaterialGroup ) )
+				{
+					skinnedModelRenderer2.MaterialGroup = clothing.MaterialGroup;
+				}
+
+				if ( clothing.Category == Clothing.ClothingCategory.Skin )
+				{
+					RuntimeHelpers.EnsureSufficientExecutionStack();
+					skinnedModelRenderer = skinnedModelRenderer2;
+				}
+
+				if ( clothing.AllowTintSelect )
+				{
+					RuntimeHelpers.EnsureSufficientExecutionStack();
+					skinnedModelRenderer2.Tint = clothing.TintSelection.Evaluate( item.Tint?.Clamp( 0f, 1f ) ?? clothing.TintDefault );
+				}
+
+				RuntimeHelpers.EnsureSufficientExecutionStack();
+				gameObject.Enabled = true;
+			}
+		}
+
 		foreach ( var (name, value) in self.GetBodyGroups() )
 		{
+			RuntimeHelpers.EnsureSufficientExecutionStack();
 			body.SetBodyGroup( name, value );
 		}
 	}
+
 }

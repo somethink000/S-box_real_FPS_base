@@ -167,7 +167,7 @@ public abstract class WeaponComponent : Component
 		ViewModel = viewModelGameObject.Components.Get<ViewModel>();
 		ViewModel.SetWeaponComponent( this );
 		ViewModel.SetCamera( player.PlyCamera );
-		
+		//ClothingContainer
 		ModelRenderer.Enabled = false;
 	}
 

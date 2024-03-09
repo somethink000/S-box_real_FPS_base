@@ -143,6 +143,8 @@ public class BaseGun : WeaponComponent, IUse
 		SendAttackMessage( origin, trace.EndPosition, trace.Distance );
 		IHealthComponent damageable = null;
 
+		//trace.Surface.DoBulletImpact( trace );
+
 		if ( trace.Component.IsValid() )
 			damageable = trace.Component.Components.GetInAncestorsOrSelf<IHealthComponent>();
 

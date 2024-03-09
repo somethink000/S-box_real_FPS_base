@@ -51,7 +51,7 @@ public class SoundSequence
 		if ( Handle.IsValid() )
 		{
 			Handle.Position = position;
-			Handle.Update();
+			
 		}
 		
 		if ( !NextSoundTime ) return;

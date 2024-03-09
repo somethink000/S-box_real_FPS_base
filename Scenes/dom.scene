@@ -449,7 +449,8 @@
       "Components": [
         {
           "__type": "ZombieSpawner",
-          "RespawnTime": 8,
+          "__enabled": false,
+          "RespawnTime": 10,
           "ZombiePrefab": {
             "_type": "gameobject",
             "prefab": "prefabs/zombie.prefab"
@@ -465,7 +466,8 @@
       "Components": [
         {
           "__type": "ZombieSpawner",
-          "RespawnTime": 8,
+          "__enabled": false,
+          "RespawnTime": 10,
           "ZombiePrefab": {
             "_type": "gameobject",
             "prefab": "prefabs/zombie.prefab"
@@ -481,7 +483,8 @@
       "Components": [
         {
           "__type": "ZombieSpawner",
-          "RespawnTime": 8,
+          "__enabled": false,
+          "RespawnTime": 10,
           "ZombiePrefab": {
             "_type": "gameobject",
             "prefab": "prefabs/zombie.prefab"
@@ -605,7 +608,7 @@
   },
   "Title": "minimal",
   "Description": "",
-  "LastSaved": "2024-03-01T11:22:42.2430989-08:00",
+  "LastSaved": "2024-03-08T16:08:43.3830546\u002B03:00",
   "__references": [
     "facepunch.wooden_door_01c"
   ]
