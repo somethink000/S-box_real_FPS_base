@@ -8,8 +8,6 @@
 	<div class="table">
 		<div class="table-row heading">
 			<div class="row-item">Name</div>
-			<div class="row-item">Kills</div>
-			<div class="row-item">Deaths</div>
 			<div class="row-item">⏲️</div>
 		</div>
 
@@ -30,8 +28,7 @@
 
 					@entry.DisplayName
 				</div>
-				<div class="row-item">@( player.IsValid() ? player.Kills : 0)</div>
-				<div class="row-item">@( player.IsValid() ? player.Deaths : 0)</div>
+
 				<div class="row-item">@GetTime( entry )</div>
 			</div>
 		}

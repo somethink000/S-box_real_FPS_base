@@ -20,8 +20,10 @@ public class BaseGun : WeaponComponent, IUse
 	[Property] public AmmoType AmmoType { get; set; } = AmmoType.Pistol;
 	[Property] public int DefaultAmmo { get; set; } = 60;
 	[Property] public int ClipSize { get; set; } = 30;
+
 	[Sync] public bool IsReloading { get; set; }
 	[Sync] public int AmmoInClip { get; set; }
+
 	public SoundSequence ReloadSound { get; set; }
 	public TimeUntil ReloadFinishTime { get; set; }
 	public bool IsFiering { get; set; } = false;

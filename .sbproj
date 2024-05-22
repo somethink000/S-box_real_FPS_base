@@ -1,5 +1,5 @@
 {
-  "Title": "Real FPS base",
+  "Title": "Some FPS base",
   "Type": "game",
   "Org": "evilinc",
   "Ident": "real_fps_base",
@@ -23,7 +23,6 @@
     "CsProjName": "",
     "StartupScene": "scenes/lobby.scene",
     "ProjectTemplate": null,
-    "MapStartupScene": null,
     "LaunchMode": "Normal"
   }
 }

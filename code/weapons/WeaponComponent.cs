@@ -22,6 +22,7 @@ public abstract class WeaponComponent : Component
 	[Property] public Vector3 aimPos { get; set; }
 	[Property] public Rotation aimRotation { get; set; }
 	[Property] public Rotation runRotation { get; set; }
+
 	public bool HasViewModel => ViewModel.IsValid();
 	public PlayerController owner { get; set; }
 	public SkinnedModelRenderer ModelRenderer { get; set; }
@@ -167,7 +168,6 @@ public abstract class WeaponComponent : Component
 		ViewModel = viewModelGameObject.Components.Get<ViewModel>();
 		ViewModel.SetWeaponComponent( this );
 		ViewModel.SetCamera( player.PlyCamera );
-		//ClothingContainer
 		ModelRenderer.Enabled = false;
 	}
 

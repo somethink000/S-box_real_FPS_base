@@ -11,6 +11,7 @@ public class EntThrow : Component
 	[Property] public SoundEvent explodeSound { get; set; }
 	[Property] public SoundEvent colideSound { get; set; }
 	[Property] public float range { get; set; }
+
 	public TimeUntil explodeTime { get; set; }
 	public TimeUntil removeTime { get; set; }
 	public bool isExploded { get; set; }

@@ -11,10 +11,13 @@ public sealed class Zombie : Component, IHealthComponent
 	[Property] public GameObject eye { get; set; }
 	[Property] public CitizenAnimationHelper animationHelper { get; set; }
 	[Property] public SoundEvent hitSounds { get; set; }
+	[Property] public GameObject ZombieRagedol { get; set; }
+
 	[Sync, Property] public float MaxHealth { get; private set; } = 100f;
 	[Sync] public LifeState LifeState { get; private set; } = LifeState.Alive;
 	[Sync] public float Health { get; private set; } = 100f;
-	[Property] public GameObject ZombieRagedol { get; set; }
+
+
 	private NavMeshAgent agent;
 	private PlayerController playerController;
 	public TimeSince timeSinceHit = 0;

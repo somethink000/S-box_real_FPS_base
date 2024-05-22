@@ -15,7 +15,6 @@ public sealed class ViewModel : Component
 
 	private float InertiaDamping => 15.0f;
 
-	//private Vector3 SieatOffset => new Vector3( 0f, 0f, -5f );
 
 	private Vector3 swingOffset;
 	private float lastPitch;
@@ -108,7 +107,7 @@ public sealed class ViewModel : Component
 		else
 		{
 			CurPos = CurPos.LerpTo( plusPos, Time.Delta * 10f );
-			//Camera.FieldOfView = Screen.CreateVerticalFieldOfView( Game.Preferences.FieldOfView );
+			
 		}
 		ModelRenderer.Set( "b_aiming", PlayerController.IsAiming );
 		
@@ -133,7 +132,6 @@ public sealed class ViewModel : Component
 		Transform.LocalRotation = CurRotation;
 		Transform.LocalPosition = CurPos;
 
-		//base.OnUpdate();
 	}
 
 	private void CalcRotateSmooth()

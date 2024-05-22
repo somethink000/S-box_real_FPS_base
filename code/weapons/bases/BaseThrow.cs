@@ -13,6 +13,7 @@ public class BaseThrow : WeaponComponent, IUse
 	[Property] public SoundEvent activateSound { get; set; }
 	[Property] public SoundEvent throwSound { get; set; }
 	[Property] public GameObject throwPrefab { get; set; }
+
 	public TimeUntil curPrepareTime { get; set; }
 	public TimeUntil curReleaseTime { get; set; }
 	public bool isPreparing { get; set; } = false;

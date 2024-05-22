@@ -3,8 +3,7 @@ using Sandbox;
 
 namespace GeneralGame;
 
-[Group( "Arena" )]
-[Title( "Ammo Container" )]
+
 public sealed class AmmoContainer : Component
 {
 	private Dictionary<AmmoType, int> AmmoCount { get; set; } = new();

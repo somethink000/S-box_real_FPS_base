@@ -3,16 +3,15 @@ using Sandbox;
 
 namespace GeneralGame;
 
-[Group( "Arena" )]
-[Title( "Weapon Manager")]
 public class WeaponManager : Component
 {
-	public static WeaponManager Instance { get; private set; }
 
-	public List<GameObject> Weapons { get; set; } = new();
-	
 	[Property] public List<PrefabScene> Prefabs { get; set; }
 
+	public static WeaponManager Instance { get; private set; }
+	public List<GameObject> Weapons { get; set; } = new();
+	
+	
 	protected override void OnAwake()
 	{
 		Instance = this;

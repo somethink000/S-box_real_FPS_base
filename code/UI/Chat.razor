@@ -82,13 +82,13 @@
 	{
 		if ( IsProxy ) return;
 
-		SendText( "🛎️", $"{channel.DisplayName} has joined the game" );
+		SendText( "", $"{channel.DisplayName} has joined the game" );
 	}
 
 	void INetworkListener.OnDisconnected( Connection channel )
 	{
 		if ( IsProxy ) return;
 
-		SendText(  "💨", $"{channel.DisplayName} has left the game" );
+		SendText(  "", $"{channel.DisplayName} has left the game" );
 	}
 }

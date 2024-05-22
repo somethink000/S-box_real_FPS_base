@@ -27,6 +27,7 @@ public class PlayerController : Component, IHealthComponent
 	[Property] public float DuckHeight { get; set; } = 28f;
 	[Property] public float HealthRegenPerSecond { get; set; } = 10f;
 	[Property] public Action OnJump { get; set; }
+
 	[Sync, Property] public float MaxHealth { get; private set; } = 100f;
 	[Sync] public LifeState LifeState { get; private set; } = LifeState.Alive;
 	[Sync] public float Health { get; private set; } = 100f;
@@ -35,8 +36,7 @@ public class PlayerController : Component, IHealthComponent
 	[Sync] public bool IsAiming { get; set; }
 	[Sync] public bool IsRunning { get; set; }
 	[Sync] public bool IsCrouching { get; set; }
-	[Sync] public int Deaths { get; private set; }
-	[Sync] public int Kills { get; private set; }
+
 	public Vector3 WishVelocity { get; private set; }
 	private Vector3 SieatOffset => new Vector3( 0f, 0f, -40f );
 	private RealTimeSince LastGroundedTime { get; set; }
@@ -44,6 +44,7 @@ public class PlayerController : Component, IHealthComponent
 	private RealTimeSince TimeSinceDamaged { get; set; }
 	private bool WantsToCrouch { get; set; }
 	private Angles Recoil { get; set; }
+
 
 	public void ApplyRecoil( Angles recoil )
 	{
@@ -126,23 +127,6 @@ public class PlayerController : Component, IHealthComponent
 
 	protected virtual void OnKilled( GameObject attacker )
 	{
-		if ( attacker.IsValid() )
-		{
-				var chat = Scene.GetAllComponents<Chat>().FirstOrDefault();
-
-				if ( chat.IsValid() )
-
-					if ( attacker.Network.OwnerConnection.DisplayName != this.Network.OwnerConnection.DisplayName )
-					{
-						chat.AddTextLocal( "💀️", $"{this.Network.OwnerConnection.DisplayName} has killed {attacker.Network.OwnerConnection.DisplayName}" );
-					}
-				
-				if ( !this.IsProxy )
-				{
-					// We killed this player.
-					this.Kills++;
-				}
-		}
 		
 		if ( IsProxy )
 			return;
@@ -155,9 +139,10 @@ public class PlayerController : Component, IHealthComponent
 		
 		RespawnAsync( 3f );
 		
-		Deaths++;
 	}
+
 	
+
 	protected override void OnAwake()
 	{
 		base.OnAwake();
@@ -169,7 +154,7 @@ public class PlayerController : Component, IHealthComponent
 		
 		if ( IsProxy )
 			return;
-
+		//DisableShadows();
 		ResetViewAngles();
 	}
 

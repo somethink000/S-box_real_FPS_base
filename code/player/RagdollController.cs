@@ -4,8 +4,7 @@ using System.Linq;
 
 namespace GeneralGame;
 
-[Group( "Arena" )]
-[Title( "Ragdoll Controller" )]
+
 public sealed class RagdollController : Component
 {
 	[Property] public ModelPhysics Physics { get; private set; }

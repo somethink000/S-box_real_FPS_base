@@ -1,26 +1,34 @@
 {
-  "Id": "6c8060eb-af23-47b9-be7e-d60f42ad3f94",
+  "__guid": "6c8060eb-af23-47b9-be7e-d60f42ad3f94",
   "GameObjects": [
     {
-      "Id": "083aca3b-13f8-40c0-b6e7-c9832589cb3e",
+      "__guid": "083aca3b-13f8-40c0-b6e7-c9832589cb3e",
+      "Flags": 0,
       "Name": "Spawnpoint (1)",
-      "Position": "-784.5682,678.656,20.71458",
-      "Rotation": "0,0,-1,0.0000001937151",
+      "Position": "96,608,32",
+      "Rotation": "0,0,-0.7071069,-0.7071066",
       "Enabled": true,
+      "NetworkMode": 2,
+      "NetworkInterpolation": true,
       "Components": [
         {
-          "__type": "SpawnPoint",
+          "__type": "Sandbox.SpawnPoint",
+          "__guid": "9dccaa11-1e3c-4edd-9f6d-c55aab7b4529",
           "Color": "0.8902,0.31765,0.05098,1"
         }
       ]
     },
     {
-      "Id": "57723daf-6b12-4e32-add9-81a777fe1625",
+      "__guid": "57723daf-6b12-4e32-add9-81a777fe1625",
+      "Flags": 0,
       "Name": "Network",
       "Enabled": true,
+      "NetworkMode": 2,
+      "NetworkInterpolation": true,
       "Components": [
         {
-          "__type": "NetworkManager",
+          "__type": "GeneralGame.NetworkManager",
+          "__guid": "cde27a66-8879-4fc5-980e-39c46afd33c9",
           "PlayerPrefab": {
             "_type": "gameobject",
             "prefab": "prefabs/player.prefab"
@@ -29,253 +37,28 @@
       ]
     },
     {
-      "Id": "9d4b76af-44c2-4f50-abff-3e62a0e2b753",
+      "__guid": "9d4b76af-44c2-4f50-abff-3e62a0e2b753",
+      "Flags": 0,
       "Name": "MapObjects",
       "Position": "-16.73947,-29.02401,131.4671",
       "Enabled": true,
+      "NetworkMode": 2,
+      "NetworkInterpolation": true,
       "Children": [
         {
-          "Id": "c4a54394-c7f1-416d-82d0-aac704969d3f",
-          "Name": "Cube",
-          "Position": "1549.874,2287.479,63.17668",
-          "Rotation": "0,0,-0.1305262,0.9914449",
-          "Scale": "23.86562,1,4.810962",
-          "Enabled": true,
-          "Components": [
-            {
-              "__type": "ModelRenderer",
-              "BodyGroups": 18446744073709551615,
-              "MaterialGroup": null,
-              "MaterialOverride": null,
-              "Model": "models/dev/box.vmdl",
-              "RenderType": "On",
-              "Tint": "1,1,1,1"
-            },
-            {
-              "__type": "BoxCollider",
-              "Center": "0,0,0",
-              "IsTrigger": false,
-              "Scale": "50,50,50",
-              "Static": false,
-              "Surface": null
-            }
-          ]
-        },
-        {
-          "Id": "f576119b-75d5-4387-a17b-af801b10098e",
-          "Name": "Map",
-          "Position": "767.2023,-2519.431,1584.684",
-          "Enabled": true,
-          "Components": [
-            {
-              "__type": "MapInstance",
-              "MapName": "maps/testbase.vmap",
-              "OnMapLoaded": null,
-              "OnMapUnloaded": null,
-              "UseMapFromLaunch": false
-            }
-          ],
-          "Children": []
-        },
-        {
-          "Id": "5deb7924-430e-4901-9675-33cb8f5c2c21",
-          "Name": "Cube (1)",
-          "Position": "-509.713,4133.889,36.11424",
-          "Rotation": "0,0,-0.7933533,0.6087615",
-          "Scale": "23.86562,1,4.810962",
-          "Enabled": true,
-          "Components": [
-            {
-              "__type": "ModelRenderer",
-              "BodyGroups": 18446744073709551615,
-              "MaterialGroup": null,
-              "MaterialOverride": null,
-              "Model": "models/dev/box.vmdl",
-              "RenderType": "On",
-              "Tint": "1,1,1,1"
-            },
-            {
-              "__type": "BoxCollider",
-              "Center": "0,0,0",
-              "IsTrigger": false,
-              "Scale": "50,50,50",
-              "Static": false,
-              "Surface": null
-            }
-          ]
-        },
-        {
-          "Id": "c3fde049-9ed2-40dc-977f-fb560e93c5f3",
-          "Name": "Cube (2)",
-          "Position": "-3977.687,5063.13,486.6471",
-          "Rotation": "0,0,-0.7933533,0.6087615",
-          "Scale": "23.86562,1,4.810962",
-          "Enabled": true,
-          "Components": [
-            {
-              "__type": "ModelRenderer",
-              "BodyGroups": 18446744073709551615,
-              "MaterialGroup": null,
-              "MaterialOverride": null,
-              "Model": "models/dev/box.vmdl",
-              "RenderType": "On",
-              "Tint": "1,1,1,1"
-            },
-            {
-              "__type": "BoxCollider",
-              "Center": "0,0,0",
-              "IsTrigger": false,
-              "Scale": "50,50,50",
-              "Static": false,
-              "Surface": null
-            }
-          ]
-        },
-        {
-          "Id": "bb95134a-d256-4a4a-9480-b954c90910ff",
-          "Name": "Cube (3)",
-          "Position": "-2429.651,3022.231,82.14503",
-          "Rotation": "0,0,-1,0.0000001788139",
-          "Scale": "23.86562,1,4.810962",
-          "Enabled": true,
-          "Components": [
-            {
-              "__type": "ModelRenderer",
-              "BodyGroups": 18446744073709551615,
-              "MaterialGroup": null,
-              "MaterialOverride": null,
-              "Model": "models/dev/box.vmdl",
-              "RenderType": "On",
-              "Tint": "1,1,1,1"
-            },
-            {
-              "__type": "BoxCollider",
-              "Center": "0,0,0",
-              "IsTrigger": false,
-              "Scale": "50,50,50",
-              "Static": false,
-              "Surface": null
-            }
-          ]
-        },
-        {
-          "Id": "ebea6dae-53ef-4291-b55e-48e8c1abaf6c",
-          "Name": "Cube (4)",
-          "Position": "-2429.649,-1392.431,77.30771",
-          "Rotation": "0,0,-0.7071069,-0.7071066",
-          "Scale": "23.86562,1,4.810962",
-          "Enabled": true,
-          "Components": [
-            {
-              "__type": "ModelRenderer",
-              "BodyGroups": 18446744073709551615,
-              "MaterialGroup": null,
-              "MaterialOverride": null,
-              "Model": "models/dev/box.vmdl",
-              "RenderType": "On",
-              "Tint": "1,1,1,1"
-            },
-            {
-              "__type": "BoxCollider",
-              "Center": "0,0,0",
-              "IsTrigger": false,
-              "Scale": "50,50,50",
-              "Static": false,
-              "Surface": null
-            }
-          ]
-        },
-        {
-          "Id": "15f62692-29dc-4a7b-820a-3f3e72307874",
-          "Name": "Cube (5)",
-          "Position": "1388.669,-3037.195,-27.90221",
-          "Rotation": "0,0,-0.5000002,-0.8660252",
-          "Scale": "23.86562,1,4.810962",
-          "Enabled": true,
-          "Components": [
-            {
-              "__type": "ModelRenderer",
-              "BodyGroups": 18446744073709551615,
-              "MaterialGroup": null,
-              "MaterialOverride": null,
-              "Model": "models/dev/box.vmdl",
-              "RenderType": "On",
-              "Tint": "1,1,1,1"
-            },
-            {
-              "__type": "BoxCollider",
-              "Center": "0,0,0",
-              "IsTrigger": false,
-              "Scale": "50,50,50",
-              "Static": false,
-              "Surface": null
-            }
-          ]
-        },
-        {
-          "Id": "83fa5a84-2a43-4049-8135-2629ecd7a153",
-          "Name": "Cube (6)",
-          "Position": "3579.909,-584.7987,125.328",
-          "Rotation": "0,0,-0.1305265,-0.9914449",
-          "Scale": "23.86562,1,4.810962",
-          "Enabled": true,
-          "Components": [
-            {
-              "__type": "ModelRenderer",
-              "BodyGroups": 18446744073709551615,
-              "MaterialGroup": null,
-              "MaterialOverride": null,
-              "Model": "models/dev/box.vmdl",
-              "RenderType": "On",
-              "Tint": "1,1,1,1"
-            },
-            {
-              "__type": "BoxCollider",
-              "Center": "0,0,0",
-              "IsTrigger": false,
-              "Scale": "50,50,50",
-              "Static": false,
-              "Surface": null
-            }
-          ]
-        },
-        {
-          "Id": "50208ca4-5b67-4fc4-b4c1-6ff642624bc6",
-          "Name": "Cube (7)",
-          "Position": "4878.649,-917.5296,503.5375",
-          "Rotation": "0,0,0.7933532,-0.6087619",
-          "Scale": "23.86562,1,4.810962",
-          "Enabled": true,
-          "Components": [
-            {
-              "__type": "ModelRenderer",
-              "BodyGroups": 18446744073709551615,
-              "MaterialGroup": null,
-              "MaterialOverride": null,
-              "Model": "models/dev/box.vmdl",
-              "RenderType": "On",
-              "Tint": "1,1,1,1"
-            },
-            {
-              "__type": "BoxCollider",
-              "Center": "0,0,0",
-              "IsTrigger": false,
-              "Scale": "50,50,50",
-              "Static": false,
-              "Surface": null
-            }
-          ]
-        },
-        {
-          "Id": "e62cf48b-ed49-4de0-a975-0c76457b0952",
+          "__guid": "e62cf48b-ed49-4de0-a975-0c76457b0952",
+          "Flags": 0,
           "Name": "Sun",
           "Position": "0,0,0",
-          "Rotation": "0,0.07974215,0,0.9968156",
+          "Rotation": "0,0.8393709,0,0.5435593",
           "Tags": "light_directional,light",
           "Enabled": true,
+          "NetworkMode": 2,
+          "NetworkInterpolation": true,
           "Components": [
             {
-              "__type": "DirectionalLight",
+              "__type": "Sandbox.DirectionalLight",
+              "__guid": "4aa2ad0b-ba8e-456c-8776-582a6b3fb949",
               "FogMode": "Enabled",
               "FogStrength": 1,
               "LightColor": "0.57674,0.44476,0.24679,1",
@@ -285,29 +68,157 @@
           ]
         },
         {
-          "Id": "16ed4ab6-8a51-430c-a43b-402bc1c7d962",
+          "__guid": "16ed4ab6-8a51-430c-a43b-402bc1c7d962",
+          "Flags": 0,
           "Name": "2D Skybox",
           "Position": "0,0,0",
           "Tags": "skybox",
           "Enabled": true,
+          "NetworkMode": 2,
+          "NetworkInterpolation": true,
           "Components": [
             {
-              "__type": "SkyBox2D",
+              "__type": "Sandbox.SkyBox2D",
+              "__guid": "8bc2a700-5089-4f39-8495-9fa0d58a6475",
               "SkyMaterial": "materials/sky/atmosphere_sky.vmat",
               "Tint": "1,1,1,1"
             }
           ]
+        },
+        {
+          "__guid": "2e60fe26-0f11-47e5-87c0-1fcbbf3f20c3",
+          "Flags": 0,
+          "Name": "telephone_box_door",
+          "Position": "183.8249,545.1422,-103.3736",
+          "Rotation": "0,0,-0.7071067,0.7071068",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "NetworkInterpolation": true,
+          "Components": [
+            {
+              "__type": "Sandbox.ModelRenderer",
+              "__guid": "af8fa4ec-5770-4921-b2ee-43a4d838f684",
+              "BodyGroups": 1,
+              "Model": "models/props/trim_sheets/doors/wooden_doors/wooden_door_01c.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "Sandbox.ModelCollider",
+              "__guid": "2c90f856-0ee9-44a2-8e36-ee72ffb51ea6",
+              "IsTrigger": false,
+              "Model": "models/props/trim_sheets/doors/wooden_doors/wooden_door_01c.vmdl",
+              "Static": false
+            },
+            {
+              "__type": "GeneralGame.DoorEntity",
+              "__guid": "b9f4e170-72eb-422b-9ff0-92f26da61fba",
+              "MoveDir": "0,0,0.7071068,0.7071068",
+              "MoveSpeed": 5,
+              "Open": false
+            }
+          ]
+        },
+        {
+          "__guid": "525ba114-e80f-4524-9937-dd6e45be6f57",
+          "Flags": 0,
+          "Name": "telephone_box_door (1)",
+          "Position": "89.65404,544.0036,-103.3736",
+          "Rotation": "0,0,0.7071067,0.7071068",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "NetworkInterpolation": true,
+          "Components": [
+            {
+              "__type": "Sandbox.ModelRenderer",
+              "__guid": "426bca83-6c41-401c-b6c0-54b68d7676f1",
+              "BodyGroups": 1,
+              "Model": "models/props/trim_sheets/doors/wooden_doors/wooden_door_01c.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "Sandbox.ModelCollider",
+              "__guid": "3834de21-3c8c-4e32-8c62-f881be98fe5d",
+              "IsTrigger": false,
+              "Model": "models/props/trim_sheets/doors/wooden_doors/wooden_door_01c.vmdl",
+              "Static": false
+            },
+            {
+              "__type": "GeneralGame.DoorEntity",
+              "__guid": "f0485da8-ccc7-481f-b29e-bd4c380f3c6c",
+              "MoveDir": "0,-0,-0.7071068,0.7071068",
+              "MoveSpeed": 5,
+              "Open": false
+            }
+          ]
+        },
+        {
+          "__guid": "4e8c1ee8-8925-46ea-8212-e462b2b87a0a",
+          "Flags": 0,
+          "Name": "telephone_box_door (1)",
+          "Position": "-419.347,-677.9947,-103.373",
+          "Rotation": "0,0,0.9999999,0.0000001490116",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "NetworkInterpolation": true,
+          "Components": [
+            {
+              "__type": "Sandbox.ModelRenderer",
+              "__guid": "8814f823-e3ac-467d-820b-3bec2d84c825",
+              "BodyGroups": 1,
+              "Model": "models/props/trim_sheets/doors/wooden_doors/wooden_door_01c.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "Sandbox.ModelCollider",
+              "__guid": "5374b8b8-c63e-4d56-b83c-48abb5da23fd",
+              "IsTrigger": false,
+              "Model": "models/props/trim_sheets/doors/wooden_doors/wooden_door_01c.vmdl",
+              "Static": false
+            },
+            {
+              "__type": "GeneralGame.DoorEntity",
+              "__guid": "ecd3a710-b5fc-42f3-b6ab-c46917d24b74",
+              "MoveDir": "0,-0,-0.7071068,0.7071068",
+              "MoveSpeed": 5,
+              "Open": false
+            }
+          ]
+        },
+        {
+          "__guid": "c893afc3-3741-4ebb-a468-887de9a3c0cf",
+          "Flags": 0,
+          "Name": "Object",
+          "Position": "-451.3088,1981.48,2440.137",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "NetworkInterpolation": true,
+          "Components": [
+            {
+              "__type": "Sandbox.MapInstance",
+              "__guid": "26ccac32-4acb-4b15-a60c-c7b979c1cb16",
+              "MapName": "maps/testbase.vmap",
+              "UseMapFromLaunch": false
+            }
+          ],
+          "Children": []
         }
       ]
     },
     {
-      "Id": "a645abc0-130b-41bf-8d50-112ec42fe8da",
+      "__guid": "a645abc0-130b-41bf-8d50-112ec42fe8da",
+      "Flags": 0,
       "Name": "\u0027WepanSpawn",
-      "Position": "-1015.168,624.3295,87.00333",
+      "Position": "56,688,32.00006",
       "Enabled": true,
+      "NetworkMode": 2,
+      "NetworkInterpolation": true,
       "Components": [
         {
-          "__type": "PickupSpawner",
+          "__type": "GeneralGame.PickupSpawner",
+          "__guid": "82e8ab7a-76e1-4e52-bf04-8785764bfdea",
           "PickupPrefab": {
             "_type": "gameobject",
             "prefab": "prefabs/weapons/aksu/aksu.prefab"
@@ -317,13 +228,17 @@
       ]
     },
     {
-      "Id": "8db7ac28-d16b-432c-8fa4-eae5af17c84a",
+      "__guid": "8db7ac28-d16b-432c-8fa4-eae5af17c84a",
+      "Flags": 0,
       "Name": "\u0027WepanSpawn (1)",
-      "Position": "-1015.168,697.3281,87.00333",
+      "Position": "128,688,32.00006",
       "Enabled": true,
+      "NetworkMode": 2,
+      "NetworkInterpolation": true,
       "Components": [
         {
-          "__type": "PickupSpawner",
+          "__type": "GeneralGame.PickupSpawner",
+          "__guid": "b6faf1d7-e903-4fab-a01e-2e1d1c0aedd4",
           "PickupPrefab": {
             "_type": "gameobject",
             "prefab": "prefabs/weapons/m67_granade/m67.prefab"
@@ -333,90 +248,17 @@
       ]
     },
     {
-      "Id": "2c146050-c31d-41a0-9595-c3623c6218b4",
-      "Name": "Spawnpoint (3)",
-      "Position": "1655.749,-1032.395,46.76888",
-      "Rotation": "0,0,-1,0.0000001937151",
-      "Enabled": true,
-      "Components": [
-        {
-          "__type": "SpawnPoint",
-          "Color": "0.8902,0.31765,0.05098,1"
-        }
-      ]
-    },
-    {
-      "Id": "ad8dfd24-06c3-467b-9070-87c234f1fba0",
-      "Name": "\u0027WepanSpawn (7)",
-      "Position": "1425.149,-974.2507,113.0576",
-      "Enabled": true,
-      "Components": [
-        {
-          "__type": "PickupSpawner",
-          "PickupPrefab": {
-            "_type": "gameobject",
-            "prefab": "prefabs/weapons/machette/machette.prefab"
-          },
-          "RespawnTime": 30
-        }
-      ]
-    },
-    {
-      "Id": "7a2c485f-efb9-47ba-858e-3ce744355ceb",
-      "Name": "\u0027WepanSpawn (6)",
-      "Position": "1425.149,-921.9982,113.0576",
-      "Enabled": true,
-      "Components": [
-        {
-          "__type": "PickupSpawner",
-          "PickupPrefab": {
-            "_type": "gameobject",
-            "prefab": "prefabs/weapons/pm/glock.prefab"
-          },
-          "RespawnTime": 30
-        }
-      ]
-    },
-    {
-      "Id": "af583e63-8abd-49d7-8b9f-171a3e90949c",
-      "Name": "\u0027WepanSpawn (5)",
-      "Position": "1425.149,-1086.721,113.0576",
-      "Enabled": true,
-      "Components": [
-        {
-          "__type": "PickupSpawner",
-          "PickupPrefab": {
-            "_type": "gameobject",
-            "prefab": "prefabs/weapons/aksu/aksu.prefab"
-          },
-          "RespawnTime": 30
-        }
-      ]
-    },
-    {
-      "Id": "8b94894a-615d-4cbb-b3a6-35bdd16b39b6",
-      "Name": "\u0027WepanSpawn (4)",
-      "Position": "1425.149,-1013.723,113.0576",
-      "Enabled": true,
-      "Components": [
-        {
-          "__type": "PickupSpawner",
-          "PickupPrefab": {
-            "_type": "gameobject",
-            "prefab": "prefabs/weapons/m67_granade/m67.prefab"
-          },
-          "RespawnTime": 30
-        }
-      ]
-    },
-    {
-      "Id": "c308e0a5-d132-4893-9d4a-98f359e88f8c",
+      "__guid": "c308e0a5-d132-4893-9d4a-98f359e88f8c",
+      "Flags": 0,
       "Name": "\u0027WepanSpawn (2)",
-      "Position": "-1015.168,736.8001,87.00333",
+      "Position": "16,656,32.00006",
       "Enabled": true,
+      "NetworkMode": 2,
+      "NetworkInterpolation": true,
       "Components": [
         {
-          "__type": "PickupSpawner",
+          "__type": "GeneralGame.PickupSpawner",
+          "__guid": "53fd67a2-841a-4f07-8f67-9ad41ae38ae7",
           "PickupPrefab": {
             "_type": "gameobject",
             "prefab": "prefabs/weapons/machette/machette.prefab"
@@ -426,64 +268,37 @@
       ]
     },
     {
-      "Id": "94701b1c-91a1-4c25-91c6-409597fcd762",
+      "__guid": "94701b1c-91a1-4c25-91c6-409597fcd762",
+      "Flags": 0,
       "Name": "\u0027WepanSpawn (3)",
-      "Position": "-1015.168,789.0527,87.00333",
+      "Position": "184,648,32.00005",
       "Enabled": true,
+      "NetworkMode": 2,
+      "NetworkInterpolation": true,
       "Components": [
         {
-          "__type": "PickupSpawner",
+          "__type": "GeneralGame.PickupSpawner",
+          "__guid": "685f7e22-12af-4efb-9a81-08114a79f829",
           "PickupPrefab": {
             "_type": "gameobject",
-            "prefab": "prefabs/weapons/pm/glock.prefab"
+            "prefab": "prefabs/weapons/glock/glock.prefab"
           },
           "RespawnTime": 30
         }
       ]
     },
     {
-      "Id": "5a7dbb4e-1ae6-4515-8be0-00ca7be0362a",
-      "Name": "ZmbSpawn",
-      "Position": "-3264.152,3951.407,595.3449",
-      "Enabled": true,
-      "Components": [
-        {
-          "__type": "ZombieSpawner",
-          "__enabled": false,
-          "RespawnTime": 10,
-          "ZombiePrefab": {
-            "_type": "gameobject",
-            "prefab": "prefabs/zombie.prefab"
-          }
-        }
-      ]
-    },
-    {
-      "Id": "4bc4960e-b688-4c09-887c-16ae09a1f3da",
-      "Name": "ZmbSpawn (1)",
-      "Position": "6106.933,3951.407,518.0339",
-      "Enabled": true,
-      "Components": [
-        {
-          "__type": "ZombieSpawner",
-          "__enabled": false,
-          "RespawnTime": 10,
-          "ZombiePrefab": {
-            "_type": "gameobject",
-            "prefab": "prefabs/zombie.prefab"
-          }
-        }
-      ]
-    },
-    {
-      "Id": "d59c81e8-ce0d-4918-a09e-096e8651db03",
+      "__guid": "75613c85-a8e1-4b94-8cf4-dfa91a51e48c",
+      "Flags": 0,
       "Name": "ZmbSpawn (2)",
-      "Position": "3474.125,-4910.982,551.993",
+      "Position": "-4000,-5200,528",
       "Enabled": true,
+      "NetworkMode": 2,
+      "NetworkInterpolation": true,
       "Components": [
         {
-          "__type": "ZombieSpawner",
-          "__enabled": false,
+          "__type": "GeneralGame.ZombieSpawner",
+          "__guid": "1728bbc6-e8c2-40e8-9a4d-8222f54b5f90",
           "RespawnTime": 10,
           "ZombiePrefab": {
             "_type": "gameobject",
@@ -493,103 +308,31 @@
       ]
     },
     {
-      "Id": "2e60fe26-0f11-47e5-87c0-1fcbbf3f20c3",
-      "Name": "telephone_box_door",
-      "Position": "166.2057,517.056,27.50138",
-      "Rotation": "0,0,-0.7071067,0.7071068",
+      "__guid": "9257f283-5039-44c6-9dda-9dedd8425cb1",
+      "Flags": 0,
+      "Name": "ZmbSpawn (1)",
+      "Position": "6120,-4984,672",
       "Enabled": true,
+      "NetworkMode": 2,
+      "NetworkInterpolation": true,
       "Components": [
         {
-          "__type": "ModelRenderer",
-          "BodyGroups": 1,
-          "MaterialGroup": null,
-          "MaterialOverride": null,
-          "Model": "models/props/trim_sheets/doors/wooden_doors/wooden_door_01c.vmdl",
-          "RenderType": "On",
-          "Tint": "1,1,1,1"
-        },
-        {
-          "__type": "ModelCollider",
-          "IsTrigger": false,
-          "Model": "models/props/trim_sheets/doors/wooden_doors/wooden_door_01c.vmdl",
-          "Static": false,
-          "Surface": null
-        },
-        {
-          "__type": "DoorEntity",
-          "MoveDir": "0,0,0.7071068,0.7071068",
-          "MoveSpeed": 5,
-          "Open": false
-        }
-      ]
-    },
-    {
-      "Id": "26776665-ae23-4790-8522-594cf35c9bdb",
-      "Name": "telephone_box_door (2)",
-      "Position": "-438.49,-661.1033,27.50137",
-      "Enabled": true,
-      "Components": [
-        {
-          "__type": "ModelRenderer",
-          "BodyGroups": 1,
-          "MaterialGroup": null,
-          "MaterialOverride": null,
-          "Model": "models/props/trim_sheets/doors/wooden_doors/wooden_door_01c.vmdl",
-          "RenderType": "On",
-          "Tint": "1,1,1,1"
-        },
-        {
-          "__type": "ModelCollider",
-          "IsTrigger": false,
-          "Model": "models/props/trim_sheets/doors/wooden_doors/wooden_door_01c.vmdl",
-          "Static": false,
-          "Surface": null
-        },
-        {
-          "__type": "DoorEntity",
-          "MoveDir": "0,0,0.7071068,0.7071068",
-          "MoveSpeed": 5,
-          "Open": false
-        }
-      ]
-    },
-    {
-      "Id": "525ba114-e80f-4524-9937-dd6e45be6f57",
-      "Name": "telephone_box_door (1)",
-      "Position": "72.0349,515.9174,27.50138",
-      "Rotation": "0,0,0.7071067,0.7071068",
-      "Enabled": true,
-      "Components": [
-        {
-          "__type": "ModelRenderer",
-          "BodyGroups": 1,
-          "MaterialGroup": null,
-          "MaterialOverride": null,
-          "Model": "models/props/trim_sheets/doors/wooden_doors/wooden_door_01c.vmdl",
-          "RenderType": "On",
-          "Tint": "1,1,1,1"
-        },
-        {
-          "__type": "ModelCollider",
-          "IsTrigger": false,
-          "Model": "models/props/trim_sheets/doors/wooden_doors/wooden_door_01c.vmdl",
-          "Static": false,
-          "Surface": null
-        },
-        {
-          "__type": "DoorEntity",
-          "MoveDir": "0,-0,-0.7071068,0.7071068",
-          "MoveSpeed": 5,
-          "Open": false
+          "__type": "GeneralGame.ZombieSpawner",
+          "__guid": "ab1c7105-65ff-45a4-9392-b144ce6e3d61",
+          "RespawnTime": 10,
+          "ZombiePrefab": {
+            "_type": "gameobject",
+            "prefab": "prefabs/zombie.prefab"
+          }
         }
       ]
     }
   ],
   "SceneProperties": {
     "FixedUpdateFrequency": 50,
-    "Lerping": true,
     "MaxFixedUpdates": 5,
     "NetworkFrequency": 60,
+    "NetworkInterpolation": true,
     "ThreadedAnimation": true,
     "TimeScale": 1,
     "UseFixedUpdate": true,
@@ -608,7 +351,9 @@
   },
   "Title": "minimal",
   "Description": "",
-  "LastSaved": "2024-03-08T16:08:43.3830546\u002B03:00",
+  "LastSaved": "2024-05-22T16:37:27.1291168-07:00",
+  "ResourceVersion": 1,
+  "__version": 1,
   "__references": [
     "facepunch.wooden_door_01c"
   ]
