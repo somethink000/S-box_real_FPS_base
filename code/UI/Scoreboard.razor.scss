@@ -1,0 +1,67 @@
+﻿Scoreboard
+{
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	right: 0px;
+	bottom: 0px;
+	background-color: #1115;
+	justify-content: center;
+	align-items: center;
+	font-family: Poppins;
+	font-size: 18px;
+	backdrop-filter: blur( 10px );
+	transition: all 0.1s ease-out;
+	color: #fff;
+
+	.table-row {
+		display: flex;
+		flex-direction: row;
+		width: 100%;
+		
+		&:not( .heading ) {
+			background-color: rgba( 0 0 0 0.2 );
+		}
+	}
+	
+	.table-row:nth-child( 2 ) {
+		background-color: rgba( 0 0 0 0.5 );
+	}
+
+	.heading {
+		opacity: 0.5;
+	}
+
+	.row-item {
+		flex: 1;
+		display: flex;
+		padding: 8px 0;
+		white-space: nowrap;
+		justify-content: center;
+		transition: all 0.15s ease-in-out;
+	}
+	
+	.table
+	{
+		flex-direction: column;
+		transform: scale( 1 );
+		transition: all 0.2s ease-in;
+		display: flex;
+		width: 600px;
+
+		.me
+		{
+			color: #d7ab31;
+		}
+	}
+
+	&.hidden
+	{
+		opacity: 0;
+		transition: all 0.2s ease-in;
+		
+		.table {
+			transform: scale( 0.8 );
+		}
+	}
+}

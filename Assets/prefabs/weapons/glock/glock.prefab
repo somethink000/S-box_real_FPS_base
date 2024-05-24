@@ -1,6 +1,6 @@
 {
   "RootObject": {
-    "__guid": "d8d27962-f791-4944-bf2b-4b9aab755c76",
+    "__guid": "14a7b823-05d4-46f8-a44d-00b230739c44",
     "Flags": 0,
     "Name": "glock",
     "Scale": "1.5,1.5,1.5",
@@ -10,7 +10,7 @@
     "Components": [
       {
         "__type": "Sandbox.SkinnedModelRenderer",
-        "__guid": "42b4e4d3-6093-4240-9dd9-a7d9a51eba08",
+        "__guid": "6c060ce7-60fa-481a-a1ad-e106884016e5",
         "BodyGroups": 1,
         "CreateBoneObjects": false,
         "Model": "models/glock/w/w_glock20lod0.vmdl",
@@ -19,7 +19,8 @@
       },
       {
         "__type": "GeneralGame.BaseGun",
-        "__guid": "78f0644d-914d-4433-a08d-c43c717abd36",
+        "__guid": "60bf1b0b-aab3-4dcd-a8d3-6d62a61535af",
+        "AimFOVDec": 30,
         "aimPos": "-1,1.43,0.56",
         "aimRotation": "0,0,0,0",
         "AmmoType": "Pistol",
@@ -54,7 +55,7 @@
       },
       {
         "__type": "Sandbox.SphereCollider",
-        "__guid": "4ffc1db1-32fe-431a-9c08-492846bf5429",
+        "__guid": "36c2fae2-b03a-4a70-a393-644b88df0604",
         "Center": "0,0,0",
         "IsTrigger": true,
         "Radius": 10,
@@ -62,14 +63,14 @@
       },
       {
         "__type": "Sandbox.ModelCollider",
-        "__guid": "4f6a6337-488b-4d24-bb2f-ede7c637b590",
+        "__guid": "9315ef14-c097-4163-8d72-16800f353bf5",
         "IsTrigger": false,
         "Model": "models/glock/w/w_glock20lod0.vmdl",
         "Static": false
       },
       {
         "__type": "Sandbox.Rigidbody",
-        "__guid": "735639d8-e8a8-4653-9050-4dca368c3aa0",
+        "__guid": "d91351c4-76d7-4117-b0df-30414f62f560",
         "AngularDamping": 0,
         "Gravity": true,
         "LinearDamping": 0,

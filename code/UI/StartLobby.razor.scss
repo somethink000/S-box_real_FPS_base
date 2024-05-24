@@ -1,0 +1,123 @@
+﻿StartLobby 
+{
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	right: 0px;
+	bottom: 0px;
+	background-color: #111;
+	pointer-events: all;
+	flex-direction: row;
+	padding: 60px;
+	font-family: Poppins;
+	color: #ccc;
+
+	.left {
+		margin-top: 64px;
+		flex-direction: column;
+		width: 800px;
+
+		> .title {
+			font-size: 64px;
+			font-weight: bold;
+			color: orange;
+		}
+
+		> .explanation {
+			color: #aaaa;
+			font-size: 24px;
+			flex-direction: column;
+			width: 100%;
+		}
+
+		> .button-list {
+			margin-top: 64px;
+			flex-direction: column;
+			gap: 16px;
+
+			> .button {
+				background-color: transparent;
+				color: #aaa;
+				font-size: 32px;
+				padding: 10px;
+				border-radius: 8px;
+				cursor: pointer;
+				width: 300px;
+				flex-direction: column;
+				transition: all 0.2s ease-out;
+
+				&:hover {
+					background-color: #333;
+				}
+			}
+		}
+	}
+
+	.header {
+		font-size: 64px;
+		width: 100%;
+		font-weight: bold;
+		color: white;
+	}
+
+	.lobby-list {
+		margin-top: 64px;
+		width: 600px;
+		flex-direction: column;
+
+		> label {
+			color: #aaaa;
+			font-size: 24px;
+			flex-direction: column;
+			width: 100%;
+		}
+
+		> .button-list {
+			flex-direction: column;
+			margin-top: 64px;
+			overflow: scroll;
+			height: 63%;
+			gap: 16px;
+
+			> .button {
+				background-color: transparent;
+				color: #aaa;
+				padding: 10px;
+				border-radius: 8px;
+				cursor: pointer;
+				width: 100%;
+				flex-direction: column;
+				transition: all 0.2s ease-out;
+				flex-shrink: 0;
+
+				.title {
+					font-weight: bold;
+					font-size: 20px;
+				}
+
+				.meta {
+					font-size: 16px;
+
+					.map {
+						flex-grow: 1;
+					}
+
+					.count {
+						white-space: nowrap;
+					}
+				}
+
+				&:hover {
+					background-color: #333;
+				}
+			}
+		}
+	}
+
+	.center {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		justify-content: center;
+	}
+}
