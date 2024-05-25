@@ -25,7 +25,7 @@ public class BaseThrow : WeaponComponent, IUse
 		var picker = Scene.Directory.FindByGuid( pickerId );
 		if ( !picker.IsValid() ) return;
 
-		var player = picker.Components.GetInDescendantsOrSelf<PlayerController>();
+		var player = picker.Components.GetInDescendantsOrSelf<PlayerObject>();
 		if ( !player.IsValid() ) return;
 
 		if ( player.IsProxy )
@@ -76,9 +76,9 @@ public class BaseThrow : WeaponComponent, IUse
 	{
 		var obj = throwPrefab.Clone( this.Transform.World );
 		obj.NetworkSpawn();
-		obj.Transform.Position = owner.PlyCamera.Transform.Position + owner.PlyCamera.Transform.Rotation.Forward * 50;
-		obj.Transform.Rotation = owner.PlyCamera.Transform.Rotation;
-		obj.Components.Get<Rigidbody>().Velocity = owner.PlyCamera.Transform.Rotation.Forward * 1000;
+		obj.Transform.Position = owner.CameraController.Camera.Transform.Position + owner.CameraController.Camera.Transform.Rotation.Forward * 50;
+		obj.Transform.Rotation = owner.CameraController.Camera.Transform.Rotation;
+		obj.Components.Get<Rigidbody>().Velocity = owner.CameraController.Camera.Transform.Rotation.Forward * 1000;
 		obj.Components.Get<EntThrow>().explodeTime = imidiantly ? 0f : curPrepareTime;
 	}
 

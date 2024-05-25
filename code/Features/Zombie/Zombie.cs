@@ -19,21 +19,21 @@ public sealed class Zombie : Component, IHealthComponent
 
 
 	private NavMeshAgent agent;
-	private PlayerController playerController;
+	private PlayerObject plyObj;
 	public TimeSince timeSinceHit = 0;
 
 	protected override void OnAwake()
 	{
 		agent = Components.Get<NavMeshAgent>();
-		playerController = Scene.GetAllComponents<PlayerController>().FirstOrDefault();
+		plyObj = Scene.GetAllComponents<PlayerObject>().FirstOrDefault();
 		
 	}
 	protected override void OnUpdate()
 	{
 		animationHelper.HoldType = CitizenAnimationHelper.HoldTypes.Swing;
 		animationHelper.MoveStyle = CitizenAnimationHelper.MoveStyles.Run;
-		var target = playerController.Transform.Position;
-		playerController = Scene.GetAllComponents<PlayerController>().FirstOrDefault();
+		var target = plyObj.Transform.Position;
+		plyObj = Scene.GetAllComponents<PlayerObject>().FirstOrDefault();
 		
 		UpdateAnimtions();
 		if (Vector3.DistanceBetween(target, GameObject.Transform.Position ) < 80f)
@@ -43,7 +43,7 @@ public sealed class Zombie : Component, IHealthComponent
 		}
 		else
 		{
-			agent.MoveTo(playerController.Transform.Position);
+			agent.MoveTo(plyObj.Transform.Position);
 		}
 	}
 	
@@ -52,7 +52,7 @@ public sealed class Zombie : Component, IHealthComponent
 	{
 		animationHelper.WithWishVelocity(agent.WishVelocity);
 		animationHelper.WithVelocity(agent.Velocity);
-		var targetRot = Rotation.LookAt(playerController.GameObject.Transform.Position.WithZ(Transform.Position.z) - body.Transform.Position);
+		var targetRot = Rotation.LookAt(plyObj.GameObject.Transform.Position.WithZ(Transform.Position.z) - body.Transform.Position);
 		body.Transform.Rotation = Rotation.Slerp(body.Transform.Rotation, targetRot, Time.Delta * 5.0f);
 	}
 	void NormalTrace()

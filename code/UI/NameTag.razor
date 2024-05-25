@@ -21,14 +21,14 @@
 
 @code
 {
-	private PlayerController Player { get; set; }
+	private PlayerObject Player { get; set; }
 	private Voice VoiceComponent { get; set; }
 
 	protected override void OnEnabled()
 	{
 		base.OnEnabled();
 		VoiceComponent = GameObject.Root.Components.GetInDescendantsOrSelf<Voice>();
-		Player = GameObject.Root.Components.GetInDescendantsOrSelf<PlayerController>();
+		Player = GameObject.Root.Components.GetInDescendantsOrSelf<PlayerObject>();
 	}
 
 	public bool IsVoicePlaying

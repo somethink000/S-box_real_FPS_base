@@ -33,7 +33,7 @@ public partial class DoorEntity : Component, IUse
 		var picker = Scene.Directory.FindByGuid( pickerId );
 		if ( !picker.IsValid() ) return;
 
-		var player = picker.Components.GetInDescendantsOrSelf<PlayerController>();
+		var player = picker.Components.GetInDescendantsOrSelf<PlayerObject>();
 		if ( !player.IsValid() ) return;
 
 		if ( player.IsProxy )

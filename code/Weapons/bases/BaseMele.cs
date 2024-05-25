@@ -24,7 +24,7 @@ public class BaseMele : WeaponComponent, IUse
 		var picker = Scene.Directory.FindByGuid( pickerId );
 		if ( !picker.IsValid() ) return;
 
-		var player = picker.Components.GetInDescendantsOrSelf<PlayerController>();
+		var player = picker.Components.GetInDescendantsOrSelf<PlayerObject>();
 		if ( !player.IsValid() ) return;
 
 		if ( player.IsProxy )
@@ -53,8 +53,8 @@ public class BaseMele : WeaponComponent, IUse
 
 		
 
-		var startPos = owner.PlyCamera.Transform.Position;
-		var direction = owner.PlyCamera.Transform.Rotation.Forward;
+		var startPos = owner.CameraController.Camera.Transform.Position;
+		var direction = owner.CameraController.Camera.Transform.Rotation.Forward;
 
 		var endPos = startPos + direction * Range;
 		var trace = Scene.Trace.Ray( startPos, endPos )

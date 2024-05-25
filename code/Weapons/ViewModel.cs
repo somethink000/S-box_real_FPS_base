@@ -37,7 +37,7 @@ public sealed class ViewModel : Component
 	public float PitchInertia { get; private set; }
 	
 
-	private PlayerController PlayerController => Weapon.Components.GetInAncestors<PlayerController>();
+	private PlayerObject plyObj => Weapon.Components.GetInAncestors<PlayerObject>();
 	private CameraComponent Camera { get; set; }
 	private WeaponComponent Weapon { get; set; }
 	private BaseGun Gun { get; set; }
@@ -85,6 +85,8 @@ public sealed class ViewModel : Component
 			return;
 		}
 
+		CurFOV = Preferences.FieldOfView;
+
 		base.OnAwake();
 	}
 
@@ -102,13 +104,20 @@ public sealed class ViewModel : Component
 			if ( Gun.IsAiming )
 			{ 
 				CurPos = CurPos.LerpTo( plusPos + Gun.aimPos, Time.Delta * 10f );
-				CurFOV = CurFOV.LerpTo( Screen.CreateVerticalFieldOfView( plySettingsFov - Gun.AimFOVDec ), Time.Delta * 10f );
+				CurFOV = CurFOV.LerpTo( plySettingsFov - Gun.AimFOVDec, Time.Delta * 10f );
 			
 			}
 			else
 			{
-				CurPos = CurPos.LerpTo( plusPos, Time.Delta * 10f );
-				CurFOV = CurFOV.LerpTo( Screen.CreateVerticalFieldOfView( plySettingsFov ), Time.Delta * 10f );
+				if ( plyObj.Controller.IsRunning )
+				{
+					CurPos = CurPos.LerpTo( plusPos + Gun.runPos, Time.Delta * 10f );
+				}
+				else
+				{
+					CurPos = CurPos.LerpTo( plusPos, Time.Delta * 10f );
+				}
+				CurFOV = CurFOV.LerpTo( plySettingsFov, Time.Delta * 10f );
 			}
 			ModelRenderer.Set( "b_aiming", Gun.IsAiming );
 		
@@ -119,7 +128,7 @@ public sealed class ViewModel : Component
 
 
 		
-			if ( PlayerController.MoveSpeed > 150f )
+			if ( plyObj.Controller.IsRunning )
 			{
 				CurRotation = Rotation.Lerp( CurRotation, Rotation.Identity * Gun.runRotation, Time.Delta * 10f );
 			}
@@ -128,7 +137,7 @@ public sealed class ViewModel : Component
 				CurRotation = Rotation.Lerp( CurRotation, Rotation.Identity, Time.Delta * 10f );
 			}
 
-		
+
 
 			
 			Camera.FieldOfView = CurFOV;
@@ -191,7 +200,7 @@ public sealed class ViewModel : Component
 		YawInertia += yawDelta;
 
 
-		var playerVelocity = PlayerController.CharacterController.Velocity;
+		var playerVelocity = plyObj.Controller.CC.Velocity;
 
 
 		var verticalDelta = playerVelocity.z * Time.Delta;

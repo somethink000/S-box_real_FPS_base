@@ -31,7 +31,7 @@
 	}
 	
 	<div class="center">
-		@* Pease of shit redo this *@
+		@* Piese of shit redo this some day*@
         @if (weapon.IsValid())
 		{
             @if (bsGun.IsValid() && !bsGun.IsAiming)
@@ -48,13 +48,13 @@
 
 @code
 {
-	private PlayerController LocalPlayer { get; set; }
+	private PlayerObject LocalPlayer { get; set; }
 	
 	protected override void OnFixedUpdate()
 	{
 		if ( !LocalPlayer.IsValid() )
 		{
-			LocalPlayer = Scene.GetAllComponents<PlayerController>().FirstOrDefault( p => p.Network.OwnerConnection == Connection.Local );
+			LocalPlayer = Scene.GetAllComponents<PlayerObject>().FirstOrDefault( p => p.Network.OwnerConnection == Connection.Local );
 		}
 	}
 

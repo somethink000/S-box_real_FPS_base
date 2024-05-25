@@ -14,7 +14,7 @@
 		@foreach ( var entry in Networking.Connections )
 		{
 			var rowClass = string.Empty;
-			var player = Scene.GetAllComponents<PlayerController>().FirstOrDefault( p => p.Network.OwnerConnection == entry );
+			var player = Scene.GetAllComponents<PlayerObject>().FirstOrDefault( p => p.Network.OwnerConnection == entry );
 			
 			if ( entry == Connection.Local )
 				rowClass = "me";

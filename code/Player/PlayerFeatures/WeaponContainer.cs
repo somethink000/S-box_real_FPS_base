@@ -10,7 +10,7 @@ public sealed class WeaponContainer : Component
 	[Property] public PrefabScene StartingWeapon { get; set; }
 	[Property] public GameObject WeaponBone { get; set; }
 	[Property] public AmmoContainer Ammo { get; set; }
-	[Property] public PlayerController PlayrControl { get; set; }
+	[Property] public PlayerObject plyObj { get; set; }
 
 	public WeaponComponent Deployed => Components.GetAll<WeaponComponent>( FindMode.EverythingInSelfAndDescendants ).FirstOrDefault( c => c.IsDeployed );
 	public IEnumerable<WeaponComponent> All => Components.GetAll<WeaponComponent>( FindMode.EverythingInSelfAndDescendants );
@@ -46,7 +46,7 @@ public sealed class WeaponContainer : Component
 
 		var weaponGo = prefab.Clone();
 		var weapon = weaponGo.Components.GetInDescendantsOrSelf<WeaponComponent>( true );
-		weapon.owner = PlayrControl;
+		weapon.owner = plyObj;
 		if ( !weapon.IsValid() )
 		{
 			weaponGo.DestroyImmediate();

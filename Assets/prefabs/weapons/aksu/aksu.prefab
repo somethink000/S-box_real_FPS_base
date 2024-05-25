@@ -1,6 +1,6 @@
 {
   "RootObject": {
-    "__guid": "9c2ca6dc-8207-4834-8046-9561db14146d",
+    "__guid": "bb59b76b-b337-457d-8a9c-5185805bdcef",
     "Flags": 0,
     "Name": "aksu",
     "Scale": "1.5,1.5,1.5",
@@ -10,7 +10,7 @@
     "Components": [
       {
         "__type": "Sandbox.SkinnedModelRenderer",
-        "__guid": "4d72c9d2-2997-435c-af76-707bafe7b2c9",
+        "__guid": "159b90fc-c997-440d-b81d-b85f637c0633",
         "BodyGroups": 9493,
         "CreateBoneObjects": false,
         "Model": "models/aksu/w/ak74u_modern_ak74u_mag_ref.vmdl",
@@ -19,7 +19,7 @@
       },
       {
         "__type": "GeneralGame.BaseGun",
-        "__guid": "78330e77-47a6-4be8-a8a7-a4d1e8814196",
+        "__guid": "85674056-3a6e-4de4-b439-ec2e6aafd61f",
         "AimFOVDec": 30,
         "aimPos": "-1,1.92,0.57",
         "aimRotation": "0,0,0,0",
@@ -46,6 +46,7 @@
         "Recoil": "-30,0,0",
         "ReloadSoundSequence": "models/aksu/aksu_reload.sndseq",
         "ReloadTime": 3,
+        "runPos": "0,-2,0",
         "runRotation": "-0.02255756,0.08418597,0.2578342,0.9622502",
         "Spread": 0.01,
         "ViewModelPrefab": {
@@ -55,14 +56,14 @@
       },
       {
         "__type": "Sandbox.ModelCollider",
-        "__guid": "6fe8b91e-3a91-4835-8799-a39c08f77072",
+        "__guid": "6b6985f7-84e4-47d6-a8dd-1b44e3096f19",
         "IsTrigger": false,
         "Model": "models/aksu/w/ak74u_modern_ak74u_mag_ref.vmdl",
         "Static": false
       },
       {
         "__type": "Sandbox.Rigidbody",
-        "__guid": "b194fccf-c330-4b4f-9789-bca2adc79cd4",
+        "__guid": "9c0b2547-52ea-43bb-9287-587d329efc63",
         "AngularDamping": 0,
         "Gravity": true,
         "LinearDamping": 0,

@@ -10,8 +10,8 @@ public class BaseGun : WeaponComponent, IUse
 	[Property] public float EmptyReloadTime { get; set; } = 2f;
 	[Property] public float Spread { get; set; } = 0.01f;
 	[Property] public Angles Recoil { get; set; }
-	[Property] public SoundEvent FireSound { get; set; }
 	[Property] public bool IsAuto { get; set; } = false;
+	[Property] public SoundEvent FireSound { get; set; }
 	[Property] public SoundEvent EmptyClipSound { get; set; }
 	[Property] public SoundSequenceData ReloadSoundSequence { get; set; }
 	[Property] public SoundSequenceData EmptyReloadSoundSequence { get; set; }
@@ -20,20 +20,23 @@ public class BaseGun : WeaponComponent, IUse
 	[Property] public AmmoType AmmoType { get; set; } = AmmoType.Pistol;
 	[Property] public int DefaultAmmo { get; set; } = 60;
 	[Property] public int ClipSize { get; set; } = 30;
-	//AIM
-	[Sync] public bool IsAiming { get; set; }
-	[Property] public Vector3 aimPos { get; set; }
-	[Property] public Rotation aimRotation { get; set; }
+	[Property] public Vector3 runPos { get; set; }
 	[Property] public Rotation runRotation { get; set; }
-	[Property] public float AimFOVDec { get; set; } = 10f;
 
 	[Sync] public bool IsReloading { get; set; }
 	[Sync] public int AmmoInClip { get; set; }
 
+	public Angles curRecoil { get; set; }
 	public SoundSequence ReloadSound { get; set; }
 	public TimeUntil ReloadFinishTime { get; set; }
 	public bool IsFiering { get; set; } = false;
 
+	//AIM {
+		[Property] public Vector3 aimPos { get; set; }
+		[Property] public Rotation aimRotation { get; set; }
+		[Property] public float AimFOVDec { get; set; } = 10f;
+		[Sync] public bool IsAiming { get; set; } = false;
+	// }
 
 	[Broadcast]
 	public virtual void OnUse( Guid pickerId )
@@ -41,7 +44,7 @@ public class BaseGun : WeaponComponent, IUse
 		var picker = Scene.Directory.FindByGuid( pickerId );
 		if ( !picker.IsValid() ) return;
 
-		var player = picker.Components.GetInDescendantsOrSelf<PlayerController>();
+		var player = picker.Components.GetInDescendantsOrSelf<PlayerObject>();
 		if ( !player.IsValid() ) return;
 
 		if ( player.IsProxy )
@@ -90,12 +93,12 @@ public class BaseGun : WeaponComponent, IUse
 	public override void seccondaryAction()
 	{
 		IsAiming = true;
-		owner.setRunSpeed( owner.baseWalkSpeed );
+		owner.Controller.setRunSpeed( owner.Controller.baseWalkSpeed );
 	}
 	public override void seccondaryActionRelease()
 	{
+		owner.Controller.setRunSpeed( owner.Controller.baseRunSpeed );
 		IsAiming = false;
-		owner.setRunSpeed( owner.baseRunSpeed );
 	}
 
 	public override void reloadAction()
@@ -118,7 +121,25 @@ public class BaseGun : WeaponComponent, IUse
 		SendReloadMessage();
 	}
 
+	//Recoil {
+	public void ApplyRecoil( Angles recoil )
+	{
+		if ( IsProxy ) return;
 
+		curRecoil += recoil;
+		/*owner.CameraController.Camera.FieldOfView += 1;*/
+		
+	}
+	private void BuildRecoil()
+	{
+		var angles = owner.CameraController.EyeAngles.Normal;
+		angles += curRecoil * Time.Delta;
+
+		owner.CameraController.EyeAngles = angles.WithRoll( 0f );
+
+		curRecoil = curRecoil.LerpTo( Angles.Zero, Time.Delta * 8f );
+	}
+	// }
 	public virtual void fireBullet()
 	{
 		if ( !NextAttackTime ) return;
@@ -132,12 +153,13 @@ public class BaseGun : WeaponComponent, IUse
 		}
 
 		
-		if ( owner.MoveSpeed > 150f ) return;
-		owner.ApplyRecoil( Recoil );
+		if ( owner.Controller.IsRunning ) return;
+
+		ApplyRecoil( Recoil );
 
 		var attachment = EffectRenderer.GetAttachment( "muzzle" );
-		var startPos = owner.PlyCamera.Transform.Position;
-		var direction = owner.PlyCamera.Transform.Rotation.Forward;
+		var startPos = owner.CameraController.Camera.Transform.Position;
+		var direction = owner.CameraController.Camera.Transform.Rotation.Forward;
 		direction += Vector3.Random * Spread;
 
 		var endPos = startPos + direction * 10000f;
@@ -179,8 +201,6 @@ public class BaseGun : WeaponComponent, IUse
 	}
 	
 
-	
-
 	protected virtual void onReloadEnd()
 	{
 		var ammoToTake = ClipSize - AmmoInClip;
@@ -192,18 +212,21 @@ public class BaseGun : WeaponComponent, IUse
 	}
 	protected override void OnUpdate()
 	{
+		base.OnUpdate();
+		if ( !IsDeployed && !IsProxy ) return;
+
+		BuildRecoil();
+
 		if ( NextAttackTime && IsFiering && IsAuto ) fireBullet();
 
-		if ( !IsProxy && ReloadFinishTime && IsReloading )
+		if ( ReloadFinishTime && IsReloading )
 		{
 			onReloadEnd();
 		}
 
 		ReloadSound?.Update( Transform.Position );
-
-
-		base.OnUpdate();
 	}
+
 	[Broadcast]
 	private void SendReloadMessage()
 	{

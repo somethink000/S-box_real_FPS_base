@@ -8,7 +8,7 @@ public sealed class HealthEffects : Component
 {
 	[Property] public ColorAdjustments Adjustments { get; set; }
 	
-	private PlayerController LocalPlayer { get; set; }
+	private PlayerObject LocalPlayer { get; set; }
 	private Vignette Vignette { get; set; }
 
 	protected override void OnStart()
@@ -21,7 +21,7 @@ public sealed class HealthEffects : Component
 	{
 		if ( !LocalPlayer.IsValid() )
 		{
-			LocalPlayer = Scene.GetAllComponents<PlayerController>()
+			LocalPlayer = Scene.GetAllComponents<PlayerObject>()
 				.FirstOrDefault( p => p.Network.IsOwner );
 		}
 

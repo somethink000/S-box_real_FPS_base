@@ -20,7 +20,7 @@ public abstract class WeaponComponent : Component
 	[Property] public Vector3 idlePos { get; set; }
 
 	public bool HasViewModel => ViewModel.IsValid();
-	public PlayerController owner { get; set; }
+	public PlayerObject owner { get; set; }
 	public SkinnedModelRenderer ModelRenderer { get; set; }
 	public ViewModel ViewModel { get; set; }
 	public TimeUntil NextAttackTime { get; set; }
@@ -64,6 +64,7 @@ public abstract class WeaponComponent : Component
 	[Broadcast]
 	public virtual void Deploy()
 	{
+		
 		if ( !IsDeployed )
 		{
 			IsDeployed = true;
@@ -112,13 +113,13 @@ public abstract class WeaponComponent : Component
 
 	protected virtual void OnDeployed()
 	{
-		var player = Components.GetInAncestors<PlayerController>();
+		var player = Components.GetInAncestors<PlayerObject>();
 
 		
 
 		if ( player.IsValid() )
 		{
-			foreach ( var animator in player.Animators )
+			foreach ( var animator in player.Controller.Animators )
 			{
 				animator.TriggerDeploy();
 			}
@@ -155,15 +156,16 @@ public abstract class WeaponComponent : Component
 	{
 		if ( !ViewModelPrefab.IsValid() )
 			return;
-		
-		var player = Components.GetInAncestors<PlayerController>();
+
+
+		var player = Components.GetInAncestors<PlayerObject>();
 
 		var viewModelGameObject = ViewModelPrefab.Clone();
-		viewModelGameObject.SetParent( player.ViewModelRoot, false );
-		
+		viewModelGameObject.SetParent( player.CameraController.Camera.GameObject, false );
+		 
 		ViewModel = viewModelGameObject.Components.Get<ViewModel>();
 		ViewModel.SetWeaponComponent( this );
-		ViewModel.SetCamera( player.PlyCamera );
+		ViewModel.SetCamera( player.CameraController.Camera );
 		ModelRenderer.Enabled = false;
 	}
 
