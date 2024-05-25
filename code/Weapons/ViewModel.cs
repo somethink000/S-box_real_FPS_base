@@ -99,7 +99,7 @@ public sealed class ViewModel : Component
 			float plySettingsFov = Preferences.FieldOfView;
 
 
-			if ( PlayerController.IsAiming )
+			if ( Gun.IsAiming )
 			{ 
 				CurPos = CurPos.LerpTo( plusPos + Gun.aimPos, Time.Delta * 10f );
 				CurFOV = CurFOV.LerpTo( Screen.CreateVerticalFieldOfView( plySettingsFov - Gun.AimFOVDec ), Time.Delta * 10f );
@@ -110,7 +110,7 @@ public sealed class ViewModel : Component
 				CurPos = CurPos.LerpTo( plusPos, Time.Delta * 10f );
 				CurFOV = CurFOV.LerpTo( Screen.CreateVerticalFieldOfView( plySettingsFov ), Time.Delta * 10f );
 			}
-			ModelRenderer.Set( "b_aiming", PlayerController.IsAiming );
+			ModelRenderer.Set( "b_aiming", Gun.IsAiming );
 		
 
 		
@@ -164,7 +164,7 @@ public sealed class ViewModel : Component
 		CurY = lastCameraCalc.Pitch() - curCameraCalc.Pitch();
 
 
-		if ( PlayerController.IsAiming )
+		if ( Gun.IsValid() && Gun.IsAiming )
 		{
 			CurSmoothRotate = Rotation.From( 0, 0, 0 );
 		}
@@ -172,6 +172,7 @@ public sealed class ViewModel : Component
 		{
 			CurSmoothRotate = Rotation.From( Math.Clamp( CurY, -1, 1 ), Math.Clamp( CurX, -1, 1 ), 0 );
 		}
+
 		
 		CurRotation *= CurSmoothRotate;
 
@@ -202,7 +203,7 @@ public sealed class ViewModel : Component
 		speed = speed > 10.0 ? speed : 0.0f;
 
 
-		if ( speed > 0f && PlayerController.IsAiming )
+		if ( Gun.IsValid() && (speed > 0f && Gun.IsAiming) )
 		{
 			speed = 10f;
 		}

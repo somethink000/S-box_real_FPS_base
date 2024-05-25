@@ -8,7 +8,7 @@ namespace GeneralGame;
 
 public class PlayerController : Component, IHealthComponent
 {
-	[Property] public Vector3 Gravity { get; set; } = new ( 0f, 0f, 800f );
+
 	[Property] public CharacterController CharacterController { get; private set; }
 	[Property] public SkinnedModelRenderer ModelRenderer { get; private set; }
 	[Property] public RagdollController Ragdoll { get; private set; }
@@ -23,29 +23,50 @@ public class PlayerController : Component, IHealthComponent
 	[Property] public CitizenAnimationHelper AnimationHelper { get; set; }
 	[Property] public SoundEvent HurtSound { get; set; }
 	[Property] public bool SicknessMode { get; set; }
-	[Property] public float StandHeight { get; set; } = 64f;
-	[Property] public float DuckHeight { get; set; } = 28f;
 	[Property] public float HealthRegenPerSecond { get; set; } = 10f;
-	[Property] public Action OnJump { get; set; }
-
+		
 	[Sync, Property] public float MaxHealth { get; private set; } = 100f;
 	[Sync] public LifeState LifeState { get; private set; } = LifeState.Alive;
 	[Sync] public float Health { get; private set; } = 100f;
-	[Sync] public float MoveSpeed { get; set; }
 	[Sync] public Angles EyeAngles { get; set; }
-	[Sync] public bool IsAiming { get; set; }
-	[Sync] public bool IsRunning { get; set; }
-	[Sync] public bool IsCrouching { get; set; }
 
-	public Vector3 WishVelocity { get; private set; }
-	private Vector3 SieatOffset => new Vector3( 0f, 0f, -40f );
-	private RealTimeSince LastGroundedTime { get; set; }
-	private RealTimeSince LastUngroundedTime { get; set; }
 	private RealTimeSince TimeSinceDamaged { get; set; }
-	private bool WantsToCrouch { get; set; }
 	private Angles Recoil { get; set; }
 
 
+	//Movement {
+		[Property] public float baseWalkSpeed { get; set; } = 110f;
+		[Property] public float baseRunSpeed { get; set; } = 260f;
+		[Property] public float baseCrouchSpeed { get; set; } = 64f;
+		private float walkSpeed { get; set; }
+		private float runSpeed { get; set; }
+		private float crouchSpeed { get; set; }
+		private bool WantsToCrouch { get; set; }
+		[Property] public float StandHeight { get; set; } = 64f;
+		[Property] public float DuckHeight { get; set; } = 28f;
+		private Vector3 SieatOffset => new Vector3( 0f, 0f, -40f );
+		[Property] public Vector3 Gravity { get; set; } = new( 0f, 0f, 800f );
+		public Vector3 WishVelocity { get; private set; }
+		private RealTimeSince LastGroundedTime { get; set; }
+		private RealTimeSince LastUngroundedTime { get; set; }
+		[Property] public Action OnJump { get; set; }
+		[Sync] public bool IsRunning { get; set; }
+		[Sync] public bool IsCrouching { get; set; }
+		[Sync] public float MoveSpeed { get; set; }
+	//}
+
+	public void setWalkSpeed( float speed )
+	{
+		walkSpeed = speed;
+	}
+	public void setRunSpeed( float speed )
+	{
+		runSpeed = speed;
+	}
+	public void setCrouchSpeed( float speed )
+	{
+		crouchSpeed = speed;
+	}
 	public void ApplyRecoil( Angles recoil )
 	{
 		if ( IsProxy ) return;
@@ -150,6 +171,9 @@ public class PlayerController : Component, IHealthComponent
 		if ( CharacterController.IsValid() )
 		{
 			CharacterController.Height = StandHeight;
+			setWalkSpeed( baseWalkSpeed );
+			setRunSpeed( baseRunSpeed );
+			setCrouchSpeed( baseCrouchSpeed );
 		}
 		
 		if ( IsProxy )
@@ -300,7 +324,7 @@ public class PlayerController : Component, IHealthComponent
 			angles.pitch = angles.pitch.Clamp( -60f, 80f );
 			
 			EyeAngles = angles.WithRoll( 0f );
-			IsRunning = Input.Down( "Run" ) && !IsAiming;
+			IsRunning = Input.Down( "Run" );
 			Recoil = Recoil.LerpTo( Angles.Zero, Time.Delta * 8f );
 		}
 		
@@ -486,12 +510,12 @@ protected virtual void DoCrouchingInput()
 
 		
 		if ( IsCrouching )
-			WishVelocity *= 64f;
+			WishVelocity *= crouchSpeed;
 		else if ( IsRunning )
 
-			WishVelocity *= 260f;
+			WishVelocity *= runSpeed;
 		else
-			WishVelocity *= 110f;
+			WishVelocity *= walkSpeed;
 	}
 
 	[Broadcast]

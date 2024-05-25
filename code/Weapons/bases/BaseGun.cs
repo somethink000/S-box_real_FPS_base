@@ -21,6 +21,7 @@ public class BaseGun : WeaponComponent, IUse
 	[Property] public int DefaultAmmo { get; set; } = 60;
 	[Property] public int ClipSize { get; set; } = 30;
 	//AIM
+	[Sync] public bool IsAiming { get; set; }
 	[Property] public Vector3 aimPos { get; set; }
 	[Property] public Rotation aimRotation { get; set; }
 	[Property] public Rotation runRotation { get; set; }
@@ -88,11 +89,13 @@ public class BaseGun : WeaponComponent, IUse
 
 	public override void seccondaryAction()
 	{
-		owner.IsAiming = true;
+		IsAiming = true;
+		owner.setRunSpeed( owner.baseWalkSpeed );
 	}
 	public override void seccondaryActionRelease()
 	{
-		owner.IsAiming = false;
+		IsAiming = false;
+		owner.setRunSpeed( owner.baseRunSpeed );
 	}
 
 	public override void reloadAction()

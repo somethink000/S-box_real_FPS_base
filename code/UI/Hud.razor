@@ -31,11 +31,18 @@
 	}
 	
 	<div class="center">
-		@* <div class="crosshair"></div> *@
-		@if (weapon.IsValid() && !LocalPlayer.IsAiming)
+		@* Pease of shit redo this *@
+        @if (weapon.IsValid())
 		{
-			<div class="crosshair"></div>
-		}
+            @if (bsGun.IsValid() && !bsGun.IsAiming)
+            {
+                <div class="crosshair"></div>
+            }
+            else if (!bsGun.IsValid())
+            {
+                <div class="crosshair"></div>
+            }
+        }
 	</div>
 </root>
 
