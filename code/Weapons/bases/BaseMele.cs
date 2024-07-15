@@ -53,8 +53,8 @@ public class BaseMele : WeaponComponent, IUse
 
 		
 
-		var startPos = owner.CameraController.Camera.Transform.Position;
-		var direction = owner.CameraController.Camera.Transform.Rotation.Forward;
+		var startPos = owner.Camera.Transform.Position;
+		var direction = owner.Camera.Transform.Rotation.Forward;
 
 		var endPos = startPos + direction * Range;
 		var trace = Scene.Trace.Ray( startPos, endPos )

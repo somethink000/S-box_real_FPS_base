@@ -8,8 +8,6 @@
       "Position": "96,608,32",
       "Rotation": "0,0,-0.7071069,-0.7071066",
       "Enabled": true,
-      "NetworkMode": 2,
-      "NetworkInterpolation": true,
       "Components": [
         {
           "__type": "Sandbox.SpawnPoint",
@@ -23,8 +21,6 @@
       "Flags": 0,
       "Name": "Network",
       "Enabled": true,
-      "NetworkMode": 2,
-      "NetworkInterpolation": true,
       "Components": [
         {
           "__type": "GeneralGame.NetworkManager",
@@ -42,8 +38,6 @@
       "Name": "MapObjects",
       "Position": "-16.73947,-29.02401,131.4671",
       "Enabled": true,
-      "NetworkMode": 2,
-      "NetworkInterpolation": true,
       "Children": [
         {
           "__guid": "e62cf48b-ed49-4de0-a975-0c76457b0952",
@@ -53,8 +47,6 @@
           "Rotation": "0,0.8393709,0,0.5435593",
           "Tags": "light_directional,light",
           "Enabled": true,
-          "NetworkMode": 2,
-          "NetworkInterpolation": true,
           "Components": [
             {
               "__type": "Sandbox.DirectionalLight",
@@ -74,8 +66,6 @@
           "Position": "0,0,0",
           "Tags": "skybox",
           "Enabled": true,
-          "NetworkMode": 2,
-          "NetworkInterpolation": true,
           "Components": [
             {
               "__type": "Sandbox.SkyBox2D",
@@ -92,8 +82,6 @@
           "Position": "183.8249,545.1422,-103.3736",
           "Rotation": "0,0,-0.7071067,0.7071068",
           "Enabled": true,
-          "NetworkMode": 2,
-          "NetworkInterpolation": true,
           "Components": [
             {
               "__type": "Sandbox.ModelRenderer",
@@ -126,8 +114,6 @@
           "Position": "89.65404,544.0036,-103.3736",
           "Rotation": "0,0,0.7071067,0.7071068",
           "Enabled": true,
-          "NetworkMode": 2,
-          "NetworkInterpolation": true,
           "Components": [
             {
               "__type": "Sandbox.ModelRenderer",
@@ -160,8 +146,6 @@
           "Position": "-419.347,-677.9947,-103.373",
           "Rotation": "0,0,0.9999999,0.0000001490116",
           "Enabled": true,
-          "NetworkMode": 2,
-          "NetworkInterpolation": true,
           "Components": [
             {
               "__type": "Sandbox.ModelRenderer",
@@ -193,13 +177,13 @@
           "Name": "Object",
           "Position": "-451.3088,1981.48,2440.137",
           "Enabled": true,
-          "NetworkMode": 2,
-          "NetworkInterpolation": true,
           "Components": [
             {
               "__type": "Sandbox.MapInstance",
               "__guid": "26ccac32-4acb-4b15-a60c-c7b979c1cb16",
+              "__version": 1,
               "MapName": "maps/testbase.vmap",
+              "NoOrigin": true,
               "UseMapFromLaunch": false
             }
           ],
@@ -213,8 +197,6 @@
       "Name": "\u0027WepanSpawn",
       "Position": "56,688,32.00006",
       "Enabled": true,
-      "NetworkMode": 2,
-      "NetworkInterpolation": true,
       "Components": [
         {
           "__type": "GeneralGame.PickupSpawner",
@@ -233,8 +215,6 @@
       "Name": "\u0027WepanSpawn (1)",
       "Position": "128,688,32.00006",
       "Enabled": true,
-      "NetworkMode": 2,
-      "NetworkInterpolation": true,
       "Components": [
         {
           "__type": "GeneralGame.PickupSpawner",
@@ -253,8 +233,6 @@
       "Name": "\u0027WepanSpawn (2)",
       "Position": "16,656,32.00006",
       "Enabled": true,
-      "NetworkMode": 2,
-      "NetworkInterpolation": true,
       "Components": [
         {
           "__type": "GeneralGame.PickupSpawner",
@@ -273,8 +251,6 @@
       "Name": "\u0027WepanSpawn (3)",
       "Position": "184,648,32.00005",
       "Enabled": true,
-      "NetworkMode": 2,
-      "NetworkInterpolation": true,
       "Components": [
         {
           "__type": "GeneralGame.PickupSpawner",
@@ -293,8 +269,6 @@
       "Name": "ZmbSpawn (2)",
       "Position": "-4000,-5200,528",
       "Enabled": true,
-      "NetworkMode": 2,
-      "NetworkInterpolation": true,
       "Components": [
         {
           "__type": "GeneralGame.ZombieSpawner",
@@ -313,8 +287,6 @@
       "Name": "ZmbSpawn (1)",
       "Position": "6120,-4984,672",
       "Enabled": true,
-      "NetworkMode": 2,
-      "NetworkInterpolation": true,
       "Components": [
         {
           "__type": "GeneralGame.ZombieSpawner",
@@ -351,10 +323,9 @@
   },
   "Title": "minimal",
   "Description": "",
-  "LastSaved": "2024-05-22T16:37:27.1291168-07:00",
   "ResourceVersion": 1,
-  "__version": 1,
   "__references": [
     "facepunch.wooden_door_01c"
-  ]
+  ],
+  "__version": 1
 }

@@ -1,10 +1,10 @@
 {
-  "Title": "Some FPS base",
+  "Title": "FPS Base",
   "Type": "game",
   "Org": "evilinc",
-  "Ident": "real_fps_base",
-  "Tags": null,
+  "Ident": "fps_base",
   "Schema": 1,
+  "IncludeSourceFiles": true,
   "Resources": null,
   "PackageReferences": [],
   "EditorReferences": null,
@@ -22,7 +22,7 @@
     "LeaderboardType": "None",
     "CsProjName": "",
     "StartupScene": "scenes/lobby.scene",
-    "ProjectTemplate": null,
+    "MapStartupScene": "scenes/dom.scene",
     "LaunchMode": "Normal"
   }
 }

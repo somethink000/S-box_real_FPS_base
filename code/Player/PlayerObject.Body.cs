@@ -8,21 +8,10 @@ using Sandbox.Citizen;
 namespace GeneralGame;
 
 //Body visability shit 
-public class PlayerBody : Component
+public partial class PlayerObject
 {
 	[Property] public SkinnedModelRenderer ModelRenderer { get; private set; }
-	private PlayerObject ply { get; set; }
-	private CameraComponent Camera { get; set; }
-	private PlayerController Controller { get; set; }
-
-
-	protected override void OnAwake()
-	{
-		base.OnAwake();
-		ply = GameObject.Components.Get<PlayerObject>();
-		Camera = ply.CameraController.Camera;
-		Controller = ply.Controller;
-	}
+	
 
 	private void UpdateModelVisibility()
 	{
@@ -34,8 +23,8 @@ public class PlayerBody : Component
 		if ( IsProxy ) Camera.Enabled = false;
 
 
-		var deployedWeapon = ply.Weapons.Deployed;
-		var shadowRenderer = Controller.ShadowAnimator.Components.Get<SkinnedModelRenderer>( true );
+		var deployedWeapon = Weapons.Deployed;
+		var shadowRenderer = ShadowAnimator.Components.Get<SkinnedModelRenderer>( true );
 		var hasViewModel = deployedWeapon.IsValid() && deployedWeapon.HasViewModel;
 		var clothing = ModelRenderer.Components.GetAll<ClothingComponent>( FindMode.EverythingInSelfAndDescendants );
 
@@ -44,12 +33,12 @@ public class PlayerBody : Component
 		{
 			shadowRenderer.Enabled = false;
 
-			ModelRenderer.Enabled = ply.Ragdoll.IsRagdolled;
+			ModelRenderer.Enabled = Ragdoll.IsRagdolled;
 			ModelRenderer.RenderType = Sandbox.ModelRenderer.ShadowRenderType.On;
 
 			foreach ( var c in clothing )
 			{
-				c.ModelRenderer.Enabled = ply.Ragdoll.IsRagdolled;
+				c.ModelRenderer.Enabled = Ragdoll.IsRagdolled;
 				c.ModelRenderer.RenderType = Sandbox.ModelRenderer.ShadowRenderType.On;
 			}
 
@@ -59,7 +48,7 @@ public class PlayerBody : Component
 		ModelRenderer.SetBodyGroup( "head", IsProxy ? 0 : 1 );
 		ModelRenderer.Enabled = true;
 
-		if ( ply.Ragdoll.IsRagdolled )
+		if ( Ragdoll.IsRagdolled )
 		{
 			ModelRenderer.RenderType = Sandbox.ModelRenderer.ShadowRenderType.On;
 			shadowRenderer.Enabled = false;
@@ -83,9 +72,8 @@ public class PlayerBody : Component
 			}
 		}
 	}
-	protected override void OnPreRender()
+	public void BodyPreRender()
 	{
-		base.OnPreRender();
 
 		if ( !Scene.IsValid() || !Camera.IsValid() )
 			return;

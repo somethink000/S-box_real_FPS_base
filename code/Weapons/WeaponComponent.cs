@@ -119,7 +119,7 @@ public abstract class WeaponComponent : Component
 
 		if ( player.IsValid() )
 		{
-			foreach ( var animator in player.Controller.Animators )
+			foreach ( var animator in player.Animators )
 			{
 				animator.TriggerDeploy();
 			}
@@ -161,11 +161,11 @@ public abstract class WeaponComponent : Component
 		var player = Components.GetInAncestors<PlayerObject>();
 
 		var viewModelGameObject = ViewModelPrefab.Clone();
-		viewModelGameObject.SetParent( player.CameraController.Camera.GameObject, false );
+		viewModelGameObject.SetParent( player.Camera.GameObject, false );
 		 
 		ViewModel = viewModelGameObject.Components.Get<ViewModel>();
 		ViewModel.SetWeaponComponent( this );
-		ViewModel.SetCamera( player.CameraController.Camera );
+		ViewModel.SetCamera( player.Camera );
 		ModelRenderer.Enabled = false;
 	}
 

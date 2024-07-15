@@ -8,11 +8,8 @@ namespace GeneralGame;
 
 //Player game logic,
 //To use Camera, Speed, CharachterController variables take them from PlayerBody, PlayerCamera, PlayerController. like (player.CameraController.Camera)
-public class PlayerObject : Component, IHealthComponent
+public partial class PlayerObject : Component, IHealthComponent
 {
-	[Property] public PlayerController Controller { get; set; }
-	[Property] public PlayerBody Body { get; set; }
-	[Property] public PlayerCamera CameraController { get; set; }
 
 	[Property] public RagdollController Ragdoll { get; private set; }
 	[Property] public AmmoContainer Ammo { get; set; }
@@ -25,7 +22,6 @@ public class PlayerObject : Component, IHealthComponent
 	[Sync] public float Health { get; private set; } = 100f;
 
 	private RealTimeSince TimeSinceDamaged { get; set; }
-	private CameraComponent Camera { get; set; }
 
 	public async void RespawnAsync( float seconds )
 	{
@@ -106,11 +102,13 @@ public class PlayerObject : Component, IHealthComponent
 	protected override void OnAwake()
 	{
 		base.OnAwake();
-		Camera = CameraController.Camera;
+		OnControllerAwake();
+		OnCameraAwake();
 	}
 
 	protected override void OnStart()
 	{
+		OnControllerStart();
 
 		if ( !IsProxy )
 		{
@@ -119,11 +117,20 @@ public class PlayerObject : Component, IHealthComponent
 			
 		base.OnStart();
 	}
+	
+	protected override void OnUpdate()
+	{
+		base.OnUpdate();
 
-
+		ControllerUpdate();
+		CameraUpdate();
+	}
 
 	protected override void OnFixedUpdate()
 	{
+
+		ControllerFixedUpdate();
+
 		if ( IsProxy )
 			return;
 
@@ -204,7 +211,7 @@ public class PlayerObject : Component, IHealthComponent
 
 		Transform.Position = randomSpawnpoint.Transform.Position;
 		Transform.Rotation = Rotation.FromYaw( randomSpawnpoint.Transform.Rotation.Yaw() );
-		CameraController.EyeAngles = Transform.Rotation;
+		EyeAngles = Transform.Rotation;
 	}
 
 
@@ -215,5 +222,11 @@ public class PlayerObject : Component, IHealthComponent
 		var attacker = Scene.Directory.FindByGuid( attackerId );
 		OnKilled( attacker );
 	}
-	
+	protected override void OnPreRender()
+	{
+		base.OnPreRender();
+		OnCameraPreRender();
+		BodyPreRender();
+
+	}
 }

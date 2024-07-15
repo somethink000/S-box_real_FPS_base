@@ -7,7 +7,7 @@ using Sandbox.Citizen;
 namespace GeneralGame;
 
 //Camera moves 
-public class PlayerCamera : Component
+public partial class PlayerObject
 {
 	[Property] public CameraComponent Camera { get; set; }
 	[Property] public GameObject Head { get; set; }
@@ -17,8 +17,6 @@ public class PlayerCamera : Component
 	[Sync] public Angles EyeAngles { get; set; }
 
 	private Vector3 SieatOffset => new Vector3( 0f, 0f, -40f );
-	private PlayerObject ply { get; set; }
-
 	
 	public void ResetViewAngles()
 	{
@@ -26,20 +24,19 @@ public class PlayerCamera : Component
 		EyeAngles = rotation.Angles().WithRoll( 0f );
 	}
 
-	protected override void OnAwake()
+	public void OnCameraAwake()
 	{
-		base.OnAwake();
-		ply = GameObject.Components.Get<PlayerObject>();
-
+		
+		
 		if ( IsProxy )
 			return;
 
 		ResetViewAngles();
 	}
-	
-	protected override void OnPreRender()
+
+	public void OnCameraPreRender()
 	{
-		base.OnPreRender();
+		
 
 		if ( !Scene.IsValid() || !Camera.IsValid() )
 			return;
@@ -50,7 +47,7 @@ public class PlayerCamera : Component
 		if ( !Eye.IsValid() )
 			return;
 
-		if ( ply.Ragdoll.IsRagdolled )
+		if ( Ragdoll.IsRagdolled )
 		{
 			Camera.Transform.Position = Camera.Transform.Position.LerpTo( Eye.Transform.Position, Time.Delta * 32f );
 			Camera.Transform.Rotation = Rotation.Lerp( Camera.Transform.Rotation, Eye.Transform.Rotation, Time.Delta * 16f );
@@ -59,7 +56,7 @@ public class PlayerCamera : Component
 
 
 		var idealEyePos = Eye.Transform.Position;
-		var headPosition = Transform.Position + Vector3.Up * ply.Controller.CC.Height;
+		var headPosition = Transform.Position + Vector3.Up * CC.Height;
 		var headTrace = Scene.Trace.Ray( Transform.Position, headPosition )
 			.UsePhysicsWorld()
 			.IgnoreGameObjectHierarchy( GameObject )
@@ -75,7 +72,7 @@ public class PlayerCamera : Component
 			.Radius( 2f )
 			.Run();
 
-		var deployedWeapon = ply.Weapons.Deployed;
+		var deployedWeapon = Weapons.Deployed;
 		var hasViewModel = deployedWeapon.IsValid() && deployedWeapon.HasViewModel;
 
 		if ( hasViewModel )
@@ -89,16 +86,16 @@ public class PlayerCamera : Component
 			Camera.Transform.Rotation = EyeAngles.ToRotation() * Rotation.FromPitch( -10f );
 
 
-		if ( ply.Controller.IsCrouching && hasViewModel )
+		if ( IsCrouching && hasViewModel )
 		{
 			Camera.Transform.Position = Camera.Transform.Position + SieatOffset;
 		}
 	}
 
 	
-	protected override void OnUpdate()
+	public void CameraUpdate()
 	{
-		if ( ply.Ragdoll.IsRagdolled || ply.LifeState == LifeState.Dead )
+		if ( Ragdoll.IsRagdolled || LifeState == LifeState.Dead )
 			return;
 
 		if ( !IsProxy )

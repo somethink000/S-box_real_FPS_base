@@ -93,11 +93,11 @@ public class BaseGun : WeaponComponent, IUse
 	public override void seccondaryAction()
 	{
 		IsAiming = true;
-		owner.Controller.setRunSpeed( owner.Controller.baseWalkSpeed );
+		owner.setRunSpeed( owner.baseWalkSpeed );
 	}
 	public override void seccondaryActionRelease()
 	{
-		owner.Controller.setRunSpeed( owner.Controller.baseRunSpeed );
+		owner.setRunSpeed( owner.baseRunSpeed );
 		IsAiming = false;
 	}
 
@@ -132,10 +132,10 @@ public class BaseGun : WeaponComponent, IUse
 	}
 	private void BuildRecoil()
 	{
-		var angles = owner.CameraController.EyeAngles.Normal;
+		var angles = owner.EyeAngles.Normal;
 		angles += curRecoil * Time.Delta;
 
-		owner.CameraController.EyeAngles = angles.WithRoll( 0f );
+		owner.EyeAngles = angles.WithRoll( 0f );
 
 		curRecoil = curRecoil.LerpTo( Angles.Zero, Time.Delta * 8f );
 	}
@@ -153,13 +153,13 @@ public class BaseGun : WeaponComponent, IUse
 		}
 
 		
-		if ( owner.Controller.IsRunning ) return;
+		if ( owner.IsRunning ) return;
 
 		ApplyRecoil( Recoil );
 
 		var attachment = EffectRenderer.GetAttachment( "muzzle" );
-		var startPos = owner.CameraController.Camera.Transform.Position;
-		var direction = owner.CameraController.Camera.Transform.Rotation.Forward;
+		var startPos = owner.Camera.Transform.Position;
+		var direction = owner.Camera.Transform.Rotation.Forward;
 		direction += Vector3.Random * Spread;
 
 		var endPos = startPos + direction * 10000f;

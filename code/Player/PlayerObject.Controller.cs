@@ -7,7 +7,7 @@ using Sandbox.Citizen;
 namespace GeneralGame;
 
 //Movement
-public class PlayerController: Component
+public partial class PlayerObject
 {
 
 	[Property] public float StandHeight { get; set; } = 64f;
@@ -28,7 +28,6 @@ public class PlayerController: Component
 	public Vector3 WishVelocity { get; private set; }
 	private RealTimeSince LastGroundedTime { get; set; }
 	private RealTimeSince LastUngroundedTime { get; set; }
-	private PlayerObject ply { get; set; }
 
 
 	//Speed {
@@ -63,11 +62,9 @@ public class PlayerController: Component
 		return !tr.Hit;
 	}
 
-	protected override void OnAwake()
+	public void OnControllerAwake()
 	{
-		base.OnAwake();
-		ply = GameObject.Components.Get<PlayerObject>();
-
+	
 		if ( CC.IsValid() )
 		{
 			CC.Height = StandHeight;
@@ -77,17 +74,17 @@ public class PlayerController: Component
 		}
 	}
 
-	protected override void OnStart()
+	public void OnControllerStart()
 	{
 		Animators.Add( ShadowAnimator );
 		Animators.Add( AnimationHelper );
 
-		base.OnStart();
+
 	}
 
-	protected override void OnUpdate()
+	public void ControllerUpdate()
 	{
-		if ( ply.Ragdoll.IsRagdolled || ply.LifeState == LifeState.Dead )
+		if ( Ragdoll.IsRagdolled || LifeState == LifeState.Dead )
 			return;
 
 		if ( !IsProxy )
@@ -95,7 +92,7 @@ public class PlayerController: Component
 			IsRunning = ( !IsCrouching && !(runSpeed <= walkSpeed) ) ? Input.Down( "Run" ) : false;
 		}
 
-		var weapon = ply.Weapons.Deployed;
+		var weapon = Weapons.Deployed;
 
 		foreach ( var animator in Animators )
 		{
@@ -105,7 +102,7 @@ public class PlayerController: Component
 			animator.IsGrounded = CC.IsOnGround;
 			animator.MoveRotationSpeed = 0f;
 			animator.DuckLevel = IsCrouching ? 1f : 0f;
-			animator.WithLook( ply.CameraController.EyeAngles.Forward );
+			animator.WithLook( EyeAngles.Forward );
 			animator.MoveStyle = (IsRunning && !IsCrouching) ? CitizenAnimationHelper.MoveStyles.Run : CitizenAnimationHelper.MoveStyles.Walk;
 		}
 	}
@@ -174,15 +171,15 @@ public class PlayerController: Component
 			LastGroundedTime = 0f;
 		}
 
-		Transform.Rotation = Rotation.FromYaw( ply.CameraController.EyeAngles.ToRotation().Yaw() );
+		Transform.Rotation = Rotation.FromYaw( EyeAngles.ToRotation().Yaw() );
 	}
 
-	protected override void OnFixedUpdate()
+	public void ControllerFixedUpdate()
 	{
 		if ( IsProxy )
 			return;
 
-		if ( ply.Ragdoll.IsRagdolled || ply.LifeState == LifeState.Dead )
+		if ( Ragdoll.IsRagdolled || LifeState == LifeState.Dead )
 			return;
 
 		DoCrouchingInput();
@@ -192,7 +189,7 @@ public class PlayerController: Component
 
 	private void BuildWishVelocity()
 	{
-		var rotation = ply.CameraController.EyeAngles.ToRotation();
+		var rotation = EyeAngles.ToRotation();
 
 		WishVelocity = rotation * Input.AnalogMove;
 		WishVelocity = WishVelocity.WithZ( 0f );

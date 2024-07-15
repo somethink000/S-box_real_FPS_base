@@ -109,7 +109,7 @@ public sealed class ViewModel : Component
 			}
 			else
 			{
-				if ( plyObj.Controller.IsRunning )
+				if ( plyObj.IsRunning )
 				{
 					CurPos = CurPos.LerpTo( plusPos + Gun.runPos, Time.Delta * 10f );
 				}
@@ -128,7 +128,7 @@ public sealed class ViewModel : Component
 
 
 		
-			if ( plyObj.Controller.IsRunning )
+			if ( plyObj.IsRunning )
 			{
 				CurRotation = Rotation.Lerp( CurRotation, Rotation.Identity * Gun.runRotation, Time.Delta * 10f );
 			}
@@ -200,7 +200,7 @@ public sealed class ViewModel : Component
 		YawInertia += yawDelta;
 
 
-		var playerVelocity = plyObj.Controller.CC.Velocity;
+		var playerVelocity = plyObj.CC.Velocity;
 
 
 		var verticalDelta = playerVelocity.z * Time.Delta;
