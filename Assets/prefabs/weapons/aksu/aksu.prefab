@@ -5,8 +5,6 @@
     "Name": "aksu",
     "Scale": "1.5,1.5,1.5",
     "Enabled": true,
-    "NetworkMode": 2,
-    "NetworkInterpolation": true,
     "Components": [
       {
         "__type": "Sandbox.SkinnedModelRenderer",
@@ -15,7 +13,8 @@
         "CreateBoneObjects": false,
         "Model": "models/aksu/w/ak74u_modern_ak74u_mag_ref.vmdl",
         "RenderType": "On",
-        "Tint": "1,1,1,1"
+        "Tint": "1,1,1,1",
+        "UseAnimGraph": true
       },
       {
         "__type": "GeneralGame.BaseGun",
@@ -23,7 +22,7 @@
         "AimFOVDec": 30,
         "aimPos": "-1,1.92,0.57",
         "aimRotation": "0,0,0,0",
-        "AmmoType": "Rifle",
+        "AmmoType": "prefabs/items/ammo_rifle.prefab",
         "ClipSize": 30,
         "Damage": 40,
         "DamageForce": 5,
@@ -72,14 +71,36 @@
         "MotionEnabled": true,
         "RigidbodyFlags": 0,
         "StartAsleep": false
+      },
+      {
+        "__type": "GeneralGame.ItemEquipment",
+        "__guid": "fd0a2289-c6e6-4e79-a65e-2588b5aa56eb",
+        "Count": 0,
+        "Description": "asdad",
+        "Icon": {
+          "Model": "models/aksu/w/ak74u_modern_ak74u_mag_ref.vmdl",
+          "MaterialGroup": "",
+          "Colour": "1,1,1,1",
+          "Position": "4,-4,2",
+          "Rotation": "-0.6272113,0.6272115,-0.3265055,-0.3265056",
+          "Guid": "2b8567c3-041d-4b99-8b6d-9d01329b9633"
+        },
+        "MaxStack": 0,
+        "Name": "ak",
+        "Slots": [
+          "SeccondWeapon",
+          "FirstWeapon"
+        ],
+        "WeightInGrams": 2000
       }
     ],
-    "Children": []
+    "Children": [],
+    "__variables": []
   },
   "ShowInMenu": false,
   "MenuPath": null,
   "MenuIcon": null,
   "ResourceVersion": 1,
-  "__version": 1,
-  "__references": []
+  "__references": [],
+  "__version": 1
 }

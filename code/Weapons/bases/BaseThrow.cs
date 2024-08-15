@@ -6,7 +6,7 @@ using System.Numerics;
 namespace GeneralGame;
 
 
-public class BaseThrow : WeaponComponent, IUse
+public class BaseThrow : WeaponComponent
 {
 	[Property] public float prepareTime { get; set; }
 	[Property] public float releaseTime { get; set; }
@@ -18,25 +18,6 @@ public class BaseThrow : WeaponComponent, IUse
 	public TimeUntil curReleaseTime { get; set; }
 	public bool isPreparing { get; set; } = false;
 	public bool waitingThrow { get; set; } = false;
-
-	[Broadcast]
-	public virtual void OnUse( Guid pickerId )
-	{
-		var picker = Scene.Directory.FindByGuid( pickerId );
-		if ( !picker.IsValid() ) return;
-
-		var player = picker.Components.GetInDescendantsOrSelf<PlayerObject>();
-		if ( !player.IsValid() ) return;
-
-		if ( player.IsProxy )
-			return;
-
-		if ( !player.Weapons.Has( GameObject ) )
-		{
-			player.Weapons.Give( GameObject, false );
-			GameObject.Destroy();
-		}
-	}
 
 	public override void primaryAction()
 	{

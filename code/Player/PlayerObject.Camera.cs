@@ -7,7 +7,7 @@ using Sandbox.Citizen;
 namespace GeneralGame;
 
 //Camera moves 
-public partial class PlayerObject
+partial class PlayerObject
 {
 	[Property] public CameraComponent Camera { get; set; }
 	[Property] public GameObject Head { get; set; }
@@ -17,26 +17,23 @@ public partial class PlayerObject
 	[Sync] public Angles EyeAngles { get; set; }
 
 	private Vector3 SieatOffset => new Vector3( 0f, 0f, -40f );
-	
+
+	public void CameraAwake()
+	{
+		if ( IsProxy )
+			return;
+		ResetViewAngles();
+	}
+
 	public void ResetViewAngles()
 	{
 		var rotation = Rotation.Identity;
 		EyeAngles = rotation.Angles().WithRoll( 0f );
 	}
-
-	public void OnCameraAwake()
+	
+	public void CameraPreRender()
 	{
-		
-		
-		if ( IsProxy )
-			return;
-
-		ResetViewAngles();
-	}
-
-	public void OnCameraPreRender()
-	{
-		
+		base.OnPreRender();
 
 		if ( !Scene.IsValid() || !Camera.IsValid() )
 			return;
@@ -47,7 +44,7 @@ public partial class PlayerObject
 		if ( !Eye.IsValid() )
 			return;
 
-		if ( Ragdoll.IsRagdolled )
+		if ( ply.Ragdoll.IsRagdolled )
 		{
 			Camera.Transform.Position = Camera.Transform.Position.LerpTo( Eye.Transform.Position, Time.Delta * 32f );
 			Camera.Transform.Rotation = Rotation.Lerp( Camera.Transform.Rotation, Eye.Transform.Rotation, Time.Delta * 16f );
@@ -72,7 +69,7 @@ public partial class PlayerObject
 			.Radius( 2f )
 			.Run();
 
-		var deployedWeapon = Weapons.Deployed;
+		var deployedWeapon = ply.Inventory.Deployed;
 		var hasViewModel = deployedWeapon.IsValid() && deployedWeapon.HasViewModel;
 
 		if ( hasViewModel )
@@ -92,10 +89,10 @@ public partial class PlayerObject
 		}
 	}
 
-	
+
 	public void CameraUpdate()
 	{
-		if ( Ragdoll.IsRagdolled || LifeState == LifeState.Dead )
+		if ( ply.Ragdoll.IsRagdolled || ply.LifeState == LifeState.Dead )
 			return;
 
 		if ( !IsProxy )

@@ -1,0 +1,28 @@
+@namespace GeneralGame.UI
+@attribute [StyleSheet]
+@inherits Panel
+
+<root 
+	onclick=@(() => { if (!IsDisabled) OnClick?.Invoke(); })
+	class="@(IsDisabled ? "disabled" : "") @(IsInverted ? "ltr" : "")"
+>
+	<image src=@ImagePath />
+	<div class="text-container">
+		<text class="text-title">@Title</text>
+		<text class="text-subtitle">@Subtitle</text>
+	</div>
+</root>
+
+@code {
+	public string Title { get; set; }
+	public string Subtitle { get; set; }
+	public string ImagePath { get; set; } = "ui/hud/goback.png";
+	public bool IsDisabled { get; set; } = false;
+	public bool IsInverted { get; set; } = false;
+	new public Action OnClick { get; set; }
+
+	protected override int BuildHash()
+	{
+		return HashCode.Combine(IsDisabled, IsInverted);
+	}
+}

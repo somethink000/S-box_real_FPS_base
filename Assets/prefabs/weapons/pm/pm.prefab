@@ -1,0 +1,106 @@
+{
+  "RootObject": {
+    "__guid": "791e8249-7f54-43c1-b4a6-028e5454f766",
+    "Flags": 0,
+    "Name": "pm",
+    "Scale": "1.5,1.5,1.5",
+    "Enabled": true,
+    "Components": [
+      {
+        "__type": "Sandbox.SkinnedModelRenderer",
+        "__guid": "e7c7a37c-131a-4473-9a88-7e62df5e06d3",
+        "BodyGroups": 1,
+        "CreateBoneObjects": false,
+        "Model": "models/pm/w/pm.vmdl",
+        "RenderType": "On",
+        "Tint": "1,1,1,1",
+        "UseAnimGraph": true
+      },
+      {
+        "__type": "GeneralGame.BaseGun",
+        "__guid": "319652a5-2de7-44ca-8725-76556dc033a3",
+        "AimFOVDec": 10,
+        "aimPos": "-2.5,1.9,0.915",
+        "aimRotation": "0,0,0,0",
+        "AmmoType": "prefabs/items/ammo_pistol.prefab",
+        "ClipSize": 8,
+        "Damage": 40,
+        "DamageForce": 5,
+        "DefaultAmmo": 60,
+        "DeploySound": "sounds/weapons/weapon_deploy3.sound",
+        "DeployTime": 0.5,
+        "DisplayName": "PM",
+        "EmptyClipSound": "sounds/weapons/empty_pistol.sound",
+        "EmptyReloadSoundSequence": "models/pm/pm_reload_empty.sndseq",
+        "EmptyReloadTime": 1.9,
+        "FireRate": 7,
+        "FireSound": "models/pm/pm_fire1.sound",
+        "HoldType": "Pistol",
+        "HolsterSound": "sounds/weapons/weapon_holster3.sound",
+        "idlePos": "-3,0,0",
+        "ImpactEffect": "particles/impact.generic.vpcf",
+        "IsAuto": false,
+        "IsDeployed": false,
+        "MuzzleFlash": "particles/pistol_muzzleflash.vpcf",
+        "Recoil": "-30,0,0",
+        "ReloadSoundSequence": "models/pm/pm_reload.sndseq",
+        "ReloadTime": 2.2,
+        "runPos": "0,0,0",
+        "runRotation": "-0.01513444,0.08583164,0.1729874,0.9810603",
+        "Spread": 0.01,
+        "ViewModelPrefab": {
+          "_type": "gameobject",
+          "prefab": "prefabs/weapons/pm/vm_pm.prefab"
+        }
+      },
+      {
+        "__type": "Sandbox.Rigidbody",
+        "__guid": "03eb6aa0-404a-41fd-b970-375b2cf358d7",
+        "AngularDamping": 0,
+        "Gravity": true,
+        "LinearDamping": 0,
+        "Locking": {},
+        "MassOverride": 0,
+        "MotionEnabled": true,
+        "RigidbodyFlags": 0,
+        "StartAsleep": false
+      },
+      {
+        "__type": "Sandbox.ModelCollider",
+        "__guid": "4bd05537-82b1-4b6f-8f39-68a72dab7799",
+        "IsTrigger": false,
+        "Model": "models/pm/w/pm.vmdl",
+        "Static": false
+      },
+      {
+        "__type": "GeneralGame.ItemEquipment",
+        "__guid": "6f423a02-6cbf-436f-b39b-862d9f51ef67",
+        "Count": 0,
+        "Description": "Old ugly gun",
+        "Icon": {
+          "Model": "models/pm/w/pm.vmdl",
+          "MaterialGroup": "",
+          "Colour": "1,1,1,1",
+          "Position": "-7,10,6.3",
+          "Rotation": "0.2705981,-0.2705981,0.6532815,0.6532815",
+          "Guid": "d12ac9c1-6d9f-4769-a377-177a673755d5"
+        },
+        "MaxStack": 0,
+        "Name": "Pm",
+        "Slots": [
+          "SeccondWeapon",
+          "FirstWeapon"
+        ],
+        "WeightInGrams": 1000
+      }
+    ],
+    "Children": [],
+    "__variables": []
+  },
+  "ShowInMenu": false,
+  "MenuPath": null,
+  "MenuIcon": null,
+  "ResourceVersion": 1,
+  "__references": [],
+  "__version": 1
+}

@@ -1,0 +1,13 @@
+InGameHud {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+
+    .hold-container {
+        position: absolute;
+        left: 0px;
+        flex-direction: column-reverse;
+        gap: 20px;
+        bottom: 50px;
+    }
+}

@@ -1,0 +1,16 @@
+@import "../Style.scss";
+
+HoverPanel {
+    position: absolute;
+    /*background-color: rgba(50,50,50,0.5);*/
+    transition: all 0.08s ease-out;
+
+    &:intro {
+        transform: translateY(20);
+        opacity: 0;
+    }
+
+    &:outro {
+        transform: scale(0);
+    }
+}

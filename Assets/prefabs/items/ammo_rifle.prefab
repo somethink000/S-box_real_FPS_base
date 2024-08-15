@@ -1,0 +1,62 @@
+{
+  "RootObject": {
+    "__guid": "e0a08569-439b-411c-8e82-73d8aabe82b6",
+    "Flags": 0,
+    "Name": "ammo_rifle",
+    "Enabled": true,
+    "Components": [
+      {
+        "__type": "Sandbox.ModelRenderer",
+        "__guid": "db730de9-4587-4812-b470-a5974dd1ac6f",
+        "BodyGroups": 18446744073709551615,
+        "Model": "models/ammos/545x39.vmdl",
+        "RenderType": "On",
+        "Tint": "1,1,1,1"
+      },
+      {
+        "__type": "Sandbox.ModelCollider",
+        "__guid": "73ec5144-983d-4fd4-98ab-d3bffed1e13e",
+        "IsTrigger": false,
+        "Model": "models/ammos/545x39.vmdl",
+        "Static": false
+      },
+      {
+        "__type": "GeneralGame.ItemComponent",
+        "__guid": "8e5e1fd1-2c03-4168-a1e6-72b4c12cb347",
+        "Count": 30,
+        "Description": "Ammo for rifle",
+        "Icon": {
+          "Model": "models/ammos/545x39.vmdl",
+          "MaterialGroup": "",
+          "Colour": "1,1,1,1",
+          "Position": "-2.5,0.2,1.5",
+          "Rotation": "-0.2418447,0.664463,-0.5416752,0.4545195",
+          "Guid": "2b464108-97dd-4049-a50f-eab7077c1fb7"
+        },
+        "MaxStack": 260,
+        "Name": "5.45x39 ammo",
+        "WeightInGrams": 20
+      },
+      {
+        "__type": "Sandbox.Rigidbody",
+        "__guid": "75336a7e-0cd8-430c-b7c5-6b034a87fdbf",
+        "AngularDamping": 0,
+        "Gravity": true,
+        "LinearDamping": 0,
+        "Locking": {},
+        "MassOverride": 0,
+        "MotionEnabled": true,
+        "RigidbodyFlags": 0,
+        "StartAsleep": false
+      }
+    ],
+    "Children": [],
+    "__variables": []
+  },
+  "ShowInMenu": false,
+  "MenuPath": null,
+  "MenuIcon": null,
+  "ResourceVersion": 1,
+  "__references": [],
+  "__version": 1
+}

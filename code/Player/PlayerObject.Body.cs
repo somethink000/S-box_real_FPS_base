@@ -8,10 +8,10 @@ using Sandbox.Citizen;
 namespace GeneralGame;
 
 //Body visability shit 
-public partial class PlayerObject
+partial class PlayerObject
 {
 	[Property] public SkinnedModelRenderer ModelRenderer { get; private set; }
-	
+
 
 	private void UpdateModelVisibility()
 	{
@@ -23,7 +23,7 @@ public partial class PlayerObject
 		if ( IsProxy ) Camera.Enabled = false;
 
 
-		var deployedWeapon = Weapons.Deployed;
+		var deployedWeapon = ply.Inventory.Deployed;
 		var shadowRenderer = ShadowAnimator.Components.Get<SkinnedModelRenderer>( true );
 		var hasViewModel = deployedWeapon.IsValid() && deployedWeapon.HasViewModel;
 		var clothing = ModelRenderer.Components.GetAll<ClothingComponent>( FindMode.EverythingInSelfAndDescendants );
@@ -33,12 +33,12 @@ public partial class PlayerObject
 		{
 			shadowRenderer.Enabled = false;
 
-			ModelRenderer.Enabled = Ragdoll.IsRagdolled;
+			ModelRenderer.Enabled = ply.Ragdoll.IsRagdolled;
 			ModelRenderer.RenderType = Sandbox.ModelRenderer.ShadowRenderType.On;
 
 			foreach ( var c in clothing )
 			{
-				c.ModelRenderer.Enabled = Ragdoll.IsRagdolled;
+				c.ModelRenderer.Enabled = ply.Ragdoll.IsRagdolled;
 				c.ModelRenderer.RenderType = Sandbox.ModelRenderer.ShadowRenderType.On;
 			}
 
@@ -48,7 +48,7 @@ public partial class PlayerObject
 		ModelRenderer.SetBodyGroup( "head", IsProxy ? 0 : 1 );
 		ModelRenderer.Enabled = true;
 
-		if ( Ragdoll.IsRagdolled )
+		if ( ply.Ragdoll.IsRagdolled )
 		{
 			ModelRenderer.RenderType = Sandbox.ModelRenderer.ShadowRenderType.On;
 			shadowRenderer.Enabled = false;
@@ -74,6 +74,7 @@ public partial class PlayerObject
 	}
 	public void BodyPreRender()
 	{
+		base.OnPreRender();
 
 		if ( !Scene.IsValid() || !Camera.IsValid() )
 			return;

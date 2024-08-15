@@ -1,0 +1,120 @@
+﻿
+@namespace GeneralGame.UI
+@attribute [StyleSheet]
+@inherits Panel
+
+@if (PlayerObject.GetLocal() is null)
+	return;
+
+<root class="txt">
+
+        <div class="midle">
+
+            <div>Tab to open inventory</div>
+            <div>You need 2 humans in lobby to start deathmatch</div>
+            <div>Enter to chat & V to voice chat</div>
+            <div>Use big board in lobby to select game inventory</div>
+            <div>If game broke just restart s&box this not on me</div>
+
+        </div>
+
+
+        <div class=left>
+		    <div>
+			
+			    <InventorySlot EquipSlotIndex=@EquipSlot.FirstWeapon Item=@PlayerObject.GetLocal().Inventory.EquippedItems[(int)EquipSlot.FirstWeapon]/>
+			    <InventorySlot EquipSlotIndex=@EquipSlot.SeccondWeapon Item=@PlayerObject.GetLocal().Inventory.EquippedItems[(int)EquipSlot.SeccondWeapon]/>
+            
+		    </div>
+       
+            <text class="title">Inventory</text>
+		    <div class="items">
+                @for (var index = 0; index < PlayerObject.GetLocal().Inventory.BackpackItems.Count; index++)
+			    {
+                    var item = PlayerObject.GetLocal().Inventory.BackpackItems[index];
+				    <InventorySlot Item=@item BackpackSlotIndex=@index />
+			    }
+		    </div>
+		    <div>
+            <div class="total-weight @(PlayerObject.GetLocal().IsEncumbered ? "encumbered" : "")">
+				    <text class="encumbrance">ENCUMBERED!</text>
+				    <text>TOTAL WEIGHT: </text>
+                    <text class="active-weight">@PlayerObject.GetLocal().Inventory.Weight.ToKilograms() kg</text>
+                    <text class="max">/ @PlayerObject.GetLocal().MaxCarryWeight.ToKilograms() kg</text>
+			    </div>
+		    </div>
+        </div>
+	
+
+
+      
+
+        <div class="right">
+                <div class="table-row heading">
+                    <div class="row-item">Name</div>
+                    <div class="row-item">⏲️</div>
+                   
+                </div>
+
+                @foreach (var entry in Networking.Connections)
+                {
+                    var rowClass = string.Empty;
+                    var player = Scene.GetAllComponents<PlayerObject>().FirstOrDefault(p => p.Network.OwnerConnection == entry);
+
+                    if (entry == Connection.Local)
+                        rowClass = "me";
+
+                    <div class="table-row @rowClass">
+                        <div class="row-item">
+                            @if (entry.IsHost)
+                            {
+                                <div>👑</div>
+                            }
+
+                            @entry.DisplayName
+                        </div>
+
+                        <div class="row-item">@GetTime(entry)</div>
+
+                     
+                    </div>
+                }
+        </div>
+
+</root>
+
+@code {
+   
+
+	public static Inventory Instance { get; private set; }
+
+	public Inventory() => Instance = this;
+
+
+    private string GetTime(Connection c)
+    {
+        var time = DateTime.UtcNow - c.ConnectionTime;
+
+        return time.ToString(time.TotalMinutes < 60f ? @"mm\m\ s\s" : @"hh\h\ \m\m");
+    }
+
+
+	// We want the inspect menu to be apart of the inventory so both close.
+	public void Inspect( ItemComponent item )
+	{
+		if ( item is not null )
+			AddChild( new InspectItem( item ) );
+	}
+
+	protected override int BuildHash()
+	{
+        if (PlayerObject.GetLocal() is null)
+			return -1;
+
+		return HashCode.Combine(
+            RealTime.Now.CeilToInt(),
+            PlayerObject.GetLocal().Inventory.BackpackItems.HashCombine(i => i?.GetHashCode() ?? -1),
+            PlayerObject.GetLocal().Inventory.EquippedItems.HashCombine(i => i?.GetHashCode() ?? -1)
+        );
+	}
+}

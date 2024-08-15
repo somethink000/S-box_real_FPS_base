@@ -1,4 +1,5 @@
 using System.Linq;
+using System.Numerics;
 using Sandbox;
 using Sandbox.Network;
 
@@ -21,8 +22,15 @@ public class NetworkManager : Component, Component.INetworkListener
 
 	void INetworkListener.OnActive( Connection connection )
 	{
-		var player = PlayerPrefab.Clone();
-		player.BreakFromPrefab();
-		player.NetworkSpawn( connection );
+		var obj = PlayerPrefab.Clone();
+		var player = obj.Components.Get<PlayerObject>( FindMode.EverythingInSelfAndDescendants );
+		obj.NetworkMode = NetworkMode.Object;
+		obj.BreakFromPrefab();
+		obj.NetworkSpawn( connection );
+		player.SetupConnection( connection );
+
+
+
+
 	}
 }

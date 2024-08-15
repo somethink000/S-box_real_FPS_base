@@ -5,8 +5,6 @@
     "Name": "glock",
     "Scale": "1.5,1.5,1.5",
     "Enabled": true,
-    "NetworkMode": 2,
-    "NetworkInterpolation": true,
     "Components": [
       {
         "__type": "Sandbox.SkinnedModelRenderer",
@@ -15,7 +13,8 @@
         "CreateBoneObjects": false,
         "Model": "models/glock/w/w_glock20lod0.vmdl",
         "RenderType": "On",
-        "Tint": "1,1,1,1"
+        "Tint": "1,1,1,1",
+        "UseAnimGraph": true
       },
       {
         "__type": "GeneralGame.BaseGun",
@@ -23,7 +22,7 @@
         "AimFOVDec": 30,
         "aimPos": "-1,1.43,0.56",
         "aimRotation": "0,0,0,0",
-        "AmmoType": "Pistol",
+        "AmmoType": "prefabs/items/ammo_pistol.prefab",
         "ClipSize": 15,
         "Damage": 40,
         "DamageForce": 5,
@@ -46,6 +45,7 @@
         "Recoil": "-30,0,0",
         "ReloadSoundSequence": "models/glock/glockreload.sndseq",
         "ReloadTime": 2.7,
+        "runPos": "0,0,0",
         "runRotation": "-0.01513444,0.08583164,0.1729874,0.9810603",
         "Spread": 0.01,
         "ViewModelPrefab": {
@@ -79,14 +79,36 @@
         "MotionEnabled": true,
         "RigidbodyFlags": 0,
         "StartAsleep": false
+      },
+      {
+        "__type": "GeneralGame.ItemEquipment",
+        "__guid": "feb5bac4-844e-4212-b0d8-31a874c31f55",
+        "Count": 0,
+        "Description": "Gangsta and cop gun",
+        "Icon": {
+          "Model": "models/glock/w/w_glock20lod0.vmdl",
+          "MaterialGroup": "",
+          "Colour": "1,1,1,1",
+          "Position": "-2,1,-2.2",
+          "Rotation": "0.5,0.4999999,-0.5,0.4999999",
+          "Guid": "3e7b7cb2-a8a0-4c13-a718-9f3febf031b9"
+        },
+        "MaxStack": 0,
+        "Name": "Glock20",
+        "Slots": [
+          "SeccondWeapon",
+          "FirstWeapon"
+        ],
+        "WeightInGrams": 1000
       }
     ],
-    "Children": []
+    "Children": [],
+    "__variables": []
   },
   "ShowInMenu": false,
   "MenuPath": null,
   "MenuIcon": null,
   "ResourceVersion": 1,
-  "__version": 1,
-  "__references": []
+  "__references": [],
+  "__version": 1
 }

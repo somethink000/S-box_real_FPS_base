@@ -18,6 +18,9 @@ public abstract class WeaponComponent : Component
 	[Property] public SoundEvent HolsterSound { get; set; }
 	[Property] public bool IsDeployed { get; set; }
 	[Property] public Vector3 idlePos { get; set; }
+	[Property] public float idleFOVDec { get; set; } = 1f;
+	[Property] public float AnimSpeed { get; set; } = 1f;
+
 
 	public bool HasViewModel => ViewModel.IsValid();
 	public PlayerObject owner { get; set; }
@@ -40,6 +43,7 @@ public abstract class WeaponComponent : Component
 	protected override void OnAwake()
 	{
 		ModelRenderer = Components.GetInDescendantsOrSelf<SkinnedModelRenderer>( true );
+
 		base.OnAwake();
 	}
 
@@ -68,18 +72,20 @@ public abstract class WeaponComponent : Component
 		if ( !IsDeployed )
 		{
 			IsDeployed = true;
-			
+			//Components.GetInDescendantsOrSelf<ModelCollider>( true ).Enabled = false;
 			OnDeployed();
 		}
 	}
 
 	[Broadcast]
-	public virtual void Holster()
+	public virtual void Holster( bool OnDrop = false )
 	{
 		if ( IsDeployed )
 		{
-			OnHolstered();
+			ModelRenderer.Enabled = OnDrop;
+			DestroyViewModel();
 			IsDeployed = false;
+
 		}
 	}
 	
@@ -113,9 +119,9 @@ public abstract class WeaponComponent : Component
 
 	protected virtual void OnDeployed()
 	{
+
 		var player = Components.GetInAncestors<PlayerObject>();
 
-		
 
 		if ( player.IsValid() )
 		{
@@ -126,7 +132,7 @@ public abstract class WeaponComponent : Component
 		}
 		
 		ModelRenderer.Enabled = !HasViewModel;
-		
+
 		if ( DeploySound is not null )
 		{
 			Sound.Play( DeploySound, Transform.Position );
@@ -140,11 +146,7 @@ public abstract class WeaponComponent : Component
 		NextAttackTime = DeployTime;
 	}
 
-	protected virtual void OnHolstered()
-	{
-		ModelRenderer.Enabled = false;
-		DestroyViewModel();
-	}
+	protected virtual void OnHolstered(){}
 	
 	private void DestroyViewModel()
 	{

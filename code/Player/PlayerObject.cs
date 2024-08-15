@@ -12,8 +12,7 @@ public partial class PlayerObject : Component, IHealthComponent
 {
 
 	[Property] public RagdollController Ragdoll { get; private set; }
-	[Property] public AmmoContainer Ammo { get; set; }
-	[Property] public WeaponContainer Weapons { get; set; }
+	[Property] public Inventory Inventory { get; set; }
 	[Property] public SoundEvent HurtSound { get; set; }
 	[Property] public float HealthRegenPerSecond { get; set; } = 10f;
 		
@@ -21,6 +20,16 @@ public partial class PlayerObject : Component, IHealthComponent
 	[Sync] public LifeState LifeState { get; private set; } = LifeState.Alive;
 	[Sync] public float Health { get; private set; } = 100f;
 
+	//Needs {
+		public float MaxNeeds { get; private set; } = 100f;
+		[Sync] public float Hunger { get; private set; } = 100f;
+		[Property] public float HungerPerSecond { get; set; } = 0.1f;
+		[Sync] public float Stamina { get; private set; } = 100f;
+		[Property] public float StaminaPerSecond { get; set; } = -5f;
+	//}
+
+	public int MaxCarryWeight { get; set; }
+	public bool IsEncumbered => Inventory.Weight > MaxCarryWeight;
 	private RealTimeSince TimeSinceDamaged { get; set; }
 
 	public async void RespawnAsync( float seconds )
@@ -36,9 +45,7 @@ public partial class PlayerObject : Component, IHealthComponent
 		if ( IsProxy )
 			return;
 
-		Weapons.Clear();
-		Weapons.GiveDefault();
-		
+		MaxCarryWeight = Inventory.MAX_WEIGHT_IN_GRAMS;
 		Ragdoll.Unragdoll();
 		MoveToSpawnPoint();
 		LifeState = LifeState.Alive;
@@ -79,7 +86,11 @@ public partial class PlayerObject : Component, IHealthComponent
 		}
 	}
 
-	
+	protected override void OnUpdate()
+	{
+		CameraUpdate();
+		ControllerUpdate();
+	}
 
 	protected virtual void OnKilled( GameObject attacker )
 	{
@@ -87,9 +98,9 @@ public partial class PlayerObject : Component, IHealthComponent
 		if ( IsProxy )
 			return;
 
-		if ( Weapons.Deployed.IsValid() ) 
+		if ( Inventory.Deployed.IsValid() ) 
 		{
-			Weapons.Deployed.Holster();
+			Inventory.Deployed.Holster();
 		}
 		
 		
@@ -102,13 +113,15 @@ public partial class PlayerObject : Component, IHealthComponent
 	protected override void OnAwake()
 	{
 		base.OnAwake();
-		OnControllerAwake();
-		OnCameraAwake();
+
+		
+		CameraAwake();
+		ControllerAwake();
 	}
 
 	protected override void OnStart()
 	{
-		OnControllerStart();
+		ControllerStart();
 
 		if ( !IsProxy )
 		{
@@ -117,18 +130,16 @@ public partial class PlayerObject : Component, IHealthComponent
 			
 		base.OnStart();
 	}
-	
-	protected override void OnUpdate()
+	protected override void OnPreRender()
 	{
-		base.OnUpdate();
-
-		ControllerUpdate();
-		CameraUpdate();
+		BodyPreRender();
+		CameraPreRender();
 	}
+	
 
 	protected override void OnFixedUpdate()
 	{
-
+		
 		ControllerFixedUpdate();
 
 		if ( IsProxy )
@@ -143,10 +154,20 @@ public partial class PlayerObject : Component, IHealthComponent
 			Health = MathF.Min( Health, MaxHealth );
 		}
 
+		
+
+		Hunger = Math.Clamp( Hunger - HungerPerSecond * Time.Delta, 0, 100 );
+		Stamina = Math.Clamp( Stamina + StaminaPerSecond * Time.Delta, 0, 100 );
+
+		if ( Hunger <= 0 ) MaxCarryWeight = Inventory.MAX_WEIGHT_IN_GRAMS / 2;
+
+		UpdateInteractions();
+
+
 		if ( Input.MouseWheel.y > 0 )
-			Weapons.Next();
+			Inventory.Next();
 		else if ( Input.MouseWheel.y < 0 )
-			Weapons.Previous();
+			Inventory.Next();
 
 		if ( Input.Pressed( "use" ) )
 		{
@@ -171,7 +192,7 @@ public partial class PlayerObject : Component, IHealthComponent
 			}
 		}
 
-		var weapon = Weapons.Deployed;
+		var weapon = Inventory.Deployed;
 		if ( !weapon.IsValid() ) return;
 
 
@@ -199,7 +220,7 @@ public partial class PlayerObject : Component, IHealthComponent
 		{
 			weapon.seccondaryActionRelease();
 		}
-	}
+	} 
 	
 	private void MoveToSpawnPoint()
 	{
@@ -222,11 +243,5 @@ public partial class PlayerObject : Component, IHealthComponent
 		var attacker = Scene.Directory.FindByGuid( attackerId );
 		OnKilled( attacker );
 	}
-	protected override void OnPreRender()
-	{
-		base.OnPreRender();
-		OnCameraPreRender();
-		BodyPreRender();
-
-	}
+	
 }

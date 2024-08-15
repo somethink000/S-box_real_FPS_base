@@ -1,0 +1,71 @@
+@import "../Style.scss";
+
+InteractionHint {
+    flex-direction: row;
+    transform-origin: left top;
+    opacity: 0;
+    transition: all 0.05s ease-in;
+
+
+    .content {
+        flex-direction: column;
+        transition: all 0.5s ease-in-out;
+       
+    }
+
+    .title {
+        font-size: 34px;
+        color: white;
+        padding: 10px;
+        padding-left: 20px;
+        min-width: 200px;
+        text-shadow: 2px 2px 0px black;
+    }
+
+
+
+    .icon {
+        width: 43px;
+        height: 70px;
+    }
+
+    .interactions {
+        padding: 5px;
+        gap: 10px;
+        flex-direction: column;
+    }
+
+    .interaction {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        font-size: 20px;
+        font-family: HabboExtended;
+        margin-left: 10px;
+
+        .circle {
+            image-rendering: pixelated;
+            margin-right: 2px;
+            margin-left: 20px;
+            width: 26px;
+            aspect-ratio: 1;
+        }
+
+        .description {
+            margin-top: 5px;
+            max-width: 325px;
+            transition: all 0.2s;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        .hint {
+            margin-right: 12px;
+        }
+    }
+
+    &.visible {
+        transition: all 0.05s ease-out;
+        opacity: 1;
+    }
+}

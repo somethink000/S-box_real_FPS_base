@@ -4,7 +4,7 @@ using System.Numerics;
 
 namespace GeneralGame;
 
-public class BaseGun : WeaponComponent, IUse
+public class BaseGun : WeaponComponent
 {
 	[Property] public float ReloadTime { get; set; } = 2f;
 	[Property] public float EmptyReloadTime { get; set; } = 2f;
@@ -17,19 +17,21 @@ public class BaseGun : WeaponComponent, IUse
 	[Property] public SoundSequenceData EmptyReloadSoundSequence { get; set; }
 	[Property] public ParticleSystem MuzzleFlash { get; set; }
 	[Property] public ParticleSystem ImpactEffect { get; set; }
-	[Property] public AmmoType AmmoType { get; set; } = AmmoType.Pistol;
 	[Property] public int DefaultAmmo { get; set; } = 60;
 	[Property] public int ClipSize { get; set; } = 30;
 	[Property] public Vector3 runPos { get; set; }
 	[Property] public Rotation runRotation { get; set; }
+	[Property] public PrefabFile AmmoType { get; set; }
+	
 
 	[Sync] public bool IsReloading { get; set; }
 	[Sync] public int AmmoInClip { get; set; }
-
+	
 	public Angles curRecoil { get; set; }
 	public SoundSequence ReloadSound { get; set; }
 	public TimeUntil ReloadFinishTime { get; set; }
 	public bool IsFiering { get; set; } = false;
+	
 
 	//AIM {
 		[Property] public Vector3 aimPos { get; set; }
@@ -37,36 +39,6 @@ public class BaseGun : WeaponComponent, IUse
 		[Property] public float AimFOVDec { get; set; } = 10f;
 		[Sync] public bool IsAiming { get; set; } = false;
 	// }
-
-	[Broadcast]
-	public virtual void OnUse( Guid pickerId )
-	{
-		var picker = Scene.Directory.FindByGuid( pickerId );
-		if ( !picker.IsValid() ) return;
-
-		var player = picker.Components.GetInDescendantsOrSelf<PlayerObject>();
-		if ( !player.IsValid() ) return;
-
-		if ( player.IsProxy )
-			return;
-
-		if ( player.Weapons.Has( GameObject ) )
-		{
-			var ammoToGive = DefaultAmmo - player.Ammo.Get( AmmoType );
-
-			if ( ammoToGive > 0 )
-			{
-				player.Ammo.Give( AmmoType, ammoToGive );
-			}
-
-			GameObject.Destroy();
-		}
-		else
-		{
-			player.Weapons.Give( GameObject, false );
-			GameObject.Destroy();
-		}
-	}
 	
 	protected override void OnDeployed()
 	{
@@ -76,7 +48,6 @@ public class BaseGun : WeaponComponent, IUse
 	protected override void OnHolstered()
 	{
 		ReloadSound?.Stop();
-		base.OnHolstered();
 	}
 	
 	public override void primaryAction()
@@ -101,6 +72,7 @@ public class BaseGun : WeaponComponent, IUse
 		IsAiming = false;
 	}
 
+
 	public override void reloadAction()
 	{
 		var ammoToTake = ClipSize - AmmoInClip;
@@ -111,7 +83,14 @@ public class BaseGun : WeaponComponent, IUse
 		if ( !owner.IsValid() || IsReloading )
 			return;
 
-		if ( !owner.Ammo.CanTake( AmmoType, ammoToTake, out var taken ) )
+		
+
+		var ammunition = owner.Inventory?.BackpackItems?.FirstOrDefault( x => x?.Prefab == AmmoType?.ResourcePath );
+		if ( ammunition == null )
+			return;
+
+		
+		if ( !owner.Inventory.HasItems( AmmoType ) )
 			return;
 
 		EffectRenderer.Set( "b_reload", true );
@@ -203,12 +182,17 @@ public class BaseGun : WeaponComponent, IUse
 
 	protected virtual void onReloadEnd()
 	{
-		var ammoToTake = ClipSize - AmmoInClip;
 
-		owner.Ammo.TryTake( AmmoType, ammoToTake, out var taken );
-		AmmoInClip += taken;
+		int ammo = owner.Inventory.TryTake( AmmoType, ClipSize - AmmoInClip );
+		
+		if ( ammo == 0 )
+			return;
+
+		AmmoInClip += ammo;
 		EffectRenderer.Set( "b_empty", false );
 		IsReloading = false;
+		
+		
 	}
 	protected override void OnUpdate()
 	{

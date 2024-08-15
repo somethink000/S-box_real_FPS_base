@@ -26,44 +26,9 @@
         }
       },
       {
-        "__type": "Sandbox.Voice",
-        "__guid": "c202fb9b-f415-46bc-9846-b899cc0bd71e",
-        "Loopback": false,
-        "Mode": "PushToTalk",
-        "MorphScale": 2,
-        "MorphSmoothTime": 0.1,
-        "PushToTalkInput": "voice",
-        "Renderer": {
-          "_type": "component",
-          "component_id": "385b2ce3-5f4f-4070-b9fc-36567ef0f92f",
-          "go": "c82accf8-3d09-4aa9-8aee-c1edfaca2829",
-          "component_type": "SkinnedModelRenderer"
-        },
-        "Volume": 1,
-        "WorldspacePlayback": true
-      },
-      {
-        "__type": "Sandbox.CharacterController",
-        "__guid": "363a20a5-1a30-4e58-b9fb-08b2aa05733d",
-        "Acceleration": 10,
-        "Bounciness": 0.3,
-        "GroundAngle": 45,
-        "Height": 64,
-        "IgnoreLayers": "",
-        "Radius": 16,
-        "StepHeight": 18,
-        "UseCollisionRules": false
-      },
-      {
-        "__type": "GeneralGame.WeaponContainer",
-        "__guid": "10a51d8b-9e8f-4602-8836-48ec494c5c0d",
-        "Ammo": {
-          "_type": "component",
-          "component_id": "f31404e1-1176-4e74-ae0c-d71856936f65",
-          "go": "1335c1a2-ef16-47fe-9291-a5d07420c318",
-          "component_type": "AmmoContainer"
-        },
-        "plyObj": {
+        "__type": "GeneralGame.Inventory",
+        "__guid": "2083ea4a-6b40-4761-9d80-949b39886817",
+        "Player": {
           "_type": "component",
           "component_id": "ee286c74-8996-4d01-8cc1-27c55bcda253",
           "go": "1335c1a2-ef16-47fe-9291-a5d07420c318",
@@ -75,46 +40,8 @@
         }
       },
       {
-        "__type": "GeneralGame.PlayerFootsteps",
-        "__guid": "8d29551f-255a-43d7-a59e-29e25bfd2c15",
-        "ModelRenderer": {
-          "_type": "component",
-          "component_id": "385b2ce3-5f4f-4070-b9fc-36567ef0f92f",
-          "go": "c82accf8-3d09-4aa9-8aee-c1edfaca2829",
-          "component_type": "SkinnedModelRenderer"
-        }
-      },
-      {
-        "__type": "GeneralGame.AmmoContainer",
-        "__guid": "f31404e1-1176-4e74-ae0c-d71856936f65"
-      },
-      {
-        "__type": "Sandbox.SphereCollider",
-        "__guid": "378797ae-f22e-48ba-b0a3-e75ab38687be",
-        "Center": "0,0,16",
-        "IsTrigger": false,
-        "Radius": 20,
-        "Static": false
-      },
-      {
-        "__type": "GeneralGame.RagdollController",
-        "__guid": "ace8ef7a-5ced-4b59-be12-6f69287e38e7",
-        "Physics": {
-          "_type": "component",
-          "component_id": "c604796d-dd13-4790-924c-d58cdd34f987",
-          "go": "c82accf8-3d09-4aa9-8aee-c1edfaca2829",
-          "component_type": "ModelPhysics"
-        }
-      },
-      {
         "__type": "GeneralGame.PlayerObject",
         "__guid": "ee286c74-8996-4d01-8cc1-27c55bcda253",
-        "Ammo": {
-          "_type": "component",
-          "component_id": "f31404e1-1176-4e74-ae0c-d71856936f65",
-          "go": "1335c1a2-ef16-47fe-9291-a5d07420c318",
-          "component_type": "AmmoContainer"
-        },
         "AnimationHelper": {
           "_type": "component",
           "component_id": "9227d366-cde8-4257-9fcd-c930561ac01e",
@@ -148,7 +75,14 @@
           "go": "48929048-5c7e-4129-8879-a0791ff39b0b"
         },
         "HealthRegenPerSecond": 5,
+        "HungerPerSecond": 0.1,
         "HurtSound": "sounds/grunt.sound",
+        "Inventory": {
+          "_type": "component",
+          "component_id": "2083ea4a-6b40-4761-9d80-949b39886817",
+          "go": "1335c1a2-ef16-47fe-9291-a5d07420c318",
+          "component_type": "Inventory"
+        },
         "MaxHealth": 100,
         "ModelRenderer": {
           "_type": "component",
@@ -169,12 +103,64 @@
           "component_type": "CitizenAnimationHelper"
         },
         "SicknessMode": false,
-        "StandHeight": 64,
-        "Weapons": {
+        "StaminaPerSecond": -5,
+        "StandHeight": 64
+      },
+      {
+        "__type": "Sandbox.Voice",
+        "__guid": "c202fb9b-f415-46bc-9846-b899cc0bd71e",
+        "Loopback": false,
+        "Mode": "PushToTalk",
+        "MorphScale": 2,
+        "MorphSmoothTime": 0.1,
+        "PushToTalkInput": "voice",
+        "Renderer": {
           "_type": "component",
-          "component_id": "10a51d8b-9e8f-4602-8836-48ec494c5c0d",
-          "go": "1335c1a2-ef16-47fe-9291-a5d07420c318",
-          "component_type": "WeaponContainer"
+          "component_id": "385b2ce3-5f4f-4070-b9fc-36567ef0f92f",
+          "go": "c82accf8-3d09-4aa9-8aee-c1edfaca2829",
+          "component_type": "SkinnedModelRenderer"
+        },
+        "Volume": 1,
+        "WorldspacePlayback": true
+      },
+      {
+        "__type": "Sandbox.CharacterController",
+        "__guid": "363a20a5-1a30-4e58-b9fb-08b2aa05733d",
+        "Acceleration": 10,
+        "Bounciness": 0.3,
+        "GroundAngle": 45,
+        "Height": 64,
+        "IgnoreLayers": "",
+        "Radius": 16,
+        "StepHeight": 18,
+        "UseCollisionRules": false
+      },
+      {
+        "__type": "GeneralGame.PlayerFootsteps",
+        "__guid": "8d29551f-255a-43d7-a59e-29e25bfd2c15",
+        "ModelRenderer": {
+          "_type": "component",
+          "component_id": "385b2ce3-5f4f-4070-b9fc-36567ef0f92f",
+          "go": "c82accf8-3d09-4aa9-8aee-c1edfaca2829",
+          "component_type": "SkinnedModelRenderer"
+        }
+      },
+      {
+        "__type": "Sandbox.SphereCollider",
+        "__guid": "378797ae-f22e-48ba-b0a3-e75ab38687be",
+        "Center": "0,0,16",
+        "IsTrigger": false,
+        "Radius": 20,
+        "Static": false
+      },
+      {
+        "__type": "GeneralGame.RagdollController",
+        "__guid": "ace8ef7a-5ced-4b59-be12-6f69287e38e7",
+        "Physics": {
+          "_type": "component",
+          "component_id": "c604796d-dd13-4790-924c-d58cdd34f987",
+          "go": "c82accf8-3d09-4aa9-8aee-c1edfaca2829",
+          "component_type": "ModelPhysics"
         }
       }
     ],
@@ -1165,16 +1151,8 @@
                 "ZIndex": 100
               },
               {
-                "__type": "GeneralGame.Scoreboard",
-                "__guid": "f7e74075-f801-474e-ba13-79a17b46d852"
-              },
-              {
-                "__type": "GeneralGame.Chat",
-                "__guid": "618e4c07-b783-4e05-8db8-406d03073218"
-              },
-              {
-                "__type": "GeneralGame.Hud",
-                "__guid": "dfc58e67-b7cc-4d4f-a98e-138328852cc7"
+                "__type": "GeneralGame.UI.Hud",
+                "__guid": "e9586772-18a3-4a7b-b663-66879b7fa718"
               },
               {
                 "__type": "Sandbox.ChromaticAberration",
@@ -1263,14 +1241,6 @@
                   "go": "df292d73-af10-49dc-af80-e02b3991e17b",
                   "component_type": "ColorAdjustments"
                 }
-              },
-              {
-                "__type": "GeneralGame.DisableShadowsWindow",
-                "__guid": "cce8b433-c01d-4c10-984b-37565427f223",
-                "Choices": [
-                  "Ok",
-                  "Hell naw"
-                ]
               }
             ]
           }

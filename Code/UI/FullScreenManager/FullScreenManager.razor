@@ -1,0 +1,128 @@
+@namespace GeneralGame.UI
+@attribute [StyleSheet]
+@inherits Panel
+
+@if (PlayerObject.GetLocal() is null)
+    return;
+
+<root>
+	    <Chat/>
+
+
+       
+
+		@switch ( ActivePanel )
+		{
+			case FullScreenPanel.InGameHud:
+				<InGameHud/>
+				break;
+			case FullScreenPanel.Inventory:
+				<Inventory/>
+				break;
+            case FullScreenPanel.Chat:
+				break;
+			default:
+				throw new ArgumentOutOfRangeException();
+		}
+
+   
+    
+        
+</root>
+
+@code {
+    public static FullScreenManager Instance { get; private set; }
+
+    public enum FullScreenPanel
+    {
+        InGameHud,
+        Inventory,
+        PauseMenu,
+        Chat,
+    }
+
+    public FullScreenPanel ActivePanel { get; private set; } = FullScreenPanel.InGameHud;
+
+    public Panel OutsiderPanel { get; private set; }
+
+
+    public FullScreenManager()
+    {
+        Instance = this;
+    }
+
+    public void Display( FullScreenPanel panel )
+    {
+        if (OutsiderPanel != null) OutsiderPanel.Delete();
+        ActivePanel = panel;
+    }
+
+    public void SetOutsider(Panel panel)
+    {
+        ActivePanel = FullScreenPanel.InGameHud;
+
+        if (OutsiderPanel != null) 
+        { 
+            OutsiderPanel.Delete();
+            OutsiderPanel = null;
+            return;
+        }
+
+        Instance.AddChild(panel);
+        OutsiderPanel = panel;
+    }
+
+
+    public override void Tick()
+    {
+        if (Input.EscapePressed)
+        {
+            Toggle(FullScreenPanel.InGameHud);
+
+        }
+
+        if (Input.Pressed(InputButtonHelper.Chat) || Input.Pressed(InputButtonHelper.ChatLocal))
+        {
+            Toggle(FullScreenPanel.Chat);
+            Chat.Instance.Toggle();
+
+        }
+        if (Input.Pressed(InputButtonHelper.Inventory))
+        {
+        	Toggle( FullScreenPanel.Inventory );
+
+        }
+        if (Input.Down(InputButtonHelper.Score) && ActivePanel != FullScreenPanel.Inventory)
+        {
+
+            Toggle(FullScreenPanel.Inventory);
+
+        }
+        else if (!Input.Down(InputButtonHelper.Score) && ActivePanel == FullScreenPanel.Inventory)
+        {
+            Toggle(FullScreenPanel.Inventory);
+        }
+
+
+
+    }
+
+    private void Toggle( FullScreenPanel panel )
+    {
+      
+        if (OutsiderPanel != null) OutsiderPanel.Delete();
+
+		if ( ActivePanel == panel )
+			ActivePanel = FullScreenPanel.InGameHud;
+		else
+			ActivePanel = panel;
+	}
+
+	public static bool Is( FullScreenPanel mode )
+		=> FullScreenManager.Instance?.ActivePanel == mode;
+
+	protected override int BuildHash()
+	{
+		return HashCode.Combine( ActivePanel.GetHashCode() );
+	}
+}

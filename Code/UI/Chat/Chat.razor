@@ -1,0 +1,112 @@
+﻿
+
+@namespace GeneralGame.UI
+@attribute [StyleSheet]
+@inherits Panel
+
+<root>
+    <div class="output txt">
+		@foreach (var entry in Entries)
+		{
+			<div class="chat_entry">
+				<div class="author">@entry.author</div>
+				<div class="message">@entry.message</div>
+			</div>
+		}
+	</div>
+
+
+    <div class="inputs_box txt">
+
+	    <div class="input">
+		    <TextEntry @ref="InputBox" onsubmit="@ChatFinished"></TextEntry>
+	    </div>
+
+        <div class="adresBtn">Global</div>
+
+    </div>
+
+
+</root>
+
+@code
+{
+
+    private List<ChatEntry> Entries { get; set; }
+    private TextEntry InputBox { get; set; }
+    private bool IsOpen { get; set; } = true;
+    private TimeSince SinceLastMassage { get; set; }
+
+    private float FadeTime = 5f;
+
+    public static Chat Instance { get; private set; }
+
+    public Chat(){
+        Instance = this;
+        Entries = PlayerObject.GetLocal().StoredChat;
+        Toggle();
+    }
+
+    public override void Tick() {
+
+        if (!IsOpen)
+        {
+            SetClass( "messaged", SinceLastMassage < FadeTime );
+        } else {
+
+
+        }
+    }
+
+    public void Toggle() {
+
+
+        IsOpen = !IsOpen;
+        SetClass("messaged", false);
+        SetClass("open", IsOpen);
+
+        if (IsOpen) {
+            AcceptsFocus = false;
+
+            InputBox.Focus();
+
+            SetClass("input_active", InputBox.HasFocus);
+        } else {
+            FullScreenManager.Instance.Display(FullScreenManager.FullScreenPanel.InGameHud);
+        }
+
+    }
+
+
+    private void ChatFinished()
+    {
+        var text = InputBox.Text;
+        InputBox.Text = "";
+
+        if (string.IsNullOrWhiteSpace(text))
+            return;
+
+
+        PlayerObject.GetLocal().NewEntry(Sandbox.Utility.Steam.PersonaName, text);
+
+        Toggle();
+    }
+
+
+    public void AddTextLocal(string author, string message)
+    {
+
+        message = message.Truncate(600);
+
+        if (string.IsNullOrWhiteSpace(message))
+            return;
+
+        PlayerObject.GetLocal().AddEntry(author, message);
+        //Entries.Add(new(author, message, 0f));
+
+        StateHasChanged();
+        SinceLastMassage = 0;
+        // Toggle();
+    }
+
+}

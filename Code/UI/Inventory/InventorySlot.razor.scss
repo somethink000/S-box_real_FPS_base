@@ -1,0 +1,97 @@
+@import "../Style.scss";
+
+InventorySlot {
+    width: 128px;
+    height: 128px;
+    margin: 5px;
+    justify-content: center;
+    align-items: center;
+    text-shadow: 2px 2px 0px black;
+    opacity: 1;
+    transform: translateY(0);
+    background-color: rgba(50, 50, 50, 0.5);
+
+    &:intro {
+        transform: translateY(50);
+        opacity: 0;
+    }
+    /*.background {
+        position: absolute;*/
+    /* background: radial-gradient(#00000047, #000000);*/
+    /*height: 100%;
+        width: 100%;
+        z-index: -10;
+    }*/
+
+    .item {
+        position: relative;
+        height: 90%;
+        width: 90%;
+
+        img {
+            
+            width: 100%;
+            height: 100%;
+        }
+
+        &.has-child-draggable {
+            opacity: 0.3;
+        }
+
+        &:hover {
+            cursor: pointer;
+            sound-in: 'hover';
+            background-color: rgba(255, 255, 255, 0.5);
+        }
+
+        .count {
+            position: absolute;
+            bottom: 5px;
+            right: 5px;
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+            font-family: HabboExtended;
+
+            &.hidden {
+                display: none;
+            }
+        }
+    }
+
+    .slot {
+        position: absolute;
+        left: -15px;
+        top: -15px;
+        height: 40px;
+        width: 40px;
+    }
+    // Drop target stuff
+    // Drop target transitions
+    .border {
+        transition: transform 0.06s ease;
+    }
+
+    transition: background-color 0.23s ease-in-out;
+    // Behaviour for when the draggable could be dropped here
+    &.can-drop {
+        background-color: rgba(255, 255, 255, 0.02);
+    }
+    // Behaviour for when we are the drop target,
+    &.is-drop-target {
+        &.can-drop {
+            // ... and the draggable can be dropped here
+            .border {
+                transform: scale(1.1);
+            }
+
+            transition: background-color 0.13s ease-in-out;
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        &:not(.can-drop) {
+            // ... and the draggable can't be dropped here
+            background-color: rgba(255, 0, 0, 0.1);
+        }
+    }
+}

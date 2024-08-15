@@ -5,7 +5,7 @@ using System.Diagnostics;
 namespace GeneralGame;
 
 
-public class BaseMele : WeaponComponent, IUse
+public class BaseMele : WeaponComponent
 {
 	[Property] public float SeccondaryDamage { get; set; } = 50f;
 	[Property] public float SeccondaryFireRate { get; set; } = 1f;
@@ -16,26 +16,6 @@ public class BaseMele : WeaponComponent, IUse
 	[Property] public SoundEvent KillSound { get; set; }
 	[Property] public float Range { get; set; }
 	[Property] public float Punch { get; set; }
-
-
-	[Broadcast]
-	public virtual void OnUse( Guid pickerId )
-	{
-		var picker = Scene.Directory.FindByGuid( pickerId );
-		if ( !picker.IsValid() ) return;
-
-		var player = picker.Components.GetInDescendantsOrSelf<PlayerObject>();
-		if ( !player.IsValid() ) return;
-
-		if ( player.IsProxy )
-			return;
-
-		if ( !player.Weapons.Has( GameObject ) )
-		{
-			player.Weapons.Give( GameObject, false );
-			GameObject.Destroy();
-		}
-	}
 
 	public override void primaryAction()
 	{

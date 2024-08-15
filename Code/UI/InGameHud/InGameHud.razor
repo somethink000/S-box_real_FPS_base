@@ -1,0 +1,19 @@
+
+@namespace GeneralGame.UI
+@attribute [StyleSheet]
+@inherits Panel
+
+@* Anything that is always active and displayed to the player when ingame. *@
+<root>
+	
+	<InteractionHint />
+</root>
+
+@code {
+	public static InGameHud Instance { get; private set; }
+
+	public InGameHud()
+	{
+		Instance = this;
+	}
+}

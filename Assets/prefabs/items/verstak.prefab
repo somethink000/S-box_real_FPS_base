@@ -1,0 +1,120 @@
+{
+  "RootObject": {
+    "__guid": "4d4052d0-5daf-4521-b44c-19afcfc91cad",
+    "Flags": 0,
+    "Name": "verstak",
+    "Enabled": true,
+    "Components": [
+      {
+        "__type": "Sandbox.ModelRenderer",
+        "__guid": "229830a8-76e5-48b3-a460-eb141b628e73",
+        "BodyGroups": 18446744073709551615,
+        "Model": "models/static/station_props/smithy/smithy_worktable.vmdl",
+        "RenderType": "On",
+        "Tint": "1,1,1,1"
+      },
+      {
+        "__type": "Sandbox.ModelCollider",
+        "__guid": "9047acf6-9c22-4a49-aec1-27b945124c8e",
+        "IsTrigger": false,
+        "Model": "models/static/station_props/smithy/smithy_worktable.vmdl",
+        "Static": false
+      }
+    ],
+    "Children": [
+      {
+        "__guid": "bdb0a7c9-15c8-4bf2-bcf6-807eb9cf3d5d",
+        "Flags": 0,
+        "Name": "press",
+        "Position": "10.61439,25.53975,31.68163",
+        "Rotation": "0,0,-0.9999999,0.0000001490116",
+        "Enabled": true,
+        "Components": [
+          {
+            "__type": "Sandbox.ModelRenderer",
+            "__guid": "88b4f5b3-8f58-45f8-9627-7144b8fb8260",
+            "BodyGroups": 18446744073709551615,
+            "Model": "models/static/exchanger/press_patron.vmdl",
+            "RenderType": "On",
+            "Tint": "1,1,1,1"
+          },
+          {
+            "__type": "Sandbox.ModelCollider",
+            "__guid": "cea18fb1-8335-4e62-b197-8a0963ff0483",
+            "IsTrigger": false,
+            "Static": false,
+            "Surface": "models/static/exchanger/press_patron.vmdl"
+          }
+        ]
+      },
+      {
+        "__guid": "3fffe4c2-d7b9-4f00-b843-acca84bbdac4",
+        "Flags": 0,
+        "Name": "smithy_vice",
+        "Position": "9.919373,-26.01849,31.86839",
+        "Rotation": "-0.000000003458126,0.00230971,0.000001496008,0.9999974",
+        "Enabled": true,
+        "Components": [
+          {
+            "__type": "Sandbox.ModelRenderer",
+            "__guid": "f67d49f1-fd14-433a-91ad-00d5af51fd70",
+            "BodyGroups": 18446744073709551615,
+            "Model": "models/static/station_props/smithy/smithy_vice.vmdl",
+            "RenderType": "On",
+            "Tint": "1,1,1,1"
+          },
+          {
+            "__type": "Sandbox.ModelCollider",
+            "__guid": "c3842159-3c1a-4531-9d9d-c3732504b6ab",
+            "IsTrigger": false,
+            "Static": false,
+            "Surface": "models/static/station_props/smithy/smithy_vice.vmdl"
+          }
+        ]
+      },
+      {
+        "__guid": "bfe749a2-e552-4d75-bafc-d1e76c2a1cb4",
+        "Flags": 0,
+        "Name": "fastening",
+        "Position": "-9.495872,-18.19863,32.31284",
+        "Rotation": "-0.000000003458126,0.00230971,0.000001496008,0.9999974",
+        "Enabled": true,
+        "Components": [
+          {
+            "__type": "Sandbox.ModelRenderer",
+            "__guid": "6aea3fc7-2fdc-45c4-84e0-41afc69137a6",
+            "BodyGroups": 18446744073709551615,
+            "Model": "models/static/station_props/smithy/fastening.vmdl",
+            "RenderType": "On",
+            "Tint": "1,1,1,1"
+          }
+        ]
+      },
+      {
+        "__guid": "bd0fae36-37ff-4577-b049-39e057ea6c46",
+        "Flags": 0,
+        "Name": "zvuko_plita_1",
+        "Position": "-0.07036591,1.842832,32.26926",
+        "Rotation": "0.00005632344,0.002309023,-0.02438544,0.9997",
+        "Enabled": true,
+        "Components": [
+          {
+            "__type": "Sandbox.ModelRenderer",
+            "__guid": "c59d1588-faf6-46ac-8688-9f9653d23801",
+            "BodyGroups": 18446744073709551615,
+            "Model": "models/static/station_props/smithy/zvuko_plita_1.vmdl",
+            "RenderType": "On",
+            "Tint": "1,1,1,1"
+          }
+        ]
+      }
+    ],
+    "__variables": []
+  },
+  "ShowInMenu": false,
+  "MenuPath": null,
+  "MenuIcon": null,
+  "ResourceVersion": 1,
+  "__references": [],
+  "__version": 1
+}

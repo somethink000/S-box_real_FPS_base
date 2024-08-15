@@ -1,0 +1,9 @@
+{
+  "profiles": {
+    "warfare.editor": {
+      "commandName": "Executable",
+      "executablePath": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\sbox\\sbox.exe",
+      "commandLineArgs": "\u002Bdeveloper 1 -w 1920 -h 1080 -noassert -tools"
+    }
+  }
+}

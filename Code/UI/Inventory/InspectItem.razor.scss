@@ -1,0 +1,46 @@
+@import "../Style.scss";
+
+InspectItem {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: 10;
+    background-color: #101010d4;
+    transition: all 0.1s ease-out;
+    opacity: 1;
+    text-shadow: $text-shadow-sm;
+
+    .scene {
+        height: 100%;
+        width: 100%;
+        transition: all 0.2s ease-out;
+        transform: scale(1);
+
+        &:intro {
+            transform: scale(0);
+        }
+
+        &:outro {
+            transform: scale(0);
+        }
+    }
+
+    .info {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        bottom: -35%;
+        transition: all 0.2s ease-out;
+        opacity: 1;
+
+        &:intro {
+            opacity: 0;
+        }
+    }
+
+    &:outro {
+        opacity: 0;
+    }
+}

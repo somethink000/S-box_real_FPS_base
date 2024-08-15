@@ -7,7 +7,7 @@ using Sandbox.Citizen;
 namespace GeneralGame;
 
 //Movement
-public partial class PlayerObject
+partial class PlayerObject
 {
 
 	[Property] public float StandHeight { get; set; } = 64f;
@@ -28,10 +28,11 @@ public partial class PlayerObject
 	public Vector3 WishVelocity { get; private set; }
 	private RealTimeSince LastGroundedTime { get; set; }
 	private RealTimeSince LastUngroundedTime { get; set; }
+	private PlayerObject ply { get; set; }
 
 
 	//Speed {
-	[Property] public float baseWalkSpeed { get; set; } = 110f;
+		[Property] public float baseWalkSpeed { get; set; } = 110f;
 		[Property] public float baseRunSpeed { get; set; } = 260f;
 		[Property] public float baseCrouchSpeed { get; set; } = 64f;
 		private float walkSpeed { get; set; }
@@ -62,9 +63,11 @@ public partial class PlayerObject
 		return !tr.Hit;
 	}
 
-	public void OnControllerAwake()
+	public void ControllerAwake()
 	{
-	
+		base.OnAwake();
+		ply = GameObject.Components.Get<PlayerObject>();
+
 		if ( CC.IsValid() )
 		{
 			CC.Height = StandHeight;
@@ -74,25 +77,25 @@ public partial class PlayerObject
 		}
 	}
 
-	public void OnControllerStart()
+	public void ControllerStart()
 	{
 		Animators.Add( ShadowAnimator );
 		Animators.Add( AnimationHelper );
 
-
+		base.OnStart();
 	}
 
 	public void ControllerUpdate()
 	{
-		if ( Ragdoll.IsRagdolled || LifeState == LifeState.Dead )
+		if ( ply.Ragdoll.IsRagdolled || ply.LifeState == LifeState.Dead )
 			return;
 
 		if ( !IsProxy )
 		{
-			IsRunning = ( !IsCrouching && !(runSpeed <= walkSpeed) ) ? Input.Down( "Run" ) : false;
+			IsRunning = ( !IsCrouching && !ply.IsEncumbered ) ? Input.Down( "Run" ) : false;
 		}
 
-		var weapon = Weapons.Deployed;
+		var weapon = ply.Inventory.Deployed;
 
 		foreach ( var animator in Animators )
 		{
@@ -130,8 +133,13 @@ public partial class PlayerObject
 		}
 
 	}
-
-	protected virtual void DoMovementInput()
+	/*if (IsEncumbered )
+	{
+		var overweight = (Inventory.Weight - Inventory.MAX_WEIGHT_IN_GRAMS).ToKilograms();
+		var multiplier = MathX.Clamp( 1 - overweight / 15f, 0.2f, 1f );
+		wishVelocity *= multiplier;
+	}*/
+protected virtual void DoMovementInput()
 	{
 		BuildWishVelocity();
 
@@ -179,7 +187,7 @@ public partial class PlayerObject
 		if ( IsProxy )
 			return;
 
-		if ( Ragdoll.IsRagdolled || LifeState == LifeState.Dead )
+		if ( ply.Ragdoll.IsRagdolled || ply.LifeState == LifeState.Dead )
 			return;
 
 		DoCrouchingInput();
