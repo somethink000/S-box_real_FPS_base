@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("fps_base.editor")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4292a7c4955afc174aff4fc6502b01546e7b740b")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c2212101676b4532eaf0e66896793a27be6942cb")]
 [assembly: System.Reflection.AssemblyProductAttribute("fps_base.editor")]
 [assembly: System.Reflection.AssemblyTitleAttribute("fps_base.editor")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -1,12 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "46r62vjlpnY8ikAoROZEJlK4Mp/mfOG4pxypBkovcMobzSgnzDAN+3JADhSSxZXuRIDnE/LrKS/TeqMpt/m9IQ==",
+  "dgSpecHash": "eoK/J2PAsMS0i2eQrotE6C/hp+SeV7VlSOcm3FAskT8JU5ZY5ijLmWYjYCIXXixq8dGiuKqWP31jVcRdVnKmXg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\susan\\Documents\\GitHub\\S-box_real_FPS_base\\Editor\\fps_base.editor.csproj",
+  "projectFilePath": "C:\\Users\\susan\\Documents\\GitHub\\FpsBas\\Editor\\fps_base.editor.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\susan\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\7.0.18\\microsoft.windowsdesktop.app.ref.7.0.18.nupkg.sha512",
-    "C:\\Users\\susan\\.nuget\\packages\\microsoft.netcore.app.ref\\7.0.18\\microsoft.netcore.app.ref.7.0.18.nupkg.sha512",
-    "C:\\Users\\susan\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\7.0.18\\microsoft.aspnetcore.app.ref.7.0.18.nupkg.sha512"
+    "C:\\Users\\susan\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\7.0.20\\microsoft.windowsdesktop.app.ref.7.0.20.nupkg.sha512",
+    "C:\\Users\\susan\\.nuget\\packages\\microsoft.netcore.app.ref\\7.0.20\\microsoft.netcore.app.ref.7.0.20.nupkg.sha512",
+    "C:\\Users\\susan\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\7.0.20\\microsoft.aspnetcore.app.ref.7.0.20.nupkg.sha512"
   ],
   "logs": []
 }

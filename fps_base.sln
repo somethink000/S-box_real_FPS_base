@@ -11,6 +11,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "shadergraph", "C:\Program F
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "actiongraph", "C:\Program Files (x86)\Steam\steamapps\common\sbox\editor\ActionGraph\Code\actiongraph.csproj", "{D99A7B07-1DA2-FEA1-BA4C-344E12BE35C4}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "hammer", "C:\Program Files (x86)\Steam\steamapps\common\sbox\editor\Hammer\Code\hammer.csproj", "{FF37D677-2789-827B-9FEC-126106445C54}"
+EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "fps_base", "Code\fps_base.csproj", "{531D5264-1124-6093-1ED3-43B470A1E022}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "fps_base.editor", "Editor\fps_base.editor.csproj", "{57CDCE05-CB38-C502-96F3-5B21073E582E}"
@@ -42,6 +44,10 @@ Global
 		{D99A7B07-1DA2-FEA1-BA4C-344E12BE35C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D99A7B07-1DA2-FEA1-BA4C-344E12BE35C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D99A7B07-1DA2-FEA1-BA4C-344E12BE35C4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FF37D677-2789-827B-9FEC-126106445C54}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FF37D677-2789-827B-9FEC-126106445C54}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FF37D677-2789-827B-9FEC-126106445C54}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FF37D677-2789-827B-9FEC-126106445C54}.Release|Any CPU.Build.0 = Release|Any CPU
 		{531D5264-1124-6093-1ED3-43B470A1E022}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{531D5264-1124-6093-1ED3-43B470A1E022}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{531D5264-1124-6093-1ED3-43B470A1E022}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -60,6 +66,7 @@ Global
 		{0DDD0665-950C-B4D6-56B9-A5A4C73C7423} = {91C47821-78DC-6EB2-D97E-14E2D5EF1C9F}
 		{E1F3841D-E6E7-98DF-B512-B4A0EDA94B43} = {91C47821-78DC-6EB2-D97E-14E2D5EF1C9F}
 		{D99A7B07-1DA2-FEA1-BA4C-344E12BE35C4} = {91C47821-78DC-6EB2-D97E-14E2D5EF1C9F}
+		{FF37D677-2789-827B-9FEC-126106445C54} = {91C47821-78DC-6EB2-D97E-14E2D5EF1C9F}
 
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
