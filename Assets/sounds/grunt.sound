@@ -1,0 +1,14 @@
+{
+  "UI": false,
+  "Volume": "0.35,0.40,1",
+  "Pitch": "1.00,1.00,0",
+  "Decibels": 40,
+  "SelectionMode": "Random",
+  "Sounds": [
+    "sounds/grunt1.vsnd",
+    "sounds/grunt2.vsnd",
+    "sounds/grunt3.vsnd",
+    "sounds/grunt4.vsnd"
+  ],
+  "__references": []
+}

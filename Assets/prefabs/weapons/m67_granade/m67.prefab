@@ -1,0 +1,80 @@
+{
+  "RootObject": {
+    "Id": "3ab71597-e919-4f4d-8a9f-7545ba3206e9",
+    "Name": "m67",
+    "Scale": "1.5,1.5,1.5",
+    "Enabled": true,
+    "Components": [
+      {
+        "__type": "SkinnedModelRenderer",
+        "AnimationGraph": null,
+        "BodyGroups": 1,
+        "BoneMergeTarget": null,
+        "CreateBoneObjects": false,
+        "MaterialGroup": null,
+        "MaterialOverride": null,
+        "Model": "models/m67/w/m67.vmdl",
+        "RenderType": "On",
+        "Tint": "1,1,1,1"
+      },
+      {
+        "__type": "BaseThrow",
+        "activateSound": "models/m67/m67_pinpull.sound",
+        "aimPos": "0,0,0",
+        "aimRotation": "0,0,0,0",
+        "Damage": 100,
+        "DamageForce": 5,
+        "DeploySound": "sounds/weapons/weapon_deploy3.sound",
+        "DeployTime": 0.5,
+        "DisplayName": "M67",
+        "FireRate": 3,
+        "HoldType": "Punch",
+        "HolsterSound": "sounds/weapons/weapon_holster3.sound",
+        "idlePos": "-10,0,0",
+        "IsDeployed": false,
+        "prepareTime": 5,
+        "releaseTime": 1.2,
+        "runRotation": "-0.00007615242,0.008726203,0.008726203,0.9999238",
+        "throwPrefab": {
+          "_type": "gameobject",
+          "prefab": "prefabs/weapons/m67_granade/granade_throw.prefab"
+        },
+        "throwSound": "models/m67/m67_safety.sound",
+        "ViewModelPrefab": {
+          "_type": "gameobject",
+          "prefab": "prefabs/weapons/m67_granade/vm_m67.prefab"
+        }
+      },
+      {
+        "__type": "SphereCollider",
+        "Center": "0,0,0",
+        "IsTrigger": true,
+        "Radius": 10,
+        "Static": false,
+        "Surface": null
+      },
+      {
+        "__type": "ModelCollider",
+        "IsTrigger": false,
+        "Model": "models/m67/w/m67.vmdl",
+        "Static": false,
+        "Surface": null
+      },
+      {
+        "__type": "Rigidbody",
+        "AngularDamping": 0,
+        "Gravity": true,
+        "LinearDamping": 0,
+        "Locking": {},
+        "MassOverride": 0,
+        "RigidbodyFlags": 0,
+        "StartAsleep": false
+      }
+    ],
+    "Children": []
+  },
+  "ShowInMenu": false,
+  "MenuPath": null,
+  "MenuIcon": null,
+  "__references": []
+}

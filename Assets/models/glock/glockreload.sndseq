@@ -1,0 +1,16 @@
+{
+  "Entries": [
+    {
+      "Duration": 0.2
+    },
+    {
+      "Sound": "models/glock/glock20_magout.sound",
+      "Duration": 1.6
+    },
+    {
+      "Sound": "models/glock/glock20_magin.sound",
+      "Duration": 0.3
+    }
+  ],
+  "__references": []
+}

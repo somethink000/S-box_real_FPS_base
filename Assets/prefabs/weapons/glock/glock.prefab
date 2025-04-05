@@ -1,0 +1,92 @@
+{
+  "RootObject": {
+    "__guid": "14a7b823-05d4-46f8-a44d-00b230739c44",
+    "Flags": 0,
+    "Name": "glock",
+    "Scale": "1.5,1.5,1.5",
+    "Enabled": true,
+    "NetworkMode": 2,
+    "NetworkInterpolation": true,
+    "Components": [
+      {
+        "__type": "Sandbox.SkinnedModelRenderer",
+        "__guid": "6c060ce7-60fa-481a-a1ad-e106884016e5",
+        "BodyGroups": 1,
+        "CreateBoneObjects": false,
+        "Model": "models/glock/w/w_glock20lod0.vmdl",
+        "RenderType": "On",
+        "Tint": "1,1,1,1"
+      },
+      {
+        "__type": "GeneralGame.BaseGun",
+        "__guid": "60bf1b0b-aab3-4dcd-a8d3-6d62a61535af",
+        "AimFOVDec": 30,
+        "aimPos": "-1,1.43,0.56",
+        "aimRotation": "0,0,0,0",
+        "AmmoType": "Pistol",
+        "ClipSize": 15,
+        "Damage": 40,
+        "DamageForce": 5,
+        "DefaultAmmo": 60,
+        "DeploySound": "sounds/weapons/weapon_deploy3.sound",
+        "DeployTime": 0.5,
+        "DisplayName": "Glock 20",
+        "EmptyClipSound": "sounds/weapons/empty_submachineguns.sound",
+        "EmptyReloadSoundSequence": "models/glock/glockemptyreload.sndseq",
+        "EmptyReloadTime": 3.05,
+        "FireRate": 7,
+        "FireSound": "models/glock/glock20_fire1.sound",
+        "HoldType": "Pistol",
+        "HolsterSound": "sounds/weapons/weapon_holster3.sound",
+        "idlePos": "-4,0,0",
+        "ImpactEffect": "particles/impact.generic.vpcf",
+        "IsAuto": false,
+        "IsDeployed": false,
+        "MuzzleFlash": "particles/pistol_muzzleflash.vpcf",
+        "Recoil": "-30,0,0",
+        "ReloadSoundSequence": "models/glock/glockreload.sndseq",
+        "ReloadTime": 2.7,
+        "runRotation": "-0.01513444,0.08583164,0.1729874,0.9810603",
+        "Spread": 0.01,
+        "ViewModelPrefab": {
+          "_type": "gameobject",
+          "prefab": "prefabs/weapons/glock/vm_glock.prefab"
+        }
+      },
+      {
+        "__type": "Sandbox.SphereCollider",
+        "__guid": "36c2fae2-b03a-4a70-a393-644b88df0604",
+        "Center": "0,0,0",
+        "IsTrigger": true,
+        "Radius": 10,
+        "Static": false
+      },
+      {
+        "__type": "Sandbox.ModelCollider",
+        "__guid": "9315ef14-c097-4163-8d72-16800f353bf5",
+        "IsTrigger": false,
+        "Model": "models/glock/w/w_glock20lod0.vmdl",
+        "Static": false
+      },
+      {
+        "__type": "Sandbox.Rigidbody",
+        "__guid": "d91351c4-76d7-4117-b0df-30414f62f560",
+        "AngularDamping": 0,
+        "Gravity": true,
+        "LinearDamping": 0,
+        "Locking": {},
+        "MassOverride": 0,
+        "MotionEnabled": true,
+        "RigidbodyFlags": 0,
+        "StartAsleep": false
+      }
+    ],
+    "Children": []
+  },
+  "ShowInMenu": false,
+  "MenuPath": null,
+  "MenuIcon": null,
+  "ResourceVersion": 1,
+  "__version": 1,
+  "__references": []
+}

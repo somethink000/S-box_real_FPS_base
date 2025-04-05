@@ -1,27 +1,28 @@
-﻿using Sandbox.Network;
-using System.Threading.Tasks;
+using System.Linq;
+using Sandbox;
+using Sandbox.Network;
 
-namespace General;
+namespace GeneralGame;
 
-public class DemoNetworkManager : Component, Component.INetworkListener
+
+public class NetworkManager : Component, Component.INetworkListener
 {
 	[Property] public PrefabScene PlayerPrefab { get; set; }
 
-	protected override Task OnLoad()
+	protected override void OnStart()
 	{
 		if ( !GameNetworkSystem.IsActive )
 		{
 			GameNetworkSystem.CreateLobby();
 		}
-
-		return base.OnLoad();
+		
+		base.OnStart();
 	}
 
-	// Called on host
 	void INetworkListener.OnActive( Connection connection )
 	{
-		var playerGO = PlayerPrefab.Clone();
-		playerGO.Name = "Player";
-		playerGO.NetworkSpawn( connection );
+		var player = PlayerPrefab.Clone();
+		player.BreakFromPrefab();
+		player.NetworkSpawn( connection );
 	}
 }
