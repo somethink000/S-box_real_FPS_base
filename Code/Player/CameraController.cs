@@ -7,10 +7,9 @@ using static Sandbox.CursorSettings;
 namespace GeneralGame;
 
 
-public partial class PlayerBase
+public partial class Player
 {
 	[Property] public float Distance { get; set; } = 0f;
-
 
 	public float CurFOV { get; set; }
 	public float TargetFov { get; set; } = 0;

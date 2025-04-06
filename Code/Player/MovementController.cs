@@ -3,18 +3,8 @@ using Sandbox.Citizen;
 
 namespace GeneralGame;
 
-public partial class PlayerBase
+public partial class Player
 {
-
-	[Property] public float BaseGroundControl { get; set; } = 4.0f;
-	[Property] public float AirControl { get; set; } = 0.1f;
-	[Property] public float MaxForce { get; set; } = 50f;
-	[Property] public float RunSpeed { get; set; } = 290f;
-	[Property] public float WalkSpeed { get; set; } = 160f;
-	[Property] public float CrouchSpeed { get; set; } = 90f;
-	[Property] public float JumpForce { get; set; } = 350f;
-	[Property, Group( "Sounds" )] public SoundEvent SlideSound { get; set; }
-
 
 	[Sync] public Vector3 WishVelocity { get; set; } = Vector3.Zero;
 	[Sync] public Angles EyeAngles { get; set; }
@@ -89,25 +79,14 @@ public partial class PlayerBase
 			if ( Input.Down( "Right" ) ) WishVelocity += rot.Right;
 
 
-		if ( !IsSlide )
-		{
+		
 			WishVelocity = WishVelocity.WithZ( 0 );
 			if ( !WishVelocity.IsNearZeroLength ) WishVelocity = WishVelocity.Normal;
 
 			if ( IsCrouching ) WishVelocity *= CrouchSpeed;
 			else if ( IsRunning ) WishVelocity *= RunSpeed;
 			else WishVelocity *= WalkSpeed;
-		}
-		else
-		{
-			//Log.Info( SlideVelocity.Length );
-			//CharacterController.ApplyFriction(-3f);
-			//SlideVelocity = Vector3.Lerp( SlideVelocity, Vector3.Zero, Time.Delta * 0.5f );
-			//WishVelocity = SlideVelocity;
 		
-			if ( Velocity.Length < 200 ) SlideEnd();
-			
-		}
 
 
 	}
@@ -179,7 +158,6 @@ public partial class PlayerBase
 	void Jump()
 	{
 		if ( !IsOnGround ) return;
-		if ( IsSlide ) SlideEnd();
 
 		CharacterController.Punch( Vector3.Up * JumpForce );
 		AnimationHelper?.TriggerJump();
@@ -200,32 +178,6 @@ public partial class PlayerBase
 
 	}
 
-	private void Slide()
-	{
-		Sound.Play( SlideSound, WorldPosition );
-		GroundControl = 0.5f;
-		CharacterController.Height /= 2f;
-		BodyCollider.End = BodyCollider.End.WithZ( BodyCollider.End.z / 2f );
-		IsSlide = true;
-	}
-	private void SlideEnd()
-	{
-		GroundControl = BaseGroundControl;
-		IsSlide = false;
-		
-		var targetHeight = CharacterController.Height * 2f;
-		var upTrace = CharacterController.TraceDirection( Vector3.Up * targetHeight );
-
-		if ( !upTrace.Hit )
-		{
-			IsCrouching = false;
-			CharacterController.Height = targetHeight;
-			BodyCollider.End = BodyCollider.End.WithZ( BodyCollider.End.z * 2f );
-		}else
-		{
-			IsCrouching = true;
-		}
-	}
 
 	void UpdateCrouch()
 	{
@@ -234,15 +186,11 @@ public partial class PlayerBase
 		if ( Input.Down( "Duck" ) && !IsCrouching && IsOnGround )
 		{
 			
-			if ( Velocity.Length <= 200 )
-			{
+			
 				IsCrouching = true;
 				CharacterController.Height /= 2f;
 				BodyCollider.End = BodyCollider.End.WithZ( BodyCollider.End.z / 2f );
-			} else
-			{
-				Slide();
-			}	
+			 
 		}
 
 		if ( IsCrouching && (!Input.Down( "Duck" ) || !IsOnGround) )

@@ -9,18 +9,29 @@ using static Sandbox.Connection;
 namespace GeneralGame;
 
 
-public partial class PlayerBase : Component, Component.INetworkSpawn, IHealthComponent
+public partial class Player : Component, Component.INetworkSpawn, IHealthComponent
 {
 
-	
+	[Property, Category( "Relatives" )] public GameObject Head { get; set; }
+	[Property, Category( "Relatives" )] public GameObject Body { get; set; }
+	[Property, Category( "Relatives" )] public SkinnedModelRenderer BodyRenderer { get; set; }
+	[Property, Category( "Relatives" )] public CameraComponent Camera { get; set; }
+	[Property, Category( "Relatives" )] public PanelComponent RootDisplay { get; set; }
+	[Property, Category( "Relatives" )] public Voice Voice { get; set; }
+	[Property, Category( "Relatives" )] public ModelPhysics ModelPhysics { get; set; }
 
-	[Property] public GameObject Head { get; set; }
-	[Property] public GameObject Body { get; set; }
-	[Property] public SkinnedModelRenderer BodyRenderer { get; set; }
-	[Property] public CameraComponent Camera { get; set; }
-	[Property] public PanelComponent RootDisplay { get; set; }
-  //  [Property] public Inventory Inventory { get; set; }
-	[Property] public Voice Voice { get; set; }
+	[Property, Category( "Movement" )] public float BaseGroundControl { get; set; } = 4.0f;
+	[Property, Category( "Movement" )] public float AirControl { get; set; } = 0.1f;
+	[Property, Category( "Movement" )] public float MaxForce { get; set; } = 50f;
+	[Property, Category( "Movement" )] public float RunSpeed { get; set; } = 290f;
+	[Property, Category( "Movement" )] public float WalkSpeed { get; set; } = 160f;
+	[Property, Category( "Movement" )] public float CrouchSpeed { get; set; } = 90f;
+	[Property, Category( "Movement" )] public float JumpForce { get; set; } = 350f;
+
+
+	[Property, Category( "Stats" )] public float MaxHealth { get; set; } = 100f;
+
+	public RagdollController RagdollController { get; }
 
 	private float SaveDelay = 60f;
 	private TimeSince SinceSave { get; set; }
@@ -28,6 +39,11 @@ public partial class PlayerBase : Component, Component.INetworkSpawn, IHealthCom
 
 	public Guid Id { get; }
 
+
+	public Player() 
+	{
+		RagdollController = new RagdollController( ModelPhysics );
+	}
 
 	protected override void OnAwake()
 	{
@@ -74,7 +90,7 @@ public partial class PlayerBase : Component, Component.INetworkSpawn, IHealthCom
 
 
 
-		Unragdoll();
+		RagdollController.Unragdoll();
 		Health = MaxHealth;
 
 		MoveToSpawnPoint();
@@ -106,9 +122,8 @@ public partial class PlayerBase : Component, Component.INetworkSpawn, IHealthCom
 
 		if ( IsProxy ) return;
 
-		Deaths += 1;
 		CharacterController.Velocity = 0;
-		Ragdoll( force, damage.Attacker.WorldPosition );
+		RagdollController.Ragdoll( force, damage.Attacker.WorldPosition );
 
 	}
 	///GameManager.ActiveScene.LoadFromFile( "scenes/basement.scene" );

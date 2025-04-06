@@ -1,12 +1,12 @@
 ﻿
 namespace GeneralGame;
 
-partial class PlayerBase
+partial class Player
 {
-	public static IReadOnlyList<PlayerBase> All => _internalPlayers;
-	public static List<PlayerBase> _internalPlayers = new List<PlayerBase>();
+	public static IReadOnlyList<Player> All => _internalPlayers;
+	public static List<Player> _internalPlayers = new List<Player>();
 
-	public static PlayerBase Local { get; set; }
+	public static Player Local { get; set; }
 
 	private Guid _guid;
 
@@ -27,7 +27,7 @@ partial class PlayerBase
 		}
 	}
 
-	public static PlayerBase GetLocal()
+	public static Player GetLocal()
 	{
 		return Local;
 	}
@@ -43,6 +43,6 @@ partial class PlayerBase
 		GameObject.Name = $"{Name} / {SteamID}";
 	}
 
-	public static PlayerBase GetByID( Guid id )
+	public static Player GetByID( Guid id )
 		=> _internalPlayers.FirstOrDefault( x => x.ConnectionID == id );
 }

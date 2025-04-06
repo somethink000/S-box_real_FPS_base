@@ -2,17 +2,15 @@
 
 namespace GeneralGame;
 
-public partial class PlayerBase
+public partial class Player
 {
-	[Sync, Property] public float MaxHealth { get; set; } = 100f;
+	
 	[Sync] public LifeState LifeState { get; private set; } = LifeState.Alive;
 	//private set;
 	[Sync] public float Health { get; set; } = 100f;
 
 
-	[Sync] public int Kills { get; set; }
-	[Sync] public int Deaths { get; set; }
-	[Sync] public bool GodMode { get; set; }
+	//TODO заменить на поиск в камере
 	[Property] public ColorAdjustments Adjustments { get; set; }
 	[Property] public Vignette Vignette { get; set; }
 
@@ -30,7 +28,7 @@ public partial class PlayerBase
 
 	public void OnDamage( in DamageInfo damage )
 	{
-		if ( !IsAlive || GodMode )
+		if ( !IsAlive )
 			return;
 
 		Health -= damage.Damage;

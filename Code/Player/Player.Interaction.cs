@@ -1,6 +1,6 @@
 namespace GeneralGame;
 
-public partial class PlayerBase
+public partial class Player
 {
 	private const float INTERACTION_DISTANCE = 650f;
 	private const float INTERACTION_SIZE = 25f;

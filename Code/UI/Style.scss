@@ -1,0 +1,39 @@
+$orange: #fbaf3e;
+$gray: #8f8f8f;
+$gold: #fbcf3e;
+$dark-gray: #636363;
+$egg-shell: #ffd29d;
+$green: #6b9d0f;
+$blood-red: #883232;
+$blue: #0e599f;
+$orange: #bc4d2a;
+
+$box-shadow-sm: 4px 4px 2px black;
+$text-shadow-sm: 3px 3px 0px black;
+
+$buttonGray: rgba(80, 80, 80, 0.9);
+$fullscreen-blur: blur( 10px );
+$fullscreen-bg: rgba(50, 50, 50, 0.5);
+$grey-bg: rgba(50, 50, 50, 1);
+$black-bg: #000000d4;
+$whire-bg: rgba(150, 150, 150, 0.5);
+
+.stxt {
+    font-family: zekton;
+    color: white;
+    font-size: 16px;
+    text-shadow: 2px 1px 4px white;
+}
+.txt {
+    font-family: zekton;
+    font-size: 24px;
+    color: white;
+    text-shadow: 2px 1px 4px white;
+}
+
+.ttl {
+   // font-family: regular;
+    font-size: 32px;
+    //color: white;
+    //text-shadow: 2px 1px 4px white;
+}

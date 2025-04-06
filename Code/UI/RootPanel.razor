@@ -1,0 +1,21 @@
+﻿
+@namespace GeneralGame.UI
+@attribute [StyleSheet]
+@inherits PanelComponent
+
+@if (IsProxy)
+    return;
+
+<root>
+
+
+</root>
+
+@code {
+    public static RootPanel Instance { get; private set; }
+
+    public RootPanel()
+    {
+        Instance = this;
+    }
+}
