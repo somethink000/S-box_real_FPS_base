@@ -1,8 +1,8 @@
-﻿
-namespace GeneralGame;
+﻿namespace GeneralGame;
 
 partial class Player
 {
+	//Setup Player Singleton
 	public static IReadOnlyList<Player> All => _internalPlayers;
 	public static List<Player> _internalPlayers = new List<Player>();
 
@@ -27,7 +27,7 @@ partial class Player
 		}
 	}
 
-	public static Player GetLocal()
+	public static Player CPly()
 	{
 		return Local;
 	}

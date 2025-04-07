@@ -127,6 +127,90 @@
           ]
         }
       ]
+    },
+    {
+      "__guid": "db554fb4-84ec-4594-800f-be80d8f8b869",
+      "Flags": 0,
+      "Name": "wooden_door_01c",
+      "Position": "297.3931,653.4834,39.23919",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "GeneralGame.DoorComponent",
+          "__guid": "a9b373bf-5c79-408b-95c7-82635edb7ee4",
+          "Angle": 100,
+          "BothSides": true,
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "OpenTime": 0.25,
+          "Pivot": "90,0,0",
+          "Sound": "sounds/grunt.sound",
+          "State": "Close"
+        },
+        {
+          "__type": "Sandbox.SkinnedModelRenderer",
+          "__guid": "ed067f2b-f138-49bb-ace1-6e4699246457",
+          "AnimationGraph": null,
+          "BodyGroups": 18446744073709551615,
+          "BoneMergeTarget": null,
+          "CreateAttachments": false,
+          "CreateBoneObjects": false,
+          "MaterialGroup": null,
+          "MaterialOverride": null,
+          "Model": "models/props/trim_sheets/doors/wooden_doors/wooden_door_01c.vmdl",
+          "Morphs": {},
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "Parameters": {
+            "bools": {},
+            "ints": {},
+            "floats": {},
+            "vectors": {},
+            "rotations": {}
+          },
+          "PlaybackRate": 1,
+          "RenderOptions": {
+            "GameLayer": true,
+            "OverlayLayer": false,
+            "BloomLayer": false,
+            "AfterUILayer": false
+          },
+          "RenderType": "On",
+          "Sequence": {
+            "Name": null
+          },
+          "Tint": "1,1,1,1",
+          "UseAnimGraph": true
+        },
+        {
+          "__type": "Sandbox.ModelCollider",
+          "__guid": "a8587b13-6f6b-4161-b3d5-149c88a8b07f",
+          "Friction": null,
+          "IsTrigger": false,
+          "Model": "models/props/trim_sheets/doors/wooden_doors/wooden_door_01c.vmdl",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "OnObjectTriggerEnter": null,
+          "OnObjectTriggerExit": null,
+          "OnTriggerEnter": null,
+          "OnTriggerExit": null,
+          "Static": false,
+          "Surface": null,
+          "SurfaceVelocity": "0,0,0"
+        }
+      ]
     }
   ],
   "SceneProperties": {
@@ -155,6 +239,8 @@
   "ResourceVersion": 2,
   "Title": null,
   "Description": null,
-  "__references": [],
+  "__references": [
+    "facepunch.wooden_door_01c#43542"
+  ],
   "__version": 2
 }
