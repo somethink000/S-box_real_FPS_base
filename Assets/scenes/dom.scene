@@ -23,28 +23,6 @@
       ]
     },
     {
-      "__guid": "57723daf-6b12-4e32-add9-81a777fe1625",
-      "Flags": 0,
-      "Name": "Network",
-      "Enabled": true,
-      "Components": [
-        {
-          "__type": "GeneralGame.NetworkManager",
-          "__guid": "cde27a66-8879-4fc5-980e-39c46afd33c9",
-          "OnComponentDestroy": null,
-          "OnComponentDisabled": null,
-          "OnComponentEnabled": null,
-          "OnComponentFixedUpdate": null,
-          "OnComponentStart": null,
-          "OnComponentUpdate": null,
-          "PlayerPrefab": {
-            "_type": "gameobject",
-            "prefab": "prefabs/player.prefab"
-          }
-        }
-      ]
-    },
-    {
       "__guid": "9d4b76af-44c2-4f50-abff-3e62a0e2b753",
       "Flags": 0,
       "Name": "MapObjects",
@@ -124,6 +102,29 @@
             }
           ],
           "Children": []
+        },
+        {
+          "__guid": "57723daf-6b12-4e32-add9-81a777fe1625",
+          "Flags": 0,
+          "Name": "Network",
+          "Position": "16.73947,29.02401,-131.4671",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "GeneralGame.NetworkManager",
+              "__guid": "29330a07-9211-49f7-a581-bb7be5f65ee2",
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null,
+              "PlayerPrefab": {
+                "_type": "gameobject",
+                "prefab": "prefabs/player.prefab"
+              }
+            }
+          ]
         }
       ]
     }

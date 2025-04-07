@@ -3,12 +3,20 @@ using Sandbox.Citizen;
 
 namespace GeneralGame;
 
-public partial class Player
+public class MovementController : Component
 {
+	[RequireComponent] public Player ply { get; set; }
+	[Property] public float BaseGroundControl { get; set; } = 4.0f;
+	[Property] public float AirControl { get; set; } = 0.1f;
+	[Property] public float MaxForce { get; set; } = 50f;
+	[Property] public float RunSpeed { get; set; } = 290f;
+	[Property] public float WalkSpeed { get; set; } = 160f;
+	[Property] public float CrouchSpeed { get; set; } = 90f;
+	[Property] public float JumpForce { get; set; } = 350f;
+
 
 	[Sync] public Vector3 WishVelocity { get; set; } = Vector3.Zero;
-	[Sync] public Angles EyeAngles { get; set; }
-	[Sync] public Vector3 EyeOffset { get; set; } = Vector3.Zero;
+	
 	[Sync] public bool IsCrouching { get; set; } = false;
 	[Sync] public bool IsRunning { get; set; } = false;
 	[Sync] public bool IsSlide { get; set; } = false;
@@ -18,31 +26,33 @@ public partial class Player
 	private float GroundControl { get; set; }
 	public bool IsOnGround => CharacterController.IsOnGround;
 	public Vector3 Velocity => CharacterController.Velocity;
-	public Vector3 EyePos => Head.Transform.Position + EyeOffset;
 
 	public CharController CharacterController { get; set; }
 	public CitizenAnimationHelper AnimationHelper { get; set; }
 	public CapsuleCollider BodyCollider { get; set; }
+	private GameObject Body => ply.Body;
 
 	TimeSince timeSinceLastFootstep = 0;
 	
-	float fallVelocity = 0;	
+	float fallVelocity = 0;
 
-	void OnMovementAwake()
+
+	protected override void OnAwake()
 	{
 		GroundControl = BaseGroundControl;
 
 		CharacterController = Components.Get<CharController>();
 		AnimationHelper = Components.Get<CitizenAnimationHelper>();
-		BodyCollider = Body.Components.Get<CapsuleCollider>();
+		BodyCollider = ply.Body.Components.Get<CapsuleCollider>();
 
-		if ( BodyRenderer is not null )
-			BodyRenderer.OnFootstepEvent += OnAnimEventFootstep;
+		if ( ply.BodyRenderer is not null )
+			ply.BodyRenderer.OnFootstepEvent += OnAnimEventFootstep;
 	}
 
-	void OnMovementUpdate()
+	protected override void OnUpdate()
 	{
-		
+		if ( !ply.IsAlive ) return;
+
 		if ( !IsProxy )
 		{
 			IsRunning = Input.Down( "Run" );
@@ -58,9 +68,10 @@ public partial class Player
 		
 	}
 
-	void OnMovementFixedUpdate()
+	protected override void OnFixedUpdate()
 	{
-		if ( IsProxy ) return;
+		
+		if ( IsProxy || !ply.IsAlive ) return;
 		BuildWishVelocity();
 		Move();
 	}
@@ -72,7 +83,7 @@ public partial class Player
 
 			WishVelocity = 0;
 			
-			var rot = EyeAngles.ToRotation();
+			var rot = ply.CameraController.EyeAngles.ToRotation();
 			if ( Input.Down( "Forward" ) ) WishVelocity += rot.Forward;
 			if ( Input.Down( "Backward" ) ) WishVelocity += rot.Backward;
 			if ( Input.Down( "Left" ) ) WishVelocity += rot.Left;
@@ -96,9 +107,10 @@ public partial class Player
 		if ( fallVelocity > 650)
 		{
 			var damage = new DamageInfo( fallVelocity / 10, GameObject, GameObject );
-			
-			OnDamage( damage );
-					}
+
+			ply.HealthController.OnDamage( damage );
+		}
+
 		fallVelocity = 0;
 	}
 
@@ -146,7 +158,8 @@ public partial class Player
 
 	void RotateBody()
 	{
-		var targetRot = new Angles( 0, EyeAngles.ToRotation().Yaw(), 0 ).ToRotation();
+		
+		var targetRot = new Angles( 0, ply.CameraController.EyeAngles.ToRotation().Yaw(), 0 ).ToRotation();
 		float rotateDiff = Body.Transform.Rotation.Distance( targetRot );
 
 		if ( rotateDiff > 20f || CharacterController.Velocity.Length > 10f )
@@ -169,9 +182,9 @@ public partial class Player
 
 		AnimationHelper.WithWishVelocity( WishVelocity );
 		AnimationHelper.WithVelocity( CharacterController.Velocity );
-		AnimationHelper.AimAngle = EyeAngles.ToRotation();
+		AnimationHelper.AimAngle = ply.CameraController.EyeAngles.ToRotation();
 		AnimationHelper.IsGrounded = IsOnGround;
-		AnimationHelper.WithLook( EyeAngles.ToRotation().Forward, 1f, 0.75f, 0.5f );
+		AnimationHelper.WithLook( ply.CameraController.EyeAngles.ToRotation().Forward, 1f, 0.75f, 0.5f );
 		AnimationHelper.MoveStyle = CitizenAnimationHelper.MoveStyles.Run;
 		AnimationHelper.DuckLevel = IsCrouching ? 1 : 0;
 		AnimationHelper.SpecialMove = IsSlide ? CitizenAnimationHelper.SpecialMoveStyle.Slide : CitizenAnimationHelper.SpecialMoveStyle.None;
@@ -210,7 +223,7 @@ public partial class Player
 
 	void OnAnimEventFootstep( SceneModel.FootstepEvent footstepEvent )
 	{
-		if ( !IsAlive || !IsOnGround ) return;
+		if ( !ply.IsAlive || !IsOnGround ) return;
 
 		// Walk
 		var stepDelay = 0.25f;

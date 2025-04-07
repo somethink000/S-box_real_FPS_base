@@ -6,7 +6,7 @@ public partial class Player
 	private const float INTERACTION_SIZE = 25f;
 
 
-	public Ray ViewRay => new( EyePos, Camera.Transform.Rotation.Forward );
+
 	public GameObject TargetedGameObject { get; private set; }
 	public SceneTraceResult InteractionTrace { get; private set; }
 	public BBox? InteractionBounds { get; private set; }
@@ -75,7 +75,7 @@ public partial class Player
 	}
 
 	// A lot of parameters! We should fix this up at a later point.
-	[Broadcast]
+	[Rpc.Broadcast]
 	public void BroadcastInteraction(
 		//Vector3 position,
 		//Rotation rotation,

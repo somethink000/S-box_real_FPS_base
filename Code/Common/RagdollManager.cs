@@ -1,18 +1,19 @@
 ﻿namespace GeneralGame;
 
-public class RagdollController
+public class RagdollManager
 {
 	private ModelPhysics RagdollModel { get; set; }
 
-	public RagdollController (ModelPhysics model) 
+	public RagdollManager (ModelPhysics model) 
 	{
-		RagdollModel = model; 
+		RagdollModel = model;
+		
 	}
 
 	public bool IsRagdolled => RagdollModel.Enabled;
 
 
-	public virtual void Ragdoll( Vector3 force, Vector3 forceOrigin )
+	public void Ragdoll( Vector3 force, Vector3 forceOrigin )
 	{
 		ToggleColliders( false );
 		RagdollModel.Enabled = true;
@@ -25,7 +26,7 @@ public class RagdollController
 		}
 	}
 
-	public virtual void ToggleColliders( bool enable )
+	public void ToggleColliders( bool enable )
 	{
 		var colliders = RagdollModel.GameObject.Components.GetAll<Collider>( FindMode.EverythingInSelfAndParent );
 
@@ -36,11 +37,13 @@ public class RagdollController
 	}
 
 
-	public virtual void Unragdoll()
+	public void Unragdoll()
 	{
+		
 		RagdollModel.Renderer.LocalPosition = Vector3.Zero;
 		RagdollModel.Renderer.LocalRotation = Rotation.Identity;
 		RagdollModel.Enabled = false;
 		ToggleColliders( true );
+		
 	}
 }
