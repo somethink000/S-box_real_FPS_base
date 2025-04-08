@@ -1,0 +1,20 @@
+@namespace GeneralGame.UI
+@attribute [StyleSheet]
+@inherits Panel
+
+@* Anything that is always active and displayed to the player when ingame. *@
+<root class="txt">
+ 
+  
+</root>
+
+@code {
+    public static Hud Instance { get; private set; }
+
+    public Hud()
+    {
+        Instance = this;
+    }
+
+
+}

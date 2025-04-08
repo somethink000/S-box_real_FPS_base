@@ -5,6 +5,7 @@ using Sandbox;
 using System;
 using System.Linq;
 using static Sandbox.Connection;
+using GeneralGame.UI;
 
 namespace GeneralGame;
 
@@ -27,7 +28,7 @@ public partial class Player : Component
 	public RagdollManager RagdollManager { get; set; }
 	
 	public bool IsAlive => HealthController.IsAlive;
-	
+	public List<ChatEntry> StoredChat { get; set; } = new();
 
 	protected override void OnAwake()
 	{
@@ -57,5 +58,20 @@ public partial class Player : Component
 
 	}
 
+	
 
+	[Rpc.Broadcast]
+	public void NewEntry( string author, string message )
+	{
+		UI.Chat.Instance.AddTextLocal( author, message );
+	}
+
+
+	public void AddEntry( string author, string message )
+	{
+		if ( IsProxy ) return;
+
+		StoredChat.Add( new( author, message, 0f ) );
+
+	}
 }

@@ -1,4 +1,5 @@
-﻿namespace GeneralGame;
+﻿
+namespace GeneralGame;
 
 public enum DoorState
 {
@@ -8,7 +9,7 @@ public enum DoorState
 	Opening
 }
 
-public class DoorComponent : Component
+public class DoorComponent : Component, IInteractable
 {
 	[Sync, Property] public DoorState State { get; set; } = DoorState.Close;
 	[Sync] public bool Inverted { get; set; }
@@ -20,6 +21,7 @@ public class DoorComponent : Component
 	[Property] public SoundEvent Sound { get; set; }
 
 	[HostSync] private Transform InitialTransform { get; set; }
+	public List<Interaction> Interactions { get; set; } = new List<Interaction>();
 
 	protected override void OnAwake()
 	{
@@ -28,31 +30,22 @@ public class DoorComponent : Component
 
 	protected override void OnStart()
 	{
-		//GameObject.SetupNetworking( orphaned: NetworkOrphaned.Host );
-		//GameObject.NetworkMode = NetworkMode.Object;
 
-		var interactions = Components.GetOrCreate<Interactions>();
-		interactions.AddInteraction( new Interaction()
-		{
-			Accessibility = AccessibleFrom.All,
-			DynamicText = () => State == DoorState.Close ? "Open" : "Close",
-			Keybind = "use",
-			Cooldown = true,
-			CooldownTime = 1f,
-			InteractDistance = 100f,
-			Action = ( Player player, GameObject obj ) =>
+		Interactions.Add(
+			new Interaction()
 			{
-				// todo: door sound
-				var dot = Vector3.Dot( InitialTransform.Rotation.Backward, (Transform.Position - player.Transform.Position).Normal );
-				Inverted = BothSides && dot <= 0;
+				Key = "use",
+				Action = ( Player player, GameObject obj ) =>
+				{
+					var dot = Vector3.Dot( InitialTransform.Rotation.Forward, (WorldPosition - player.WorldPosition).Normal );
+					Inverted = BothSides && dot <= 0;
 
-				State = State == DoorState.Close ? DoorState.Opening : DoorState.Closing;
-			},
-			ShowWhenDisabled = () => true,
-			Disabled = () => State == DoorState.Closing || State == DoorState.Opening,
-			Animation = InteractAnimations.Interact,
-			Sound = () => Sound
-		} );
+					State = State == DoorState.Close ? DoorState.Opening : DoorState.Closing;
+				},
+
+			}
+		); 
+
 	}
 
 	protected override void DrawGizmos()
@@ -63,7 +56,7 @@ public class DoorComponent : Component
 		Gizmo.Draw.IgnoreDepth = true;
 
 		var pivot = Pivot.WithZ( 0f );
-		var dir = Vector3.Right * Transform.Rotation.Inverse * 20;
+		var dir = Vector3.Right * WorldRotation.Inverse * 20;
 
 		Gizmo.Draw.Color = Color.Blue;
 		Gizmo.Draw.LineThickness = 5;
@@ -108,7 +101,7 @@ public class DoorComponent : Component
 				: DoorState.Close;
 
 			Transform.World = InitialTransform;
-			Transform.World = Transform.World.RotateAround( Transform.Position + Pivot * InitialTransform.Rotation, targetRotation );
+			Transform.World = Transform.World.RotateAround( WorldPosition + Pivot * InitialTransform.Rotation, targetRotation );
 
 			if ( State == DoorState.Close )
 			{
@@ -123,6 +116,6 @@ public class DoorComponent : Component
 		// Rotate around the hinge by a tiny amount every tick.
 		var rot = Rotation.Lerp( inversed, targetRotation, 1f / OpenTime * Time.Delta );
 		Transform.World = InitialTransform;
-		Transform.World = Transform.World.RotateAround( Transform.Position + Pivot * InitialTransform.Rotation, rot );
+		Transform.World = Transform.World.RotateAround( WorldPosition + Pivot * InitialTransform.Rotation, rot );
 	}
 }

@@ -1,37 +1,37 @@
 {
   "AssetBrowser.History": {
-    "Value": "[\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\Assets\u0022,\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\Assets\\\\prefabs\u0022,\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\Assets\\\\prefabs\\\\weapons\u0022,\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\Assets\\\\prefabs\u0022]",
-    "Timeout": 1746622828,
+    "Value": "[\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\Assets\u0022,\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\Assets\\\\prefabs\u0022,\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\Assets\u0022,\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\Assets\\\\scenes\u0022]",
+    "Timeout": 1746719418,
     "DeleteAt": 0
   },
   "AssetBrowser.HistoryIdx": {
     "Value": "3",
-    "Timeout": 1746622828,
+    "Timeout": 1746719418,
     "DeleteAt": 0
   },
   "Window.SboxSceneEditor.Dock": {
-    "Value": "{\u0022floatingWindows\u0022:[],\u0022mainWrapper\u0022:{\u0022geometry\u0022:\u0022AdnQywADAAAAAAAAAAAAAAAAB1IAAAOzAAAAAAAAAAAAAAdSAAADswAAAAAAAAAAB4AAAAAAAAAAAAAAB1IAAAOz\u0022,\u0022splitter\u0022:{\u0022items\u0022:[{\u0022currentIndex\u0022:0,\u0022objects\u0022:[{\u0022data\u0022:null,\u0022managedType\u0022:\u0022Inspector\u0022,\u0022name\u0022:\u0022Inspector\u0022}],\u0022type\u0022:\u0022area\u0022},{\u0022items\u0022:[{\u0022items\u0022:[{\u0022currentIndex\u0022:0,\u0022objects\u0022:[{\u0022data\u0022:null,\u0022managedType\u0022:\u0022SceneTreeWidget\u0022,\u0022name\u0022:\u0022Hierarchy\u0022},{\u0022data\u0022:null,\u0022managedType\u0022:\u0022PerformanceDock\u0022,\u0022name\u0022:\u0022Performance\u0022}],\u0022type\u0022:\u0022area\u0022},{\u0022currentIndex\u0022:0,\u0022objects\u0022:[{\u0022data\u0022:null,\u0022managedType\u0022:\u0022\u0022,\u0022name\u0022:\u0022GameFrame\u0022}],\u0022type\u0022:\u0022area\u0022}],\u0022state\u0022:\u0022AAAA/wAAAAEAAAACAAABTAAAA9IA/////wEAAAABAA==\u0022,\u0022type\u0022:\u0022splitter\u0022},{\u0022items\u0022:[{\u0022currentIndex\u0022:1,\u0022objects\u0022:[{\u0022data\u0022:null,\u0022managedType\u0022:\u0022MainAssetBrowser\u0022,\u0022name\u0022:\u0022Asset Browser\u0022},{\u0022data\u0022:null,\u0022managedType\u0022:\u0022ConsoleWidget\u0022,\u0022name\u0022:\u0022Console\u0022},{\u0022data\u0022:null,\u0022managedType\u0022:\u0022MixerDock\u0022,\u0022name\u0022:\u0022Mixer\u0022},{\u0022data\u0022:null,\u0022managedType\u0022:\u0022MainCloudBrowser\u0022,\u0022name\u0022:\u0022Cloud Browser\u0022},{\u0022data\u0022:null,\u0022managedType\u0022:\u0022PanelInspectorWidget\u0022,\u0022name\u0022:\u0022UI Panels\u0022},{\u0022data\u0022:null,\u0022managedType\u0022:\u0022LibraryManagerDock\u0022,\u0022name\u0022:\u0022Library Manager\u0022}],\u0022type\u0022:\u0022area\u0022},{\u0022currentIndex\u0022:0,\u0022objects\u0022:[{\u0022data\u0022:null,\u0022managedType\u0022:\u0022MainAssetBrowser\u0022,\u0022name\u0022:\u0022Asset Browser 2\u0022}],\u0022type\u0022:\u0022area\u0022}],\u0022state\u0022:\u0022AAAA/wAAAAEAAAACAAAC\u002BAAAAlMA/////wEAAAABAA==\u0022,\u0022type\u0022:\u0022splitter\u0022}],\u0022state\u0022:\u0022AAAA/wAAAAEAAAACAAAC3AAABL0A/////wEAAAACAA==\u0022,\u0022type\u0022:\u0022splitter\u0022}],\u0022state\u0022:\u0022AAAA/wAAAAEAAAACAAACqAAABL0A/////wEAAAABAA==\u0022,\u0022type\u0022:\u0022splitter\u0022}},\u0022toolWindowManagerStateFormat\u0022:1}",
-    "Timeout": 1746636469,
+    "Value": "{\u0022floatingWindows\u0022:[],\u0022mainWrapper\u0022:{\u0022geometry\u0022:\u0022AdnQywADAAAAAAAAAAAAAAAAB1IAAAOzAAAAAAAAAAAAAAdSAAADswAAAAAAAAAAB4AAAAAAAAAAAAAAB1IAAAOz\u0022,\u0022splitter\u0022:{\u0022items\u0022:[{\u0022currentIndex\u0022:0,\u0022objects\u0022:[{\u0022data\u0022:null,\u0022managedType\u0022:\u0022Inspector\u0022,\u0022name\u0022:\u0022Inspector\u0022}],\u0022type\u0022:\u0022area\u0022},{\u0022items\u0022:[{\u0022items\u0022:[{\u0022currentIndex\u0022:0,\u0022objects\u0022:[{\u0022data\u0022:null,\u0022managedType\u0022:\u0022SceneTreeWidget\u0022,\u0022name\u0022:\u0022Hierarchy\u0022},{\u0022data\u0022:null,\u0022managedType\u0022:\u0022PerformanceDock\u0022,\u0022name\u0022:\u0022Performance\u0022}],\u0022type\u0022:\u0022area\u0022},{\u0022currentIndex\u0022:0,\u0022objects\u0022:[{\u0022data\u0022:null,\u0022managedType\u0022:\u0022\u0022,\u0022name\u0022:\u0022GameFrame\u0022},{\u0022data\u0022:null,\u0022managedType\u0022:\u0022SceneDock\u0022,\u0022name\u0022:\u0022SceneDock:prefabs/player.prefab\u0022},{\u0022data\u0022:null,\u0022managedType\u0022:\u0022SceneDock\u0022,\u0022name\u0022:\u0022SceneDock:scenes/dom.scene\u0022},{\u0022data\u0022:null,\u0022managedType\u0022:\u0022SceneDock\u0022,\u0022name\u0022:\u0022SceneDock:untitled\u0022}],\u0022type\u0022:\u0022area\u0022}],\u0022state\u0022:\u0022AAAA/wAAAAEAAAACAAABTAAAA9IA/////wEAAAABAA==\u0022,\u0022type\u0022:\u0022splitter\u0022},{\u0022items\u0022:[{\u0022currentIndex\u0022:1,\u0022objects\u0022:[{\u0022data\u0022:null,\u0022managedType\u0022:\u0022MainAssetBrowser\u0022,\u0022name\u0022:\u0022Asset Browser\u0022},{\u0022data\u0022:null,\u0022managedType\u0022:\u0022ConsoleWidget\u0022,\u0022name\u0022:\u0022Console\u0022},{\u0022data\u0022:null,\u0022managedType\u0022:\u0022MixerDock\u0022,\u0022name\u0022:\u0022Mixer\u0022},{\u0022data\u0022:null,\u0022managedType\u0022:\u0022MainCloudBrowser\u0022,\u0022name\u0022:\u0022Cloud Browser\u0022},{\u0022data\u0022:null,\u0022managedType\u0022:\u0022PanelInspectorWidget\u0022,\u0022name\u0022:\u0022UI Panels\u0022},{\u0022data\u0022:null,\u0022managedType\u0022:\u0022LibraryManagerDock\u0022,\u0022name\u0022:\u0022Library Manager\u0022}],\u0022type\u0022:\u0022area\u0022},{\u0022currentIndex\u0022:0,\u0022objects\u0022:[{\u0022data\u0022:null,\u0022managedType\u0022:\u0022MainAssetBrowser\u0022,\u0022name\u0022:\u0022Asset Browser 2\u0022}],\u0022type\u0022:\u0022area\u0022}],\u0022state\u0022:\u0022AAAA/wAAAAEAAAACAAAC\u002BAAAAlMA/////wEAAAABAA==\u0022,\u0022type\u0022:\u0022splitter\u0022}],\u0022state\u0022:\u0022AAAA/wAAAAEAAAACAAAC3AAABL0A/////wEAAAACAA==\u0022,\u0022type\u0022:\u0022splitter\u0022}],\u0022state\u0022:\u0022AAAA/wAAAAEAAAACAAACqAAABL0A/////wEAAAABAA==\u0022,\u0022type\u0022:\u0022splitter\u0022}},\u0022toolWindowManagerStateFormat\u0022:1}",
+    "Timeout": 1746727328,
     "DeleteAt": 0
   },
   "SceneView.Viewport0.Settings": {
-    "Value": "{\u0022CameraPosition\u0022:\u0022-392.0357,683.7072,437.9561\u0022,\u0022CameraRotation\u0022:\u00220.08352676,0.1996772,-0.3767582,0.9006695\u0022,\u0022View\u0022:0,\u0022RenderMode\u0022:0,\u0022WireframeMode\u0022:false,\u0022EnablePostProcessing\u0022:true,\u0022EnablePrefabLighting\u0022:true,\u0022ShowGrid\u0022:true,\u0022GridOpacity\u0022:0.2,\u0022GridAxis\u0022:0,\u0022CameraOrthoHeight\u0022:1000}",
-    "Timeout": 1746636467,
+    "Value": "{\u0022CameraPosition\u0022:\u0022-1.974661,783.8239,537.2138\u0022,\u0022CameraRotation\u0022:\u00220.2454831,0.4303732,-0.4303734,0.7545169\u0022,\u0022View\u0022:0,\u0022RenderMode\u0022:0,\u0022WireframeMode\u0022:false,\u0022EnablePostProcessing\u0022:true,\u0022EnablePrefabLighting\u0022:true,\u0022ShowGrid\u0022:true,\u0022GridOpacity\u0022:0.2,\u0022GridAxis\u0022:0,\u0022CameraOrthoHeight\u0022:1000}",
+    "Timeout": 1746727331,
     "DeleteAt": 0
   },
   "SceneView.Layout": {
     "Value": "{\u0022Layout\u0022:0,\u0022SplitterState\u0022:[]}",
-    "Timeout": 1746636467,
+    "Timeout": 1746727329,
     "DeleteAt": 0
   },
   "gizmo.settings": {
     "Value": "{\u0022EditMode\u0022:\u0022position\u0022,\u0022Selection\u0022:true,\u0022ViewMode\u0022:\u00223d\u0022,\u0022GizmosEnabled\u0022:true,\u0022GizmoScale\u0022:1,\u0022GridSpacing\u0022:32,\u0022SnapToGrid\u0022:false,\u0022SnapToAngles\u0022:true,\u0022AngleSpacing\u0022:15,\u0022GlobalSpace\u0022:false,\u0022DebugActionGraphs\u0022:false}",
-    "Timeout": 1746636469,
+    "Timeout": 1746719418,
     "DeleteAt": 0
   },
   "scene.lastopened": {
-    "Value": "[\u0022prefabs/player.prefab\u0022]",
-    "Timeout": 1746636465,
+    "Value": "[\u0022prefabs/player.prefab\u0022,\u0022scenes/dom.scene\u0022]",
+    "Timeout": 1746719418,
     "DeleteAt": 0
   },
   "scenes/lobby.scene.Viewport0": {
@@ -41,12 +41,12 @@
   },
   ".Viewport0": {
     "Value": "{\u0022CameraPosition\u0022:\u002233.06498,690.677,86.60291\u0022,\u0022CameraRotation\u0022:\u00220.01940618,0.03210659,-0.5169163,0.8552134\u0022,\u0022CameraOrthoHeight\u0022:1000}",
-    "Timeout": 1746636422,
+    "Timeout": 1746727329,
     "DeleteAt": 0
   },
   "scenes/dom.scene.Viewport0": {
-    "Value": "{\u0022CameraPosition\u0022:\u0022368.7774,783.1649,192.3048\u0022,\u0022CameraRotation\u0022:\u00220.2157987,0.1351065,-0.8196563,0.5131673\u0022,\u0022CameraOrthoHeight\u0022:1000}",
-    "Timeout": 1746636465,
+    "Value": "{\u0022CameraPosition\u0022:\u0022-1.974661,783.8239,537.2138\u0022,\u0022CameraRotation\u0022:\u00220.2454831,0.4303732,-0.4303734,0.7545169\u0022,\u0022CameraOrthoHeight\u0022:1000}",
+    "Timeout": 1746727331,
     "DeleteAt": 0
   },
   "Window.SboxHammer.Dock": {
@@ -61,7 +61,7 @@
   },
   "prefabs/player.prefab.Viewport0": {
     "Value": "{\u0022CameraPosition\u0022:\u0022-392.0357,683.7072,437.9561\u0022,\u0022CameraRotation\u0022:\u00220.08352676,0.1996772,-0.3767582,0.9006695\u0022,\u0022CameraOrthoHeight\u0022:1000}",
-    "Timeout": 1746636467,
+    "Timeout": 1746727331,
     "DeleteAt": 0
   },
   "expand.bf0f959a-8e13-4133-8fc5-edc7aa3d1b0c.MissingComponent": {
@@ -91,17 +91,17 @@
   },
   "expand.bf0f959a-8e13-4133-8fc5-edc7aa3d1b0c.CitizenAnimationHelper": {
     "Value": "false",
-    "Timeout": 1746636047,
+    "Timeout": 1746727223,
     "DeleteAt": 0
   },
   "expand.bf0f959a-8e13-4133-8fc5-edc7aa3d1b0c.CharController": {
     "Value": "false",
-    "Timeout": 1746636047,
+    "Timeout": 1746727223,
     "DeleteAt": 0
   },
   "expand.bf0f959a-8e13-4133-8fc5-edc7aa3d1b0c.Voice": {
     "Value": "false",
-    "Timeout": 1746636047,
+    "Timeout": 1746727223,
     "DeleteAt": 0
   },
   "AssetBrowser.Scene.History": {

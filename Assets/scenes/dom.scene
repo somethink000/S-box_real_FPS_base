@@ -132,7 +132,8 @@
       "__guid": "db554fb4-84ec-4594-800f-be80d8f8b869",
       "Flags": 0,
       "Name": "wooden_door_01c",
-      "Position": "297.3931,653.4834,39.23919",
+      "Position": "297.3931,591.5135,39.24505",
+      "Rotation": "0,0,0.7071067,0.7071068",
       "Enabled": true,
       "Components": [
         {
@@ -147,7 +148,7 @@
           "OnComponentStart": null,
           "OnComponentUpdate": null,
           "OpenTime": 0.25,
-          "Pivot": "90,0,0",
+          "Pivot": "0,0,0",
           "Sound": "sounds/grunt.sound",
           "State": "Close"
         },
