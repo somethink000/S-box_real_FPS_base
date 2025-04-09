@@ -16,6 +16,7 @@ public partial class Player : Component
 	[RequireComponent] public CameraController CameraController { get; set; }
 	[RequireComponent] public HealthController HealthController { get; set; }
 	[RequireComponent] public InteractionController InteractionController { get; set; }
+	[RequireComponent] public InventoryController InventoryController { get; set; }
 
 	[Property, Category( "Relatives" )] public GameObject Head { get; set; }
 	[Property, Category( "Relatives" )] public GameObject Body { get; set; }

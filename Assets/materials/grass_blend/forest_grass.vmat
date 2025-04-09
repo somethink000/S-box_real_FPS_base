@@ -1,0 +1,61 @@
+// THIS FILE IS AUTO-GENERATED
+
+Layer0
+{
+	shader "shaders/blendable.shader"
+
+	//---- Number Of Blendable Layers ----
+	F_MULTIBLEND 3 // 4 Layers
+
+	//---- Use Tint Masks In Vertex Paint ----
+	F_USE_TINT_MASKS_IN_VERTEX_PAINT 1
+
+	//---- Fog ----
+	g_bFogEnabled "1"
+
+	//---- Material A ----
+	g_flTintColorA "[1.000000 1.000000 1.000000 0.000000]"
+	TextureAmbientOcclusionA "materials/default/default_ao.tga"
+	TextureBlendMaskA "materials/default/default_blend.tga"
+	TextureColorA "materials/grass_blend/forest_grass.png"
+	TextureMetalnessA "materials/default/default_metal.tga"
+	TextureNormalA "materials/default/default_normal.tga"
+	TextureRoughnessA "[1.000000 1.000000 1.000000 0.000000]"
+	TextureTintMaskA "materials/default/default.tga"
+
+	//---- Material B ----
+	g_flBlendSoftnessB "0.500"
+	g_flTintColorB "[1.000000 1.000000 1.000000 0.000000]"
+	g_vTexCoordScale2 "[1.000 1.000]"
+	TextureAmbientOcclusionB "materials/default/default_ao.tga"
+	TextureBlendMaskB "materials/default/default_blend.tga"
+	TextureColorB "materials/grass_blend/cliff.png"
+	TextureMetalnessB "materials/default/default_metal.tga"
+	TextureNormalB "materials/default/default_normal.tga"
+	TextureRoughnessB "[1.000000 1.000000 1.000000 0.000000]"
+	TextureTintMaskB "materials/default/default.tga"
+
+	//---- Material C ----
+	g_flBlendSoftnessC "0.500"
+	g_flTintColorC "[1.000000 1.000000 1.000000 0.000000]"
+	g_vTexCoordScale3 "[1.000 1.000]"
+	TextureAmbientOcclusionC "materials/default/default_ao.tga"
+	TextureBlendMaskC "materials/default/default_blend.tga"
+	TextureColorC "materials/grass_blend/train_dirt_floor_01_krya.png"
+	TextureMetalnessC "materials/default/default_metal.tga"
+	TextureNormalC "materials/default/default_normal.tga"
+	TextureRoughnessC "[1.000000 1.000000 1.000000 0.000000]"
+	TextureTintMaskC "materials/default/default.tga"
+
+	//---- Material D ----
+	g_flBlendSoftnessD "0.500"
+	g_flTintColorD "[1.000000 1.000000 1.000000 0.000000]"
+	g_vTexCoordScale4 "[1.000 1.000]"
+	TextureAmbientOcclusionD "materials/default/default_ao.tga"
+	TextureBlendMaskD "materials/default/default_blend.tga"
+	TextureColorD "materials/grass_blend/forest_dirt_04.png"
+	TextureMetalnessD "materials/default/default_metal.tga"
+	TextureNormalD "materials/default/default_normal.tga"
+	TextureRoughnessD "[1.000000 1.000000 1.000000 0.000000]"
+	TextureTintMaskD "materials/default/default.tga"
+}

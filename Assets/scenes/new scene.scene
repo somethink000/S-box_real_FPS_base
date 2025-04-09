@@ -1,36 +1,15 @@
 {
-  "__guid": "6c8060eb-af23-47b9-be7e-d60f42ad3f94",
+  "__guid": "e76eeff2-df53-4546-85f4-f024f3af2461",
   "GameObjects": [
     {
-      "__guid": "083aca3b-13f8-40c0-b6e7-c9832589cb3e",
-      "Flags": 0,
-      "Name": "Spawnpoint (1)",
-      "Position": "96,608,32",
-      "Rotation": "0,0,-0.7071069,-0.7071066",
-      "Enabled": true,
-      "Components": [
-        {
-          "__type": "Sandbox.SpawnPoint",
-          "__guid": "9dccaa11-1e3c-4edd-9f6d-c55aab7b4529",
-          "Color": "0.8902,0.31765,0.05098,1",
-          "OnComponentDestroy": null,
-          "OnComponentDisabled": null,
-          "OnComponentEnabled": null,
-          "OnComponentFixedUpdate": null,
-          "OnComponentStart": null,
-          "OnComponentUpdate": null
-        }
-      ]
-    },
-    {
-      "__guid": "9d4b76af-44c2-4f50-abff-3e62a0e2b753",
+      "__guid": "8d49fbaf-394d-4a59-8e3a-ed2435083383",
       "Flags": 0,
       "Name": "MapObjects",
       "Position": "-16.73947,-29.02401,131.4671",
       "Enabled": true,
       "Children": [
         {
-          "__guid": "e62cf48b-ed49-4de0-a975-0c76457b0952",
+          "__guid": "10328c93-5a32-4362-a175-ebc8c9972583",
           "Flags": 0,
           "Name": "Sun",
           "Rotation": "-0.4984078,0.7821411,0.03987102,0.3718273",
@@ -39,7 +18,7 @@
           "Components": [
             {
               "__type": "Sandbox.DirectionalLight",
-              "__guid": "4aa2ad0b-ba8e-456c-8776-582a6b3fb949",
+              "__guid": "041976f4-1de0-43ae-aa72-3f8d3cf3df0b",
               "FogMode": "Enabled",
               "FogStrength": 1,
               "LightColor": "0.57674,0.44476,0.24679,1",
@@ -55,7 +34,7 @@
           ]
         },
         {
-          "__guid": "16ed4ab6-8a51-430c-a43b-402bc1c7d962",
+          "__guid": "00179c53-34d9-4ed5-95cf-14f6e28bc28b",
           "Flags": 0,
           "Name": "2D Skybox",
           "Tags": "skybox",
@@ -63,7 +42,7 @@
           "Components": [
             {
               "__type": "Sandbox.SkyBox2D",
-              "__guid": "8bc2a700-5089-4f39-8495-9fa0d58a6475",
+              "__guid": "284d31e7-7bea-454f-aa4d-5c20655711a1",
               "OnComponentDestroy": null,
               "OnComponentDisabled": null,
               "OnComponentEnabled": null,
@@ -77,7 +56,7 @@
           ]
         },
         {
-          "__guid": "57723daf-6b12-4e32-add9-81a777fe1625",
+          "__guid": "d7da96d6-8ed1-432a-bdc7-5080391da8d0",
           "Flags": 0,
           "Name": "Network",
           "Position": "16.73947,29.02401,-131.4671",
@@ -85,7 +64,7 @@
           "Components": [
             {
               "__type": "GeneralGame.NetworkManager",
-              "__guid": "29330a07-9211-49f7-a581-bb7be5f65ee2",
+              "__guid": "26a59eb9-4792-4676-8494-93e6db99c11e",
               "OnComponentDestroy": null,
               "OnComponentDisabled": null,
               "OnComponentEnabled": null,
@@ -102,47 +81,63 @@
       ]
     },
     {
-      "__guid": "9d71f52a-0c4c-41ae-bcc1-51d3ccdc790e",
+      "__guid": "4021baef-7481-4851-bd3b-6c2341dd3474",
       "Flags": 0,
-      "Name": "Map",
-      "Position": "0,50.4727,0",
+      "Name": "Plane",
+      "Position": "3.882725,-3.459526,0.9796143",
       "Enabled": true,
       "Components": [
         {
-          "__type": "Sandbox.MapInstance",
-          "__guid": "ed007304-4acc-4748-b227-5bdf06375760",
-          "__version": 1,
-          "EnableCollision": true,
-          "MapName": "scenes/dom.vmap",
-          "NoOrigin": false,
+          "__type": "Sandbox.ModelRenderer",
+          "__guid": "966a9b71-f6f1-48cd-9c6f-a8d7723811d6",
+          "BodyGroups": 18446744073709551615,
+          "CreateAttachments": false,
+          "MaterialGroup": null,
+          "MaterialOverride": null,
+          "Model": "models/dev/plane.vmdl",
           "OnComponentDestroy": null,
           "OnComponentDisabled": null,
           "OnComponentEnabled": null,
           "OnComponentFixedUpdate": null,
           "OnComponentStart": null,
           "OnComponentUpdate": null,
-          "OnMapLoaded": null,
-          "OnMapUnloaded": null,
-          "UseMapFromLaunch": false
+          "RenderOptions": {
+            "GameLayer": true,
+            "OverlayLayer": false,
+            "BloomLayer": false,
+            "AfterUILayer": false
+          },
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "Sandbox.PlaneCollider",
+          "__guid": "51b6efbf-e4b8-4ac7-8e5b-2107db45630e",
+          "Center": "0,0,0",
+          "Friction": null,
+          "IsTrigger": false,
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "OnObjectTriggerEnter": null,
+          "OnObjectTriggerExit": null,
+          "OnTriggerEnter": null,
+          "OnTriggerExit": null,
+          "Scale": "50,50",
+          "Static": true,
+          "Surface": null,
+          "SurfaceVelocity": "0,0,0"
         }
-      ],
-      "Children": []
-    },
-    {
-      "__guid": "0f7c32e8-66ef-4449-b789-f2d09c1a87a3",
-      "Flags": 0,
-      "Name": "glock",
-      "Position": "150.3072,793.7659,35",
-      "Rotation": "0.6087613,0,0,0.7933534",
-      "Enabled": true,
-      "__Prefab": "prefabs/weapons/glock.prefab",
-      "__PrefabVariables": {}
+      ]
     }
   ],
   "SceneProperties": {
     "FixedUpdateFrequency": 50,
     "MaxFixedUpdates": 5,
-    "NetworkFrequency": 60,
+    "NetworkFrequency": 30,
     "NetworkInterpolation": true,
     "PhysicsSubSteps": 1,
     "ThreadedAnimation": true,
@@ -150,7 +145,7 @@
     "UseFixedUpdate": true,
     "Metadata": {},
     "NavMesh": {
-      "Enabled": true,
+      "Enabled": false,
       "IncludeStaticBodies": true,
       "IncludeKeyframedBodies": true,
       "EditorAutoUpdate": true,
