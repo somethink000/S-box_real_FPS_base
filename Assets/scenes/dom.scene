@@ -129,13 +129,13 @@
       "Children": []
     },
     {
-      "__guid": "0f7c32e8-66ef-4449-b789-f2d09c1a87a3",
+      "__guid": "d78d0880-b63b-41e5-b2c9-5ad2d1b8f8ee",
       "Flags": 0,
-      "Name": "glock",
-      "Position": "150.3072,793.7659,35",
-      "Rotation": "0.6087613,0,0,0.7933534",
+      "Name": "glock (1)",
+      "Position": "175.5721,824.0715,38.39474",
+      "Rotation": "-0.6087614,0,0,0.7933533",
       "Enabled": true,
-      "__Prefab": "prefabs/weapons/glock.prefab",
+      "__Prefab": "prefabs/weapons/beretta.prefab",
       "__PrefabVariables": {}
     }
   ],

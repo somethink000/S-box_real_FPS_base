@@ -20,15 +20,17 @@ public partial class Carriable : Component, IInteractable
 	[Property] public float TuckRange { get; set; } = 30f;
 	[Property] public CitizenAnimationHelper.HoldTypes HoldType { get; set; } = CitizenAnimationHelper.HoldTypes.Pistol;
 	[Property] public CitizenAnimationHelper.Hand Hand { get; set; } = CitizenAnimationHelper.Hand.Both;
-	public bool IsRunning => Owner != null && Owner.MovementController.IsRunning && Owner.MovementController.IsOnGround && Owner.MovementController.Velocity.Length >= 200;
+
 	public ViewModel ViewModelHandler { get; private set; }
 	public SkinnedModelRenderer ViewModelRenderer { get; private set; }
 	public SkinnedModelRenderer ViewModelHandsRenderer { get; private set; }
 	public SkinnedModelRenderer WorldModelRenderer { get; private set; }
 	public bool CanSeeViewModel => !IsProxy && Owner.IsFirstPerson;
 	public Player Owner { get; set; }
-	public List<Interaction> Interactions { get; set; } = new List<Interaction>();
+	public virtual List<Interaction> Interactions { get; set; } = new List<Interaction>();
 
+	public bool IsRunning => Owner != null && Owner.MovementController.IsRunning && Owner.MovementController.IsOnGround && Owner.MovementController.Velocity.Length >= 200;
+	public bool IsCrouching => Owner.MovementController.IsCrouching;
 
 	protected override void OnAwake()
 	{
@@ -39,7 +41,6 @@ public partial class Carriable : Component, IInteractable
 
 	protected override void OnStart()
 	{
-
 		Interactions.Add(
 			new Interaction()
 			{
@@ -53,7 +54,7 @@ public partial class Carriable : Component, IInteractable
 		);
 
 	}
-
+	protected virtual void SetupAnimEvents(){}
 	protected override void OnUpdate()
 	{
 		if ( Owner == null ) return;
@@ -143,12 +144,14 @@ public partial class Carriable : Component, IInteractable
 
 		}
 
+		SetupAnimEvents();
+
 		var bodyRenderer = Owner.BodyRenderer;
 		WorldModelRenderer.BoneMergeTarget = bodyRenderer;
 		Network.ClearInterpolation();
 	}
 
-	public virtual SceneTraceResult TraceBullet( Vector3 start, Vector3 end, float radius = 2.0f )
+	public virtual SceneTraceResult MakeTrace( Vector3 start, Vector3 end, float radius = 2.0f )
 	{
 		//var startsInWater = SurfaceUtil.IsPointWater( start );
 		List<string> withoutTags = new() { TagsHelper.Trigger, TagsHelper.PlayerClip, TagsHelper.PassBullets, TagsHelper.ViewModel };
@@ -175,7 +178,7 @@ public partial class Carriable : Component, IInteractable
 
 		var pos = Owner.CameraController.EyePos;
 		var forward = Owner.CameraController.EyeAngles.ToRotation().Forward;
-		var trace = TraceBullet( Owner.CameraController.EyePos, pos + forward * TuckRange );
+		var trace = MakeTrace( Owner.CameraController.EyePos, pos + forward * TuckRange );
 
 		if ( !trace.Hit )
 			return -1;
@@ -196,7 +199,7 @@ public partial class Carriable : Component, IInteractable
 
 
 	[Rpc.Broadcast]
-	void PlaySound( int resourceID )
+	protected void PlaySound( int resourceID )
 	{
 		if ( !IsValid ) return;
 
