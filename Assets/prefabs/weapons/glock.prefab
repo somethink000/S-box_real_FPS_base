@@ -54,9 +54,12 @@
         "StartAsleep": false
       },
       {
-        "__type": "GeneralGame.Weapon",
-        "__guid": "3fd73b46-c377-4098-9b22-0e8ea33064c3",
+        "__type": "GeneralGame.Gun",
+        "__guid": "48a460fd-6d81-40a1-b9e4-36aba3d8abb2",
+        "Hand": "Both",
         "HoldType": "Pistol",
+        "Icon": null,
+        "Name": "Ak",
         "OnComponentDestroy": null,
         "OnComponentDisabled": null,
         "OnComponentEnabled": null,
@@ -79,7 +82,7 @@
         "BodyGroups": 18446744073709551615,
         "BoneMergeTarget": null,
         "CreateAttachments": false,
-        "CreateBoneObjects": false,
+        "CreateBoneObjects": true,
         "MaterialGroup": null,
         "MaterialOverride": null,
         "Model": "models/aksu/w/ak74u_modern_ak74u_mag_ref.vmdl",
@@ -112,7 +115,14 @@
         "UseAnimGraph": true
       }
     ],
-    "Children": [],
+    "Children": [
+      {
+        "__guid": "846ddfa8-b754-4fe3-80f5-17b7bb51142b",
+        "Flags": 4,
+        "Name": "root",
+        "Enabled": true
+      }
+    ],
     "__variables": [],
     "__properties": {
       "FixedUpdateFrequency": 50,

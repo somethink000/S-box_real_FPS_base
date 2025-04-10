@@ -11,18 +11,21 @@ namespace GeneralGame;
 
 public partial class Carriable : Component, IInteractable
 {
-	[Property, Group( "Models" )] public Model ViewModel { get; set; }
-	[Property, Group( "Models" )] public Model ViewModelHands { get; set; }
-	[Property, Group( "Models" )] public Model WorldModel { get; set; }
-	[Property, Group( "Animations" ), Title( "Run Offset" )] public AngPos RunAnimData { get; set; }
-	[Property, Group( "General" )] public float TuckRange { get; set; } = 30f;
-	[Property, Group( "General" )] public CitizenAnimationHelper.HoldTypes HoldType { get; set; } = CitizenAnimationHelper.HoldTypes.Pistol;
+	[Property] public string Name { get; set; }
+	[Property] public Material Icon { get; set; }
+	[Property] public Model ViewModel { get; set; }
+	[Property] public Model ViewModelHands { get; set; }
+	[Property] public Model WorldModel { get; set; }
+	[Property] public AngPos RunAnimData { get; set; }
+	[Property] public float TuckRange { get; set; } = 30f;
+	[Property] public CitizenAnimationHelper.HoldTypes HoldType { get; set; } = CitizenAnimationHelper.HoldTypes.Pistol;
+	[Property] public CitizenAnimationHelper.Hand Hand { get; set; } = CitizenAnimationHelper.Hand.Both;
 	public bool IsRunning => Owner != null && Owner.MovementController.IsRunning && Owner.MovementController.IsOnGround && Owner.MovementController.Velocity.Length >= 200;
 	public ViewModel ViewModelHandler { get; private set; }
 	public SkinnedModelRenderer ViewModelRenderer { get; private set; }
 	public SkinnedModelRenderer ViewModelHandsRenderer { get; private set; }
 	public SkinnedModelRenderer WorldModelRenderer { get; private set; }
-	public bool CanSeeViewModel => !IsProxy && Owner.CameraController.IsFirstPerson;
+	public bool CanSeeViewModel => !IsProxy && Owner.IsFirstPerson;
 	public Player Owner { get; set; }
 	public List<Interaction> Interactions { get; set; } = new List<Interaction>();
 
@@ -57,7 +60,7 @@ public partial class Carriable : Component, IInteractable
 
 			if ( !IsProxy && WorldModelRenderer is not null )
 			{
-				WorldModelRenderer.RenderType = Owner.CameraController.IsFirstPerson ? ModelRenderer.ShadowRenderType.ShadowsOnly : ModelRenderer.ShadowRenderType.On;
+				WorldModelRenderer.RenderType = Owner.IsFirstPerson && ViewModel is not null ? ModelRenderer.ShadowRenderType.ShadowsOnly : ModelRenderer.ShadowRenderType.On;
 			}
 	}
 
@@ -66,10 +69,8 @@ public partial class Carriable : Component, IInteractable
 	{
 		Owner = player;
 		GameObject.Enabled = true;
-		Log.Info( "wd" );
 		SetupModels();
 		if ( IsProxy ) return;
-
 
 	}
 	public virtual bool CanHolster()
@@ -142,12 +143,56 @@ public partial class Carriable : Component, IInteractable
 
 		}
 
-		var bodyRenderer = Owner.Body.Components.Get<SkinnedModelRenderer>();
+		var bodyRenderer = Owner.BodyRenderer;
 		WorldModelRenderer.BoneMergeTarget = bodyRenderer;
 		Network.ClearInterpolation();
 	}
 
+	public virtual SceneTraceResult TraceBullet( Vector3 start, Vector3 end, float radius = 2.0f )
+	{
+		//var startsInWater = SurfaceUtil.IsPointWater( start );
+		List<string> withoutTags = new() { TagsHelper.Trigger, TagsHelper.PlayerClip, TagsHelper.PassBullets, TagsHelper.ViewModel };
 
+		//if ( startsInWater )
+		//	withoutTags.Add( TagsHelper.Water );
+
+		var tr = Scene.Trace.Ray( start, end )
+				.UseHitboxes()
+				.WithoutTags( withoutTags.ToArray() )
+				.Size( radius )
+				.IgnoreGameObjectHierarchy( Owner.GameObject )
+				.Run();
+
+		return tr;
+	}
+
+	public virtual float GetTuckDist()
+	{
+		if ( TuckRange == -1 )
+			return -1;
+
+		if ( !Owner.IsValid ) return -1;
+
+		var pos = Owner.CameraController.EyePos;
+		var forward = Owner.CameraController.EyeAngles.ToRotation().Forward;
+		var trace = TraceBullet( Owner.CameraController.EyePos, pos + forward * TuckRange );
+
+		if ( !trace.Hit )
+			return -1;
+
+		return trace.Distance;
+	}
+
+	public bool ShouldTuck()
+	{
+		return GetTuckDist() != -1;
+	}
+
+	public bool ShouldTuck( out float dist )
+	{
+		dist = GetTuckDist();
+		return dist != -1;
+	}
 
 
 	[Rpc.Broadcast]
@@ -168,7 +213,7 @@ public partial class Carriable : Component, IInteractable
 		}
 		else
 		{
-			Sound.Play( sound, Transform.Position );
+			Sound.Play( sound, WorldPosition );
 		}
 	}
 

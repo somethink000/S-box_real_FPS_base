@@ -26,10 +26,13 @@ public partial class Player : Component
 	[Property, Category( "Relatives" )] public Voice Voice { get; set; }
 	[Property, Category( "Relatives" )] public ModelPhysics ModelPhysics { get; set; }
 
+	[Property] public bool IsFirstPerson { get; set; } = true;
 	public RagdollManager RagdollManager { get; set; }
 	
 	public bool IsAlive => HealthController.IsAlive;
 	public List<ChatEntry> StoredChat { get; set; } = new();
+	public List<CitizenAnimationHelper> Animators { get; private set; } = new(); // List of animators, one for shadow, one for yor view
+
 
 	protected override void OnAwake()
 	{
@@ -44,18 +47,33 @@ public partial class Player : Component
 		{
 			if ( Camera is not null )
 				Camera.Enabled = false;
+		}else if ( IsFirstPerson )
+		{
+
+			// Create shadow model only on client
+			SkinnedModelRenderer ShadowBodyRenderer = GameObject.Components.Create<SkinnedModelRenderer>();
+			ShadowBodyRenderer.Model = BodyRenderer.Model;
+			ShadowBodyRenderer.RenderType = ModelRenderer.ShadowRenderType.ShadowsOnly;
+
+			BodyRenderer.SetBodyGroup( "head", 2 );
+
+			CitizenAnimationHelper ShadowAnimator = GameObject.Components.Create<CitizenAnimationHelper>();
+			ShadowAnimator.Target = ShadowBodyRenderer;
+
+			Animators.Add( ShadowAnimator );
+
+			BodyRenderer.RenderType = ModelRenderer.ShadowRenderType.Off;
 		}
 
+		Animators.Add( Components.Get<CitizenAnimationHelper>() );
+
+		
 		base.OnStart();
 	}
 	
 	protected override void OnUpdate()
 	{
 		
-		if ( !IsProxy )
-		{
-			BodyRenderer.SetBodyGroup( "head", 2 );
-		}
 
 	}
 

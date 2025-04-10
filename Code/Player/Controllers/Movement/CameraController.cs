@@ -13,7 +13,7 @@ public class CameraController : Component
 
 	[Sync] public Angles EyeAngles { get; set; }
 	[Sync] public Vector3 EyeOffset { get; set; } = Vector3.Zero;
-	public Vector3 EyePos => ply.Head.Transform.Position + EyeOffset;
+	public Vector3 EyePos => ply.Head.WorldPosition + EyeOffset;
 
 
 	public float CurFOV { get; set; }
@@ -28,7 +28,7 @@ public class CameraController : Component
 	public float InputSensitivity { get; set; } = 1f;
 	public Angles EyeAnglesOffset { get; set; }
 
-	public bool IsFirstPerson = true;
+
 	private float fovSpeed = 5f;
 
 
@@ -75,11 +75,12 @@ public class CameraController : Component
 		if ( Scene.Camera is not null )
 		{
 			var camPos = EyePos;
-			if ( !IsFirstPerson )
+
+			if ( !ply.IsFirstPerson )
 			{
 
 				var camForward = eyeAngles.ToRotation().Forward + (new Vector3( 0.2f, 0.5f, 0 ) * eyeAngles);
-				var camTrace = Scene.Trace.Ray( camPos, camPos - (camForward) ) //* Distance
+				var camTrace = Scene.Trace.Ray( camPos, camPos - (camForward) * 20 ) 
 					.WithoutTags( TagsHelper.Player, TagsHelper.Trigger, TagsHelper.ViewModel, TagsHelper.Weapon )
 					.Run();
 

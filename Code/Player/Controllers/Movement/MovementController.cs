@@ -28,7 +28,6 @@ public class MovementController : Component
 	public Vector3 Velocity => CharacterController.Velocity;
 
 	public CharController CharacterController { get; set; }
-	public CitizenAnimationHelper AnimationHelper { get; set; }
 	public CapsuleCollider BodyCollider { get; set; }
 	private GameObject Body => ply.Body;
 
@@ -42,7 +41,6 @@ public class MovementController : Component
 		GroundControl = BaseGroundControl;
 
 		CharacterController = Components.Get<CharController>();
-		AnimationHelper = Components.Get<CitizenAnimationHelper>();
 		BodyCollider = ply.Body.Components.Get<CapsuleCollider>();
 
 		if ( ply.BodyRenderer is not null )
@@ -173,21 +171,26 @@ public class MovementController : Component
 		if ( !IsOnGround ) return;
 
 		CharacterController.Punch( Vector3.Up * JumpForce );
-		AnimationHelper?.TriggerJump();
+
+		foreach ( var animator in ply.Animators )
+		{
+			animator?.TriggerJump();
+		}
 	}
 
 	void UpdateAnimations()
 	{
-		if ( AnimationHelper is null ) return;
-
-		AnimationHelper.WithWishVelocity( WishVelocity );
-		AnimationHelper.WithVelocity( CharacterController.Velocity );
-		AnimationHelper.AimAngle = ply.CameraController.EyeAngles.ToRotation();
-		AnimationHelper.IsGrounded = IsOnGround;
-		AnimationHelper.WithLook( ply.CameraController.EyeAngles.ToRotation().Forward, 1f, 0.75f, 0.5f );
-		AnimationHelper.MoveStyle = CitizenAnimationHelper.MoveStyles.Run;
-		AnimationHelper.DuckLevel = IsCrouching ? 1 : 0;
-		AnimationHelper.SpecialMove = IsSlide ? CitizenAnimationHelper.SpecialMoveStyle.Slide : CitizenAnimationHelper.SpecialMoveStyle.None;
+		foreach ( var animator in ply.Animators )
+		{
+			animator.WithWishVelocity( WishVelocity );
+			animator.WithVelocity( CharacterController.Velocity );
+			animator.AimAngle = ply.CameraController.EyeAngles.ToRotation();
+			animator.IsGrounded = IsOnGround;
+			animator.WithLook( ply.CameraController.EyeAngles.ToRotation().Forward, 1f, 0.75f, 0.5f );
+			animator.MoveStyle = CitizenAnimationHelper.MoveStyles.Run;
+			animator.DuckLevel = IsCrouching ? 1 : 0;
+			animator.SpecialMove = IsSlide ? CitizenAnimationHelper.SpecialMoveStyle.Slide : CitizenAnimationHelper.SpecialMoveStyle.None;
+		}
 
 	}
 
