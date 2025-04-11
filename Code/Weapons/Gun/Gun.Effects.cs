@@ -31,7 +31,7 @@ public partial class Gun
 	//Features  Anims
 	public string DeployAnim { get; set; } = "deploy";
 	public string HolsterAnim { get; set; } = "holster";
-	//public string InspectAnim { get; set; } = "inspect";
+	public string InspectAnim { get; set; } = "inspect";
 	public string ReadyAnim { get; set; } = "ready";
 	public string ModeAnim { get; set; } = "mode";
 	public string FixAnim { get; set; } = "fix";
@@ -39,6 +39,19 @@ public partial class Gun
 	public string EmptyState { get; set; } = "empty";
 	public string AimState { get; set; } = "aiming";
 
+
+	protected override void SetupViewModel( GameObject viewModelGO )
+	{
+		GunViewModel gvm = viewModelGO.Components.Create<GunViewModel>();
+		ViewModelHandler = gvm;
+
+		//TODO What the fuck is that
+		gvm.Carriable = this;
+		gvm.Weapon = this;
+
+		ViewModelHandler.ViewModelRenderer = ViewModelRenderer;
+		ViewModelHandler.Camera = Owner.Camera;
+	}
 
 	protected override void SetupAnimEvents()
 	{

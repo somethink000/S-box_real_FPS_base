@@ -58,9 +58,11 @@
         "__guid": "48a460fd-6d81-40a1-b9e4-36aba3d8abb2",
         "AimAnimData": {
           "Angle": "0,0,0",
-          "Pos": "0,0,0"
+          "Pos": "0,0.1000001,0"
         },
-        "AimFOV": 10,
+        "AimFOV": 30,
+        "AimSpeed": 1,
+        "AnimSpeed": 1,
         "BarrelSmokeParticle": "particles/swb/muzzle/smoke.vpcf",
         "BoltBack": false,
         "BulletCocking": true,
@@ -71,7 +73,7 @@
         "DryShootSound": "weapons/sounds/1911/mechlol.sound",
         "FireMod": "semi",
         "Force": 0.1,
-        "Hand": "Both",
+        "Hand": "Right",
         "HitFlinch": 1.25,
         "HoldType": "Pistol",
         "Icon": null,
@@ -140,13 +142,7 @@
     ],
     "Children": [
       {
-        "__guid": "846ddfa8-b754-4fe3-80f5-17b7bb51142b",
-        "Flags": 0,
-        "Name": "root",
-        "Enabled": true
-      },
-      {
-        "__guid": "61f84d69-dd51-4f04-9947-853e9f472807",
+        "__guid": "319f7b59-c44a-4e2a-840c-dc8375378978",
         "Flags": 4,
         "Name": "bip01_r_hand",
         "Enabled": true

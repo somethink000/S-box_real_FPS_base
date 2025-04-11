@@ -14,6 +14,7 @@ public partial class Gun : Carriable
 	[Property] public AngPos AimAnimData { get; set; }
 	[Property] public bool ShellReloading { get; set; } = false;
 	[Property] public bool BoltBack { get; set; } = false;
+	[Property] public float AimSpeed { get; set; } = 1;
 
 	int burstCount = 0;
 	int barrelHeat = 0;
@@ -26,6 +27,7 @@ public partial class Gun : Carriable
 
 	protected override void OnUpdate()
 	{
+		base.OnUpdate();
 		if ( Owner == null ) return;
 
 		ViewModelRenderer?.Set( EmptyState, IsEmpty );
@@ -37,6 +39,7 @@ public partial class Gun : Carriable
 
 		if ( !IsProxy )
 		{
+			
 			if ( IsDeploying ) return;
 
 			if ( !IsScoping && !IsAiming && Input.Pressed( InputButtonHelper.Inspect ) )

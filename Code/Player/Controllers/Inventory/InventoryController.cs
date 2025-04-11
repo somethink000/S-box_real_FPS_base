@@ -9,7 +9,7 @@ namespace GeneralGame;
 public partial class InventoryController : Component
 {
 	[RequireComponent] public Player ply { get; set; }
-	[Property] public List<Carriable> Weapons { get; set; } = new List<Carriable>();
+	[Property] public List<Carriable> Weapons { get; set; } = new List<Carriable>( new Carriable[9] );
 
 	public Carriable Deployed { get; set; }
 	public int Slot { get; set; }
@@ -55,7 +55,8 @@ public partial class InventoryController : Component
 
 	private void DeployWeapon( int index )
 	{
-		var item = Weapons[index];
+		
+		var item = Weapons[(int)index];
 
 		if ( item == null ) return;
 
@@ -82,7 +83,7 @@ public partial class InventoryController : Component
 				animator.Handedness = Deployed.Hand;
 			}
 
-			if ( ply.IsFirstPerson || Deployed.ViewModel is not null ) { 
+			if ( ply.IsFirstPerson && Deployed.ViewModel is not null ) { 
 				ply.BodyRenderer.SetBodyGroup( "chest", 1 );
 				ply.BodyRenderer.SetBodyGroup( "hands", 1 );
 			}
@@ -93,7 +94,7 @@ public partial class InventoryController : Component
 			{
 				animator.HoldType = CitizenAnimationHelper.HoldTypes.None;
 			}
-			if ( ply.IsFirstPerson || Deployed.ViewModel is not null )
+			if ( ply.IsFirstPerson && Deployed.ViewModel is not null )
 			{
 				ply.BodyRenderer.SetBodyGroup( "chest", 0 );
 				ply.BodyRenderer.SetBodyGroup( "hands", 0 );

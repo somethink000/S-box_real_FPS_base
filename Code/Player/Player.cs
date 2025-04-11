@@ -51,13 +51,12 @@ public partial class Player : Component
 		{
 
 			// Create shadow model only on client
-			SkinnedModelRenderer ShadowBodyRenderer = GameObject.Components.Create<SkinnedModelRenderer>();
+			SkinnedModelRenderer ShadowBodyRenderer = Body.Components.Create<SkinnedModelRenderer>();
 			ShadowBodyRenderer.Model = BodyRenderer.Model;
 			ShadowBodyRenderer.RenderType = ModelRenderer.ShadowRenderType.ShadowsOnly;
-
 			BodyRenderer.SetBodyGroup( "head", 2 );
 
-			CitizenAnimationHelper ShadowAnimator = GameObject.Components.Create<CitizenAnimationHelper>();
+			CitizenAnimationHelper ShadowAnimator = Body.Components.Create<CitizenAnimationHelper>();
 			ShadowAnimator.Target = ShadowBodyRenderer;
 
 			Animators.Add( ShadowAnimator );

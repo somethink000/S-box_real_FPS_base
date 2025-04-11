@@ -1,217 +1,107 @@
 {
+  "scene.lastopened": {
+    "Value": "[\u0022scenes/dom.scene\u0022,\u0022prefabs/weapons/beretta.prefab\u0022,\u0022prefabs/player.prefab\u0022]",
+    "Timeout": 1746973472,
+    "DeleteAt": 0
+  },
   "AssetBrowser.History": {
-    "Value": "[\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\Assets\u0022,\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\Assets\\\\prefabs\u0022,\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\Assets\u0022,\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\Assets\\\\scenes\u0022,\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\Assets\u0022,\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\Assets\\\\prefabs\u0022,\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\Assets\\\\prefabs\\\\weapons\u0022,\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\Assets\\\\prefabs\u0022,\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\Assets\\\\prefabs\\\\weapons\u0022,\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\Assets\\\\prefabs\u0022,\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\Assets\u0022,\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\Assets\\\\models\u0022,\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\Assets\\\\models\\\\aksu\u0022,\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\Assets\\\\models\\\\aksu\\\\w\u0022,\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\Assets\\\\weapons\u0022,\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\Assets\\\\weapons\\\\vss\u0022,\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\Assets\\\\weapons\u0022,\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\Assets\\\\weapons\\\\ammos\u0022,\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\Assets\\\\weapons\u0022,\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\Assets\\\\weapons\\\\bereta\u0022,\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\Assets\\\\weapons\u0022,\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\Assets\\\\weapons\\\\hands_l\u0022,\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\Assets\\\\weapons\u0022,\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\Assets\u0022,\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\Assets\\\\prefabs\u0022,\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\Assets\\\\prefabs\\\\weapons\u0022,\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\Assets\\\\prefabs\u0022,\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\Assets\u0022,\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\Assets\\\\sounds\u0022,\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\Assets\\\\sounds\\\\weapons\u0022,\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\Assets\u0022,\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\Assets\\\\weapons\u0022,\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\Assets\\\\weapons\\\\bereta\u0022,\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\Assets\\\\weapons\u0022,\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\Assets\\\\weapons\\\\sounds\u0022,\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\Assets\\\\weapons\\\\sounds\\\\beretta\u0022,\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\Assets\\\\weapons\\\\sounds\u0022,\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\Assets\\\\weapons\\\\sounds\\\\1911\u0022,\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\Assets\\\\weapons\u0022,\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\Assets\u0022,\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\Assets\\\\particles\u0022,\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\Assets\\\\particles\\\\swb\u0022,\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\Assets\\\\particles\\\\swb\\\\tracer\u0022,\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\Assets\\\\particles\\\\swb\u0022,\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\Assets\\\\particles\\\\swb\\\\muzzle\u0022,\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\Assets\\\\particles\\\\swb\u0022,\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\Assets\\\\particles\\\\swb\\\\bullet_hulls\u0022]",
-    "Timeout": 1746886720,
+    "Value": "[\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\Assets\u0022,\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\Libraries\\\\evilinc.modeliconeditor\u0022,\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\Libraries\\\\evilinc.modeliconeditor\\\\Editor\u0022,\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\u0022,\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\Localization\u0022,\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\ProjectSettings\u0022,\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\Libraries\\\\evilinc.modeliconeditor\\\\Editor\u0022,\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\Assets\u0022,\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\u0022,\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\Editor\u0022,\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\Code\u0022,\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\Assets\u0022,\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\Assets\\\\scenes\u0022,\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\Assets\u0022,\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\Assets\\\\prefabs\u0022,\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\Assets\\\\prefabs\\\\weapons\u0022,\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\Assets\\\\prefabs\u0022]",
+    "Timeout": 1746973391,
     "DeleteAt": 0
   },
   "AssetBrowser.HistoryIdx": {
-    "Value": "46",
-    "Timeout": 1746886720,
+    "Value": "16",
+    "Timeout": 1746973391,
     "DeleteAt": 0
   },
-  "Window.SboxSceneEditor.Dock": {
-    "Value": "{\u0022floatingWindows\u0022:[],\u0022mainWrapper\u0022:{\u0022geometry\u0022:\u0022AdnQywADAAAAAAAAAAAAAAAAB1IAAAOzAAAAAAAAAAAAAAdSAAADswAAAAAAAAAAB4AAAAAAAAAAAAAAB1IAAAOz\u0022,\u0022splitter\u0022:{\u0022items\u0022:[{\u0022currentIndex\u0022:0,\u0022objects\u0022:[{\u0022data\u0022:null,\u0022managedType\u0022:\u0022Inspector\u0022,\u0022name\u0022:\u0022Inspector\u0022}],\u0022type\u0022:\u0022area\u0022},{\u0022items\u0022:[{\u0022items\u0022:[{\u0022currentIndex\u0022:0,\u0022objects\u0022:[{\u0022data\u0022:null,\u0022managedType\u0022:\u0022SceneTreeWidget\u0022,\u0022name\u0022:\u0022Hierarchy\u0022},{\u0022data\u0022:null,\u0022managedType\u0022:\u0022PerformanceDock\u0022,\u0022name\u0022:\u0022Performance\u0022}],\u0022type\u0022:\u0022area\u0022},{\u0022currentIndex\u0022:0,\u0022objects\u0022:[{\u0022data\u0022:null,\u0022managedType\u0022:\u0022\u0022,\u0022name\u0022:\u0022GameFrame\u0022},{\u0022data\u0022:null,\u0022managedType\u0022:\u0022SceneDock\u0022,\u0022name\u0022:\u0022SceneDock:prefabs/player.prefab\u0022},{\u0022data\u0022:null,\u0022managedType\u0022:\u0022SceneDock\u0022,\u0022name\u0022:\u0022SceneDock:scenes/dom.scene\u0022},{\u0022data\u0022:null,\u0022managedType\u0022:\u0022SceneDock\u0022,\u0022name\u0022:\u0022SceneDock:prefabs/weapons/beretta.prefab\u0022},{\u0022data\u0022:null,\u0022managedType\u0022:\u0022SceneDock\u0022,\u0022name\u0022:\u0022SceneDock:untitled\u0022}],\u0022type\u0022:\u0022area\u0022}],\u0022state\u0022:\u0022AAAA/wAAAAEAAAACAAABLgAAA3UA/////wEAAAABAA==\u0022,\u0022type\u0022:\u0022splitter\u0022},{\u0022currentIndex\u0022:1,\u0022objects\u0022:[{\u0022data\u0022:null,\u0022managedType\u0022:\u0022MainAssetBrowser\u0022,\u0022name\u0022:\u0022Asset Browser\u0022},{\u0022data\u0022:null,\u0022managedType\u0022:\u0022ConsoleWidget\u0022,\u0022name\u0022:\u0022Console\u0022},{\u0022data\u0022:null,\u0022managedType\u0022:\u0022MixerDock\u0022,\u0022name\u0022:\u0022Mixer\u0022},{\u0022data\u0022:null,\u0022managedType\u0022:\u0022MainCloudBrowser\u0022,\u0022name\u0022:\u0022Cloud Browser\u0022},{\u0022data\u0022:null,\u0022managedType\u0022:\u0022PanelInspectorWidget\u0022,\u0022name\u0022:\u0022UI Panels\u0022},{\u0022data\u0022:null,\u0022managedType\u0022:\u0022LibraryManagerDock\u0022,\u0022name\u0022:\u0022Library Manager\u0022}],\u0022type\u0022:\u0022area\u0022}],\u0022state\u0022:\u0022AAAA/wAAAAEAAAACAAAC3AAAAcEA/////wEAAAACAA==\u0022,\u0022type\u0022:\u0022splitter\u0022}],\u0022state\u0022:\u0022AAAA/wAAAAEAAAACAAACqAAABZcA/////wEAAAABAA==\u0022,\u0022type\u0022:\u0022splitter\u0022}},\u0022toolWindowManagerStateFormat\u0022:1}",
-    "Timeout": 1746887468,
+  "scenes/dom.scene.Viewport0": {
+    "Value": "{\u0022CameraPosition\u0022:\u0022-94.49974,1315.778,277.1271\u0022,\u0022CameraRotation\u0022:\u00220.06899056,0.09409004,-0.5872762,0.8009332\u0022,\u0022CameraOrthoHeight\u0022:1000}",
+    "Timeout": 1746978207,
     "DeleteAt": 0
   },
   "SceneView.Viewport0.Settings": {
-    "Value": "{\u0022CameraPosition\u0022:\u0022-203.9848,240.9355,87.88494\u0022,\u0022CameraRotation\u0022:\u0022-0.09397902,0.137769,0.5556318,0.8145311\u0022,\u0022View\u0022:0,\u0022RenderMode\u0022:0,\u0022WireframeMode\u0022:false,\u0022EnablePostProcessing\u0022:true,\u0022EnablePrefabLighting\u0022:true,\u0022ShowGrid\u0022:true,\u0022GridOpacity\u0022:0.2,\u0022GridAxis\u0022:0,\u0022CameraOrthoHeight\u0022:1000}",
-    "Timeout": 1746887468,
+    "Value": "{\u0022CameraPosition\u0022:\u0022-94.49974,1315.778,277.1271\u0022,\u0022CameraRotation\u0022:\u00220.06899056,0.09409004,-0.5872762,0.8009332\u0022,\u0022View\u0022:0,\u0022RenderMode\u0022:0,\u0022WireframeMode\u0022:false,\u0022EnablePostProcessing\u0022:true,\u0022EnablePrefabLighting\u0022:true,\u0022ShowGrid\u0022:true,\u0022GridOpacity\u0022:0.2,\u0022GridAxis\u0022:0,\u0022CameraOrthoHeight\u0022:1000}",
+    "Timeout": 1746978207,
+    "DeleteAt": 0
+  },
+  "Window.SboxSceneEditor.Dock": {
+    "Value": "{\u0022floatingWindows\u0022:[],\u0022mainWrapper\u0022:{\u0022geometry\u0022:\u0022AdnQywADAAAAAAAAAAAAAAAAB1IAAAOzAAAAAAAAAAAAAAdSAAADswAAAAAAAAAAB4AAAAAAAAAAAAAAB1IAAAOz\u0022,\u0022splitter\u0022:{\u0022items\u0022:[{\u0022currentIndex\u0022:0,\u0022objects\u0022:[{\u0022data\u0022:null,\u0022managedType\u0022:\u0022Inspector\u0022,\u0022name\u0022:\u0022Inspector\u0022}],\u0022type\u0022:\u0022area\u0022},{\u0022items\u0022:[{\u0022items\u0022:[{\u0022currentIndex\u0022:0,\u0022objects\u0022:[{\u0022data\u0022:null,\u0022managedType\u0022:\u0022SceneTreeWidget\u0022,\u0022name\u0022:\u0022Hierarchy\u0022},{\u0022data\u0022:null,\u0022managedType\u0022:\u0022PerformanceDock\u0022,\u0022name\u0022:\u0022Performance\u0022}],\u0022type\u0022:\u0022area\u0022},{\u0022currentIndex\u0022:1,\u0022objects\u0022:[{\u0022data\u0022:null,\u0022managedType\u0022:\u0022\u0022,\u0022name\u0022:\u0022GameFrame\u0022},{\u0022data\u0022:null,\u0022managedType\u0022:\u0022SceneDock\u0022,\u0022name\u0022:\u0022SceneDock:scenes/dom.scene\u0022},{\u0022data\u0022:null,\u0022managedType\u0022:\u0022SceneDock\u0022,\u0022name\u0022:\u0022SceneDock:prefabs/weapons/beretta.prefab\u0022},{\u0022data\u0022:null,\u0022managedType\u0022:\u0022SceneDock\u0022,\u0022name\u0022:\u0022SceneDock:prefabs/player.prefab\u0022}],\u0022type\u0022:\u0022area\u0022}],\u0022state\u0022:\u0022AAAA/wAAAAEAAAACAAABLgAAA3UA/////wEAAAABAA==\u0022,\u0022type\u0022:\u0022splitter\u0022},{\u0022currentIndex\u0022:1,\u0022objects\u0022:[{\u0022data\u0022:null,\u0022managedType\u0022:\u0022MainAssetBrowser\u0022,\u0022name\u0022:\u0022Asset Browser\u0022},{\u0022data\u0022:null,\u0022managedType\u0022:\u0022ConsoleWidget\u0022,\u0022name\u0022:\u0022Console\u0022},{\u0022data\u0022:null,\u0022managedType\u0022:\u0022MixerDock\u0022,\u0022name\u0022:\u0022Mixer\u0022},{\u0022data\u0022:null,\u0022managedType\u0022:\u0022MainCloudBrowser\u0022,\u0022name\u0022:\u0022Cloud Browser\u0022},{\u0022data\u0022:null,\u0022managedType\u0022:\u0022PanelInspectorWidget\u0022,\u0022name\u0022:\u0022UI Panels\u0022},{\u0022data\u0022:null,\u0022managedType\u0022:\u0022LibraryManagerDock\u0022,\u0022name\u0022:\u0022Library Manager\u0022}],\u0022type\u0022:\u0022area\u0022}],\u0022state\u0022:\u0022AAAA/wAAAAEAAAACAAACXwAAAU0A/////wEAAAACAA==\u0022,\u0022type\u0022:\u0022splitter\u0022}],\u0022state\u0022:\u0022AAAA/wAAAAEAAAACAAACMAAABR8A/////wEAAAABAA==\u0022,\u0022type\u0022:\u0022splitter\u0022}},\u0022toolWindowManagerStateFormat\u0022:1}",
+    "Timeout": 1746978207,
+    "DeleteAt": 0
+  },
+  ".Viewport0": {
+    "Value": "{\u0022CameraPosition\u0022:\u0022124.0985,905.3914,116.922\u0022,\u0022CameraRotation\u0022:\u00220.09973447,0.1216353,-0.6261619,0.7636616\u0022,\u0022CameraOrthoHeight\u0022:1000}",
+    "Timeout": 1746977295,
     "DeleteAt": 0
   },
   "SceneView.Layout": {
     "Value": "{\u0022Layout\u0022:0,\u0022SplitterState\u0022:[]}",
-    "Timeout": 1746887420,
+    "Timeout": 1746978207,
+    "DeleteAt": 0
+  },
+  "prefabs/weapons/beretta.prefab.Viewport0": {
+    "Value": "{\u0022CameraPosition\u0022:\u002233.58875,-2262.308,2487.102\u0022,\u0022CameraRotation\u0022:\u0022-0.1840677,0.1503902,0.7521976,0.6145736\u0022,\u0022CameraOrthoHeight\u0022:1000}",
+    "Timeout": 1746978207,
     "DeleteAt": 0
   },
   "gizmo.settings": {
     "Value": "{\u0022EditMode\u0022:\u0022position\u0022,\u0022Selection\u0022:true,\u0022ViewMode\u0022:\u00223d\u0022,\u0022GizmosEnabled\u0022:true,\u0022GizmoScale\u0022:1,\u0022GridSpacing\u0022:32,\u0022SnapToGrid\u0022:false,\u0022SnapToAngles\u0022:true,\u0022AngleSpacing\u0022:15,\u0022GlobalSpace\u0022:false,\u0022DebugActionGraphs\u0022:false}",
-    "Timeout": 1746875991,
+    "Timeout": 1746978207,
     "DeleteAt": 0
   },
-  "scene.lastopened": {
-    "Value": "[\u0022scenes/dom.scene\u0022,\u0022prefabs/player.prefab\u0022,\u0022prefabs/weapons/beretta.prefab\u0022]",
-    "Timeout": 1746876459,
+  "AssetLocations.ShowMounts": {
+    "Value": "false",
+    "Timeout": 1746971083,
     "DeleteAt": 0
   },
-  "scenes/lobby.scene.Viewport0": {
-    "Value": "{\u0022CameraPosition\u0022:\u0022-477.1582,393.2484,16.32274\u0022,\u0022CameraRotation\u0022:\u00220.05137003,0.2198803,-0.2216254,0.9486284\u0022,\u0022CameraOrthoHeight\u0022:1000}",
-    "Timeout": 1746541320,
+  "AssetLocations.ShowBaseContent": {
+    "Value": "true",
+    "Timeout": 1746971083,
     "DeleteAt": 0
   },
-  ".Viewport0": {
-    "Value": "{\u0022CameraPosition\u0022:\u0022-203.9848,240.9355,87.88494\u0022,\u0022CameraRotation\u0022:\u0022-0.09397902,0.137769,0.5556318,0.8145311\u0022,\u0022CameraOrthoHeight\u0022:1000}",
-    "Timeout": 1746887468,
+  "AssetBrowser.ViewMode": {
+    "Value": "0",
+    "Timeout": 1746971083,
     "DeleteAt": 0
   },
-  "scenes/dom.scene.Viewport0": {
-    "Value": "{\u0022CameraPosition\u0022:\u0022-740.6686,1010.053,924.4546\u0022,\u0022CameraRotation\u0022:\u00220.06088563,0.3932773,-0.1403564,0.9066013\u0022,\u0022CameraOrthoHeight\u0022:1000}",
-    "Timeout": 1746887468,
+  "AssetBrowser.ShowJunkFiles": {
+    "Value": "false",
+    "Timeout": 1746971083,
     "DeleteAt": 0
   },
-  "Window.SboxHammer.Dock": {
-    "Value": "{\u0022floatingWindows\u0022:[],\u0022mainWrapper\u0022:{\u0022geometry\u0022:\u0022AdnQywADAAAAAAAAAAAAAAAAB0oAAAPOAAAAAAAAAAAAAAdKAAADzgAAAAAAAAAAB4AAAAAAAAAAAAAAB0oAAAPO\u0022,\u0022splitter\u0022:{\u0022items\u0022:[{\u0022items\u0022:[{\u0022currentIndex\u0022:0,\u0022objects\u0022:[{\u0022data\u0022:null,\u0022managedType\u0022:\u0022\u0022,\u0022name\u0022:\u0022Tool Properties\u0022}],\u0022type\u0022:\u0022area\u0022},{\u0022currentIndex\u0022:0,\u0022objects\u0022:[{\u0022data\u0022:null,\u0022managedType\u0022:\u0022\u0022,\u0022name\u0022:\u0022Active Material\u0022}],\u0022type\u0022:\u0022area\u0022}],\u0022state\u0022:\u0022AAAA/wAAAAEAAAACAAABaAAAAH8A/////wEAAAACAA==\u0022,\u0022type\u0022:\u0022splitter\u0022},{\u0022items\u0022:[{\u0022currentIndex\u0022:0,\u0022objects\u0022:[{\u0022data\u0022:null,\u0022managedType\u0022:\u0022\u0022,\u0022name\u0022:\u0022Map View\u0022}],\u0022type\u0022:\u0022area\u0022},{\u0022currentIndex\u0022:1,\u0022objects\u0022:[{\u0022data\u0022:null,\u0022managedType\u0022:\u0022HammerAssetBrowser\u0022,\u0022name\u0022:\u0022Asset Browser\u0022},{\u0022data\u0022:null,\u0022managedType\u0022:\u0022HammerCloudBrowser\u0022,\u0022name\u0022:\u0022Cloud Browser\u0022}],\u0022type\u0022:\u0022area\u0022}],\u0022state\u0022:\u0022AAAA/wAAAAEAAAACAAADsQAAAfYA/////wEAAAACAA==\u0022,\u0022type\u0022:\u0022splitter\u0022},{\u0022items\u0022:[{\u0022currentIndex\u0022:0,\u0022objects\u0022:[{\u0022data\u0022:null,\u0022managedType\u0022:\u0022\u0022,\u0022name\u0022:\u0022Outliner\u0022},{\u0022data\u0022:null,\u0022managedType\u0022:\u0022\u0022,\u0022name\u0022:\u0022Selection Sets\u0022}],\u0022type\u0022:\u0022area\u0022},{\u0022currentIndex\u0022:0,\u0022objects\u0022:[{\u0022data\u0022:null,\u0022managedType\u0022:\u0022\u0022,\u0022name\u0022:\u0022Object Properties\u0022}],\u0022type\u0022:\u0022area\u0022}],\u0022state\u0022:\u0022AAAA/wAAAAEAAAACAAAA8AAAAPAA/////wEAAAACAA==\u0022,\u0022type\u0022:\u0022splitter\u0022}],\u0022state\u0022:\u0022AAAA/wAAAAEAAAADAAABYgAABFMAAAFqAP////8BAAAAAQA=\u0022,\u0022type\u0022:\u0022splitter\u0022}},\u0022toolWindowManagerStateFormat\u0022:1}",
-    "Timeout": 1746789758,
+  "AssetBrowser.HideNonAssets": {
+    "Value": "false",
+    "Timeout": 1746971083,
     "DeleteAt": 0
   },
-  "prefabs/weapons/glock/glock.prefab.Viewport0": {
-    "Value": "{\u0022CameraPosition\u0022:\u0022-1090.688,-862.4724,1955.944\u0022,\u0022CameraRotation\u0022:\u0022-0.137155,0.4376611,0.2657336,0.8479546\u0022,\u0022CameraOrthoHeight\u0022:1000}",
-    "Timeout": 1746541189,
+  "AssetBrowser.ShowRecursiveFiles": {
+    "Value": "false",
+    "Timeout": 1746971083,
+    "DeleteAt": 0
+  },
+  "AssetBrowser.Search": {
+    "Value": "\u0022\u0022",
+    "Timeout": 1746971083,
+    "DeleteAt": 0
+  },
+  "AssetBrowser.ActiveTags": {
+    "Value": "\u0022\u0022",
+    "Timeout": 1746971083,
+    "DeleteAt": 0
+  },
+  "AssetBrowser.ExcludedTags": {
+    "Value": "\u0022\u0022",
+    "Timeout": 1746971083,
+    "DeleteAt": 0
+  },
+  "scenes/nothing.scene.Viewport0": {
+    "Value": "{\u0022CameraPosition\u0022:\u0022-46.62567,-51.74089,42.00698\u0022,\u0022CameraRotation\u0022:\u0022-0.1154499,0.2857597,0.3563594,0.8820549\u0022,\u0022CameraOrthoHeight\u0022:1000}",
+    "Timeout": 1746971979,
     "DeleteAt": 0
   },
   "prefabs/player.prefab.Viewport0": {
-    "Value": "{\u0022CameraPosition\u0022:\u0022332.5624,-430.9337,291.205\u0022,\u0022CameraRotation\u0022:\u0022-0.2353235,0.1301769,0.8428008,0.4662227\u0022,\u0022CameraOrthoHeight\u0022:1000}",
-    "Timeout": 1746887468,
-    "DeleteAt": 0
-  },
-  "expand.bf0f959a-8e13-4133-8fc5-edc7aa3d1b0c.MissingComponent": {
-    "Value": "false",
-    "Timeout": 1746545567,
-    "DeleteAt": 0
-  },
-  "expand.55559241-6791-4c24-9635-07aceee3d8a4.ModelPhysics": {
-    "Value": "false",
-    "Timeout": 1746871032,
-    "DeleteAt": 0
-  },
-  "expand.55559241-6791-4c24-9635-07aceee3d8a4.ModelHitboxes": {
-    "Value": "false",
-    "Timeout": 1746871032,
-    "DeleteAt": 0
-  },
-  "expand.55559241-6791-4c24-9635-07aceee3d8a4.CapsuleCollider": {
-    "Value": "false",
-    "Timeout": 1746871032,
-    "DeleteAt": 0
-  },
-  "expand.bf0f959a-8e13-4133-8fc5-edc7aa3d1b0c.CharController": {
-    "Value": "false",
-    "Timeout": 1746887367,
-    "DeleteAt": 0
-  },
-  "expand.bf0f959a-8e13-4133-8fc5-edc7aa3d1b0c.Voice": {
-    "Value": "false",
-    "Timeout": 1746887367,
-    "DeleteAt": 0
-  },
-  "AssetBrowser.Scene.History": {
-    "Value": "[\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\Assets\u0022,\u0022c:\\\\users\\\\susan\\\\documents\\\\github\\\\s-box_real_fps_base\\\\assets\\\\scenes\u0022,\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\Assets\u0022,\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\Assets\\\\scenes\u0022]",
-    "Timeout": 1746623211,
-    "DeleteAt": 0
-  },
-  "AssetBrowser.Scene.HistoryIdx": {
-    "Value": "3",
-    "Timeout": 1746623211,
-    "DeleteAt": 0
-  },
-  "AssetBrowser.Sound Event.History": {
-    "Value": "[\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\Assets\u0022,\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\Assets\u0022,\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\Assets\\\\sounds\u0022]",
-    "Timeout": 1746636209,
-    "DeleteAt": 0
-  },
-  "AssetBrowser.Sound Event.HistoryIdx": {
-    "Value": "2",
-    "Timeout": 1746636209,
-    "DeleteAt": 0
-  },
-  "expand.c893afc3-3741-4ebb-a468-887de9a3c0cf.MapInstance": {
-    "Value": "false",
-    "Timeout": 1746729416,
-    "DeleteAt": 0
-  },
-  "CloudBrowser.CloudBrowser.ViewMode": {
-    "Value": "1",
-    "Timeout": 1746789720,
-    "DeleteAt": 0
-  },
-  "CloudBrowser.CloudBrowser.ShowJunkFiles": {
-    "Value": "false",
-    "Timeout": 1746789720,
-    "DeleteAt": 0
-  },
-  "CloudBrowser.CloudBrowser.HideNonAssets": {
-    "Value": "false",
-    "Timeout": 1746789720,
-    "DeleteAt": 0
-  },
-  "CloudBrowser.CloudBrowser.ShowRecursiveFiles": {
-    "Value": "false",
-    "Timeout": 1746789720,
-    "DeleteAt": 0
-  },
-  "AssetBrowser.Image,Sheetfile.History": {
-    "Value": "[\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\Assets\u0022,\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\Assets\u0022,\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\Assets\\\\materials\u0022,\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\Assets\\\\materials\\\\grass_blend\u0022,\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\Assets\u0022,\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\Assets\\\\materials\u0022,\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\Assets\\\\materials\\\\grass_blend\u0022]",
-    "Timeout": 1746730149,
-    "DeleteAt": 0
-  },
-  "AssetBrowser.Image,Sheetfile.HistoryIdx": {
-    "Value": "6",
-    "Timeout": 1746730149,
-    "DeleteAt": 0
-  },
-  "AssetBrowser.Image,Sheetfile.ViewMode": {
-    "Value": "1",
-    "Timeout": 1746730146,
-    "DeleteAt": 0
-  },
-  "AssetBrowser.Image,Sheetfile.ShowJunkFiles": {
-    "Value": "false",
-    "Timeout": 1746730146,
-    "DeleteAt": 0
-  },
-  "AssetBrowser.Image,Sheetfile.HideNonAssets": {
-    "Value": "false",
-    "Timeout": 1746730146,
-    "DeleteAt": 0
-  },
-  "AssetBrowser.Image,Sheetfile.ShowRecursiveFiles": {
-    "Value": "false",
-    "Timeout": 1746730146,
-    "DeleteAt": 0
-  },
-  "scenes/new scene.scene.Viewport0": {
-    "Value": "{\u0022CameraPosition\u0022:\u0022180.1072,-108.6042,65.6535\u0022,\u0022CameraRotation\u0022:\u0022-0.1311922,0.04098817,0.9454405,0.2953825\u0022,\u0022CameraOrthoHeight\u0022:1000}",
-    "Timeout": 1746789701,
-    "DeleteAt": 0
-  },
-  "prefabs/weapons/ak.prefab.Viewport0": {
-    "Value": "{\u0022CameraPosition\u0022:\u0022-209.6699,-168.7116,355.4612\u0022,\u0022CameraRotation\u0022:\u0022-0.1403778,0.3986228,0.3010414,0.8548498\u0022,\u0022CameraOrthoHeight\u0022:1000}",
-    "Timeout": 1746814441,
-    "DeleteAt": 0
-  },
-  "prefabs/weapons/glock.prefab.Viewport0": {
-    "Value": "{\u0022CameraPosition\u0022:\u0022-688.6621,-56.27775,430.8689\u0022,\u0022CameraRotation\u0022:\u0022-0.01408066,0.4357905,0.02906239,0.8994686\u0022,\u0022CameraOrthoHeight\u0022:1000}",
-    "Timeout": 1746876056,
-    "DeleteAt": 0
-  },
-  "expand.75e8dbf9-98c5-4504-a879-6f6da3f32a1c.Rigidbody": {
-    "Value": "false",
-    "Timeout": 1746887372,
-    "DeleteAt": 0
-  },
-  "AssetBrowser.Model.History": {
-    "Value": "[\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\Assets\u0022,\u0022c:\\\\users\\\\susan\\\\documents\\\\github\\\\s-box_real_fps_base\\\\assets\\\\models\\\\aksu\\\\v\u0022]",
-    "Timeout": 1746813833,
-    "DeleteAt": 0
-  },
-  "AssetBrowser.Model.HistoryIdx": {
-    "Value": "1",
-    "Timeout": 1746813833,
-    "DeleteAt": 0
-  },
-  "prefabs/weapons/beretta.prefab.Viewport0": {
-    "Value": "{\u0022CameraPosition\u0022:\u0022-495.5788,-472.3785,1086.28\u0022,\u0022CameraRotation\u0022:\u0022-0.1163566,0.3285797,0.312872,0.88352\u0022,\u0022CameraOrthoHeight\u0022:1000}",
-    "Timeout": 1746887468,
-    "DeleteAt": 0
-  },
-  "AssetBrowser.Particle System.History": {
-    "Value": "[\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\Assets\u0022,\u0022c:\\\\users\\\\susan\\\\documents\\\\github\\\\s-box_real_fps_base\\\\assets\\\\particles\\\\swb\\\\muzzle\u0022,\u0022c:\\\\users\\\\susan\\\\documents\\\\github\\\\s-box_real_fps_base\\\\assets\\\\particles\\\\swb\\\\muzzle\u0022]",
-    "Timeout": 1746887415,
-    "DeleteAt": 0
-  },
-  "AssetBrowser.Particle System.HistoryIdx": {
-    "Value": "2",
-    "Timeout": 1746887415,
+    "Value": "{\u0022CameraPosition\u0022:\u0022-780.551,57.68713,474.3635\u0022,\u0022CameraRotation\u0022:\u00220.01091193,0.2523855,-0.04179382,0.9666622\u0022,\u0022CameraOrthoHeight\u0022:1000}",
+    "Timeout": 1746978207,
     "DeleteAt": 0
   }
 }

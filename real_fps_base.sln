@@ -15,9 +15,19 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "hammer", "C:\Program Files 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "real_fps_base", "Code\real_fps_base.csproj", "{D1E519C9-062A-3ECB-F943-F6CA7A8E43BE}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "real_fps_base.editor", "Editor\real_fps_base.editor.csproj", "{FBB87D65-4F4E-F434-92CF-E879811DE666}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "modeliconeditor", "Libraries\evilinc.modeliconeditor\Code\modeliconeditor.csproj", "{DC1606D8-3B95-3D9A-2297-2B5311F3078E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "modeliconeditor.editor", "Libraries\evilinc.modeliconeditor\Editor\modeliconeditor.editor.csproj", "{91670412-9AD8-4E07-A6C0-4875448C9C5C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "modeliconeditor.unittest", "Libraries\evilinc.modeliconeditor\UnitTests\modeliconeditor.unittest.csproj", "{AFCF49DA-8636-118D-E50D-2F98CA6A4A2F}"
+EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Addons", "Addons", "{7E84B5F6-56F9-A3B2-F215-7A71616B85A2}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tools", "Tools", "{91C47821-78DC-6EB2-D97E-14E2D5EF1C9F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Libraries", "Libraries", "{A4043C4D-9AC0-3AB1-C0E6-AD534972B49C}"
 EndProject
 
 Global
@@ -50,6 +60,22 @@ Global
 		{D1E519C9-062A-3ECB-F943-F6CA7A8E43BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D1E519C9-062A-3ECB-F943-F6CA7A8E43BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D1E519C9-062A-3ECB-F943-F6CA7A8E43BE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FBB87D65-4F4E-F434-92CF-E879811DE666}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FBB87D65-4F4E-F434-92CF-E879811DE666}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FBB87D65-4F4E-F434-92CF-E879811DE666}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FBB87D65-4F4E-F434-92CF-E879811DE666}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DC1606D8-3B95-3D9A-2297-2B5311F3078E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DC1606D8-3B95-3D9A-2297-2B5311F3078E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DC1606D8-3B95-3D9A-2297-2B5311F3078E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DC1606D8-3B95-3D9A-2297-2B5311F3078E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{91670412-9AD8-4E07-A6C0-4875448C9C5C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{91670412-9AD8-4E07-A6C0-4875448C9C5C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{91670412-9AD8-4E07-A6C0-4875448C9C5C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{91670412-9AD8-4E07-A6C0-4875448C9C5C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AFCF49DA-8636-118D-E50D-2F98CA6A4A2F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AFCF49DA-8636-118D-E50D-2F98CA6A4A2F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AFCF49DA-8636-118D-E50D-2F98CA6A4A2F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AFCF49DA-8636-118D-E50D-2F98CA6A4A2F}.Release|Any CPU.Build.0 = Release|Any CPU
 
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
@@ -61,6 +87,9 @@ Global
 		{E1F3841D-E6E7-98DF-B512-B4A0EDA94B43} = {91C47821-78DC-6EB2-D97E-14E2D5EF1C9F}
 		{D99A7B07-1DA2-FEA1-BA4C-344E12BE35C4} = {91C47821-78DC-6EB2-D97E-14E2D5EF1C9F}
 		{FF37D677-2789-827B-9FEC-126106445C54} = {91C47821-78DC-6EB2-D97E-14E2D5EF1C9F}
+		{DC1606D8-3B95-3D9A-2297-2B5311F3078E} = {A4043C4D-9AC0-3AB1-C0E6-AD534972B49C}
+		{91670412-9AD8-4E07-A6C0-4875448C9C5C} = {A4043C4D-9AC0-3AB1-C0E6-AD534972B49C}
+		{AFCF49DA-8636-118D-E50D-2F98CA6A4A2F} = {A4043C4D-9AC0-3AB1-C0E6-AD534972B49C}
 
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution

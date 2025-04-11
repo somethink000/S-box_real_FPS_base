@@ -1,0 +1,13 @@
+{
+  "Title": "ModelIconEditor",
+  "Type": "library",
+  "Org": "evilinc",
+  "Ident": "modeliconeditor",
+  "Schema": 1,
+  "IncludeSourceFiles": false,
+  "Resources": null,
+  "PackageReferences": [],
+  "EditorReferences": null,
+  "IsStandaloneOnly": false,
+  "Metadata": {}
+}

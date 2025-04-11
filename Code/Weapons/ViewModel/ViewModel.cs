@@ -6,12 +6,12 @@ using static Sandbox.CursorSettings;
 namespace GeneralGame;
 
 
-public sealed class ViewModel : Component
+public partial class ViewModel : Component
 {
 	public ModelRenderer ViewModelRenderer { get; set; }
 	public SkinnedModelRenderer ViewModelHandsRenderer { get; set; }
 	public Carriable Carriable { get; set; }
-	private Player ply => Carriable.Owner;
+	protected Player ply => Carriable.Owner;
 	public CameraComponent Camera { get; set; }
 	public bool ShouldDraw { get; set; }
 
@@ -20,29 +20,29 @@ public sealed class ViewModel : Component
 	public AngPos EditorOffset { get; set; }
 	public float EditorFOV { get; set; }
 
-	float animSpeed = 1;
-	float playerFOVSpeed = 1;
+	protected float animSpeed { get; set; } = 1;
+	protected float playerFOVSpeed = 1;
 
 	// Target animation values
-	Vector3 targetVectorPos;
-	Vector3 targetVectorRot;
-	float targetPlayerFOV = Preferences.FieldOfView;
+	protected Vector3 targetVectorPos;
+	protected Vector3 targetVectorRot;
+	protected float targetPlayerFOV = Preferences.FieldOfView;
 
 	// Finalized animation values
-	Vector3 finalVectorPos;
-	Vector3 finalVectorRot;
-	float finalPlayerFOV = Preferences.FieldOfView;
+	protected Vector3 finalVectorPos;
+	protected Vector3 finalVectorRot;
+	protected float finalPlayerFOV = Preferences.FieldOfView;
 
 	// Sway
-	Rotation lastEyeRot;
+	protected Rotation lastEyeRot;
 
 	// Jumping Animation
-	float jumpTime;
-	float landTime;
+	protected float jumpTime;
+	protected float landTime;
 
 
 	// Helpful values
-	Vector3 localVel;
+	protected Vector3 localVel;
 
 
 
@@ -85,7 +85,7 @@ public sealed class ViewModel : Component
 
 		ply.CameraController.ApplyFov( targetPlayerFOV - Preferences.FieldOfView );
 
-		animSpeed = 10;
+		animSpeed = 10 * Carriable.AnimSpeed;
 
 		// Change the angles and positions of the viewmodel with the new vectors
 		Transform.Rotation *= Rotation.From( finalVectorRot.x, finalVectorRot.y, finalVectorRot.z );

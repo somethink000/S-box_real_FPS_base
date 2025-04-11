@@ -20,8 +20,9 @@ public partial class Carriable : Component, IInteractable
 	[Property] public float TuckRange { get; set; } = 30f;
 	[Property] public CitizenAnimationHelper.HoldTypes HoldType { get; set; } = CitizenAnimationHelper.HoldTypes.Pistol;
 	[Property] public CitizenAnimationHelper.Hand Hand { get; set; } = CitizenAnimationHelper.Hand.Both;
+	[Property] public float AnimSpeed { get; set; } = 1;
 
-	public ViewModel ViewModelHandler { get; private set; }
+	public ViewModel ViewModelHandler { get; protected set; }
 	public SkinnedModelRenderer ViewModelRenderer { get; private set; }
 	public SkinnedModelRenderer ViewModelHandsRenderer { get; private set; }
 	public SkinnedModelRenderer WorldModelRenderer { get; private set; }
@@ -97,6 +98,13 @@ public partial class Carriable : Component, IInteractable
 		Owner = null;
 	}
 
+	protected virtual void SetupViewModel(GameObject viewModelGO )
+	{
+		ViewModelHandler = viewModelGO.Components.Create<ViewModel>();
+		ViewModelHandler.Carriable = this;
+		ViewModelHandler.ViewModelRenderer = ViewModelRenderer;
+		ViewModelHandler.Camera = Owner.Camera;
+	}
 
 	void SetupModels()
 	{
@@ -117,16 +125,14 @@ public partial class Carriable : Component, IInteractable
 			ViewModelRenderer.OnComponentEnabled += () =>
 			{
 				// Prevent flickering when enabling the component, this is controlled by the ViewModelHandler
-
 				ViewModelRenderer.RenderType = ModelRenderer.ShadowRenderType.ShadowsOnly;
 				// Start drawing
 				ViewModelHandler.ShouldDraw = true;
 			};
 
-			ViewModelHandler = viewModelGO.Components.Create<ViewModel>();
-			ViewModelHandler.Carriable = this;
-			ViewModelHandler.ViewModelRenderer = ViewModelRenderer;
-			ViewModelHandler.Camera = Owner.Camera;
+
+			SetupViewModel( viewModelGO );
+
 
 			if ( ViewModelHands is not null )
 			{
@@ -153,11 +159,11 @@ public partial class Carriable : Component, IInteractable
 
 	public virtual SceneTraceResult MakeTrace( Vector3 start, Vector3 end, float radius = 2.0f )
 	{
-		//var startsInWater = SurfaceUtil.IsPointWater( start );
+	    var startsInWater = SurfaceUtil.IsPointWater( start );
 		List<string> withoutTags = new() { TagsHelper.Trigger, TagsHelper.PlayerClip, TagsHelper.PassBullets, TagsHelper.ViewModel };
 
-		//if ( startsInWater )
-		//	withoutTags.Add( TagsHelper.Water );
+		if ( startsInWater )
+			withoutTags.Add( TagsHelper.Water );
 
 		var tr = Scene.Trace.Ray( start, end )
 				.UseHitboxes()
