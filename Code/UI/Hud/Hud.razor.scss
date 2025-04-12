@@ -3,5 +3,44 @@
 
 Hud {
 
-    
+
+
+    .stats {
+        position: absolute;
+        left: 10px;
+        bottom: 10px;
+        align-items: flex-end;
+        background-color: rgba(50, 50, 50, 0.5);
+        border-radius: 10px;
+        padding: 12px;
+
+
+        .health {
+            align-items: center;
+
+            .img {
+                width: 64px;
+            }
+
+            .num {
+                margin-left: 10px;
+                font-size: 50px;
+                
+            }
+        }
+
+        .ammo {
+            margin-left: 20px;
+            align-items: center;
+
+            .img {
+                width: 34px;
+            }
+
+            .num {
+                margin-left: 2px;
+                font-size: 20px;
+            }
+        }
+    }
 }

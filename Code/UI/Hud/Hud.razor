@@ -20,8 +20,8 @@
             return -1;
 
         return HashCode.Combine(
-            Player.CPly().HealthController.Health
-           
+           Player.CPly().HealthController.Health,
+           Player.CPly().InventoryController.Deployed.GameObject.Components.Get<IUseAmmo>().Clip
         );
     }
 
@@ -34,9 +34,31 @@
    <InventoryPart />
 
 
-    @Player.CPly().HealthController.Health
+   <div class="stats">
+
+       <div class="health">
+           
+            <img class="img" src="ui/hud_sheld.png" />
+            <div class="num">@Player.CPly().HealthController.Health</div>
+       </div>
 
 
+        <div class="ammo">
+
+            <img class="img" src="ui/bullet.png" />
+
+           @{Carriable carriable = Player.CPly().InventoryController.Deployed;}
+
+            @if (carriable.IsValid() && carriable.GameObject.Components.Get<IUseAmmo>() is IUseAmmo gun && gun != null)
+            {
+                <div class="num">@gun.Clip / @Player.CPly().InventoryController.Get(gun.AmmoType)</div>
+            }
+            
+           
+        </div>
+        
+   </div>
+   
 </root>
 
 

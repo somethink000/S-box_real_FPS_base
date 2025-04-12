@@ -8,7 +8,7 @@ using static Sandbox.SerializedProperty;
 
 namespace GeneralGame;
 
-public partial class Gun : Carriable
+public partial class Gun : Carriable, IUseAmmo
 {
 	[Property] public float AimFOV { get; set; } = 0f;
 	[Property] public AngPos AimAnimData { get; set; }

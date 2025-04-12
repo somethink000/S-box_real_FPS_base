@@ -57,6 +57,7 @@ public class HealthController : Component, IHealthComponent
 
 		Health -= damage.Damage;
 
+		ply.CameraController.ApplyShake( 10, 1 );
 
 		if ( Health <= 0 )
 			OnDeath( damage );
