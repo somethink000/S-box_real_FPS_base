@@ -34,8 +34,8 @@ public partial class Gun
 
 		if ( ClipSize == -1 )
 		{
-			//return Owner.Inventory.HasItems( AmmoType );
-			return true;
+			return Owner.InventoryController.CanTake( AmmoType, 1, out var ammo );
+
 		}
 
 		if ( Clip == 0 )

@@ -1,0 +1,44 @@
+@using GeneralGame
+@namespace GeneralGame.UI
+@attribute [StyleSheet]
+@inherits Panel
+
+@code
+{
+    protected override int BuildHash()
+    {
+        if (Player.CPly() is null)
+            return -1;
+
+        return HashCode.Combine(
+            Player.CPly().InventoryController.Slot,
+            Player.CPly().InventoryController.Weapons.HashCombine(i => i?.GetHashCode() ?? -1)
+
+        );
+    }
+
+}
+
+<root>
+
+        @for (var index = 0; index < Player.CPly().InventoryController.Weapons.Count; index++)
+        {
+
+            var item = Player.CPly().InventoryController.Weapons[index];
+
+            <div class="slot @( Player.CPly().InventoryController.Slot == index ? "active" : "" )">
+
+                @if (item is not null)
+                {
+                    <img class="img" src=@item.Icon.ResourcePath />
+                    <label class="name">@item.Name</label>
+                }
+                <label class="num">@(index + 1)</label>
+
+            </div>
+
+        }
+
+</root>
+
+

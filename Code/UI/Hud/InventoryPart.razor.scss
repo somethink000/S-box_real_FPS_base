@@ -1,0 +1,60 @@
+
+@import "../Style.scss";
+
+InventoryPart {
+    flex-direction: column;
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    align-items: flex-end;
+
+    .slot {
+        width: 74px;
+        height: 74px;
+        margin: 4px;
+        justify-content: center;
+        align-items: center;
+        text-shadow: 2px 2px 0px black;
+        opacity: 1;
+        transform: translateY(0);
+        position: relative;
+
+
+        &.active {
+            width: 94px;
+            height: 94px;
+            background-color: rgba(90, 90, 90, 0.4);
+
+            img {
+                opacity: 1;
+            }
+
+            .num {
+                opacity: 1;
+            }
+        }
+
+        img {
+            opacity: 0.5;
+            width: 100%;
+            height: 100%;
+        }
+
+        .num {
+            position: absolute;
+            bottom: 2px;
+            right: 2px;
+            color: white;
+            font-size: 12px;
+            opacity: 0.5;
+        }
+
+        .name {
+            position: absolute;
+            top: 2px;
+            left: 2px;
+            color: white;
+            font-size: 12px;
+        }
+    }
+}

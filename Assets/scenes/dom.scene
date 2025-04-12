@@ -137,6 +137,17 @@
       "Enabled": true,
       "__Prefab": "prefabs/weapons/beretta.prefab",
       "__PrefabVariables": {}
+    },
+    {
+      "__guid": "ea496a85-75c9-40e9-be74-2710de2eecad",
+      "Flags": 0,
+      "Name": "zombie",
+      "Position": "730.6053,495.6372,25.00216",
+      "Rotation": "-0.000002235174,-0.000000692904,0.9886857,-0.1500021",
+      "Tags": "ignorenav",
+      "Enabled": true,
+      "__Prefab": "prefabs/npc/zombie.prefab",
+      "__PrefabVariables": {}
     }
   ],
   "SceneProperties": {

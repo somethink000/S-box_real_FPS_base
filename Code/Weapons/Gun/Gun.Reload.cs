@@ -12,9 +12,13 @@ namespace GeneralGame;
 
 public partial class Gun
 {
+	[Property, Group( "Reloading" )] public float ReloadTime { get; set; } = 2;
+	[Property, Group( "Reloading" )] public float EmptyReloadTime { get; set; } = 2;
+	[Property, Group( "Reloading" )] public AmmoType AmmoType { get; set; } = AmmoType.Pistol;
+
 	public virtual void Reload()
 	{
-
+		
 		if ( IsReloading || InBoltBack || IsShooting() || IsHolstering )
 			return;
 
@@ -25,34 +29,29 @@ public partial class Gun
 
 		var isEmptyReload = Clip == 0;
 
-
-		//if ( !Owner.Inventory.HasItems( AmmoType ) )
-		//	return;
+		if ( !Owner.InventoryController.CanTake( AmmoType, maxClipSize - Clip, out var ammo ) )
+			return;
 
 		IsReloading = true;
-
-		ViewModelRenderer?.Set( ReloadAnim, true );
-
-		// Player anim
+		AwaitReloadEnd();
 		HandleReloadEffects();
-
+	}
+	public async void AwaitReloadEnd( )
+	{
+		float delay = IsEmpty ? EmptyReloadTime : ReloadTime;
+		
+		await GameTask.DelaySeconds( delay );
+		
+		OnReloadFinish();
 	}
 
-	public virtual void OnReloadFinish()
+	public void OnReloadFinish()
 	{
 		IsReloading = false;
+		
 		var maxClipSize = BulletCocking && Clip > 0 ? ClipSize + 1 : ClipSize;
 
-		//if ( Owner.CurrentGame.InfiniteAmmo )
-		//{
-		//	Ammo = maxClipSize;
-		//	IsEmpty = false;
-		//	return;
-		//}
-
-
-
-		var ammo = 10;//Owner.Inventory.TryTake( AmmoType, maxClipSize - Ammo ); //Owner.TakeAmmo( Primary.AmmoType, maxClipSize - Primary.Ammo );
+		Owner.InventoryController.TryTake( AmmoType, maxClipSize - Clip, out var ammo );
 	
 		if ( ammo == 0 )
 			return;
@@ -79,8 +78,8 @@ public partial class Gun
 		var isEmptyReload = Clip == 0;
 
 
-		//if ( !Owner.Inventory.HasItems( AmmoType ) )
-		//	return;
+		if ( !Owner.InventoryController.CanTake( AmmoType, 1, out var ammo ) )
+			return;
 
 
 		IsReloading = true;
@@ -92,7 +91,7 @@ public partial class Gun
 		IsReloading = false;
 
 
-		var ammo = 1;//Owner.Inventory.TryTake( AmmoType, 1 );
+		Owner.InventoryController.TryTake( AmmoType, 1, out var ammo );
 
 		Clip += 1;
 
@@ -115,13 +114,5 @@ public partial class Gun
 		if ( !IsProxy )
 			ViewModelRenderer?.Set( BoltBackAnim, true );
 
-	}
-
-
-	[Rpc.Broadcast]
-	public virtual void HandleReloadEffects()
-	{
-		// Player
-		Owner.BodyRenderer.Set( "b_reload", true );
 	}
 }

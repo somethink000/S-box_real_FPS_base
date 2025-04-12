@@ -1,0 +1,15 @@
+C:\Program Files (x86)\Steam\steamapps\common\sbox\.vs\output\modeliconeditor.xml
+C:\Program Files (x86)\Steam\steamapps\common\sbox\.vs\output\modeliconeditor.deps.json
+C:\Program Files (x86)\Steam\steamapps\common\sbox\.vs\output\modeliconeditor.dll
+C:\Program Files (x86)\Steam\steamapps\common\sbox\.vs\output\modeliconeditor.pdb
+C:\Users\susan\Documents\GitHub\S-box_real_FPS_base\Libraries\evilinc.modeliconeditor\Code\obj\Debug\modeliconeditor.csproj.AssemblyReference.cache
+C:\Users\susan\Documents\GitHub\S-box_real_FPS_base\Libraries\evilinc.modeliconeditor\Code\obj\Debug\modeliconeditor.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\susan\Documents\GitHub\S-box_real_FPS_base\Libraries\evilinc.modeliconeditor\Code\obj\Debug\modeliconeditor.AssemblyInfoInputs.cache
+C:\Users\susan\Documents\GitHub\S-box_real_FPS_base\Libraries\evilinc.modeliconeditor\Code\obj\Debug\modeliconeditor.AssemblyInfo.cs
+C:\Users\susan\Documents\GitHub\S-box_real_FPS_base\Libraries\evilinc.modeliconeditor\Code\obj\Debug\modeliconeditor.csproj.CoreCompileInputs.cache
+C:\Users\susan\Documents\GitHub\S-box_real_FPS_base\Libraries\evilinc.modeliconeditor\Code\obj\Debug\modeliconeditor.sourcelink.json
+C:\Users\susan\Documents\GitHub\S-box_real_FPS_base\Libraries\evilinc.modeliconeditor\Code\obj\Debug\modelico.8544A412.Up2Date
+C:\Users\susan\Documents\GitHub\S-box_real_FPS_base\Libraries\evilinc.modeliconeditor\Code\obj\Debug\modeliconeditor.dll
+C:\Users\susan\Documents\GitHub\S-box_real_FPS_base\Libraries\evilinc.modeliconeditor\Code\obj\Debug\refint\modeliconeditor.dll
+C:\Users\susan\Documents\GitHub\S-box_real_FPS_base\Libraries\evilinc.modeliconeditor\Code\obj\Debug\modeliconeditor.pdb
+C:\Users\susan\Documents\GitHub\S-box_real_FPS_base\Libraries\evilinc.modeliconeditor\Code\obj\Debug\ref\modeliconeditor.dll

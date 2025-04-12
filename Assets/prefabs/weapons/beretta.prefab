@@ -60,8 +60,9 @@
           "Angle": "0,0,0",
           "Pos": "0,0.1000001,0"
         },
-        "AimFOV": 30,
+        "AimFOV": -30,
         "AimSpeed": 1,
+        "AmmoType": "Pistol",
         "AnimSpeed": 1,
         "BarrelSmokeParticle": "particles/swb/muzzle/smoke.vpcf",
         "BoltBack": false,
@@ -70,15 +71,45 @@
         "Bullets": 1,
         "ClipSize": 10,
         "Damage": 5,
+        "DeployTime": 0.5,
         "DryShootSound": "weapons/sounds/1911/mechlol.sound",
+        "EmptyReloadTime": 1,
         "FireMod": "semi",
         "Force": 0.1,
         "Hand": "Right",
         "HitFlinch": 1.25,
         "HoldType": "Pistol",
-        "Icon": null,
+        "HolsterTime": 0.5,
+        "Icon": {
+          "$compiler": "texture",
+          "$source": "imagefile",
+          "data": {
+            "FilePath": "ui/icons/w_berettai.png",
+            "MaxSize": 4096,
+            "ConvertHeightToNormals": false,
+            "NormalScale": 1,
+            "Rotate": 0,
+            "FlipVertical": false,
+            "FlipHorizontal": false,
+            "Padding": {
+              "Size": "0,0",
+              "EdgeSize": "0,0"
+            },
+            "Sharpen": 0,
+            "InvertColor": false,
+            "Blur": 0,
+            "Brightness": 1,
+            "Contrast": 1,
+            "Saturation": 1,
+            "Hue": 0,
+            "Colorize": false,
+            "TargetColor": "0,1,0,1",
+            "CacheToDisk": true
+          },
+          "compiled": null
+        },
         "MuzzleFlashParticle": "particles/swb/muzzle/sparks.vpcf",
-        "Name": "Ak",
+        "Name": "Beretta",
         "OnComponentDestroy": null,
         "OnComponentDisabled": null,
         "OnComponentEnabled": null,
@@ -86,6 +117,7 @@
         "OnComponentStart": null,
         "OnComponentUpdate": null,
         "Recoil": 0.1,
+        "ReloadTime": 4.4999986,
         "RPM": 200,
         "RunAnimData": {
           "Angle": "0,0,0",
@@ -145,6 +177,12 @@
         "__guid": "319f7b59-c44a-4e2a-840c-dc8375378978",
         "Flags": 4,
         "Name": "bip01_r_hand",
+        "Enabled": true
+      },
+      {
+        "__guid": "583d5540-f32d-4389-992c-c16f06e6281f",
+        "Flags": 4,
+        "Name": "hold_R",
         "Enabled": true
       }
     ],

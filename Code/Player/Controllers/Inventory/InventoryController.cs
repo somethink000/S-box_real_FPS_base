@@ -5,11 +5,16 @@ using static Sandbox.SerializedProperty;
 using static Sandbox.Services.Inventory;
 
 namespace GeneralGame;
+public enum AmmoType
+{
+	Pistol,
+	Rifle
+}
 
 public partial class InventoryController : Component
 {
 	[RequireComponent] public Player ply { get; set; }
-	[Property] public List<Carriable> Weapons { get; set; } = new List<Carriable>( new Carriable[9] );
+	public List<Carriable> Weapons { get; set; } = new List<Carriable>( new Carriable[10] );
 
 	public Carriable Deployed { get; set; }
 	public int Slot { get; set; }
@@ -19,6 +24,13 @@ public partial class InventoryController : Component
 	//	//TODO make this beter
 	//	return Weapons.Any( w => w.GameObject.Components.GetInDescendantsOrSelf<Carriable>( true ).DisplayName == prefab.Components.GetInDescendantsOrSelf<Carriable>( true ).DisplayName );
 	//}
+	public bool HaveFreeSpace()
+		=> Weapons.IndexOf( null ) != -1;
+
+	public InventoryController()
+	{
+		//Weapons = 
+	}
 
 	public void Clear()
 	{
@@ -32,6 +44,7 @@ public partial class InventoryController : Component
 
 	private void ChangeDeployed( Carriable carriable, int slot )
 	{
+
 		if ( Deployed != null )
 		{
 
@@ -55,10 +68,28 @@ public partial class InventoryController : Component
 
 	private void DeployWeapon( int index )
 	{
-		
-		var item = Weapons[(int)index];
+		if (index < 0)
+		{
+			index = Weapons.Count - 1;
+		}
 
-		if ( item == null ) return;
+		if ( index > (Weapons.Count - 1) )
+		{
+			index = 0;
+		}
+
+		var item = Weapons.ElementAtOrDefault(index);
+
+		if ( item == null )
+		{
+			if ( Deployed != null )
+			{
+				ClearDeployed();
+			}
+			Slot = index;
+			
+			return;
+		}
 
 		if ( item.GameObject.Components.GetInDescendantsOrSelf<Carriable>( true ) != null )
 		{
@@ -94,7 +125,8 @@ public partial class InventoryController : Component
 			{
 				animator.HoldType = CitizenAnimationHelper.HoldTypes.None;
 			}
-			if ( ply.IsFirstPerson && Deployed.ViewModel is not null )
+
+			if ( ply.IsFirstPerson )
 			{
 				ply.BodyRenderer.SetBodyGroup( "chest", 0 );
 				ply.BodyRenderer.SetBodyGroup( "hands", 0 );
@@ -112,30 +144,36 @@ public partial class InventoryController : Component
 		else if ( Input.Pressed( InputButtonHelper.Slot7 ) ) DeployWeapon( 7 );
 		else if ( Input.Pressed( InputButtonHelper.Slot8 ) ) DeployWeapon( 8 );
 		else if ( Input.Pressed( InputButtonHelper.Slot9 ) ) DeployWeapon( 9 );
-		else if ( Input.MouseWheel.y > 0 ) DeployWeapon( Slot + 1 );
-		else if ( Input.MouseWheel.y < 0 ) DeployWeapon( Slot - 1 );
+		else if ( Input.MouseWheel.y > 0 ) DeployWeapon( Slot - 1 );
+		else if ( Input.MouseWheel.y < 0 ) DeployWeapon( Slot + 1 );
 
 	}
 
 	public void GiveItem( Carriable item )
 	{
 
-		//item.GameObject.SetupNetworking();
-		item.GameObject.Network.TakeOwnership();
-		item.GameObject.Parent = this.GameObject;
-		item.GameObject.WorldPosition = this.GameObject.WorldPosition;
-		item.GameObject.WorldRotation = this.GameObject.WorldRotation;
-	
-	
-		item.Components.Get<ModelCollider>( FindMode.InSelf ).Enabled = false;
-		item.Components.Get<Rigidbody>( FindMode.InSelf ).Enabled = false;
-		
-		//	Components.Get<ModelCollider>( FindMode.InSelf ).Enabled = true;
-		//	Components.Get<Rigidbody>( FindMode.InSelf ).Enabled = true;
-		
-		
-		item.GameObject.Enabled = false;
-		Weapons.Add( item );
+		int freeSlot = Weapons.IndexOf( null );
 
+		//check if there is a free slot and new slot les than inventory size
+		if ( freeSlot >= 0 && freeSlot < Weapons.Count ) { 
+			
+
+			//item.GameObject.SetupNetworking();
+			item.GameObject.Network.TakeOwnership();
+			item.GameObject.Parent = this.GameObject;
+			item.GameObject.WorldPosition = this.GameObject.WorldPosition;
+			item.GameObject.WorldRotation = this.GameObject.WorldRotation;
+	
+	
+			item.Components.Get<ModelCollider>( FindMode.InSelf ).Enabled = false;
+			item.Components.Get<Rigidbody>( FindMode.InSelf ).Enabled = false;
+		
+			//	Components.Get<ModelCollider>( FindMode.InSelf ).Enabled = true;
+			//	Components.Get<Rigidbody>( FindMode.InSelf ).Enabled = true;
+		
+		
+			item.GameObject.Enabled = false;
+			Weapons[freeSlot] = item;
+		}
 	}
 }

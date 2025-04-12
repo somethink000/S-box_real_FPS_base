@@ -1,0 +1,313 @@
+{
+  "Jackets": [
+    {
+      "Cloth": {
+        "Clothing": "models/citizen_clothes/jacket/biker_jacket/biker_jacket.clothing",
+        "Tint": null
+      },
+      "Gender": "All"
+    },
+    {
+      "Cloth": {
+        "Clothing": "models/citizen_clothes/jacket/bomber_jacket/bomber_jacket.clothing",
+        "Tint": null
+      },
+      "Gender": "All"
+    },
+    {
+      "Cloth": {
+        "Clothing": "models/citizen_clothes/jacket/brown_leather_jacket/black_leather_jacket.clothing",
+        "Tint": null
+      },
+      "Gender": "All"
+    },
+    {
+      "Cloth": {
+        "Clothing": "models/citizen_clothes/jacket/brown_leather_jacket/brown_leather_jacket.clothing",
+        "Tint": null
+      },
+      "Gender": "All"
+    },
+    {
+      "Cloth": {
+        "Clothing": "models/citizen_clothes/jacket/hoodie/hoodie.clothing",
+        "Tint": null
+      },
+      "Gender": "All"
+    },
+    {
+      "Cloth": {
+        "Clothing": "models/citizen_clothes/jacket/hoodie/hoodie_black.clothing",
+        "Tint": null
+      },
+      "Gender": "All"
+    },
+    {
+      "Cloth": {
+        "Clothing": "models/citizen_clothes/jacket/puffer_jacket/puffer_jacket.clothing",
+        "Tint": null
+      },
+      "Gender": "All"
+    },
+    {
+      "Cloth": {
+        "Clothing": "models/citizen_clothes/jacket/puffer_jacket/puffer_jacket_orange.clothing",
+        "Tint": null
+      },
+      "Gender": "All"
+    },
+    {
+      "Cloth": {
+        "Clothing": "models/citizen_clothes/jacket/puffer_jacket/puffer_jacket_blue.clothing",
+        "Tint": null
+      },
+      "Gender": "All"
+    },
+    {
+      "Cloth": {
+        "Clothing": "models/citizen_clothes/jacket/sleeveless_jacket/sleeveless_jacket.clothing",
+        "Tint": null
+      },
+      "Gender": "All"
+    }
+  ],
+  "Shirts": [
+    {
+      "Cloth": {
+        "Clothing": "models/citizen_clothes/shirt/army_shirt/army_shirt.clothing",
+        "Tint": null
+      },
+      "Gender": "All"
+    },
+    {
+      "Cloth": {
+        "Clothing": "models/citizen_clothes/shirt/chef_shirt/chef_shirt.clothing",
+        "Tint": null
+      },
+      "Gender": "All"
+    },
+    {
+      "Cloth": {
+        "Clothing": "models/citizen_clothes/shirt/fisherman_jumpsuit/fisherman_jumpsuit.clothing",
+        "Tint": null
+      },
+      "Gender": "All"
+    },
+    {
+      "Cloth": {
+        "Clothing": "models/citizen_clothes/shirt/flannel_shirt/flannel_shirt.clothing",
+        "Tint": null
+      },
+      "Gender": "All"
+    },
+    {
+      "Cloth": {
+        "Clothing": "models/citizen_clothes/shirt/hawaiian_shirt/hawaiian shirt.clothing",
+        "Tint": null
+      },
+      "Gender": "All"
+    },
+    {
+      "Cloth": {
+        "Clothing": "models/citizen_clothes/shirt/leotard/leotard.clothing",
+        "Tint": null
+      },
+      "Gender": "All"
+    },
+    {
+      "Cloth": {
+        "Clothing": "models/citizen_clothes/shirt/leotard/leotard_blue.clothing",
+        "Tint": null
+      },
+      "Gender": "All"
+    },
+    {
+      "Cloth": {
+        "Clothing": "models/citizen_clothes/shirt/loose_shirt/loose_shirt.clothing",
+        "Tint": null
+      },
+      "Gender": "All"
+    },
+    {
+      "Cloth": {
+        "Clothing": "models/citizen_clothes/shirt/polo_shirt/binman_shirt.clothing",
+        "Tint": null
+      },
+      "Gender": "All"
+    },
+    {
+      "Cloth": {
+        "Clothing": "models/citizen_clothes/shirt/polo_shirt/polo_shirt.clothing",
+        "Tint": null
+      },
+      "Gender": "All"
+    },
+    {
+      "Cloth": {
+        "Clothing": "models/citizen_clothes/shirt/polo_shirt/polo_shirt_white.clothing",
+        "Tint": null
+      },
+      "Gender": "All"
+    },
+    {
+      "Cloth": {
+        "Clothing": "models/citizen_clothes/shirt/tanktop/tanktop.clothing",
+        "Tint": null
+      },
+      "Gender": "All"
+    },
+    {
+      "Cloth": {
+        "Clothing": "models/citizen_clothes/shirt/tshirt/football_tshirt.clothing",
+        "Tint": null
+      },
+      "Gender": "All"
+    },
+    {
+      "Cloth": {
+        "Clothing": "models/citizen_clothes/shirt/tshirt/tshirt.clothing",
+        "Tint": null
+      },
+      "Gender": "All"
+    },
+    {
+      "Cloth": {
+        "Clothing": "models/citizen_clothes/shirt/waistcoat_and_shirt/waistcoat_and_shirt.clothing",
+        "Tint": null
+      },
+      "Gender": "All"
+    }
+  ],
+  "Trousers": [
+    {
+      "Cloth": {
+        "Clothing": "models/citizen_clothes/trousers/cargopants/cargo_pants_army.clothing",
+        "Tint": null
+      },
+      "Gender": "All"
+    },
+    {
+      "Cloth": {
+        "Clothing": "models/citizen_clothes/trousers/jeans/jeans.clothing",
+        "Tint": null
+      },
+      "Gender": "All"
+    },
+    {
+      "Cloth": {
+        "Clothing": "models/citizen_clothes/trousers/jeans/jeans_black.clothing",
+        "Tint": null
+      },
+      "Gender": "All"
+    },
+    {
+      "Cloth": {
+        "Clothing": "models/citizen_clothes/trousers/cargopants/brown_cargo_pants.clothing",
+        "Tint": null
+      },
+      "Gender": "All"
+    },
+    {
+      "Cloth": {
+        "Clothing": "models/citizen_clothes/trousers/cargopants/binman_trousers.clothing",
+        "Tint": null
+      },
+      "Gender": "All"
+    },
+    {
+      "Cloth": {
+        "Clothing": "models/citizen_clothes/trousers/loosejeans/loose_jeans.clothing",
+        "Tint": null
+      },
+      "Gender": "All"
+    },
+    {
+      "Cloth": {
+        "Clothing": "models/citizen_clothes/trousers/loosetrousers/loose_trousers.clothing",
+        "Tint": null
+      },
+      "Gender": "All"
+    },
+    {
+      "Cloth": {
+        "Clothing": "models/citizen_clothes/trousers/smarttrousers/trousers.smart.clothing",
+        "Tint": null
+      },
+      "Gender": "All"
+    },
+    {
+      "Cloth": {
+        "Clothing": "models/citizen_clothes/trousers/trackiebottoms/trackie_bottoms.clothing",
+        "Tint": null
+      },
+      "Gender": "All"
+    },
+    {
+      "Cloth": {
+        "Clothing": "models/citizen_clothes/trousers/trackiebottoms/trackie_bottoms_black.clothing",
+        "Tint": null
+      },
+      "Gender": "All"
+    }
+  ],
+  "Shoes": [
+    {
+      "Cloth": {
+        "Clothing": "models/citizen_clothes/shoes/boots/army_boots.clothing",
+        "Tint": null
+      },
+      "Gender": "All"
+    },
+    {
+      "Cloth": {
+        "Clothing": "models/citizen_clothes/shoes/boots/black_boots.clothing",
+        "Tint": null
+      },
+      "Gender": "All"
+    },
+    {
+      "Cloth": {
+        "Clothing": "models/citizen_clothes/shoes/boxing_boots/boxing_boots.clothing",
+        "Tint": null
+      },
+      "Gender": "All"
+    },
+    {
+      "Cloth": {
+        "Clothing": "models/citizen_clothes/shoes/boxing_boots/boxing_boots_blue.clothing",
+        "Tint": null
+      },
+      "Gender": "All"
+    },
+    {
+      "Cloth": {
+        "Clothing": "models/citizen_clothes/shoes/slippers/slippers.clothing",
+        "Tint": null
+      },
+      "Gender": "All"
+    },
+    {
+      "Cloth": {
+        "Clothing": "models/citizen_clothes/shoes/sneakers/blue_sneakers.clothing",
+        "Tint": null
+      },
+      "Gender": "All"
+    },
+    {
+      "Cloth": {
+        "Clothing": "models/citizen_clothes/shoes/sneakers/sneakers.clothing",
+        "Tint": null
+      },
+      "Gender": "All"
+    },
+    {
+      "Cloth": {
+        "Clothing": "models/citizen_clothes/shoes/trainers/trainers.clothing",
+        "Tint": null
+      },
+      "Gender": "All"
+    }
+  ],
+  "__references": [],
+  "__version": 0
+}

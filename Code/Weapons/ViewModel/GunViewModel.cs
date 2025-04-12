@@ -43,8 +43,7 @@ public partial class GunViewModel : ViewModel
 		finalVectorRot = finalVectorRot.LerpTo( targetVectorRot, animSpeed * RealTime.Delta );
 
 
-		ply.CameraController.ApplyFov( targetPlayerFOV - Preferences.FieldOfView );
-
+		
 		animSpeed = 10 * Weapon.AnimSpeed;
 
 		// Change the angles and positions of the viewmodel with the new vectors
@@ -57,17 +56,7 @@ public partial class GunViewModel : ViewModel
 		targetVectorPos = Vector3.Zero;
 		targetVectorRot = Vector3.Zero;
 
-		targetPlayerFOV = Preferences.FieldOfView;
-
-		// Editor mode
-		if ( EditorMode )
-		{
-			targetVectorRot += MathUtil.ToVector3( EditorOffset.Angle );
-			targetVectorPos += EditorOffset.Pos;
-			targetPlayerFOV = EditorFOV;
-			return;
-		}
-
+		
 		// I'm sure there's something already that does this for me, but I spend an hour
 		// searching through the wiki and a bunch of other garbage and couldn't find anything...
 		// So I'm doing it manually. Problem solved.
@@ -192,23 +181,11 @@ public partial class GunViewModel : ViewModel
 			targetVectorPos += Weapon.AimAnimData.Pos;
 			targetVectorRot += MathUtil.ToVector3( Weapon.AimAnimData.Angle );
 
-			if ( Weapon.AimFOV > 0 )
-				targetPlayerFOV = Weapon.AimFOV;
-
-			if ( Weapon.AimFOV > 0 )
-				targetPlayerFOV = Preferences.FieldOfView - Weapon.AimFOV;
-
-			playerFOVSpeed = Weapon.AimSpeed;
 		}
 		else
 		{
 			aimTime = 0;
-			targetPlayerFOV = Preferences.FieldOfView;
-
-			if ( finalPlayerFOV != Weapon.AimFOV )
-			{
-				playerFOVSpeed = Weapon.AimSpeed;
-			}
+		
 		}
 	}
 

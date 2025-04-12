@@ -15,23 +15,15 @@ public partial class ViewModel : Component
 	public CameraComponent Camera { get; set; }
 	public bool ShouldDraw { get; set; }
 
-
-	public bool EditorMode { get; set; }
-	public AngPos EditorOffset { get; set; }
-	public float EditorFOV { get; set; }
-
 	protected float animSpeed { get; set; } = 1;
-	protected float playerFOVSpeed = 1;
 
 	// Target animation values
 	protected Vector3 targetVectorPos;
 	protected Vector3 targetVectorRot;
-	protected float targetPlayerFOV = Preferences.FieldOfView;
 
 	// Finalized animation values
 	protected Vector3 finalVectorPos;
 	protected Vector3 finalVectorRot;
-	protected float finalPlayerFOV = Preferences.FieldOfView;
 
 	// Sway
 	protected Rotation lastEyeRot;
@@ -82,9 +74,6 @@ public partial class ViewModel : Component
 		finalVectorPos = finalVectorPos.LerpTo( targetVectorPos, animSpeed * RealTime.Delta );
 		finalVectorRot = finalVectorRot.LerpTo( targetVectorRot, animSpeed * RealTime.Delta );
 
-
-		ply.CameraController.ApplyFov( targetPlayerFOV - Preferences.FieldOfView );
-
 		animSpeed = 10 * Carriable.AnimSpeed;
 
 		// Change the angles and positions of the viewmodel with the new vectors
@@ -96,17 +85,6 @@ public partial class ViewModel : Component
 		// Initialize the target vectors for this frame
 		targetVectorPos = Vector3.Zero;
 		targetVectorRot = Vector3.Zero;
-
-		targetPlayerFOV = Preferences.FieldOfView;
-
-		// Editor mode
-		if ( EditorMode )
-		{
-			targetVectorRot += MathUtil.ToVector3( EditorOffset.Angle );
-			targetVectorPos += EditorOffset.Pos;
-			targetPlayerFOV = EditorFOV;
-			return;
-		}
 
 		// I'm sure there's something already that does this for me, but I spend an hour
 		// searching through the wiki and a bunch of other garbage and couldn't find anything...

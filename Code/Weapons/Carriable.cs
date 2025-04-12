@@ -12,7 +12,7 @@ namespace GeneralGame;
 public partial class Carriable : Component, IInteractable
 {
 	[Property] public string Name { get; set; }
-	[Property] public Material Icon { get; set; }
+	[Property] public Texture Icon { get; set; }
 	[Property] public Model ViewModel { get; set; }
 	[Property] public Model ViewModelHands { get; set; }
 	[Property] public Model WorldModel { get; set; }
@@ -49,12 +49,14 @@ public partial class Carriable : Component, IInteractable
 				Action = ( Player player, GameObject obj ) =>
 				{
 					player.InventoryController.GiveItem( this );
+					OnPickUp(player);
 				},
 
 			}
 		);
 
 	}
+	protected virtual void OnPickUp(Player ply) { }
 	protected virtual void SetupAnimEvents(){}
 	protected override void OnUpdate()
 	{

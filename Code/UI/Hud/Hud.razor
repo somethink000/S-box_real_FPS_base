@@ -2,20 +2,41 @@
 @attribute [StyleSheet]
 @inherits Panel
 
-@* Anything that is always active and displayed to the player when ingame. *@
-<root class="txt">
+@if (Player.CPly() is null)
+    return;
 
-    
-  
-</root>
 
 @code {
-    public static Hud Instance { get; private set; }
+    public static Hud Instance { get; private set; }  
 
     public Hud()
     {
         Instance = this;
     }
 
+    protected override int BuildHash()
+    {
+        if (Player.CPly() is null)
+            return -1;
+
+        return HashCode.Combine(
+            Player.CPly().HealthController.Health
+           
+        );
+    }
 
 }
+
+
+@* Anything that is always active and displayed to the player when ingame. *@
+<root class="txt">
+
+   <InventoryPart />
+
+
+    @Player.CPly().HealthController.Health
+
+
+</root>
+
+

@@ -1,5 +1,5 @@
 is_global = true
-build_property.DesignTimeBuild = true
+build_property.DesignTimeBuild = 
 build_property.TargetFramework = net9.0
 build_property.TargetPlatformMinVersion = 
 build_property.UsingMicrosoftNETSdkWeb = 

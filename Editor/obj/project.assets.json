@@ -1,0 +1,219 @@
+{
+  "version": 3,
+  "targets": {
+    "net9.0": {
+      "actiongraph/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v9.0",
+        "dependencies": {
+          "Base Editor Library": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/actiongraph.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/actiongraph.dll": {}
+        }
+      },
+      "Base Editor Library/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v9.0",
+        "compile": {
+          "bin/placeholder/Base Editor Library.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Base Editor Library.dll": {}
+        }
+      },
+      "Base Library/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v9.0",
+        "compile": {
+          "bin/placeholder/Base Library.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Base Library.dll": {}
+        }
+      },
+      "hammer/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v9.0",
+        "dependencies": {
+          "Base Editor Library": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/hammer.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/hammer.dll": {}
+        }
+      },
+      "modeliconeditor/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v9.0",
+        "dependencies": {
+          "Base Library": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/modeliconeditor.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/modeliconeditor.dll": {}
+        }
+      },
+      "real_fps_base/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v9.0",
+        "dependencies": {
+          "Base Library": "1.0.0",
+          "modeliconeditor": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/real_fps_base.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/real_fps_base.dll": {}
+        }
+      },
+      "shadergraph/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v9.0",
+        "dependencies": {
+          "Base Editor Library": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/shadergraph.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/shadergraph.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "actiongraph/1.0.0": {
+      "type": "project",
+      "path": "../../../../../../Program Files (x86)/Steam/steamapps/common/sbox/editor/ActionGraph/Code/actiongraph.csproj",
+      "msbuildProject": "../../../../../../Program Files (x86)/Steam/steamapps/common/sbox/editor/ActionGraph/Code/actiongraph.csproj"
+    },
+    "Base Editor Library/1.0.0": {
+      "type": "project",
+      "path": "../../../../../../Program Files (x86)/Steam/steamapps/common/sbox/addons/tools/Code/Base Editor Library.csproj",
+      "msbuildProject": "../../../../../../Program Files (x86)/Steam/steamapps/common/sbox/addons/tools/Code/Base Editor Library.csproj"
+    },
+    "Base Library/1.0.0": {
+      "type": "project",
+      "path": "../../../../../../Program Files (x86)/Steam/steamapps/common/sbox/addons/base/Code/Base Library.csproj",
+      "msbuildProject": "../../../../../../Program Files (x86)/Steam/steamapps/common/sbox/addons/base/Code/Base Library.csproj"
+    },
+    "hammer/1.0.0": {
+      "type": "project",
+      "path": "../../../../../../Program Files (x86)/Steam/steamapps/common/sbox/editor/Hammer/Code/hammer.csproj",
+      "msbuildProject": "../../../../../../Program Files (x86)/Steam/steamapps/common/sbox/editor/Hammer/Code/hammer.csproj"
+    },
+    "modeliconeditor/1.0.0": {
+      "type": "project",
+      "path": "../Libraries/evilinc.modeliconeditor/Code/modeliconeditor.csproj",
+      "msbuildProject": "../Libraries/evilinc.modeliconeditor/Code/modeliconeditor.csproj"
+    },
+    "real_fps_base/1.0.0": {
+      "type": "project",
+      "path": "../Code/real_fps_base.csproj",
+      "msbuildProject": "../Code/real_fps_base.csproj"
+    },
+    "shadergraph/1.0.0": {
+      "type": "project",
+      "path": "../../../../../../Program Files (x86)/Steam/steamapps/common/sbox/editor/ShaderGraph/Code/shadergraph.csproj",
+      "msbuildProject": "../../../../../../Program Files (x86)/Steam/steamapps/common/sbox/editor/ShaderGraph/Code/shadergraph.csproj"
+    }
+  },
+  "projectFileDependencyGroups": {
+    "net9.0": [
+      "Base Editor Library >= 1.0.0",
+      "actiongraph >= 1.0.0",
+      "hammer >= 1.0.0",
+      "real_fps_base >= 1.0.0",
+      "shadergraph >= 1.0.0"
+    ]
+  },
+  "packageFolders": {
+    "C:\\Users\\susan\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "C:\\Users\\susan\\Documents\\GitHub\\S-box_real_FPS_base\\Editor\\real_fps_base.editor.csproj",
+      "projectName": "real_fps_base.editor",
+      "projectPath": "C:\\Users\\susan\\Documents\\GitHub\\S-box_real_FPS_base\\Editor\\real_fps_base.editor.csproj",
+      "packagesPath": "C:\\Users\\susan\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\susan\\Documents\\GitHub\\S-box_real_FPS_base\\Editor\\obj\\",
+      "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
+      "configFilePaths": [
+        "C:\\Users\\susan\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+      ],
+      "originalTargetFrameworks": [
+        "net9.0"
+      ],
+      "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "net9.0": {
+          "targetAlias": "net9.0",
+          "projectReferences": {
+            "C:\\Program Files (x86)\\Steam\\steamapps\\common\\sbox\\addons\\tools\\Code\\Base Editor Library.csproj": {
+              "projectPath": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\sbox\\addons\\tools\\Code\\Base Editor Library.csproj"
+            },
+            "C:\\Program Files (x86)\\Steam\\steamapps\\common\\sbox\\editor\\ActionGraph\\Code\\actiongraph.csproj": {
+              "projectPath": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\sbox\\editor\\ActionGraph\\Code\\actiongraph.csproj"
+            },
+            "C:\\Program Files (x86)\\Steam\\steamapps\\common\\sbox\\editor\\Hammer\\Code\\hammer.csproj": {
+              "projectPath": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\sbox\\editor\\Hammer\\Code\\hammer.csproj"
+            },
+            "C:\\Program Files (x86)\\Steam\\steamapps\\common\\sbox\\editor\\ShaderGraph\\Code\\shadergraph.csproj": {
+              "projectPath": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\sbox\\editor\\ShaderGraph\\Code\\shadergraph.csproj"
+            },
+            "C:\\Users\\susan\\Documents\\GitHub\\S-box_real_FPS_base\\Code\\real_fps_base.csproj": {
+              "projectPath": "C:\\Users\\susan\\Documents\\GitHub\\S-box_real_FPS_base\\Code\\real_fps_base.csproj"
+            }
+          }
+        }
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "all"
+      },
+      "SdkAnalysisLevel": "9.0.100"
+    },
+    "frameworks": {
+      "net9.0": {
+        "targetAlias": "net9.0",
+        "imports": [
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48",
+          "net481"
+        ],
+        "assetTargetFallback": true,
+        "warn": true,
+        "frameworkReferences": {
+          "Microsoft.NETCore.App": {
+            "privateAssets": "all"
+          }
+        },
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.100/PortableRuntimeIdentifierGraph.json"
+      }
+    }
+  }
+}

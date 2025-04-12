@@ -53,6 +53,13 @@ public partial class Gun
 		ViewModelHandler.Camera = Owner.Camera;
 	}
 
+	[Rpc.Broadcast]
+	public virtual void HandleReloadEffects()
+	{
+		ViewModelRenderer?.Set( ReloadAnim, true );
+		Owner.BodyRenderer.Set( "b_reload", true );
+	}
+
 	protected override void SetupAnimEvents()
 	{
 
@@ -62,49 +69,49 @@ public partial class Gun
 
 			switch ( t )
 			{
-				case "reload_end":
+				//case "reload_end":
 
-					if ( !ShellReloading )
-					{
-						OnReloadFinish();
-					}
-					else
-					{
-						IsReloading = false;
-					}
+				//	if ( !ShellReloading )
+				//	{
+				//		OnReloadFinish();
+				//	}
+				//	else
+				//	{
+				//		IsReloading = false;
+				//	}
 
-					break;
+				//	break;
 
-				case "pump_end":
+				//case "pump_end":
 
-					InBoltBack = false;
+				//	InBoltBack = false;
 
-					break;
+				//	break;
 
-				case "eject_shell":
+				//case "eject_shell":
 
-					CreateParticle( BulletEjectParticle, "ejection_point" );
+				//	CreateParticle( BulletEjectParticle, "ejection_point" );
 
-					break;
+				//	break;
 
-				case "shell_insert":
+				//case "shell_insert":
 
-					ShellReload();
+				//	ShellReload();
 
-					break;
+				//	break;
 
-				case "deployed":
+				//case "deployed":
 
-					if ( !IsReady ) IsReady = true;
-					IsDeploying = false;
+				//	if ( !IsReady ) IsReady = true;
+				//	IsDeploying = false;
 
-					break;
+				//	break;
 
-				case "holstered":
+				//case "holstered":
 
-					//EndHolster();
+				//	//EndHolster();
 
-					break;
+				//	break;
 
 			}
 
