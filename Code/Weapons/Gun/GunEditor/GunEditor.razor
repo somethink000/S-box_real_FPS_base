@@ -29,8 +29,12 @@
     [Property] public float EmptyReloadAnimTime { get; set; }
     [Property] public float HolsterTime { get; set; }
     [Property] public float DeployTime { get; set; }
+    [Property] public float BoltBackTime { get; set; }
+    [Property] public float ShellInsertTime { get; set; }
 
     [Property] public bool IsAiming { get; set; } = true;
+    [Property] public bool BoltBack { get; set; } = false;
+    [Property] public bool ShellReload { get; set; } = false;
 
     private bool isEmpty { get; set; } = false;
     private TimeSince lastAnim { get; set; }
@@ -88,7 +92,18 @@
                     HolsterTime = lastAnim;
                     lastAnim = 0;
 
+                    if (BoltBack) {
+                        ViewModel.Set("boltback", true); 
+                    }
+
                     break;
+
+                case "pump_end":
+
+					BoltBackTime = lastAnim;
+                    lastAnim = 0;
+
+					break;
 
             }
 

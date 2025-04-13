@@ -148,6 +148,50 @@
       "Enabled": true,
       "__Prefab": "prefabs/npc/zombie.prefab",
       "__PrefabVariables": {}
+    },
+    {
+      "__guid": "07e99446-e6bc-4f96-841c-023036c37d7c",
+      "Flags": 0,
+      "Name": "awp",
+      "Position": "119.8398,830.9586,33",
+      "Rotation": "-0.7071068,0,0,0.7071069",
+      "Tags": "weapon",
+      "Enabled": true,
+      "__Prefab": "prefabs/weapons/awp.prefab",
+      "__PrefabVariables": {}
+    },
+    {
+      "__guid": "5f825fc6-b774-496a-8f8e-c2b913398fb8",
+      "Flags": 0,
+      "Name": "mp7",
+      "Position": "166.5021,851.0498,32",
+      "Rotation": "-0.6087614,0,0,0.7933534",
+      "Tags": "weapon",
+      "Enabled": true,
+      "__Prefab": "prefabs/weapons/mp7.prefab",
+      "__PrefabVariables": {}
+    },
+    {
+      "__guid": "edaba3c5-42b2-4f24-9a46-0aa3c9753ded",
+      "Flags": 0,
+      "Name": "reming870",
+      "Position": "167.937,801.9638,37.70428",
+      "Rotation": "-0.6087614,0,0,0.7933534",
+      "Tags": "weapon",
+      "Enabled": true,
+      "__Prefab": "prefabs/weapons/reming870.prefab",
+      "__PrefabVariables": {}
+    },
+    {
+      "__guid": "2ce21fa3-359e-4db8-a219-8a62b21c7f24",
+      "Flags": 0,
+      "Name": "vss",
+      "Position": "101.6573,809.2354,31.99999",
+      "Rotation": "-0.7071067,0,0,0.7071068",
+      "Tags": "weapon",
+      "Enabled": true,
+      "__Prefab": "prefabs/weapons/vss.prefab",
+      "__PrefabVariables": {}
     }
   ],
   "SceneProperties": {

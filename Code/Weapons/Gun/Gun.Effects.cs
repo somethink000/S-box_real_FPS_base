@@ -88,11 +88,11 @@ public partial class Gun
 
 				//	break;
 
-				//case "eject_shell":
+				case "eject_shell":
 
-				//	CreateParticle( BulletEjectParticle, "ejection_point" );
+					CreateParticle( BulletEjectParticle, "ejection_point" );
 
-				//	break;
+					break;
 
 				//case "shell_insert":
 

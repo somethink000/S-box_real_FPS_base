@@ -167,7 +167,10 @@
 						import_filter = 
 						{
 							exclude_by_default = false
-							exception_list = [  ]
+							exception_list = 
+							[
+								"ironsdown",
+							]
 						}
 					},
 					{
@@ -184,7 +187,10 @@
 						import_filter = 
 						{
 							exclude_by_default = false
-							exception_list = [  ]
+							exception_list = 
+							[
+								"irons",
+							]
 						}
 					},
 				]
@@ -1918,24 +1924,15 @@
 						[
 							{
 								_class = "BodyGroupChoice"
-								meshes = 
-								[
-									"sight_def",
-								]
+								meshes = [  ]
 							},
 							{
 								_class = "BodyGroupChoice"
-								meshes = 
-								[
-									"sight_def_down",
-								]
+								meshes = [  ]
 							},
 							{
 								_class = "BodyGroupChoice"
-								meshes = 
-								[
-									"optic_t1",
-								]
+								meshes = [  ]
 							},
 						]
 						hidden_in_tools = false

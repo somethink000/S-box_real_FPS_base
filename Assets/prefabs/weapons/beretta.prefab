@@ -23,7 +23,7 @@
         "BulletEjectParticle": "particles/swb/bullet_hulls/9mm.vpcf",
         "Bullets": 1,
         "ClipSize": 8,
-        "Damage": 5,
+        "Damage": 16,
         "DeployTime": 0.502,
         "DryShootSound": "weapons/sounds/1911/mechlol.sound",
         "EmptyReloadTime": 1.504,
