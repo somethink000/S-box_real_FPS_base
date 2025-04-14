@@ -10,29 +10,30 @@
         "__type": "GeneralGame.Gun",
         "__guid": "338af348-369f-4217-bc86-3766f859c90d",
         "AimAnimData": {
-          "Angle": "-0.16,-0.03,-0.4",
-          "Pos": "-1.918,0,0.776"
+          "Angle": "0.05,-0.01,0.5",
+          "Pos": "-2.226,0,1.27"
         },
         "AimFOV": -30,
         "AimSpeed": 1,
-        "AmmoType": "Pistol",
+        "AmmoType": "Rifle",
         "AnimSpeed": 1,
         "BarrelSmokeParticle": "particles/swb/muzzle/smoke.vpcf",
         "BoltBack": false,
+        "BoltBackTime": 1,
         "BulletCocking": true,
         "BulletEjectParticle": "particles/swb/bullet_hulls/9mm.vpcf",
         "Bullets": 1,
-        "ClipSize": 8,
-        "Damage": 16,
-        "DeployTime": 0.502,
-        "DryShootSound": "weapons/sounds/1911/mechlol.sound",
-        "EmptyReloadTime": 1.504,
-        "FireMod": "semi",
+        "ClipSize": 30,
+        "Damage": 24,
+        "DeployTime": 0.469,
+        "DryShootSound": "weapons/sounds/mp7/dryfire.sound",
+        "EmptyReloadTime": 2.174,
+        "FireMod": "auto",
         "Force": 0.1,
         "Hand": "Right",
         "HitFlinch": 1.25,
         "HoldType": "Pistol",
-        "HolsterTime": 0.337,
+        "HolsterTime": 0.404,
         "Icon": {
           "$compiler": "texture",
           "$source": "imagefile",
@@ -59,7 +60,7 @@
             "TargetColor": "0,1,0,1",
             "CacheToDisk": true
           },
-          "compiled": null
+          "compiled": "textures/generated/imagefile/b4a545c90a991844.vtex"
         },
         "MuzzleFlashParticle": "particles/swb/muzzle/sparks.vpcf",
         "Name": "VSS",
@@ -70,14 +71,14 @@
         "OnComponentStart": null,
         "OnComponentUpdate": null,
         "Recoil": 0.1,
-        "ReloadTime": 1.436,
+        "ReloadTime": 1.569,
         "RPM": 500,
         "RunAnimData": {
-          "Angle": "25.51,21.44,-0.7",
-          "Pos": "0,0.3079997,3.589"
+          "Angle": "11.89,19.64,0",
+          "Pos": "-0.199,0,0.38"
         },
         "ShellReloading": false,
-        "ShootSound": "weapons/sounds/1911/fire-9-01.sound",
+        "ShootSound": "weapons/sounds/mp7/fire_sup.sound",
         "Spread": 0.1,
         "TuckRange": 30,
         "ViewModel": "weapons/vss/vss.vmdl",

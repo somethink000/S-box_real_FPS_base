@@ -33,8 +33,7 @@
     [Property] public float ShellInsertTime { get; set; }
 
     [Property] public bool IsAiming { get; set; } = true;
-    [Property] public bool BoltBack { get; set; } = false;
-    [Property] public bool ShellReload { get; set; } = false;
+
 
     private bool isEmpty { get; set; } = false;
     private TimeSince lastAnim { get; set; }
@@ -92,9 +91,9 @@
                     HolsterTime = lastAnim;
                     lastAnim = 0;
 
-                    if (BoltBack) {
-                        ViewModel.Set("boltback", true); 
-                    }
+                   
+                    ViewModel.Set("boltback", true); 
+                   
 
                     break;
 

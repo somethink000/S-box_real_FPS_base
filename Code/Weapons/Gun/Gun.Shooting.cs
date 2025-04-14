@@ -34,14 +34,14 @@ public partial class Gun
 	[Property, Group( "Shooting" )] public SoundEvent ShootSound { get; set; }
 	public IBulletBase BulletType { get; set; } = new HitScanBullet();
 
-	[Sync] public int Clip { get; set; } = 10;
+	[Sync] public int Clip { get; set; }
 
 	public TimeSince TimeSinceShoot { get; set; }
 
 	public virtual bool CanShoot()
 	{
 
-		if ( IsShooting() || (IsReloading && !ShellReloading) || InBoltBack || IsHolstering ) return false;
+		if ( IsShooting() || IsReloading || InBoltBack || IsHolstering ) return false;
 		if ( !Owner.IsValid() || IsRunning || !Owner.IsAlive ) return false;
 
 		if ( !HasAmmo() )

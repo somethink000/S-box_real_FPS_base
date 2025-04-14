@@ -25,6 +25,7 @@ public partial class Gun : Carriable, IUseAmmo
 	{
 		base.OnStart();
 
+		if ( Clip <= 0 ) IsEmpty = true;
 	}
 
 	protected override void OnPickUp( Player ply )
@@ -83,8 +84,12 @@ public partial class Gun : Carriable, IUseAmmo
 
 			if ( Input.Down( InputButtonHelper.PrimaryAttack ) )
 			{
-
+				if (IsReloading && ShellReloading)
+				{
+					CancelReload = true;
+				}	
 				Shoot();
+			
 			}
 
 		}
