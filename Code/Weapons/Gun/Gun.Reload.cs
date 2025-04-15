@@ -12,9 +12,7 @@ namespace GeneralGame;
 
 public partial class Gun
 {
-	[Property, Group( "Reloading" )] public float ReloadTime { get; set; } = 2;
-	[Property, Group( "Reloading" )] public float EmptyReloadTime { get; set; } = 2;
-	[Property, Group( "Reloading" )] public float BoltBackTime { get; set; } = 1;
+
 	[Property, Group( "Reloading" )] public AmmoType AmmoType { get; set; } = AmmoType.Pistol;
 
 	public virtual void Reload()
@@ -34,19 +32,10 @@ public partial class Gun
 			return;
 
 		IsReloading = true;
-		AwaitReloadEnd();
+
 		HandleReloadEffects();
 	}
-	public async void AwaitReloadEnd( )
-	{
-		float delay = IsEmpty ? EmptyReloadTime : ReloadTime;
-		
-		await GameTask.DelaySeconds( delay );
-
-
-		OnReloadFinish();
-
-	}
+	
 
 	public void OnReloadFinish()
 	{

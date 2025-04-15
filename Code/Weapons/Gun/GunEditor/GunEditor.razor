@@ -25,12 +25,12 @@
     [Property] public AngPos CurPos { get; set; }
     [Property] public float CurFov { get; set; }
 
+
+    //We dont realy need this but who know maybe you want to combine FPS & TPS on your guns
     [Property] public float ReloadAnimTime { get; set; }
     [Property] public float EmptyReloadAnimTime { get; set; }
     [Property] public float HolsterTime { get; set; }
     [Property] public float DeployTime { get; set; }
-    [Property] public float BoltBackTime { get; set; }
-    [Property] public float ShellInsertTime { get; set; }
 
     [Property] public bool IsAiming { get; set; } = true;
 
@@ -91,18 +91,7 @@
                     HolsterTime = lastAnim;
                     lastAnim = 0;
 
-                   
-                    ViewModel.Set("boltback", true); 
-                   
-
                     break;
-
-                case "pump_end":
-
-					BoltBackTime = lastAnim;
-                    lastAnim = 0;
-
-					break;
 
             }
 

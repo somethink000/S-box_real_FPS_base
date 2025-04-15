@@ -134,7 +134,7 @@ public partial class Gun
 
 		if ( BoltBack && Clip > 0 )
 		{
-			AsyncBoltBack( GetRealRPM( RPM ) );
+			AsyncBoltBack( GetRealRPM( RPM ) ); 
 		}
 
 		if ( !muzzleTransform.HasValue ) return;
@@ -158,5 +158,16 @@ public partial class Gun
 		{
 			burstCount = 0;
 		}
+	}
+	async void AsyncBoltBack( float boltBackDelay )
+	{
+		InBoltBack = true;
+		// Start boltback
+		await GameTask.DelaySeconds( boltBackDelay );
+		if ( !IsValid ) return;
+		if ( !IsProxy )
+			ViewModelRenderer?.Set( BoltBackAnim, true );
+
+
 	}
 }

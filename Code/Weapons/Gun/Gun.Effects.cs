@@ -71,24 +71,24 @@ public partial class Gun
 
 			switch ( t )
 			{
-				//case "reload_end":
+				case "reload_end":
 
-				//	if ( !ShellReloading )
-				//	{
-				//		OnReloadFinish();
-				//	}
-				//	else
-				//	{
-				//		IsReloading = false;
-				//	}
+					if ( !ShellReloading )
+					{
+						OnReloadFinish();
+					}
+					else
+					{
+						EndShellReload();
+					}
 
-				//	break;
+					break;
 
-				//case "pump_end":
+				case "pump_end":
 
-				//	InBoltBack = false;
+					InBoltBack = false;
 
-				//	break;
+					break;
 
 				case "eject_shell":
 
@@ -96,24 +96,24 @@ public partial class Gun
 
 					break;
 
-				//case "shell_insert":
+				case "shell_insert":
 
-				//	ShellReload();
+					InsertShell();
 
-				//	break;
+					break;
 
-				//case "deployed":
+				case "deployed":
 
-				//	if ( !IsReady ) IsReady = true;
-				//	IsDeploying = false;
+					if ( !IsReady ) IsReady = true;
+					IsDeploying = false;
 
-				//	break;
+					break;
 
-				//case "holstered":
+				case "holstered":
 
-				//	//EndHolster();
+					//EndHolster();
 
-				//	break;
+					break;
 
 			}
 

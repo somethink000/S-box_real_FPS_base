@@ -15,8 +15,6 @@ public partial class Gun : Carriable, IUseAmmo
 	[Property] public bool ShellReloading { get; set; } = false;
 	[Property] public bool BoltBack { get; set; } = false;
 	[Property] public float AimSpeed { get; set; } = 1;
-	[Property] public float DeployTime { get; set; } = 0.5f;
-	[Property] public float HolsterTime { get; set; } = 0.5f;
 
 	int burstCount = 0;
 	int barrelHeat = 0;
@@ -102,8 +100,6 @@ public partial class Gun : Carriable, IUseAmmo
 		base.Deploy( player );
 
 		ViewModelRenderer?.Set( IsReady ? DeployAnim : ReadyAnim, true );
-
-		AwaitDeployEnd();
 	}
 
 	public override bool CanHolster()
@@ -112,18 +108,5 @@ public partial class Gun : Carriable, IUseAmmo
 		if ( IsShooting() || InBoltBack || IsHolstering || IsDeploying || IsReloading ) return false;
 		return true;
 	}
-	public async void AwaitDeployEnd()
-	{
-		await GameTask.DelaySeconds( DeployTime );
-
-		if ( !IsReady ) IsReady = true;
-		IsDeploying = false;
-	}
-
-	public async void AwaitHolsterEnd()
-	{
-		await GameTask.DelaySeconds( HolsterTime );
-
-		//EndHolster();
-	}
+	
 }
