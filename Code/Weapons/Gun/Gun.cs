@@ -82,10 +82,12 @@ public partial class Gun : Carriable, IUseAmmo
 
 			if ( Input.Down( InputButtonHelper.PrimaryAttack ) )
 			{
-				if (IsReloading && ShellReloading)
+
+				if ( IsReloading && ShellReloading && !IsEmpty )
 				{
 					CancelReload = true;
-				}	
+				}
+
 				Shoot();
 			
 			}

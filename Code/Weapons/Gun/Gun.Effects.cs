@@ -9,9 +9,7 @@ namespace GeneralGame;
 
 public partial class Gun
 {
-	[Property, Group( "Shooting" )] public ParticleSystem BulletEjectParticle { get; set; }
-	[Property, Group( "Shooting" )] public ParticleSystem MuzzleFlashParticle { get; set; }
-	[Property, Group( "Shooting" )] public ParticleSystem BarrelSmokeParticle { get; set; }
+
 
 	[Sync] public bool IsReloading { get; set; }
 	[Sync] public bool IsAiming { get; set; }
@@ -92,12 +90,13 @@ public partial class Gun
 
 				case "eject_shell":
 
-					CreateParticle( BulletEjectParticle, "ejection_point" );
-
+					//CreateParticle( BulletEjectParticle, "ejection_point" );
+					
 					break;
 
 				case "shell_insert":
 
+					
 					InsertShell();
 
 					break;
@@ -148,23 +147,6 @@ public partial class Gun
 		{
 			var effectPath = Game.Random.FromList( tr.Surface.ImpactEffects.BulletDecal, "particles/impact.generic.smokepuff.vpcf" );
 
-			if ( effectPath is not null )
-			{
-				// Surface def for flesh has wrong blood particle linked
-				if ( effectPath.Contains( "impact.flesh" ) )
-				{
-					effectPath = "particles/impact.flesh.bloodpuff.vpcf";
-				}
-				else if ( effectPath.Contains( "impact.wood" ) )
-				{
-					effectPath = "particles/impact.generic.smokepuff.vpcf";
-				}
-
-				var p = new SceneParticles( Scene.SceneWorld, effectPath );
-				p.SetControlPoint( 0, tr.HitPosition );
-				p.SetControlPoint( 0, Rotation.LookAt( tr.Normal ) );
-				p.PlayUntilFinished( TaskSource.Create() );
-			}
 		}
 
 		// Decal
@@ -178,8 +160,8 @@ public partial class Gun
 
 				var gameObject = Scene.CreateObject();
 				//gameObject.SetParent( tr.GameObject, false );
-				gameObject.Transform.Position = tr.HitPosition;
-				gameObject.Transform.Rotation = Rotation.LookAt( -tr.Normal );
+				gameObject.WorldPosition = tr.HitPosition;
+				gameObject.WorldRotation = Rotation.LookAt( -tr.Normal );
 
 				var decalRenderer = gameObject.Components.Create<DecalRenderer>();
 				decalRenderer.Material = decalEntry.Material;
@@ -188,31 +170,5 @@ public partial class Gun
 			}
 		}
 	}
-
-	/// <summary>Create a weapon particle</summary>
-	public virtual void CreateParticle( ParticleSystem particle, string attachment, Action<SceneParticles> OnFrame = null )
-	{
-		var effectRenderer = GetEffectRenderer();
-
-		if ( effectRenderer is null || effectRenderer.SceneModel is null ) return;
-
-		var transform = effectRenderer.SceneModel.GetAttachment( attachment );
-
-		if ( !transform.HasValue ) return;
-
-		CreateParticle( particle, transform.Value, OnFrame );
-	}
-
-	public virtual void CreateParticle( ParticleSystem particle, Transform transform, Action<SceneParticles> OnFrame = null )
-	{
-		SceneParticles particles = new( Scene.SceneWorld, particle );
-		particles?.SetControlPoint( 0, transform.Position );
-		particles?.SetControlPoint( 0, transform.Rotation );
-		particles?.SetNamedValue( "scale", 1 );
-
-		if ( CanSeeViewModel )
-			particles.Tags.Add( TagsHelper.ViewModel );
-
-		particles?.PlayUntilFinished( Task, OnFrame );
-	}
+	
 }

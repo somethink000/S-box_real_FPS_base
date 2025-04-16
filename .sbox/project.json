@@ -1,102 +1,102 @@
 {
   "scene.lastopened": {
-    "Value": "[\u0022scenes/dom.scene\u0022,\u0022prefabs/weapons/beretta.prefab\u0022,\u0022scenes/nothing.scene\u0022,\u0022prefabs/weapons/vss.prefab\u0022,\u0022prefabs/weapons/reming870.prefab\u0022]",
-    "Timeout": 1747318736,
+    "Value": "[\u0022scenes/dom.scene\u0022]",
+    "Timeout": 1747412036,
     "DeleteAt": 0
   },
   "AssetBrowser.History": {
-    "Value": "[\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\Assets\u0022,\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\Libraries\\\\evilinc.modeliconeditor\u0022,\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\Libraries\\\\evilinc.modeliconeditor\\\\Editor\u0022,\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\u0022,\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\Localization\u0022,\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\ProjectSettings\u0022,\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\Libraries\\\\evilinc.modeliconeditor\\\\Editor\u0022,\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\Assets\u0022,\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\u0022,\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\Editor\u0022,\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\Code\u0022,\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\Assets\u0022,\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\Assets\\\\scenes\u0022,\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\Assets\u0022,\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\Assets\\\\sounds\u0022,\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\Assets\u0022,\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\Assets\\\\weapons\u0022,\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\Assets\\\\weapons\\\\sounds\u0022,\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\Assets\\\\weapons\\\\sounds\\\\awp\u0022,\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\Assets\\\\weapons\u0022,\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\Assets\\\\weapons\\\\awp\u0022,\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\Assets\\\\weapons\u0022,\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\Assets\\\\weapons\\\\vss\u0022,\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\Assets\\\\weapons\u0022,\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\Assets\\\\weapons\\\\mp7\u0022,\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\Assets\\\\weapons\u0022,\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\Assets\u0022,\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\Assets\\\\weapons\u0022,\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\Assets\\\\weapons\\\\reming870\u0022,\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\Assets\\\\weapons\\\\reming870\\\\sounds\u0022,\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\Assets\u0022]",
-    "Timeout": 1747321364,
+    "Value": "[\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\Assets\u0022,\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\Assets\\\\weapons\u0022,\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\Assets\\\\weapons\\\\mp7\u0022,\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\Assets\\\\weapons\u0022,\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\Assets\u0022,\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\Assets\\\\scenes\u0022,\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\Assets\u0022,\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\Assets\\\\particles\u0022,\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\Assets\\\\particles\\\\tracer\u0022,\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\Assets\\\\particles\u0022,\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\Assets\u0022,\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\Assets\\\\weapons\u0022,\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\Assets\\\\weapons\\\\reming870\u0022,\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\Assets\\\\weapons\\\\reming870\u0022,\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\Assets\\\\weapons\u0022,\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\Assets\u0022,\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\u0022,\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\Assets\u0022,\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\Assets\\\\weapons\u0022,\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\Assets\\\\weapons\\\\sounds\u0022,\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\Assets\\\\weapons\\\\sounds\\\\ar15\u0022,\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\Assets\\\\weapons\\\\sounds\u0022,\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\Assets\\\\weapons\\\\sounds\\\\57\u0022,\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\Assets\\\\weapons\\\\sounds\u0022,\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\Assets\\\\weapons\\\\sounds\\\\mp5\u0022,\u0022c:\\\\users\\\\susan\\\\documents\\\\github\\\\s-box_real_fps_base\\\\assets\\\\weapons\\\\sounds\\\\mp5\u0022,\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\assets\\\\weapons\\\\sounds\u0022,\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\assets\\\\weapons\\\\sounds\\\\uzi\u0022,\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\assets\\\\weapons\\\\sounds\u0022,\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\assets\\\\weapons\\\\sounds\\\\vepr\u0022,\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\assets\\\\weapons\\\\sounds\u0022,\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\assets\\\\weapons\u0022,\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\assets\\\\weapons\\\\sounds\u0022,\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\assets\\\\weapons\\\\sounds\\\\beretta\u0022,\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\assets\\\\weapons\\\\sounds\u0022,\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\assets\\\\weapons\\\\sounds\\\\870\u0022,\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\assets\\\\weapons\\\\sounds\u0022,\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\assets\\\\weapons\\\\sounds\\\\mp7\u0022,\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\assets\\\\weapons\\\\sounds\u0022,\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\assets\\\\weapons\\\\sounds\\\\wpns\u0022,\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\assets\\\\weapons\\\\sounds\u0022,\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\assets\\\\weapons\\\\sounds\\\\common\u0022,\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\assets\\\\weapons\\\\sounds\\\\common\\\\pistol\u0022,\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\assets\\\\weapons\\\\sounds\\\\common\u0022,\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\assets\\\\weapons\\\\sounds\\\\common\\\\movement\u0022,\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\assets\\\\weapons\\\\sounds\\\\common\u0022,\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\assets\\\\weapons\\\\sounds\u0022,\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\assets\\\\weapons\\\\sounds\\\\spas12\u0022,\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\assets\\\\weapons\\\\sounds\u0022,\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\assets\\\\weapons\\\\sounds\\\\wpns\u0022,\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\assets\\\\weapons\\\\sounds\\\\wpns\\\\9mm\u0022,\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\assets\\\\weapons\\\\sounds\\\\wpns\u0022,\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\assets\\\\weapons\\\\sounds\u0022,\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\assets\\\\weapons\\\\sounds\\\\1911\u0022,\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\assets\\\\weapons\\\\sounds\u0022,\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\assets\\\\weapons\\\\sounds\\\\beretta\u0022,\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\assets\\\\weapons\\\\sounds\u0022,\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\assets\\\\weapons\\\\sounds\\\\1911\u0022,\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\assets\\\\weapons\\\\sounds\u0022,\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\assets\\\\weapons\\\\sounds\\\\grenades\u0022,\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\assets\\\\weapons\\\\sounds\u0022,\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\assets\\\\weapons\\\\sounds\\\\common\u0022,\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\assets\\\\weapons\\\\sounds\u0022,\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\assets\\\\weapons\\\\sounds\\\\wpns\u0022,\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\assets\\\\weapons\\\\sounds\u0022,\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\assets\\\\weapons\\\\sounds\\\\1911\u0022,\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\assets\\\\weapons\\\\sounds\u0022,\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\assets\\\\weapons\\\\sounds\\\\57\u0022,\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\assets\\\\weapons\\\\sounds\u0022,\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\assets\\\\weapons\\\\sounds\\\\ak\u0022,\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\assets\\\\weapons\\\\sounds\u0022,\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\assets\\\\weapons\\\\sounds\\\\awp\u0022,\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\assets\\\\weapons\\\\sounds\\\\awp\\\\338\u0022,\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\assets\\\\weapons\\\\sounds\\\\awp\u0022,\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\assets\\\\weapons\\\\sounds\u0022,\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\assets\\\\weapons\\\\sounds\\\\deagle\u0022,\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\assets\\\\weapons\\\\sounds\u0022,\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\assets\\\\weapons\\\\sounds\\\\deagle\u0022,\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\assets\\\\weapons\\\\sounds\u0022,\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\assets\\\\weapons\\\\sounds\\\\mp5\u0022,\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\assets\\\\weapons\\\\sounds\u0022,\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\assets\\\\weapons\\\\sounds\\\\mp7\u0022,\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\assets\\\\weapons\\\\sounds\u0022,\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\assets\\\\weapons\\\\sounds\\\\wpns\u0022,\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\assets\\\\weapons\\\\sounds\u0022,\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\assets\\\\weapons\\\\sounds\\\\1911\u0022,\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\assets\\\\weapons\\\\sounds\u0022,\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\assets\\\\weapons\\\\sounds\\\\mp7\u0022,\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\assets\\\\weapons\\\\sounds\\\\mp7\\\\warning stuff here uses mp5 sounds and prob not fits\u0022,\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\assets\\\\weapons\\\\sounds\\\\mp7\u0022,\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\assets\\\\weapons\\\\sounds\u0022,\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\assets\\\\weapons\\\\sounds\\\\wpns\u0022,\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\assets\\\\weapons\\\\sounds\\\\wpns\\\\9mm\u0022,\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\assets\\\\weapons\\\\sounds\\\\wpns\u0022,\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\assets\\\\weapons\\\\sounds\u0022,\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\assets\\\\weapons\\\\sounds\\\\common\u0022,\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\assets\\\\weapons\\\\sounds\u0022,\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\assets\\\\weapons\\\\sounds\\\\wpns\u0022,\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\assets\\\\weapons\\\\sounds\u0022,\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\assets\\\\weapons\\\\sounds\\\\870\u0022,\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\assets\\\\weapons\\\\sounds\u0022,\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\assets\\\\weapons\\\\sounds\\\\common\u0022,\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\assets\\\\weapons\\\\sounds\u0022,\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\assets\\\\weapons\\\\sounds\\\\mp7\u0022,\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\assets\\\\weapons\\\\sounds\u0022,\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\assets\\\\weapons\\\\sounds\\\\wpns\u0022,\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\assets\\\\weapons\\\\sounds\u0022,\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\assets\\\\weapons\\\\sounds\\\\beretta\u0022,\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\assets\\\\weapons\\\\sounds\u0022,\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\assets\\\\weapons\\\\sounds\\\\mp7\u0022,\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\assets\\\\weapons\\\\sounds\u0022,\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\assets\\\\weapons\u0022,\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\assets\\\\weapons\\\\vss\u0022,\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\assets\\\\weapons\u0022,\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\assets\\\\weapons\\\\reming870\u0022,\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\assets\\\\weapons\u0022,\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\assets\\\\weapons\\\\mp7\u0022]",
+    "Timeout": 1747412629,
     "DeleteAt": 0
   },
   "AssetBrowser.HistoryIdx": {
-    "Value": "30",
-    "Timeout": 1747321364,
+    "Value": "116",
+    "Timeout": 1747412629,
     "DeleteAt": 0
   },
   "scenes/dom.scene.Viewport0": {
-    "Value": "{\u0022CameraPosition\u0022:\u002271.37837,1673.003,1339.279\u0022,\u0022CameraRotation\u0022:\u00220.2773657,0.3425138,-0.5649057,0.6975917\u0022,\u0022CameraOrthoHeight\u0022:1000}",
-    "Timeout": 1747321591,
+    "Value": "{\u0022CameraPosition\u0022:\u0022849.9647,1527.066,790.4248\u0022,\u0022CameraRotation\u0022:\u00220.3211625,0.1376408,-0.86121,0.3690893\u0022,\u0022CameraOrthoHeight\u0022:1000}",
+    "Timeout": 1747413107,
     "DeleteAt": 0
   },
   "SceneView.Viewport0.Settings": {
-    "Value": "{\u0022CameraPosition\u0022:\u0022-36.67365,-36.67365,51.86437\u0022,\u0022CameraRotation\u0022:\u0022-0.1464466,0.3535534,0.3535534,0.8535534\u0022,\u0022View\u0022:0,\u0022RenderMode\u0022:0,\u0022WireframeMode\u0022:false,\u0022EnablePostProcessing\u0022:true,\u0022EnablePrefabLighting\u0022:true,\u0022ShowGrid\u0022:true,\u0022GridOpacity\u0022:0.2,\u0022GridAxis\u0022:0,\u0022CameraOrthoHeight\u0022:1000}",
-    "Timeout": 1747321591,
+    "Value": "{\u0022CameraPosition\u0022:\u0022849.9647,1527.066,790.4248\u0022,\u0022CameraRotation\u0022:\u00220.3211625,0.1376408,-0.86121,0.3690893\u0022,\u0022View\u0022:0,\u0022RenderMode\u0022:0,\u0022WireframeMode\u0022:false,\u0022EnablePostProcessing\u0022:true,\u0022EnablePrefabLighting\u0022:true,\u0022ShowGrid\u0022:true,\u0022GridOpacity\u0022:0.2,\u0022GridAxis\u0022:0,\u0022CameraOrthoHeight\u0022:1000}",
+    "Timeout": 1747413107,
     "DeleteAt": 0
   },
   "Window.SboxSceneEditor.Dock": {
-    "Value": "{\u0022floatingWindows\u0022:[],\u0022mainWrapper\u0022:{\u0022geometry\u0022:\u0022AdnQywADAAAAAAAAAAAAAAAAB1IAAAOzAAAAAAAAAAAAAAdSAAADswAAAAAAAAAAB4AAAAAAAAAAAAAAB1IAAAOz\u0022,\u0022splitter\u0022:{\u0022items\u0022:[{\u0022currentIndex\u0022:0,\u0022objects\u0022:[{\u0022data\u0022:null,\u0022managedType\u0022:\u0022Inspector\u0022,\u0022name\u0022:\u0022Inspector\u0022}],\u0022type\u0022:\u0022area\u0022},{\u0022items\u0022:[{\u0022items\u0022:[{\u0022currentIndex\u0022:0,\u0022objects\u0022:[{\u0022data\u0022:null,\u0022managedType\u0022:\u0022SceneTreeWidget\u0022,\u0022name\u0022:\u0022Hierarchy\u0022},{\u0022data\u0022:null,\u0022managedType\u0022:\u0022PerformanceDock\u0022,\u0022name\u0022:\u0022Performance\u0022}],\u0022type\u0022:\u0022area\u0022},{\u0022currentIndex\u0022:0,\u0022objects\u0022:[{\u0022data\u0022:null,\u0022managedType\u0022:\u0022\u0022,\u0022name\u0022:\u0022GameFrame\u0022},{\u0022data\u0022:null,\u0022managedType\u0022:\u0022SceneDock\u0022,\u0022name\u0022:\u0022SceneDock:prefabs/weapons/vss.prefab\u0022},{\u0022data\u0022:null,\u0022managedType\u0022:\u0022SceneDock\u0022,\u0022name\u0022:\u0022SceneDock:scenes/dom.scene\u0022},{\u0022data\u0022:null,\u0022managedType\u0022:\u0022SceneDock\u0022,\u0022name\u0022:\u0022SceneDock:prefabs/weapons/beretta.prefab\u0022},{\u0022data\u0022:null,\u0022managedType\u0022:\u0022SceneDock\u0022,\u0022name\u0022:\u0022SceneDock:scenes/nothing.scene\u0022},{\u0022data\u0022:null,\u0022managedType\u0022:\u0022SceneDock\u0022,\u0022name\u0022:\u0022SceneDock:prefabs/weapons/reming870.prefab\u0022},{\u0022data\u0022:null,\u0022managedType\u0022:\u0022SceneDock\u0022,\u0022name\u0022:\u0022SceneDock:untitled\u0022}],\u0022type\u0022:\u0022area\u0022}],\u0022state\u0022:\u0022AAAA/wAAAAEAAAACAAABIwAABI8A/////wEAAAABAA==\u0022,\u0022type\u0022:\u0022splitter\u0022},{\u0022currentIndex\u0022:0,\u0022objects\u0022:[{\u0022data\u0022:null,\u0022managedType\u0022:\u0022MainAssetBrowser\u0022,\u0022name\u0022:\u0022Asset Browser\u0022},{\u0022data\u0022:null,\u0022managedType\u0022:\u0022ConsoleWidget\u0022,\u0022name\u0022:\u0022Console\u0022},{\u0022data\u0022:null,\u0022managedType\u0022:\u0022MixerDock\u0022,\u0022name\u0022:\u0022Mixer\u0022},{\u0022data\u0022:null,\u0022managedType\u0022:\u0022MainCloudBrowser\u0022,\u0022name\u0022:\u0022Cloud Browser\u0022},{\u0022data\u0022:null,\u0022managedType\u0022:\u0022PanelInspectorWidget\u0022,\u0022name\u0022:\u0022UI Panels\u0022},{\u0022data\u0022:null,\u0022managedType\u0022:\u0022LibraryManagerDock\u0022,\u0022name\u0022:\u0022Library Manager\u0022}],\u0022type\u0022:\u0022area\u0022}],\u0022state\u0022:\u0022AAAA/wAAAAEAAAACAAAC3AAAAcEA/////wEAAAACAA==\u0022,\u0022type\u0022:\u0022splitter\u0022}],\u0022state\u0022:\u0022AAAA/wAAAAEAAAACAAACTAAABQMA/////wEAAAABAA==\u0022,\u0022type\u0022:\u0022splitter\u0022}},\u0022toolWindowManagerStateFormat\u0022:1}",
-    "Timeout": 1747321325,
+    "Value": "{\u0022floatingWindows\u0022:[],\u0022mainWrapper\u0022:{\u0022geometry\u0022:\u0022AdnQywADAAAAAAAAAAAAAAAAB1IAAAOzAAAAAAAAAAAAAAdSAAADswAAAAAAAAAAB4AAAAAAAAAAAAAAB1IAAAOz\u0022,\u0022splitter\u0022:{\u0022items\u0022:[{\u0022currentIndex\u0022:0,\u0022objects\u0022:[{\u0022data\u0022:null,\u0022managedType\u0022:\u0022Inspector\u0022,\u0022name\u0022:\u0022Inspector\u0022}],\u0022type\u0022:\u0022area\u0022},{\u0022items\u0022:[{\u0022items\u0022:[{\u0022currentIndex\u0022:0,\u0022objects\u0022:[{\u0022data\u0022:null,\u0022managedType\u0022:\u0022SceneTreeWidget\u0022,\u0022name\u0022:\u0022Hierarchy\u0022},{\u0022data\u0022:null,\u0022managedType\u0022:\u0022PerformanceDock\u0022,\u0022name\u0022:\u0022Performance\u0022}],\u0022type\u0022:\u0022area\u0022},{\u0022currentIndex\u0022:1,\u0022objects\u0022:[{\u0022data\u0022:null,\u0022managedType\u0022:\u0022\u0022,\u0022name\u0022:\u0022GameFrame\u0022},{\u0022data\u0022:null,\u0022managedType\u0022:\u0022SceneDock\u0022,\u0022name\u0022:\u0022SceneDock:scenes/dom.scene\u0022}],\u0022type\u0022:\u0022area\u0022}],\u0022state\u0022:\u0022AAAA/wAAAAEAAAACAAABIwAABI8A/////wEAAAABAA==\u0022,\u0022type\u0022:\u0022splitter\u0022},{\u0022currentIndex\u0022:0,\u0022objects\u0022:[{\u0022data\u0022:null,\u0022managedType\u0022:\u0022MainAssetBrowser\u0022,\u0022name\u0022:\u0022Asset Browser\u0022},{\u0022data\u0022:null,\u0022managedType\u0022:\u0022ConsoleWidget\u0022,\u0022name\u0022:\u0022Console\u0022},{\u0022data\u0022:null,\u0022managedType\u0022:\u0022MixerDock\u0022,\u0022name\u0022:\u0022Mixer\u0022},{\u0022data\u0022:null,\u0022managedType\u0022:\u0022MainCloudBrowser\u0022,\u0022name\u0022:\u0022Cloud Browser\u0022},{\u0022data\u0022:null,\u0022managedType\u0022:\u0022PanelInspectorWidget\u0022,\u0022name\u0022:\u0022UI Panels\u0022},{\u0022data\u0022:null,\u0022managedType\u0022:\u0022LibraryManagerDock\u0022,\u0022name\u0022:\u0022Library Manager\u0022}],\u0022type\u0022:\u0022area\u0022}],\u0022state\u0022:\u0022AAAA/wAAAAEAAAACAAAC3AAAAcEA/////wEAAAACAA==\u0022,\u0022type\u0022:\u0022splitter\u0022}],\u0022state\u0022:\u0022AAAA/wAAAAEAAAACAAACTAAABQMA/////wEAAAABAA==\u0022,\u0022type\u0022:\u0022splitter\u0022}},\u0022toolWindowManagerStateFormat\u0022:1}",
+    "Timeout": 1747412053,
     "DeleteAt": 0
   },
   ".Viewport0": {
     "Value": "{\u0022CameraPosition\u0022:\u0022-9.699189,-89.4645,13.54777\u0022,\u0022CameraRotation\u0022:\u0022-0.06884146,0.09633432,0.5773229,0.8078854\u0022,\u0022CameraOrthoHeight\u0022:1000}",
-    "Timeout": 1747321326,
+    "Timeout": 1747410836,
     "DeleteAt": 0
   },
   "SceneView.Layout": {
     "Value": "{\u0022Layout\u0022:0,\u0022SplitterState\u0022:[]}",
-    "Timeout": 1747321326,
+    "Timeout": 1747412036,
     "DeleteAt": 0
   },
   "prefabs/weapons/beretta.prefab.Viewport0": {
     "Value": "{\u0022CameraPosition\u0022:\u0022-72.5331,-2310.012,2224.681\u0022,\u0022CameraRotation\u0022:\u0022-0.276759,0.2500687,0.6884308,0.6220394\u0022,\u0022CameraOrthoHeight\u0022:1000}",
-    "Timeout": 1747321591,
+    "Timeout": 1747321799,
     "DeleteAt": 0
   },
   "gizmo.settings": {
     "Value": "{\u0022EditMode\u0022:\u0022position\u0022,\u0022Selection\u0022:true,\u0022ViewMode\u0022:\u00223d\u0022,\u0022GizmosEnabled\u0022:true,\u0022GizmoScale\u0022:1,\u0022GridSpacing\u0022:32,\u0022SnapToGrid\u0022:false,\u0022SnapToAngles\u0022:true,\u0022AngleSpacing\u0022:15,\u0022GlobalSpace\u0022:false,\u0022DebugActionGraphs\u0022:false}",
-    "Timeout": 1747318735,
+    "Timeout": 1747412035,
     "DeleteAt": 0
   },
   "AssetLocations.ShowMounts": {
     "Value": "false",
-    "Timeout": 1747318736,
+    "Timeout": 1747412036,
     "DeleteAt": 0
   },
   "AssetLocations.ShowBaseContent": {
     "Value": "true",
-    "Timeout": 1747318736,
+    "Timeout": 1747412036,
     "DeleteAt": 0
   },
   "AssetBrowser.ViewMode": {
     "Value": "1",
-    "Timeout": 1747318736,
+    "Timeout": 1747412036,
     "DeleteAt": 0
   },
   "AssetBrowser.ShowJunkFiles": {
     "Value": "false",
-    "Timeout": 1747318736,
+    "Timeout": 1747412036,
     "DeleteAt": 0
   },
   "AssetBrowser.HideNonAssets": {
     "Value": "false",
-    "Timeout": 1747318736,
+    "Timeout": 1747412036,
     "DeleteAt": 0
   },
   "AssetBrowser.ShowRecursiveFiles": {
     "Value": "false",
-    "Timeout": 1747318736,
+    "Timeout": 1747412036,
     "DeleteAt": 0
   },
   "AssetBrowser.Search": {
     "Value": "\u0022\u0022",
-    "Timeout": 1747318736,
+    "Timeout": 1747412036,
     "DeleteAt": 0
   },
   "AssetBrowser.ActiveTags": {
     "Value": "\u0022\u0022",
-    "Timeout": 1747318736,
+    "Timeout": 1747412036,
     "DeleteAt": 0
   },
   "AssetBrowser.ExcludedTags": {
     "Value": "\u0022\u0022",
-    "Timeout": 1747318736,
+    "Timeout": 1747412036,
     "DeleteAt": 0
   },
   "scenes/nothing.scene.Viewport0": {
     "Value": "{\u0022CameraPosition\u0022:\u00228.505404,-20.42254,14.17025\u0022,\u0022CameraRotation\u0022:\u0022-0.209646,0.3143608,0.5136999,0.7702846\u0022,\u0022CameraOrthoHeight\u0022:1000}",
-    "Timeout": 1747321591,
+    "Timeout": 1747321800,
     "DeleteAt": 0
   },
   "prefabs/player.prefab.Viewport0": {
@@ -135,13 +135,13 @@
     "DeleteAt": 0
   },
   "prefabs/weapons/reming870.prefab.Viewport0": {
-    "Value": "{\u0022CameraPosition\u0022:\u0022-36.67365,-36.67365,51.86437\u0022,\u0022CameraRotation\u0022:\u0022-0.1464466,0.3535534,0.3535534,0.8535534\u0022,\u0022CameraOrthoHeight\u0022:1000}",
-    "Timeout": 1747321591,
+    "Value": "{\u0022CameraPosition\u0022:\u0022-529.5907,-440.1236,1025.467\u0022,\u0022CameraRotation\u0022:\u0022-0.1601982,0.4486479,0.2956639,0.8280304\u0022,\u0022CameraOrthoHeight\u0022:1000}",
+    "Timeout": 1747408212,
     "DeleteAt": 0
   },
   "prefabs/weapons/vss.prefab.Viewport0": {
-    "Value": "{\u0022CameraPosition\u0022:\u0022-0.6736481,-0.6736482,0.9526824\u0022,\u0022CameraRotation\u0022:\u0022-0.1464466,0.3535534,0.3535534,0.8535534\u0022,\u0022CameraOrthoHeight\u0022:1000}",
-    "Timeout": 1747321591,
+    "Value": "{\u0022CameraPosition\u0022:\u0022-171.0342,-372.817,425.5743\u0022,\u0022CameraRotation\u0022:\u0022-0.1791193,0.3178862,0.4570579,0.8111491\u0022,\u0022CameraOrthoHeight\u0022:1000}",
+    "Timeout": 1747411503,
     "DeleteAt": 0
   },
   "AssetBrowser.Image,Sheetfile.History": {
@@ -172,6 +172,16 @@
   "AssetBrowser.Image,Sheetfile.ShowRecursiveFiles": {
     "Value": "false",
     "Timeout": 1747155852,
+    "DeleteAt": 0
+  },
+  "AssetBrowser.Model.History": {
+    "Value": "[\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\Assets\u0022,\u0022c:\\\\program files (x86)\\\\steam\\\\steamapps\\\\common\\\\sbox\\\\core\\\\models\\\\dev\u0022,\u0022c:\\\\program files (x86)\\\\steam\\\\steamapps\\\\common\\\\sbox\\\\core\\\\models\u0022,\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\Code\u0022,\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\Assets\u0022,\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\Assets\\\\prefabs\u0022,\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\Assets\\\\prefabs\\\\weapons\u0022,\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\Assets\\\\prefabs\u0022,\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\Assets\u0022,\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\Assets\\\\weapons\u0022,\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\Assets\\\\weapons\\\\shells\u0022,\u0022c:\\\\users\\\\susan\\\\documents\\\\github\\\\s-box_real_fps_base\\\\assets\\\\weapons\\\\shells\u0022,\u0022c:\\\\users\\\\susan\\\\documents\\\\github\\\\s-box_real_fps_base\\\\assets\\\\weapons\\\\shells\u0022,\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\assets\\\\weapons\u0022,\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\assets\\\\weapons\\\\ammos\u0022,\u0022c:\\\\users\\\\susan\\\\documents\\\\github\\\\s-box_real_fps_base\\\\assets\\\\weapons\\\\ammos\u0022,\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\assets\\\\weapons\u0022,\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\assets\\\\weapons\\\\awp\u0022,\u0022c:\\\\users\\\\susan\\\\documents\\\\github\\\\s-box_real_fps_base\\\\assets\\\\weapons\\\\awp\u0022,\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\Assets\u0022,\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\Assets\\\\weapons\u0022,\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\Assets\\\\weapons\\\\ammos\u0022,\u0022c:\\\\users\\\\susan\\\\documents\\\\github\\\\s-box_real_fps_base\\\\assets\\\\weapons\\\\ammos\u0022,\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\assets\\\\weapons\u0022,\u0022C:\\\\Users\\\\susan\\\\Documents\\\\GitHub\\\\S-box_real_FPS_base\\\\assets\\\\weapons\\\\shells\u0022,\u0022c:\\\\users\\\\susan\\\\documents\\\\github\\\\s-box_real_fps_base\\\\assets\\\\weapons\\\\shells\u0022]",
+    "Timeout": 1747333951,
+    "DeleteAt": 0
+  },
+  "AssetBrowser.Model.HistoryIdx": {
+    "Value": "25",
+    "Timeout": 1747333951,
     "DeleteAt": 0
   }
 }

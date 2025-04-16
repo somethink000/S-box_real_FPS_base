@@ -19,9 +19,13 @@
         if (Player.CPly() is null)
             return -1;
 
+        var inMagazin = 0;
+        if (Player.CPly().InventoryController.Deployed != null && Player.CPly().InventoryController.Deployed is IUseAmmo wpn)
+            inMagazin = wpn.Clip;
+        
         return HashCode.Combine(
            Player.CPly().HealthController.Health,
-           Player.CPly().InventoryController.Deployed.GameObject.Components.Get<IUseAmmo>().Clip
+           inMagazin
         );
     }
 

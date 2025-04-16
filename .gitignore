@@ -23,3 +23,8 @@ code/Editor/.vscode/*
 *.*_c
 *.los
 *.vpk
+
+*idea
+/.sbox
+Code/testbed.csproj.user
+Libraries/*/.bin

@@ -585,6 +585,19 @@
 											tags = ""
 										}
 									},
+									{
+										_class = "AnimEvent"
+										event_class = "AE_GENERIC_EVENT"
+										event_frame = 23
+										event_keys = 
+										{
+											TypeName = "shell_insert"
+											Int = 0
+											Float = 0.0
+											Vector = [ 0.0, 0.0, 0.0 ]
+											StringData = ""
+										}
+									},
 								]
 								activity_name = ""
 								activity_weight = 1
@@ -727,19 +740,6 @@
 								[
 									{
 										_class = "AnimEvent"
-										event_class = "AE_GENERIC_EVENT"
-										event_frame = 65
-										event_keys = 
-										{
-											TypeName = "shell_insert"
-											Int = 0
-											Float = 0.0
-											Vector = [ 0.0, 0.0, 0.0 ]
-											StringData = ""
-										}
-									},
-									{
-										_class = "AnimEvent"
 										event_class = "AE_CL_PLAYSOUND"
 										event_frame = 2
 										event_keys = 
@@ -808,6 +808,19 @@
 											stop_on_seq_change = false
 											use_layer_sequence = false
 											tags = ""
+										}
+									},
+									{
+										_class = "AnimEvent"
+										event_class = "AE_GENERIC_EVENT"
+										event_frame = 64
+										event_keys = 
+										{
+											TypeName = "shell_insert"
+											Int = 0
+											Float = 0.0
+											Vector = [ 0.0, 0.0, 0.0 ]
+											StringData = ""
 										}
 									},
 								]
@@ -1287,83 +1300,6 @@
 					},
 				]
 				default_root_bone_name = ""
-			},
-			{
-				_class = "BodyGroupList"
-				children = 
-				[
-					{
-						_class = "BodyGroup"
-						name = "magazin"
-						children = 
-						[
-							{
-								_class = "BodyGroupChoice"
-								meshes = 
-								[
-									"mag10",
-								]
-							},
-							{
-								_class = "BodyGroupChoice"
-								meshes = 
-								[
-									"mag20",
-								]
-							},
-							{
-								_class = "BodyGroupChoice"
-								meshes = 
-								[
-									"mag30",
-								]
-							},
-						]
-						hidden_in_tools = false
-					},
-					{
-						_class = "BodyGroup"
-						name = "rail"
-						children = 
-						[
-							{
-								_class = "BodyGroupChoice"
-								meshes = 
-								[
-									"mount",
-								]
-							},
-							{
-								_class = "BodyGroupChoice"
-								name = "zenit"
-								meshes = 
-								[
-									"mount_pec",
-								]
-							},
-						]
-						hidden_in_tools = false
-					},
-					{
-						_class = "BodyGroup"
-						name = "sight"
-						children = 
-						[
-							{
-								_class = "BodyGroupChoice"
-								meshes = [  ]
-							},
-							{
-								_class = "BodyGroupChoice"
-								meshes = 
-								[
-									"optic_t1",
-								]
-							},
-						]
-						hidden_in_tools = false
-					},
-				]
 			},
 		]
 		model_archetype = ""

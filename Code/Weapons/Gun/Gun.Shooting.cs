@@ -140,12 +140,12 @@ public partial class Gun
 		if ( !muzzleTransform.HasValue ) return;
 
 		// Muzzle flash
-		if ( MuzzleFlashParticle is not null )
-			CreateParticle( MuzzleFlashParticle, muzzleTransform.Value, ( particles ) => ParticleToMuzzlePos( particles ) );
+		//if ( MuzzleFlashParticle is not null )
+		//	CreateParticle( MuzzleFlashParticle, muzzleTransform.Value, ( particles ) => ParticleToMuzzlePos( particles ) );
 
-		// Barrel smoke
-		if ( !IsProxy && BarrelSmokeParticle is not null && barrelHeat >= ClipSize * 0.75 )
-			CreateParticle( BarrelSmokeParticle, muzzleTransform.Value, ( particles ) => ParticleToMuzzlePos( particles ) );
+		//// Barrel smoke
+		//if ( !IsProxy && BarrelSmokeParticle is not null && barrelHeat >= ClipSize * 0.75 )
+		//	CreateParticle( BarrelSmokeParticle, muzzleTransform.Value, ( particles ) => ParticleToMuzzlePos( particles ) );
 	}
 
 	

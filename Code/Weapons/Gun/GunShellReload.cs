@@ -23,18 +23,9 @@ public partial class Gun
 		if ( Clip >= maxClipSize || ClipSize == -1 )
 			return;
 
-		int toTake;
+		
 
-		if ( IsEmpty )
-		{
-			toTake = 2;
-		}
-		else
-		{
-			toTake = 1;
-		}
-
-		if ( !Owner.InventoryController.CanTake( AmmoType, toTake, out var ammo ) )
+		if ( !Owner.InventoryController.CanTake( AmmoType, GetToTake(), out var ammo ) )
 				return;
 
 
@@ -42,16 +33,20 @@ public partial class Gun
 		ViewModelRenderer.Set( ReloadAnim, true );
 
 	}
-
+	
 	void InsertShell()
 	{
-		
-		
-		Owner.InventoryController.TryTake( AmmoType, 1, out var ammo );
 
-		Clip += 1;
+		int toTake = GetToTake();
+
+		Owner.InventoryController.TryTake( AmmoType, toTake, out var ammo );
+
+		Clip += toTake;
+		
 		IsEmpty = false;
+		
 
+		//TODO
 		if ( ammo != 0 && !CancelReload && CanInsertShell() )
 		{
 			//AwaitShelInsert();
@@ -60,12 +55,24 @@ public partial class Gun
 		{
 			EndShellReload();
 		}
-
 	}
 
-	
+	//first animation inserting 2 bullets
+	int GetToTake()
+	{
+		if ( IsEmpty )
+		{
+			return 2;
+		}
+		else
+		{
+			return 1;
+		}
+	}
+
 	bool CanInsertShell()
 	{
+
 		var maxClipSize = BulletCocking ? ClipSize + 1 : ClipSize;
 
 		if ( Clip >= maxClipSize || ClipSize == -1 )
