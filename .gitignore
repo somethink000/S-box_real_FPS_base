@@ -28,3 +28,4 @@ code/Editor/.vscode/*
 /.sbox
 Code/testbed.csproj.user
 Libraries/*/.bin
+/.sbox

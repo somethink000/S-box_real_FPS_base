@@ -15,13 +15,13 @@
     "DeleteAt": 0
   },
   "scenes/dom.scene.Viewport0": {
-    "Value": "{\u0022CameraPosition\u0022:\u0022849.9647,1527.066,790.4248\u0022,\u0022CameraRotation\u0022:\u00220.3211625,0.1376408,-0.86121,0.3690893\u0022,\u0022CameraOrthoHeight\u0022:1000}",
-    "Timeout": 1747413107,
+    "Value": "{\u0022CameraPosition\u0022:\u0022849.9647,1527.066,790.4248\u0022,\u0022CameraRotation\u0022:\u00220.54375,0.1507804,-0.7955707,0.2206096\u0022,\u0022CameraOrthoHeight\u0022:1000}",
+    "Timeout": 1747413227,
     "DeleteAt": 0
   },
   "SceneView.Viewport0.Settings": {
-    "Value": "{\u0022CameraPosition\u0022:\u0022849.9647,1527.066,790.4248\u0022,\u0022CameraRotation\u0022:\u00220.3211625,0.1376408,-0.86121,0.3690893\u0022,\u0022View\u0022:0,\u0022RenderMode\u0022:0,\u0022WireframeMode\u0022:false,\u0022EnablePostProcessing\u0022:true,\u0022EnablePrefabLighting\u0022:true,\u0022ShowGrid\u0022:true,\u0022GridOpacity\u0022:0.2,\u0022GridAxis\u0022:0,\u0022CameraOrthoHeight\u0022:1000}",
-    "Timeout": 1747413107,
+    "Value": "{\u0022CameraPosition\u0022:\u0022849.9647,1527.066,790.4248\u0022,\u0022CameraRotation\u0022:\u00220.54375,0.1507804,-0.7955707,0.2206096\u0022,\u0022View\u0022:0,\u0022RenderMode\u0022:0,\u0022WireframeMode\u0022:false,\u0022EnablePostProcessing\u0022:true,\u0022EnablePrefabLighting\u0022:true,\u0022ShowGrid\u0022:true,\u0022GridOpacity\u0022:0.2,\u0022GridAxis\u0022:0,\u0022CameraOrthoHeight\u0022:1000}",
+    "Timeout": 1747413227,
     "DeleteAt": 0
   },
   "Window.SboxSceneEditor.Dock": {
