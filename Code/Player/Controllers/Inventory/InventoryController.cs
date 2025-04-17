@@ -27,15 +27,8 @@ public partial class InventoryController : Component
 	public bool HaveFreeSpace()
 		=> Weapons.IndexOf( null ) != -1;
 
-	public InventoryController()
-	{
-		//Weapons = 
-	}
-
 	public void Clear()
 	{
-		if ( IsProxy ) return;
-
 		foreach ( var weapon in Weapons )
 		{
 			weapon.GameObject.Destroy();
@@ -52,7 +45,9 @@ public partial class InventoryController : Component
 
 			ClearDeployed();
 		}
+
 		
+
 		Deployed = carriable;
 		Slot = slot;
 		Deployed.Deploy( ply );
@@ -68,6 +63,7 @@ public partial class InventoryController : Component
 
 	private void DeployWeapon( int index )
 	{
+
 		if (index < 0)
 		{
 			index = Weapons.Count - 1;
@@ -103,7 +99,7 @@ public partial class InventoryController : Component
 
 	protected override void OnUpdate()
 	{
-		if ( IsProxy ) return;
+		
 
 
 		if ( Deployed != null )
@@ -114,7 +110,7 @@ public partial class InventoryController : Component
 				animator.Handedness = Deployed.Hand;
 			}
 
-			if ( ply.IsFirstPerson && Deployed.ViewModel is not null ) { 
+			if ( ply.IsFirstPerson && Deployed.ViewModel is not null && !IsProxy ) { 
 				ply.BodyRenderer.SetBodyGroup( "chest", 1 );
 				ply.BodyRenderer.SetBodyGroup( "hands", 1 );
 			}
@@ -126,14 +122,16 @@ public partial class InventoryController : Component
 				animator.HoldType = CitizenAnimationHelper.HoldTypes.None;
 			}
 
-			if ( ply.IsFirstPerson )
+			if ( ply.IsFirstPerson && !IsProxy )
 			{
 				ply.BodyRenderer.SetBodyGroup( "chest", 0 );
 				ply.BodyRenderer.SetBodyGroup( "hands", 0 );
 			}
 		}
 
-
+		if ( IsProxy ) return;
+		
+		//if ( Input.Pressed( InputButtonHelper.Slot0 ) ) DropWeapon( 0 );
 		if ( Input.Pressed( InputButtonHelper.Slot0 ) ) DeployWeapon( 0 );
 		else if ( Input.Pressed( InputButtonHelper.Slot1 ) ) DeployWeapon( 1 );
 		else if ( Input.Pressed( InputButtonHelper.Slot2 ) ) DeployWeapon( 2 );
@@ -149,33 +147,39 @@ public partial class InventoryController : Component
 
 	}
 
+	[Rpc.Broadcast( NetFlags.Reliable | NetFlags.OwnerOnly )]
 	public void GiveItem( Carriable item )
 	{
 
 		int freeSlot = Weapons.IndexOf( null );
 
 		//check if there is a free slot and new slot les than inventory size
-		if ( freeSlot >= 0 && freeSlot < Weapons.Count ) { 
-			
+		if ( freeSlot >= 0 && freeSlot < Weapons.Count ) {
 
-			//item.GameObject.SetupNetworking();
-			item.GameObject.Network.TakeOwnership();
-			item.GameObject.Parent = this.GameObject;
-			item.GameObject.WorldPosition = this.GameObject.WorldPosition;
-			item.GameObject.WorldRotation = this.GameObject.WorldRotation;
+			if ( Networking.IsHost )
+			{
+				item.GameObject.Network.AssignOwnership( Network.Owner );
+			}
+
+			//item.GameObject.Parent = this.GameObject;
+			//item.GameObject.WorldPosition = this.GameObject.WorldPosition;
+			//item.GameObject.WorldRotation = this.GameObject.WorldRotation;
 	
-	
-			item.Components.Get<ModelCollider>( FindMode.InSelf ).Enabled = false;
-			item.Components.Get<Rigidbody>( FindMode.InSelf ).Enabled = false;
-		
+			//item.Components.Get<ModelCollider>( FindMode.InSelf ).Enabled = false;
+			//item.Components.Get<Rigidbody>( FindMode.InSelf ).Enabled = false;
+
 			//	Components.Get<ModelCollider>( FindMode.InSelf ).Enabled = true;
 			//	Components.Get<Rigidbody>( FindMode.InSelf ).Enabled = true;
-		
-		
-			item.GameObject.Enabled = false;
-			Weapons[freeSlot] = item;
 
-			if ( freeSlot == Slot ) { DeployWeapon( Slot ); }
+
+
+			item.GameObject.Enabled = false;
+			
+			if ( !IsProxy ) {
+				Weapons[freeSlot] = item;
+
+				if ( freeSlot == Slot ) { DeployWeapon( Slot ); }
+			}
 		}
 	}
 }

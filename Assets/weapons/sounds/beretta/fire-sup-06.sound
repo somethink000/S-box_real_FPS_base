@@ -1,16 +1,16 @@
 {
   "UI": false,
-  "Volume": "0.7",
+  "Volume": "1",
   "Pitch": "1",
   "Decibels": 70,
   "SelectionMode": "Random",
   "Sounds": [
-    "weapons/sounds/wpns/9mm/fire-9-06.vsnd",
-    "weapons/sounds/wpns/9mm/fire-9-05.vsnd",
-    "weapons/sounds/wpns/9mm/fire-9-04.vsnd",
-    "weapons/sounds/wpns/9mm/fire-9-03.vsnd",
-    "weapons/sounds/wpns/9mm/fire-9-02.vsnd",
-    "weapons/sounds/wpns/9mm/fire-9-01.vsnd"
+    "weapons/sounds/beretta/fire-sup-06.vsnd",
+    "weapons/sounds/beretta/fire-sup-05.vsnd",
+    "weapons/sounds/beretta/fire-sup-04.vsnd",
+    "weapons/sounds/beretta/fire-sup-03.vsnd",
+    "weapons/sounds/beretta/fire-sup-02.vsnd",
+    "weapons/sounds/beretta/fire-sup-01.vsnd"
   ],
   "Occlusion": true,
   "AirAbsorption": true,
@@ -49,6 +49,5 @@
     }
   ],
   "__references": [],
-  "IsValid": true,
   "__version": 1
 }

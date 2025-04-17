@@ -48,7 +48,7 @@ public partial class ViewModel : Component
 	protected override void OnUpdate()
 	{
 
-		if ( ply == null ) return;
+		if ( ply == null || IsProxy ) return;
 
 		var renderType = ShouldDraw ? ModelRenderer.ShadowRenderType.Off : ModelRenderer.ShadowRenderType.ShadowsOnly;
 		ViewModelRenderer.Enabled = ply.IsFirstPerson;
@@ -64,11 +64,11 @@ public partial class ViewModel : Component
 
 
 		// For particles & lighting
-		Camera.Transform.Position = Scene.Camera.Transform.Position;
-		Camera.Transform.Rotation = Scene.Camera.Transform.Rotation;
+		Camera.WorldPosition = Scene.Camera.WorldPosition;
+		Camera.WorldRotation = Scene.Camera.WorldRotation;
 
-		Transform.Position = Camera.Transform.Position;
-		Transform.Rotation = Camera.Transform.Rotation;
+		WorldPosition = Camera.WorldPosition;
+		WorldRotation = Camera.WorldRotation;
 
 		// Smoothly transition the vectors with the target values
 		finalVectorPos = finalVectorPos.LerpTo( targetVectorPos, animSpeed * RealTime.Delta );
@@ -77,9 +77,9 @@ public partial class ViewModel : Component
 		animSpeed = 10 * Carriable.AnimSpeed;
 
 		// Change the angles and positions of the viewmodel with the new vectors
-		Transform.Rotation *= Rotation.From( finalVectorRot.x, finalVectorRot.y, finalVectorRot.z );
+		WorldRotation *= Rotation.From( finalVectorRot.x, finalVectorRot.y, finalVectorRot.z );
 		// Position has to be set after rotation!
-		Transform.Position += finalVectorPos.z * Transform.Rotation.Up + finalVectorPos.y * Transform.Rotation.Forward + finalVectorPos.x * Transform.Rotation.Right;
+		WorldPosition += finalVectorPos.z * WorldRotation.Up + finalVectorPos.y * WorldRotation.Forward + finalVectorPos.x * WorldRotation.Right;
 		//player.CurFOV = finalPlayerFOV;
 
 		// Initialize the target vectors for this frame
@@ -162,10 +162,10 @@ public partial class ViewModel : Component
 
 
 		// Lerp the eye position
-		lastEyeRot = Rotation.Lerp( lastEyeRot, ply.Camera.Transform.Rotation, swayspeed * RealTime.Delta );
+		lastEyeRot = Rotation.Lerp( lastEyeRot, ply.Camera.WorldRotation, swayspeed * RealTime.Delta );
 
 		// Calculate the difference between our current eye angles and old (lerped) eye angles
-		var angDif = ply.Camera.Transform.Rotation.Angles() - lastEyeRot.Angles();
+		var angDif = ply.Camera.WorldRotation.Angles() - lastEyeRot.Angles();
 		angDif = new Angles( angDif.pitch, MathX.RadianToDegree( MathF.Atan2( MathF.Sin( MathX.DegreeToRadian( angDif.yaw ) ), MathF.Cos( MathX.DegreeToRadian( angDif.yaw ) ) ) ), 0 );
 
 		// Perform sway

@@ -5,13 +5,34 @@
       "__guid": "083aca3b-13f8-40c0-b6e7-c9832589cb3e",
       "Flags": 0,
       "Name": "Spawnpoint (1)",
-      "Position": "96,608,32",
+      "Position": "26.07477,607.9999,32",
       "Rotation": "0,0,-0.7071069,-0.7071066",
       "Enabled": true,
       "Components": [
         {
           "__type": "Sandbox.SpawnPoint",
           "__guid": "9dccaa11-1e3c-4edd-9f6d-c55aab7b4529",
+          "Color": "0.8902,0.31765,0.05098,1",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null
+        }
+      ]
+    },
+    {
+      "__guid": "193ef2b9-2739-4972-be74-0cdc38449dcc",
+      "Flags": 0,
+      "Name": "Spawnpoint (2)",
+      "Position": "28.96463,439.3841,31.99994",
+      "Rotation": "0,0,-0.7071069,-0.7071066",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Sandbox.SpawnPoint",
+          "__guid": "d3d85c08-e305-4681-8f1b-d9319d347218",
           "Color": "0.8902,0.31765,0.05098,1",
           "OnComponentDestroy": null,
           "OnComponentDisabled": null,

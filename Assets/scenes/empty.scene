@@ -1,0 +1,195 @@
+{
+  "__guid": "b216ae6e-9756-4fb9-9671-814d33ce99bc",
+  "GameObjects": [
+    {
+      "__guid": "e3920eb9-5d55-4b30-ab91-8acc25d93a72",
+      "Flags": 0,
+      "Name": "Map",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Sandbox.MapInstance",
+          "__guid": "0e465ff3-cef9-4839-9e03-d9975d952022",
+          "__version": 1,
+          "EnableCollision": true,
+          "MapName": "scenes/box.vmap",
+          "NoOrigin": false,
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "OnMapLoaded": null,
+          "OnMapUnloaded": null,
+          "UseMapFromLaunch": false
+        }
+      ],
+      "Children": []
+    },
+    {
+      "__guid": "88acbd9f-d2e9-4277-91df-e9473b30a3f6",
+      "Flags": 0,
+      "Name": "Network",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "GeneralGame.NetworkManager",
+          "__guid": "79e6d5cf-ed37-4ec6-883d-f1e193487d38",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "PlayerPrefab": {
+            "_type": "gameobject",
+            "prefab": "prefabs/player.prefab"
+          }
+        }
+      ]
+    },
+    {
+      "__guid": "356110db-542a-4c0f-94e4-e3b56cad733b",
+      "Flags": 0,
+      "Name": "vss",
+      "Position": "158.7351,-36.48055,13.21064",
+      "Rotation": "-0.270598,0.6532815,-0.6532814,0.2705981",
+      "Tags": "weapon",
+      "Enabled": true,
+      "__Prefab": "prefabs/weapons/vss.prefab",
+      "__PrefabVariables": {}
+    },
+    {
+      "__guid": "0a8608a4-2e86-4208-bfb2-5d96b4f85e93",
+      "Flags": 0,
+      "Name": "Spawnpoint (1)",
+      "Position": "26.07503,-7.236205,4.984819",
+      "Rotation": "0,0,0.3826832,-0.9238795",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Sandbox.SpawnPoint",
+          "__guid": "b617c4ca-ae85-4f49-92c9-75f3890414c7",
+          "Color": "0.8902,0.31765,0.05098,1",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null
+        }
+      ]
+    },
+    {
+      "__guid": "2a4eeb2a-b578-4930-9fa4-0448e110ef53",
+      "Flags": 0,
+      "Name": "Spawnpoint (2)",
+      "Position": "80.60947,28.78308,4.984919",
+      "Rotation": "0,0,0.3826832,-0.9238795",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Sandbox.SpawnPoint",
+          "__guid": "3d8087b7-2d1c-4674-b693-461550e86371",
+          "Color": "0.8902,0.31765,0.05098,1",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null
+        }
+      ]
+    },
+    {
+      "__guid": "c1ae7b3d-940f-4963-9e14-cd36c4cc1f43",
+      "Flags": 0,
+      "Name": "reming870",
+      "Position": "106.7265,-78.20556,18.91492",
+      "Rotation": "-0.2329629,0.5624223,-0.7329628,0.3036032",
+      "Tags": "weapon",
+      "Enabled": true,
+      "__Prefab": "prefabs/weapons/reming870.prefab",
+      "__PrefabVariables": {}
+    },
+    {
+      "__guid": "e577230d-5152-4b30-9d0d-265af7bdfa07",
+      "Flags": 0,
+      "Name": "mp7",
+      "Position": "142.4501,-111.9,13.21063",
+      "Rotation": "-0.2329629,0.5624223,-0.7329628,0.3036032",
+      "Tags": "weapon",
+      "Enabled": true,
+      "__Prefab": "prefabs/weapons/mp7.prefab",
+      "__PrefabVariables": {}
+    },
+    {
+      "__guid": "2393078c-5e19-4f2f-821d-49bdee2c7e96",
+      "Flags": 0,
+      "Name": "awp",
+      "Position": "161.2387,-64.69814,14.21064",
+      "Rotation": "-0.2705981,0.6532816,-0.6532815,0.2705981",
+      "Tags": "weapon",
+      "Enabled": true,
+      "__Prefab": "prefabs/weapons/awp.prefab",
+      "__PrefabVariables": {}
+    },
+    {
+      "__guid": "993b769f-9967-48a2-a108-91d94df0e986",
+      "Flags": 0,
+      "Name": "glock (1)",
+      "Position": "116.9601,-99.23687,19.60537",
+      "Rotation": "-0.2329629,0.5624223,-0.7329627,0.3036031",
+      "Enabled": true,
+      "__Prefab": "prefabs/weapons/beretta.prefab",
+      "__PrefabVariables": {}
+    },
+    {
+      "__guid": "e33d3446-9af9-4d06-8665-fdaaf087a10b",
+      "Flags": 0,
+      "Name": "zombie",
+      "Position": "516.7767,-404.0625,2.567402",
+      "Tags": "ignorenav",
+      "__Prefab": "prefabs/npc/zombie.prefab",
+      "__PrefabVariables": {}
+    },
+    {
+      "__guid": "d1fb2368-1caa-47c4-adba-23a1037fd3cb",
+      "Flags": 0,
+      "Name": "testpistol",
+      "Position": "79.20485,158.2443,-0.00001525879",
+      "Enabled": true,
+      "__Prefab": "prefabs/weapons/testpistol.prefab",
+      "__PrefabVariables": {}
+    }
+  ],
+  "SceneProperties": {
+    "FixedUpdateFrequency": 50,
+    "MaxFixedUpdates": 5,
+    "NetworkFrequency": 30,
+    "NetworkInterpolation": true,
+    "PhysicsSubSteps": 1,
+    "ThreadedAnimation": true,
+    "TimeScale": 1,
+    "UseFixedUpdate": true,
+    "Metadata": {},
+    "NavMesh": {
+      "Enabled": true,
+      "IncludeStaticBodies": true,
+      "IncludeKeyframedBodies": true,
+      "EditorAutoUpdate": true,
+      "AgentHeight": 64,
+      "AgentRadius": 16,
+      "AgentStepSize": 18,
+      "AgentMaxSlope": 40,
+      "ExcludedBodies": "",
+      "IncludedBodies": ""
+    }
+  },
+  "ResourceVersion": 2,
+  "Title": null,
+  "Description": null,
+  "__references": [],
+  "__version": 2
+}

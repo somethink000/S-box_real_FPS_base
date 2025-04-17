@@ -34,17 +34,18 @@ public partial class Gun : Carriable, IUseAmmo
 	protected override void OnUpdate()
 	{
 		base.OnUpdate();
+
+
 		if ( Owner == null ) return;
-
-		ViewModelRenderer?.Set( EmptyState, IsEmpty );
-
-		if ( !IsReloading && !InBoltBack )
-		{
-			ViewModelRenderer?.Set( AimState, IsAiming );
-		}
 
 		if ( !IsProxy )
 		{
+			ViewModelRenderer?.Set( EmptyState, IsEmpty );
+
+			if ( !IsReloading && !InBoltBack )
+			{
+				ViewModelRenderer?.Set( AimState, IsAiming );
+			}
 
 			if ( IsDeploying ) return;
 
@@ -64,7 +65,6 @@ public partial class Gun : Carriable, IUseAmmo
 			{
 				Owner.CameraController.ApplyFov( AimFOV );
 			}
-			
 
 			ResetBurstFireCount( InputButtonHelper.PrimaryAttack );
 
@@ -93,15 +93,17 @@ public partial class Gun : Carriable, IUseAmmo
 			}
 
 		}
+		
 	}
 
-	[Rpc.Broadcast]
+	[Rpc.Broadcast( NetFlags.Reliable | NetFlags.OwnerOnly )]
 	public override void Deploy( Player player )
 	{
 		
 		base.Deploy( player );
-
-		ViewModelRenderer?.Set( IsReady ? DeployAnim : ReadyAnim, true );
+		
+		if ( !IsProxy )
+			ViewModelRenderer?.Set( IsReady ? DeployAnim : ReadyAnim, true );
 	}
 
 	public override bool CanHolster()

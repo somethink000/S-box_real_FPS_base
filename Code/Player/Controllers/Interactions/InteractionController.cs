@@ -3,6 +3,7 @@
 using Microsoft.VisualBasic;
 using Sandbox;
 using System.Diagnostics;
+using static Sandbox.Services.Inventory;
 
 namespace GeneralGame;
 
@@ -15,11 +16,12 @@ public class InteractionController : Component
 
 	protected override void OnFixedUpdate()
 	{
-
+	
+		if (IsProxy) return;
+		
 		Trace = Scene.Trace.Ray( ViewRay, 9999 )
 			.IgnoreGameObjectHierarchy( GameObject )
 			.Run();
-
 	
 		GameObject obj = Trace.GameObject;
 

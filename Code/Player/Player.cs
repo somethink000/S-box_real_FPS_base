@@ -27,6 +27,7 @@ public partial class Player : Component
 	[Property, Category( "Relatives" )] public ModelPhysics ModelPhysics { get; set; }
 
 	[Property] public bool IsFirstPerson { get; set; } = true;
+
 	public RagdollManager RagdollManager { get; set; }
 	
 	public bool IsAlive => HealthController.IsAlive;
@@ -38,7 +39,11 @@ public partial class Player : Component
 	{
 		RagdollManager = new RagdollManager( ModelPhysics );
 	}
-	
+
+	public void OnNetworkSpawn( Connection connection )
+	{
+
+	}
 
 	protected override void OnStart()
 	{
@@ -47,15 +52,19 @@ public partial class Player : Component
 		{
 			if ( Camera is not null )
 				Camera.Enabled = false;
-		}else if ( IsFirstPerson )
-		{
+				
+		}
 
+		BodyRenderer.SetBodyGroup( "head", IsProxy ? 0 : 2 );
+
+		if ( !IsProxy && IsFirstPerson )
+		{
+			
 			// Create shadow model only on client
 			SkinnedModelRenderer ShadowBodyRenderer = Body.Components.Create<SkinnedModelRenderer>();
 			ShadowBodyRenderer.Model = BodyRenderer.Model;
 			ShadowBodyRenderer.RenderType = ModelRenderer.ShadowRenderType.ShadowsOnly;
-			BodyRenderer.SetBodyGroup( "head", 2 );
-
+			
 			CitizenAnimationHelper ShadowAnimator = Body.Components.Create<CitizenAnimationHelper>();
 			ShadowAnimator.Target = ShadowBodyRenderer;
 
@@ -72,13 +81,12 @@ public partial class Player : Component
 	
 	protected override void OnUpdate()
 	{
-		
 
 	}
 
-	
 
-	[Rpc.Broadcast]
+
+	[Rpc.Broadcast( NetFlags.Reliable | NetFlags.OwnerOnly )]
 	public void NewEntry( string author, string message )
 	{
 		UI.Chat.Instance.AddTextLocal( author, message );

@@ -2,21 +2,19 @@
   "publish": {
     "Enabled": false,
     "ProjectConfig": {
-      "Title": "Dom",
+      "Title": "Box",
       "Type": "map",
       "Org": "local",
-      "Ident": "dom",
+      "Ident": "box",
       "Schema": 0,
       "IncludeSourceFiles": false,
       "Resources": null,
       "PackageReferences": [],
-      "EditorReferences": [
-        "evilinc.ah_super_large_pine002#48323"
-      ],
+      "EditorReferences": [],
       "Mounts": null,
       "IsStandaloneOnly": false,
       "Metadata": {
-        "SingleAssetSource": "scenes/dom.vmap",
+        "SingleAssetSource": "scenes/box.vmap",
         "ParentPackage": "evilinc.real_fps_base"
       }
     }

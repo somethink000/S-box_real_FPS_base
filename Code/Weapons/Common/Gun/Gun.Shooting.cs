@@ -97,6 +97,11 @@ public partial class Gun
 		// Particles
 		HandleShootEffects();
 
+		if ( BoltBack && Clip > 0 )
+		{
+			AsyncBoltBack( GetRealRPM( RPM ) );
+		}
+
 		// Barrel smoke
 		barrelHeat += 1;
 
@@ -116,29 +121,20 @@ public partial class Gun
 		Owner.CameraController.ApplyShake( ViewPunch, 1 );
 	}
 
-	[Rpc.Broadcast]
+	[Rpc.Broadcast( NetFlags.Reliable | NetFlags.OwnerOnly )]
 	public virtual void ShootBullet( Vector3 spreadOffset )
 	{
 		BulletType.Shoot( this, spreadOffset );
 	}
 
-	
-	[Rpc.Broadcast]
+
+	[Rpc.Broadcast( NetFlags.Reliable | NetFlags.OwnerOnly )]
 	public virtual void HandleShootEffects()
 	{
 		// Player
 		Owner.BodyRenderer.Set( "b_attack", true );
 
-		// Weapon
-		var muzzleTransform = GetMuzzleTransform();
-
-		if ( BoltBack && Clip > 0 )
-		{
-			AsyncBoltBack( GetRealRPM( RPM ) ); 
-		}
-
-		if ( !muzzleTransform.HasValue ) return;
-
+	
 		// Muzzle flash
 		//if ( MuzzleFlashParticle is not null )
 		//	CreateParticle( MuzzleFlashParticle, muzzleTransform.Value, ( particles ) => ParticleToMuzzlePos( particles ) );

@@ -97,7 +97,7 @@ public partial class Zombie
 		{
 			if ( TargetPrimaryObject == TargetObject ) return;
 			var targetDead = TargetObject.Components.GetInAncestorsOrSelf<IHealthComponent>()?.LifeState == LifeState.Dead; // Is our target dead or undead
-			var targetEscaped = TargetObject.Transform.Position.Distance( Transform.Position ) > VisionRange * Scale; // Did our target get out of vision range
+			var targetEscaped = TargetObject.WorldPosition.Distance( WorldPosition ) > VisionRange * Scale; // Did our target get out of vision range
 
 			if ( targetEscaped || targetDead ) // Did our target die or escape
 				Undetected();

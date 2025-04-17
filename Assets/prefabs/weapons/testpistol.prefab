@@ -2,32 +2,14 @@
   "RootObject": {
     "__guid": "75e8dbf9-98c5-4504-a879-6f6da3f32a1c",
     "Flags": 0,
-    "Name": "beretta",
+    "Name": "testpistol",
     "NetworkMode": 1,
-    "NetworkOrphaned": 3,
-    "OwnerTransfer": 0,
     "Components": [
       {
-        "__type": "GeneralGame.Gun",
-        "__guid": "48a460fd-6d81-40a1-b9e4-36aba3d8abb2",
-        "AimAnimData": {
-          "Angle": "-0.16,-0.03,-0.4",
-          "Pos": "-1.918,0,0.776"
-        },
-        "AimFOV": -30,
-        "AimSpeed": 1,
-        "AmmoType": "Pistol",
+        "__type": "GeneralGame.BasePistol",
+        "__guid": "03712fa9-e700-494a-93d9-d3f152a2c0bf",
         "AnimSpeed": 1,
-        "BoltBack": false,
-        "BulletCocking": true,
-        "Bullets": 1,
-        "ClipSize": 8,
-        "Damage": 16,
-        "DryShootSound": "weapons/sounds/1911/mechlol.sound",
-        "FireMod": "semi",
-        "Force": 0.1,
         "Hand": "Right",
-        "HitFlinch": 1.25,
         "HoldType": "Pistol",
         "Icon": {
           "$compiler": "texture",
@@ -57,26 +39,20 @@
           },
           "compiled": "textures/generated/imagefile/be71165a3e057467.vtex"
         },
-        "Name": "Beretta",
+        "Name": null,
         "OnComponentDestroy": null,
         "OnComponentDisabled": null,
         "OnComponentEnabled": null,
         "OnComponentFixedUpdate": null,
         "OnComponentStart": null,
         "OnComponentUpdate": null,
-        "Recoil": 0.1,
-        "RPM": 500,
         "RunAnimData": {
           "Angle": "25.51,21.44,-0.7",
           "Pos": "0,0.3079997,3.589"
         },
-        "ShellReloading": false,
-        "ShootSound": "weapons/sounds/1911/fire-9-01.sound",
-        "Spread": 0.1,
         "TuckRange": 30,
         "ViewModel": "weapons/bereta/beretta.vmdl",
         "ViewModelHands": "weapons/hands_l/hands_l.vmdl",
-        "ViewPunch": 5,
         "WorldModel": "weapons/bereta/w_beretta.vmdl"
       },
       {

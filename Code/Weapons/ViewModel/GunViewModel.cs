@@ -16,7 +16,7 @@ public partial class GunViewModel : ViewModel
 	protected override void OnUpdate()
 	{
 
-		if ( ply == null ) return;
+		if ( ply == null || IsProxy ) return;
 
 		var renderType = ShouldDraw ? ModelRenderer.ShadowRenderType.Off : ModelRenderer.ShadowRenderType.ShadowsOnly;
 		ViewModelRenderer.Enabled = ply.IsFirstPerson;

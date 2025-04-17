@@ -18,9 +18,12 @@ public class NetworkManager : Component, Component.INetworkListener
 		base.OnStart();
 	}
 
+
 	// Called on host
 	void INetworkListener.OnActive( Connection connection )
 	{
+		connection.CanSpawnObjects = false;
+		connection.CanRefreshObjects = false;
 
 		var obj = PlayerPrefab.Clone();
 		var player = obj.Components.Get<Player>( FindMode.EverythingInSelfAndDescendants );

@@ -68,19 +68,22 @@ public partial class Carriable : Component, IInteractable
 			}
 	}
 
-	[Rpc.Broadcast]
+
+	[Rpc.Broadcast] //( NetFlags.Reliable | NetFlags.OwnerOnly )
 	public virtual void Deploy( Player player )
 	{
+
 		Owner = player;
 		GameObject.Enabled = true;
 		SetupModels();
-		if ( IsProxy ) return;
+		
 
 	}
 	public virtual bool CanHolster()
 	{
-		return false;
+		return true;
 	}
+	[Rpc.Broadcast( NetFlags.Reliable | NetFlags.OwnerOnly )]
 	public virtual void Holster()
 	{
 		GameObject.Enabled = false;
@@ -150,9 +153,11 @@ public partial class Carriable : Component, IInteractable
 
 			ViewModelHandler.ViewModelHandsRenderer = ViewModelHandsRenderer;
 
+
+			SetupAnimEvents();
 		}
 
-		SetupAnimEvents();
+		
 
 		var bodyRenderer = Owner.BodyRenderer;
 		WorldModelRenderer.BoneMergeTarget = bodyRenderer;
@@ -206,7 +211,7 @@ public partial class Carriable : Component, IInteractable
 	}
 
 
-	[Rpc.Broadcast]
+	[Rpc.Broadcast( NetFlags.Reliable | NetFlags.OwnerOnly )]
 	protected void PlaySound( int resourceID )
 	{
 		if ( !IsValid ) return;

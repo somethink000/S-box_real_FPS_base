@@ -51,7 +51,7 @@ public partial class Gun
 		ViewModelHandler.Camera = Owner.Camera;
 	}
 
-	[Rpc.Broadcast]
+	[Rpc.Broadcast( NetFlags.Reliable | NetFlags.OwnerOnly )]
 	public virtual void HandleReloadEffects()
 	{
 		ViewModelRenderer?.Set( ReloadAnim, true );
