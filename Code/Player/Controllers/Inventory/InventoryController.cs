@@ -19,11 +19,7 @@ public partial class InventoryController : Component
 	public Carriable Deployed { get; set; }
 	public int Slot { get; set; }
 
-	//public bool Has( GameObject prefab )
-	//{
-	//	//TODO make this beter
-	//	return Weapons.Any( w => w.GameObject.Components.GetInDescendantsOrSelf<Carriable>( true ).DisplayName == prefab.Components.GetInDescendantsOrSelf<Carriable>( true ).DisplayName );
-	//}
+
 	public bool HaveFreeSpace()
 		=> Weapons.IndexOf( null ) != -1;
 
@@ -41,12 +37,10 @@ public partial class InventoryController : Component
 		if ( Deployed != null )
 		{
 
-			if ( !Deployed.CanHolster() ) return;
-
 			ClearDeployed();
 		}
 
-		
+
 
 		Deployed = carriable;
 		Slot = slot;
@@ -75,6 +69,8 @@ public partial class InventoryController : Component
 		}
 
 		var item = Weapons.ElementAtOrDefault(index);
+
+		if ( (Deployed != null && !Deployed.CanHolster()) || !ply.HealthController.IsAlive ) return;
 
 		if ( item == null )
 		{
@@ -129,22 +125,14 @@ public partial class InventoryController : Component
 			}
 		}
 
-		//if ( IsProxy ) return;
-		
-		//if ( Input.Pressed( InputButtonHelper.Slot0 ) ) DropWeapon( 0 );
-		if ( Input.Pressed( InputButtonHelper.Slot0 ) ) DeployWeapon( 0 );
-		else if ( Input.Pressed( InputButtonHelper.Slot1 ) ) DeployWeapon( 1 );
-		else if ( Input.Pressed( InputButtonHelper.Slot2 ) ) DeployWeapon( 2 );
-		else if ( Input.Pressed( InputButtonHelper.Slot3 ) ) DeployWeapon( 3 );
-		else if ( Input.Pressed( InputButtonHelper.Slot4 ) ) DeployWeapon( 4 );
-		else if ( Input.Pressed( InputButtonHelper.Slot5 ) ) DeployWeapon( 5 );
-		else if ( Input.Pressed( InputButtonHelper.Slot6 ) ) DeployWeapon( 6 );
-		else if ( Input.Pressed( InputButtonHelper.Slot7 ) ) DeployWeapon( 7 );
-		else if ( Input.Pressed( InputButtonHelper.Slot8 ) ) DeployWeapon( 8 );
-		else if ( Input.Pressed( InputButtonHelper.Slot9 ) ) DeployWeapon( 9 );
+
+		if ( Input.Pressed( InputButtonHelper.Slot1 ) ) DeployWeapon( 0 );
+		else if ( Input.Pressed( InputButtonHelper.Slot2 ) ) DeployWeapon( 1 );
+		else if ( Input.Pressed( InputButtonHelper.Slot3 ) ) DeployWeapon( 2 );
+		else if ( Input.Pressed( InputButtonHelper.Slot4 ) ) DeployWeapon( 3 );
+		else if ( Input.Pressed( InputButtonHelper.Slot5 ) ) DeployWeapon( 4 );
 		else if ( Input.MouseWheel.y > 0 ) DeployWeapon( Slot - 1 );
 		else if ( Input.MouseWheel.y < 0 ) DeployWeapon( Slot + 1 );
-
 	}
 
 	[Rpc.Broadcast( NetFlags.Reliable | NetFlags.OwnerOnly )]
@@ -159,35 +147,42 @@ public partial class InventoryController : Component
 			if ( Networking.IsHost )
 			{
 				item.GameObject.Parent = this.GameObject;
-				item.GameObject.Network.Refresh();
-				item.GameObject.Network.AssignOwnership( Network.Owner );
-				
+				item.GameObject.Network.AssignOwnership( this.GameObject.Network.Owner );
+				//item.GameObject.Network.Refresh();
+
+				DeployItem( item, freeSlot );
 			}
 
-			item.GameObject.Parent = this.GameObject;
-			item.GameObject.WorldPosition = this.GameObject.WorldPosition;
-			item.GameObject.WorldRotation = this.GameObject.WorldRotation;
-			
-			item.Components.Get<ModelCollider>( FindMode.InSelf ).Enabled = false;
-			item.Components.Get<Rigidbody>( FindMode.InSelf ).Enabled = false;
-
-			//	Components.Get<ModelCollider>( FindMode.InSelf ).Enabled = true;
-			//	Components.Get<Rigidbody>( FindMode.InSelf ).Enabled = true;
-
-
-
-			item.GameObject.Enabled = false;
-			
-		
-				
-			Weapons[freeSlot] = item;
-
-			if ( freeSlot == Slot ) {
-				item.SayPoo(2);
-				Deployed = item;
-				Slot = freeSlot;
-				Deployed.Deploy( ply );
-			}
 		}
 	}
+
+	[Rpc.Broadcast( NetFlags.Reliable | NetFlags.HostOnly )]
+	public void DeployItem( Carriable item, int freeSlot )
+	{
+
+		item.GameObject.Parent = this.GameObject;
+		item.GameObject.WorldPosition = this.GameObject.WorldPosition;
+		item.GameObject.WorldRotation = this.GameObject.WorldRotation;
+
+		item.Components.Get<ModelCollider>( FindMode.InSelf ).Enabled = false;
+		item.Components.Get<Rigidbody>( FindMode.InSelf ).Enabled = false;
+
+		//	Components.Get<ModelCollider>( FindMode.InSelf ).Enabled = true;
+		//	Components.Get<Rigidbody>( FindMode.InSelf ).Enabled = true;
+
+		item.GameObject.Enabled = false;
+
+		Weapons[freeSlot] = item;
+
+		if ( freeSlot == Slot )
+		{
+
+			Deployed = item;
+			Slot = freeSlot;
+			Deployed.Deploy( ply );
+		}
+	}
+
+	
+
 }

@@ -64,19 +64,10 @@
 					},
 					{
 						_class = "Attachment"
-						name = "muzzle_silenced"
-						parent_bone = "ak_frame"
-						relative_origin = [ 0.000907, -15.860134, 1.083089 ]
-						relative_angles = [ -0.0, -90.0, 0.0 ]
-						weight = 1.0
-						ignore_rotation = false
-					},
-					{
-						_class = "Attachment"
 						name = "ejection_point"
-						parent_bone = "chandle"
-						relative_origin = [ 0.0, 0.0, 0.0 ]
-						relative_angles = [ -0.0, -179.999908, 0.0 ]
+						parent_bone = "body"
+						relative_origin = [ -0.796221, -0.316672, 1.807606 ]
+						relative_angles = [ -0.0, -179.999893, 0.0 ]
 						weight = 1.0
 						ignore_rotation = false
 					},
@@ -165,63 +156,6 @@
 						{
 							exclude_by_default = false
 							exception_list = [  ]
-						}
-					},
-					{
-						_class = "RenderMeshFile"
-						name = "iron_rs"
-						filename = "weapons/awp/compil/rs down.smd"
-						import_translation = [ 0.0, 0.0, 0.0 ]
-						import_rotation = [ 0.0, 0.0, 0.0 ]
-						import_scale = 1.0
-						align_origin_x_type = "None"
-						align_origin_y_type = "None"
-						align_origin_z_type = "None"
-						parent_bone = ""
-						import_filter = 
-						{
-							exclude_by_default = false
-							exception_list = 
-							[
-								"rs_down",
-							]
-						}
-					},
-					{
-						_class = "RenderMeshFile"
-						name = "mount"
-						filename = "weapons/awp/compil/mount.smd"
-						import_translation = [ 0.0, 0.0, 0.0 ]
-						import_rotation = [ 0.0, 0.0, 0.0 ]
-						import_scale = 1.0
-						align_origin_x_type = "None"
-						align_origin_y_type = "None"
-						align_origin_z_type = "None"
-						parent_bone = ""
-						import_filter = 
-						{
-							exclude_by_default = false
-							exception_list = [  ]
-						}
-					},
-					{
-						_class = "RenderMeshFile"
-						name = "iron_fs"
-						filename = "weapons/awp/compil/fs mid.smd"
-						import_translation = [ 0.0, 0.0, 0.0 ]
-						import_rotation = [ 0.0, 0.0, 0.0 ]
-						import_scale = 1.0
-						align_origin_x_type = "None"
-						align_origin_y_type = "None"
-						align_origin_z_type = "None"
-						parent_bone = ""
-						import_filter = 
-						{
-							exclude_by_default = false
-							exception_list = 
-							[
-								"fs_mid",
-							]
 						}
 					},
 				]

@@ -15,7 +15,6 @@ public class CameraController : Component
 	[Sync] public Vector3 EyeOffset { get; set; } = Vector3.Zero;
 	public Vector3 EyePos => ply.Head.WorldPosition + EyeOffset;
 
-
 	public float CurFOV { get; set; }
 	public float TargetFov { get; set; } = 0;
 

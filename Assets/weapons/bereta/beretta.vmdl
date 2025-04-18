@@ -60,15 +60,6 @@
 					},
 					{
 						_class = "Attachment"
-						name = "muzzle_silenced"
-						parent_bone = "barrel"
-						relative_origin = [ 0.0, 0.0, 0.0 ]
-						relative_angles = [ -0.0, -90.0, 0.0 ]
-						weight = 1.0
-						ignore_rotation = false
-					},
-					{
-						_class = "Attachment"
 						name = "ejection_point"
 						parent_bone = "bullet1"
 						relative_origin = [ 0.0, 0.0, 0.0 ]
@@ -119,40 +110,6 @@
 						_class = "RenderMeshFile"
 						name = "mag_15"
 						filename = "weapons/bereta/compil/mag.smd"
-						import_translation = [ 0.0, 0.0, 0.0 ]
-						import_rotation = [ 0.0, 0.0, 0.0 ]
-						import_scale = 1.0
-						align_origin_x_type = "None"
-						align_origin_y_type = "None"
-						align_origin_z_type = "None"
-						parent_bone = ""
-						import_filter = 
-						{
-							exclude_by_default = false
-							exception_list = [  ]
-						}
-					},
-					{
-						_class = "RenderMeshFile"
-						name = "mag_21"
-						filename = "weapons/bereta/compil/mag ext.smd"
-						import_translation = [ 0.0, 0.0, 0.0 ]
-						import_rotation = [ 0.0, 0.0, 0.0 ]
-						import_scale = 1.0
-						align_origin_x_type = "None"
-						align_origin_y_type = "None"
-						align_origin_z_type = "None"
-						parent_bone = ""
-						import_filter = 
-						{
-							exclude_by_default = false
-							exception_list = [  ]
-						}
-					},
-					{
-						_class = "RenderMeshFile"
-						name = "mount_pec"
-						filename = "weapons/bereta/compil/irons rail.smd"
 						import_translation = [ 0.0, 0.0, 0.0 ]
 						import_rotation = [ 0.0, 0.0, 0.0 ]
 						import_scale = 1.0
@@ -625,98 +582,6 @@
 								disable_interpolation = false
 								enable_scale = false
 								source_filename = "weapons/bereta/compil/anims/holster_empty.smd"
-								start_frame = -1
-								end_frame = -1
-								framerate = -1.0
-								take = 0
-								reverse = false
-							},
-							{
-								_class = "AnimFile"
-								name = "switch"
-								activity_name = ""
-								activity_weight = 1
-								weight_list_name = ""
-								fade_in_time = 0.2
-								fade_out_time = 0.2
-								looping = false
-								delta = false
-								worldSpace = false
-								hidden = false
-								anim_markup_ordered = false
-								disable_compression = false
-								disable_interpolation = false
-								enable_scale = false
-								source_filename = "weapons/bereta/compil/anims/switch.smd"
-								start_frame = -1
-								end_frame = -1
-								framerate = -1.0
-								take = 0
-								reverse = false
-							},
-							{
-								_class = "AnimFile"
-								name = "switch_empty"
-								activity_name = ""
-								activity_weight = 1
-								weight_list_name = ""
-								fade_in_time = 0.2
-								fade_out_time = 0.2
-								looping = false
-								delta = false
-								worldSpace = false
-								hidden = false
-								anim_markup_ordered = false
-								disable_compression = false
-								disable_interpolation = false
-								enable_scale = false
-								source_filename = "weapons/bereta/compil/anims/switch_empty.smd"
-								start_frame = -1
-								end_frame = -1
-								framerate = -1.0
-								take = 0
-								reverse = false
-							},
-							{
-								_class = "AnimFile"
-								name = "switch_empty_ads"
-								activity_name = ""
-								activity_weight = 1
-								weight_list_name = ""
-								fade_in_time = 0.2
-								fade_out_time = 0.2
-								looping = false
-								delta = false
-								worldSpace = false
-								hidden = false
-								anim_markup_ordered = false
-								disable_compression = false
-								disable_interpolation = false
-								enable_scale = false
-								source_filename = "weapons/bereta/compil/anims/switch_empty_ads.smd"
-								start_frame = -1
-								end_frame = -1
-								framerate = -1.0
-								take = 0
-								reverse = false
-							},
-							{
-								_class = "AnimFile"
-								name = "switch_ads"
-								activity_name = ""
-								activity_weight = 1
-								weight_list_name = ""
-								fade_in_time = 0.2
-								fade_out_time = 0.2
-								looping = false
-								delta = false
-								worldSpace = false
-								hidden = false
-								anim_markup_ordered = false
-								disable_compression = false
-								disable_interpolation = false
-								enable_scale = false
-								source_filename = "weapons/bereta/compil/anims/switch_ads.smd"
 								start_frame = -1
 								end_frame = -1
 								framerate = -1.0
@@ -1622,73 +1487,6 @@
 					},
 				]
 				default_root_bone_name = ""
-			},
-			{
-				_class = "BodyGroupList"
-				children = 
-				[
-					{
-						_class = "BodyGroup"
-						name = "magazin"
-						children = 
-						[
-							{
-								_class = "BodyGroupChoice"
-								meshes = 
-								[
-									"mag_15",
-								]
-							},
-							{
-								_class = "BodyGroupChoice"
-								meshes = 
-								[
-									"mag_21",
-								]
-							},
-						]
-						hidden_in_tools = false
-					},
-					{
-						_class = "BodyGroup"
-						name = "rail"
-						children = 
-						[
-							{
-								_class = "BodyGroupChoice"
-								meshes = 
-								[
-									"mount",
-								]
-							},
-							{
-								_class = "BodyGroupChoice"
-								name = "zenit"
-								meshes = 
-								[
-									"mount_pec",
-								]
-							},
-						]
-						hidden_in_tools = false
-					},
-					{
-						_class = "BodyGroup"
-						name = "sight"
-						children = 
-						[
-							{
-								_class = "BodyGroupChoice"
-								meshes = [  ]
-							},
-							{
-								_class = "BodyGroupChoice"
-								meshes = [  ]
-							},
-						]
-						hidden_in_tools = false
-					},
-				]
 			},
 		]
 		model_archetype = ""

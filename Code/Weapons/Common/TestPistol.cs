@@ -40,6 +40,7 @@ public partial class BasePistol : Carriable
 
 	public override bool CanHolster()
 	{
+		
 		return true;
 	}
 

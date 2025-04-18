@@ -63,7 +63,7 @@ public class HealthController : Component, IHealthComponent
 			OnDeath( damage );
 	}
 
-	[Rpc.Broadcast]
+	[Rpc.Broadcast( NetFlags.Reliable | NetFlags.OwnerOnly )]
 	public virtual void OnDeath( DamageInfo damage )
 	{
 
@@ -71,9 +71,16 @@ public class HealthController : Component, IHealthComponent
 
 		if ( IsProxy ) return;
 
+		if ( ply.InventoryController.Deployed != null )
+		{
+			ply.InventoryController.Deployed.Holster();
+			ply.InventoryController.Deployed = null;
+		}
+
 		ply.MovementController.CharacterController.Velocity = 0;
 		ply.RagdollManager.Ragdoll( force, damage.Attacker.WorldPosition );
 
+		RespawnWithDelay(10);
 	}
 
 	public async void RespawnWithDelay( float delay )
