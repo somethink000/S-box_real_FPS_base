@@ -39,7 +39,10 @@ public partial class Carriable : Component, IInteractable
 
 		WorldModelRenderer = Components.GetInDescendantsOrSelf<SkinnedModelRenderer>();
 	}
-
+	public void SayPoo(int ewe)
+	{
+		Log.Info( ewe );
+	}
 	protected override void OnStart()
 	{
 		Interactions.Add(
@@ -69,7 +72,7 @@ public partial class Carriable : Component, IInteractable
 	}
 
 
-	[Rpc.Broadcast] //( NetFlags.Reliable | NetFlags.OwnerOnly )
+	//[Rpc.Broadcast] //( NetFlags.Reliable | NetFlags.OwnerOnly )
 	public virtual void Deploy( Player player )
 	{
 

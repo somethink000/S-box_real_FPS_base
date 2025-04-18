@@ -28,7 +28,7 @@ public partial class BasePistol : Carriable
 
 	}
 
-	[Rpc.Broadcast( NetFlags.Reliable | NetFlags.OwnerOnly )]
+	
 	public override void Deploy( Player player )
 	{
 

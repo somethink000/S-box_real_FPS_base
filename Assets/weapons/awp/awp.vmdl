@@ -37,7 +37,7 @@
 							},
 							{
 								from = "material.vmat"
-								to = "weapons/attachments/sight_texture.vmat"
+								to = "weapons/attachments/scope.vmat"
 							},
 							{
 								from = "lowpoly_glow.vmat"
@@ -181,7 +181,10 @@
 						import_filter = 
 						{
 							exclude_by_default = false
-							exception_list = [  ]
+							exception_list = 
+							[
+								"rs_down",
+							]
 						}
 					},
 					{
@@ -215,7 +218,10 @@
 						import_filter = 
 						{
 							exclude_by_default = false
-							exception_list = [  ]
+							exception_list = 
+							[
+								"fs_mid",
+							]
 						}
 					},
 				]
@@ -2003,86 +2009,6 @@
 					},
 				]
 				default_root_bone_name = ""
-			},
-			{
-				_class = "BodyGroupList"
-				children = 
-				[
-					{
-						_class = "BodyGroup"
-						name = "magazin"
-						children = 
-						[
-							{
-								_class = "BodyGroupChoice"
-								meshes = 
-								[
-									"mag10",
-								]
-							},
-							{
-								_class = "BodyGroupChoice"
-								meshes = 
-								[
-									"mag20",
-								]
-							},
-							{
-								_class = "BodyGroupChoice"
-								meshes = 
-								[
-									"mag30",
-								]
-							},
-						]
-						hidden_in_tools = false
-					},
-					{
-						_class = "BodyGroup"
-						name = "rail"
-						children = 
-						[
-							{
-								_class = "BodyGroupChoice"
-								meshes = 
-								[
-									"",
-								]
-							},
-							{
-								_class = "BodyGroupChoice"
-								name = "zenit"
-								meshes = 
-								[
-									"mount",
-								]
-							},
-						]
-						hidden_in_tools = false
-					},
-					{
-						_class = "BodyGroup"
-						name = "sight"
-						children = 
-						[
-							{
-								_class = "BodyGroupChoice"
-								meshes = 
-								[
-									"iron_rs",
-								]
-							},
-							{
-								_class = "BodyGroupChoice"
-								meshes = 
-								[
-									"optic_t1",
-								]
-							},
-						]
-						hidden_in_tools = false
-					},
-				]
 			},
 		]
 		model_archetype = ""

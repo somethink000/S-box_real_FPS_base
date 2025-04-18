@@ -32,7 +32,7 @@ public class HitScanBullet : IBulletBase
 			{
 				damageable.OnDamage( damage );
 			}
-
+		
 		}
 	}
 

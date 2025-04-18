@@ -106,9 +106,9 @@ PS
     // Overlay layer
     //
     CreateInputTexture2D(RedDot, Srgb, 8, "", "_color", "Sight Dot,10/10", Default3(0.0, 0.0, 0.0));
-    CreateInputTexture2D(RedDot2, Srgb, 8, "", "_color", "Sight Dot,10/10", Default3(0.0, 0.0, 0.0));
-    CreateInputTexture2D(RedDot3, Srgb, 8, "", "_color", "Sight Dot,10/10", Default3(0.0, 0.0, 0.0));
-    CreateTexture2DWithoutSampler(g_tRedDot) < Channel(R, Box(RedDot), Linear); Channel(G, Box(RedDot2), Linear); Channel(B, Box(RedDot3), Linear); OutputFormat(BC7); SrgbRead(false); > ;
+    //CreateInputTexture2D(RedDot2, Srgb, 8, "", "_color", "Sight Dot,10/10", Default3(0.0, 0.0, 0.0));
+    //CreateInputTexture2D(RedDot3, Srgb, 8, "", "_color", "Sight Dot,10/10", Default3(0.0, 0.0, 0.0));Channel(G, Box(RedDot2), Linear); Channel(B, Box(RedDot3), Linear);
+    CreateTexture2DWithoutSampler(g_tRedDot) < Channel(R, Box(RedDot), Linear);  OutputFormat(BC7); SrgbRead(false); > ;
 	
     float3 GetIridescence(float3 vCameraDirWs, float3 vNormalWs, float k) 
     {

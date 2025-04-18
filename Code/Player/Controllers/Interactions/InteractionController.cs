@@ -14,11 +14,13 @@ public class InteractionController : Component
 
 	public Ray ViewRay => new( ply.CameraController.EyePos, ply.Camera.WorldRotation.Forward );
 
+
+
 	protected override void OnFixedUpdate()
 	{
-	
-		if (IsProxy) return;
-		
+
+		//if (IsProxy) return;
+
 		Trace = Scene.Trace.Ray( ViewRay, 9999 )
 			.IgnoreGameObjectHierarchy( GameObject )
 			.Run();

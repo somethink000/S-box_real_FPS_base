@@ -129,7 +129,7 @@ public partial class InventoryController : Component
 			}
 		}
 
-		if ( IsProxy ) return;
+		//if ( IsProxy ) return;
 		
 		//if ( Input.Pressed( InputButtonHelper.Slot0 ) ) DropWeapon( 0 );
 		if ( Input.Pressed( InputButtonHelper.Slot0 ) ) DeployWeapon( 0 );
@@ -158,15 +158,18 @@ public partial class InventoryController : Component
 
 			if ( Networking.IsHost )
 			{
+				item.GameObject.Parent = this.GameObject;
+				item.GameObject.Network.Refresh();
 				item.GameObject.Network.AssignOwnership( Network.Owner );
+				
 			}
 
-			//item.GameObject.Parent = this.GameObject;
-			//item.GameObject.WorldPosition = this.GameObject.WorldPosition;
-			//item.GameObject.WorldRotation = this.GameObject.WorldRotation;
-	
-			//item.Components.Get<ModelCollider>( FindMode.InSelf ).Enabled = false;
-			//item.Components.Get<Rigidbody>( FindMode.InSelf ).Enabled = false;
+			item.GameObject.Parent = this.GameObject;
+			item.GameObject.WorldPosition = this.GameObject.WorldPosition;
+			item.GameObject.WorldRotation = this.GameObject.WorldRotation;
+			
+			item.Components.Get<ModelCollider>( FindMode.InSelf ).Enabled = false;
+			item.Components.Get<Rigidbody>( FindMode.InSelf ).Enabled = false;
 
 			//	Components.Get<ModelCollider>( FindMode.InSelf ).Enabled = true;
 			//	Components.Get<Rigidbody>( FindMode.InSelf ).Enabled = true;
@@ -175,10 +178,15 @@ public partial class InventoryController : Component
 
 			item.GameObject.Enabled = false;
 			
-			if ( !IsProxy ) {
-				Weapons[freeSlot] = item;
+		
+				
+			Weapons[freeSlot] = item;
 
-				if ( freeSlot == Slot ) { DeployWeapon( Slot ); }
+			if ( freeSlot == Slot ) {
+				item.SayPoo(2);
+				Deployed = item;
+				Slot = freeSlot;
+				Deployed.Deploy( ply );
 			}
 		}
 	}

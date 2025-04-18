@@ -11,29 +11,23 @@
         "__guid": "b2023aac-5ae9-4407-8dad-d2434b57f6b3",
         "AimAnimData": {
           "Angle": "0,0,0",
-          "Pos": "-2.31,0,1.145"
+          "Pos": "-2.321,-8.6,0.9990001"
         },
         "AimFOV": -30,
         "AimSpeed": 1,
         "AmmoType": "Pistol",
         "AnimSpeed": 1,
-        "BarrelSmokeParticle": "particles/swb/muzzle/smoke.vpcf",
         "BoltBack": true,
-        "BoltBackTime": 1.035,
         "BulletCocking": true,
-        "BulletEjectParticle": "particles/swb/bullet_hulls/9mm.vpcf",
         "Bullets": 1,
         "ClipSize": 8,
-        "Damage": 16,
-        "DeployTime": 0.838,
+        "Damage": 100,
         "DryShootSound": "weapons/sounds/awp/dryfire.sound",
-        "EmptyReloadTime": 2.64,
         "FireMod": "semi",
         "Force": 0.1,
         "Hand": "Both",
         "HitFlinch": 1.25,
         "HoldType": "Rifle",
-        "HolsterTime": 0.44,
         "Icon": {
           "$compiler": "texture",
           "$source": "imagefile",
@@ -62,7 +56,6 @@
           },
           "compiled": "textures/generated/imagefile/b117b8a2f015d7b4.vtex"
         },
-        "MuzzleFlashParticle": "particles/swb/muzzle/sparks.vpcf",
         "Name": "Beretta",
         "OnComponentDestroy": null,
         "OnComponentDisabled": null,
@@ -71,7 +64,6 @@
         "OnComponentStart": null,
         "OnComponentUpdate": null,
         "Recoil": 0.1,
-        "ReloadTime": 1.638,
         "RPM": 500,
         "RunAnimData": {
           "Angle": "16.68,30.02,0",

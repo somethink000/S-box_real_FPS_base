@@ -5,7 +5,7 @@
       "__guid": "083aca3b-13f8-40c0-b6e7-c9832589cb3e",
       "Flags": 0,
       "Name": "Spawnpoint (1)",
-      "Position": "26.07477,607.9999,32",
+      "Position": "518.3976,893.1833,50.69394",
       "Rotation": "0,0,-0.7071069,-0.7071066",
       "Enabled": true,
       "Components": [
@@ -26,7 +26,7 @@
       "__guid": "193ef2b9-2739-4972-be74-0cdc38449dcc",
       "Flags": 0,
       "Name": "Spawnpoint (2)",
-      "Position": "28.96463,439.3841,31.99994",
+      "Position": "521.2875,724.5676,50.69388",
       "Rotation": "0,0,-0.7071069,-0.7071066",
       "Enabled": true,
       "Components": [
@@ -54,7 +54,7 @@
           "__guid": "e62cf48b-ed49-4de0-a975-0c76457b0952",
           "Flags": 0,
           "Name": "Sun",
-          "Rotation": "-0.4984078,0.7821411,0.03987102,0.3718273",
+          "Rotation": "-0.6102447,-0.4532409,0.6363208,0.1314181",
           "Tags": "light_directional,light",
           "Enabled": true,
           "Components": [
@@ -119,6 +119,41 @@
               }
             }
           ]
+        },
+        {
+          "__guid": "fe8a8cd2-69f1-429d-8c60-b12897d811c8",
+          "Flags": 0,
+          "Name": "Envmap Probe",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "Sandbox.EnvmapProbe",
+              "__guid": "f14a45dc-0277-49e3-aaa4-9109b75d381f",
+              "Bounds": {
+                "Mins": "-2690.107,-3537.003,-1000",
+                "Maxs": "2664.246,4174.461,2367.589"
+              },
+              "DelayBetweenUpdates": 0.1,
+              "Feathering": 0.02,
+              "FrameInterval": 5,
+              "MaxDistance": 512,
+              "MultiBounce": false,
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null,
+              "Projection": "Box",
+              "RenderDynamically": false,
+              "Resolution": "Small",
+              "Texture": "textures/cubemaps/default2.vtex",
+              "TintColor": "1,1,1,1",
+              "UpdateStrategy": "OnEnabled",
+              "ZFar": 4096,
+              "ZNear": 16
+            }
+          ]
         }
       ]
     },
@@ -153,8 +188,8 @@
       "__guid": "d78d0880-b63b-41e5-b2c9-5ad2d1b8f8ee",
       "Flags": 0,
       "Name": "glock (1)",
-      "Position": "175.5721,824.0715,38.39474",
-      "Rotation": "-0.6087614,0,0,0.7933533",
+      "Position": "457.2368,1084.072,108.0614",
+      "Rotation": "-0.5880184,-0.2053349,0.157559,0.7663205",
       "Enabled": true,
       "__Prefab": "prefabs/weapons/beretta.prefab",
       "__PrefabVariables": {}
@@ -163,7 +198,7 @@
       "__guid": "ea496a85-75c9-40e9-be74-2710de2eecad",
       "Flags": 0,
       "Name": "zombie",
-      "Position": "730.6053,495.6372,25.00216",
+      "Position": "-240.5667,36.33444,11.99478",
       "Rotation": "-0.000002235174,-0.000000692904,0.9886857,-0.1500021",
       "Tags": "ignorenav",
       "Enabled": true,
@@ -174,8 +209,8 @@
       "__guid": "07e99446-e6bc-4f96-841c-023036c37d7c",
       "Flags": 0,
       "Name": "awp",
-      "Position": "119.8398,830.9586,33",
-      "Rotation": "-0.7071068,0,0,0.7071069",
+      "Position": "406.3431,1063.362,95.27216",
+      "Rotation": "-0.6830127,-0.2241439,0.1294095,0.6830128",
       "Tags": "weapon",
       "Enabled": true,
       "__Prefab": "prefabs/weapons/awp.prefab",
@@ -185,8 +220,8 @@
       "__guid": "5f825fc6-b774-496a-8f8e-c2b913398fb8",
       "Flags": 0,
       "Name": "mp7",
-      "Position": "166.5021,851.0498,32",
-      "Rotation": "-0.6087614,0,0,0.7933534",
+      "Position": "437.18,1103.512,99.64676",
+      "Rotation": "-0.5880184,-0.2053349,0.157559,0.7663205",
       "Tags": "weapon",
       "Enabled": true,
       "__Prefab": "prefabs/weapons/mp7.prefab",
@@ -196,8 +231,8 @@
       "__guid": "edaba3c5-42b2-4f24-9a46-0aa3c9753ded",
       "Flags": 0,
       "Name": "reming870",
-      "Position": "167.937,801.9638,37.70428",
-      "Rotation": "-0.6087614,0,0,0.7933534",
+      "Position": "461.3911,1061.063,107.1296",
+      "Rotation": "-0.5880184,-0.2053349,0.157559,0.7663205",
       "Tags": "weapon",
       "Enabled": true,
       "__Prefab": "prefabs/weapons/reming870.prefab",
@@ -207,8 +242,8 @@
       "__guid": "2ce21fa3-359e-4db8-a219-8a62b21c7f24",
       "Flags": 0,
       "Name": "vss",
-      "Position": "101.6573,809.2354,31.99999",
-      "Rotation": "-0.7071067,0,0,0.7071068",
+      "Position": "401.2176,1035.606,92.65573",
+      "Rotation": "-0.6830126,-0.2241438,0.1294095,0.6830127",
       "Tags": "weapon",
       "Enabled": true,
       "__Prefab": "prefabs/weapons/vss.prefab",
@@ -527,6 +562,160 @@
           "Scale": 5.7001376
         }
       ]
+    },
+    {
+      "__guid": "9267a89c-c938-4490-9454-238a092a09fd",
+      "Flags": 0,
+      "Name": "Box",
+      "Position": "-359.3038,622.2324,3.99884",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Sandbox.MeshComponent",
+          "__guid": "093e409b-53d3-46ab-a244-32117fecbb0d",
+          "Collision": "Mesh",
+          "Color": "1,1,1,1",
+          "Friction": null,
+          "HideInGame": false,
+          "IsTrigger": false,
+          "Mesh": {
+            "Topology": "H4sIAAAAAAAACk2MCQoAIQzE4qqr//9wJdiCA6WQOQawgcbVBwzgT+bJXi0gIkLeM68q69fXm7n1bsv1a6skN2tH394B6DpJeKAAAAA=",
+            "Position": "-359.3038,622.2324,3.99884",
+            "Rotation": "0,0,0,1",
+            "Positions": [
+              "-9.303772,-1.767578,0",
+              "9.303772,-1.767578,0",
+              "9.303772,1.767578,0",
+              "-9.303772,1.767578,0"
+            ],
+            "TextureCoord": [
+              "0.07268572,0.0138092",
+              "0,0",
+              "0.07268572,-0.0138092",
+              "0,0",
+              "-0.07268572,-0.0138092",
+              "0,0",
+              "-0.07268572,0.0138092",
+              "0,0"
+            ],
+            "TextureUAxis": [
+              "1,0,0"
+            ],
+            "TextureVAxis": [
+              "0,-1,0"
+            ],
+            "TextureScale": [
+              "0.25,0.25"
+            ],
+            "TextureOffset": [
+              "413.2151,440.9297"
+            ],
+            "MaterialIndex": [
+              0
+            ],
+            "EdgeFlags": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "Materials": [
+              "materials/dev/reflectivity_30.vmat"
+            ]
+          },
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "OnObjectTriggerEnter": null,
+          "OnObjectTriggerExit": null,
+          "OnTriggerEnter": null,
+          "OnTriggerExit": null,
+          "RenderType": "On",
+          "SmoothingAngle": 40,
+          "Static": true,
+          "Surface": null,
+          "SurfaceVelocity": "0,0,0"
+        }
+      ]
+    },
+    {
+      "__guid": "71293ba2-ed4c-4851-ad4c-d315ce6a09ef",
+      "Flags": 0,
+      "Name": "Text",
+      "Position": "372,754,114",
+      "Rotation": "0,0,-0.9659259,0.2588192",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Sandbox.TextRenderer",
+          "__guid": "a29367ac-012f-4a0e-b6e2-d7ecc982500d",
+          "__version": 1,
+          "BlendMode": "Normal",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "RenderOptions": {
+            "GameLayer": true,
+            "OverlayLayer": false,
+            "BloomLayer": false,
+            "AfterUILayer": false
+          },
+          "Scale": 0.2,
+          "TextAlignment": "Center",
+          "TextScope": {
+            "Text": "Network still in progress\nGithub repo in description of project \n\nWant to suport me - just play this game\n",
+            "TextColor": "1,1,1,1",
+            "FontName": "Manrope",
+            "FontSize": 44,
+            "FontWeight": 800,
+            "FontItalic": false,
+            "LineHeight": 1,
+            "LetterSpacing": 0,
+            "WordSpacing": 0,
+            "Outline": {
+              "Enabled": false,
+              "Size": 4,
+              "Color": "1,1,1,1"
+            },
+            "Shadow": {
+              "Enabled": true,
+              "Size": 4,
+              "Color": "0,0,0,1",
+              "Offset": "4,4"
+            },
+            "OutlineUnder": {
+              "Enabled": false,
+              "Size": 4,
+              "Color": "1,1,1,1"
+            },
+            "ShadowUnder": {
+              "Enabled": false,
+              "Size": 4,
+              "Color": "0,0,0,1",
+              "Offset": "4,4"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "__guid": "c470bd71-4df5-4867-8834-9637d7fddc1f",
+      "Flags": 0,
+      "Name": "testpistol",
+      "Position": "393.9999,965.9999,42",
+      "Enabled": true,
+      "__Prefab": "prefabs/weapons/testpistol.prefab",
+      "__PrefabVariables": {}
     }
   ],
   "SceneProperties": {
