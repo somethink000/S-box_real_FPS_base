@@ -127,19 +127,23 @@
 						_class = "Attachment"
 						name = "muzzle"
 						parent_bone = "bip01_r_hand"
-						relative_origin = [ 26.045731, -0.709611, -6.821875 ]
+						relative_origin = [ 32.920662, -0.709614, -8.764173 ]
 						relative_angles = [ -0.0, 0.0, -0.000087 ]
 						weight = 1.0
 						ignore_rotation = false
 					},
+				]
+			},
+			{
+				_class = "Skeleton"
+				children = 
+				[
 					{
-						_class = "Attachment"
+						_class = "Bone"
 						name = "hold_R"
-						parent_bone = "bip01_r_hand"
-						relative_origin = [ 0.0, 0.0, 0.0 ]
-						relative_angles = [ 0.0, 0.0, 0.0 ]
-						weight = 1.0
-						ignore_rotation = false
+						origin = [ -9.422811, -0.750856, 9.458283 ]
+						angles = [ -4.73881, -11.760296, -17.594063 ]
+						do_not_discard = true
 					},
 				]
 			},

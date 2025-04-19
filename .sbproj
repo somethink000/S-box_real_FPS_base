@@ -5,7 +5,7 @@
   "Ident": "real_fps_base",
   "Schema": 1,
   "IncludeSourceFiles": false,
-  "Resources": null,
+  "Resources": "\nui/*",
   "PackageReferences": [],
   "EditorReferences": null,
   "Mounts": null,
@@ -23,9 +23,20 @@
     "PerMapRanking": false,
     "LeaderboardType": "None",
     "CsProjName": "",
-    "StartupScene": "scenes/dom.scene",
+    "StartupScene": "scenes/lobby.scene",
     "ProjectTemplate": null,
     "LaunchMode": "Normal",
-    "MapStartupScene": "scenes/dom.scene"
+    "Compiler": {
+      "RootNamespace": "Sandbox",
+      "DefineConstants": "SANDBOX;ADDON;DEBUG",
+      "NoWarn": "1701;1702;1591;",
+      "WarningsAsErrors": "",
+      "TreatWarningsAsErrors": false,
+      "Nullables": false,
+      "ReleaseMode": "Debug",
+      "AssemblyReferences": [],
+      "IgnoreFolders": [],
+      "DistinctAssemblyReferences": []
+    }
   }
 }

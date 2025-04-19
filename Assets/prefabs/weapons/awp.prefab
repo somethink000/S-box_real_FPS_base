@@ -56,7 +56,7 @@
           },
           "compiled": "textures/generated/imagefile/b117b8a2f015d7b4.vtex"
         },
-        "Name": "Beretta",
+        "Name": "AWP",
         "OnComponentDestroy": null,
         "OnComponentDisabled": null,
         "OnComponentEnabled": null,

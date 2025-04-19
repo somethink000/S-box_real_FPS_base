@@ -132,14 +132,18 @@
 						weight = 1.0
 						ignore_rotation = false
 					},
+				]
+			},
+			{
+				_class = "Skeleton"
+				children = 
+				[
 					{
-						_class = "Attachment"
+						_class = "Bone"
 						name = "hold_R"
-						parent_bone = "bip01_r_hand"
-						relative_origin = [ 0.0, 0.0, 0.0 ]
-						relative_angles = [ 0.0, 0.0, 0.0 ]
-						weight = 1.0
-						ignore_rotation = false
+						origin = [ -9.42131, -0.653885, 6.437204 ]
+						angles = [ 0.0, -11.580886, 0.0 ]
+						do_not_discard = true
 					},
 				]
 			},

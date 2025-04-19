@@ -18,8 +18,8 @@ public class HealthController : Component, IHealthComponent
 	public ColorAdjustments Adjustments { get; set; }
 	public Vignette Vignette { get; set; }
 
-	public bool IsAlive => Health > 0;
-
+	public bool IsAlive => LifeState == LifeState.Alive;
+	public bool IsRagdolled => ply.ModelPhysics.Enabled;
 
 	protected override void OnAwake()
 	{
@@ -52,24 +52,23 @@ public class HealthController : Component, IHealthComponent
 
 	public void OnDamage( in DamageInfo damage )
 	{
-		if ( !IsAlive )
+		Log.Info( LifeState );
+		if ( IsProxy || !IsAlive )
 			return;
+	
 
 		Health -= damage.Damage;
 
 		ply.CameraController.ApplyShake( 10, 1 );
-
+		
 		if ( Health <= 0 )
 			OnDeath( damage );
 	}
 
-	[Rpc.Broadcast( NetFlags.Reliable | NetFlags.OwnerOnly )]
+
 	public virtual void OnDeath( DamageInfo damage )
 	{
-
-		var force = damage.Weapon.WorldRotation.Forward * 10 * damage.Damage;
-
-		if ( IsProxy ) return;
+		LifeState = LifeState.Dead;
 
 		if ( ply.InventoryController.Deployed != null )
 		{
@@ -78,7 +77,10 @@ public class HealthController : Component, IHealthComponent
 		}
 
 		ply.MovementController.CharacterController.Velocity = 0;
-		ply.RagdollManager.Ragdoll( force, damage.Attacker.WorldPosition );
+
+		var force = damage.Weapon.WorldRotation.Forward * 10 * damage.Damage;
+
+		Ragdoll( force, damage.Attacker.WorldPosition );
 
 		RespawnWithDelay(10);
 	}
@@ -95,7 +97,8 @@ public class HealthController : Component, IHealthComponent
 			return;
 
 
-		ply.RagdollManager.Unragdoll();
+		Unragdoll();
+		LifeState = LifeState.Alive;
 		Health = MaxHealth;
 
 		MoveToSpawnPoint();
@@ -115,6 +118,44 @@ public class HealthController : Component, IHealthComponent
 
 		ply.CameraController.EyeAngles = WorldRotation;
 	}
-	
+
+
+
+
+
+	[Rpc.Broadcast( NetFlags.Reliable | NetFlags.OwnerOnly )]
+	public void Ragdoll( Vector3 force, Vector3 forceOrigin )
+	{
+		ToggleColliders( false );
+		ply.ModelPhysics.Enabled = true;
+
+
+		foreach ( var body in ply.ModelPhysics.PhysicsGroup.Bodies )
+		{
+
+			body.ApplyImpulseAt( forceOrigin, force );
+		}
+	}
+
+	public void ToggleColliders( bool enable )
+	{
+		var colliders = ply.ModelPhysics.GameObject.Components.GetAll<Collider>( FindMode.EverythingInSelfAndParent );
+
+		foreach ( var collider in colliders )
+		{
+			collider.Enabled = enable;
+		}
+	}
+
+	[Rpc.Broadcast( NetFlags.Reliable | NetFlags.OwnerOnly )]
+	public void Unragdoll()
+	{
+
+		ply.ModelPhysics.Renderer.LocalPosition = Vector3.Zero;
+		ply.ModelPhysics.Renderer.LocalRotation = Rotation.Identity;
+		ply.ModelPhysics.Enabled = false;
+		ToggleColliders( true );
+
+	}
 }
 

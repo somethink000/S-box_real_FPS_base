@@ -13,11 +13,13 @@ public enum AmmoType
 
 public partial class InventoryController : Component
 {
-	//TODO make all of this sync hosted
+	
 	[RequireComponent] public Player ply { get; set; }
+	//TODO make all of this sync hosted
 	public List<Carriable> Weapons { get; set; } = new List<Carriable>( new Carriable[5] );
 	[Sync]public Carriable Deployed { get; set; }
-	public int Slot { get; set; }
+
+	public int Slot { get; set; } = 0;
 
 
 
@@ -184,6 +186,8 @@ public partial class InventoryController : Component
 
 		item.GameObject.Enabled = false;
 
+		if ( IsProxy ) return;
+
 		Weapons[freeSlot] = item;
 
 		if ( freeSlot == Slot )
@@ -193,6 +197,7 @@ public partial class InventoryController : Component
 			Slot = freeSlot;
 			Deployed.Deploy( ply );
 		}
+		
 	}
 
 	

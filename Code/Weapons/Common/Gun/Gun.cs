@@ -49,15 +49,18 @@ public partial class Gun : Carriable, IUseAmmo
 
 			if ( IsDeploying ) return;
 
-			if ( !IsScoping && !IsAiming && Input.Pressed( InputButtonHelper.Inspect ) )
+			if ( Input.Pressed( InputButtonHelper.Inspect ) )
 			{
+				if ( IsShooting() || InBoltBack || IsHolstering || IsDeploying || IsReloading ) return;
+
 				ViewModelRenderer?.Set( InspectAnim, true );
 			}
 
-			if ( !IsScoping && !IsAiming && Input.Pressed( InputButtonHelper.Mode ) )
-			{
-				ViewModelRenderer?.Set( ModeAnim, true );
-			}
+			//TODO make fire types
+			//if (Input.Pressed( InputButtonHelper.Mode ) )
+			//{
+			//	ViewModelRenderer?.Set( ModeAnim, true );
+			//}
 
 			IsAiming = !IsRunning && AimAnimData != AngPos.Zero && Input.Down( InputButtonHelper.SecondaryAttack );
 

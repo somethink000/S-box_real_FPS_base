@@ -30,22 +30,9 @@ public partial class Player : Component
 
 	GameObject firstPersonBodyGO { get; set; }
 
-	public RagdollManager RagdollManager { get; set; }
-	
 	public bool IsAlive => HealthController.IsAlive;
 	public List<ChatEntry> StoredChat { get; set; } = new();
 	public List<CitizenAnimationHelper> Animators { get; private set; } = new(); // List of animators, one for shadow, one for yor view
-
-
-	protected override void OnAwake()
-	{
-		RagdollManager = new RagdollManager( ModelPhysics );
-	}
-
-	public void OnNetworkSpawn( Connection connection )
-	{
-
-	}
 
 	protected override void OnStart()
 	{

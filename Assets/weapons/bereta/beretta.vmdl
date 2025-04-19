@@ -321,7 +321,7 @@
 										event_frame = 2
 										event_keys = 
 										{
-											name = "weapons/sounds/1911/draw.sound"
+											name = "weapons/sounds/beretta/draw.sound"
 											stop_on_seq_change = false
 											use_layer_sequence = false
 											tags = ""
@@ -408,7 +408,7 @@
 										event_frame = 0
 										event_keys = 
 										{
-											name = "weapons/sounds/1911/draw.sound"
+											name = "weapons/sounds/beretta/draw.sound"
 											stop_on_seq_change = false
 											use_layer_sequence = false
 											tags = ""
@@ -510,7 +510,7 @@
 										event_frame = 0
 										event_keys = 
 										{
-											name = "weapons/sounds/1911/draw.sound"
+											name = "weapons/sounds/beretta/draw.sound"
 											stop_on_seq_change = false
 											use_layer_sequence = false
 											tags = ""

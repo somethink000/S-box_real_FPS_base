@@ -20,9 +20,9 @@ public class HitScanBullet : IBulletBase
 
 		// Impact
 		weapon.CreateBulletImpact( bulletTr );
-
+		
 		// Damage
-		if (hitObj is not null )
+		if ( hitObj is not null )
 		{
 			
 			var damage = new DamageInfo( weapon.Damage, weapon.Owner.GameObject, weapon.GameObject, bulletTr.Hitbox );
