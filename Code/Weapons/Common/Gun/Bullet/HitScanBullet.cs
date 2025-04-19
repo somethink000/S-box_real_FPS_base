@@ -9,6 +9,7 @@ public class HitScanBullet : IBulletBase
 	public void Shoot( Gun weapon, Vector3 spreadOffset )
 	{
 		var player = weapon.Owner;
+		
 		var forward = player.CameraController.EyeAngles.Forward + spreadOffset;
 		forward = forward.Normal;
 		var endPos = player.CameraController.EyePos + forward * 999999;
@@ -21,18 +22,19 @@ public class HitScanBullet : IBulletBase
 		weapon.CreateBulletImpact( bulletTr );
 
 		// Damage
-		if ( !weapon.IsProxy && hitObj is not null )
+		if (hitObj is not null )
 		{
-
+			
 			var damage = new DamageInfo( weapon.Damage, weapon.Owner.GameObject, weapon.GameObject, bulletTr.Hitbox );
 			damage.Position = bulletTr.HitPosition;
 			damage.Shape = bulletTr.Shape;
 
-			foreach ( var damageable in bulletTr.GameObject.Components.GetAll<IHealthComponent>() )
-			{
-				damageable.OnDamage( damage );
-			}
 		
+			if ( bulletTr.GameObject.Components.GetInAncestorsOrSelf<IHealthComponent>() is IHealthComponent damagable )
+			{
+				damagable.OnDamage( damage );
+			}
+
 		}
 	}
 

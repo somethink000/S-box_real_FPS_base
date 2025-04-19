@@ -154,6 +154,30 @@
               "ZNear": 16
             }
           ]
+        },
+        {
+          "__guid": "766e4c5e-ffa3-477f-b931-60a91e78dd43",
+          "Flags": 0,
+          "Name": "Gradient Fog",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "Sandbox.GradientFog",
+              "__guid": "6a74c2ab-22d3-4c3c-89df-4d44b67f6567",
+              "Color": "0.27907,0.27907,0.27907,1",
+              "EndDistance": 5000,
+              "FalloffExponent": 1,
+              "Height": 12800,
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null,
+              "StartDistance": 1500,
+              "VerticalFalloffExponent": -2
+            }
+          ]
         }
       ]
     },
@@ -673,7 +697,7 @@
           "Scale": 0.2,
           "TextAlignment": "Center",
           "TextScope": {
-            "Text": "Network still in progress\nGithub repo in description of project \n\nWant to suport me - just play this game\n",
+            "Text": "Network still in progress\nGithub repo in description of project \n",
             "TextColor": "1,1,1,1",
             "FontName": "Manrope",
             "FontSize": 44,

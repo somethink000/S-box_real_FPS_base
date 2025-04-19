@@ -20,7 +20,7 @@ public class DoorComponent : Component, IInteractable
 	[Property] public Vector3 Pivot { get; set; }
 	[Property] public SoundEvent Sound { get; set; }
 
-	[HostSync] private Transform InitialTransform { get; set; }
+	[Sync( SyncFlags.FromHost )] private Transform InitialTransform { get; set; }
 	public List<Interaction> Interactions { get; set; } = new List<Interaction>();
 
 	protected override void OnAwake()
@@ -91,7 +91,7 @@ public class DoorComponent : Component, IInteractable
 		var targetRotation = defaultAngles
 			.WithYaw( targetYaw )
 			.ToRotation();
-		var inversed = Transform.Rotation * InitialTransform.Rotation.Inverse;
+		var inversed = WorldRotation * InitialTransform.Rotation.Inverse;
 		var difference = inversed.Distance( targetRotation );
 
 		if ( difference.AlmostEqual( 0, 1f ) )

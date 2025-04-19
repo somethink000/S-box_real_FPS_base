@@ -55,9 +55,15 @@ public partial class Carriable : Component, IInteractable
 			}
 		);
 
+		if (IsProxy)
+		{
+			WorldModelRenderer.RenderType = ModelRenderer.ShadowRenderType.On;
+		}
 	}
 	protected virtual void OnPickUp(Player ply) { }
 	protected virtual void SetupAnimEvents(){}
+
+	//TODO remove this from update
 	protected override void OnUpdate()
 	{
 		if ( Owner == null ) return;
@@ -69,15 +75,13 @@ public partial class Carriable : Component, IInteractable
 	}
 
 
-	//[Rpc.Broadcast] //( NetFlags.Reliable | NetFlags.OwnerOnly )
+	[Rpc.Broadcast( NetFlags.Reliable | NetFlags.OwnerOnly )]
 	public virtual void Deploy( Player player )
 	{
-
+		
 		Owner = player;
 		GameObject.Enabled = true;
 		SetupModels();
-		
-
 	}
 	public virtual bool CanHolster()
 	{
@@ -113,6 +117,7 @@ public partial class Carriable : Component, IInteractable
 
 	void SetupModels()
 	{
+		
 
 		if ( !IsProxy && ViewModel is not null && ViewModelRenderer is null )
 		{
@@ -120,7 +125,7 @@ public partial class Carriable : Component, IInteractable
 			var viewModelGO = new GameObject( true, "Viewmodel" );
 			viewModelGO.SetParent( Owner.GameObject, false );
 			viewModelGO.Tags.Add( TagsHelper.ViewModel );
-			viewModelGO.Flags |= GameObjectFlags.NotNetworked;
+			viewModelGO.NetworkMode = NetworkMode.Never;
 
 			ViewModelRenderer = viewModelGO.Components.Create<SkinnedModelRenderer>();
 			ViewModelRenderer.Model = ViewModel;

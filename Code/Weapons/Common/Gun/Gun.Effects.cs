@@ -54,7 +54,6 @@ public partial class Gun
 	[Rpc.Broadcast( NetFlags.Reliable | NetFlags.OwnerOnly )]
 	public virtual void HandleReloadEffects()
 	{
-		ViewModelRenderer?.Set( ReloadAnim, true );
 		Owner.BodyRenderer.Set( "b_reload", true );
 	}
 

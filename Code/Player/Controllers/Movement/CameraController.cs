@@ -1,5 +1,6 @@
 
 
+using Sandbox.Citizen;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using static Sandbox.CursorSettings;
@@ -30,9 +31,6 @@ public class CameraController : Component
 
 	private float fovSpeed = 5f;
 
-
-	TimeSince timeSinceShake;
-	float shakeSpeed;
 	private Vector3 CurShakePos { get; set; }
 	private Angles CurShakeRot { get; set; } 
 
@@ -40,6 +38,7 @@ public class CameraController : Component
 	protected override void OnAwake()
 	{
 		CurFOV = Preferences.FieldOfView;
+
 	}
 
 	protected override void OnUpdate()

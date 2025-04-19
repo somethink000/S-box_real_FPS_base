@@ -13,12 +13,24 @@ public enum AmmoType
 
 public partial class InventoryController : Component
 {
+	//TODO make all of this sync hosted
 	[RequireComponent] public Player ply { get; set; }
 	public List<Carriable> Weapons { get; set; } = new List<Carriable>( new Carriable[5] );
-
-	public Carriable Deployed { get; set; }
+	[Sync]public Carriable Deployed { get; set; }
 	public int Slot { get; set; }
 
+
+
+	protected override void OnStart()
+	{
+		base.OnStart();
+
+		if (IsProxy)
+		{
+			ply.BodyRenderer.SetBodyGroup( "chest", 0 );
+			ply.BodyRenderer.SetBodyGroup( "hands", 0 );
+		}
+	}
 
 	public bool HaveFreeSpace()
 		=> Weapons.IndexOf( null ) != -1;

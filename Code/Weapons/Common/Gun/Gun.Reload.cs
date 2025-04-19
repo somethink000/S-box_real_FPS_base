@@ -32,7 +32,7 @@ public partial class Gun
 			return;
 
 		IsReloading = true;
-
+		ViewModelRenderer?.Set( ReloadAnim, true );
 		HandleReloadEffects();
 	}
 	

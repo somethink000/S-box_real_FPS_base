@@ -96,10 +96,9 @@ public partial class Gun : Carriable, IUseAmmo
 		
 	}
 
-	[Rpc.Broadcast( NetFlags.Reliable | NetFlags.OwnerOnly )]
 	public override void Deploy( Player player )
 	{
-		
+
 		base.Deploy( player );
 		
 		if ( !IsProxy )
