@@ -44,7 +44,7 @@ public partial class Gun
 		ViewModelHandler = gvm;
 
 		//TODO What the fuck is that
-		gvm.Carriable = this;
+		gvm.Carry = this;
 		gvm.Weapon = this;
 
 		ViewModelHandler.ViewModelRenderer = ViewModelRenderer;

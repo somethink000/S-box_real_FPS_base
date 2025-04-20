@@ -66,7 +66,7 @@ public class CameraController : Component
 
 		// Set the current camera offset
 		var targetOffset = Vector3.Zero;
-		//if ( IsCrouching || IsSlide ) targetOffset += Vector3.Down * 32f;
+		if ( ply.MovementController.IsCrouching ) targetOffset += Vector3.Down * 32f;
 		EyeOffset = Vector3.Lerp( EyeOffset, targetOffset, Time.Delta * 10f );
 
 		// Set position of the camera

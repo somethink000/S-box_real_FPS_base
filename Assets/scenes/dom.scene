@@ -219,17 +219,6 @@
       "__PrefabVariables": {}
     },
     {
-      "__guid": "ea496a85-75c9-40e9-be74-2710de2eecad",
-      "Flags": 0,
-      "Name": "zombie",
-      "Position": "-240.5667,36.33444,11.99478",
-      "Rotation": "-0.000002235174,-0.000000692904,0.9886857,-0.1500021",
-      "Tags": "ignorenav",
-      "Enabled": true,
-      "__Prefab": "prefabs/npc/zombie.prefab",
-      "__PrefabVariables": {}
-    },
-    {
       "__guid": "07e99446-e6bc-4f96-841c-023036c37d7c",
       "Flags": 0,
       "Name": "awp",
@@ -740,6 +729,99 @@
       "Enabled": true,
       "__Prefab": "prefabs/weapons/testpistol.prefab",
       "__PrefabVariables": {}
+    },
+    {
+      "__guid": "e37dda5f-1de4-42a4-b2d3-9960c5088148",
+      "Flags": 0,
+      "Name": "zombiespawners",
+      "Position": "-247.1004,461.2957,362.9586",
+      "Enabled": true,
+      "Children": [
+        {
+          "__guid": "43c6ede7-790f-44b9-9859-cb90b45aea79",
+          "Flags": 0,
+          "Name": "spawner",
+          "Position": "-362.8996,-207.2957,-330.9586",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "GeneralGame.ZombieSpawner",
+              "__guid": "c5670588-709c-4cc2-9a99-cd8475e70028",
+              "Delay": 15,
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null,
+              "Target": {
+                "_type": "gameobject",
+                "go": "083aca3b-13f8-40c0-b6e7-c9832589cb3e"
+              },
+              "ZombiePrefab": {
+                "_type": "gameobject",
+                "prefab": "prefabs/npc/zombie.prefab"
+              }
+            }
+          ]
+        },
+        {
+          "__guid": "6622c6e7-6fd2-4b3d-a242-1fcf712e1c7e",
+          "Flags": 0,
+          "Name": "spawner",
+          "Position": "235.1004,-1753.296,-184.9586",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "GeneralGame.ZombieSpawner",
+              "__guid": "82f68101-4ff7-49b5-912f-b79a585b3f7a",
+              "Delay": 20,
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null,
+              "Target": {
+                "_type": "gameobject",
+                "go": "083aca3b-13f8-40c0-b6e7-c9832589cb3e"
+              },
+              "ZombiePrefab": {
+                "_type": "gameobject",
+                "prefab": "prefabs/npc/zombie.prefab"
+              }
+            }
+          ]
+        },
+        {
+          "__guid": "1aa440c4-1212-498d-8cd6-5307e5366a04",
+          "Flags": 0,
+          "Name": "spawner",
+          "Position": "803.1004,1756.704,-340.9586",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "GeneralGame.ZombieSpawner",
+              "__guid": "994a63d6-cfab-4da5-a430-edfdf4772320",
+              "Delay": 17,
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null,
+              "Target": {
+                "_type": "gameobject",
+                "go": "083aca3b-13f8-40c0-b6e7-c9832589cb3e"
+              },
+              "ZombiePrefab": {
+                "_type": "gameobject",
+                "prefab": "prefabs/npc/zombie.prefab"
+              }
+            }
+          ]
+        }
+      ]
     }
   ],
   "SceneProperties": {

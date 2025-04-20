@@ -110,7 +110,7 @@ public partial class Carriable : Component, IInteractable
 	protected virtual void SetupViewModel(GameObject viewModelGO )
 	{
 		ViewModelHandler = viewModelGO.Components.Create<ViewModel>();
-		ViewModelHandler.Carriable = this;
+		ViewModelHandler.Carry = this;
 		ViewModelHandler.ViewModelRenderer = ViewModelRenderer;
 		ViewModelHandler.Camera = Owner.Camera;
 	}

@@ -18,20 +18,12 @@ public partial class InventoryController : Component
 	//TODO make all of this sync hosted
 	public List<Carriable> Weapons { get; set; } = new List<Carriable>( new Carriable[5] );
 	[Sync]public Carriable Deployed { get; set; }
-
 	public int Slot { get; set; } = 0;
-
 
 
 	protected override void OnStart()
 	{
 		base.OnStart();
-
-		if (IsProxy)
-		{
-			ply.BodyRenderer.SetBodyGroup( "chest", 0 );
-			ply.BodyRenderer.SetBodyGroup( "hands", 0 );
-		}
 	}
 
 	public bool HaveFreeSpace()
@@ -111,32 +103,18 @@ public partial class InventoryController : Component
 	{
 		
 
-
+		//TODO Make it in SlotChanged() 
 		if ( Deployed != null )
 		{
-			foreach ( var animator in ply.Animators )
-			{
-				animator.HoldType = Deployed.HoldType;
-				animator.Handedness = Deployed.Hand;
-			}
 
-			if ( ply.IsFirstPerson && Deployed.ViewModel is not null && !IsProxy ) { 
-				ply.BodyRenderer.SetBodyGroup( "chest", 1 );
-				ply.BodyRenderer.SetBodyGroup( "hands", 1 );
-			}
+			ply.Animator.HoldType = Deployed.HoldType;
+			ply.Animator.Handedness = Deployed.Hand;
 		}
 		else
 		{
-			foreach ( var animator in ply.Animators )
-			{
-				animator.HoldType = CitizenAnimationHelper.HoldTypes.None;
-			}
+			
+			ply.Animator.HoldType = CitizenAnimationHelper.HoldTypes.None;
 
-			if ( ply.IsFirstPerson && !IsProxy )
-			{
-				ply.BodyRenderer.SetBodyGroup( "chest", 0 );
-				ply.BodyRenderer.SetBodyGroup( "hands", 0 );
-			}
 		}
 
 

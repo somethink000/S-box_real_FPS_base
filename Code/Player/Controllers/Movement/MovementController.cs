@@ -173,16 +173,14 @@ public class MovementController : Component
 
 		CharacterController.Punch( Vector3.Up * JumpForce );
 
-		foreach ( var animator in ply.Animators )
-		{
-			animator?.TriggerJump();
-		}
+
+		ply.Animator?.TriggerJump();
+		
 	}
 
 	void UpdateAnimations()
 	{
-		foreach ( var animator in ply.Animators )
-		{
+		CitizenAnimationHelper animator = ply.Animator;
 			animator.WithWishVelocity( WishVelocity );
 			animator.WithVelocity( CharacterController.Velocity );
 			animator.AimAngle = ply.CameraController.EyeAngles.ToRotation();
@@ -191,7 +189,6 @@ public class MovementController : Component
 			animator.MoveStyle = CitizenAnimationHelper.MoveStyles.Run;
 			animator.DuckLevel = IsCrouching ? 1 : 0;
 			animator.SpecialMove = IsSlide ? CitizenAnimationHelper.SpecialMoveStyle.Slide : CitizenAnimationHelper.SpecialMoveStyle.None;
-		}
 
 	}
 

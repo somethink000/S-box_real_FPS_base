@@ -16,19 +16,19 @@ public partial class GunViewModel : ViewModel
 	protected override void OnUpdate()
 	{
 
-		if ( ply == null || IsProxy ) return;
+		if ( player == null || IsProxy ) return;
 
 		var renderType = ShouldDraw ? ModelRenderer.ShadowRenderType.Off : ModelRenderer.ShadowRenderType.ShadowsOnly;
-		ViewModelRenderer.Enabled = ply.IsFirstPerson;
+		ViewModelRenderer.Enabled = player.IsFirstPerson;
 		ViewModelRenderer.RenderType = renderType;
 
 		if ( ViewModelHandsRenderer is not null )
 		{
-			ViewModelHandsRenderer.Enabled = ply.IsFirstPerson;
+			ViewModelHandsRenderer.Enabled = player.IsFirstPerson;
 			ViewModelHandsRenderer.RenderType = renderType;
 		}
 
-		if ( !ply.IsFirstPerson ) return;
+		if ( !player.IsFirstPerson ) return;
 
 
 		// For particles & lighting
@@ -60,8 +60,8 @@ public partial class GunViewModel : ViewModel
 		// I'm sure there's something already that does this for me, but I spend an hour
 		// searching through the wiki and a bunch of other garbage and couldn't find anything...
 		// So I'm doing it manually. Problem solved.
-		var eyeRot = ply.CameraController.EyeAngles.ToRotation();
-		localVel = new Vector3( eyeRot.Right.Dot( ply.MovementController.Velocity ), eyeRot.Forward.Dot( ply.MovementController.Velocity ), ply.MovementController.Velocity.z );
+		var eyeRot = player.CameraController.EyeAngles.ToRotation();
+		localVel = new Vector3( eyeRot.Right.Dot( player.MovementController.Velocity ), eyeRot.Forward.Dot( player.MovementController.Velocity ), player.MovementController.Velocity.z );
 
 		HandleIdleAnimation();
 		HandleWalkAnimation();
@@ -95,7 +95,7 @@ public partial class GunViewModel : ViewModel
 		targetVectorRot -= new Vector3( MathF.Cos( breatheTime / 5.0f ), MathF.Cos( breatheTime / 4.0f ), MathF.Cos( breatheTime / 7.0f ) );
 
 		// Crouching animation
-		if ( Input.Down( InputButtonHelper.Duck ) && ply.MovementController.IsOnGround )
+		if ( Input.Down( InputButtonHelper.Duck ) && player.MovementController.IsOnGround )
 			targetVectorPos += new Vector3( -1.0f, -1.0f, 0.5f );
 	}
 
@@ -103,17 +103,17 @@ public partial class GunViewModel : ViewModel
 	void HandleWalkAnimation()
 	{
 		var breatheTime = RealTime.Now * 16.0f;
-		var walkSpeed = new Vector3( ply.MovementController.Velocity.x, ply.MovementController.Velocity.y, 0.0f ).Length;
+		var walkSpeed = new Vector3( player.MovementController.Velocity.x, player.MovementController.Velocity.y, 0.0f ).Length;
 		var maxWalkSpeed = 200.0f;
 		var roll = 0.0f;
 		var yaw = 0.0f;
 
 		// Check if on the ground
-		if ( !ply.MovementController.IsOnGround )
+		if ( !player.MovementController.IsOnGround )
 			return;
 
 		// Check if sprinting
-		if ( ply.MovementController.IsRunning )
+		if ( player.MovementController.IsRunning )
 		{
 			breatheTime = RealTime.Now * 18.0f;
 			maxWalkSpeed = 100.0f;
@@ -150,7 +150,7 @@ public partial class GunViewModel : ViewModel
 		lastEyeRot = Rotation.Lerp( lastEyeRot, Camera.WorldRotation, swayspeed * RealTime.Delta );
 
 		// Calculate the difference between our current eye angles and old (lerped) eye angles
-		var angDif = ply.Camera.WorldRotation.Angles() - lastEyeRot.Angles();
+		var angDif = player.Camera.WorldRotation.Angles() - lastEyeRot.Angles();
 		angDif = new Angles( angDif.pitch, MathX.RadianToDegree( MathF.Atan2( MathF.Sin( MathX.DegreeToRadian( angDif.yaw ) ), MathF.Cos( MathX.DegreeToRadian( angDif.yaw ) ) ) ), 0 );
 
 		// Perform sway
@@ -202,7 +202,7 @@ public partial class GunViewModel : ViewModel
 	void HandleJumpAnimation()
 	{
 		// If we're not on the ground, reset the landing animation time
-		if ( !ply.MovementController.IsOnGround )
+		if ( !player.MovementController.IsOnGround )
 			landTime = RealTime.Now + 0.31f;
 
 		// Reset the timers once they elapse
@@ -236,7 +236,7 @@ public partial class GunViewModel : ViewModel
 				targetVectorRot += new Vector3( pt, yw, rl ) / 4.0f;
 				animSpeed = 20.0f;
 			}
-			else if ( !ply.MovementController.IsOnGround )
+			else if ( !player.MovementController.IsOnGround )
 			{
 				// Shaking while falling
 				var breatheTime = RealTime.Now * 30.0f;
