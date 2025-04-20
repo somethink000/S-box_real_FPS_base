@@ -212,7 +212,6 @@ public partial class Zombie : Component, IHealthComponent
 		
 		animationHelper.Target.Set( "b_attack", true );
 		Sound.Play( hitSounds, WorldPosition );
-		//GameObject.PlaySound( rageSounds );
 
 		var damage = new DamageInfo( Damage, GameObject, GameObject );
 	

@@ -52,7 +52,7 @@ public class HealthController : Component, IHealthComponent
 
 	public void OnDamage( in DamageInfo damage )
 	{
-		Log.Info( LifeState );
+		
 		if ( IsProxy || !IsAlive )
 			return;
 	

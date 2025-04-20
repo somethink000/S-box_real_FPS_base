@@ -121,41 +121,6 @@
           ]
         },
         {
-          "__guid": "fe8a8cd2-69f1-429d-8c60-b12897d811c8",
-          "Flags": 0,
-          "Name": "Envmap Probe",
-          "Enabled": true,
-          "Components": [
-            {
-              "__type": "Sandbox.EnvmapProbe",
-              "__guid": "f14a45dc-0277-49e3-aaa4-9109b75d381f",
-              "Bounds": {
-                "Mins": "-2690.107,-3537.003,-1000",
-                "Maxs": "2664.246,4174.461,2367.589"
-              },
-              "DelayBetweenUpdates": 0.1,
-              "Feathering": 0.02,
-              "FrameInterval": 5,
-              "MaxDistance": 512,
-              "MultiBounce": false,
-              "OnComponentDestroy": null,
-              "OnComponentDisabled": null,
-              "OnComponentEnabled": null,
-              "OnComponentFixedUpdate": null,
-              "OnComponentStart": null,
-              "OnComponentUpdate": null,
-              "Projection": "Box",
-              "RenderDynamically": false,
-              "Resolution": "Small",
-              "Texture": "textures/cubemaps/default2.vtex",
-              "TintColor": "1,1,1,1",
-              "UpdateStrategy": "OnEnabled",
-              "ZFar": 4096,
-              "ZNear": 16
-            }
-          ]
-        },
-        {
           "__guid": "766e4c5e-ffa3-477f-b931-60a91e78dd43",
           "Flags": 0,
           "Name": "Gradient Fog",
@@ -747,7 +712,7 @@
             {
               "__type": "GeneralGame.ZombieSpawner",
               "__guid": "c5670588-709c-4cc2-9a99-cd8475e70028",
-              "Delay": 15,
+              "Delay": 50,
               "OnComponentDestroy": null,
               "OnComponentDisabled": null,
               "OnComponentEnabled": null,
@@ -803,7 +768,7 @@
             {
               "__type": "GeneralGame.ZombieSpawner",
               "__guid": "994a63d6-cfab-4da5-a430-edfdf4772320",
-              "Delay": 17,
+              "Delay": 80,
               "OnComponentDestroy": null,
               "OnComponentDisabled": null,
               "OnComponentEnabled": null,
