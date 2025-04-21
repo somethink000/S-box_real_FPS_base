@@ -1,0 +1,19 @@
+{
+  "publish": {
+    "Enabled": false,
+    "ProjectConfig": {
+      "Title": "lamp_zzzz1",
+      "Type": "sound",
+      "Org": "local",
+      "Ident": "lamp_zzzz1",
+      "Schema": 0,
+      "IncludeSourceFiles": true,
+      "Resources": null,
+      "PackageReferences": null,
+      "EditorReferences": null,
+      "Metadata": {
+        "SingleAssetSource": "sounds/ambient/lamp_zzzz1.sound"
+      }
+    }
+  }
+}

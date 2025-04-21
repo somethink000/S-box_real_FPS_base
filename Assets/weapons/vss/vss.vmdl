@@ -64,7 +64,7 @@
 					},
 					{
 						_class = "Attachment"
-						name = "ejection_point"
+						name = "eject"
 						parent_bone = "chandle"
 						relative_origin = [ 0.0, 0.0, 0.0 ]
 						relative_angles = [ -0.0, -179.999908, 0.0 ]
@@ -96,6 +96,7 @@
 					},
 					{
 						_class = "RenderMeshFile"
+						name = "brl"
 						filename = "weapons/vss/compile/brl def.smd"
 						import_translation = [ 0.0, 0.0, 0.0 ]
 						import_rotation = [ 0.0, 0.0, 0.0 ]
@@ -112,6 +113,7 @@
 					},
 					{
 						_class = "RenderMeshFile"
+						name = "recie"
 						filename = "weapons/vss/compile/reciever.smd"
 						import_translation = [ 0.0, 0.0, 0.0 ]
 						import_rotation = [ 0.0, 0.0, 0.0 ]
@@ -128,6 +130,7 @@
 					},
 					{
 						_class = "RenderMeshFile"
+						name = "stock"
 						filename = "weapons/vss/compile/stock fold.smd"
 						import_translation = [ 0.0, 0.0, 0.0 ]
 						import_rotation = [ 0.0, 0.0, 0.0 ]

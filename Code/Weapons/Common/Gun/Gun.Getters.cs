@@ -23,7 +23,7 @@ public partial class Gun
 	public virtual Transform? GetMuzzleTransform()
 	{
 		var effectRenderer = GetEffectRenderer();
-		var effectAttachment = "muzzle";
+		var effectAttachment = muzzleBone;
 
 
 		return effectRenderer?.GetAttachment( effectAttachment );

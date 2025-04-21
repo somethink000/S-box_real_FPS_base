@@ -1,0 +1,23 @@
+{
+  "MasterVolume": "0.1",
+  "LoopedSounds": [
+    {
+      "SoundFile": "sounds/ambient/crucial_cricket_amb_02.vsnd",
+      "Volume": "0.2"
+    },
+    {
+      "SoundFile": "sounds/ambient/sea_breeze.vsnd",
+      "Volume": "0.09"
+    }
+  ],
+  "StingSounds": [
+    {
+      "SoundFile": "sounds/ambient/wind_leaves_mild_gust_1.sound",
+      "InstanceCount": 1,
+      "RepeatTime": "1",
+      "Distance": "1000"
+    }
+  ],
+  "__references": [],
+  "__version": 0
+}

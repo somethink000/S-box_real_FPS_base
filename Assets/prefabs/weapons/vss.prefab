@@ -4,6 +4,7 @@
     "Flags": 0,
     "Name": "vss",
     "Tags": "weapon",
+    "Enabled": true,
     "NetworkMode": 1,
     "Components": [
       {
@@ -23,6 +24,12 @@
         "ClipSize": 30,
         "Damage": 15,
         "DryShootSound": "weapons/sounds/mp7/dryfire.sound",
+        "EjectShellEmiter": {
+          "_type": "component",
+          "component_id": "a07f46b7-bac0-43f8-8552-5d850ed0cbe4",
+          "go": "361350f9-1aa0-4178-a497-126f274229c5",
+          "component_type": "ParticleEffect"
+        },
         "FireMod": "auto",
         "Force": 0.1,
         "Hand": "Right",
@@ -56,6 +63,13 @@
           },
           "compiled": "textures/generated/imagefile/b4a545c90a991844.vtex"
         },
+        "MuzzleFlashEmiter": {
+          "_type": "component",
+          "component_id": "24383fff-ff1b-472a-b3ed-99efbc30a0a1",
+          "go": "cf30f233-8325-4de2-85cf-e6f0bd26f2b1",
+          "component_type": "ParticleEffect"
+        },
+        "MuzzleSmokeEmiter": null,
         "Name": "VSS",
         "OnComponentDestroy": null,
         "OnComponentDisabled": null,
@@ -165,7 +179,26 @@
         "UseAnimGraph": true
       }
     ],
-    "Children": [],
+    "Children": [
+      {
+        "__guid": "361350f9-1aa0-4178-a497-126f274229c5",
+        "Flags": 0,
+        "Name": "shellparticle",
+        "Tags": "particles",
+        "Enabled": true,
+        "__Prefab": "prefabs/weapons/effects/shellparticle.prefab",
+        "__PrefabVariables": {}
+      },
+      {
+        "__guid": "cf30f233-8325-4de2-85cf-e6f0bd26f2b1",
+        "Flags": 0,
+        "Name": "muzzleflash",
+        "Tags": "particles",
+        "Enabled": true,
+        "__Prefab": "prefabs/weapons/effects/muzzleflash.prefab",
+        "__PrefabVariables": {}
+      }
+    ],
     "__variables": [],
     "__properties": {
       "FixedUpdateFrequency": 50,

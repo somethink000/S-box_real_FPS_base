@@ -2,14 +2,23 @@
 using Sandbox.Citizen;
 using System.Collections.Generic;
 using System.Linq;
+using System.Numerics;
 using static Sandbox.Citizen.CitizenAnimationHelper;
+using static Sandbox.PhysicsContact;
 using static Sandbox.SerializedProperty;
 
 namespace GeneralGame;
 
 public partial class Gun
 {
-
+	//[Property] public GameObject MuzzleFlashPrefab { get; set; }
+	//[Property] public GameObject MuzzleSmokePrefab { get; set; }
+	//[Property] public PrefabFile EjectShellPrefab { get; set; }
+	[Property] public ParticleEffect MuzzleFlashEmiter { get; set; }
+	[Property] public ParticleEffect MuzzleSmokeEmiter { get; set; }
+	[Property] public ParticleEffect EjectShellEmiter { get; set; }
+	string muzzleBone { get; set; } = "muzzle";
+	string ejectBone { get; set; } = "eject";
 
 	[Sync] public bool IsReloading { get; set; }
 	[Sync] public bool IsAiming { get; set; }
@@ -116,26 +125,31 @@ public partial class Gun
 		};
 	}
 
+	void SetupEffects()
+	{
+		//Log.Info( EjectShellPrefab );
+		//var ej = SceneUtility.GetPrefabScene( EjectShellPrefab ).Clone( this.WorldTransform );
+		//ej.NetworkSpawn();
+		//EjectShellEmiter = ej.Components.Get<ParticleEffect>();
 
-	void ParticleToMuzzlePos( SceneParticles particles )
+		//var ej = EjectShellPrefab.Clone( this.WorldTransform );
+		//ej.NetworkSpawn();
+		//EjectShellEmiter = ej.Components.Get<ParticleEffect>();
+	}
+
+	void ShootEffect()
 	{
 		var transform = GetMuzzleTransform();
 
-		if ( transform.HasValue )
-		{
-			// Apply velocity to prevent muzzle shift when moving fast
-			particles?.SetControlPoint( 0, transform.Value.Position + Owner.MovementController.Velocity * 0.03f );
-			particles?.SetControlPoint( 0, transform.Value.Rotation );
-		}
-		else
-		{
-			particles?.Delete();
-		}
+		Particle particle = MuzzleFlashEmiter.Emit( transform.Value.Position, 1 );
+
+		//particle.Velocity += 10;
 	}
 
 	/// <summary>Create a bullet impact effect</summary>
 	public virtual void CreateBulletImpact( SceneTraceResult tr )
 	{
+
 		// Sound
 		tr.Surface.PlayCollisionSound( tr.HitPosition );
 

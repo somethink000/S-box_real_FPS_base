@@ -1,0 +1,18 @@
+{
+  "Images": null,
+  "Sequences": [
+    {
+      "Source": "particles/muzzleflash.png",
+      "IsLooping": true,
+      "FlipBook": true,
+      "Columns": 5,
+      "Rows": 3,
+      "Frames": 6
+    }
+  ],
+  "InputColorSpace": "Linear",
+  "OutputFormat": "DXT5",
+  "OutputColorSpace": "Linear",
+  "OutputMipAlgorithm": "None",
+  "OutputTypeString": "2D"
+}

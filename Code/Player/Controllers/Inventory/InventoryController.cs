@@ -24,6 +24,18 @@ public partial class InventoryController : Component
 	protected override void OnStart()
 	{
 		base.OnStart();
+		ply.InventoryController.Give( AmmoType.Pistol, 500 );
+		ply.InventoryController.Give( AmmoType.Rifle, 1000 );
+
+		foreach ( var weapon in Weapons )
+		{
+			weapon.Components.Get<ModelCollider>( FindMode.InSelf ).Enabled = false;
+			weapon.Components.Get<Rigidbody>( FindMode.InSelf ).Enabled = false;
+
+			weapon.GameObject.Enabled = false;
+		}
+		
+
 	}
 
 	public bool HaveFreeSpace()

@@ -22,7 +22,7 @@ public partial class Gun : Carriable, IUseAmmo
 	protected override void OnStart()
 	{
 		base.OnStart();
-
+		SetupEffects();
 		if ( Clip <= 0 ) IsEmpty = true;
 	}
 
@@ -103,7 +103,7 @@ public partial class Gun : Carriable, IUseAmmo
 	{
 
 		base.Deploy( player );
-		player.InventoryController.Give( AmmoType, 100 );
+
 		if ( !IsProxy )
 			ViewModelRenderer?.Set( IsReady ? DeployAnim : ReadyAnim, true );
 	}

@@ -179,7 +179,6 @@
       "Name": "glock (1)",
       "Position": "457.2368,1084.072,108.0614",
       "Rotation": "-0.5880184,-0.2053349,0.157559,0.7663205",
-      "Enabled": true,
       "__Prefab": "prefabs/weapons/beretta.prefab",
       "__PrefabVariables": {}
     },
@@ -190,7 +189,6 @@
       "Position": "406.3431,1063.362,95.27216",
       "Rotation": "-0.6830127,-0.2241439,0.1294095,0.6830128",
       "Tags": "weapon",
-      "Enabled": true,
       "__Prefab": "prefabs/weapons/awp.prefab",
       "__PrefabVariables": {}
     },
@@ -201,7 +199,6 @@
       "Position": "437.18,1103.512,99.64676",
       "Rotation": "-0.5880184,-0.2053349,0.157559,0.7663205",
       "Tags": "weapon",
-      "Enabled": true,
       "__Prefab": "prefabs/weapons/mp7.prefab",
       "__PrefabVariables": {}
     },
@@ -212,7 +209,6 @@
       "Position": "461.3911,1061.063,107.1296",
       "Rotation": "-0.5880184,-0.2053349,0.157559,0.7663205",
       "Tags": "weapon",
-      "Enabled": true,
       "__Prefab": "prefabs/weapons/reming870.prefab",
       "__PrefabVariables": {}
     },
@@ -223,323 +219,8 @@
       "Position": "401.2176,1035.606,92.65573",
       "Rotation": "-0.6830126,-0.2241438,0.1294095,0.6830127",
       "Tags": "weapon",
-      "Enabled": true,
       "__Prefab": "prefabs/weapons/vss.prefab",
       "__PrefabVariables": {}
-    },
-    {
-      "__guid": "98741540-a03d-4b43-b7a1-7dbafc748772",
-      "Flags": 0,
-      "Name": "Emitter",
-      "Position": "532.2277,161.0502,63.11144",
-      "Tags": "particles",
-      "Enabled": true,
-      "Components": [
-        {
-          "__type": "Sandbox.ParticleEffect",
-          "__guid": "9d89de0f-cafa-4e46-bcfe-ae10dbca2b7c",
-          "__version": 1,
-          "Alpha": 1,
-          "ApplyAlpha": true,
-          "ApplyColor": true,
-          "ApplyRotation": true,
-          "ApplyShape": true,
-          "Bounce": {
-            "Type": "Range",
-            "Evaluation": "Particle",
-            "CurveA": [
-              {
-                "x": 0.5,
-                "y": 0.5,
-                "in": 0,
-                "out": 0,
-                "mode": "Mirrored"
-              }
-            ],
-            "CurveB": [
-              {
-                "x": 0.5,
-                "y": 0.5,
-                "in": 0,
-                "out": 0,
-                "mode": "Mirrored"
-              }
-            ],
-            "Constants": "0,0.05,0,0"
-          },
-          "Brightness": 1,
-          "Bumpiness": 0,
-          "Collision": true,
-          "CollisionIgnore": "player",
-          "CollisionRadius": 1,
-          "Damping": {
-            "Type": "Range",
-            "Evaluation": "Particle",
-            "CurveA": [
-              {
-                "x": 0.5,
-                "y": 0.5,
-                "in": 0,
-                "out": 0,
-                "mode": "Mirrored"
-              }
-            ],
-            "CurveB": [
-              {
-                "x": 0.5,
-                "y": 0.5,
-                "in": 0,
-                "out": 0,
-                "mode": "Mirrored"
-              }
-            ],
-            "Constants": "0.2,0.3,0,0"
-          },
-          "DieOnCollisionChance": 0,
-          "Force": true,
-          "ForceDirection": "0,0,-1",
-          "ForceScale": 900,
-          "ForceSpace": "World",
-          "Friction": 2.0000002,
-          "Gradient": {
-            "Type": "Range",
-            "Evaluation": "Particle",
-            "GradientA": {
-              "blend": "Linear",
-              "color": [
-                {
-                  "t": 0.5,
-                  "c": "1,1,1,1"
-                }
-              ],
-              "alpha": []
-            },
-            "GradientB": {
-              "blend": "Linear",
-              "color": [
-                {
-                  "t": 0.5,
-                  "c": "1,1,1,1"
-                }
-              ],
-              "alpha": []
-            },
-            "ConstantA": "1,1,1,1",
-            "ConstantB": "1,1,1,1"
-          },
-          "Lifetime": {
-            "Type": "Range",
-            "Evaluation": "Particle",
-            "CurveA": [
-              {
-                "x": 0.5,
-                "y": 0.5,
-                "in": 0,
-                "out": 0,
-                "mode": "Mirrored"
-              }
-            ],
-            "CurveB": [
-              {
-                "x": 0.5,
-                "y": 0.5,
-                "in": 0,
-                "out": 0,
-                "mode": "Mirrored"
-              }
-            ],
-            "Constants": "3,5,0,0"
-          },
-          "MaxParticles": 15,
-          "OnComponentDestroy": null,
-          "OnComponentDisabled": null,
-          "OnComponentEnabled": null,
-          "OnComponentFixedUpdate": null,
-          "OnComponentStart": null,
-          "OnComponentUpdate": null,
-          "OnParticleCreated": null,
-          "OnParticleDestroyed": null,
-          "OrbitalForce": {
-            "X": 0,
-            "Y": 0,
-            "Z": 0
-          },
-          "OrbitalPull": 0,
-          "PerParticleTimeScale": 1,
-          "Pitch": {
-            "Type": "Range",
-            "Evaluation": "Particle",
-            "CurveA": [
-              {
-                "x": 0.5,
-                "y": 0.5,
-                "in": 0,
-                "out": 0,
-                "mode": "Mirrored"
-              }
-            ],
-            "CurveB": [
-              {
-                "x": 0.5,
-                "y": 0.5,
-                "in": 0,
-                "out": 0,
-                "mode": "Mirrored"
-              }
-            ],
-            "Constants": "0,360,0,0"
-          },
-          "PreWarm": 0,
-          "PushStrength": 0,
-          "Roll": {
-            "Type": "Range",
-            "Evaluation": "Particle",
-            "CurveA": [
-              {
-                "x": 0.5,
-                "y": 0.5,
-                "in": 0,
-                "out": 0,
-                "mode": "Mirrored"
-              }
-            ],
-            "CurveB": [
-              {
-                "x": 0.5,
-                "y": 0.5,
-                "in": 0,
-                "out": 0,
-                "mode": "Mirrored"
-              }
-            ],
-            "Constants": "0,360,0,0"
-          },
-          "Scale": 1,
-          "SequenceId": 0,
-          "SequenceSpeed": 1,
-          "SequenceTime": 1,
-          "SheetSequence": false,
-          "Space": "World",
-          "StartDelay": 0,
-          "StartVelocity": {
-            "Type": "Range",
-            "Evaluation": "Particle",
-            "CurveA": [
-              {
-                "x": 0.5,
-                "y": 0.5,
-                "in": 0,
-                "out": 0,
-                "mode": "Mirrored"
-              }
-            ],
-            "CurveB": [
-              {
-                "x": 0.5,
-                "y": 0.5,
-                "in": 0,
-                "out": 0,
-                "mode": "Mirrored"
-              }
-            ],
-            "Constants": "100,0,0,0"
-          },
-          "Stretch": {
-            "Type": "Range",
-            "Evaluation": "Particle",
-            "CurveA": [
-              {
-                "x": 0.5,
-                "y": 0.5,
-                "in": 0,
-                "out": 0,
-                "mode": "Mirrored"
-              }
-            ],
-            "CurveB": [
-              {
-                "x": 0.5,
-                "y": 0.5,
-                "in": 0,
-                "out": 0,
-                "mode": "Mirrored"
-              }
-            ],
-            "Constants": "0,0,0,0"
-          },
-          "TimeScale": 1,
-          "Tint": "1,1,1,1",
-          "Yaw": {
-            "Type": "Range",
-            "Evaluation": "Particle",
-            "CurveA": [
-              {
-                "x": 0.5,
-                "y": 0.5,
-                "in": 0,
-                "out": 0,
-                "mode": "Mirrored"
-              }
-            ],
-            "CurveB": [
-              {
-                "x": 0.5,
-                "y": 0.5,
-                "in": 0,
-                "out": 0,
-                "mode": "Mirrored"
-              }
-            ],
-            "Constants": "0,360,0,0"
-          }
-        },
-        {
-          "__type": "Sandbox.ParticleBoxEmitter",
-          "__guid": "83b57eb3-402b-496e-b292-2ecf0ca6b1e7",
-          "Burst": 1,
-          "Delay": 1,
-          "DestroyOnEnd": false,
-          "Duration": 1,
-          "Loop": true,
-          "OnComponentDestroy": null,
-          "OnComponentDisabled": null,
-          "OnComponentEnabled": null,
-          "OnComponentFixedUpdate": null,
-          "OnComponentStart": null,
-          "OnComponentUpdate": null,
-          "OnEdge": false,
-          "Rate": 0,
-          "RateOverDistance": 0,
-          "Size": "1,1,1"
-        },
-        {
-          "__type": "Sandbox.ParticleModelRenderer",
-          "__guid": "01ba0d03-6679-414e-96fb-1f23545dca6c",
-          "__version": 1,
-          "CastShadows": true,
-          "Choices": [
-            {
-              "Model": "weapons/shells/9mm.vmdl",
-              "MaterialGroup": null,
-              "BodyGroups": 18446744073709551615
-            }
-          ],
-          "MaterialOverride": null,
-          "OnComponentDestroy": null,
-          "OnComponentDisabled": null,
-          "OnComponentEnabled": null,
-          "OnComponentFixedUpdate": null,
-          "OnComponentStart": null,
-          "OnComponentUpdate": null,
-          "RenderOptions": {
-            "GameLayer": true,
-            "OverlayLayer": false,
-            "BloomLayer": false,
-            "AfterUILayer": false
-          },
-          "Scale": 5.7001376
-        }
-      ]
     },
     {
       "__guid": "9267a89c-c938-4490-9454-238a092a09fd",
@@ -691,7 +372,6 @@
       "Flags": 0,
       "Name": "testpistol",
       "Position": "393.9999,965.9999,42",
-      "Enabled": true,
       "__Prefab": "prefabs/weapons/testpistol.prefab",
       "__PrefabVariables": {}
     },
@@ -712,6 +392,36 @@
             {
               "__type": "GeneralGame.ZombieSpawner",
               "__guid": "c5670588-709c-4cc2-9a99-cd8475e70028",
+              "ActiveState": true,
+              "Delay": 50,
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null,
+              "Target": {
+                "_type": "gameobject",
+                "go": "083aca3b-13f8-40c0-b6e7-c9832589cb3e"
+              },
+              "ZombiePrefab": {
+                "_type": "gameobject",
+                "prefab": "prefabs/npc/zombie.prefab"
+              }
+            }
+          ]
+        },
+        {
+          "__guid": "5fed4441-8ae6-4a6f-b923-a0b465ea1601",
+          "Flags": 0,
+          "Name": "spawner",
+          "Position": "747.1004,1622.704,-318.9586",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "GeneralGame.ZombieSpawner",
+              "__guid": "fc02e4b1-737b-40ac-b605-a0cc023f65f6",
+              "ActiveState": true,
               "Delay": 50,
               "OnComponentDestroy": null,
               "OnComponentDisabled": null,
@@ -740,6 +450,7 @@
             {
               "__type": "GeneralGame.ZombieSpawner",
               "__guid": "82f68101-4ff7-49b5-912f-b79a585b3f7a",
+              "ActiveState": true,
               "Delay": 20,
               "OnComponentDestroy": null,
               "OnComponentDisabled": null,
@@ -757,34 +468,96 @@
               }
             }
           ]
-        },
+        }
+      ]
+    },
+    {
+      "__guid": "5a6bb703-649d-4fb6-8906-209df3b09834",
+      "Flags": 0,
+      "Name": "Soundscape",
+      "Position": "222,1382,168",
+      "Scale": "1,1,0.4645154",
+      "Enabled": true,
+      "Components": [
         {
-          "__guid": "1aa440c4-1212-498d-8cd6-5307e5366a04",
-          "Flags": 0,
-          "Name": "spawner",
-          "Position": "803.1004,1756.704,-340.9586",
-          "Enabled": true,
-          "Components": [
-            {
-              "__type": "GeneralGame.ZombieSpawner",
-              "__guid": "994a63d6-cfab-4da5-a430-edfdf4772320",
-              "Delay": 80,
-              "OnComponentDestroy": null,
-              "OnComponentDisabled": null,
-              "OnComponentEnabled": null,
-              "OnComponentFixedUpdate": null,
-              "OnComponentStart": null,
-              "OnComponentUpdate": null,
-              "Target": {
-                "_type": "gameobject",
-                "go": "083aca3b-13f8-40c0-b6e7-c9832589cb3e"
-              },
-              "ZombiePrefab": {
-                "_type": "gameobject",
-                "prefab": "prefabs/npc/zombie.prefab"
-              }
-            }
-          ]
+          "__type": "Sandbox.SoundscapeTrigger",
+          "__guid": "206d035f-4065-4119-b906-2c6268d87b75",
+          "BoxSize": "50,50,50",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "Radius": 512,
+          "Soundscape": "sounds/ambient/construct_outside.sndscape",
+          "StayActiveOnExit": true,
+          "TargetMixer": {
+            "Name": "unknown",
+            "Id": "00000000-0000-0000-0000-000000000000"
+          },
+          "Type": "Sphere",
+          "Volume": 1
+        }
+      ]
+    },
+    {
+      "__guid": "f810bd84-ed89-4fd2-87d7-4f4029789210",
+      "Flags": 0,
+      "Name": "Soundscape (2)",
+      "Position": "738,652,168.0001",
+      "Scale": "1,1,0.4645154",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Sandbox.SoundscapeTrigger",
+          "__guid": "5c06d478-c3ca-4803-9e07-ecc755cf1cc8",
+          "BoxSize": "50,50,50",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "Radius": 512,
+          "Soundscape": "sounds/ambient/construct_inside.sndscape",
+          "StayActiveOnExit": true,
+          "TargetMixer": {
+            "Name": "unknown",
+            "Id": "00000000-0000-0000-0000-000000000000"
+          },
+          "Type": "Sphere",
+          "Volume": 1
+        }
+      ]
+    },
+    {
+      "__guid": "6f1d41ad-aedd-4851-b3a8-746a287664cb",
+      "Flags": 0,
+      "Name": "Soundscape (1)",
+      "Position": "-472,212,168",
+      "Scale": "2.250409,2.250409,0.6066976",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Sandbox.SoundscapeTrigger",
+          "__guid": "9bcf0cea-121b-4861-991a-c4938716db07",
+          "BoxSize": "50,50,50",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "Radius": 512,
+          "Soundscape": "sounds/ambient/construct_outside.sndscape",
+          "StayActiveOnExit": true,
+          "TargetMixer": {
+            "Name": "unknown",
+            "Id": "00000000-0000-0000-0000-000000000000"
+          },
+          "Type": "Sphere",
+          "Volume": 1
         }
       ]
     }

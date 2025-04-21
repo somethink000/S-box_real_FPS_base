@@ -8,7 +8,7 @@ public sealed class ZombieSpawner : Component
 	[Property] public GameObject Target { get; set; }
 	[Property] public float Delay { get; set; }
 
-	private bool ActiveState = true;
+	[Property] public bool ActiveState = false;
 
 
 	protected override void OnStart()

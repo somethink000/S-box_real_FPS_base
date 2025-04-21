@@ -19,6 +19,7 @@ public enum FiringType
 
 public partial class Gun
 {
+	
 	[Property, Group( "Shooting" )] public int Bullets { get; set; } = 1;
 	[Property, Group( "Shooting" )] public int ClipSize { get; set; } = 10;
 	[Property, Group( "Shooting" )] public float Damage { get; set; } = 5;
@@ -89,7 +90,7 @@ public partial class Gun
 
 
 		ViewModelRenderer.Set( ShootAnim, true );
-
+		
 		// Sound
 		if ( ShootSound is not null )
 			PlaySound( ShootSound.ResourceId );
@@ -125,6 +126,7 @@ public partial class Gun
 	public virtual void ShootBullet( Vector3 spreadOffset )
 	{
 		BulletType.Shoot( this, spreadOffset );
+		ShootEffect();
 	}
 
 

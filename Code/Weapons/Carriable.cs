@@ -29,7 +29,7 @@ public partial class Carriable : Component, IInteractable
 	public SkinnedModelRenderer ViewModelHandsRenderer { get; private set; }
 
 	public bool CanSeeViewModel => !IsProxy && Owner.IsFirstPerson;
-	public Player Owner { get; set; }
+	[Sync] public Player Owner { get; set; }
 	public virtual List<Interaction> Interactions { get; set; } = new List<Interaction>();
 
 	public bool IsRunning => Owner != null && Owner.MovementController.IsRunning && Owner.MovementController.IsOnGround && Owner.MovementController.Velocity.Length >= 200;
@@ -158,16 +158,6 @@ public partial class Carriable : Component, IInteractable
 
 			ViewModelHandler.ViewModelHandsRenderer = ViewModelHandsRenderer;
 
-			//TODO Sbox is so fucked up...
-			//
-			//This is viewmodel fix btw, hope im find out how to avoid this
-			//{
-				var gameObject = Scene.CreateObject();
-			//gameObject.SetParent( GameObject, false );
-			gameObject.Name = "FuckedViewModelFix";
-				gameObject.WorldPosition = WorldPosition;
-				gameObject.Components.Create<FuckedViewModelFix>();
-			//}
 
 			SetupAnimEvents();
 		}
