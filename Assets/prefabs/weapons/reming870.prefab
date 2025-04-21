@@ -23,6 +23,12 @@
         "ClipSize": 6,
         "Damage": 14,
         "DryShootSound": "weapons/sounds/870/dryfire.sound",
+        "EjectShellEmiter": {
+          "_type": "component",
+          "component_id": "ac6b9054-4579-4f80-b0d9-8e8640220911",
+          "go": "2320a194-83aa-4c58-a4cb-b1af8a3b75e2",
+          "component_type": "ParticleEffect"
+        },
         "FireMod": "semi",
         "Force": 0.1,
         "Hand": "Both",
@@ -56,6 +62,13 @@
           },
           "compiled": "textures/generated/imagefile/27230bbc57349e41.vtex"
         },
+        "MuzzleFlashEmiter": {
+          "_type": "component",
+          "component_id": "2e3de7d2-f24f-41d8-b449-70dfed692dd7",
+          "go": "c3708445-5100-45f4-923b-5d60e937d907",
+          "component_type": "ParticleEffect"
+        },
+        "MuzzleSmokeEmiter": null,
         "Name": "Remington 870",
         "OnComponentDestroy": null,
         "OnComponentDisabled": null,
@@ -165,7 +178,26 @@
         "UseAnimGraph": true
       }
     ],
-    "Children": [],
+    "Children": [
+      {
+        "__guid": "2320a194-83aa-4c58-a4cb-b1af8a3b75e2",
+        "Flags": 0,
+        "Name": "shellparticle",
+        "Tags": "particles",
+        "Enabled": true,
+        "__Prefab": "prefabs/weapons/effects/shellparticle.prefab",
+        "__PrefabVariables": {}
+      },
+      {
+        "__guid": "c3708445-5100-45f4-923b-5d60e937d907",
+        "Flags": 0,
+        "Name": "muzzleflash",
+        "Tags": "particles",
+        "Enabled": true,
+        "__Prefab": "prefabs/weapons/effects/muzzleflash.prefab",
+        "__PrefabVariables": {}
+      }
+    ],
     "__variables": [],
     "__properties": {
       "FixedUpdateFrequency": 50,

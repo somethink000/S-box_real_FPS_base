@@ -40,8 +40,8 @@ public partial class Zombie : Component, IHealthComponent
 	public float AttackRange { get; set; } = 80f;
 	public LifeState LifeState { get; private set; } = LifeState.Alive;
 	public float Health { get; private set; } = 100f;
-	public GameObject TargetObject { get; private set; } = null;
-	public GameObject TargetPrimaryObject { get; set; } = null;
+	[Sync( SyncFlags.FromHost )] public GameObject TargetObject { get; private set; } = null;
+	[Sync( SyncFlags.FromHost )] public GameObject TargetPrimaryObject { get; set; } = null;
 	public bool IsAlive => Health > 0;
 	private bool IsRunner { get; set; }
 	public bool IsRagdolled => RagdollPhysics.Enabled;

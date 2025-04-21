@@ -17,23 +17,23 @@
         "AimSpeed": 1,
         "AmmoType": "Pistol",
         "AnimSpeed": 1,
-        "BarrelSmokeParticle": "particles/swb/muzzle/smoke.vpcf",
         "BoltBack": false,
-        "BoltBackTime": 1,
         "BulletCocking": true,
-        "BulletEjectParticle": "particles/swb/bullet_hulls/9mm.vpcf",
         "Bullets": 1,
         "ClipSize": 20,
         "Damage": 8,
-        "DeployTime": 0.702,
         "DryShootSound": "weapons/sounds/mp7/dryfire.sound",
-        "EmptyReloadTime": 1.77,
+        "EjectShellEmiter": {
+          "_type": "component",
+          "component_id": "f279b942-6dce-4b25-a14e-dab4bd1ab3e6",
+          "go": "4770d8f8-aaa3-4624-962e-e992c9e21d11",
+          "component_type": "ParticleEffect"
+        },
         "FireMod": "auto",
         "Force": 0.1,
         "Hand": "Both",
         "HitFlinch": 1.25,
         "HoldType": "Rifle",
-        "HolsterTime": 0.47,
         "Icon": {
           "$compiler": "texture",
           "$source": "imagefile",
@@ -62,7 +62,13 @@
           },
           "compiled": "textures/generated/imagefile/b8f9e1198c779806.vtex"
         },
-        "MuzzleFlashParticle": "particles/swb/muzzle/sparks.vpcf",
+        "MuzzleFlashEmiter": {
+          "_type": "component",
+          "component_id": "8f8d8fa4-084d-4dd7-8c3d-f2e9f23aa057",
+          "go": "398e137d-b19f-49c9-b769-d6915a72ad4e",
+          "component_type": "ParticleEffect"
+        },
+        "MuzzleSmokeEmiter": null,
         "Name": "MP7",
         "OnComponentDestroy": null,
         "OnComponentDisabled": null,
@@ -71,7 +77,6 @@
         "OnComponentStart": null,
         "OnComponentUpdate": null,
         "Recoil": 0.1,
-        "ReloadTime": 1.636,
         "RPM": 900,
         "RunAnimData": {
           "Angle": "25.51,21.44,-0.7",
@@ -173,7 +178,26 @@
         "UseAnimGraph": true
       }
     ],
-    "Children": [],
+    "Children": [
+      {
+        "__guid": "398e137d-b19f-49c9-b769-d6915a72ad4e",
+        "Flags": 0,
+        "Name": "muzzleflash",
+        "Tags": "particles",
+        "Enabled": true,
+        "__Prefab": "prefabs/weapons/effects/muzzleflash.prefab",
+        "__PrefabVariables": {}
+      },
+      {
+        "__guid": "4770d8f8-aaa3-4624-962e-e992c9e21d11",
+        "Flags": 0,
+        "Name": "shellparticle",
+        "Tags": "particles",
+        "Enabled": true,
+        "__Prefab": "prefabs/weapons/effects/shellparticle.prefab",
+        "__PrefabVariables": {}
+      }
+    ],
     "__variables": [],
     "__properties": {
       "FixedUpdateFrequency": 50,

@@ -23,6 +23,12 @@
         "ClipSize": 8,
         "Damage": 100,
         "DryShootSound": "weapons/sounds/awp/dryfire.sound",
+        "EjectShellEmiter": {
+          "_type": "component",
+          "component_id": "39f96df9-90ec-4292-aca8-cde473b2c624",
+          "go": "5f45916e-751a-416a-8e67-59fe3eec069c",
+          "component_type": "ParticleEffect"
+        },
         "FireMod": "semi",
         "Force": 0.1,
         "Hand": "Both",
@@ -56,6 +62,13 @@
           },
           "compiled": "textures/generated/imagefile/b117b8a2f015d7b4.vtex"
         },
+        "MuzzleFlashEmiter": {
+          "_type": "component",
+          "component_id": "804a04f0-4a87-4570-b7e0-5bd703e5404e",
+          "go": "40be6b08-33a9-44c0-9db1-ab751c8555ac",
+          "component_type": "ParticleEffect"
+        },
+        "MuzzleSmokeEmiter": null,
         "Name": "AWP",
         "OnComponentDestroy": null,
         "OnComponentDisabled": null,
@@ -165,7 +178,26 @@
         "UseAnimGraph": true
       }
     ],
-    "Children": [],
+    "Children": [
+      {
+        "__guid": "40be6b08-33a9-44c0-9db1-ab751c8555ac",
+        "Flags": 0,
+        "Name": "muzzleflash",
+        "Tags": "particles",
+        "Enabled": true,
+        "__Prefab": "prefabs/weapons/effects/muzzleflash.prefab",
+        "__PrefabVariables": {}
+      },
+      {
+        "__guid": "5f45916e-751a-416a-8e67-59fe3eec069c",
+        "Flags": 0,
+        "Name": "shellparticle",
+        "Tags": "particles",
+        "Enabled": true,
+        "__Prefab": "prefabs/weapons/effects/shellparticle.prefab",
+        "__PrefabVariables": {}
+      }
+    ],
     "__variables": [],
     "__properties": {
       "FixedUpdateFrequency": 50,

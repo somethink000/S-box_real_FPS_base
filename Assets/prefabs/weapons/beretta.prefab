@@ -24,6 +24,12 @@
         "ClipSize": 8,
         "Damage": 36,
         "DryShootSound": "weapons/sounds/mp7/dryfire.sound",
+        "EjectShellEmiter": {
+          "_type": "component",
+          "component_id": "28e02caf-ff73-4de9-979e-c7cca9334a36",
+          "go": "7b52dd96-6cff-4a5b-ad89-eeadff884b13",
+          "component_type": "ParticleEffect"
+        },
         "FireMod": "semi",
         "Force": 0.1,
         "Hand": "Right",
@@ -57,6 +63,13 @@
           },
           "compiled": "textures/generated/imagefile/be71165a3e057467.vtex"
         },
+        "MuzzleFlashEmiter": {
+          "_type": "component",
+          "component_id": "a971f759-f03b-4c40-a42d-08d2b7f3dd97",
+          "go": "2ed9a689-0d66-4913-9281-10e3ae340597",
+          "component_type": "ParticleEffect"
+        },
+        "MuzzleSmokeEmiter": null,
         "Name": "Beretta",
         "OnComponentDestroy": null,
         "OnComponentDisabled": null,
@@ -178,6 +191,24 @@
         "Flags": 4,
         "Name": "hold_R",
         "Enabled": true
+      },
+      {
+        "__guid": "2ed9a689-0d66-4913-9281-10e3ae340597",
+        "Flags": 0,
+        "Name": "muzzleflash",
+        "Tags": "particles",
+        "Enabled": true,
+        "__Prefab": "prefabs/weapons/effects/muzzleflash.prefab",
+        "__PrefabVariables": {}
+      },
+      {
+        "__guid": "7b52dd96-6cff-4a5b-ad89-eeadff884b13",
+        "Flags": 0,
+        "Name": "shellparticle",
+        "Tags": "particles",
+        "Enabled": true,
+        "__Prefab": "prefabs/weapons/effects/shellparticle.prefab",
+        "__PrefabVariables": {}
       }
     ],
     "__variables": [],

@@ -31,7 +31,7 @@ public partial class InventoryController : Component
 		{
 			weapon.Components.Get<ModelCollider>( FindMode.InSelf ).Enabled = false;
 			weapon.Components.Get<Rigidbody>( FindMode.InSelf ).Enabled = false;
-
+			SetOwner( weapon );
 			weapon.GameObject.Enabled = false;
 		}
 		
@@ -58,11 +58,19 @@ public partial class InventoryController : Component
 			ClearDeployed();
 		}
 
-
-
 		Deployed = carriable;
 		Slot = slot;
-		Deployed.Deploy( ply );
+		SetOwner(carriable);
+		Deployed.Deploy( );
+	}
+	
+	[Rpc.Broadcast( NetFlags.Reliable | NetFlags.OwnerOnly )]
+	private void SetOwner( Carriable item )
+	{
+		if ( Networking.IsHost )
+		{
+			item.Owner = ply;
+		}
 	}
 
 	private void ClearDeployed()
@@ -129,6 +137,7 @@ public partial class InventoryController : Component
 
 		}
 
+		if (IsProxy) return;
 
 		if ( Input.Pressed( InputButtonHelper.Slot1 ) ) DeployWeapon( 0 );
 		else if ( Input.Pressed( InputButtonHelper.Slot2 ) ) DeployWeapon( 1 );
@@ -187,7 +196,7 @@ public partial class InventoryController : Component
 
 			Deployed = item;
 			Slot = freeSlot;
-			Deployed.Deploy( ply );
+			Deployed.Deploy( );
 		}
 		
 	}

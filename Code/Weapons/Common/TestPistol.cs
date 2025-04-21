@@ -28,15 +28,12 @@ public partial class BasePistol : Carriable
 
 	}
 
-	
-	public override void Deploy( Player player )
+
+	public override void Deploy()
 	{
-
-		base.Deploy( player );
-
-		//if ( !IsProxy )
-		//	ViewModelRenderer?.Set( IsReady ? DeployAnim : ReadyAnim, true );
+		base.Deploy();
 	}
+	
 
 	public override bool CanHolster()
 	{

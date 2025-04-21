@@ -99,10 +99,9 @@ public partial class Gun : Carriable, IUseAmmo
 		
 	}
 
-	public override void Deploy( Player player )
+	public override void Deploy()
 	{
-
-		base.Deploy( player );
+		base.Deploy();
 
 		if ( !IsProxy )
 			ViewModelRenderer?.Set( IsReady ? DeployAnim : ReadyAnim, true );

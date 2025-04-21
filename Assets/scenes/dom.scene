@@ -392,6 +392,7 @@
             {
               "__type": "GeneralGame.ZombieSpawner",
               "__guid": "c5670588-709c-4cc2-9a99-cd8475e70028",
+              "__enabled": false,
               "ActiveState": true,
               "Delay": 50,
               "OnComponentDestroy": null,
@@ -421,6 +422,7 @@
             {
               "__type": "GeneralGame.ZombieSpawner",
               "__guid": "fc02e4b1-737b-40ac-b605-a0cc023f65f6",
+              "__enabled": false,
               "ActiveState": true,
               "Delay": 50,
               "OnComponentDestroy": null,
@@ -450,6 +452,7 @@
             {
               "__type": "GeneralGame.ZombieSpawner",
               "__guid": "82f68101-4ff7-49b5-912f-b79a585b3f7a",
+              "__enabled": false,
               "ActiveState": true,
               "Delay": 20,
               "OnComponentDestroy": null,

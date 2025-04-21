@@ -29,7 +29,7 @@ public partial class Carriable : Component, IInteractable
 	public SkinnedModelRenderer ViewModelHandsRenderer { get; private set; }
 
 	public bool CanSeeViewModel => !IsProxy && Owner.IsFirstPerson;
-	[Sync] public Player Owner { get; set; }
+	[Sync( SyncFlags.FromHost )] public Player Owner { get; set; }
 	public virtual List<Interaction> Interactions { get; set; } = new List<Interaction>();
 
 	public bool IsRunning => Owner != null && Owner.MovementController.IsRunning && Owner.MovementController.IsOnGround && Owner.MovementController.Velocity.Length >= 200;
@@ -75,17 +75,18 @@ public partial class Carriable : Component, IInteractable
 
 
 	[Rpc.Broadcast( NetFlags.Reliable | NetFlags.OwnerOnly )]
-	public virtual void Deploy( Player player )
+	public virtual void Deploy( )
 	{
 		
-		Owner = player;
 		GameObject.Enabled = true;
 		SetupModels();
 	}
+
 	public virtual bool CanHolster()
 	{
 		return true;
 	}
+
 	[Rpc.Broadcast( NetFlags.Reliable | NetFlags.OwnerOnly )]
 	public virtual void Holster()
 	{
@@ -103,7 +104,6 @@ public partial class Carriable : Component, IInteractable
 			ViewModelHandsRenderer = null;
 		}
 
-		Owner = null;
 	}
 
 	protected virtual void SetupViewModel(GameObject viewModelGO )
@@ -162,7 +162,6 @@ public partial class Carriable : Component, IInteractable
 			SetupAnimEvents();
 		}
 
-		
 
 		var bodyRenderer = Owner.BodyRenderer;
 		WorldModelRenderer.BoneMergeTarget = bodyRenderer;
