@@ -44,7 +44,7 @@ public partial class Gun
 		ViewModelHandler = gvm;
 
 		//TODO What the fuck is that
-		gvm.Carry = this;
+		gvm.Carriable = this;
 		gvm.Weapon = this;
 
 		ViewModelHandler.ViewModelRenderer = ViewModelRenderer;
@@ -59,8 +59,6 @@ public partial class Gun
 
 	protected override void SetupAnimEvents()
 	{
-		//Sometimes animations fucked because of time differance and they dont wark when you dont have view model.
-		//So for functional we using TimeSince but for youe view model GenericEvents
 
 		ViewModelRenderer.OnGenericEvent = ( a ) =>
 		{
@@ -169,5 +167,5 @@ public partial class Gun
 			}
 		}
 	}
-	
+
 }

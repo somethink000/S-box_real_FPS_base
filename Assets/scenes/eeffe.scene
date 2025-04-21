@@ -1,0 +1,264 @@
+{
+  "__guid": "9dc11e10-6c3d-4d79-9bf1-a3e9d2ac3aa2",
+  "GameObjects": [
+    {
+      "__guid": "9ef32435-4aa9-48f6-859a-9e20da52a42e",
+      "Flags": 0,
+      "Name": "Sun",
+      "Position": "-22.50128,-33.58792,176",
+      "Rotation": "0,0.6087614,0,0.7933534",
+      "Tags": "light_directional,light",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Sandbox.DirectionalLight",
+          "__guid": "68273fc2-65b3-41dc-8c92-c78130226752",
+          "FogMode": "Enabled",
+          "FogStrength": 1,
+          "LightColor": "0.91373,0.98039,1,1",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "Shadows": true,
+          "SkyColor": "0,0,0,0"
+        }
+      ]
+    },
+    {
+      "__guid": "328f3b34-081d-4caa-9926-2bbb1a93236f",
+      "Flags": 0,
+      "Name": "Box",
+      "Position": "-48,17,64",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Sandbox.MeshComponent",
+          "__guid": "2c1c789a-26e1-460c-87c8-2de7c466801e",
+          "Collision": "Mesh",
+          "Color": "1,1,1,1",
+          "Friction": null,
+          "HideInGame": false,
+          "IsTrigger": false,
+          "Mesh": {
+            "Topology": "H4sIAAAAAAAACl2QCQ7CMAwEp4Qj3NBy/f+laMRGsohUVbFn1+t04ANs+Z0VsM69AwfgBFyAKZ9MPXdgk3qLnsI+Um/h/me9i2ZXfFvYOazafTJN0XRgKZmPyWtfXvYVL73PZRd52WdYPa7xtC8veys7u6t17/7t6Tn0ZtFjvIXZR895zjKjPWf4NiOrGt+ivpXZ3XnozaOndVn9vvVkkTjEAQAA",
+            "Position": "-48,17,64",
+            "Rotation": "0,0,0,1",
+            "Positions": [
+              "-184,-73,-46",
+              "184,-73,-46",
+              "184,73,-46",
+              "-184,73,-46",
+              "-184,73,-64",
+              "184,73,-64",
+              "184,-73,-64",
+              "-184,-73,-64"
+            ],
+            "TextureCoord": [
+              "1.4375,0.5703125",
+              "-1.4375,0.359375",
+              "1.4375,-0.5703125",
+              "0.4296875,0.359375",
+              "-1.4375,-0.5703125",
+              "-0.4375,0.359375",
+              "-1.4375,0.5703125",
+              "-0.5703125,0.359375",
+              "1.4375,-0.5703125",
+              "2.4375,0.5",
+              "1.4375,0.5703125",
+              "1.570312,0.5",
+              "-1.4375,0.5703125",
+              "1.4375,0.5",
+              "-1.4375,-0.5703125",
+              "0.5703125,0.5",
+              "0.5703125,0.359375",
+              "-1.4375,0.5",
+              "-0.5703125,0.5",
+              "2.4375,0.359375",
+              "0.4296875,0.5",
+              "1.4375,0.359375",
+              "1.570312,0.359375",
+              "-0.4375,0.5"
+            ],
+            "TextureUAxis": [
+              "1,0,0",
+              "1,0,-0",
+              "0,-1,0",
+              "0,1,0",
+              "-1,0,0",
+              "1,-0,0"
+            ],
+            "TextureVAxis": [
+              "0,-1,0",
+              "0,-1,0",
+              "0,0,-1",
+              "-0,0,-1",
+              "0,0,-1",
+              "-0,0,-1"
+            ],
+            "TextureScale": [
+              "0.25,0.25",
+              "0.25,0.25",
+              "0.25,0.25",
+              "0.25,0.25",
+              "0.25,0.25",
+              "0.25,0.25"
+            ],
+            "TextureOffset": [
+              "192,68",
+              "192,68",
+              "68,256",
+              "444,256",
+              "320,256",
+              "192,256"
+            ],
+            "MaterialIndex": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "EdgeFlags": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "Materials": [
+              "materials/dev/reflectivity_30.vmat"
+            ]
+          },
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "OnObjectTriggerEnter": null,
+          "OnObjectTriggerExit": null,
+          "OnTriggerEnter": null,
+          "OnTriggerExit": null,
+          "RenderType": "On",
+          "SmoothingAngle": 40,
+          "Static": true,
+          "Surface": null,
+          "SurfaceVelocity": "0,0,0"
+        }
+      ]
+    },
+    {
+      "__guid": "443fcca8-e81d-4e45-a45a-280cb1d48f12",
+      "Flags": 0,
+      "Name": "spaw",
+      "Position": "-22,24,26",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Sandbox.SpawnPoint",
+          "__guid": "5996d232-34d3-49e7-8576-b52833814896",
+          "Color": "0.8902,0.31765,0.05098,1",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null
+        }
+      ]
+    },
+    {
+      "__guid": "215d570c-f847-44b8-96e6-90214ccfe633",
+      "Flags": 0,
+      "Name": "awp",
+      "Position": "49.99999,-22,23",
+      "Tags": "weapon",
+      "Enabled": true,
+      "__Prefab": "prefabs/weapons/awp.prefab",
+      "__PrefabVariables": {}
+    },
+    {
+      "__guid": "1c1aa496-ebd7-489f-a2e9-cd596624931b",
+      "Flags": 0,
+      "Name": "beretta",
+      "Position": "55.99999,9.999998,18",
+      "Enabled": true,
+      "__Prefab": "prefabs/weapons/beretta.prefab",
+      "__PrefabVariables": {}
+    },
+    {
+      "__guid": "63581d42-995a-4736-8040-ba5ddb0ce99f",
+      "Flags": 0,
+      "Name": "net",
+      "Position": "-108.2675,98.94522,-7.562744",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "GeneralGame.NetworkManager",
+          "__guid": "1ef1b3fd-03a1-4a90-af47-ca1034f2f6e6",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "PlayerPrefab": {
+            "_type": "gameobject",
+            "prefab": "prefabs/player.prefab"
+          }
+        }
+      ]
+    }
+  ],
+  "SceneProperties": {
+    "FixedUpdateFrequency": 50,
+    "MaxFixedUpdates": 5,
+    "NetworkFrequency": 30,
+    "NetworkInterpolation": true,
+    "PhysicsSubSteps": 1,
+    "ThreadedAnimation": true,
+    "TimeScale": 1,
+    "UseFixedUpdate": true,
+    "Metadata": {},
+    "NavMesh": {
+      "Enabled": false,
+      "IncludeStaticBodies": true,
+      "IncludeKeyframedBodies": true,
+      "EditorAutoUpdate": true,
+      "AgentHeight": 64,
+      "AgentRadius": 16,
+      "AgentStepSize": 18,
+      "AgentMaxSlope": 40,
+      "ExcludedBodies": "",
+      "IncludedBodies": ""
+    }
+  },
+  "ResourceVersion": 2,
+  "Title": null,
+  "Description": null,
+  "__references": [],
+  "__version": 2
+}

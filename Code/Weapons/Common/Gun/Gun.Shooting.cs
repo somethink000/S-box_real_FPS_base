@@ -108,7 +108,7 @@ public partial class Gun
 		// Recoil
 		Owner.CameraController.EyeAnglesOffset += GetRecoilAngles();
 
-	
+
 		// Bullet
 		for ( int i = 0; i < Bullets; i++ )
 		{

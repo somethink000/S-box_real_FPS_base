@@ -16,10 +16,10 @@ public partial class InventoryController : Component
 	
 	[RequireComponent] public Player ply { get; set; }
 	//TODO make all of this sync hosted
-	public List<Carriable> Weapons { get; set; } = new List<Carriable>( new Carriable[5] );
+	[Property]public List<Carriable> Weapons { get; set; } = new List<Carriable>( new Carriable[5] );
 	[Sync]public Carriable Deployed { get; set; }
 	public int Slot { get; set; } = 0;
-
+	
 
 	protected override void OnStart()
 	{
@@ -138,9 +138,19 @@ public partial class InventoryController : Component
 
 			if ( Networking.IsHost )
 			{
+				//item.GameObject.BreakFromPrefab();
+				item.GameObject.Enabled = false;
 				item.GameObject.Parent = this.GameObject;
+				item.GameObject.WorldPosition = this.GameObject.WorldPosition;
+				item.GameObject.WorldRotation = this.GameObject.WorldRotation;
+
+				item.Components.Get<ModelCollider>( FindMode.InSelf ).Enabled = false;
+				item.Components.Get<Rigidbody>( FindMode.InSelf ).Enabled = false;
+
 				item.GameObject.Network.AssignOwnership( this.GameObject.Network.Owner );
+				//item.GameObject.Network.ClearInterpolation();
 				//item.GameObject.Network.Refresh();
+
 
 				DeployItem( item, freeSlot );
 			}
@@ -152,17 +162,9 @@ public partial class InventoryController : Component
 	public void DeployItem( Carriable item, int freeSlot )
 	{
 
-		item.GameObject.Parent = this.GameObject;
-		item.GameObject.WorldPosition = this.GameObject.WorldPosition;
-		item.GameObject.WorldRotation = this.GameObject.WorldRotation;
-
-		item.Components.Get<ModelCollider>( FindMode.InSelf ).Enabled = false;
-		item.Components.Get<Rigidbody>( FindMode.InSelf ).Enabled = false;
-
 		//	Components.Get<ModelCollider>( FindMode.InSelf ).Enabled = true;
 		//	Components.Get<Rigidbody>( FindMode.InSelf ).Enabled = true;
 
-		item.GameObject.Enabled = false;
 
 		if ( IsProxy ) return;
 

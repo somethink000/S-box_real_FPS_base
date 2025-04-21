@@ -18,18 +18,18 @@ public class HitScanBullet : IBulletBase
 
 		if ( SurfaceUtil.IsSkybox( bulletTr.Surface ) || bulletTr.HitPosition == Vector3.Zero ) return;
 
-		// Impact
+		//// Impact
 		weapon.CreateBulletImpact( bulletTr );
-		
+
 		// Damage
 		if ( hitObj is not null )
 		{
-			
+
 			var damage = new DamageInfo( weapon.Damage, weapon.Owner.GameObject, weapon.GameObject, bulletTr.Hitbox );
 			damage.Position = bulletTr.HitPosition;
 			damage.Shape = bulletTr.Shape;
 
-		
+
 			if ( bulletTr.GameObject.Components.GetInAncestorsOrSelf<IHealthComponent>() is IHealthComponent damagable )
 			{
 				damagable.OnDamage( damage );

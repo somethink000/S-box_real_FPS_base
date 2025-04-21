@@ -5,12 +5,14 @@ using Sandbox.Citizen;
 using System.Collections.Generic;
 using System.Linq;
 using static Sandbox.Citizen.CitizenAnimationHelper;
+using static Sandbox.DecalDefinition;
 using static Sandbox.SerializedProperty;
 
 namespace GeneralGame;
 
 public partial class Carriable : Component, IInteractable
 {
+	[RequireComponent] public SkinnedModelRenderer WorldModelRenderer { get; set; }
 	[Property] public string Name { get; set; }
 	[Property] public Texture Icon { get; set; }
 	[Property] public Model ViewModel { get; set; }
@@ -25,7 +27,7 @@ public partial class Carriable : Component, IInteractable
 	public ViewModel ViewModelHandler { get; protected set; }
 	public SkinnedModelRenderer ViewModelRenderer { get; private set; }
 	public SkinnedModelRenderer ViewModelHandsRenderer { get; private set; }
-	public SkinnedModelRenderer WorldModelRenderer { get; private set; }
+
 	public bool CanSeeViewModel => !IsProxy && Owner.IsFirstPerson;
 	public Player Owner { get; set; }
 	public virtual List<Interaction> Interactions { get; set; } = new List<Interaction>();
@@ -33,15 +35,10 @@ public partial class Carriable : Component, IInteractable
 	public bool IsRunning => Owner != null && Owner.MovementController.IsRunning && Owner.MovementController.IsOnGround && Owner.MovementController.Velocity.Length >= 200;
 	public bool IsCrouching => Owner.MovementController.IsCrouching;
 
-	protected override void OnAwake()
-	{
-		base.OnAwake();
-
-		WorldModelRenderer = Components.GetInDescendantsOrSelf<SkinnedModelRenderer>();
-	}
 
 	protected override void OnStart()
 	{
+
 		Interactions.Add(
 			new Interaction()
 			{
@@ -66,6 +63,8 @@ public partial class Carriable : Component, IInteractable
 	//TODO remove this from update
 	protected override void OnUpdate()
 	{
+		base.OnUpdate();
+
 		if ( Owner == null ) return;
 
 			if ( !IsProxy && WorldModelRenderer is not null )
@@ -110,7 +109,7 @@ public partial class Carriable : Component, IInteractable
 	protected virtual void SetupViewModel(GameObject viewModelGO )
 	{
 		ViewModelHandler = viewModelGO.Components.Create<ViewModel>();
-		ViewModelHandler.Carry = this;
+		ViewModelHandler.Carriable = this;
 		ViewModelHandler.ViewModelRenderer = ViewModelRenderer;
 		ViewModelHandler.Camera = Owner.Camera;
 	}
@@ -126,6 +125,7 @@ public partial class Carriable : Component, IInteractable
 			viewModelGO.SetParent( Owner.GameObject, false );
 			viewModelGO.Tags.Add( TagsHelper.ViewModel );
 			viewModelGO.NetworkMode = NetworkMode.Never;
+			viewModelGO.Flags |= GameObjectFlags.NotNetworked;
 
 			ViewModelRenderer = viewModelGO.Components.Create<SkinnedModelRenderer>();
 			ViewModelRenderer.Model = ViewModel;
@@ -158,6 +158,16 @@ public partial class Carriable : Component, IInteractable
 
 			ViewModelHandler.ViewModelHandsRenderer = ViewModelHandsRenderer;
 
+			//TODO Sbox is so fucked up...
+			//
+			//This is viewmodel fix btw, hope im find out how to avoid this
+			//{
+				var gameObject = Scene.CreateObject();
+			//gameObject.SetParent( GameObject, false );
+			gameObject.Name = "FuckedViewModelFix";
+				gameObject.WorldPosition = WorldPosition;
+				gameObject.Components.Create<FuckedViewModelFix>();
+			//}
 
 			SetupAnimEvents();
 		}
@@ -242,5 +252,15 @@ public partial class Carriable : Component, IInteractable
 
 
 
+public sealed class FuckedViewModelFix : Component
+{
+	protected override void OnStart()
+	{
+		
+	}
 
+	protected override void OnUpdate()
+	{
 
+	}
+}

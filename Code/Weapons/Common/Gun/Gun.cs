@@ -103,7 +103,7 @@ public partial class Gun : Carriable, IUseAmmo
 	{
 
 		base.Deploy( player );
-		
+		player.InventoryController.Give( AmmoType, 100 );
 		if ( !IsProxy )
 			ViewModelRenderer?.Set( IsReady ? DeployAnim : ReadyAnim, true );
 	}
