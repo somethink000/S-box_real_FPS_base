@@ -7,6 +7,11 @@ namespace GeneralGame;
 public static class GameObjectExtensions
 {
 
+	public static IEnumerable<Interaction> GetInteractions( this GameObject obj )
+	{
+		return obj.Components.Get<Interactions>( FindMode.EverythingInSelf )?.AllInteractions;
+	}
+
 	public static void DestroyAsync( this GameObject self, float seconds = 1.0f )
 	{
 		var component = self.Components.Create<TimedDestroyComponent>();

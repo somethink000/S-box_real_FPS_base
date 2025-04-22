@@ -25,9 +25,9 @@
         "DryShootSound": "weapons/sounds/awp/dryfire.sound",
         "EjectShellEmiter": {
           "_type": "component",
-          "component_id": "39f96df9-90ec-4292-aca8-cde473b2c624",
+          "component_id": "d56144d7-01e2-4b61-af4b-87f94298443d",
           "go": "5f45916e-751a-416a-8e67-59fe3eec069c",
-          "component_type": "ParticleEffect"
+          "component_type": "BasicParticleEmiter"
         },
         "FireMod": "semi",
         "Force": 0.1,
@@ -64,9 +64,9 @@
         },
         "MuzzleFlashEmiter": {
           "_type": "component",
-          "component_id": "804a04f0-4a87-4570-b7e0-5bd703e5404e",
+          "component_id": "6dace09b-2a31-497b-989b-9b31f5a1d602",
           "go": "40be6b08-33a9-44c0-9db1-ab751c8555ac",
-          "component_type": "ParticleEffect"
+          "component_type": "BasicParticleEmiter"
         },
         "MuzzleSmokeEmiter": null,
         "Name": "AWP",

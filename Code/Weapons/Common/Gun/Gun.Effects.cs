@@ -14,9 +14,9 @@ public partial class Gun
 	//[Property] public GameObject MuzzleFlashPrefab { get; set; }
 	//[Property] public GameObject MuzzleSmokePrefab { get; set; }
 	//[Property] public PrefabFile EjectShellPrefab { get; set; }
-	[Property] public ParticleEffect MuzzleFlashEmiter { get; set; }
-	[Property] public ParticleEffect MuzzleSmokeEmiter { get; set; }
-	[Property] public ParticleEffect EjectShellEmiter { get; set; }
+	[Property] public BasicParticleEmiter MuzzleFlashEmiter { get; set; }
+	[Property] public BasicParticleEmiter MuzzleSmokeEmiter { get; set; }
+	[Property] public BasicParticleEmiter EjectShellEmiter { get; set; }
 	string muzzleBone { get; set; } = "muzzle";
 	string ejectBone { get; set; } = "eject";
 
@@ -96,8 +96,11 @@ public partial class Gun
 
 				case "eject_shell":
 
-					//CreateParticle( BulletEjectParticle, "ejection_point" );
+					var transform = GetArrachmentTransform( ejectBone );
+
+					EjectShellEmiter.Emit( transform.Value.Position );
 					
+
 					break;
 
 				case "shell_insert":
@@ -125,25 +128,19 @@ public partial class Gun
 		};
 	}
 
-	void SetupEffects()
-	{
-		//Log.Info( EjectShellPrefab );
-		//var ej = SceneUtility.GetPrefabScene( EjectShellPrefab ).Clone( this.WorldTransform );
-		//ej.NetworkSpawn();
-		//EjectShellEmiter = ej.Components.Get<ParticleEffect>();
-
-		//var ej = EjectShellPrefab.Clone( this.WorldTransform );
-		//ej.NetworkSpawn();
-		//EjectShellEmiter = ej.Components.Get<ParticleEffect>();
-	}
-
 	void ShootEffect()
 	{
-		var transform = GetMuzzleTransform();
+		var transform = GetArrachmentTransform(muzzleBone);
+		
+		IEnumerable<BasicParticleEmiter> emiters = MuzzleFlashEmiter.GameObject.Components.GetAll<BasicParticleEmiter>(FindMode.EnabledInSelfAndChildren);
 
-		Particle particle = MuzzleFlashEmiter.Emit( transform.Value.Position, 1 );
+		foreach ( var emiter in emiters ) 
+		{
+			
+			emiter.Emit( transform.Value.Position );
+			
+		}
 
-		//particle.Velocity += 10;
 	}
 
 	/// <summary>Create a bullet impact effect</summary>

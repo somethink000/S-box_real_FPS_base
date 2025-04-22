@@ -25,9 +25,9 @@
         "DryShootSound": "weapons/sounds/mp7/dryfire.sound",
         "EjectShellEmiter": {
           "_type": "component",
-          "component_id": "f279b942-6dce-4b25-a14e-dab4bd1ab3e6",
+          "component_id": "d79ec809-5359-4c6c-a734-4da168912c3b",
           "go": "4770d8f8-aaa3-4624-962e-e992c9e21d11",
-          "component_type": "ParticleEffect"
+          "component_type": "BasicParticleEmiter"
         },
         "FireMod": "auto",
         "Force": 0.1,
@@ -64,9 +64,9 @@
         },
         "MuzzleFlashEmiter": {
           "_type": "component",
-          "component_id": "8f8d8fa4-084d-4dd7-8c3d-f2e9f23aa057",
+          "component_id": "a8249120-ce80-4b98-ac76-d38c8de78765",
           "go": "398e137d-b19f-49c9-b769-d6915a72ad4e",
-          "component_type": "ParticleEffect"
+          "component_type": "BasicParticleEmiter"
         },
         "MuzzleSmokeEmiter": null,
         "Name": "MP7",

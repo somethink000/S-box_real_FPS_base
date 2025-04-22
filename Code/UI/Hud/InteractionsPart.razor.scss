@@ -1,0 +1,84 @@
+﻿@import "../Style.scss";
+
+InteractionsPart {
+    flex-direction: row;
+    transform-origin: left top;
+    opacity: 0;
+    transition: all 0.05s ease-in;
+
+    .icon {
+        width: 32px;
+        height: 32px;
+    }
+
+
+    .content {
+        flex-direction: column;
+        transition: all 0.5s ease-in-out;
+
+        .dopinfo {
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        .lootó {
+            flex-wrap: wrap;
+            width: 500px;
+
+            .selected {
+                background-color: $whire-bg;
+            }
+        }
+    }
+
+    .title {
+        font-size: 34px;
+        color: white;
+        padding: 10px;
+        padding-left: 20px;
+        min-width: 200px;
+    }
+
+
+
+
+
+    .interactions {
+        padding: 5px;
+        gap: 10px;
+        flex-direction: row;
+    }
+
+    .interaction {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        font-size: 20px;
+        margin-left: 10px;
+
+        .circle {
+            margin-right: 2px;
+            margin-left: 20px;
+            width: 26px;
+            aspect-ratio: 1;
+        }
+
+        .description {
+            margin-top: 5px;
+            max-width: 325px;
+            transition: all 0.2s;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        .hint {
+            margin-right: 12px;
+        }
+    }
+
+    &.visible {
+        transition: all 0.05s ease-out;
+        opacity: 1;
+    }
+}

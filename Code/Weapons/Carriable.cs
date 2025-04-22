@@ -10,7 +10,7 @@ using static Sandbox.SerializedProperty;
 
 namespace GeneralGame;
 
-public partial class Carriable : Component, IInteractable
+public partial class Carriable : Component
 {
 	[RequireComponent] public SkinnedModelRenderer WorldModelRenderer { get; set; }
 	[Property] public string Name { get; set; }
@@ -38,16 +38,25 @@ public partial class Carriable : Component, IInteractable
 
 	protected override void OnStart()
 	{
+		var interactions = Components.GetOrCreate<Interactions>();
+
+		interactions.AddInteraction( new Interaction()
+		{
+			Description = "Pickup",
+			Key = "use",
+			Action = ( Player player, GameObject obj ) =>
+			{
+				player.InventoryController.GiveItem( this );
+				OnPickUp( player );
+			},
+			//Disabled = () => !PlayerBase.GetLocal().Inventory.HasSpaceInBackpack(),
+		} );
+
 
 		Interactions.Add(
 			new Interaction()
 			{
-				Key = "use",
-				Action = ( Player player, GameObject obj ) =>
-				{
-					player.InventoryController.GiveItem( this );
-					OnPickUp(player);
-				},
+				
 
 			}
 		);

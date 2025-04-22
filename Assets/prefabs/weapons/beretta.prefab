@@ -26,9 +26,9 @@
         "DryShootSound": "weapons/sounds/mp7/dryfire.sound",
         "EjectShellEmiter": {
           "_type": "component",
-          "component_id": "28e02caf-ff73-4de9-979e-c7cca9334a36",
+          "component_id": "1e52b980-9ac4-4a9f-b1fe-86d0cbd37d2c",
           "go": "7b52dd96-6cff-4a5b-ad89-eeadff884b13",
-          "component_type": "ParticleEffect"
+          "component_type": "BasicParticleEmiter"
         },
         "FireMod": "semi",
         "Force": 0.1,
@@ -65,9 +65,9 @@
         },
         "MuzzleFlashEmiter": {
           "_type": "component",
-          "component_id": "a971f759-f03b-4c40-a42d-08d2b7f3dd97",
+          "component_id": "5b81a5af-c721-4a6c-8c62-e80128603a9c",
           "go": "2ed9a689-0d66-4913-9281-10e3ae340597",
-          "component_type": "ParticleEffect"
+          "component_type": "BasicParticleEmiter"
         },
         "MuzzleSmokeEmiter": null,
         "Name": "Beretta",

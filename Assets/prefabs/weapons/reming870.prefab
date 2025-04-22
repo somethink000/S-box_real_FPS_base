@@ -25,9 +25,9 @@
         "DryShootSound": "weapons/sounds/870/dryfire.sound",
         "EjectShellEmiter": {
           "_type": "component",
-          "component_id": "ac6b9054-4579-4f80-b0d9-8e8640220911",
+          "component_id": "97c329ca-c331-4123-80e9-1494098f2987",
           "go": "2320a194-83aa-4c58-a4cb-b1af8a3b75e2",
-          "component_type": "ParticleEffect"
+          "component_type": "BasicParticleEmiter"
         },
         "FireMod": "semi",
         "Force": 0.1,
@@ -64,9 +64,9 @@
         },
         "MuzzleFlashEmiter": {
           "_type": "component",
-          "component_id": "2e3de7d2-f24f-41d8-b449-70dfed692dd7",
+          "component_id": "dee8710e-aa46-4fa5-bbc0-333f3b9ccf95",
           "go": "c3708445-5100-45f4-923b-5d60e937d907",
-          "component_type": "ParticleEffect"
+          "component_type": "BasicParticleEmiter"
         },
         "MuzzleSmokeEmiter": null,
         "Name": "Remington 870",

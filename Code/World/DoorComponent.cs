@@ -9,7 +9,7 @@ public enum DoorState
 	Opening
 }
 
-public class DoorComponent : Component, IInteractable
+public class DoorComponent : Component
 {
 	[Sync, Property] public DoorState State { get; set; } = DoorState.Close;
 	[Sync] public bool Inverted { get; set; }
@@ -28,25 +28,15 @@ public class DoorComponent : Component, IInteractable
 		InitialTransform = Transform.World;
 	}
 
-	protected override void OnStart()
+	
+	public void Use(Player player)
 	{
+		var dot = Vector3.Dot( InitialTransform.Rotation.Forward, (WorldPosition - player.WorldPosition).Normal );
+		Inverted = BothSides && dot <= 0;
 
-		Interactions.Add(
-			new Interaction()
-			{
-				Key = "use",
-				Action = ( Player player, GameObject obj ) =>
-				{
-					var dot = Vector3.Dot( InitialTransform.Rotation.Forward, (WorldPosition - player.WorldPosition).Normal );
-					Inverted = BothSides && dot <= 0;
-
-					State = State == DoorState.Close ? DoorState.Opening : DoorState.Closing;
-				},
-
-			}
-		); 
-
+		State = State == DoorState.Close ? DoorState.Opening : DoorState.Closing;
 	}
+
 
 	protected override void DrawGizmos()
 	{

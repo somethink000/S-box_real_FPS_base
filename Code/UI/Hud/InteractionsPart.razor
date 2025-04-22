@@ -1,0 +1,161 @@
+@using GeneralGame
+@namespace GeneralGame.UI
+@attribute [StyleSheet]
+@inherits Panel
+
+@code
+{
+    private string DisplayName => _targetObject?.Name;
+
+    private GameObject _targetObject => Player.CPly()?.InteractionController.TargetedGameObject;
+
+    private static Dictionary<string, Interaction> priorityList = new();
+    private IEnumerable<Interaction> _interactions => _targetObject?.GetInteractions() ?? new List<Interaction>();
+    private bool WithinBounds(Interaction interaction) => !interaction.HasBounds || GetInteractionBounds(interaction).Contains(Player.CPly().InteractionController.InteractionTrace.EndPosition);
+    private bool HasPriority(string key) => !priorityList.ContainsKey(key.ToLower());
+    private BBox GetInteractionBounds(Interaction interaction)
+        => new BBox(interaction.Position - interaction.Extents / 2f, interaction.Position + interaction.Extents / 2f)
+            .Transform(_targetObject.Transform.World);
+
+    private void AddToPriority(Interaction interaction, bool forced = false)
+    {
+        if (!forced)
+            return;
+
+        var key = interaction.Key.ToLower();
+        var contains = priorityList.ContainsKey(key);
+        if (contains)
+            return;
+
+        priorityList.Add(key, interaction);
+    }
+
+    public override void Tick()
+    {
+
+        SetClass("visible", ShowHint());
+        if (!HasClass("visible"))
+            return;
+
+        var pos = (
+            Player.CPly().InteractionController.InteractionBounds == null ? 
+             _targetObject.WorldPosition :
+             _targetObject.Transform.World.PointToWorld(Player.CPly().InteractionController.InteractionBounds.Value.Center)
+        );
+        
+        foreach (var interaction in _interactions)
+        {
+            
+            if (interaction is null || !WithinBounds(interaction))
+                continue;
+
+            var canInteract = !interaction.Disabled.InvokeOrDefault();
+            if (canInteract)
+                AddToPriority(interaction);
+
+            if (!HasPriority(interaction.Key))
+                continue;
+
+              
+            if (interaction.HasBounds)
+                pos = _targetObject.WorldPosition + interaction.Position * _targetObject.WorldRotation;
+
+
+            if (canInteract && interaction.InputFunction(interaction.Key) )
+            {
+                _targetObject?.Network.TakeOwnership();
+                interaction.Action?.Invoke(Player.CPly(), _targetObject);
+
+                if (!_targetObject.IsValid())
+                    return;
+
+                if (interaction.InputMode != InputMode.Down)
+                    Input.Clear(interaction.Key);
+
+
+                var vector = (pos - Player.CPly().WorldPosition) * Player.CPly().WorldRotation.Inverse;
+           
+            }
+        }
+
+        pos = Scene.Camera.PointToScreenPixels(pos);
+        pos *= ScaleFromScreen;
+
+        Style.Position = PositionMode.Absolute;
+        Style.Left = Length.Pixels(pos.x);
+        Style.Top = Length.Pixels(pos.y);
+
+        StateHasChanged();
+    }
+
+
+
+    private bool ShowHint()
+    {
+        if (!_targetObject.IsValid())
+            return false;
+
+        if (!_targetObject.Components.TryGet<Interactions>(out var interactions))
+            return false;
+
+        var interactionsAvailable = interactions.AllInteractions.Any(i => WithinBounds(i) && WithinRange(i));
+        if (!interactionsAvailable && interactions.HideOnEmpty)
+            return false;
+
+        return interactionsAvailable;
+    }
+
+    private bool WithinRange(Interaction interaction)
+    {
+        return Player.CPly().InteractionController.ViewRay.Position.Distance(_targetObject.WorldPosition) < interaction.InteractDistance;
+    }
+
+    protected override int BuildHash()
+    {
+        return HashCode.Combine
+        (
+            DisplayName,
+            _targetObject.IsValid(),
+            _interactions.HashCombine(i => HashCode.Combine( i.Disabled.InvokeOrDefault(), WithinBounds(i), HasPriority(i.Key)))
+        );
+    }
+}
+
+<root>
+
+    <image src="ui/cross.png" class="icon" />
+
+
+	<div class="content txt">
+        <text class="title ttl">@DisplayName</text>
+
+		<div class="interactions">
+			@foreach(var interaction in _interactions)
+			{
+
+				if (interaction is null || !WithinBounds(interaction) )
+					continue;
+
+              
+                var canInteract = !interaction.Disabled.InvokeOrDefault();
+
+				if ( canInteract )
+				{
+                    var isActive = HasPriority(interaction.Key) && canInteract;
+					<div class="interaction">
+
+						<div>
+							<inputhint class="hint" input=@interaction.Key DarkMode=@(!isActive) />
+                            <txt class="description" style="color: @(isActive ? "#ffffff" : "#883232")">@interaction.Description</txt>
+						</div>
+
+					</div>
+				}
+			}
+		</div>
+	</div>
+    
+
+</root>
+
+

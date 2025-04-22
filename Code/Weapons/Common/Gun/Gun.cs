@@ -22,7 +22,7 @@ public partial class Gun : Carriable, IUseAmmo
 	protected override void OnStart()
 	{
 		base.OnStart();
-		SetupEffects();
+
 		if ( Clip <= 0 ) IsEmpty = true;
 	}
 

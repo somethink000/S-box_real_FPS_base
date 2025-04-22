@@ -20,10 +20,10 @@ public partial class Gun
 		return effectModel;
 	}
 
-	public virtual Transform? GetMuzzleTransform()
+	public virtual Transform? GetArrachmentTransform( string bone)
 	{
 		var effectRenderer = GetEffectRenderer();
-		var effectAttachment = muzzleBone;
+		var effectAttachment = bone;
 
 
 		return effectRenderer?.GetAttachment( effectAttachment );

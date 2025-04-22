@@ -2,59 +2,93 @@
   "RootObject": {
     "__guid": "98741540-a03d-4b43-b7a1-7dbafc748772",
     "Flags": 0,
-    "Name": "shellparticle",
+    "Name": "muzzlesilenceflash",
     "Tags": "particles",
     "Enabled": true,
     "Components": [
       {
         "__type": "Sandbox.ParticleEffect",
-        "__guid": "9d89de0f-cafa-4e46-bcfe-ae10dbca2b7c",
+        "__guid": "05250647-2841-4d44-805b-f33029c2f75e",
         "__version": 1,
-        "Alpha": 1,
+        "Alpha": {
+          "Type": "Curve",
+          "Evaluation": "Life",
+          "CurveA": {
+            "rangey": "0,0.5",
+            "frames": [
+              {
+                "x": 0,
+                "y": 0.4988603,
+                "in": -0.09733023,
+                "out": 0.09733023,
+                "mode": "Mirrored"
+              },
+              {
+                "x": 0.5080562,
+                "y": 0.28130698,
+                "in": 0.1290322,
+                "out": -0.1290322,
+                "mode": "Mirrored"
+              },
+              {
+                "x": 1,
+                "y": 0,
+                "in": 0.059259344,
+                "out": -0.059259344,
+                "mode": "Mirrored"
+              }
+            ]
+          },
+          "CurveB": [
+            {
+              "x": 0.5,
+              "y": 0.5,
+              "in": 0,
+              "out": 0,
+              "mode": "Mirrored"
+            }
+          ],
+          "Constants": "1,0,0,0"
+        },
         "ApplyAlpha": true,
         "ApplyColor": true,
         "ApplyRotation": false,
-        "ApplyShape": false,
-        "Bounce": {
-          "Type": "Range",
-          "Evaluation": "Particle",
-          "CurveA": [
-            {
-              "x": 0.5,
-              "y": 0.5,
-              "in": 0,
-              "out": 0,
-              "mode": "Mirrored"
-            }
-          ],
-          "CurveB": [
-            {
-              "x": 0.5,
-              "y": 0.5,
-              "in": 0,
-              "out": 0,
-              "mode": "Mirrored"
-            }
-          ],
-          "Constants": "0,0,0,0"
-        },
+        "ApplyShape": true,
+        "Bounce": 1,
         "Brightness": 1,
         "Bumpiness": 0,
-        "Collision": true,
-        "CollisionIgnore": "player",
+        "Collision": false,
+        "CollisionIgnore": null,
         "CollisionRadius": 1,
         "Damping": {
-          "Type": "Range",
-          "Evaluation": "Particle",
-          "CurveA": [
-            {
-              "x": 0.5,
-              "y": 0.5,
-              "in": 0,
-              "out": 0,
-              "mode": "Mirrored"
-            }
-          ],
+          "Type": "Curve",
+          "Evaluation": "Life",
+          "CurveA": {
+            "rangey": "0,2",
+            "frames": [
+              {
+                "x": 0,
+                "y": 0,
+                "in": -3.0120494,
+                "out": 3.0120494,
+                "mode": "Mirrored"
+              },
+              {
+                "x": 0.08004926,
+                "y": 0.7107143,
+                "in": -1.0333333,
+                "out": 1.0333333,
+                "mode": "Mirrored"
+              },
+              {
+                "x": 1,
+                "y": 1,
+                "in": 0,
+                "out": 0,
+                "mode": "Mirrored"
+              }
+            ]
+          },
           "CurveB": [
             {
               "x": 0.5,
@@ -64,14 +98,14 @@
               "mode": "Mirrored"
             }
           ],
-          "Constants": "0.2,0.3,0,0"
+          "Constants": "0,10,0,0"
         },
         "DieOnCollisionChance": 0,
-        "Force": true,
-        "ForceDirection": "0,0,0",
-        "ForceScale": 900,
+        "Force": false,
+        "ForceDirection": "0,0,100",
+        "ForceScale": 1,
         "ForceSpace": "World",
-        "Friction": 2.0000002,
+        "Friction": 1,
         "Gradient": {
           "Type": "Range",
           "Evaluation": "Particle",
@@ -95,8 +129,8 @@
             ],
             "alpha": []
           },
-          "ConstantA": "1,1,1,1",
-          "ConstantB": "1,1,1,1"
+          "ConstantA": "0.2,0.19891,0.13488,1",
+          "ConstantB": "0.09787,0.10671,0.12093,1"
         },
         "Lifetime": {
           "Type": "Range",
@@ -119,9 +153,9 @@
               "mode": "Mirrored"
             }
           ],
-          "Constants": "3,5,0,0"
+          "Constants": "1,2,0,0"
         },
-        "MaxParticles": 1,
+        "MaxParticles": 5000,
         "OnComponentDestroy": null,
         "OnComponentDisabled": null,
         "OnComponentEnabled": null,
@@ -137,29 +171,7 @@
         },
         "OrbitalPull": 0,
         "PerParticleTimeScale": 1,
-        "Pitch": {
-          "Type": "Range",
-          "Evaluation": "Particle",
-          "CurveA": [
-            {
-              "x": 0.5,
-              "y": 0.5,
-              "in": 0,
-              "out": 0,
-              "mode": "Mirrored"
-            }
-          ],
-          "CurveB": [
-            {
-              "x": 0.5,
-              "y": 0.5,
-              "in": 0,
-              "out": 0,
-              "mode": "Mirrored"
-            }
-          ],
-          "Constants": "0,360,0,0"
-        },
+        "Pitch": 0,
         "PreWarm": 0,
         "PushStrength": 0,
         "Roll": {
@@ -185,115 +197,95 @@
           ],
           "Constants": "0,360,0,0"
         },
-        "Scale": 1,
+        "Scale": {
+          "Type": "Curve",
+          "Evaluation": "Life",
+          "CurveA": {
+            "rangey": "0,30",
+            "frames": [
+              {
+                "x": 0,
+                "y": 0.0035714286,
+                "in": -11.230768,
+                "out": 11.230768,
+                "mode": "Mirrored"
+              },
+              {
+                "x": 0.16009852,
+                "y": 0.85714287,
+                "in": -0.5348841,
+                "out": 0.5348841,
+                "mode": "Mirrored"
+              },
+              {
+                "x": 1,
+                "y": 1,
+                "in": 0,
+                "out": 0,
+                "mode": "Mirrored"
+              }
+            ]
+          },
+          "CurveB": [
+            {
+              "x": 0.5,
+              "y": 0.5,
+              "in": 0,
+              "out": 0,
+              "mode": "Mirrored"
+            }
+          ],
+          "Constants": "1,30,0,0"
+        },
         "SequenceId": 0,
-        "SequenceSpeed": 1,
+        "SequenceSpeed": 0.1,
         "SequenceTime": 1,
-        "SheetSequence": false,
+        "SheetSequence": true,
         "Space": "World",
         "StartDelay": 0,
-        "StartVelocity": {
-          "Type": "Range",
-          "Evaluation": "Particle",
-          "CurveA": [
-            {
-              "x": 0.5,
-              "y": 0.5,
-              "in": 0,
-              "out": 0,
-              "mode": "Mirrored"
-            }
-          ],
-          "CurveB": [
-            {
-              "x": 0.5,
-              "y": 0.5,
-              "in": 0,
-              "out": 0,
-              "mode": "Mirrored"
-            }
-          ],
-          "Constants": "0,0,0,0"
-        },
-        "Stretch": {
-          "Type": "Range",
-          "Evaluation": "Particle",
-          "CurveA": [
-            {
-              "x": 0.5,
-              "y": 0.5,
-              "in": 0,
-              "out": 0,
-              "mode": "Mirrored"
-            }
-          ],
-          "CurveB": [
-            {
-              "x": 0.5,
-              "y": 0.5,
-              "in": 0,
-              "out": 0,
-              "mode": "Mirrored"
-            }
-          ],
-          "Constants": "0,0,0,0"
-        },
+        "StartVelocity": 0,
+        "Stretch": 0,
         "TimeScale": 1,
-        "Tint": "1,1,1,1",
-        "Yaw": {
-          "Type": "Range",
-          "Evaluation": "Particle",
-          "CurveA": [
-            {
-              "x": 0.5,
-              "y": 0.5,
-              "in": 0,
-              "out": 0,
-              "mode": "Mirrored"
-            }
-          ],
-          "CurveB": [
-            {
-              "x": 0.5,
-              "y": 0.5,
-              "in": 0,
-              "out": 0,
-              "mode": "Mirrored"
-            }
-          ],
-          "Constants": "0,360,0,0"
-        }
+        "Tint": "0,0,0,1",
+        "Yaw": 0
       },
       {
-        "__type": "Sandbox.ParticleModelRenderer",
-        "__guid": "01ba0d03-6679-414e-96fb-1f23545dca6c",
-        "__version": 1,
-        "CastShadows": true,
-        "Choices": [
-          {
-            "Model": "weapons/shells/9mm.vmdl",
-            "MaterialGroup": null,
-            "BodyGroups": 18446744073709551615
-          }
-        ],
-        "MaterialOverride": null,
+        "__type": "Sandbox.ParticleSpriteRenderer",
+        "__guid": "17631a25-3a17-4bb7-8bdb-f5409eec6961",
+        "Additive": false,
+        "Alignment": "LookAtCamera",
+        "BlurAmount": 0.5,
+        "BlurOpacity": 0.91,
+        "BlurSpacing": 0.73,
+        "DepthFeather": 0,
+        "FaceVelocity": false,
+        "FogStrength": 1,
+        "LeadingTrail": true,
+        "Lighting": false,
+        "MotionBlur": false,
         "OnComponentDestroy": null,
         "OnComponentDisabled": null,
         "OnComponentEnabled": null,
         "OnComponentFixedUpdate": null,
         "OnComponentStart": null,
         "OnComponentUpdate": null,
+        "Opaque": false,
+        "Pivot": "0.5,0.5",
         "RenderOptions": {
           "GameLayer": true,
           "OverlayLayer": false,
           "BloomLayer": false,
           "AfterUILayer": false
         },
-        "Scale": 0.2
+        "RotationOffset": 0,
+        "Scale": 1,
+        "Shadows": false,
+        "SortMode": "Unsorted",
+        "Texture": "materials/particles/smoke/smoke.vtex"
       },
       {
         "__type": "Sandbox.BasicParticleEmiter",
-        "__guid": "40ebd078-2ef6-44e7-a8c8-56fd5a851f6c",
+        "__guid": "c083e12e-fee1-4d5d-8622-ead9cda68b86",
         "OnComponentDestroy": null,
         "OnComponentDisabled": null,
         "OnComponentEnabled": null,

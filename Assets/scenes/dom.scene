@@ -61,7 +61,7 @@
             {
               "__type": "Sandbox.DirectionalLight",
               "__guid": "4aa2ad0b-ba8e-456c-8776-582a6b3fb949",
-              "FogMode": "Enabled",
+              "FogMode": "Disabled",
               "FogStrength": 1,
               "LightColor": "0.57674,0.44476,0.24679,1",
               "OnComponentDestroy": null,
@@ -563,6 +563,492 @@
           "Volume": 1
         }
       ]
+    },
+    {
+      "__guid": "da6287ec-ef67-43cb-9b2f-0245640cf4ad",
+      "Flags": 0,
+      "Name": "wooden_door_01c",
+      "Position": "761,550,164",
+      "Rotation": "0,0,-0.5,0.8660254",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Sandbox.ModelRenderer",
+          "__guid": "731c1784-a3b6-4e26-9fcb-5342df54881a",
+          "BodyGroups": 18446744073709551615,
+          "CreateAttachments": false,
+          "MaterialGroup": null,
+          "MaterialOverride": null,
+          "Model": "models/props/trim_sheets/doors/wooden_doors/wooden_door_01c.vmdl",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "RenderOptions": {
+            "GameLayer": true,
+            "OverlayLayer": false,
+            "BloomLayer": false,
+            "AfterUILayer": false
+          },
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "Sandbox.ModelCollider",
+          "__guid": "d218afa7-520b-4d1f-badd-b8630e093e65",
+          "Friction": null,
+          "IsTrigger": false,
+          "Model": "models/props/trim_sheets/doors/wooden_doors/wooden_door_01c.vmdl",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "OnObjectTriggerEnter": null,
+          "OnObjectTriggerExit": null,
+          "OnTriggerEnter": null,
+          "OnTriggerExit": null,
+          "Static": false,
+          "Surface": null,
+          "SurfaceVelocity": "0,0,0"
+        },
+        {
+          "__type": "GeneralGame.DoorComponent",
+          "__guid": "c1d93d84-0b05-4956-bcc4-79f58819b425",
+          "Angle": 100,
+          "BothSides": true,
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "OpenTime": 0.25,
+          "Pivot": "0,0,0",
+          "Sound": null,
+          "State": "Close"
+        },
+        {
+          "__type": "GeneralGame.Interactions",
+          "__guid": "7e9a435d-7cf3-47f4-a5fd-e156f0822a01",
+          "HideOnEmpty": false,
+          "ObjectInteractions": [
+            {
+              "Description": "Open",
+              "Key": "use",
+              "InputMode": "Pressed",
+              "Disabled": {
+                "__version": 9,
+                "__guid": "05dc366a-a104-4ad3-8f5e-f1cd5653853e",
+                "__changeId": 67,
+                "UserData": {
+                  "Title": "Disabled",
+                  "ReferencedComponentTypes": []
+                },
+                "Variables": [
+                  {
+                    "Name": "newVariable",
+                    "Type": "System.Boolean"
+                  },
+                  {
+                    "Name": "res",
+                    "Type": "System.Boolean"
+                  }
+                ],
+                "Nodes": [
+                  {
+                    "Id": 0,
+                    "Type": "input",
+                    "UserData": {
+                      "Position": "-216,0"
+                    }
+                  },
+                  {
+                    "Id": 1,
+                    "Type": "output",
+                    "UserData": {
+                      "Position": "300,0"
+                    }
+                  },
+                  {
+                    "Id": 24,
+                    "Type": "var",
+                    "Properties": {
+                      "_var": "res"
+                    },
+                    "UserData": {
+                      "Position": "156,36"
+                    }
+                  },
+                  {
+                    "Id": 25,
+                    "Type": "var",
+                    "Properties": {
+                      "_var": "res"
+                    },
+                    "UserData": {
+                      "Position": "-12,0"
+                    }
+                  }
+                ],
+                "Links": [
+                  {
+                    "SrcId": 24,
+                    "SrcName": "_result",
+                    "DstId": 1,
+                    "DstName": "_result"
+                  },
+                  {
+                    "SrcId": 25,
+                    "SrcName": "_signal",
+                    "DstId": 1,
+                    "DstName": "_signal"
+                  },
+                  {
+                    "SrcId": 0,
+                    "SrcName": "_signal",
+                    "DstId": 25,
+                    "DstName": "_signal"
+                  },
+                  {
+                    "Id": 27,
+                    "Value": false,
+                    "DstId": 25,
+                    "DstName": "_value"
+                  }
+                ]
+              },
+              "InteractDistance": 150,
+              "Action": {
+                "__version": 9,
+                "__guid": "c5f4c51f-9bc1-49b8-bd48-4a862865e5f3",
+                "__changeId": 22,
+                "UserData": {
+                  "Title": "Action",
+                  "ReferencedComponentTypes": [],
+                  "Description": ""
+                },
+                "Variables": [],
+                "Nodes": [
+                  {
+                    "Id": 0,
+                    "Type": "input",
+                    "UserData": {
+                      "Position": "-60,132"
+                    }
+                  },
+                  {
+                    "Id": 1,
+                    "Type": "call",
+                    "Properties": {
+                      "_isStatic": false,
+                      "_name": "Get",
+                      "_type": "Sandbox.IComponentLister",
+                      "T": "GeneralGame.DoorComponent"
+                    },
+                    "UserData": {
+                      "Position": "168,228"
+                    }
+                  },
+                  {
+                    "Id": 2,
+                    "Type": "call",
+                    "Properties": {
+                      "_isStatic": false,
+                      "_name": "Use",
+                      "_type": "GeneralGame.DoorComponent"
+                    },
+                    "UserData": {
+                      "Position": "516,132"
+                    }
+                  }
+                ],
+                "Links": [
+                  {
+                    "SrcId": 0,
+                    "SrcName": "obj",
+                    "DstId": 1,
+                    "DstName": "_target"
+                  },
+                  {
+                    "SrcId": 0,
+                    "SrcName": "_signal",
+                    "DstId": 2,
+                    "DstName": "_signal"
+                  },
+                  {
+                    "SrcId": 1,
+                    "SrcName": "_result",
+                    "DstId": 2,
+                    "DstName": "_target"
+                  },
+                  {
+                    "SrcId": 0,
+                    "SrcName": "interactor",
+                    "DstId": 2,
+                    "DstName": "player"
+                  }
+                ]
+              },
+              "HasBounds": true,
+              "Position": "0,-43.6,53.09998",
+              "Extents": "50,50,50"
+            }
+          ],
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null
+        }
+      ]
+    },
+    {
+      "__guid": "a6c66cd5-42d2-416e-b182-8ca9b29e4963",
+      "Flags": 0,
+      "Name": "wooden_door_01c (1)",
+      "Position": "792,564,164",
+      "Rotation": "0,0,0.8660253,0.5000002",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Sandbox.ModelRenderer",
+          "__guid": "d1e62086-2446-4f1b-a304-f88f22e31d32",
+          "BodyGroups": 18446744073709551615,
+          "CreateAttachments": false,
+          "MaterialGroup": null,
+          "MaterialOverride": null,
+          "Model": "models/props/trim_sheets/doors/wooden_doors/wooden_door_01c.vmdl",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "RenderOptions": {
+            "GameLayer": true,
+            "OverlayLayer": false,
+            "BloomLayer": false,
+            "AfterUILayer": false
+          },
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "Sandbox.ModelCollider",
+          "__guid": "c1ac7fc8-156d-49ce-9b92-a1b974e7e837",
+          "Friction": null,
+          "IsTrigger": false,
+          "Model": "models/props/trim_sheets/doors/wooden_doors/wooden_door_01c.vmdl",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "OnObjectTriggerEnter": null,
+          "OnObjectTriggerExit": null,
+          "OnTriggerEnter": null,
+          "OnTriggerExit": null,
+          "Static": false,
+          "Surface": null,
+          "SurfaceVelocity": "0,0,0"
+        },
+        {
+          "__type": "GeneralGame.DoorComponent",
+          "__guid": "806afab4-d302-4695-a6ca-b06337df16e8",
+          "Angle": 100,
+          "BothSides": true,
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "OpenTime": 0.25,
+          "Pivot": "0,0,0",
+          "Sound": null,
+          "State": "Close"
+        },
+        {
+          "__type": "GeneralGame.Interactions",
+          "__guid": "8a5820d7-2be4-4b95-ab5e-ce0fd988b256",
+          "HideOnEmpty": false,
+          "ObjectInteractions": [
+            {
+              "Description": "Open",
+              "Key": "use",
+              "InputMode": "Pressed",
+              "Disabled": {
+                "__version": 9,
+                "__guid": "1466d57a-0c16-4f1a-8c43-70c486766dc3",
+                "__changeId": 67,
+                "UserData": {
+                  "Title": "Disabled",
+                  "ReferencedComponentTypes": []
+                },
+                "Variables": [
+                  {
+                    "Name": "newVariable",
+                    "Type": "System.Boolean"
+                  },
+                  {
+                    "Name": "res",
+                    "Type": "System.Boolean"
+                  }
+                ],
+                "Nodes": [
+                  {
+                    "Id": 0,
+                    "Type": "input",
+                    "UserData": {
+                      "Position": "-216,0"
+                    }
+                  },
+                  {
+                    "Id": 1,
+                    "Type": "output",
+                    "UserData": {
+                      "Position": "300,0"
+                    }
+                  },
+                  {
+                    "Id": 24,
+                    "Type": "var",
+                    "Properties": {
+                      "_var": "res"
+                    },
+                    "UserData": {
+                      "Position": "156,36"
+                    }
+                  },
+                  {
+                    "Id": 25,
+                    "Type": "var",
+                    "Properties": {
+                      "_var": "res"
+                    },
+                    "UserData": {
+                      "Position": "-12,0"
+                    }
+                  }
+                ],
+                "Links": [
+                  {
+                    "SrcId": 24,
+                    "SrcName": "_result",
+                    "DstId": 1,
+                    "DstName": "_result"
+                  },
+                  {
+                    "SrcId": 25,
+                    "SrcName": "_signal",
+                    "DstId": 1,
+                    "DstName": "_signal"
+                  },
+                  {
+                    "SrcId": 0,
+                    "SrcName": "_signal",
+                    "DstId": 25,
+                    "DstName": "_signal"
+                  },
+                  {
+                    "Id": 26,
+                    "Value": false,
+                    "DstId": 25,
+                    "DstName": "_value"
+                  }
+                ]
+              },
+              "InteractDistance": 150,
+              "Action": {
+                "__version": 9,
+                "__guid": "5c2c1bae-759a-4923-9e7c-26b252a0816c",
+                "__changeId": 22,
+                "UserData": {
+                  "Title": "Action",
+                  "ReferencedComponentTypes": [],
+                  "Description": ""
+                },
+                "Variables": [],
+                "Nodes": [
+                  {
+                    "Id": 0,
+                    "Type": "input",
+                    "UserData": {
+                      "Position": "-60,132"
+                    }
+                  },
+                  {
+                    "Id": 1,
+                    "Type": "call",
+                    "Properties": {
+                      "_isStatic": false,
+                      "_name": "Get",
+                      "_type": "Sandbox.IComponentLister",
+                      "T": "GeneralGame.DoorComponent"
+                    },
+                    "UserData": {
+                      "Position": "168,228"
+                    }
+                  },
+                  {
+                    "Id": 2,
+                    "Type": "call",
+                    "Properties": {
+                      "_isStatic": false,
+                      "_name": "Use",
+                      "_type": "GeneralGame.DoorComponent"
+                    },
+                    "UserData": {
+                      "Position": "516,132"
+                    }
+                  }
+                ],
+                "Links": [
+                  {
+                    "SrcId": 0,
+                    "SrcName": "obj",
+                    "DstId": 1,
+                    "DstName": "_target"
+                  },
+                  {
+                    "SrcId": 0,
+                    "SrcName": "_signal",
+                    "DstId": 2,
+                    "DstName": "_signal"
+                  },
+                  {
+                    "SrcId": 1,
+                    "SrcName": "_result",
+                    "DstId": 2,
+                    "DstName": "_target"
+                  },
+                  {
+                    "SrcId": 0,
+                    "SrcName": "interactor",
+                    "DstId": 2,
+                    "DstName": "player"
+                  }
+                ]
+              },
+              "HasBounds": true,
+              "Position": "0,-43.6,53.09998",
+              "Extents": "50,50,50"
+            }
+          ],
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null
+        }
+      ]
     }
   ],
   "SceneProperties": {
@@ -591,6 +1077,8 @@
   "ResourceVersion": 2,
   "Title": null,
   "Description": null,
-  "__references": [],
+  "__references": [
+    "facepunch.wooden_door_01c#43542"
+  ],
   "__version": 2
 }
