@@ -128,7 +128,16 @@
 						name = "muzzle"
 						parent_bone = "bip01_r_hand"
 						relative_origin = [ 32.920662, -0.709614, -8.764173 ]
-						relative_angles = [ -0.0, 0.0, -0.000087 ]
+						relative_angles = [ -0.0, 0.0, 0.0 ]
+						weight = 1.0
+						ignore_rotation = false
+					},
+					{
+						_class = "Attachment"
+						name = "eject"
+						parent_bone = "bip01_r_hand"
+						relative_origin = [ 10.712009, 0.036449, -4.534161 ]
+						relative_angles = [ -0.0, 0.0, 0.0 ]
 						weight = 1.0
 						ignore_rotation = false
 					},

@@ -56,19 +56,10 @@
 					},
 					{
 						_class = "Attachment"
-						name = "muzzle_silenced"
-						parent_bone = "ak_frame"
-						relative_origin = [ 0.000907, -15.860134, 1.083089 ]
-						relative_angles = [ -0.0, -90.0, 0.0 ]
-						weight = 1.0
-						ignore_rotation = false
-					},
-					{
-						_class = "Attachment"
-						name = "ejection_point"
+						name = "eject"
 						parent_bone = "body"
-						relative_origin = [ -0.987181, 0.105711, 3.283837 ]
-						relative_angles = [ -0.0, -179.999893, 0.0 ]
+						relative_origin = [ -0.983289, 0.111817, 3.013136 ]
+						relative_angles = [ -0.0, 0.0, 0.0 ]
 						weight = 1.0
 						ignore_rotation = false
 					},

@@ -60,10 +60,10 @@
 					},
 					{
 						_class = "Attachment"
-						name = "ejection_point"
-						parent_bone = "bullet1"
-						relative_origin = [ 0.0, 0.0, 0.0 ]
-						relative_angles = [ -0.0, -179.999908, 0.0 ]
+						name = "eject"
+						parent_bone = "body"
+						relative_origin = [ -0.003815, 2.500592, 2.288413 ]
+						relative_angles = [ -0.0, 0.0, 0.0 ]
 						weight = 1.0
 						ignore_rotation = false
 					},

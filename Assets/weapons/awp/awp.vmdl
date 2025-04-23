@@ -57,17 +57,17 @@
 						_class = "Attachment"
 						name = "muzzle"
 						parent_bone = "barrel"
-						relative_origin = [ 0.0, 0.0, 0.0 ]
-						relative_angles = [ -90.0, 0.0, 0.0 ]
+						relative_origin = [ -0.015643, 0.000273, 2.385845 ]
+						relative_angles = [ -89.999931, -0.000047, 0.0 ]
 						weight = 1.0
 						ignore_rotation = false
 					},
 					{
 						_class = "Attachment"
-						name = "ejection_point"
+						name = "eject"
 						parent_bone = "body"
-						relative_origin = [ -0.796221, -0.316672, 1.807606 ]
-						relative_angles = [ -0.0, -179.999893, 0.0 ]
+						relative_origin = [ -0.799358, -0.320857, 2.07392 ]
+						relative_angles = [ -0.0, 0.0, 0.0 ]
 						weight = 1.0
 						ignore_rotation = false
 					},

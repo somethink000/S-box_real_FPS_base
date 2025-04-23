@@ -3,6 +3,7 @@
     "__guid": "75e8dbf9-98c5-4504-a879-6f6da3f32a1c",
     "Flags": 0,
     "Name": "beretta",
+    "Enabled": true,
     "NetworkMode": 1,
     "NetworkOrphaned": 3,
     "OwnerTransfer": 0,
@@ -26,8 +27,8 @@
         "DryShootSound": "weapons/sounds/mp7/dryfire.sound",
         "EjectShellEmiter": {
           "_type": "component",
-          "component_id": "1e52b980-9ac4-4a9f-b1fe-86d0cbd37d2c",
-          "go": "7b52dd96-6cff-4a5b-ad89-eeadff884b13",
+          "component_id": "7d08a65a-b20e-4b8e-9d11-8d9b36410bac",
+          "go": "3867b33f-885d-46e5-885b-6fbc8a805751",
           "component_type": "BasicParticleEmiter"
         },
         "FireMod": "semi",
@@ -65,7 +66,7 @@
         },
         "MuzzleFlashEmiter": {
           "_type": "component",
-          "component_id": "5b81a5af-c721-4a6c-8c62-e80128603a9c",
+          "component_id": "00b20b1a-63fa-4ad4-88be-0f57c70f3a21",
           "go": "2ed9a689-0d66-4913-9281-10e3ae340597",
           "component_type": "BasicParticleEmiter"
         },
@@ -184,12 +185,16 @@
         "__guid": "319f7b59-c44a-4e2a-840c-dc8375378978",
         "Flags": 4,
         "Name": "bip01_r_hand",
+        "Position": "-3.660735,-1.182861,2.522177",
+        "Rotation": "0.9988103,-0.0436119,-0.02179443,-0.0009514778",
         "Enabled": true
       },
       {
         "__guid": "583d5540-f32d-4389-992c-c16f06e6281f",
         "Flags": 4,
         "Name": "hold_R",
+        "Position": "-1.633867,0.2039642,3.799041",
+        "Rotation": "0,0,-0.04264397,0.9990903",
         "Enabled": true
       },
       {
@@ -202,12 +207,12 @@
         "__PrefabVariables": {}
       },
       {
-        "__guid": "7b52dd96-6cff-4a5b-ad89-eeadff884b13",
+        "__guid": "3867b33f-885d-46e5-885b-6fbc8a805751",
         "Flags": 0,
         "Name": "shellparticle",
         "Tags": "particles",
         "Enabled": true,
-        "__Prefab": "prefabs/weapons/effects/shellparticle.prefab",
+        "__Prefab": "prefabs/weapons/effects/shells/9mm.prefab",
         "__PrefabVariables": {}
       }
     ],

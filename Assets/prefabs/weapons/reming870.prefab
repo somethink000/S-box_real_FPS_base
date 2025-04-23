@@ -25,8 +25,8 @@
         "DryShootSound": "weapons/sounds/870/dryfire.sound",
         "EjectShellEmiter": {
           "_type": "component",
-          "component_id": "97c329ca-c331-4123-80e9-1494098f2987",
-          "go": "2320a194-83aa-4c58-a4cb-b1af8a3b75e2",
+          "component_id": "32f1bc72-a1cf-49c1-9414-16b4dc7ec942",
+          "go": "71c8dcb4-a3c7-4071-a432-59fea0e76141",
           "component_type": "BasicParticleEmiter"
         },
         "FireMod": "semi",
@@ -64,7 +64,7 @@
         },
         "MuzzleFlashEmiter": {
           "_type": "component",
-          "component_id": "dee8710e-aa46-4fa5-bbc0-333f3b9ccf95",
+          "component_id": "607d6a03-6492-4762-8e02-fb72406936d4",
           "go": "c3708445-5100-45f4-923b-5d60e937d907",
           "component_type": "BasicParticleEmiter"
         },
@@ -180,21 +180,21 @@
     ],
     "Children": [
       {
-        "__guid": "2320a194-83aa-4c58-a4cb-b1af8a3b75e2",
-        "Flags": 0,
-        "Name": "shellparticle",
-        "Tags": "particles",
-        "Enabled": true,
-        "__Prefab": "prefabs/weapons/effects/shellparticle.prefab",
-        "__PrefabVariables": {}
-      },
-      {
         "__guid": "c3708445-5100-45f4-923b-5d60e937d907",
         "Flags": 0,
         "Name": "muzzleflash",
         "Tags": "particles",
         "Enabled": true,
         "__Prefab": "prefabs/weapons/effects/muzzleflash.prefab",
+        "__PrefabVariables": {}
+      },
+      {
+        "__guid": "71c8dcb4-a3c7-4071-a432-59fea0e76141",
+        "Flags": 0,
+        "Name": "buck",
+        "Tags": "particles",
+        "Enabled": true,
+        "__Prefab": "prefabs/weapons/effects/shells/buck.prefab",
         "__PrefabVariables": {}
       }
     ],

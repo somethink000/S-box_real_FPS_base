@@ -64,19 +64,10 @@
 					},
 					{
 						_class = "Attachment"
-						name = "muzzle_silenced"
-						parent_bone = "ak_frame"
-						relative_origin = [ 0.000907, -15.860134, 1.083089 ]
-						relative_angles = [ -0.0, -90.0, 0.0 ]
-						weight = 1.0
-						ignore_rotation = false
-					},
-					{
-						_class = "Attachment"
-						name = "ejection_point"
-						parent_bone = "chandle"
-						relative_origin = [ 0.0, 0.0, 0.0 ]
-						relative_angles = [ -0.0, -179.999908, 0.0 ]
+						name = "eject"
+						parent_bone = "body"
+						relative_origin = [ -0.973812, -0.873382, 0.693373 ]
+						relative_angles = [ -0.0, 0.0, 0.0 ]
 						weight = 1.0
 						ignore_rotation = false
 					},
@@ -150,6 +141,22 @@
 							{
 								_class = "AnimFile"
 								name = "fire"
+								children = 
+								[
+									{
+										_class = "AnimEvent"
+										event_class = "AE_GENERIC_EVENT"
+										event_frame = 1
+										event_keys = 
+										{
+											TypeName = "eject_shell"
+											Int = 0
+											Float = 0.0
+											Vector = [ 0.0, 0.0, 0.0 ]
+											StringData = ""
+										}
+									},
+								]
 								activity_name = ""
 								activity_weight = 1
 								weight_list_name = ""
@@ -173,6 +180,22 @@
 							{
 								_class = "AnimFile"
 								name = "fire_empty"
+								children = 
+								[
+									{
+										_class = "AnimEvent"
+										event_class = "AE_GENERIC_EVENT"
+										event_frame = 1
+										event_keys = 
+										{
+											TypeName = "eject_shell"
+											Int = 0
+											Float = 0.0
+											Vector = [ 0.0, 0.0, 0.0 ]
+											StringData = ""
+										}
+									},
+								]
 								activity_name = ""
 								activity_weight = 1
 								weight_list_name = ""
@@ -196,6 +219,22 @@
 							{
 								_class = "AnimFile"
 								name = "fire_empty_iron"
+								children = 
+								[
+									{
+										_class = "AnimEvent"
+										event_class = "AE_GENERIC_EVENT"
+										event_frame = 1
+										event_keys = 
+										{
+											TypeName = "eject_shell"
+											Int = 0
+											Float = 0.0
+											Vector = [ 0.0, 0.0, 0.0 ]
+											StringData = ""
+										}
+									},
+								]
 								activity_name = ""
 								activity_weight = 1
 								weight_list_name = ""
@@ -219,6 +258,22 @@
 							{
 								_class = "AnimFile"
 								name = "fire_iron"
+								children = 
+								[
+									{
+										_class = "AnimEvent"
+										event_class = "AE_GENERIC_EVENT"
+										event_frame = 1
+										event_keys = 
+										{
+											TypeName = "eject_shell"
+											Int = 0
+											Float = 0.0
+											Vector = [ 0.0, 0.0, 0.0 ]
+											StringData = ""
+										}
+									},
+								]
 								activity_name = ""
 								activity_weight = 1
 								weight_list_name = ""

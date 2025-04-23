@@ -567,7 +567,7 @@
     {
       "__guid": "da6287ec-ef67-43cb-9b2f-0245640cf4ad",
       "Flags": 0,
-      "Name": "wooden_door_01c",
+      "Name": "Door",
       "Position": "761,550,164",
       "Rotation": "0,0,-0.5,0.8660254",
       "Enabled": true,
@@ -714,7 +714,7 @@
                     "DstName": "_signal"
                   },
                   {
-                    "Id": 27,
+                    "Id": 26,
                     "Value": false,
                     "DstId": 25,
                     "DstName": "_value"
@@ -810,7 +810,7 @@
     {
       "__guid": "a6c66cd5-42d2-416e-b182-8ca9b29e4963",
       "Flags": 0,
-      "Name": "wooden_door_01c (1)",
+      "Name": "Door",
       "Position": "792,564,164",
       "Rotation": "0,0,0.8660253,0.5000002",
       "Enabled": true,

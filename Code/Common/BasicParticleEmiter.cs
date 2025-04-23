@@ -10,14 +10,17 @@ namespace Sandbox;
 [Category( "Particles" )]
 public sealed class BasicParticleEmiter : Component
 {
-
 	[RequireComponent] public ParticleEffect ParticleEffect { get; set; }
 
+	[Property] public Vector3 Angle { get; set; }
 
-	public void Emit( Vector3 pos )
+
+	public void Emit( Transform transform )
 	{
 
-		ParticleEffect.Emit( pos, 1 );
+		Particle particle = ParticleEffect.Emit( transform.Position, 1 );
+
+		particle.Velocity += transform.Rotation * Angle;
 	}
 }
 

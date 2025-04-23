@@ -98,7 +98,7 @@ public partial class Gun
 
 					var transform = GetArrachmentTransform( ejectBone );
 
-					EjectShellEmiter.Emit( transform.Value.Position );
+					EjectShellEmiter.Emit( transform.Value );
 					
 
 					break;
@@ -137,7 +137,7 @@ public partial class Gun
 		foreach ( var emiter in emiters ) 
 		{
 			
-			emiter.Emit( transform.Value.Position );
+			emiter.Emit( transform.Value );
 			
 		}
 

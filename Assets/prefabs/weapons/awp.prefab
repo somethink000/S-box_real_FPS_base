@@ -25,8 +25,8 @@
         "DryShootSound": "weapons/sounds/awp/dryfire.sound",
         "EjectShellEmiter": {
           "_type": "component",
-          "component_id": "d56144d7-01e2-4b61-af4b-87f94298443d",
-          "go": "5f45916e-751a-416a-8e67-59fe3eec069c",
+          "component_id": "e4307f94-293d-4339-9876-596a3c921652",
+          "go": "f6e6531d-4a42-4d3b-a181-4e81bd12d9fa",
           "component_type": "BasicParticleEmiter"
         },
         "FireMod": "semi",
@@ -64,7 +64,7 @@
         },
         "MuzzleFlashEmiter": {
           "_type": "component",
-          "component_id": "6dace09b-2a31-497b-989b-9b31f5a1d602",
+          "component_id": "8a0106d3-aaaa-40f1-955d-ee83b28c47aa",
           "go": "40be6b08-33a9-44c0-9db1-ab751c8555ac",
           "component_type": "BasicParticleEmiter"
         },
@@ -189,12 +189,12 @@
         "__PrefabVariables": {}
       },
       {
-        "__guid": "5f45916e-751a-416a-8e67-59fe3eec069c",
+        "__guid": "f6e6531d-4a42-4d3b-a181-4e81bd12d9fa",
         "Flags": 0,
-        "Name": "shellparticle",
+        "Name": "5.45",
         "Tags": "particles",
         "Enabled": true,
-        "__Prefab": "prefabs/weapons/effects/shellparticle.prefab",
+        "__Prefab": "prefabs/weapons/effects/shells/5.45.prefab",
         "__PrefabVariables": {}
       }
     ],

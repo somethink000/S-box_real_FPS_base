@@ -26,8 +26,8 @@
         "DryShootSound": "weapons/sounds/mp7/dryfire.sound",
         "EjectShellEmiter": {
           "_type": "component",
-          "component_id": "0f09e1c5-a4a5-4125-b7ac-76ab269d0632",
-          "go": "361350f9-1aa0-4178-a497-126f274229c5",
+          "component_id": "026bf099-c9e6-43d6-b55b-f81eaf390bfc",
+          "go": "82f411bb-e42e-4e72-9e09-8508fde05971",
           "component_type": "BasicParticleEmiter"
         },
         "FireMod": "auto",
@@ -65,7 +65,7 @@
         },
         "MuzzleFlashEmiter": {
           "_type": "component",
-          "component_id": "e1c2e21e-b21b-49b7-a9af-91e6b850fc26",
+          "component_id": "5e4a604b-5ec3-4f4f-bbc0-326beb00add1",
           "go": "308ecaa2-6a7e-4089-8b23-0a1f3dc62dc1",
           "component_type": "BasicParticleEmiter"
         },
@@ -181,21 +181,21 @@
     ],
     "Children": [
       {
-        "__guid": "361350f9-1aa0-4178-a497-126f274229c5",
-        "Flags": 0,
-        "Name": "shellparticle",
-        "Tags": "particles",
-        "Enabled": true,
-        "__Prefab": "prefabs/weapons/effects/shellparticle.prefab",
-        "__PrefabVariables": {}
-      },
-      {
         "__guid": "308ecaa2-6a7e-4089-8b23-0a1f3dc62dc1",
         "Flags": 0,
         "Name": "muzzlesilenceflash",
         "Tags": "particles",
         "Enabled": true,
         "__Prefab": "prefabs/weapons/effects/muzzlesilenceflash.prefab",
+        "__PrefabVariables": {}
+      },
+      {
+        "__guid": "82f411bb-e42e-4e72-9e09-8508fde05971",
+        "Flags": 0,
+        "Name": "5.45",
+        "Tags": "particles",
+        "Enabled": true,
+        "__Prefab": "prefabs/weapons/effects/shells/5.45.prefab",
         "__PrefabVariables": {}
       }
     ],

@@ -2,7 +2,7 @@
   "RootObject": {
     "__guid": "98741540-a03d-4b43-b7a1-7dbafc748772",
     "Flags": 0,
-    "Name": "shellparticle",
+    "Name": "buck",
     "Tags": "particles",
     "Enabled": true,
     "Components": [
@@ -15,29 +15,7 @@
         "ApplyColor": true,
         "ApplyRotation": false,
         "ApplyShape": false,
-        "Bounce": {
-          "Type": "Range",
-          "Evaluation": "Particle",
-          "CurveA": [
-            {
-              "x": 0.5,
-              "y": 0.5,
-              "in": 0,
-              "out": 0,
-              "mode": "Mirrored"
-            }
-          ],
-          "CurveB": [
-            {
-              "x": 0.5,
-              "y": 0.5,
-              "in": 0,
-              "out": 0,
-              "mode": "Mirrored"
-            }
-          ],
-          "Constants": "0,0,0,0"
-        },
+        "Bounce": 0,
         "Brightness": 1,
         "Bumpiness": 0,
         "Collision": true,
@@ -68,7 +46,7 @@
         },
         "DieOnCollisionChance": 0,
         "Force": true,
-        "ForceDirection": "0,0,0",
+        "ForceDirection": "0,0,-1",
         "ForceScale": 900,
         "ForceSpace": "World",
         "Friction": 2.0000002,
@@ -271,7 +249,7 @@
         "CastShadows": true,
         "Choices": [
           {
-            "Model": "weapons/shells/9mm.vmdl",
+            "Model": "weapons/shells/buck.vmdl",
             "MaterialGroup": null,
             "BodyGroups": 18446744073709551615
           }
@@ -294,6 +272,7 @@
       {
         "__type": "Sandbox.BasicParticleEmiter",
         "__guid": "40ebd078-2ef6-44e7-a8c8-56fd5a851f6c",
+        "Angle": "-100,0,0",
         "OnComponentDestroy": null,
         "OnComponentDisabled": null,
         "OnComponentEnabled": null,
