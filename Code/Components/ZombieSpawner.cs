@@ -11,28 +11,23 @@ public sealed class ZombieSpawner : Component
 	[Property] public bool ActiveState = false;
 
 
-	protected override void OnStart()
+
+	public void Activate()
 	{
-		NewZombie();
+		ActiveState = true;
+		
+		NewZombie();	
 	}
 
-	public void Toggle()
+	public void Disable()
 	{
-		ActiveState = !ActiveState;
-
-		if ( ActiveState ) 
-		{
-			NewZombie();
-		}
-
+		ActiveState = false;
 	}
 
 	async void NewZombie()
 	{
 		if ( !Networking.IsHost )
 			return;
-
-		await GameTask.DelaySeconds( Delay );
 
 		if ( ActiveState )
 		{
@@ -42,6 +37,7 @@ public sealed class ZombieSpawner : Component
 			zombie.NetworkSpawn();
 			zombie.Components.Get<Zombie>().TargetPrimaryObject = Target;
 
+			await GameTask.DelaySeconds( Delay );
 
 			NewZombie();
 		}

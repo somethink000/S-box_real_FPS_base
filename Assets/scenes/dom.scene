@@ -392,7 +392,6 @@
             {
               "__type": "GeneralGame.ZombieSpawner",
               "__guid": "c5670588-709c-4cc2-9a99-cd8475e70028",
-              "__enabled": false,
               "ActiveState": true,
               "Delay": 50,
               "OnComponentDestroy": null,
@@ -422,7 +421,6 @@
             {
               "__type": "GeneralGame.ZombieSpawner",
               "__guid": "fc02e4b1-737b-40ac-b605-a0cc023f65f6",
-              "__enabled": false,
               "ActiveState": true,
               "Delay": 50,
               "OnComponentDestroy": null,
@@ -452,7 +450,6 @@
             {
               "__type": "GeneralGame.ZombieSpawner",
               "__guid": "82f68101-4ff7-49b5-912f-b79a585b3f7a",
-              "__enabled": false,
               "ActiveState": true,
               "Delay": 20,
               "OnComponentDestroy": null,
@@ -469,6 +466,73 @@
                 "_type": "gameobject",
                 "prefab": "prefabs/npc/zombie.prefab"
               }
+            }
+          ]
+        },
+        {
+          "__guid": "32cabe0b-a349-4a82-8c51-2389a775e8eb",
+          "Flags": 0,
+          "Name": "Spawm zombies",
+          "Position": "360.1004,502.7043,-288.9586",
+          "Scale": "0.05355028,0.1194351,0.1194351",
+          "Enabled": true,
+          "NetworkMode": 1,
+          "Components": [
+            {
+              "__type": "Sandbox.ModelRenderer",
+              "__guid": "29f108d5-7836-4170-b7e9-06ad54ea98b3",
+              "BodyGroups": 18446744073709551615,
+              "CreateAttachments": false,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/dev/box.vmdl",
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null,
+              "RenderOptions": {
+                "GameLayer": true,
+                "OverlayLayer": false,
+                "BloomLayer": false,
+                "AfterUILayer": false
+              },
+              "RenderType": "On",
+              "Tint": "1,0,0,1"
+            },
+            {
+              "__type": "GeneralGame.ZombiesButton",
+              "__guid": "54163607-5757-4a0f-b746-90df121a5b56",
+              "ActSound": "sounds/knopkayes.sound",
+              "DisSound": "sounds/knopkano.sound",
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null
+            },
+            {
+              "__type": "Sandbox.BoxCollider",
+              "__guid": "12b34c0a-e256-42b6-8594-56887c258822",
+              "Center": "0,0,0",
+              "Friction": null,
+              "IsTrigger": false,
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null,
+              "OnObjectTriggerEnter": null,
+              "OnObjectTriggerExit": null,
+              "OnTriggerEnter": null,
+              "OnTriggerExit": null,
+              "Scale": "50,50,50",
+              "Static": false,
+              "Surface": null,
+              "SurfaceVelocity": "0,0,0"
             }
           ]
         }
@@ -714,7 +778,7 @@
                     "DstName": "_signal"
                   },
                   {
-                    "Id": 26,
+                    "Id": 27,
                     "Value": false,
                     "DstId": 25,
                     "DstName": "_value"
@@ -957,7 +1021,7 @@
                     "DstName": "_signal"
                   },
                   {
-                    "Id": 26,
+                    "Id": 27,
                     "Value": false,
                     "DstId": 25,
                     "DstName": "_value"
@@ -1047,6 +1111,149 @@
           "OnComponentFixedUpdate": null,
           "OnComponentStart": null,
           "OnComponentUpdate": null
+        }
+      ]
+    },
+    {
+      "__guid": "2a28bb1c-e98a-4270-8fdc-a957a6fb970f",
+      "Flags": 0,
+      "Name": "Box",
+      "Position": "110,964,53.00062",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Sandbox.MeshComponent",
+          "__guid": "ea8631d1-c774-4bed-88dd-a44962f53eb4",
+          "Collision": "Mesh",
+          "Color": "1,1,1,1",
+          "Friction": null,
+          "HideInGame": false,
+          "IsTrigger": false,
+          "Mesh": {
+            "Topology": "H4sIAAAAAAAACl2QCQ7CMAwEp4Qj3NBy/f+laMRGsohUVbFn1+t04ANs+Z0VsM69AwfgBFyAKZ9MPXdgk3qLnsI+Um/h/me9i2ZXfFvYOazafTJN0XRgKZmPyWtfXvYVL73PZRd52WdYPa7xtC8veys7u6t17/7t6Tn0ZtFjvIXZR895zjKjPWf4NiOrGt+ivpXZ3XnozaOndVn9vvVkkTjEAQAA",
+            "Position": "110,964,53.00062",
+            "Rotation": "0,0,0,1",
+            "Positions": [
+              "-1.5,-3.5,24.99938",
+              "1.5,-3.5,24.99938",
+              "1.5,3.5,24.99938",
+              "-1.5,3.5,24.99938",
+              "-1.5,3.5,-24.99938",
+              "1.5,3.5,-24.99938",
+              "1.5,-3.5,-24.99938",
+              "-1.5,-3.5,-24.99938"
+            ],
+            "TextureCoord": [
+              "0.03125,0.05078125",
+              "-0.03125,-0.5",
+              "0.03125,-0.05078125",
+              "-0.05078125,-0.5",
+              "-0.03125,-0.05078125",
+              "-0.03125,-0.5",
+              "-0.03125,0.05078125",
+              "-0.05078125,-0.5",
+              "0.03125,-0.05078125",
+              "0.03125,0.5",
+              "0.03125,0.05078125",
+              "0.05078125,0.5",
+              "-0.03125,0.05078125",
+              "0.03125,0.5",
+              "-0.03125,-0.05078125",
+              "0.05078125,0.5",
+              "0.05078125,-0.5",
+              "-0.03125,0.5",
+              "-0.05078125,0.5",
+              "0.03125,-0.5",
+              "-0.05078125,0.5",
+              "0.03125,-0.5",
+              "0.05078125,-0.5",
+              "-0.03125,0.5"
+            ],
+            "TextureUAxis": [
+              "1,0,0",
+              "1,0,-0",
+              "0,-1,0",
+              "0,1,0",
+              "-1,0,0",
+              "1,-0,0"
+            ],
+            "TextureVAxis": [
+              "0,-1,0",
+              "0,-1,0",
+              "0,0,-1",
+              "-0,0,-1",
+              "0,0,-1",
+              "-0,0,-1"
+            ],
+            "TextureScale": [
+              "0.09375001,0.1346154",
+              "0.09375001,0.1346154",
+              "0.1346154,0.09765381",
+              "0.1346154,0.09765381",
+              "0.09375001,0.09765384",
+              "0.09375001,0.09765384"
+            ],
+            "TextureOffset": [
+              "362.6667,505.1421",
+              "362.6667,505.1421",
+              "505.1431,30.73987",
+              "6.856934,30.73993",
+              "149.3333,30.73987",
+              "362.6667,30.73975"
+            ],
+            "MaterialIndex": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "EdgeFlags": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "Materials": [
+              "materials/dev/reflectivity_30.vmat"
+            ]
+          },
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "OnObjectTriggerEnter": null,
+          "OnObjectTriggerExit": null,
+          "OnTriggerEnter": null,
+          "OnTriggerExit": null,
+          "RenderType": "On",
+          "SmoothingAngle": 40,
+          "Static": true,
+          "Surface": null,
+          "SurfaceVelocity": "0,0,0"
         }
       ]
     }

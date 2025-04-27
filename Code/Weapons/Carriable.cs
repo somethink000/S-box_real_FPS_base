@@ -30,7 +30,6 @@ public partial class Carriable : Component
 
 	public bool CanSeeViewModel => !IsProxy && Owner.IsFirstPerson;
 	[Sync( SyncFlags.FromHost )] public Player Owner { get; set; }
-	public virtual List<Interaction> Interactions { get; set; } = new List<Interaction>();
 
 	public bool IsRunning => Owner != null && Owner.MovementController.IsRunning && Owner.MovementController.IsOnGround && Owner.MovementController.Velocity.Length >= 200;
 	public bool IsCrouching => Owner.MovementController.IsCrouching;
@@ -52,14 +51,6 @@ public partial class Carriable : Component
 			//Disabled = () => !PlayerBase.GetLocal().Inventory.HasSpaceInBackpack(),
 		} );
 
-
-		Interactions.Add(
-			new Interaction()
-			{
-				
-
-			}
-		);
 
 		if (IsProxy)
 		{
