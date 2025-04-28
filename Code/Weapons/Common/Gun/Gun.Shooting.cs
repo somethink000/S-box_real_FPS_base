@@ -95,8 +95,6 @@ public partial class Gun
 		if ( ShootSound is not null )
 			PlaySound( ShootSound.ResourceId );
 
-		// Particles
-		HandleShootEffects();
 
 		if ( BoltBack && Clip > 0 )
 		{
@@ -125,25 +123,10 @@ public partial class Gun
 	[Rpc.Broadcast( NetFlags.Reliable | NetFlags.OwnerOnly )]
 	public virtual void ShootBullet( Vector3 spreadOffset )
 	{
-		BulletType.Shoot( this, spreadOffset );
-		ShootEffect();
-	}
-
-
-	[Rpc.Broadcast( NetFlags.Reliable | NetFlags.OwnerOnly )]
-	public virtual void HandleShootEffects()
-	{
-		// Player
 		Owner.BodyRenderer.Set( "b_attack", true );
 
-	
-		// Muzzle flash
-		//if ( MuzzleFlashParticle is not null )
-		//	CreateParticle( MuzzleFlashParticle, muzzleTransform.Value, ( particles ) => ParticleToMuzzlePos( particles ) );
-
-		//// Barrel smoke
-		//if ( !IsProxy && BarrelSmokeParticle is not null && barrelHeat >= ClipSize * 0.75 )
-		//	CreateParticle( BarrelSmokeParticle, muzzleTransform.Value, ( particles ) => ParticleToMuzzlePos( particles ) );
+		BulletType.Shoot( this, spreadOffset );
+		ShootEffect();
 	}
 
 	

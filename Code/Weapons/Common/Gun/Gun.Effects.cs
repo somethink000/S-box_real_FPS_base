@@ -11,9 +11,7 @@ namespace GeneralGame;
 
 public partial class Gun
 {
-	//[Property] public GameObject MuzzleFlashPrefab { get; set; }
-	//[Property] public GameObject MuzzleSmokePrefab { get; set; }
-	//[Property] public PrefabFile EjectShellPrefab { get; set; }
+
 	[Property] public BasicParticleEmiter MuzzleFlashEmiter { get; set; }
 	[Property] public BasicParticleEmiter MuzzleSmokeEmiter { get; set; }
 	[Property] public BasicParticleEmiter EjectShellEmiter { get; set; }

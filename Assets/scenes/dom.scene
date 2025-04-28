@@ -778,7 +778,7 @@
                     "DstName": "_signal"
                   },
                   {
-                    "Id": 27,
+                    "Id": 26,
                     "Value": false,
                     "DstId": 25,
                     "DstName": "_value"
@@ -1021,7 +1021,7 @@
                     "DstName": "_signal"
                   },
                   {
-                    "Id": 27,
+                    "Id": 26,
                     "Value": false,
                     "DstId": 25,
                     "DstName": "_value"
@@ -1256,6 +1256,16 @@
           "SurfaceVelocity": "0,0,0"
         }
       ]
+    },
+    {
+      "__guid": "40b2edd1-ab2b-4a22-bf56-4d34c61ed24a",
+      "Flags": 0,
+      "Name": "knife",
+      "Position": "379.9999,1026,40",
+      "Rotation": "-0.6087613,0,0,0.7933533",
+      "Enabled": true,
+      "__Prefab": "prefabs/weapons/knife.prefab",
+      "__PrefabVariables": {}
     }
   ],
   "SceneProperties": {

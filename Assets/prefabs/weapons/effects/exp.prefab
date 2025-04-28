@@ -2829,8 +2829,6 @@
   "MenuIcon": null,
   "DontBreakAsTemplate": false,
   "ResourceVersion": 1,
-  "__references": [
-    "facepunch.explosionmedium#78691"
-  ],
+  "__references": [],
   "__version": 1
 }

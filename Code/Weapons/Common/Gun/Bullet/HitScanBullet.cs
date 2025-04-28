@@ -8,8 +8,6 @@ public class HitScanBullet : IBulletBase
 {
 	public void Shoot( Gun weapon, Vector3 spreadOffset )
 	{
-		Log.Info( weapon.Owner );
-
 		var player = weapon.Owner;
 		var forward = player.CameraController.EyeAngles.Forward + spreadOffset;
 		forward = forward.Normal;

@@ -29,6 +29,7 @@ public partial class InventoryController : Component
 
 		foreach ( var weapon in Weapons )
 		{
+			if ( weapon == null ) continue; 
 			weapon.Components.Get<ModelCollider>( FindMode.InSelf ).Enabled = false;
 			weapon.Components.Get<Rigidbody>( FindMode.InSelf ).Enabled = false;
 			SetOwner( weapon );
