@@ -1258,13 +1258,30 @@
       ]
     },
     {
-      "__guid": "40b2edd1-ab2b-4a22-bf56-4d34c61ed24a",
+      "__guid": "034eaf13-3c9b-482b-af37-68b90390ea02",
       "Flags": 0,
       "Name": "knife",
-      "Position": "379.9999,1026,40",
-      "Rotation": "-0.6087613,0,0,0.7933533",
+      "Position": "330.9999,995.9999,34.00002",
       "Enabled": true,
       "__Prefab": "prefabs/weapons/knife.prefab",
+      "__PrefabVariables": {}
+    },
+    {
+      "__guid": "742942e5-d5f6-40c7-8849-61d73426137a",
+      "Flags": 0,
+      "Name": "beretta",
+      "Position": "291.9999,975.9999,27.99999",
+      "Enabled": true,
+      "__Prefab": "prefabs/weapons/beretta.prefab",
+      "__PrefabVariables": {}
+    },
+    {
+      "__guid": "fed6f931-a9fd-4f6b-acd7-c27944604b28",
+      "Flags": 0,
+      "Name": "granade",
+      "Position": "318.9999,1016,28.09647",
+      "Enabled": true,
+      "__Prefab": "prefabs/weapons/granade.prefab",
       "__PrefabVariables": {}
     }
   ],

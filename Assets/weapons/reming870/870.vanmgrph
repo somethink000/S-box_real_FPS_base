@@ -888,7 +888,7 @@
 							{
 								m_id = 1243514606
 							}
-							m_position = [ -512.0, -480.0 ]
+							m_position = [ -528.0, -496.0 ]
 							m_bIsStartState = false
 							m_bIsEndtState = false
 							m_bIsPassthrough = false
@@ -1453,7 +1453,7 @@
 							{
 								m_id = 269505478
 							}
-							m_position = [ -224.0, -704.0 ]
+							m_position = [ -240.0, -704.0 ]
 							m_bIsStartState = false
 							m_bIsEndtState = false
 							m_bIsPassthrough = false
@@ -1496,8 +1496,13 @@
 									m_flRandomTimeEnd = 0.0
 								},
 							]
-							m_tags = [  ]
-							m_tagBehaviors = [  ]
+							m_tags = 
+							[
+								{
+									m_id = 598710421
+								},
+							]
+							m_tagBehaviors = [ 0 ]
 							m_name = "reload_finish"
 							m_inputConnection = 
 							{

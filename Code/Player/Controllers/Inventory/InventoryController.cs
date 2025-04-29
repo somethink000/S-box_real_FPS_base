@@ -16,7 +16,7 @@ public partial class InventoryController : Component
 	
 	[RequireComponent] public Player ply { get; set; }
 	//TODO make all of this sync hosted
-	[Property]public List<Carriable> Weapons { get; set; } = new List<Carriable>( new Carriable[5] );
+	[Property]public List<Carriable> Weapons { get; set; } = new List<Carriable>( new Carriable[7] );
 	[Sync]public Carriable Deployed { get; set; }
 	public int Slot { get; set; } = 0;
 	

@@ -1,0 +1,135 @@
+@namespace GeneralGame.UI
+@attribute [StyleSheet]
+@inherits Panel
+
+
+@code {
+
+    public float X { get; set; } = 0f;
+    public float Y { get; set; } = 0f;
+    public float Z { get; set; } = 0f;
+
+    public float Pitch { get; set; } = 0f;
+    public float Yaw { get; set; } = 0f;
+    public float Roll { get; set; } = 0f;
+    public float Sensitivity { get; set; } = 0f;
+
+
+    float startX;
+    float startY;
+    float xOrigin;
+    float zOrigin;
+    float pitchOrigin;
+    float yawOrigin;
+
+    private string CurMouse { get; set; }
+
+    public Label DragModeLabel { get; set; }
+
+    public static OffsetPanel Instance { get; private set; }
+
+    public OffsetPanel()
+    {
+        Instance = this;
+    }
+
+    public virtual bool CanDragOnPanel(Panel p)
+    {
+        return p.ElementName == "offsetpanel";
+    }
+
+
+    protected override void OnMouseMove(MousePanelEvent e)
+    {
+        //that kinda shity
+        X = GunEditor.Instance.CurPos.Pos.x;
+        Y = GunEditor.Instance.CurPos.Pos.y;
+        Z = GunEditor.Instance.CurPos.Pos.z;
+
+        Pitch = GunEditor.Instance.CurPos.Angle.pitch;
+        Yaw = GunEditor.Instance.CurPos.Angle.yaw;
+        Roll = GunEditor.Instance.CurPos.Angle.roll;
+
+        
+
+        base.OnMouseMove(e);
+
+
+        if (!HasActive || !CanDragOnPanel(e.Target)) return;
+
+        if (CurMouse == "mouseleft") {
+            X = xOrigin - (startX - Mouse.Position.x) * 0.001f;
+            Z = zOrigin + (startY - Mouse.Position.y) * 0.001f;
+        }
+        else if (CurMouse == "mouseright")
+        {
+            Yaw = yawOrigin + (startX - Mouse.Position.x) * 0.01f;
+            Pitch = pitchOrigin - (startY - Mouse.Position.y) * 0.01f;
+        }
+
+        GunEditor.Instance.CurPos = new AngPos
+            {
+                Angle = new Angles(Pitch, Yaw, Roll),
+                Pos = new Vector3(X, Y, Z)
+            };
+     
+
+        SkipTransitions();
+        e.StopPropagation();
+    }
+
+    public override void OnMouseWheel(Vector2 value)
+    {
+        GunEditor.Instance.CurFov += value.y;
+
+        base.OnMouseWheel(value);
+    }
+
+    protected override void OnMouseDown(MousePanelEvent e)
+    {
+        base.OnMouseDown(e);
+
+
+        if (!CanDragOnPanel(e.Target)) return;
+       
+
+        startX = Mouse.Position.x;
+        startY = Mouse.Position.y;
+
+        xOrigin = X;
+        zOrigin = Z;
+        pitchOrigin = Pitch;
+        yawOrigin = Yaw;
+
+        CurMouse = e.Button;
+
+        e.StopPropagation();
+    }
+
+
+    protected override int BuildHash()
+    {
+        return HashCode.Combine(DateTime.Now.ToString());
+    }
+  
+
+}
+
+
+<root>
+
+    <div class="controls">
+
+        <div class="guide">
+            <text class="subTitle">Right mouse to rotate</text>
+            <text class="subTitle">Left mouse to move</text>
+            <text class="subTitle">Wheel to zoom</text>
+        </div>
+
+        <button class="btn" onclick=@( () => GunEditor.Instance.AnaliseAnimationsSpeed())>Analise animations time</button>
+
+    </div>
+   
+</root>
+
+

@@ -57,7 +57,6 @@ public partial class GunViewModel : ViewModel
 		targetVectorPos = Vector3.Zero;
 		targetVectorRot = Vector3.Zero;
 
-		
 		// I'm sure there's something already that does this for me, but I spend an hour
 		// searching through the wiki and a bunch of other garbage and couldn't find anything...
 		// So I'm doing it manually. Problem solved.
