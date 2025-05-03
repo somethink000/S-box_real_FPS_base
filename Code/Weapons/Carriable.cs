@@ -7,6 +7,7 @@ using System.Linq;
 using static Sandbox.Citizen.CitizenAnimationHelper;
 using static Sandbox.DecalDefinition;
 using static Sandbox.SerializedProperty;
+using static Sandbox.Services.Inventory;
 
 namespace GeneralGame;
 
@@ -30,10 +31,11 @@ public partial class Carriable : Component
 
 	public bool CanSeeViewModel => !IsProxy && Owner.IsFirstPerson;
 	[Sync( SyncFlags.FromHost )] public Player Owner { get; set; }
-
+	
 	public bool IsRunning => Owner != null && Owner.MovementController.IsRunning && Owner.MovementController.IsOnGround && Owner.MovementController.Velocity.Length >= 200;
 	public bool IsCrouching => Owner.MovementController.IsCrouching;
 
+	protected bool _deployed { get; set; } = false;//i have this variable because of s&box bug
 
 	protected override void OnStart()
 	{
@@ -52,7 +54,7 @@ public partial class Carriable : Component
 		} );
 
 
-		if (IsProxy)
+		if ( IsProxy )
 		{
 			WorldModelRenderer.RenderType = ModelRenderer.ShadowRenderType.On;
 		}
@@ -60,25 +62,20 @@ public partial class Carriable : Component
 	protected virtual void OnPickUp(Player ply) { }
 	protected virtual void SetupAnimEvents(){}
 
-	//TODO remove this from update
-	protected override void OnUpdate()
-	{
-		base.OnUpdate();
-
-		if ( Owner == null ) return;
-
-			if ( !IsProxy && WorldModelRenderer is not null )
-			{
-				WorldModelRenderer.RenderType = Owner.IsFirstPerson && ViewModel is not null ? ModelRenderer.ShadowRenderType.ShadowsOnly : ModelRenderer.ShadowRenderType.On;
-			}
-	}
-
 
 	[Rpc.Broadcast( NetFlags.Reliable | NetFlags.OwnerOnly )]
 	public virtual void Deploy( )
 	{
+		WorldModelRenderer.Tint = WorldModelRenderer.Tint.WithAlpha( 1 );
+		Owner.Animator.HoldType = HoldType;
+		Owner.Animator.Handedness = Hand;
 		
-		GameObject.Enabled = true;
+		if ( !IsProxy && WorldModelRenderer is not null )
+		{
+			WorldModelRenderer.RenderType = Owner.IsFirstPerson && ViewModel is not null ? ModelRenderer.ShadowRenderType.ShadowsOnly : ModelRenderer.ShadowRenderType.On;
+		}
+
+		_deployed = true;
 		SetupModels();
 	}
 
@@ -90,14 +87,15 @@ public partial class Carriable : Component
 	[Rpc.Broadcast( NetFlags.Reliable | NetFlags.OwnerOnly )]
 	public virtual void Holster()
 	{
-		GameObject.Enabled = false;
+		_deployed = false;
+		Owner.Animator.HoldType = CitizenAnimationHelper.HoldTypes.None;
+		WorldModelRenderer.RenderType = ModelRenderer.ShadowRenderType.Off;
+		WorldModelRenderer.Tint = WorldModelRenderer.Tint.WithAlpha( 0 );
 
 		if ( !IsProxy )
 		{
 
 			ViewModelHandler.OnHolster();
-
-			WorldModelRenderer.RenderType = ModelRenderer.ShadowRenderType.On;
 			ViewModelRenderer.GameObject.Destroy();
 			ViewModelHandler = null;
 			ViewModelRenderer = null;
@@ -131,33 +129,23 @@ public partial class Carriable : Component
 			ViewModelRenderer.Model = ViewModel;
 			ViewModelRenderer.AnimationGraph = ViewModel.AnimGraph;
 			ViewModelRenderer.CreateBoneObjects = true;
-			ViewModelRenderer.Enabled = false;
-			ViewModelRenderer.OnComponentEnabled += () =>
-			{
-				// Prevent flickering when enabling the component, this is controlled by the ViewModelHandler
-				ViewModelRenderer.RenderType = ModelRenderer.ShadowRenderType.ShadowsOnly;
-				// Start drawing
-				ViewModelHandler.ShouldDraw = true;
-			};
-
+			ViewModelRenderer.RenderType = ModelRenderer.ShadowRenderType.Off;
 
 			SetupViewModel( viewModelGO );
-
+			
 
 			if ( ViewModelHands is not null )
 			{
 				ViewModelHandsRenderer = viewModelGO.Components.Create<SkinnedModelRenderer>();
 				ViewModelHandsRenderer.Model = ViewModelHands;
 				ViewModelHandsRenderer.BoneMergeTarget = ViewModelRenderer;
-				ViewModelHandsRenderer.OnComponentEnabled += () =>
-				{
-					// Prevent flickering when enabling the component, this is controlled by the ViewModelHandler
-					ViewModelHandsRenderer.RenderType = ModelRenderer.ShadowRenderType.ShadowsOnly;
-				};
+				ViewModelHandsRenderer.RenderType = ModelRenderer.ShadowRenderType.Off;
 			}
 
 			ViewModelHandler.ViewModelHandsRenderer = ViewModelHandsRenderer;
 
+			
+			
 
 			SetupAnimEvents();
 		}
@@ -239,17 +227,3 @@ public partial class Carriable : Component
 
 }
 
-
-
-public sealed class FuckedViewModelFix : Component
-{
-	protected override void OnStart()
-	{
-		
-	}
-
-	protected override void OnUpdate()
-	{
-
-	}
-}

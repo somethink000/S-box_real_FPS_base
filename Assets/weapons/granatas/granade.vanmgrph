@@ -177,19 +177,6 @@
 											m_option = "FinishedConditionOption_OnAlmostFinished"
 											m_bIsFinished = true
 										},
-										{
-											_class = "CParameterAnimCondition"
-											m_comparisonOp = 0
-											m_paramID = 
-											{
-												m_id = 1416194514
-											}
-											m_comparisonValue = 
-											{
-												m_nType = 1
-												m_data = true
-											}
-										},
 									]
 									m_blendDuration = 0.2
 									m_destState = 

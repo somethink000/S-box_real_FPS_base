@@ -2,6 +2,7 @@
 using Sandbox.Citizen;
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics.Contracts;
 using System.Linq;
 using System.Numerics;
 using static Sandbox.Citizen.CitizenAnimationHelper;
@@ -15,16 +16,15 @@ public partial class MeleWeapon : Carriable
 	[Property] public float Damage { get; set; } = 5;
 	[Property] public SoundEvent HitSound { get; set; }
 
-	[Sync] public bool IsDeploying { get; set; }
+	private bool isDeploying { get; set; }
 
 	private string DeployAnim { get; set; } = "deploy";
 	private string HolsterAnim { get; set; } = "holster";
 	private string InspectAnim { get; set; } = "inspect";
 	private string ReadyAnim { get; set; } = "ready";
-
 	private bool IsReady = false;
 	private bool IsAttacking = false;
-	private bool AttackTraced = false;
+	private bool canTrace = false;
 
 	private TimeUntil AttackHitDelay { get; set; }
 
@@ -43,11 +43,11 @@ public partial class MeleWeapon : Carriable
 	{
 		base.OnUpdate();
 
-		if ( Owner == null ) return;
+		if ( Owner == null || !_deployed ) return;
 
 		if ( Input.Pressed( InputButtonHelper.Inspect ) )
 		{
-			if ( IsDeploying ) return;
+			if ( isDeploying ) return;
 
 			ViewModelRenderer?.Set( InspectAnim, true );
 		}
@@ -58,21 +58,21 @@ public partial class MeleWeapon : Carriable
 			if ( Input.Down( InputButtonHelper.PrimaryAttack ) )
 			{
 				IsAttacking = true;
-				AttackTraced = false;
+				canTrace = true;
 				AttackHitDelay = AttackDelay;
 				ViewModelRenderer?.Set( "attack", true );
 			}
 			if ( Input.Down( InputButtonHelper.SecondaryAttack ) )
 			{
 				IsAttacking = true;
-				AttackTraced = false;
+				canTrace = true;
 				AttackHitDelay = AttackDelay;
 				ViewModelRenderer?.Set( "attack2", true );
 			}
 
 		}
 
-		if (AttackHitDelay <= 0 && !AttackTraced)
+		if (AttackHitDelay <= 0 && canTrace )
 		{
 			Attack();
 		}
@@ -82,7 +82,7 @@ public partial class MeleWeapon : Carriable
 	[Rpc.Broadcast( NetFlags.Reliable | NetFlags.OwnerOnly )]
 	public virtual void Attack( )
 	{
-		AttackTraced = true;
+		canTrace = false;
 		Owner.BodyRenderer.Set( "b_attack", true );
 
 
@@ -128,7 +128,7 @@ public partial class MeleWeapon : Carriable
 	public override bool CanHolster()
 	{
 
-		if ( IsDeploying || IsAttacking ) return false;
+		if ( isDeploying || IsAttacking ) return false;
 		return true;
 	}
 
@@ -145,7 +145,7 @@ public partial class MeleWeapon : Carriable
 				case "deployed":
 
 					if ( !IsReady ) IsReady = true;
-					IsDeploying = false;
+					isDeploying = false;
 
 					break;
 

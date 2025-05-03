@@ -13,7 +13,6 @@ public partial class ViewModel : Component
 	public Carriable Carriable { get; set; }
 	protected Player ply => Carriable.Owner;
 	public CameraComponent Camera { get; set; }
-	public bool ShouldDraw { get; set; }
 
 	protected float animSpeed { get; set; } = 1;
 
@@ -49,18 +48,6 @@ public partial class ViewModel : Component
 	{
 		base.OnUpdate();
 		if ( ply == null || IsProxy ) return;
-
-		var renderType = ShouldDraw ? ModelRenderer.ShadowRenderType.Off : ModelRenderer.ShadowRenderType.ShadowsOnly;
-		ViewModelRenderer.Enabled = ply.IsFirstPerson;
-		ViewModelRenderer.RenderType = renderType;
-
-		if ( ViewModelHandsRenderer is not null )
-		{
-			ViewModelHandsRenderer.Enabled = ply.IsFirstPerson;
-			ViewModelHandsRenderer.RenderType = renderType;
-		}
-
-		if ( !ply.IsFirstPerson ) return;
 
 
 		// For particles & lighting

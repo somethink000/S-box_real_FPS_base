@@ -9,7 +9,7 @@ namespace GeneralGame;
 
 public class EntThrow : Component
 {
-	[Property] public ParticleSystem explosionEffect { get; set; }
+	[Property] public GameObject ExplosionEffect { get; set; }
 	[Property] public SoundEvent explodeSound { get; set; }
 	[Property] public float range { get; set; }
 	[Property] public float Damage { get; set; } = 50;
@@ -25,6 +25,7 @@ public class EntThrow : Component
 
 	protected override void OnUpdate()
 	{
+
 		if ( explodeTime && !isExploded )
 		{
 			isExploded = true;
@@ -44,7 +45,7 @@ public class EntThrow : Component
 
 				
 				if ( trace.GameObject != null ) {
-					Log.Info( trace.GameObject ); 
+					
 					var damage = new DamageInfo( Damage, Owner.GameObject, GameObject, trace.Hitbox );
 					damage.Position = trace.HitPosition;
 					damage.Shape = trace.Shape;
@@ -59,9 +60,14 @@ public class EntThrow : Component
 				
 			}
 
-			//var p = new SceneParticles( Scene.SceneWorld, explosionEffect );
-			//p.SetControlPoint( 0, Transform.Position );
-			//p.PlayUntilFinished( Task );
+			IEnumerable<BasicParticleEmiter> emiters = ExplosionEffect.Components.GetAll<BasicParticleEmiter>( FindMode.EnabledInSelfAndChildren );
+
+			foreach ( var emiter in emiters )
+			{
+
+				emiter.Emit( WorldTransform, null );
+
+			}
 
 			Sound.Play( explodeSound, WorldPosition );
 		}

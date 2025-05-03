@@ -33,11 +33,13 @@ public partial class Gun
 	[Property, Group( "Shooting" )] public FiringType FireMod { get; set; } = FiringType.semi;
 	[Property, Group( "Shooting" )] public SoundEvent DryShootSound { get; set; }
 	[Property, Group( "Shooting" )] public SoundEvent ShootSound { get; set; }
-	public IBulletBase BulletType { get; set; } = new HitScanBullet();
+
 
 	[Sync] public int Clip { get; set; }
 
 	public TimeSince TimeSinceShoot { get; set; }
+
+	private IBulletBase bulletType { get; set; } = new HitScanBullet();
 
 	public virtual bool CanShoot()
 	{
@@ -111,8 +113,8 @@ public partial class Gun
 		// Bullet
 		for ( int i = 0; i < Bullets; i++ )
 		{
-			var realSpread = IsScoping ? 0 : GetRealSpread( Spread );
-			var spreadOffset = BulletType.GetRandomSpread( realSpread );
+			var realSpread = GetRealSpread( Spread );
+			var spreadOffset = bulletType.GetRandomSpread( realSpread );
 			ShootBullet( spreadOffset );
 		}
 
@@ -125,7 +127,7 @@ public partial class Gun
 	{
 		Owner.BodyRenderer.Set( "b_attack", true );
 
-		BulletType.Shoot( this, spreadOffset );
+		bulletType.Shoot( this, spreadOffset );
 		ShootEffect();
 	}
 

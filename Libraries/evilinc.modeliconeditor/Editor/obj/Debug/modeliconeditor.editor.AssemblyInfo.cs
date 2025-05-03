@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("modeliconeditor.editor")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+52ef76f50bba31d2ea644f2f480b1a0939ac3fb9")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+32d39ddd2506dc9d5fbc3313923c382ac127cd32")]
 [assembly: System.Reflection.AssemblyProductAttribute("modeliconeditor.editor")]
 [assembly: System.Reflection.AssemblyTitleAttribute("modeliconeditor.editor")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

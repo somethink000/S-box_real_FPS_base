@@ -27,7 +27,7 @@
         "DryShootSound": "weapons/sounds/mp7/dryfire.sound",
         "EjectShellEmiter": {
           "_type": "component",
-          "component_id": "7d08a65a-b20e-4b8e-9d11-8d9b36410bac",
+          "component_id": "ac7be2f2-5376-4fcd-8fa1-e619ea752ede",
           "go": "3867b33f-885d-46e5-885b-6fbc8a805751",
           "component_type": "BasicParticleEmiter"
         },
@@ -66,7 +66,7 @@
         },
         "MuzzleFlashEmiter": {
           "_type": "component",
-          "component_id": "00b20b1a-63fa-4ad4-88be-0f57c70f3a21",
+          "component_id": "ff916f2f-fa1c-42a4-be74-77b29b619b7e",
           "go": "2ed9a689-0d66-4913-9281-10e3ae340597",
           "component_type": "BasicParticleEmiter"
         },
@@ -174,7 +174,8 @@
         },
         "RenderType": "On",
         "Sequence": {
-          "Name": null
+          "Name": null,
+          "Looping": true
         },
         "Tint": "1,1,1,1",
         "UseAnimGraph": true
@@ -187,7 +188,9 @@
         "Name": "bip01_r_hand",
         "Position": "-3.660735,-1.182861,2.522177",
         "Rotation": "0.9988103,-0.0436119,-0.02179443,-0.0009514778",
-        "Enabled": true
+        "Enabled": true,
+        "Components": [],
+        "Children": []
       },
       {
         "__guid": "583d5540-f32d-4389-992c-c16f06e6281f",
@@ -195,7 +198,9 @@
         "Name": "hold_R",
         "Position": "-1.633867,0.2039642,3.799041",
         "Rotation": "0,0,-0.04264397,0.9990903",
-        "Enabled": true
+        "Enabled": true,
+        "Components": [],
+        "Children": []
       },
       {
         "__guid": "2ed9a689-0d66-4913-9281-10e3ae340597",
@@ -218,14 +223,9 @@
     ],
     "__variables": [],
     "__properties": {
-      "FixedUpdateFrequency": 50,
-      "MaxFixedUpdates": 5,
-      "NetworkFrequency": 30,
       "NetworkInterpolation": true,
-      "PhysicsSubSteps": 1,
-      "ThreadedAnimation": true,
       "TimeScale": 1,
-      "UseFixedUpdate": true,
+      "WantsSystemScene": true,
       "Metadata": {},
       "NavMesh": {
         "Enabled": false,

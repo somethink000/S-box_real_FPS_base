@@ -16,21 +16,7 @@ public partial class GunViewModel : ViewModel
 	protected override void OnUpdate()
 	{
 
-
 		if ( ply == null || IsProxy ) return;
-
-		var renderType = ShouldDraw ? ModelRenderer.ShadowRenderType.Off : ModelRenderer.ShadowRenderType.ShadowsOnly;
-		ViewModelRenderer.Enabled = ply.IsFirstPerson;
-		ViewModelRenderer.RenderType = renderType;
-
-		if ( ViewModelHandsRenderer is not null )
-		{
-			ViewModelHandsRenderer.Enabled = ply.IsFirstPerson;
-			ViewModelHandsRenderer.RenderType = renderType;
-		}
-
-		if ( !ply.IsFirstPerson ) return;
-
 
 		// For particles & lighting
 		Camera.WorldPosition = Scene.Camera.WorldPosition;
@@ -172,7 +158,7 @@ public partial class GunViewModel : ViewModel
 			var timeDiff = RealTime.Now - aimTime;
 
 			// Mod only while actively scoping
-			if ( Weapon.IsScoping || (!Weapon.IsScoping && timeDiff < 0.2f) )
+			if ( timeDiff < 0.2f )
 			{
 				speedMod = timeDiff * 10;
 			}

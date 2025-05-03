@@ -78,18 +78,31 @@
       {
         "__type": "GeneralGame.EntThrow",
         "__guid": "efa80515-e25d-459f-99c2-1e4a2270f850",
+        "Damage": 120,
         "explodeSound": "weapons/sounds/grenades/m67_explode_6.sound",
-        "explosionEffect": "particles/explosion/barrel_explosion/explosion_smoke_ring_02.vpcf",
+        "ExplosionEffect": {
+          "_type": "gameobject",
+          "go": "5ad39de1-074b-4842-87e2-269c9b3ed645"
+        },
         "OnComponentDestroy": null,
         "OnComponentDisabled": null,
         "OnComponentEnabled": null,
         "OnComponentFixedUpdate": null,
         "OnComponentStart": null,
         "OnComponentUpdate": null,
-        "range": 200
+        "range": 700
       }
     ],
-    "Children": [],
+    "Children": [
+      {
+        "__guid": "5ad39de1-074b-4842-87e2-269c9b3ed645",
+        "Flags": 0,
+        "Name": "explosion.medium",
+        "Enabled": true,
+        "__Prefab": "prefabs/weapons/effects/exp.prefab",
+        "__PrefabVariables": {}
+      }
+    ],
     "__variables": [],
     "__properties": {
       "FixedUpdateFrequency": 50,

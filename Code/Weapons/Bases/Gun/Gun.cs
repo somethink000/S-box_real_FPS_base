@@ -36,7 +36,7 @@ public partial class Gun : Carriable, IUseAmmo
 		base.OnUpdate();
 
 
-		if ( Owner == null ) return;
+		if ( Owner == null || !_deployed ) return;
 
 		if ( !IsProxy )
 		{

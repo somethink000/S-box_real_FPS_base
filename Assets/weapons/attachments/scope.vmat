@@ -9,8 +9,8 @@ Layer0
 
 	//---- Glass ----
 	g_flBlurAmount "0.000"
-	g_flIridescence "1000.000"
-	g_flIridescenceScale "10.000"
+	g_flIridescence "0.000"
+	g_flIridescenceScale "0.000"
 	g_flRefractionStrength "10.000"
 	g_flSightDistanceScale "1.000"
 	g_vSightLightColor "[1.000000 0.000000 0.000000 1.000000]"

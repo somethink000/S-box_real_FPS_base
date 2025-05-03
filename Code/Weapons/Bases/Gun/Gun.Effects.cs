@@ -18,12 +18,11 @@ public partial class Gun
 	string muzzleBone { get; set; } = "muzzle";
 	string ejectBone { get; set; } = "eject";
 
-	[Sync] public bool IsReloading { get; set; }
-	[Sync] public bool IsAiming { get; set; }
-	[Sync] public bool IsScoping { get; set; }
-	[Sync] public bool InBoltBack { get; set; }
-	[Sync] public bool IsDeploying { get; set; }
-	[Sync] public bool IsHolstering { get; set; }
+	public bool IsReloading { get; set; }
+	public bool IsAiming { get; set; }
+	public bool InBoltBack { get; set; }
+	public bool IsDeploying { get; set; }
+	public bool IsHolstering { get; set; }
 
 	public bool IsEmpty = false;
 	public bool IsReady = false;

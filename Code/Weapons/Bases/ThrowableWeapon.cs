@@ -14,7 +14,7 @@ public partial class ThrowableWeapon : Carriable
 	[Property] public float PrepareTime { get; set; }
 	[Property] public GameObject ThrowPrefab { get; set; }
 
-	[Sync] public bool IsDeploying { get; set; }
+	public bool IsDeploying { get; set; }
 
 	private string DeployAnim { get; set; } = "deploy";
 	private string HolsterAnim { get; set; } = "holster";
@@ -25,12 +25,12 @@ public partial class ThrowableWeapon : Carriable
 	private bool IsReady = false;
 	private bool IsCooking = false;
 
-	
-
 	public TimeUntil curPrepareTime { get; set; }
 	public TimeUntil curReleaseTime { get; set; }
 	public bool isPreparing { get; set; } = false;
 	public bool waitingThrow { get; set; } = false;
+
+
 	protected override void OnStart()
 	{
 		base.OnStart();
@@ -46,7 +46,7 @@ public partial class ThrowableWeapon : Carriable
 	{
 		base.OnUpdate();
 
-		if ( Owner == null ) return;
+		if ( Owner == null || !_deployed ) return;
 
 		if ( Input.Pressed( InputButtonHelper.Inspect ) )
 		{
@@ -56,18 +56,17 @@ public partial class ThrowableWeapon : Carriable
 		}
 
 
-		if ( Input.Down( InputButtonHelper.SecondaryAttack ) )
+		if ( Input.Down( InputButtonHelper.PrimaryAttack ) )
 		{
 			if ( isPreparing ) return;
 
 			isPreparing = true;
 			curPrepareTime = PrepareTime;
-			Log.Info( "EF" );
 			ViewModelRenderer?.Set( CookingAnim, true );
 
 		}
 
-		if ( Input.Released( InputButtonHelper.SecondaryAttack ) )
+		if ( Input.Released( InputButtonHelper.PrimaryAttack ) )
 		{
 			if ( !isPreparing || curPrepareTime ) return;
 			waitingThrow = true;
@@ -76,14 +75,15 @@ public partial class ThrowableWeapon : Carriable
 		//explode granade in hands
 		if ( curPrepareTime && isPreparing )
 		{
-			isPreparing = false;
+
 			createThrow( true );
+			isPreparing = false;
 		}
 
 		//throw 
 		if ( waitingThrow && curReleaseTime )
 		{
-			isPreparing = false;
+			
 			waitingThrow = false;
 
 			ViewModelRenderer?.Set( CookingAnim, false );
@@ -91,9 +91,6 @@ public partial class ThrowableWeapon : Carriable
 
 
 	}
-
-
-
 
 	public override void Deploy()
 	{
@@ -137,6 +134,7 @@ public partial class ThrowableWeapon : Carriable
 				case "throw":
 
 					createThrow( false );
+					isPreparing = false;
 
 					break;
 

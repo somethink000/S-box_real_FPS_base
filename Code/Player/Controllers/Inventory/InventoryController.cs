@@ -15,73 +15,52 @@ public partial class InventoryController : Component
 {
 	
 	[RequireComponent] public Player ply { get; set; }
-	//TODO make all of this sync hosted
-	[Property]public List<Carriable> Weapons { get; set; } = new List<Carriable>( new Carriable[7] );
-	[Sync]public Carriable Deployed { get; set; }
+
+	[Sync( SyncFlags.FromHost )] public List<Carriable> Weapons { get; set; } = new List<Carriable>( new Carriable[7] );
+	[Sync( SyncFlags.FromHost )] public Carriable Deployed { get; set; }
+
 	public int Slot { get; set; } = 0;
 	
-
-	protected override void OnStart()
-	{
-		base.OnStart();
-		ply.InventoryController.Give( AmmoType.Pistol, 500 );
-		ply.InventoryController.Give( AmmoType.Rifle, 1000 );
-
-		foreach ( var weapon in Weapons )
-		{
-			if ( weapon == null ) continue; 
-			weapon.Components.Get<ModelCollider>( FindMode.InSelf ).Enabled = false;
-			weapon.Components.Get<Rigidbody>( FindMode.InSelf ).Enabled = false;
-			SetOwner( weapon );
-			weapon.GameObject.Enabled = false;
-		}
-		
-
-	}
 
 	public bool HaveFreeSpace()
 		=> Weapons.IndexOf( null ) != -1;
 
-	public void Clear()
+	public void ClearWeapons()
 	{
-		foreach ( var weapon in Weapons )
+		
+		ClearDeployed();
+		
+		for ( int i = 0; i < Weapons.Count; i++ )
 		{
+			var weapon = Weapons[i];
+
+			if ( weapon == null ) continue;
+
 			weapon.GameObject.Destroy();
+			Weapons[i] = null;
 		}
 	}
 
-	private void ChangeDeployed( Carriable carriable, int slot )
-	{
-
-		if ( Deployed != null )
-		{
-
-			ClearDeployed();
-		}
-
-		Deployed = carriable;
-		Slot = slot;
-		SetOwner(carriable);
-		Deployed.Deploy( );
-	}
 	
-	[Rpc.Broadcast( NetFlags.Reliable | NetFlags.OwnerOnly )]
-	private void SetOwner( Carriable item )
-	{
-		if ( Networking.IsHost )
-		{
-			item.Owner = ply;
-		}
-	}
 
+	
+	//should called on bradcast
 	private void ClearDeployed()
 	{
-		Deployed.Holster();
-		Deployed = null;
+		
+		if ( Deployed != null )
+		{
+			Deployed.Holster();
+	
+			if ( Networking.IsHost )
+			{
+				Deployed = null;
+			}
+		}
+
 	}
 
-	
-
+	[Rpc.Broadcast( NetFlags.Reliable | NetFlags.OwnerOnly )]
 	private void DeployWeapon( int index )
 	{
 
@@ -101,10 +80,9 @@ public partial class InventoryController : Component
 
 		if ( item == null )
 		{
-			if ( Deployed != null )
-			{
-				ClearDeployed();
-			}
+			
+			ClearDeployed();
+			
 			Slot = index;
 			
 			return;
@@ -113,8 +91,16 @@ public partial class InventoryController : Component
 		if ( item.GameObject.Components.GetInDescendantsOrSelf<Carriable>( true ) != null )
 		{
 			Carriable nextWeapon = item.GameObject.Components.GetInDescendantsOrSelf<Carriable>( true );
-			
-			ChangeDeployed( nextWeapon, index );
+
+			ClearDeployed();
+
+			if ( Networking.IsHost )
+			{
+				Deployed = nextWeapon;
+			}
+
+			Slot = index;
+			nextWeapon.Deploy();
 		}
 
 	}
@@ -123,22 +109,10 @@ public partial class InventoryController : Component
 	protected override void OnUpdate()
 	{
 		
-
-		//TODO Make it in SlotChanged() 
-		if ( Deployed != null )
-		{
-
-			ply.Animator.HoldType = Deployed.HoldType;
-			ply.Animator.Handedness = Deployed.Hand;
-		}
-		else
-		{
-			
-			ply.Animator.HoldType = CitizenAnimationHelper.HoldTypes.None;
-
-		}
-
 		if (IsProxy) return;
+
+
+		if ( Input.Pressed( InputButtonHelper.Drop ) ) ClearWeapons( );
 
 		if ( Input.Pressed( InputButtonHelper.Slot1 ) ) DeployWeapon( 0 );
 		else if ( Input.Pressed( InputButtonHelper.Slot2 ) ) DeployWeapon( 1 );
@@ -149,7 +123,8 @@ public partial class InventoryController : Component
 		else if ( Input.MouseWheel.y < 0 ) DeployWeapon( Slot + 1 );
 	}
 
-	[Rpc.Broadcast( NetFlags.Reliable | NetFlags.OwnerOnly )]
+
+	[Rpc.Host( NetFlags.Reliable | NetFlags.OwnerOnly )]
 	public void GiveItem( Carriable item )
 	{
 
@@ -158,48 +133,53 @@ public partial class InventoryController : Component
 		//check if there is a free slot and new slot les than inventory size
 		if ( freeSlot >= 0 && freeSlot < Weapons.Count ) {
 
-			if ( Networking.IsHost )
+
+			item.GameObject.Parent = this.GameObject;
+			item.GameObject.WorldPosition = this.GameObject.WorldPosition;
+			item.GameObject.WorldRotation = this.GameObject.WorldRotation;
+
+			//NEVER FUCKING DISABLE ANY COMPONENT ON WEAPON OR VIEW MODEL FUCKED UP BECAUE OF S&BOX BUG
+			///{ 
+				ModelCollider collider = item.Components.Get<ModelCollider>( FindMode.InSelf );
+				collider.Static = true;
+				collider.IsTrigger = true;
+
+				Rigidbody rigid = item.Components.Get<Rigidbody>( FindMode.InSelf );
+				rigid.Gravity = false;
+				rigid.MotionEnabled = false;
+			//}
+			item.Owner = ply;
+
+			item.GameObject.Network.AssignOwnership( this.GameObject.Network.Owner );
+			
+
+			Weapons[freeSlot] = item;
+
+			if ( freeSlot == Slot )
 			{
-				//item.GameObject.BreakFromPrefab();
-				item.GameObject.Enabled = false;
-				item.GameObject.Parent = this.GameObject;
-				item.GameObject.WorldPosition = this.GameObject.WorldPosition;
-				item.GameObject.WorldRotation = this.GameObject.WorldRotation;
-
-				item.Components.Get<ModelCollider>( FindMode.InSelf ).Enabled = false;
-				item.Components.Get<Rigidbody>( FindMode.InSelf ).Enabled = false;
-
-				item.GameObject.Network.AssignOwnership( this.GameObject.Network.Owner );
-				//item.GameObject.Network.ClearInterpolation();
-				//item.GameObject.Network.Refresh();
-
-
-				DeployItem( item, freeSlot );
+				Deployed = item;
 			}
 
+			DeployItem( item, freeSlot );
 		}
+
+		
 	}
 
 	[Rpc.Broadcast( NetFlags.Reliable | NetFlags.HostOnly )]
 	public void DeployItem( Carriable item, int freeSlot )
 	{
 
-		//	Components.Get<ModelCollider>( FindMode.InSelf ).Enabled = true;
-		//	Components.Get<Rigidbody>( FindMode.InSelf ).Enabled = true;
-
+		item.WorldModelRenderer.Tint = item.WorldModelRenderer.Tint.WithAlpha( 0 );
 
 		if ( IsProxy ) return;
 
-		Weapons[freeSlot] = item;
-
 		if ( freeSlot == Slot )
 		{
-
-			Deployed = item;
 			Slot = freeSlot;
-			Deployed.Deploy( );
+			item.Deploy();
 		}
-		
+
 	}
 
 	
