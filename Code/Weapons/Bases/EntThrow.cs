@@ -13,20 +13,22 @@ public class EntThrow : Component
 	[Property] public SoundEvent explodeSound { get; set; }
 	[Property] public float range { get; set; }
 	[Property] public float Damage { get; set; } = 50;
-	[Sync] public Player Owner { get; set; }
-	public TimeUntil explodeTime { get; set; }
-	public TimeUntil removeTime { get; set; }
+	[Sync( SyncFlags.FromHost )] public Player Owner { get; set; }
+	[Sync( SyncFlags.FromHost )] public float ExplodeTime { get; set; }
+	private TimeUntil untilExplodeTime { get; set; }
+	private TimeUntil removeTime { get; set; }
 	public bool isExploded { get; set; }
 
 	protected override void OnStart()
 	{
-		removeTime = explodeTime + 5;
+		untilExplodeTime = ExplodeTime;
+		removeTime = ExplodeTime + 5;
 	}
 
 	protected override void OnUpdate()
 	{
 
-		if ( explodeTime && !isExploded )
+		if ( untilExplodeTime && !isExploded )
 		{
 			isExploded = true;
 

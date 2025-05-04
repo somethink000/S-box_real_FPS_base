@@ -13,7 +13,7 @@
         "Damage": 150,
         "Hand": "Both",
         "HitSound": "weapons/sounds/knife/slash-01.sound",
-        "HoldType": "None",
+        "HoldType": "Punch",
         "Icon": {
           "$compiler": "texture",
           "$source": "imagefile",
@@ -139,7 +139,8 @@
         },
         "RenderType": "On",
         "Sequence": {
-          "Name": null
+          "Name": null,
+          "Looping": true
         },
         "Tint": "1,1,1,1",
         "UseAnimGraph": true
@@ -150,19 +151,24 @@
         "__guid": "d3dc9fcf-4f5a-42ec-9bc1-c263fa121488",
         "Flags": 4,
         "Name": "body",
-        "Enabled": true
+        "Enabled": true,
+        "Components": [],
+        "Children": []
+      },
+      {
+        "__guid": "48ec24b2-1171-4627-9ec0-378a9826cc9d",
+        "Flags": 4,
+        "Name": "hold_R",
+        "Enabled": true,
+        "Components": [],
+        "Children": []
       }
     ],
     "__variables": [],
     "__properties": {
-      "FixedUpdateFrequency": 50,
-      "MaxFixedUpdates": 5,
-      "NetworkFrequency": 30,
       "NetworkInterpolation": true,
-      "PhysicsSubSteps": 1,
-      "ThreadedAnimation": true,
       "TimeScale": 1,
-      "UseFixedUpdate": true,
+      "WantsSystemScene": true,
       "Metadata": {},
       "NavMesh": {
         "Enabled": false,

@@ -92,14 +92,16 @@ public partial class Carriable : Component
 		WorldModelRenderer.RenderType = ModelRenderer.ShadowRenderType.Off;
 		WorldModelRenderer.Tint = WorldModelRenderer.Tint.WithAlpha( 0 );
 
-		if ( !IsProxy )
+		if ( !IsProxy && ViewModelHandler != null )
 		{
-
+			
 			ViewModelHandler.OnHolster();
 			ViewModelRenderer.GameObject.Destroy();
 			ViewModelHandler = null;
 			ViewModelRenderer = null;
 			ViewModelHandsRenderer = null;
+			
+		
 		}
 
 	}

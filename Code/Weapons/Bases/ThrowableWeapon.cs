@@ -46,8 +46,8 @@ public partial class ThrowableWeapon : Carriable
 	{
 		base.OnUpdate();
 
-		if ( Owner == null || !_deployed ) return;
-
+		if ( Owner == null || !_deployed || IsProxy ) return;
+		
 		if ( Input.Pressed( InputButtonHelper.Inspect ) )
 		{
 			if ( IsDeploying ) return;
@@ -76,7 +76,7 @@ public partial class ThrowableWeapon : Carriable
 		if ( curPrepareTime && isPreparing )
 		{
 
-			createThrow( true );
+			createThrow( 0 );
 			isPreparing = false;
 		}
 
@@ -132,8 +132,8 @@ public partial class ThrowableWeapon : Carriable
 					break;
 
 				case "throw":
-
-					createThrow( false );
+					
+					createThrow( curPrepareTime );
 					isPreparing = false;
 
 					break;
@@ -144,16 +144,26 @@ public partial class ThrowableWeapon : Carriable
 	}
 
 
-	public virtual void createThrow( bool imidiantly )
+	[Rpc.Broadcast( NetFlags.Reliable | NetFlags.OwnerOnly )]
+	public virtual void createThrow( float time )
 	{
-		var obj = ThrowPrefab.Clone( this.Transform.World );
-		obj.NetworkSpawn();
-		obj.WorldPosition = Owner.Camera.WorldPosition + Owner.Camera.WorldRotation.Forward * 50;
-		obj.WorldRotation = Owner.Camera.WorldRotation;
-		obj.Components.Get<Rigidbody>().Velocity = Owner.Camera.WorldRotation.Forward * 1000;
-		var thrw = obj.Components.Get<EntThrow>();
-		thrw.Owner = Owner;
-		thrw.explodeTime = imidiantly ? 0f : curPrepareTime;
+
+
+
+
+		if ( Networking.IsHost )
+		{
+
+			var obj = ThrowPrefab.Clone( this.Transform.World );
+			obj.WorldPosition = Owner.Camera.WorldPosition + Owner.Camera.WorldRotation.Forward * 50;
+			obj.WorldRotation = Owner.Camera.WorldRotation;
+			obj.Components.Get<Rigidbody>().Velocity = Owner.Camera.WorldRotation.Forward * 1000;
+			var thrw = obj.Components.Get<EntThrow>();
+			thrw.Owner = Owner;
+			thrw.ExplodeTime = time;
+			obj.NetworkSpawn( null );
+		}
+
 	}
 
 

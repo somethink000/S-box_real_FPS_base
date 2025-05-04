@@ -10,7 +10,7 @@
         "__guid": "e34c6a2e-bdf4-4003-aa2e-5315f472b93b",
         "AnimSpeed": 1,
         "Hand": "Both",
-        "HoldType": "Pistol",
+        "HoldType": "Punch",
         "Icon": {
           "$compiler": "texture",
           "$source": "imagefile",
@@ -37,7 +37,7 @@
             "TargetColor": "0,1,0,1",
             "CacheToDisk": true
           },
-          "compiled": null
+          "compiled": "textures/generated/imagefile/7151eefaf1bcc7ab.vtex"
         },
         "Name": "M26",
         "OnComponentDestroy": null,
@@ -141,7 +141,8 @@
         },
         "RenderType": "On",
         "Sequence": {
-          "Name": null
+          "Name": null,
+          "Looping": true
         },
         "Tint": "1,1,1,1",
         "UseAnimGraph": true
@@ -152,19 +153,24 @@
         "__guid": "df5aa62a-4e7d-4b58-b211-53b596d2404d",
         "Flags": 4,
         "Name": "root",
-        "Enabled": true
+        "Enabled": true,
+        "Components": [],
+        "Children": []
+      },
+      {
+        "__guid": "33a86d4b-3f86-4d31-825d-7baa233458ae",
+        "Flags": 4,
+        "Name": "hold_R",
+        "Enabled": true,
+        "Components": [],
+        "Children": []
       }
     ],
     "__variables": [],
     "__properties": {
-      "FixedUpdateFrequency": 50,
-      "MaxFixedUpdates": 5,
-      "NetworkFrequency": 30,
       "NetworkInterpolation": true,
-      "PhysicsSubSteps": 1,
-      "ThreadedAnimation": true,
       "TimeScale": 1,
-      "UseFixedUpdate": true,
+      "WantsSystemScene": true,
       "Metadata": {},
       "NavMesh": {
         "Enabled": false,

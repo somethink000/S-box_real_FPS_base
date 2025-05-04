@@ -72,6 +72,19 @@
 					},
 				]
 			},
+			{
+				_class = "Skeleton"
+				children = 
+				[
+					{
+						_class = "Bone"
+						name = "hold_R"
+						origin = [ 0.381031, 1.601715, 1.330742 ]
+						angles = [ 11.893481, 0.0, 0.0 ]
+						do_not_discard = true
+					},
+				]
+			},
 		]
 		model_archetype = ""
 		primary_associated_entity = ""

@@ -43,7 +43,7 @@ public partial class MeleWeapon : Carriable
 	{
 		base.OnUpdate();
 
-		if ( Owner == null || !_deployed ) return;
+		if ( Owner == null || !_deployed || IsProxy ) return;
 
 		if ( Input.Pressed( InputButtonHelper.Inspect ) )
 		{
