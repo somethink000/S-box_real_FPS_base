@@ -57,6 +57,7 @@ public partial class Carriable : Component
 		if ( IsProxy )
 		{
 			WorldModelRenderer.RenderType = ModelRenderer.ShadowRenderType.On;
+			
 		}
 	}
 	protected virtual void OnPickUp(Player ply) { }
@@ -118,7 +119,7 @@ public partial class Carriable : Component
 	{
 		
 
-		if ( !IsProxy && ViewModel is not null && ViewModelRenderer is null )
+		if ( !IsProxy && ViewModel is not null && ViewModelRenderer is null && Owner.IsFirstPerson )
 		{
 
 			var viewModelGO = new GameObject( true, "Viewmodel" );
@@ -132,7 +133,7 @@ public partial class Carriable : Component
 			ViewModelRenderer.AnimationGraph = ViewModel.AnimGraph;
 			ViewModelRenderer.CreateBoneObjects = true;
 			ViewModelRenderer.RenderType = ModelRenderer.ShadowRenderType.Off;
-
+			ViewModelRenderer.Enabled = false;
 			SetupViewModel( viewModelGO );
 			
 
@@ -142,8 +143,9 @@ public partial class Carriable : Component
 				ViewModelHandsRenderer.Model = ViewModelHands;
 				ViewModelHandsRenderer.BoneMergeTarget = ViewModelRenderer;
 				ViewModelHandsRenderer.RenderType = ModelRenderer.ShadowRenderType.Off;
+				ViewModelHandsRenderer.Enabled = true;
 			}
-
+			ViewModelRenderer.Enabled = true;
 			ViewModelHandler.ViewModelHandsRenderer = ViewModelHandsRenderer;
 
 			
