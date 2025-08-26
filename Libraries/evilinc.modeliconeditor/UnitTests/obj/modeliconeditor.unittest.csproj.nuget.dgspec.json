@@ -1,7 +1,7 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\susan\\Documents\\GitHub\\S-box_real_FPS_base\\Libraries\\evilinc.modeliconeditor\\UnitTests\\modeliconeditor.unittest.csproj": {}
+    "C:\\Users\\Skipin\\Documents\\GitHub\\S-box_real_FPS_base\\Libraries\\evilinc.modeliconeditor\\UnitTests\\modeliconeditor.unittest.csproj": {}
   },
   "projects": {
     "C:\\Program Files (x86)\\Steam\\steamapps\\common\\sbox\\addons\\base\\Code\\Base Library.csproj": {
@@ -10,14 +10,14 @@
         "projectUniqueName": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\sbox\\addons\\base\\Code\\Base Library.csproj",
         "projectName": "Base Library",
         "projectPath": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\sbox\\addons\\base\\Code\\Base Library.csproj",
-        "packagesPath": "C:\\Users\\susan\\.nuget\\packages\\",
+        "packagesPath": "C:\\Users\\Skipin\\.nuget\\packages\\",
         "outputPath": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\sbox\\addons\\base\\Code\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\susan\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Skipin\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -40,9 +40,9 @@
         "restoreAuditProperties": {
           "enableAudit": "true",
           "auditLevel": "low",
-          "auditMode": "all"
+          "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "9.0.100"
+        "SdkAnalysisLevel": "9.0.300"
       },
       "frameworks": {
         "net9.0": {
@@ -63,7 +63,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.100/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.300/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
@@ -73,14 +73,14 @@
         "projectUniqueName": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\sbox\\addons\\tools\\Code\\Base Editor Library.csproj",
         "projectName": "Base Editor Library",
         "projectPath": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\sbox\\addons\\tools\\Code\\Base Editor Library.csproj",
-        "packagesPath": "C:\\Users\\susan\\.nuget\\packages\\",
+        "packagesPath": "C:\\Users\\Skipin\\.nuget\\packages\\",
         "outputPath": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\sbox\\addons\\tools\\Code\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\susan\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Skipin\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -100,9 +100,9 @@
         "restoreAuditProperties": {
           "enableAudit": "true",
           "auditLevel": "low",
-          "auditMode": "all"
+          "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "9.0.100"
+        "SdkAnalysisLevel": "9.0.300"
       },
       "frameworks": {
         "net9.0": {
@@ -123,7 +123,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.100/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.300/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
@@ -133,14 +133,14 @@
         "projectUniqueName": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\sbox\\editor\\ActionGraph\\Code\\actiongraph.csproj",
         "projectName": "actiongraph",
         "projectPath": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\sbox\\editor\\ActionGraph\\Code\\actiongraph.csproj",
-        "packagesPath": "C:\\Users\\susan\\.nuget\\packages\\",
+        "packagesPath": "C:\\Users\\Skipin\\.nuget\\packages\\",
         "outputPath": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\sbox\\editor\\ActionGraph\\Code\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\susan\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Skipin\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -167,9 +167,9 @@
         "restoreAuditProperties": {
           "enableAudit": "true",
           "auditLevel": "low",
-          "auditMode": "all"
+          "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "9.0.100"
+        "SdkAnalysisLevel": "9.0.300"
       },
       "frameworks": {
         "net9.0": {
@@ -190,7 +190,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.100/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.300/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
@@ -200,14 +200,14 @@
         "projectUniqueName": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\sbox\\editor\\Hammer\\Code\\hammer.csproj",
         "projectName": "hammer",
         "projectPath": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\sbox\\editor\\Hammer\\Code\\hammer.csproj",
-        "packagesPath": "C:\\Users\\susan\\.nuget\\packages\\",
+        "packagesPath": "C:\\Users\\Skipin\\.nuget\\packages\\",
         "outputPath": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\sbox\\editor\\Hammer\\Code\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\susan\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Skipin\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -234,9 +234,9 @@
         "restoreAuditProperties": {
           "enableAudit": "true",
           "auditLevel": "low",
-          "auditMode": "all"
+          "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "9.0.100"
+        "SdkAnalysisLevel": "9.0.300"
       },
       "frameworks": {
         "net9.0": {
@@ -257,7 +257,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.100/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.300/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
@@ -267,14 +267,14 @@
         "projectUniqueName": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\sbox\\editor\\ShaderGraph\\Code\\shadergraph.csproj",
         "projectName": "shadergraph",
         "projectPath": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\sbox\\editor\\ShaderGraph\\Code\\shadergraph.csproj",
-        "packagesPath": "C:\\Users\\susan\\.nuget\\packages\\",
+        "packagesPath": "C:\\Users\\Skipin\\.nuget\\packages\\",
         "outputPath": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\sbox\\editor\\ShaderGraph\\Code\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\susan\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Skipin\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -301,9 +301,9 @@
         "restoreAuditProperties": {
           "enableAudit": "true",
           "auditLevel": "low",
-          "auditMode": "all"
+          "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "9.0.100"
+        "SdkAnalysisLevel": "9.0.300"
       },
       "frameworks": {
         "net9.0": {
@@ -324,24 +324,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.100/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.300/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\susan\\Documents\\GitHub\\S-box_real_FPS_base\\Libraries\\evilinc.modeliconeditor\\Code\\modeliconeditor.csproj": {
+    "C:\\Users\\Skipin\\Documents\\GitHub\\S-box_real_FPS_base\\Libraries\\evilinc.modeliconeditor\\Code\\modeliconeditor.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\susan\\Documents\\GitHub\\S-box_real_FPS_base\\Libraries\\evilinc.modeliconeditor\\Code\\modeliconeditor.csproj",
+        "projectUniqueName": "C:\\Users\\Skipin\\Documents\\GitHub\\S-box_real_FPS_base\\Libraries\\evilinc.modeliconeditor\\Code\\modeliconeditor.csproj",
         "projectName": "modeliconeditor",
-        "projectPath": "C:\\Users\\susan\\Documents\\GitHub\\S-box_real_FPS_base\\Libraries\\evilinc.modeliconeditor\\Code\\modeliconeditor.csproj",
-        "packagesPath": "C:\\Users\\susan\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\susan\\Documents\\GitHub\\S-box_real_FPS_base\\Libraries\\evilinc.modeliconeditor\\Code\\obj\\",
+        "projectPath": "C:\\Users\\Skipin\\Documents\\GitHub\\S-box_real_FPS_base\\Libraries\\evilinc.modeliconeditor\\Code\\modeliconeditor.csproj",
+        "packagesPath": "C:\\Users\\Skipin\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Skipin\\Documents\\GitHub\\S-box_real_FPS_base\\Libraries\\evilinc.modeliconeditor\\Code\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\susan\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Skipin\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -365,9 +365,9 @@
         "restoreAuditProperties": {
           "enableAudit": "true",
           "auditLevel": "low",
-          "auditMode": "all"
+          "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "9.0.100"
+        "SdkAnalysisLevel": "9.0.300"
       },
       "frameworks": {
         "net9.0": {
@@ -388,24 +388,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.100/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.300/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\susan\\Documents\\GitHub\\S-box_real_FPS_base\\Libraries\\evilinc.modeliconeditor\\Editor\\modeliconeditor.editor.csproj": {
+    "C:\\Users\\Skipin\\Documents\\GitHub\\S-box_real_FPS_base\\Libraries\\evilinc.modeliconeditor\\Editor\\modeliconeditor.editor.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\susan\\Documents\\GitHub\\S-box_real_FPS_base\\Libraries\\evilinc.modeliconeditor\\Editor\\modeliconeditor.editor.csproj",
+        "projectUniqueName": "C:\\Users\\Skipin\\Documents\\GitHub\\S-box_real_FPS_base\\Libraries\\evilinc.modeliconeditor\\Editor\\modeliconeditor.editor.csproj",
         "projectName": "modeliconeditor.editor",
-        "projectPath": "C:\\Users\\susan\\Documents\\GitHub\\S-box_real_FPS_base\\Libraries\\evilinc.modeliconeditor\\Editor\\modeliconeditor.editor.csproj",
-        "packagesPath": "C:\\Users\\susan\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\susan\\Documents\\GitHub\\S-box_real_FPS_base\\Libraries\\evilinc.modeliconeditor\\Editor\\obj\\",
+        "projectPath": "C:\\Users\\Skipin\\Documents\\GitHub\\S-box_real_FPS_base\\Libraries\\evilinc.modeliconeditor\\Editor\\modeliconeditor.editor.csproj",
+        "packagesPath": "C:\\Users\\Skipin\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Skipin\\Documents\\GitHub\\S-box_real_FPS_base\\Libraries\\evilinc.modeliconeditor\\Editor\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\susan\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Skipin\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -432,8 +432,8 @@
               "C:\\Program Files (x86)\\Steam\\steamapps\\common\\sbox\\editor\\ShaderGraph\\Code\\shadergraph.csproj": {
                 "projectPath": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\sbox\\editor\\ShaderGraph\\Code\\shadergraph.csproj"
               },
-              "C:\\Users\\susan\\Documents\\GitHub\\S-box_real_FPS_base\\Libraries\\evilinc.modeliconeditor\\Code\\modeliconeditor.csproj": {
-                "projectPath": "C:\\Users\\susan\\Documents\\GitHub\\S-box_real_FPS_base\\Libraries\\evilinc.modeliconeditor\\Code\\modeliconeditor.csproj"
+              "C:\\Users\\Skipin\\Documents\\GitHub\\S-box_real_FPS_base\\Libraries\\evilinc.modeliconeditor\\Code\\modeliconeditor.csproj": {
+                "projectPath": "C:\\Users\\Skipin\\Documents\\GitHub\\S-box_real_FPS_base\\Libraries\\evilinc.modeliconeditor\\Code\\modeliconeditor.csproj"
               }
             }
           }
@@ -441,9 +441,9 @@
         "restoreAuditProperties": {
           "enableAudit": "true",
           "auditLevel": "low",
-          "auditMode": "all"
+          "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "9.0.100"
+        "SdkAnalysisLevel": "9.0.300"
       },
       "frameworks": {
         "net9.0": {
@@ -464,24 +464,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.100/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.300/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\susan\\Documents\\GitHub\\S-box_real_FPS_base\\Libraries\\evilinc.modeliconeditor\\UnitTests\\modeliconeditor.unittest.csproj": {
+    "C:\\Users\\Skipin\\Documents\\GitHub\\S-box_real_FPS_base\\Libraries\\evilinc.modeliconeditor\\UnitTests\\modeliconeditor.unittest.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\susan\\Documents\\GitHub\\S-box_real_FPS_base\\Libraries\\evilinc.modeliconeditor\\UnitTests\\modeliconeditor.unittest.csproj",
+        "projectUniqueName": "C:\\Users\\Skipin\\Documents\\GitHub\\S-box_real_FPS_base\\Libraries\\evilinc.modeliconeditor\\UnitTests\\modeliconeditor.unittest.csproj",
         "projectName": "modeliconeditor.unittest",
-        "projectPath": "C:\\Users\\susan\\Documents\\GitHub\\S-box_real_FPS_base\\Libraries\\evilinc.modeliconeditor\\UnitTests\\modeliconeditor.unittest.csproj",
-        "packagesPath": "C:\\Users\\susan\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\susan\\Documents\\GitHub\\S-box_real_FPS_base\\Libraries\\evilinc.modeliconeditor\\UnitTests\\obj\\",
+        "projectPath": "C:\\Users\\Skipin\\Documents\\GitHub\\S-box_real_FPS_base\\Libraries\\evilinc.modeliconeditor\\UnitTests\\modeliconeditor.unittest.csproj",
+        "packagesPath": "C:\\Users\\Skipin\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Skipin\\Documents\\GitHub\\S-box_real_FPS_base\\Libraries\\evilinc.modeliconeditor\\UnitTests\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\susan\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Skipin\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -499,11 +499,11 @@
               "C:\\Program Files (x86)\\Steam\\steamapps\\common\\sbox\\addons\\tools\\Code\\Base Editor Library.csproj": {
                 "projectPath": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\sbox\\addons\\tools\\Code\\Base Editor Library.csproj"
               },
-              "C:\\Users\\susan\\Documents\\GitHub\\S-box_real_FPS_base\\Libraries\\evilinc.modeliconeditor\\Code\\modeliconeditor.csproj": {
-                "projectPath": "C:\\Users\\susan\\Documents\\GitHub\\S-box_real_FPS_base\\Libraries\\evilinc.modeliconeditor\\Code\\modeliconeditor.csproj"
+              "C:\\Users\\Skipin\\Documents\\GitHub\\S-box_real_FPS_base\\Libraries\\evilinc.modeliconeditor\\Code\\modeliconeditor.csproj": {
+                "projectPath": "C:\\Users\\Skipin\\Documents\\GitHub\\S-box_real_FPS_base\\Libraries\\evilinc.modeliconeditor\\Code\\modeliconeditor.csproj"
               },
-              "C:\\Users\\susan\\Documents\\GitHub\\S-box_real_FPS_base\\Libraries\\evilinc.modeliconeditor\\Editor\\modeliconeditor.editor.csproj": {
-                "projectPath": "C:\\Users\\susan\\Documents\\GitHub\\S-box_real_FPS_base\\Libraries\\evilinc.modeliconeditor\\Editor\\modeliconeditor.editor.csproj"
+              "C:\\Users\\Skipin\\Documents\\GitHub\\S-box_real_FPS_base\\Libraries\\evilinc.modeliconeditor\\Editor\\modeliconeditor.editor.csproj": {
+                "projectPath": "C:\\Users\\Skipin\\Documents\\GitHub\\S-box_real_FPS_base\\Libraries\\evilinc.modeliconeditor\\Editor\\modeliconeditor.editor.csproj"
               }
             }
           }
@@ -511,9 +511,9 @@
         "restoreAuditProperties": {
           "enableAudit": "true",
           "auditLevel": "low",
-          "auditMode": "all"
+          "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "9.0.100"
+        "SdkAnalysisLevel": "9.0.300"
       },
       "frameworks": {
         "net9.0": {
@@ -552,7 +552,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.100/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.300/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

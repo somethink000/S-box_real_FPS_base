@@ -137,23 +137,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\susan\\.nuget\\packages\\": {},
+    "C:\\Users\\Skipin\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\susan\\Documents\\GitHub\\S-box_real_FPS_base\\Editor\\real_fps_base.editor.csproj",
+      "projectUniqueName": "C:\\Users\\Skipin\\Documents\\GitHub\\S-box_real_FPS_base\\Editor\\real_fps_base.editor.csproj",
       "projectName": "real_fps_base.editor",
-      "projectPath": "C:\\Users\\susan\\Documents\\GitHub\\S-box_real_FPS_base\\Editor\\real_fps_base.editor.csproj",
-      "packagesPath": "C:\\Users\\susan\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\susan\\Documents\\GitHub\\S-box_real_FPS_base\\Editor\\obj\\",
+      "projectPath": "C:\\Users\\Skipin\\Documents\\GitHub\\S-box_real_FPS_base\\Editor\\real_fps_base.editor.csproj",
+      "packagesPath": "C:\\Users\\Skipin\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Skipin\\Documents\\GitHub\\S-box_real_FPS_base\\Editor\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\susan\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Skipin\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -180,8 +180,8 @@
             "C:\\Program Files (x86)\\Steam\\steamapps\\common\\sbox\\editor\\ShaderGraph\\Code\\shadergraph.csproj": {
               "projectPath": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\sbox\\editor\\ShaderGraph\\Code\\shadergraph.csproj"
             },
-            "C:\\Users\\susan\\Documents\\GitHub\\S-box_real_FPS_base\\Code\\real_fps_base.csproj": {
-              "projectPath": "C:\\Users\\susan\\Documents\\GitHub\\S-box_real_FPS_base\\Code\\real_fps_base.csproj"
+            "C:\\Users\\Skipin\\Documents\\GitHub\\S-box_real_FPS_base\\Code\\real_fps_base.csproj": {
+              "projectPath": "C:\\Users\\Skipin\\Documents\\GitHub\\S-box_real_FPS_base\\Code\\real_fps_base.csproj"
             }
           }
         }
@@ -189,9 +189,9 @@
       "restoreAuditProperties": {
         "enableAudit": "true",
         "auditLevel": "low",
-        "auditMode": "all"
+        "auditMode": "direct"
       },
-      "SdkAnalysisLevel": "9.0.100"
+      "SdkAnalysisLevel": "9.0.300"
     },
     "frameworks": {
       "net9.0": {
@@ -212,7 +212,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.100/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.300/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

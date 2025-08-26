@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("modeliconeditor.unittest")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d6f2ff835eef84ecb1c4a27ef269a07e0851e0a9")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+02bb8c2a3102b56a409d4e0ba182223e9093c2a2")]
 [assembly: System.Reflection.AssemblyProductAttribute("modeliconeditor.unittest")]
 [assembly: System.Reflection.AssemblyTitleAttribute("modeliconeditor.unittest")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
