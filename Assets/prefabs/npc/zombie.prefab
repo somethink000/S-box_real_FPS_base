@@ -1,15 +1,23 @@
 {
   "RootObject": {
     "__guid": "5c755036-6bb9-4b9a-9774-e26c4e857156",
+    "__version": 1,
     "Flags": 0,
     "Name": "zombie",
+    "Position": "0,0,0",
+    "Rotation": "0,0,0,1",
+    "Scale": "1,1,1",
     "Tags": "ignorenav",
     "Enabled": true,
     "NetworkMode": 1,
+    "NetworkInterpolation": true,
+    "NetworkOrphaned": 0,
+    "OwnerTransfer": 1,
     "Components": [
       {
         "__type": "GeneralGame.Dresser",
         "__guid": "402d6d75-d304-46d4-9959-c54890cf8bce",
+        "__enabled": true,
         "ApplyHeightScale": true,
         "ApplyLocalUserClothes": false,
         "BodyTarget": {
@@ -30,6 +38,9 @@
         "__type": "Sandbox.ModelPhysics",
         "__guid": "3cbe5526-6a51-492d-ae22-ad5bf69eeff6",
         "__enabled": false,
+        "Bodies": [],
+        "IgnoreRoot": false,
+        "Joints": [],
         "Locking": {
           "X": false,
           "Y": false,
@@ -46,17 +57,20 @@
         "OnComponentFixedUpdate": null,
         "OnComponentStart": null,
         "OnComponentUpdate": null,
+        "PhysicsWereCreated": false,
         "Renderer": {
           "_type": "component",
           "component_id": "388310b3-d9f1-4a1a-bc1f-5dd069d99ca3",
           "go": "48c1e19f-144e-46f4-a404-4ee51df123b0",
           "component_type": "SkinnedModelRenderer"
         },
-        "RigidbodyFlags": 0
+        "RigidbodyFlags": 0,
+        "StartAsleep": false
       },
       {
         "__type": "GeneralGame.Zombie",
         "__guid": "92fee72e-d0be-4e4a-9e80-7e95afd5472f",
+        "__enabled": true,
         "AlertOthers": true,
         "AttackDelay": 1,
         "Cloths": "prefabs/npc/cloth/zombcloth.grpclths",
@@ -82,11 +96,12 @@
         "OnComponentStart": null,
         "OnComponentUpdate": null,
         "VisionRange": 512,
-        "ZombTexture": "models/citizen/skin/citizen_skin_zombie_02.vmat"
+        "ZombTexture": "models/citizen/skin/citizen_skin_grey.vmat"
       },
       {
         "__type": "Sandbox.NavMeshAgent",
         "__guid": "6ffcdf43-c10b-4682-9f80-af5aa102fda6",
+        "__enabled": true,
         "Acceleration": 500,
         "AutoTraverseLinks": true,
         "Height": 64,
@@ -105,6 +120,8 @@
       {
         "__type": "Sandbox.ModelCollider",
         "__guid": "1747b21f-ffa9-4453-b48a-178c0aca8a1e",
+        "__enabled": true,
+        "Elasticity": null,
         "Friction": null,
         "IsTrigger": false,
         "Model": null,
@@ -118,6 +135,7 @@
         "OnObjectTriggerExit": null,
         "OnTriggerEnter": null,
         "OnTriggerExit": null,
+        "RollingResistance": null,
         "Static": false,
         "Surface": null,
         "SurfaceVelocity": "0,0,0"
@@ -125,6 +143,7 @@
       {
         "__type": "Sandbox.Citizen.CitizenAnimationHelper",
         "__guid": "e3b18468-1e4b-4cf1-b598-884ecd60bd67",
+        "__enabled": true,
         "BodyWeight": 1,
         "EyeSource": null,
         "EyesWeight": 1,
@@ -152,6 +171,7 @@
       {
         "__type": "Sandbox.ModelHitboxes",
         "__guid": "23b6199c-936a-4aaf-b793-aa94a3bec91d",
+        "__enabled": true,
         "OnComponentDestroy": null,
         "OnComponentDisabled": null,
         "OnComponentEnabled": null,
@@ -170,20 +190,32 @@
     "Children": [
       {
         "__guid": "48c1e19f-144e-46f4-a404-4ee51df123b0",
+        "__version": 1,
         "Flags": 0,
         "Name": "body",
+        "Position": "0,0,0",
+        "Rotation": "0,0,0,1",
+        "Scale": "1,1,1",
+        "Tags": "",
         "Enabled": true,
+        "NetworkMode": 2,
+        "NetworkInterpolation": true,
+        "NetworkOrphaned": 0,
+        "OwnerTransfer": 1,
         "Components": [
           {
             "__type": "Sandbox.SkinnedModelRenderer",
             "__guid": "388310b3-d9f1-4a1a-bc1f-5dd069d99ca3",
+            "__enabled": true,
             "AnimationGraph": null,
             "BodyGroups": 0,
             "BoneMergeTarget": null,
             "CreateAttachments": false,
             "CreateBoneObjects": false,
+            "LodOverride": null,
             "MaterialGroup": "default",
             "MaterialOverride": null,
+            "Materials": null,
             "Model": null,
             "Morphs": {},
             "OnComponentDestroy": null,
@@ -208,24 +240,21 @@
             },
             "RenderType": "On",
             "Sequence": {
-              "Name": null
+              "Name": null,
+              "Looping": true,
+              "Blending": false
             },
             "Tint": "1,1,1,1",
             "UseAnimGraph": true
           }
-        ]
+        ],
+        "Children": []
       }
     ],
-    "__variables": [],
     "__properties": {
-      "FixedUpdateFrequency": 50,
-      "MaxFixedUpdates": 5,
-      "NetworkFrequency": 30,
       "NetworkInterpolation": true,
-      "PhysicsSubSteps": 1,
-      "ThreadedAnimation": true,
       "TimeScale": 1,
-      "UseFixedUpdate": true,
+      "WantsSystemScene": true,
       "Metadata": {},
       "NavMesh": {
         "Enabled": false,
@@ -239,13 +268,14 @@
         "ExcludedBodies": "",
         "IncludedBodies": ""
       }
-    }
+    },
+    "__variables": []
   },
+  "ResourceVersion": 2,
   "ShowInMenu": false,
   "MenuPath": null,
   "MenuIcon": null,
   "DontBreakAsTemplate": false,
-  "ResourceVersion": 1,
   "__references": [],
-  "__version": 1
+  "__version": 2
 }

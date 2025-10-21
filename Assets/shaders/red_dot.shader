@@ -108,8 +108,8 @@ PS
     CreateInputTexture2D(RedDot, Srgb, 8, "", "_color", "Sight Dot,10/10", Default3(0.0, 0.0, 0.0));
     //CreateInputTexture2D(RedDot2, Srgb, 8, "", "_color", "Sight Dot,10/10", Default3(0.0, 0.0, 0.0));
     //CreateInputTexture2D(RedDot3, Srgb, 8, "", "_color", "Sight Dot,10/10", Default3(0.0, 0.0, 0.0));Channel(G, Box(RedDot2), Linear); Channel(B, Box(RedDot3), Linear);
-    CreateTexture2DWithoutSampler(g_tRedDot) < Channel(R, Box(RedDot), Linear);  OutputFormat(BC7); SrgbRead(false); > ;
-	
+    CreateTexture2D(g_tRedDot) < Channel(R, Box(RedDot), Linear); OutputFormat(BC7); SrgbRead(false); Filter(MIN_MAG_MIP_LINEAR); AddressU(CLAMP); AddressV(CLAMP); > ;
+    
     float3 GetIridescence(float3 vCameraDirWs, float3 vNormalWs, float k) 
     {
         const float3 c1 = float3(3.54585104, 2.93225262, 2.41593945);
@@ -238,9 +238,9 @@ PS
                 float2 vRedDotUV2 = saturate( i.vTextureCoords.xy + ( flProjectA * 1.1 ) * float2( flProjectDirOntoTangentU, flProjectDirOntoTangentV ) );
                 float2 vRedDotUV3 = saturate( i.vTextureCoords.xy + ( flProjectA * 1.2 ) * float2( flProjectDirOntoTangentU, flProjectDirOntoTangentV ) );
                 
-                float flRedDot = Tex2DLevelS(g_tRedDot, TextureFiltering, vRedDotUV, sqrt(flAmount) * 7 ).r;
-                flRedDot += Tex2DLevelS(g_tRedDot, TextureFiltering, vRedDotUV2, sqrt(flAmount) * 7 ).g;
-                flRedDot += Tex2DLevelS(g_tRedDot, TextureFiltering, vRedDotUV3, sqrt(flAmount) * 7 ).b;
+                float flRedDot = Tex2DLevel(g_tRedDot, vRedDotUV, sqrt(flAmount) * 7 ).r;
+                flRedDot += Tex2DLevel(g_tRedDot, vRedDotUV2, sqrt(flAmount) * 7 ).g;
+                flRedDot += Tex2DLevel(g_tRedDot, vRedDotUV3, sqrt(flAmount) * 7 ).b;
 
                 vDotColor = float4( flRedDot * vRedDotColor * vAlbedoTint, flRedDot );
                 m.Emission = lerp(m.Emission, vDotColor.rgb, vDotColor.a );
@@ -259,3 +259,4 @@ PS
         return ShadingModelStandard::Shade(i, m);
     }
 }
+
