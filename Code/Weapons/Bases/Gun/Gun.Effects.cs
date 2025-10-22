@@ -147,33 +147,6 @@ public partial class Gun
 		// Sound
 		tr.Surface.PlayCollisionSound( tr.HitPosition );
 
-		// Particles
-		if ( tr.Surface.ImpactEffects.BulletDecal is not null )
-		{
-			var effectPath = Game.Random.FromList( tr.Surface.ImpactEffects.BulletDecal, "particles/impact.generic.smokepuff.vpcf" );
-
-		}
-
-		// Decal
-		if ( tr.Surface.ImpactEffects.BulletDecal is not null )
-		{
-			var decalPath = Game.Random.FromList( tr.Surface.ImpactEffects.BulletDecal, "decals/bullethole.decal" );
-
-			if ( ResourceLibrary.TryGet<DecalDefinition>( decalPath, out var decalDef ) )
-			{
-				var decalEntry = Game.Random.FromList( decalDef.Decals );
-
-				var gameObject = Scene.CreateObject();
-				//gameObject.SetParent( tr.GameObject, false );
-				gameObject.WorldPosition = tr.HitPosition;
-				gameObject.WorldRotation = Rotation.LookAt( -tr.Normal );
-
-				var decalRenderer = gameObject.Components.Create<DecalRenderer>();
-				decalRenderer.Material = decalEntry.Material;
-				decalRenderer.Size = new( decalEntry.Height.GetValue(), decalEntry.Height.GetValue(), decalEntry.Depth.GetValue() );
-				gameObject.DestroyAsync( 30f );
-			}
-		}
 	}
 
 }

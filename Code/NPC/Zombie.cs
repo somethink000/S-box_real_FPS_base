@@ -178,10 +178,10 @@ public partial class Zombie : Component, IHealthComponent
 		Collider.Enabled = false;
 		RagdollPhysics.Enabled = true;
 
-		foreach ( var body in RagdollPhysics.PhysicsGroup.Bodies )
+		foreach ( var body in RagdollPhysics.Bodies )
 		{
 
-			body.ApplyImpulseAt( WorldPosition, force );
+			body.Component.ApplyImpulseAt( WorldPosition, force );
 		}
 	}
 

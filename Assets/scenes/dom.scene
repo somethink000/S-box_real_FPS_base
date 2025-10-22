@@ -318,7 +318,7 @@
       "__version": 1,
       "Flags": 0,
       "Name": "Text",
-      "Position": "372,754,114",
+      "Position": "372.2726,753.6964,114",
       "Rotation": "0,0,-0.9659259,0.2588192",
       "Scale": "1,1,1",
       "Tags": "",
@@ -332,7 +332,7 @@
           "__type": "Sandbox.TextRenderer",
           "__guid": "a29367ac-012f-4a0e-b6e2-d7ecc982500d",
           "__enabled": true,
-          "__version": 1,
+          "__version": 2,
           "BlendMode": "Normal",
           "FogStrength": 1,
           "HorizontalAlignment": "Center",
@@ -350,7 +350,7 @@
           },
           "Scale": 0.2,
           "TextScope": {
-            "Text": "Network still in progress\nGithub repo in description of project \n",
+            "Text": "Github repo in description of project \n",
             "TextColor": "1,1,1,1",
             "FontName": "Manrope",
             "FontSize": 44,
@@ -359,6 +359,7 @@
             "LineHeight": 1,
             "LetterSpacing": 0,
             "WordSpacing": 0,
+            "FilterMode": "Bilinear",
             "Outline": {
               "Enabled": false,
               "Size": 4,
@@ -541,6 +542,7 @@
               "__enabled": true,
               "BodyGroups": 18446744073709551615,
               "CreateAttachments": false,
+              "LodOverride": null,
               "MaterialGroup": null,
               "MaterialOverride": null,
               "Materials": null,
@@ -740,6 +742,7 @@
           "__enabled": true,
           "BodyGroups": 18446744073709551615,
           "CreateAttachments": false,
+          "LodOverride": null,
           "MaterialGroup": null,
           "MaterialOverride": null,
           "Materials": null,
@@ -883,7 +886,7 @@
                     "DstName": "_signal"
                   },
                   {
-                    "Id": 27,
+                    "Id": 26,
                     "Value": false,
                     "DstId": 25,
                     "DstName": "_value"
@@ -998,6 +1001,7 @@
           "__enabled": true,
           "BodyGroups": 18446744073709551615,
           "CreateAttachments": false,
+          "LodOverride": null,
           "MaterialGroup": null,
           "MaterialOverride": null,
           "Materials": null,
@@ -1141,7 +1145,7 @@
                     "DstName": "_signal"
                   },
                   {
-                    "Id": 27,
+                    "Id": 26,
                     "Value": false,
                     "DstId": 25,
                     "DstName": "_value"
@@ -1458,21 +1462,21 @@
             "319f7b59-c44a-4e2a-840c-dc8375378978": "533f00ab-528e-4191-8a82-c7ab736febe1",
             "583d5540-f32d-4389-992c-c16f06e6281f": "081ed4c3-2d14-4029-aad4-e1224ea7c918",
             "2ed9a689-0d66-4913-9281-10e3ae340597": "c2048802-862c-4bd8-a4c9-08e50f126863",
-            "17a5e328-9a8a-4c71-8ce2-7e3e80317be0": "bf24d170-59b0-49a3-8b92-d7d074d3cad1",
-            "6d42b8f4-9832-4026-a083-a8062217302a": "0e151aed-ef30-41e4-971b-dfb69a2cb9cb",
-            "d5d3c621-2207-481b-8af5-6a1f93b5dad5": "60946932-6a0b-4cef-9353-0be4c8ba8643",
-            "6e0e3551-5908-454c-87b6-1cf148db32ba": "dae062dc-5484-4f06-a176-4f75a4e048c0",
-            "e3e5d7ab-9696-42f7-83bd-026d3a54e32c": "aec7a374-02c5-4839-b5b4-083a57f5046c",
-            "4a1d0757-c264-4ae7-9fd3-0744b78e3688": "4b48c523-c6f5-49dd-9278-ed0da67b8079",
-            "9dd24be3-931f-4e53-99b5-04f570e4f358": "7a9b811f-6053-4fc0-93da-e9e6f894cfa0",
-            "88f6be35-112d-4ffd-950b-86a245cc8887": "14b4ffad-258f-402f-81ca-ac7d240d6cb5",
-            "6cd40ed1-9e20-4181-b39c-6ef8dafe3ed5": "b4748be8-158d-45a9-96e7-65a1f41a4316",
-            "ed9cf367-12b5-4dae-929e-c164362ab408": "134d8c7a-d0fc-476e-982b-8a0b1dc7da32",
-            "e9245c3f-8180-48c1-9842-b11c1dfa631a": "117af3c6-4923-4eb4-8f8c-19ba8b2bd80c",
+            "911466bf-0abb-4303-a4b1-c8a2f5419b63": "837ada70-e54e-4882-abb4-0e32dca26211",
+            "d34df034-fa36-47de-97b4-d4513741bb2a": "a55e11bf-2a97-4229-92c1-6a69fa93e9a3",
+            "2950eb6d-aaab-4983-b738-4b3b021c9692": "05ee1513-8627-430f-98f9-827c20d0853d",
+            "e7c8fce7-3995-4536-8a11-cace1afa5186": "0c7f088c-1bf3-40a4-9133-8337486f2850",
+            "a020c8a3-3d15-490a-a018-9be23d10e919": "7393544d-7582-4b92-8678-d866e90f2857",
+            "ca07bc32-03c7-4008-aef1-21120f5cd1f1": "11dbde7e-2fdd-4ffc-abd5-729d3b34e24b",
+            "f70e1d23-17f5-4b31-b284-18035b21a184": "540fd1a7-ba2c-4237-b7bb-148177a13f4b",
+            "3b0be6d7-8ed0-426a-8ff0-d237b2602c6b": "90de4f38-a71c-4bce-b363-6f46d645330f",
+            "aa61e9ad-0484-4db8-aa7f-d2e58dd3b3e2": "da9e6565-bfaa-4856-ad8e-9d84e432fbcf",
+            "9b027c34-05b3-4583-a93d-4445d0e2e570": "dc1bdbf7-5ae3-463d-94b6-03da479e3a8a",
+            "7d98c949-41cb-4a25-8210-b315f6232af0": "83153027-4a89-4bfa-b3ec-bc3569eb8a2e",
             "3867b33f-885d-46e5-885b-6fbc8a805751": "79fa5e5b-359f-48fd-8826-140e969ef6e6",
-            "aac5fc63-cf06-4493-8595-2ed40f496770": "eb2a2d6b-88d3-4907-b969-39e58066922a",
-            "bd9e94e0-f4a7-49d6-ad6e-3018e5100e42": "f42b28b7-4552-4d28-81cf-6e36918b0545",
-            "b3385a0e-6c9c-4d28-88cf-57806c08cf47": "109f677f-4594-4f29-bd0a-7e3df255a9f8"
+            "3fdb2be1-d9ab-45a3-9a43-dc32eceed912": "427958a5-b9ee-416d-be10-24b597740a7f",
+            "778467ec-9e4e-43ca-8fe3-414f2b4b5381": "325f87d3-3689-4410-9264-86428d98d9fe",
+            "d0ded0d9-d1ec-40cb-bd22-78ddc1afce7f": "7f66831d-6046-4c71-91a6-c3dcc9c3cbec"
           }
         },
         {
@@ -1525,21 +1529,21 @@
             "0bb60a56-5b86-4b47-8f39-0649671dc683": "a63aa40a-f72a-4242-852e-3d9d031886f0",
             "383445c6-7b6a-4b53-9990-3b2d0850f9e1": "ae2e2d22-b2ac-403e-b39e-e16f1a120484",
             "40be6b08-33a9-44c0-9db1-ab751c8555ac": "bbfd379b-8771-448f-99b6-e3a21c7bb486",
-            "467bfc3a-8abf-4f83-aaaf-94eee0116a76": "ce70c666-c14d-4314-9a0b-f8e266f637d3",
-            "6b906e6a-3892-4d41-8965-461b6c63c322": "bf1c52ff-06bc-4502-b7b0-7dbd3cfe05f5",
-            "343d1074-4437-4b92-95f6-5d51ef2f1f4a": "18597fc1-4a12-4d0f-b8f5-b08954fe694d",
-            "1fb5ecca-e6b0-42c1-88d5-2eb6feb5fb0f": "e80d6e02-36e1-442e-ae95-22becebbd922",
-            "02c8189f-9a00-40e3-ac62-b63644d6529a": "175b685a-e6a4-4424-998b-c65744deeab1",
-            "9972e837-beee-44e2-ac33-3f5151b2a90c": "727887d9-11cd-46d7-a5c0-299daec15980",
-            "61a4aa1d-1f40-40b5-87b5-18c6c35e16c4": "98619374-e159-4bf9-bc29-ba9f4e6a51c9",
-            "4efd9500-997d-4fd4-96de-e8caa31670c5": "cea503cf-c6d0-4283-8470-8cf656615320",
-            "671b160b-947d-4dcb-904b-c95b610a4399": "97e619b4-7097-4a85-a678-bcf4c6014306",
-            "4808e045-9ce9-4c9a-99d6-868775540801": "b4c50803-0d0b-4ef3-b0ca-5905b5b83be4",
-            "f1f5cacf-80ef-40aa-bbfe-fc83864ca13c": "cc3e16a2-b298-43c6-8e6e-1004a144e2c9",
+            "57f64921-f56d-4906-a912-0bc6fa604a2c": "eb4c24fa-62a1-47df-a507-1ea7c2d84dd5",
+            "e2d3e066-20b6-4ce7-b365-a78e01c9ac38": "5c1330b2-8dce-477b-b648-b1625fa48e0d",
+            "06326acc-efd9-4642-9de3-7ad857311641": "ef7d8086-612d-48d8-8616-dff19604fa0b",
+            "efe16808-000c-45c5-a5b4-21f3f5c4eaf8": "3ea77b30-dfbb-4fb0-b379-a3607c568a4d",
+            "02fda649-eb0e-481d-ba2c-ad2209baf8ce": "101f467c-6eff-49e9-8c5b-9867fe949edc",
+            "5dfd8c42-9d60-4bb9-9798-75021364a47c": "7a3eb13f-9b32-40ee-9330-a00ecae5527b",
+            "98eb047e-742c-4a96-969c-1b5cfba62e3a": "aaa200ed-3504-4c8b-819d-bc2eb94d163e",
+            "21398519-67a1-4439-a7ab-2830495d0108": "615e7873-aa9b-4af1-b3ba-72bb01c36bcb",
+            "35230d06-6d83-405e-9bed-64948386d918": "997faba6-c89a-4e2a-9756-7e10517bedfb",
+            "39360d5d-7885-4c67-abc8-63c9c37480af": "dcfaa5be-e651-4876-8a9a-643a4e73ec44",
+            "cab7a601-7080-44e4-b614-1a43fb17f4e8": "19715d8c-b5b3-423e-a0c7-1bb93150d004",
             "f6e6531d-4a42-4d3b-a181-4e81bd12d9fa": "7e9c8278-632e-46db-bbf6-6e13fd72ed01",
-            "5fb3311c-783f-452b-a56e-90badcf57428": "d1ac5c5d-c068-4f1c-98c5-490a5122c7c6",
-            "6136727a-bbca-4f62-85e2-9e16272ebf90": "2ed542ae-4fb7-411e-b288-4efd940f3989",
-            "ff58e4ad-4e14-4100-b9f5-50ded5f17be8": "bc7d8640-7f24-4310-bec3-bef1f82d91a5"
+            "f38242c9-6b56-4d91-9184-31f0d18e1a59": "fb7e2d98-df2d-406f-9249-83b7481d9f79",
+            "581e5aea-50c0-4a5f-adf9-d90a65fe9375": "2030d1f0-cf04-404d-9083-c6bb428cf1cd",
+            "f2dc6851-c675-4c1b-aed6-f45a3abf0a44": "e06fec4e-4404-493f-a451-207588978b2b"
           }
         },
         {
@@ -1592,21 +1596,21 @@
             "0bb60a56-5b86-4b47-8f39-0649671dc683": "111d7798-dfdd-43b8-86b6-4bc18fc7f5f8",
             "383445c6-7b6a-4b53-9990-3b2d0850f9e1": "af64af9d-7704-4754-9b1c-fe8a3960ab5f",
             "398e137d-b19f-49c9-b769-d6915a72ad4e": "20128c48-5d1f-49ad-9a1c-5eca89981083",
-            "6a09ff90-9855-4c36-8102-743f87d93b74": "15b046fc-7a84-4c84-8784-2c940b7cfbda",
-            "9fc7611b-54cd-4773-a4d2-5e6083f78ad2": "035bc41a-5c0a-433f-a42d-f058cb377a79",
-            "ea07694c-abf9-4618-8507-3e618387972c": "fca9a29b-f669-42c5-8ece-c6a8755a2388",
-            "4592a15e-0b5c-4859-ad4c-54a0194e8ccd": "f756526f-5eb8-4322-9942-074465b3ff4f",
-            "e3010300-4118-4868-a61c-3852048577c5": "14b7e986-9868-4939-89a3-93b97322643b",
-            "527ec308-dc6a-4233-a89a-73149ea327a1": "2dd47a22-425d-4a6b-b6eb-33a5280c115e",
-            "377c127a-c6e4-4766-852b-9d12e4d63fb6": "a2e03f82-5029-45e5-89b6-0f5c4766c891",
-            "bc10069c-7ebd-450b-88cd-73c95f6b53e6": "6316b704-6216-423c-a901-d51216d5318d",
-            "16dc5e7b-1d0f-43a6-ac74-dd9b373c8e52": "7736dd15-b286-40e6-9613-3c49916fd6d2",
-            "494e6875-3224-490b-99be-5d2c6ba97ffa": "25f9eb65-0d63-4537-bfa9-166e320fdaf1",
-            "b33ab56d-c599-49b5-adfc-98476b510ed5": "2dee329e-3814-4883-b0a1-25096fc6e38b",
+            "f3f609a3-bacb-4f8f-8aee-016a7f883761": "ca9b254d-06ca-4aea-8108-6314b62b5c62",
+            "e6a9f592-cfc5-4b9c-948a-47d06fb4e478": "1dbebf67-6ed7-42d5-a9a6-34f148ca6916",
+            "41045a49-1af4-4ffb-9fdc-2dceeeaa436a": "ee2e0702-0586-4567-841f-921adfad5e77",
+            "2f8e5bb0-c2cd-42a1-bd50-caba76781fa0": "a5c2b369-f62e-40c6-a230-0ed8d893bb1f",
+            "b37ad65f-749b-4a41-921f-890e5260ae31": "7ae5722c-8fbc-47af-bda6-fca52c001beb",
+            "39e5af9a-b024-4ffc-acb3-0515cdc0ff20": "e0d94c16-d84f-45b8-9b9d-43657151a9d5",
+            "fef0d103-d9fc-4405-9986-484b617e2f09": "64b5d8f1-31f0-484c-ad31-f4a4b9e1c164",
+            "e6ee521a-65c2-414d-a4dc-aa30e62fc150": "aad0e113-965c-4566-b2f2-276bfe0b5640",
+            "909b9db1-3e8a-457e-96a4-52bfa751ad8a": "b76841a3-159b-4683-85ec-eca9b074b515",
+            "61c4a1cc-6587-4c9b-87a4-3268f13a945b": "85bd71d8-8a14-4fd8-88fa-4def281e05a2",
+            "e70a1dbf-7258-4999-8c9b-f9e918def4a2": "ed06508f-c023-4d3f-a1fa-bf733cae851b",
             "f96778ac-a68e-4f03-bb4b-4085b1372df5": "83692fc4-daee-4060-91fe-73c99afdbefe",
-            "5e7f1b0f-27cb-4bbc-8124-2b283b0ddac8": "2cf73b7d-3e6a-4497-8353-785a362ea4ad",
-            "7bcd0679-e88a-4975-813b-f9f2b08c445a": "f6423b37-e34d-46c0-90bc-e7580e30fd14",
-            "23bf3ff4-c41d-4bb8-824d-0e75a08cf410": "09bfc029-494e-430f-b29e-1009be258d8c"
+            "134f0e6f-5939-48c8-91f8-f88f083c0a00": "e66a6a84-e388-489b-86de-dd7a2df7b2db",
+            "166b0bb7-7d34-47ff-bf2b-8fe86c341c41": "9ab3e43f-7c00-4dbb-9b46-9da8452c3806",
+            "82a2ea84-b4ab-40a6-b6be-2db1b0fffb98": "d6493d23-44f6-48e5-b750-e8ba63b1d74e"
           }
         },
         {
@@ -1659,21 +1663,21 @@
             "0bb60a56-5b86-4b47-8f39-0649671dc683": "fab97afd-767d-4fad-be5a-998f3c319489",
             "383445c6-7b6a-4b53-9990-3b2d0850f9e1": "cb8e5adc-9d85-4db2-a939-a75f4308e87c",
             "c3708445-5100-45f4-923b-5d60e937d907": "c24a2405-ce78-4531-9139-9e5904d1c4ac",
-            "3604ca22-7331-4c5a-91e0-76b2e7fcaf7e": "e1772500-7fb8-4f07-8d21-da3a0e2c79fb",
-            "37205c94-6335-47ac-984c-f715035450e2": "b36c543b-534d-4cda-aa56-ba9386cd9a59",
-            "2da0f23f-121a-428d-8689-ded96b4d6dbc": "775831e9-d4a3-4714-a9ab-ac37f0f0edbd",
-            "a4ac8855-1530-461d-b500-910ee9c8ae88": "e8d9600b-f6f0-4c43-9913-a50e5ac74c95",
-            "9e7ee911-b9d6-4fc8-a9a7-a292a0dd1f94": "0e9b5c54-110d-433c-86f8-bd716d12ce20",
-            "a1f34082-c8da-4a30-a69f-b06f3c85ac0a": "957d25ee-bdef-4ae7-b061-f605f6ef66b7",
-            "99ef8e31-8468-407c-a9df-a075c8868b23": "d52897e4-b24b-4155-9c90-4d9aa7b1332f",
-            "fae9b4c8-d39f-4f63-a180-8650aa8f3265": "fc34ca87-bf2b-4f97-8029-8c7d87558129",
-            "25fd8885-e281-48ec-b8b9-d7fb42d4e292": "5935a52e-d9e6-4e84-93a9-5ad8580e96d8",
-            "9b83faa9-ef14-4a2b-8ce0-b76a0be6e43d": "5f3df77c-d9d3-4c7a-8251-82a3f6ce1aa4",
-            "ae625a63-ee59-4795-873b-aaeae58716cb": "02e2b1ca-cba1-4257-9213-91638c0ea788",
+            "5228ba59-0760-470f-8db5-15ed3828bcd5": "3e23be04-e17d-4aa1-b913-a5b05e2e28a7",
+            "a3fa46c1-79c2-4bea-8d03-d852c1c11541": "9dd2546d-cc0e-43b2-a0a2-ee1c8f95aad9",
+            "86ac7ed1-68ea-44b5-8d5a-2c5c7de7ecab": "4dcf2780-cb38-446c-9936-a5b369ab81b5",
+            "95e4f8cd-62eb-4cf5-badf-3d9bf5124740": "9e0208d5-dfca-486f-bc3e-b9966865256c",
+            "cf7f30c4-3a64-4904-9fb2-e374704d5a68": "c20cee4b-04c9-4c4f-8145-bbe14320ac4b",
+            "33386930-a7c3-4700-8a4b-ca19e6f87d13": "dcb7f5b0-547a-4d0d-8d7a-ef470fc53aea",
+            "b77724a8-16d3-474f-ad09-73369493a8db": "12bf33a7-791b-4a51-88af-a7008ee74af5",
+            "3251b415-eb22-4bba-90fa-8e8777b19d30": "19ae8ac6-437a-4083-a758-88cb5bbc589d",
+            "2fec0308-2637-4cfa-a595-1d3506c60d19": "3abd3d82-595e-42e7-b7f0-784e030a26a3",
+            "07b2704d-9bc1-4065-8563-99042c4a4cc1": "cac0fefb-0d90-4adb-8b9f-28a807183696",
+            "fc11e158-30f1-4efe-b80d-d31d579fff28": "02abbfa2-9913-4811-90a4-89821bf2cc25",
             "71c8dcb4-a3c7-4071-a432-59fea0e76141": "b17f51b7-31cf-4032-8feb-898d9efdcd39",
-            "552a7821-a564-4bf9-8a73-092fcbb317d9": "c3c91345-e62f-4405-8892-43f07df03893",
-            "86bc1679-9443-45d0-b656-9db467ad3b75": "a4afecac-bbe8-400d-9416-7b12679f0591",
-            "3aeb3a0a-bb8a-4a76-92ed-015b7cf87db9": "d8790d64-b400-41bf-a3f1-c858779b9eff"
+            "b1abd142-aeef-40bf-bba0-7dda59ced267": "bdcbb729-bd90-41c2-8b6e-2d7cb7727230",
+            "0b054e29-dd3a-405d-bdf1-9dff8c552889": "8bc78575-d807-4b2e-9e54-f5a9bdcb823a",
+            "d3f7914a-83f4-4bd0-a0a7-9d18fc3ee722": "5b1e7149-3c7b-4db8-86d4-a448cde8df73"
           }
         },
         {
@@ -1719,9 +1723,9 @@
             "383445c6-7b6a-4b53-9990-3b2d0850f9e1": "a25f996d-4e71-44f6-9f09-2f92f78022fa",
             "308ecaa2-6a7e-4089-8b23-0a1f3dc62dc1": "2e4e61a0-654f-4157-ba70-eabff08bf9a2",
             "82f411bb-e42e-4e72-9e09-8508fde05971": "33878f99-dc0a-41be-9958-a7ed56cce713",
-            "a3fa5fc0-b3fa-4c84-b900-9ee5d89831d5": "2274bdb3-5692-4ab0-ba61-b2dcc8e33dbc",
-            "abe79621-5a59-4da0-a519-28adbe7c6ee4": "f6ecd7da-5f24-4546-aee1-a389f6f43b27",
-            "3821573e-ec85-4265-9da4-12d84ece7e73": "cf192ad4-1d6b-413c-a966-c907a0ae38b1"
+            "4b52fcd2-ed7c-4329-8e48-deb797cd11b9": "c96862c5-aa4b-4ad1-9786-d1201c59d9d5",
+            "ff98a77a-afa8-4f91-ae57-e353165d9578": "9a2ab79d-c5a4-468d-8b5c-6f7aa1e08c2a",
+            "e8e8e4b4-6891-4087-9d12-ef95f4e03c74": "33bc96b4-ba72-4366-81c1-a2fac76a6362"
           }
         },
         {
@@ -1755,30 +1759,6 @@
                 },
                 "Property": "NetworkInterpolation",
                 "Value": false
-              },
-              {
-                "Target": {
-                  "Type": "GameObject",
-                  "IdValue": "df5aa62a-4e7d-4b58-b211-53b596d2404d"
-                },
-                "Property": "Rotation",
-                "Value": "0,0,0.7071066,0.7071069"
-              },
-              {
-                "Target": {
-                  "Type": "GameObject",
-                  "IdValue": "33a86d4b-3f86-4d31-825d-7baa233458ae"
-                },
-                "Property": "Position",
-                "Value": "0.381031,1.601715,1.330742"
-              },
-              {
-                "Target": {
-                  "Type": "GameObject",
-                  "IdValue": "33a86d4b-3f86-4d31-825d-7baa233458ae"
-                },
-                "Property": "Rotation",
-                "Value": "0,0.103604,0,0.9946186"
               }
             ],
             "MovedObjects": []
@@ -1829,21 +1809,21 @@
             "319f7b59-c44a-4e2a-840c-dc8375378978": "e3e13ee1-5ddf-401c-929b-cfb0ce1363ec",
             "583d5540-f32d-4389-992c-c16f06e6281f": "24816541-8646-453a-b276-be8d43dc0a7c",
             "2ed9a689-0d66-4913-9281-10e3ae340597": "fdf66537-4f9d-41a0-9281-eaefd0f33b8a",
-            "17a5e328-9a8a-4c71-8ce2-7e3e80317be0": "3f5b1a23-8213-497f-8efc-5f303ab51b4e",
-            "6d42b8f4-9832-4026-a083-a8062217302a": "65003fd4-f3c2-4653-8d2b-c8905a9e5312",
-            "d5d3c621-2207-481b-8af5-6a1f93b5dad5": "984da4fe-eb2d-43e6-9669-0ae032ad9508",
-            "6e0e3551-5908-454c-87b6-1cf148db32ba": "bf5d81df-732e-4136-8911-6e6aadc18740",
-            "e3e5d7ab-9696-42f7-83bd-026d3a54e32c": "550edeaa-b6e1-4b09-abd2-5b030af94aaf",
-            "4a1d0757-c264-4ae7-9fd3-0744b78e3688": "88b6d37a-8879-4914-8c65-25e2f6de50bf",
-            "9dd24be3-931f-4e53-99b5-04f570e4f358": "2850a3f1-d535-4cda-8b14-67e0485be58f",
-            "88f6be35-112d-4ffd-950b-86a245cc8887": "9ae7b7cc-74f1-409c-b940-8d3b5e8eaa8e",
-            "6cd40ed1-9e20-4181-b39c-6ef8dafe3ed5": "8de207e1-6586-4070-ae9d-f09ac8841ea3",
-            "ed9cf367-12b5-4dae-929e-c164362ab408": "e4c7bf80-e769-4b71-afe9-ebfea2e775bc",
-            "e9245c3f-8180-48c1-9842-b11c1dfa631a": "1fb871a1-d838-47ae-8354-1c93372f13b3",
+            "911466bf-0abb-4303-a4b1-c8a2f5419b63": "d6e0a2b0-630a-4165-9855-663fc8e28dcf",
+            "d34df034-fa36-47de-97b4-d4513741bb2a": "f0d93c7c-b592-41ee-b9d3-9a72194a2d8d",
+            "2950eb6d-aaab-4983-b738-4b3b021c9692": "617f8c3c-0de8-442e-b71c-cc6423d3ecec",
+            "e7c8fce7-3995-4536-8a11-cace1afa5186": "c9700d6e-6dbb-40e0-a53b-7a3ea2fa713e",
+            "a020c8a3-3d15-490a-a018-9be23d10e919": "7886ff4e-983b-4ade-b022-9ec1c88326f0",
+            "ca07bc32-03c7-4008-aef1-21120f5cd1f1": "b78bbaf7-6f47-4b5c-8514-a971576720c2",
+            "f70e1d23-17f5-4b31-b284-18035b21a184": "fe22cd88-b80a-439a-a365-b40984ed36cb",
+            "3b0be6d7-8ed0-426a-8ff0-d237b2602c6b": "dbbb9079-aa38-4fa9-a50f-ab17d6f3fde7",
+            "aa61e9ad-0484-4db8-aa7f-d2e58dd3b3e2": "0c996a4e-10f9-4a72-acd6-4181e62d33bd",
+            "9b027c34-05b3-4583-a93d-4445d0e2e570": "6b8777a2-1c3a-4e8f-972a-cd019671d1cc",
+            "7d98c949-41cb-4a25-8210-b315f6232af0": "a2eec5bb-20e9-41ca-a43e-743a88028786",
             "3867b33f-885d-46e5-885b-6fbc8a805751": "f77128bb-f8b0-400d-8641-de90b8dad97e",
-            "aac5fc63-cf06-4493-8595-2ed40f496770": "88a0a8bb-0a5d-43fc-8327-0d58121daf15",
-            "bd9e94e0-f4a7-49d6-ad6e-3018e5100e42": "77b70479-5576-4675-bff9-72654aac4e1d",
-            "b3385a0e-6c9c-4d28-88cf-57806c08cf47": "de3dda2e-2d56-4dd6-be81-d99207f7c402"
+            "3fdb2be1-d9ab-45a3-9a43-dc32eceed912": "64b7869a-cd73-4fc2-977e-1dab73ed828c",
+            "778467ec-9e4e-43ca-8fe3-414f2b4b5381": "d364eeec-47ca-444a-aac0-2e76d6379e01",
+            "d0ded0d9-d1ec-40cb-bd22-78ddc1afce7f": "4b8710ec-4b69-4057-bde0-a56cdf03b342"
           }
         },
         {
@@ -1877,38 +1857,6 @@
                 },
                 "Property": "NetworkInterpolation",
                 "Value": false
-              },
-              {
-                "Target": {
-                  "Type": "GameObject",
-                  "IdValue": "d3dc9fcf-4f5a-42ec-9bc1-c263fa121488"
-                },
-                "Property": "Position",
-                "Value": "0.1110338,0.4656311,-2.851931"
-              },
-              {
-                "Target": {
-                  "Type": "GameObject",
-                  "IdValue": "d3dc9fcf-4f5a-42ec-9bc1-c263fa121488"
-                },
-                "Property": "Rotation",
-                "Value": "0.4999998,0.4999997,0.5,0.5000005"
-              },
-              {
-                "Target": {
-                  "Type": "GameObject",
-                  "IdValue": "48ec24b2-1171-4627-9ec0-378a9826cc9d"
-                },
-                "Property": "Position",
-                "Value": "1.504991,1.453788,-3.467989"
-              },
-              {
-                "Target": {
-                  "Type": "GameObject",
-                  "IdValue": "48ec24b2-1171-4627-9ec0-378a9826cc9d"
-                },
-                "Property": "Rotation",
-                "Value": "-0.197314,0,0,0.9803403"
               }
             ],
             "MovedObjects": []

@@ -21,7 +21,7 @@ public struct ClothStruct
 	public DressGender Gender { get; set; }
 }
 
-[GameResource( "GroupedCloth", "grpclths", "Clothes" )]
+[AssetType( Name = "GroupedCloth", Extension = "grpclths", Category = "Clothes" )]
 public partial class GroupedCloth : GameResource
 {
 	[Property] public List<ClothStruct> Jackets { get; set; }

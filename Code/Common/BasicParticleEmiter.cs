@@ -15,16 +15,13 @@ public sealed class BasicParticleEmiter : Component
 	[RequireComponent] public ParticleEffect ParticleEffect { get; set; }
 
 	[Property] public Vector3 Angle { get; set; }
-
 	[Property]
-	[Range( 0, 1000, 1, true, true )]
+	[Range( 0, 1000 )]
 	[Title( "Initial Burst" )]
-	[DefaultValue( 100f )]
-	public int Burst { get; set; } = 1;
+	public int Burst { get; set; } = 100;
 
 	public void Emit( Transform transform, Vector3? velocity )
 	{
-
 		
 		for ( int i = 0; i < Burst; i++ ) 
 		{
