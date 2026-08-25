@@ -1,9 +1,0 @@
-{
-  "profiles": {
-    "Editor": {
-      "commandName": "Executable",
-      "executablePath": "C:\\program files (x86)\\steam\\steamapps\\common\\sbox\\sbox-dev.exe",
-      "commandLineArgs": "-project \u0022C:\\Users\\Skipin\\Documents\\GitHub\\S-box_real_FPS_base\\Libraries\\evilinc.modeliconeditor\\modeliconeditor.sbproj\u0022"
-    }
-  }
-}

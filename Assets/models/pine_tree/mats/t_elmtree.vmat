@@ -1,0 +1,29 @@
+// THIS FILE IS AUTO-GENERATED
+
+Layer0
+{
+	shader "map/gen_foliage.shader"
+
+	//---- Features ----
+	F_ALPHA 1
+	F_ROUGHNESS 1 // Off
+	F_WIND 1
+
+	//---- Rendering ----
+	F_RENDER_BACKFACES 1
+
+	//---- Alpha ----
+	g_flOpacityCutoff "0.500"
+	g_flOpacityMipBoost "0.500"
+	TextureOpacity "models/pine_tree/mats/t_elmtree_mask.png"
+
+	//---- Fog ----
+	g_bFogEnabled "1"
+
+	//---- Material ----
+	TextureColor "models/pine_tree/mats/t_elmtree_diffuse.png"
+
+	//---- Wind ----
+	g_flCardHeight "512.000"
+	TextureWindMask "models/pine_tree/mats/t_elmtree_subsurface.png"
+}

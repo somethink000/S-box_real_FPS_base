@@ -1,0 +1,22 @@
+{
+  "publish": {
+    "Enabled": false,
+    "ProjectConfig": {
+      "Title": "New Map",
+      "Type": "map",
+      "Org": "local",
+      "Ident": "new_map",
+      "Schema": 0,
+      "IncludeSourceFiles": false,
+      "Resources": null,
+      "PackageReferences": [],
+      "EditorReferences": [],
+      "Mounts": null,
+      "IsStandaloneOnly": false,
+      "Metadata": {
+        "SingleAssetSource": "scenes/new map.vmap",
+        "ParentPackage": "evilinc.real_fps_base"
+      }
+    }
+  }
+}

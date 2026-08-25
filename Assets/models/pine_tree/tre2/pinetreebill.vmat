@@ -1,0 +1,31 @@
+// THIS FILE IS AUTO-GENERATED
+
+Layer0
+{
+	shader "map/gen_foliage.shader"
+
+	//---- Features ----
+	F_ALPHA 1
+	F_BILLBOARD 1
+	F_ROUGHNESS 1 // Off
+	F_WIND 1 // Height
+
+	//---- Rendering ----
+	F_DO_NOT_CAST_SHADOWS 1
+
+	//---- Alpha ----
+	g_flOpacityCutoff "0.500"
+	g_flOpacityMipBoost "0.500"
+	TextureOpacity "models/pine_tree/tre2/pinetreebill_o.png"
+
+	//---- Fog ----
+	g_bFogEnabled "1"
+
+	//---- Material ----
+	TextureColor "models/pine_tree/tre2/pinetreebill.png"
+
+	//---- Wind ----
+	g_flCardHeight "80.000"
+	g_flWindSpeed "1.000"
+	g_flWindStrength "0.500"
+}
