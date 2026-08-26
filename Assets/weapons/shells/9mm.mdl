@@ -1,0 +1,100 @@
+{
+  "Mesh": "weapons/shells/9x18mm.smd",
+  "Meshes": [
+    {
+      "File": "weapons/shells/9x18mm.smd",
+      "Scale": 0.0254,
+      "Include": null,
+      "Enabled": true,
+      "Position": "0,0,0",
+      "Rotation": "0,0,0",
+      "Parent": ""
+    },
+    {
+      "File": "weapons/shells/9x18mm_lod1.smd",
+      "Scale": 0.0254,
+      "Include": null,
+      "Enabled": true,
+      "Position": "0,0,0",
+      "Rotation": "0,0,0",
+      "Parent": ""
+    }
+  ],
+  "Scale": 0.0254,
+  "MaterialMode": 0,
+  "Material": "",
+  "Materials": [
+    "weapons/ammos/cartridges.mat"
+  ],
+  "MaterialRemaps": [
+    {
+      "Surface": "cartridges",
+      "Material": "weapons/ammos/cartridges.mat"
+    }
+  ],
+  "DefaultMaterial": "",
+  "Clips": [],
+  "Transform": {
+    "Enabled": true,
+    "Position": "0,0,0",
+    "Rotation": "0,0,0",
+    "Scale": "1,1,1",
+    "IsIdentity": true
+  },
+  "Mirror": {
+    "Enabled": false,
+    "Axis": 0,
+    "FlipWinding": true,
+    "RemapLeftRight": true
+  },
+  "Joints": [],
+  "AnimationGraph": "",
+  "LookAtChains": [],
+  "IkChains": [],
+  "BodyGroups": [],
+  "Folders": [],
+  "Lods": [
+    {
+      "Name": "lod0",
+      "Enabled": true,
+      "Distance": 0,
+      "Meshes": [
+        "lod0"
+      ]
+    },
+    {
+      "Name": "lod1",
+      "Enabled": true,
+      "Distance": 0.127,
+      "Meshes": [
+        "lod1"
+      ]
+    }
+  ],
+  "MaterialGroups": [],
+  "Hulls": [
+    {
+      "__type": "HullFile",
+      "File": "weapons/shells/5_45x39mm_physics.smd",
+      "Scale": 0.0254,
+      "MaxVertices": 0,
+      "Name": "5_45x39mm_physics",
+      "Enabled": true,
+      "Bone": "",
+      "Surface": "",
+      "Tags": "solid",
+      "Folder": ""
+    }
+  ],
+  "Surface": "",
+  "Mass": 0,
+  "OverrideBounds": false,
+  "Bounds": {
+    "Mins": "-16,-16,-16",
+    "Maxs": "16,16,16"
+  },
+  "Attachments": [],
+  "Bones": [],
+  "Constraints": [],
+  "__references": null
+}

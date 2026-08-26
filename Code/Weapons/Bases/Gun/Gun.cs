@@ -1,10 +1,10 @@
-﻿using Sandbox;
-using Sandbox.Citizen;
+using Rinten;
+using Rinten.Citizen;
 using System.Collections.Generic;
 using System.Linq;
 using System.Numerics;
-using static Sandbox.Citizen.CitizenAnimationHelper;
-using static Sandbox.SerializedProperty;
+using static Rinten.Citizen.CitizenAnimationHelper;
+using static Rinten.SerializedProperty;
 
 namespace GeneralGame;
 

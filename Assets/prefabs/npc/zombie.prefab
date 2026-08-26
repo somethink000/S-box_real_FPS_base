@@ -35,7 +35,7 @@
         "OnComponentUpdate": null
       },
       {
-        "__type": "Sandbox.ModelPhysics",
+        "__type": "Rinten.ModelPhysics",
         "__guid": "3cbe5526-6a51-492d-ae22-ad5bf69eeff6",
         "__enabled": false,
         "Bodies": [],
@@ -78,10 +78,10 @@
         "DeleteTime": 10,
         "DetectRange": 456,
         "EnemyTags": "player",
-        "FemModel": "models/citizen_human/citizen_human_female.vmdl",
+        "FemModel": "models/citizen_human/citizen_human_female.mdl",
         "headshotSounds": "sounds/punch/hit_punch_04.sound",
         "hitSounds": "sounds/punch/hit_punch_04.sound",
-        "MalModel": "models/citizen_human/citizen_human_male.vmdl",
+        "MalModel": "models/citizen_human/citizen_human_male.mdl",
         "MaxHealth": 100,
         "Model": {
           "_type": "component",
@@ -99,26 +99,26 @@
         "ZombTexture": "models/citizen/skin/citizen_skin_grey.vmat"
       },
       {
-        "__type": "Sandbox.NavMeshAgent",
+        "__type": "Rinten.NavMeshAgent",
         "__guid": "6ffcdf43-c10b-4682-9f80-af5aa102fda6",
         "__enabled": true,
-        "Acceleration": 500,
+        "Acceleration": 12.69999984651804,
         "AutoTraverseLinks": true,
-        "Height": 64,
-        "MaxSpeed": 210,
+        "Height": 1.625599980354309,
+        "MaxSpeed": 5.333999935537577,
         "OnComponentDestroy": null,
         "OnComponentDisabled": null,
         "OnComponentEnabled": null,
         "OnComponentFixedUpdate": null,
         "OnComponentStart": null,
         "OnComponentUpdate": null,
-        "Radius": 5.0000033,
+        "Radius": 0.1270000822851794,
         "Separation": 0,
         "UpdatePosition": true,
         "UpdateRotation": false
       },
       {
-        "__type": "Sandbox.ModelCollider",
+        "__type": "Rinten.ModelCollider",
         "__guid": "1747b21f-ffa9-4453-b48a-178c0aca8a1e",
         "__enabled": true,
         "Elasticity": null,
@@ -141,7 +141,7 @@
         "SurfaceVelocity": "0,0,0"
       },
       {
-        "__type": "Sandbox.Citizen.CitizenAnimationHelper",
+        "__type": "Rinten.Citizen.CitizenAnimationHelper",
         "__guid": "e3b18468-1e4b-4cf1-b598-884ecd60bd67",
         "__enabled": true,
         "BodyWeight": 1,
@@ -169,7 +169,7 @@
         }
       },
       {
-        "__type": "Sandbox.ModelHitboxes",
+        "__type": "Rinten.ModelHitboxes",
         "__guid": "23b6199c-936a-4aaf-b793-aa94a3bec91d",
         "__enabled": true,
         "OnComponentDestroy": null,
@@ -204,7 +204,7 @@
         "OwnerTransfer": 1,
         "Components": [
           {
-            "__type": "Sandbox.SkinnedModelRenderer",
+            "__type": "Rinten.SkinnedModelRenderer",
             "__guid": "388310b3-d9f1-4a1a-bc1f-5dd069d99ca3",
             "__enabled": true,
             "AnimationGraph": null,

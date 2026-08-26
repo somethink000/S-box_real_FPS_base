@@ -1,0 +1,120 @@
+{
+  "Mesh": "weapons/awp/w/awp.smd",
+  "Meshes": [
+    {
+      "File": "weapons/awp/w/awp.smd",
+      "Scale": 0.0254,
+      "Include": null,
+      "Enabled": true,
+      "Position": "0,0,0",
+      "Rotation": "0,0,0",
+      "Parent": ""
+    }
+  ],
+  "Scale": 0.0254,
+  "MaterialMode": 0,
+  "Material": "",
+  "Materials": [
+    "weapons/pallete_metal.mat",
+    "weapons/pallete_wood.mat"
+  ],
+  "MaterialRemaps": [
+    {
+      "Surface": "lowpoly_metal",
+      "Material": "weapons/pallete_metal.mat"
+    },
+    {
+      "Surface": "lowpoly_plastic",
+      "Material": "weapons/pallete_wood.mat"
+    }
+  ],
+  "DefaultMaterial": "",
+  "Clips": [],
+  "Transform": {
+    "Enabled": true,
+    "Position": "0,0,0",
+    "Rotation": "0,0,0",
+    "Scale": "1,1,1",
+    "IsIdentity": true
+  },
+  "Mirror": {
+    "Enabled": false,
+    "Axis": 0,
+    "FlipWinding": true,
+    "RemapLeftRight": true
+  },
+  "Joints": [],
+  "AnimationGraph": "",
+  "LookAtChains": [],
+  "IkChains": [],
+  "BodyGroups": [],
+  "Folders": [],
+  "Lods": [
+    {
+      "Name": "lod0",
+      "Enabled": true,
+      "Distance": 0,
+      "Meshes": [
+        "lod0"
+      ]
+    },
+    {
+      "Name": "lod1",
+      "Enabled": true,
+      "Distance": 0.254,
+      "Meshes": [
+        "lod1"
+      ]
+    }
+  ],
+  "MaterialGroups": [],
+  "Hulls": [
+    {
+      "__type": "HullFile",
+      "File": "weapons/awp/w/awplod.smd",
+      "Scale": 0.0254,
+      "MaxVertices": 0,
+      "Name": "awplod",
+      "Enabled": true,
+      "Bone": "",
+      "Surface": "",
+      "Tags": "solid",
+      "Folder": ""
+    }
+  ],
+  "Surface": "",
+  "Mass": 0,
+  "OverrideBounds": false,
+  "Bounds": {
+    "Mins": "-16,-16,-16",
+    "Maxs": "16,16,16"
+  },
+  "Attachments": [
+    {
+      "Name": "muzzle",
+      "Parent": "bip01_r_hand",
+      "Position": "0.929091334,-0.0180242211,-0.243560687",
+      "Rotation": "-0,0,-8.70000003E-05",
+      "FacesOneWay": false,
+      "Influences": []
+    },
+    {
+      "Name": "eject",
+      "Parent": "bip01_r_hand",
+      "Position": "0.241578609,-0.00127894082,-0.12362083",
+      "Rotation": "-0,0,-8.70000003E-05",
+      "FacesOneWay": false,
+      "Influences": []
+    }
+  ],
+  "Bones": [
+    {
+      "Name": "hold_R",
+      "Parent": "",
+      "Position": "-0.2619057,-0.0267321039,0.157497674",
+      "Rotation": "0,-14.9216576,0"
+    }
+  ],
+  "Constraints": [],
+  "__references": null
+}

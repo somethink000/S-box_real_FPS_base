@@ -1,0 +1,61 @@
+{
+  "Mesh": "weapons/hands_l/compile/BarearmsFull.smd",
+  "Meshes": [
+    {
+      "File": "weapons/hands_l/compile/BarearmsFull.smd",
+      "Scale": 0.0254,
+      "Include": null,
+      "Enabled": true,
+      "Position": "0,0,0",
+      "Rotation": "0,0,0",
+      "Parent": ""
+    }
+  ],
+  "Scale": 0.0254,
+  "MaterialMode": 0,
+  "Material": "",
+  "Materials": [
+    "weapons/hands_l/hozq4rig.mat"
+  ],
+  "MaterialRemaps": [
+    {
+      "Surface": "hozqrig4",
+      "Material": "weapons/hands_l/hozq4rig.mat"
+    }
+  ],
+  "DefaultMaterial": "",
+  "Clips": [],
+  "Transform": {
+    "Enabled": true,
+    "Position": "0,0,0",
+    "Rotation": "0,0,0",
+    "Scale": "1,1,1",
+    "IsIdentity": true
+  },
+  "Mirror": {
+    "Enabled": false,
+    "Axis": 0,
+    "FlipWinding": true,
+    "RemapLeftRight": true
+  },
+  "Joints": [],
+  "AnimationGraph": "",
+  "LookAtChains": [],
+  "IkChains": [],
+  "BodyGroups": [],
+  "Folders": [],
+  "Lods": [],
+  "MaterialGroups": [],
+  "Hulls": [],
+  "Surface": "",
+  "Mass": 0,
+  "OverrideBounds": false,
+  "Bounds": {
+    "Mins": "-16,-16,-16",
+    "Maxs": "16,16,16"
+  },
+  "Attachments": [],
+  "Bones": [],
+  "Constraints": [],
+  "__references": null
+}

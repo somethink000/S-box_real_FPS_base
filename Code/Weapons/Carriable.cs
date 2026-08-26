@@ -1,13 +1,13 @@
-﻿
+
 using Microsoft.VisualBasic;
-using Sandbox;
-using Sandbox.Citizen;
+using Rinten;
+using Rinten.Citizen;
 using System.Collections.Generic;
 using System.Linq;
-using static Sandbox.Citizen.CitizenAnimationHelper;
-using static Sandbox.DecalDefinition;
-using static Sandbox.SerializedProperty;
-using static Sandbox.Services.Inventory;
+using static Rinten.Citizen.CitizenAnimationHelper;
+using static Rinten.DecalDefinition;
+using static Rinten.SerializedProperty;
+using static Rinten.Services.Inventory;
 
 namespace GeneralGame;
 
@@ -32,7 +32,7 @@ public partial class Carriable : Component
 	public bool CanSeeViewModel => !IsProxy && Owner.IsFirstPerson;
 	[Sync( SyncFlags.FromHost )] public Player Owner { get; set; }
 	
-	public bool IsRunning => Owner != null && Owner.MovementController.IsRunning && Owner.MovementController.IsOnGround && Owner.MovementController.Velocity.Length >= 200;
+	public bool IsRunning => Owner != null && Owner.MovementController.IsRunning && Owner.MovementController.IsOnGround && Owner.MovementController.Velocity.Length >=  (200) * 0.0254f ;
 	public bool IsCrouching => Owner.MovementController.IsCrouching;
 
 	protected bool _deployed { get; set; } = false;//i have this variable because of s&box bug
@@ -160,7 +160,7 @@ public partial class Carriable : Component
 		Network.ClearInterpolation();
 	}
 
-	public virtual SceneTraceResult MakeTrace( Vector3 start, Vector3 end, float radius = 2.0f )
+	public virtual SceneTraceResult MakeTrace( Vector3 start, Vector3 end, float radius = (2.0f) * 0.0254f)
 	{
 	    var startsInWater = SurfaceUtil.IsPointWater( start );
 		List<string> withoutTags = new() { TagsHelper.Trigger, TagsHelper.PlayerClip, TagsHelper.PassBullets, TagsHelper.ViewModel };
@@ -187,7 +187,7 @@ public partial class Carriable : Component
 
 		var pos = Owner.CameraController.EyePos;
 		var forward = Owner.CameraController.EyeAngles.ToRotation().Forward;
-		var trace = MakeTrace( Owner.CameraController.EyePos, pos + forward * TuckRange );
+		var trace = MakeTrace( Owner.CameraController.EyePos, pos + (forward * TuckRange) * 0.0254f );
 
 		if ( !trace.Hit )
 			return -1;

@@ -1,0 +1,19 @@
+{
+  "Shader": "shaders/blendable.slang",
+  "Features": {},
+  "Numbers": {},
+  "Tint": "1,1,1,1",
+  "ColorMap": "materials/grass_blend/forest_grass.png",
+  "Normal": "",
+  "RoughMetalAmbient": "",
+  "Emission": "",
+  "Roughness": 1,
+  "Metalness": 0,
+  "EmissionStrength": 0,
+  "PhysicsSurface": "",
+  "TwoSided": false,
+  "Filtering": 0,
+  "Blend": 0,
+  "AlphaCutoff": 0.5,
+  "__references": null
+}

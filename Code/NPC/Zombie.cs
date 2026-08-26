@@ -1,11 +1,11 @@
-﻿
 
-using Sandbox;
-using Sandbox.Citizen;
-using static Sandbox.Connection;
-using static Sandbox.Diagnostics.PerformanceStats;
-using static Sandbox.PhysicsContact;
-using static Sandbox.VertexLayout;
+
+using Rinten;
+using Rinten.Citizen;
+using static Rinten.Connection;
+using static Rinten.Diagnostics.PerformanceStats;
+using static Rinten.PhysicsContact;
+using static Rinten.VertexLayout;
 
 namespace GeneralGame;
 
@@ -103,9 +103,9 @@ public partial class Zombie : Component, IHealthComponent
 
 		if ( IsRunner )
 		{
-			agent.MaxSpeed = 100;
+			agent.MaxSpeed =  (100) * 0.0254f ;
 		}
-		else { agent.MaxSpeed = 200; }
+		else { agent.MaxSpeed =  (200) * 0.0254f ; }
 	}
 
 	//if (Vector3.DistanceBetween(target, GameObject.Transform.Position) < 80f)
@@ -157,7 +157,7 @@ public partial class Zombie : Component, IHealthComponent
 
 		if ( Health <= 0 )
 		{
-			Ragdoll( damage.Weapon.WorldRotation.Forward * 10 * damage.Damage );
+			Ragdoll( damage.Weapon.WorldRotation.Forward * (10) * 0.0254f * damage.Damage );
 			timeSinceDead = 0;
 			LifeState = LifeState.Dead;
 

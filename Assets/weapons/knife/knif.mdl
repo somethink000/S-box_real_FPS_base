@@ -1,0 +1,168 @@
+{
+  "Mesh": "weapons/hands_l/compile/BarearmsFull.smd",
+  "Meshes": [
+    {
+      "File": "weapons/hands_l/compile/BarearmsFull.smd",
+      "Scale": 0.0254,
+      "Include": null,
+      "Enabled": true,
+      "Position": "0,0,0",
+      "Rotation": "0,0,0",
+      "Parent": ""
+    },
+    {
+      "File": "weapons/knife/compil/knif_blue.smd",
+      "Scale": 0.0254,
+      "Include": null,
+      "Enabled": true,
+      "Position": "0,0,0",
+      "Rotation": "0,0,0",
+      "Parent": ""
+    }
+  ],
+  "Scale": 0.0254,
+  "MaterialMode": 0,
+  "Material": "",
+  "Materials": [
+    "weapons/pallete_wood.mat"
+  ],
+  "MaterialRemaps": [],
+  "DefaultMaterial": "weapons/pallete_wood.mat",
+  "Clips": [
+    {
+      "File": "weapons/knife/compil/anims/idle.smd",
+      "TakeName": "idle",
+      "Take": 0,
+      "Scale": 0.0254,
+      "Looping": true,
+      "Additive": false,
+      "Enabled": true,
+      "Folder": "",
+      "Events": [],
+      "SequenceName": "idle"
+    },
+    {
+      "File": "weapons/knife/compil/anims/swing2.smd",
+      "TakeName": "swing2",
+      "Take": 0,
+      "Scale": 0.0254,
+      "Looping": false,
+      "Additive": false,
+      "Enabled": true,
+      "Folder": "",
+      "Events": [
+        {
+          "Id": "end_attack",
+          "Kind": 0,
+          "StartFrame": 27,
+          "EndFrame": -1,
+          "Data": 0,
+          "Curve": []
+        }
+      ],
+      "SequenceName": "swing2"
+    },
+    {
+      "File": "weapons/knife/compil/anims/swing3.smd",
+      "TakeName": "swing3",
+      "Take": 0,
+      "Scale": 0.0254,
+      "Looping": false,
+      "Additive": false,
+      "Enabled": true,
+      "Folder": "",
+      "Events": [
+        {
+          "Id": "end_attack",
+          "Kind": 0,
+          "StartFrame": 27,
+          "EndFrame": -1,
+          "Data": 0,
+          "Curve": []
+        }
+      ],
+      "SequenceName": "swing3"
+    },
+    {
+      "File": "weapons/knife/compil/anims/ready.smd",
+      "TakeName": "ready",
+      "Take": 0,
+      "Scale": 0.0254,
+      "Looping": false,
+      "Additive": false,
+      "Enabled": true,
+      "Folder": "",
+      "Events": [],
+      "SequenceName": "ready"
+    },
+    {
+      "File": "weapons/knife/compil/anims/draw.smd",
+      "TakeName": "draw",
+      "Take": 0,
+      "Scale": 0.0254,
+      "Looping": false,
+      "Additive": false,
+      "Enabled": true,
+      "Folder": "",
+      "Events": [],
+      "SequenceName": "draw"
+    },
+    {
+      "File": "weapons/knife/compil/anims/holster.smd",
+      "TakeName": "holster",
+      "Take": 0,
+      "Scale": 0.0254,
+      "Looping": false,
+      "Additive": false,
+      "Enabled": true,
+      "Folder": "",
+      "Events": [],
+      "SequenceName": "holster"
+    },
+    {
+      "File": "weapons/knife/compil/anims/inspect2.smd",
+      "TakeName": "inspect2",
+      "Take": 0,
+      "Scale": 0.0254,
+      "Looping": false,
+      "Additive": false,
+      "Enabled": true,
+      "Folder": "",
+      "Events": [],
+      "SequenceName": "inspect2"
+    }
+  ],
+  "Transform": {
+    "Enabled": true,
+    "Position": "0,0,0",
+    "Rotation": "0,0,0",
+    "Scale": "1,1,1",
+    "IsIdentity": true
+  },
+  "Mirror": {
+    "Enabled": false,
+    "Axis": 0,
+    "FlipWinding": true,
+    "RemapLeftRight": true
+  },
+  "Joints": [],
+  "AnimationGraph": "weapons/knife/knife.ag",
+  "LookAtChains": [],
+  "IkChains": [],
+  "BodyGroups": [],
+  "Folders": [],
+  "Lods": [],
+  "MaterialGroups": [],
+  "Hulls": [],
+  "Surface": "",
+  "Mass": 0,
+  "OverrideBounds": false,
+  "Bounds": {
+    "Mins": "-16,-16,-16",
+    "Maxs": "16,16,16"
+  },
+  "Attachments": [],
+  "Bones": [],
+  "Constraints": [],
+  "__references": null
+}

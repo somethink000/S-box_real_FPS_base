@@ -1,0 +1,465 @@
+{
+  "Mesh": "weapons/reming870/compil/870.smd",
+  "Meshes": [
+    {
+      "File": "weapons/reming870/compil/870.smd",
+      "Scale": 0.0254,
+      "Include": null,
+      "Enabled": true,
+      "Position": "0,0,0",
+      "Rotation": "0,0,0",
+      "Parent": ""
+    },
+    {
+      "File": "weapons/reming870/compil/870 stock.smd",
+      "Scale": 0.0254,
+      "Include": null,
+      "Enabled": true,
+      "Position": "0,0,0",
+      "Rotation": "0,0,0",
+      "Parent": ""
+    },
+    {
+      "File": "weapons/reming870/compil/870 barrel 7.smd",
+      "Scale": 0.0254,
+      "Include": null,
+      "Enabled": true,
+      "Position": "0,0,0",
+      "Rotation": "0,0,0",
+      "Parent": ""
+    },
+    {
+      "File": "weapons/reming870/compil/870 irons.smd",
+      "Scale": 0.0254,
+      "Include": null,
+      "Enabled": true,
+      "Position": "0,0,0",
+      "Rotation": "0,0,0",
+      "Parent": ""
+    },
+    {
+      "File": "weapons/reming870/compil/870 pump.smd",
+      "Scale": 0.0254,
+      "Include": null,
+      "Enabled": true,
+      "Position": "0,0,0",
+      "Rotation": "0,0,0",
+      "Parent": ""
+    },
+    {
+      "File": "weapons/reming870/compil/ammos 590 r.smd",
+      "Scale": 0.0254,
+      "Include": null,
+      "Enabled": true,
+      "Position": "0,0,0",
+      "Rotation": "0,0,0",
+      "Parent": ""
+    },
+    {
+      "File": "weapons/reming870/compil/870 rs rail sight.smd",
+      "Scale": 0.0254,
+      "Include": null,
+      "Enabled": true,
+      "Position": "0,0,0",
+      "Rotation": "0,0,0",
+      "Parent": ""
+    }
+  ],
+  "Scale": 0.0254,
+  "MaterialMode": 0,
+  "Material": "",
+  "Materials": [
+    "weapons/pallete_metal.mat",
+    "weapons/pallete_wood.mat"
+  ],
+  "MaterialRemaps": [
+    {
+      "Surface": "lowpoly_metal",
+      "Material": "weapons/pallete_metal.mat"
+    },
+    {
+      "Surface": "lowpoly_plastic",
+      "Material": "weapons/pallete_wood.mat"
+    }
+  ],
+  "DefaultMaterial": "",
+  "Clips": [
+    {
+      "File": "weapons/reming870/compil/anims/cycle_1.smd",
+      "TakeName": "cycle_1",
+      "Take": 0,
+      "Scale": 0.0254,
+      "Looping": false,
+      "Additive": false,
+      "Enabled": true,
+      "Folder": "",
+      "Events": [
+        {
+          "Id": "pump_end",
+          "Kind": 0,
+          "StartFrame": 20,
+          "EndFrame": -1,
+          "Data": 0,
+          "Curve": []
+        },
+        {
+          "Id": "eject_shell",
+          "Kind": 0,
+          "StartFrame": 5,
+          "EndFrame": -1,
+          "Data": 0,
+          "Curve": []
+        }
+      ],
+      "SequenceName": "cycle_1"
+    },
+    {
+      "File": "weapons/reming870/compil/anims/cycle_2.smd",
+      "TakeName": "cycle_2",
+      "Take": 0,
+      "Scale": 0.0254,
+      "Looping": false,
+      "Additive": false,
+      "Enabled": true,
+      "Folder": "",
+      "Events": [
+        {
+          "Id": "pump_end",
+          "Kind": 0,
+          "StartFrame": 20,
+          "EndFrame": -1,
+          "Data": 0,
+          "Curve": []
+        },
+        {
+          "Id": "eject_shell",
+          "Kind": 0,
+          "StartFrame": 5,
+          "EndFrame": -1,
+          "Data": 0,
+          "Curve": []
+        }
+      ],
+      "SequenceName": "cycle_2"
+    },
+    {
+      "File": "weapons/reming870/compil/anims/cycle_3.smd",
+      "TakeName": "cycle_3",
+      "Take": 0,
+      "Scale": 0.0254,
+      "Looping": false,
+      "Additive": false,
+      "Enabled": true,
+      "Folder": "",
+      "Events": [
+        {
+          "Id": "pump_end",
+          "Kind": 0,
+          "StartFrame": 20,
+          "EndFrame": -1,
+          "Data": 0,
+          "Curve": []
+        }
+      ],
+      "SequenceName": "cycle_3"
+    },
+    {
+      "File": "weapons/reming870/compil/anims/cycle_iron.smd",
+      "TakeName": "cycle_iron",
+      "Take": 0,
+      "Scale": 0.0254,
+      "Looping": false,
+      "Additive": false,
+      "Enabled": true,
+      "Folder": "",
+      "Events": [
+        {
+          "Id": "pump_end",
+          "Kind": 0,
+          "StartFrame": 20,
+          "EndFrame": -1,
+          "Data": 0,
+          "Curve": []
+        },
+        {
+          "Id": "eject_shell",
+          "Kind": 0,
+          "StartFrame": 5,
+          "EndFrame": -1,
+          "Data": 0,
+          "Curve": []
+        }
+      ],
+      "SequenceName": "cycle_iron"
+    },
+    {
+      "File": "weapons/reming870/compil/anims/sgreload_start.smd",
+      "TakeName": "sgreload_start",
+      "Take": 0,
+      "Scale": 0.0254,
+      "Looping": false,
+      "Additive": false,
+      "Enabled": true,
+      "Folder": "",
+      "Events": [
+        {
+          "Id": "shell_insert",
+          "Kind": 0,
+          "StartFrame": 23,
+          "EndFrame": -1,
+          "Data": 0,
+          "Curve": []
+        }
+      ],
+      "SequenceName": "sgreload_start"
+    },
+    {
+      "File": "weapons/reming870/compil/anims/sgreload_end.smd",
+      "TakeName": "sgreload_end",
+      "Take": 0,
+      "Scale": 0.0254,
+      "Looping": false,
+      "Additive": false,
+      "Enabled": true,
+      "Folder": "",
+      "Events": [
+        {
+          "Id": "reload_end",
+          "Kind": 0,
+          "StartFrame": 15,
+          "EndFrame": -1,
+          "Data": 0,
+          "Curve": []
+        }
+      ],
+      "SequenceName": "sgreload_end"
+    },
+    {
+      "File": "weapons/reming870/compil/anims/sgreload_insert.smd",
+      "TakeName": "sgreload_insert",
+      "Take": 0,
+      "Scale": 0.0254,
+      "Looping": false,
+      "Additive": false,
+      "Enabled": true,
+      "Folder": "",
+      "Events": [
+        {
+          "Id": "shell_insert",
+          "Kind": 0,
+          "StartFrame": 18,
+          "EndFrame": -1,
+          "Data": 0,
+          "Curve": []
+        }
+      ],
+      "SequenceName": "sgreload_insert"
+    },
+    {
+      "File": "weapons/reming870/compil/anims/sgreload_start_empty.smd",
+      "TakeName": "sgreload_start_empty",
+      "Take": 0,
+      "Scale": 0.0254,
+      "Looping": false,
+      "Additive": false,
+      "Enabled": true,
+      "Folder": "",
+      "Events": [
+        {
+          "Id": "shell_insert",
+          "Kind": 0,
+          "StartFrame": 64,
+          "EndFrame": -1,
+          "Data": 0,
+          "Curve": []
+        }
+      ],
+      "SequenceName": "sgreload_start_empty"
+    },
+    {
+      "File": "weapons/reming870/compil/anims/fire.smd",
+      "TakeName": "fire",
+      "Take": 0,
+      "Scale": 0.0254,
+      "Looping": false,
+      "Additive": false,
+      "Enabled": true,
+      "Folder": "",
+      "Events": [],
+      "SequenceName": "fire"
+    },
+    {
+      "File": "weapons/reming870/compil/anims/fire_iron.smd",
+      "TakeName": "fire_iron",
+      "Take": 0,
+      "Scale": 0.0254,
+      "Looping": false,
+      "Additive": false,
+      "Enabled": true,
+      "Folder": "",
+      "Events": [],
+      "SequenceName": "fire_iron"
+    },
+    {
+      "File": "weapons/reming870/compil/anims/ready.smd",
+      "TakeName": "ready",
+      "Take": 0,
+      "Scale": 0.0254,
+      "Looping": false,
+      "Additive": false,
+      "Enabled": true,
+      "Folder": "",
+      "Events": [
+        {
+          "Id": "deployed",
+          "Kind": 0,
+          "StartFrame": 38,
+          "EndFrame": -1,
+          "Data": 0,
+          "Curve": []
+        }
+      ],
+      "SequenceName": "ready"
+    },
+    {
+      "File": "weapons/reming870/compil/anims/draw.smd",
+      "TakeName": "draw",
+      "Take": 0,
+      "Scale": 0.0254,
+      "Looping": false,
+      "Additive": false,
+      "Enabled": true,
+      "Folder": "",
+      "Events": [
+        {
+          "Id": "deployed",
+          "Kind": 0,
+          "StartFrame": 24,
+          "EndFrame": -1,
+          "Data": 0,
+          "Curve": []
+        }
+      ],
+      "SequenceName": "draw"
+    },
+    {
+      "File": "weapons/reming870/compil/anims/holster.smd",
+      "TakeName": "holster",
+      "Take": 0,
+      "Scale": 0.0254,
+      "Looping": false,
+      "Additive": false,
+      "Enabled": true,
+      "Folder": "",
+      "Events": [
+        {
+          "Id": "holstered",
+          "Kind": 0,
+          "StartFrame": 16,
+          "EndFrame": -1,
+          "Data": 0,
+          "Curve": []
+        }
+      ],
+      "SequenceName": "holster"
+    },
+    {
+      "File": "weapons/reming870/compil/anims/inspect_serbu.smd",
+      "TakeName": "inspect_serbu",
+      "Take": 0,
+      "Scale": 0.0254,
+      "Looping": false,
+      "Additive": false,
+      "Enabled": true,
+      "Folder": "",
+      "Events": [],
+      "SequenceName": "inspect_serbu"
+    },
+    {
+      "File": "weapons/reming870/compil/anims/inspect.smd",
+      "TakeName": "inspect",
+      "Take": 0,
+      "Scale": 0.0254,
+      "Looping": false,
+      "Additive": false,
+      "Enabled": true,
+      "Folder": "",
+      "Events": [],
+      "SequenceName": "inspect"
+    },
+    {
+      "File": "weapons/reming870/compil/anims/idle.smd",
+      "TakeName": "idle",
+      "Take": 0,
+      "Scale": 0.0254,
+      "Looping": true,
+      "Additive": false,
+      "Enabled": true,
+      "Folder": "",
+      "Events": [],
+      "SequenceName": "idle"
+    },
+    {
+      "File": "weapons/reming870/compil/anims/idle_iron.smd",
+      "TakeName": "idle_iron",
+      "Take": 0,
+      "Scale": 0.0254,
+      "Looping": true,
+      "Additive": false,
+      "Enabled": true,
+      "Folder": "",
+      "Events": [],
+      "SequenceName": "idle_iron"
+    }
+  ],
+  "Transform": {
+    "Enabled": true,
+    "Position": "0,0,0",
+    "Rotation": "0,0,0",
+    "Scale": "1,1,1",
+    "IsIdentity": true
+  },
+  "Mirror": {
+    "Enabled": false,
+    "Axis": 0,
+    "FlipWinding": true,
+    "RemapLeftRight": true
+  },
+  "Joints": [],
+  "AnimationGraph": "weapons/reming870/870.ag",
+  "LookAtChains": [],
+  "IkChains": [],
+  "BodyGroups": [],
+  "Folders": [],
+  "Lods": [],
+  "MaterialGroups": [],
+  "Hulls": [],
+  "Surface": "",
+  "Mass": 0,
+  "OverrideBounds": false,
+  "Bounds": {
+    "Mins": "-16,-16,-16",
+    "Maxs": "16,16,16"
+  },
+  "Attachments": [
+    {
+      "Name": "muzzle",
+      "Parent": "barrel",
+      "Position": "0.000308254414,0.00105590338,0.0562114976",
+      "Rotation": "-89.9999313,-0,0",
+      "FacesOneWay": false,
+      "Influences": []
+    },
+    {
+      "Name": "eject",
+      "Parent": "body",
+      "Position": "-0.0249755401,0.00284015178,0.0765336528",
+      "Rotation": "-0,0,0",
+      "FacesOneWay": false,
+      "Influences": []
+    }
+  ],
+  "Bones": [],
+  "Constraints": [],
+  "__references": null
+}

@@ -1,0 +1,457 @@
+{
+  "Version": 1,
+  "Model": "weapons/granatas/m26.mdl",
+  "Skeleton": "weapons/granatas/m26.mdl",
+  "parameters": [
+    {
+      "Identifier": "5d91c6a1-8d58-4013-aca8-ab6cc816b493",
+      "Type": "Bool",
+      "Name": "cook",
+      "Group": "",
+      "AutoReset": false,
+      "DefaultBool": false
+    },
+    {
+      "Identifier": "979f7238-90ed-40d5-a4ce-d305896d4a07",
+      "Type": "Bool",
+      "Name": "deploy",
+      "Group": "",
+      "AutoReset": true,
+      "DefaultBool": false
+    },
+    {
+      "Identifier": "470f8298-8cc3-409e-98f3-5cd0e39d5641",
+      "Type": "Bool",
+      "Name": "holster",
+      "Group": "",
+      "AutoReset": true,
+      "DefaultBool": false
+    }
+  ],
+  "virtualParameters": [],
+  "nodes": [
+    {
+      "_class": "PoseResultNode",
+      "Identifier": "b3e053f1-7ed6-491a-af50-e184d76ee475",
+      "Position": "336,-13.5",
+      "Pose": {
+        "Identifier": "d8ea224e-304d-4660-b226-960ec277880d",
+        "Output": "Result"
+      }
+    },
+    {
+      "Loop": false,
+      "DefaultVariationData": {
+        "AnimationName": "throw",
+        "SpeedMultiplier": 1
+      },
+      "_class": "AnimationClipNode",
+      "Identifier": "11c4e774-2224-4956-8b0b-ec7f1b8d8af3",
+      "Position": "-624,-240"
+    },
+    {
+      "Loop": false,
+      "DefaultVariationData": {
+        "AnimationName": "throw_idle",
+        "SpeedMultiplier": 1
+      },
+      "_class": "AnimationClipNode",
+      "Identifier": "2adda00a-4c41-4dbb-885b-ece02bc81f11",
+      "Position": "-624,-168"
+    },
+    {
+      "Loop": false,
+      "DefaultVariationData": {
+        "AnimationName": "draw",
+        "SpeedMultiplier": 1
+      },
+      "_class": "AnimationClipNode",
+      "Identifier": "af6cc918-6c2b-4c97-a6ca-826d9c8dadc0",
+      "Position": "-624,-312"
+    },
+    {
+      "Loop": false,
+      "DefaultVariationData": {
+        "AnimationName": "pullpin",
+        "SpeedMultiplier": 1
+      },
+      "_class": "AnimationClipNode",
+      "Identifier": "c5c413ba-44a4-4add-9691-6ec32ec6b59c",
+      "Position": "-624,-384"
+    },
+    {
+      "_class": "StateMachineNode",
+      "Identifier": "d8ea224e-304d-4660-b226-960ec277880d",
+      "Position": "-192,-408",
+      "States": [
+        {
+          "Name": "idle",
+          "Type": "BlendTree",
+          "Position": "-192,-240",
+          "Graph": {
+            "Version": 1,
+            "nodes": [
+              {
+                "_class": "PoseResultNode",
+                "Identifier": "180ff26e-63f3-4169-bd2f-9f10caab3336",
+                "Position": "400,0"
+              }
+            ]
+          },
+          "Pose": {
+            "Identifier": "c15b77a7-2e6b-4bd5-a416-85ac3791ea63",
+            "Output": "Result"
+          }
+        },
+        {
+          "Name": "start",
+          "Type": "BlendTree",
+          "Position": "-816,-504",
+          "Graph": {
+            "Version": 1,
+            "nodes": [
+              {
+                "_class": "PoseResultNode",
+                "Identifier": "b7d4f01b-b543-4a83-902a-47ea10ceb825",
+                "Position": "400,0"
+              }
+            ]
+          },
+          "Pose": {
+            "Identifier": "c5c413ba-44a4-4add-9691-6ec32ec6b59c",
+            "Output": "Result"
+          },
+          "TimedEvents": [
+            {
+              "Id": "Cooking",
+              "Type": "TimeElapsed",
+              "Operator": "GreaterThanEqual",
+              "Time": 0
+            }
+          ]
+        },
+        {
+          "Name": "deploy",
+          "Type": "BlendTree",
+          "Position": "-552,-96",
+          "Graph": {
+            "Version": 1,
+            "nodes": [
+              {
+                "_class": "PoseResultNode",
+                "Identifier": "68883646-22e9-441b-992b-24103f09dc5d",
+                "Position": "400,0"
+              }
+            ]
+          },
+          "Pose": {
+            "Identifier": "af6cc918-6c2b-4c97-a6ca-826d9c8dadc0",
+            "Output": "Result"
+          }
+        },
+        {
+          "Name": "Any",
+          "Type": "Off",
+          "Position": "-888,-264",
+          "Graph": {
+            "Version": 1,
+            "nodes": [
+              {
+                "_class": "PoseResultNode",
+                "Identifier": "e216f11a-8dbd-4855-9120-19c557a23532",
+                "Position": "400,0"
+              }
+            ]
+          }
+        },
+        {
+          "Name": "throw",
+          "Type": "BlendTree",
+          "Position": "-264,-504",
+          "Graph": {
+            "Version": 1,
+            "nodes": [
+              {
+                "_class": "PoseResultNode",
+                "Identifier": "017c684e-3a54-46cf-8329-fd26d70dc61f",
+                "Position": "400,0"
+              }
+            ]
+          },
+          "Pose": {
+            "Identifier": "11c4e774-2224-4956-8b0b-ec7f1b8d8af3",
+            "Output": "Result"
+          }
+        },
+        {
+          "Name": "cook",
+          "Type": "BlendTree",
+          "Position": "-552,-624",
+          "Graph": {
+            "Version": 1,
+            "nodes": [
+              {
+                "_class": "PoseResultNode",
+                "Identifier": "2cba9675-8da2-4f9a-adf1-a2a54571b16f",
+                "Position": "400,0"
+              }
+            ]
+          },
+          "Pose": {
+            "Identifier": "2adda00a-4c41-4dbb-885b-ece02bc81f11",
+            "Output": "Result"
+          },
+          "TimedEvents": [
+            {
+              "Id": "Cooking",
+              "Type": "TimeElapsed",
+              "Operator": "GreaterThanEqual",
+              "Time": 0
+            }
+          ]
+        }
+      ],
+      "Conduits": [
+        {
+          "From": "start",
+          "To": "cook",
+          "Graph": {
+            "Version": 1,
+            "Kind": "TransitionConduit",
+            "nodes": [
+              {
+                "TransitionName": "start \u2192 cook",
+                "Duration": 0.2,
+                "CanBeForced": false,
+                "_class": "TransitionNode",
+                "Identifier": "13f99cd1-ca46-4bf5-a30b-62a45af6976b",
+                "Position": "320,0",
+                "Condition": {
+                  "Identifier": "776f6bad-cdbb-4e9e-ad69-d8811c93171f",
+                  "Output": "Result"
+                }
+              },
+              {
+                "AtClipEnd": false,
+                "Invert": false,
+                "Attached": true,
+                "_class": "StateCompletedConditionNode",
+                "Identifier": "776f6bad-cdbb-4e9e-ad69-d8811c93171f",
+                "Position": "-360,0"
+              }
+            ]
+          }
+        },
+        {
+          "From": "deploy",
+          "To": "idle",
+          "Graph": {
+            "Version": 1,
+            "Kind": "TransitionConduit",
+            "nodes": [
+              {
+                "TransitionName": "deploy \u2192 idle",
+                "Duration": 0.2,
+                "CanBeForced": false,
+                "_class": "TransitionNode",
+                "Identifier": "bd1be6bf-23be-4371-8e4e-c2a997e41e35",
+                "Position": "320,0",
+                "Condition": {
+                  "Identifier": "b069b1da-4abc-43a5-b53e-54fcbdaeec4c",
+                  "Output": "Result"
+                }
+              },
+              {
+                "AtClipEnd": true,
+                "Invert": false,
+                "Attached": true,
+                "_class": "StateCompletedConditionNode",
+                "Identifier": "b069b1da-4abc-43a5-b53e-54fcbdaeec4c",
+                "Position": "-360,0"
+              }
+            ]
+          }
+        },
+        {
+          "From": "Any",
+          "To": "start",
+          "Graph": {
+            "Version": 1,
+            "Kind": "TransitionConduit",
+            "nodes": [
+              {
+                "TransitionName": "Any \u2192 start",
+                "Duration": 0,
+                "CanBeForced": false,
+                "_class": "TransitionNode",
+                "Identifier": "abd8b806-ac29-460e-a6e2-a648c2005fdd",
+                "Position": "320,0",
+                "Condition": {
+                  "Identifier": "b44196d6-771c-495d-95d6-bbab04425020",
+                  "Output": "Result"
+                }
+              },
+              {
+                "ParameterIdentifier": "5d91c6a1-8d58-4013-aca8-ab6cc816b493",
+                "ParameterName": "cook",
+                "Attached": true,
+                "_class": "BoolParameterNode",
+                "Identifier": "3e89dd79-efda-4966-8d15-165cc026d3b4",
+                "Position": "-640,0"
+              },
+              {
+                "Operator": "Or",
+                "SearchRule": "SearchAll",
+                "EventIds": [
+                  "Cooking"
+                ],
+                "Invert": true,
+                "Attached": true,
+                "_class": "IDEventConditionNode",
+                "Identifier": "51751ff1-e93e-4894-977d-daad3b62e9fe",
+                "Position": "-360,130"
+              },
+              {
+                "Conditions": [
+                  {
+                    "Input": {
+                      "Identifier": "3e89dd79-efda-4966-8d15-165cc026d3b4",
+                      "Output": "Value"
+                    }
+                  },
+                  {
+                    "Input": {
+                      "Identifier": "51751ff1-e93e-4894-977d-daad3b62e9fe",
+                      "Output": "Result"
+                    }
+                  }
+                ],
+                "_class": "AndNode",
+                "Identifier": "b44196d6-771c-495d-95d6-bbab04425020",
+                "Position": "-40,0"
+              }
+            ]
+          }
+        },
+        {
+          "From": "Any",
+          "To": "deploy",
+          "Graph": {
+            "Version": 1,
+            "Kind": "TransitionConduit",
+            "nodes": [
+              {
+                "TransitionName": "Any \u2192 deploy",
+                "Duration": 0,
+                "CanBeForced": false,
+                "_class": "TransitionNode",
+                "Identifier": "88e282ea-c9fb-420d-b170-b48b27cd92d3",
+                "Position": "320,0",
+                "Condition": {
+                  "Identifier": "3c3f7d2c-ceb3-488c-b632-e4687c242b87",
+                  "Output": "Value"
+                }
+              },
+              {
+                "ParameterIdentifier": "979f7238-90ed-40d5-a4ce-d305896d4a07",
+                "ParameterName": "deploy",
+                "Attached": true,
+                "_class": "BoolParameterNode",
+                "Identifier": "3c3f7d2c-ceb3-488c-b632-e4687c242b87",
+                "Position": "-640,0"
+              }
+            ]
+          }
+        },
+        {
+          "From": "throw",
+          "To": "idle",
+          "Graph": {
+            "Version": 1,
+            "Kind": "TransitionConduit",
+            "nodes": [
+              {
+                "TransitionName": "throw \u2192 idle",
+                "Duration": 0.2,
+                "CanBeForced": false,
+                "_class": "TransitionNode",
+                "Identifier": "3deffa31-74ef-4a13-b020-6d3da6911e48",
+                "Position": "320,0",
+                "Condition": {
+                  "Identifier": "a5832f8b-3c78-4692-83af-3a3b47d8b255",
+                  "Output": "Result"
+                }
+              },
+              {
+                "AtClipEnd": false,
+                "Invert": false,
+                "Attached": true,
+                "_class": "StateCompletedConditionNode",
+                "Identifier": "a5832f8b-3c78-4692-83af-3a3b47d8b255",
+                "Position": "-360,0"
+              }
+            ]
+          }
+        },
+        {
+          "From": "cook",
+          "To": "throw",
+          "Graph": {
+            "Version": 1,
+            "Kind": "TransitionConduit",
+            "nodes": [
+              {
+                "TransitionName": "cook \u2192 throw",
+                "Duration": 0.2,
+                "CanBeForced": false,
+                "_class": "TransitionNode",
+                "Identifier": "26b94fe3-c445-4f1e-a26c-fdb5b5e550a0",
+                "Position": "320,0",
+                "Condition": {
+                  "Identifier": "fec919ce-1060-49ef-83e1-ef7ea34df777",
+                  "Output": "Value"
+                }
+              },
+              {
+                "ParameterIdentifier": "5d91c6a1-8d58-4013-aca8-ab6cc816b493",
+                "ParameterName": "cook",
+                "Attached": true,
+                "_class": "BoolParameterNode",
+                "Identifier": "fec919ce-1060-49ef-83e1-ef7ea34df777",
+                "Position": "-640,0",
+                "Invert": true
+              }
+            ]
+          }
+        }
+      ],
+      "DefaultState": "idle",
+      "GlobalGraph": {
+        "Version": 1,
+        "nodes": [],
+        "Kind": "GlobalTransitions"
+      },
+      "EntryGraph": {
+        "Version": 1,
+        "nodes": [
+          {
+            "_class": "EntryStateOverrideConditionsNode",
+            "Identifier": "5072b51b-951d-4412-a70d-03852186baf9",
+            "Position": "400,0"
+          }
+        ],
+        "Kind": "EntryOverrides"
+      }
+    },
+    {
+      "Loop": true,
+      "DefaultVariationData": {
+        "AnimationName": "idle",
+        "SpeedMultiplier": 1
+      },
+      "_class": "AnimationClipNode",
+      "Identifier": "c15b77a7-2e6b-4bd5-a416-85ac3791ea63",
+      "Position": "-624,-456"
+    }
+  ]
+}

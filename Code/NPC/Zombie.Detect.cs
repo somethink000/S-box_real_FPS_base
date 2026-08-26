@@ -1,11 +1,11 @@
-﻿
 
-using Sandbox;
-using Sandbox.Citizen;
-using static Sandbox.Connection;
-using static Sandbox.Diagnostics.PerformanceStats;
-using static Sandbox.PhysicsContact;
-using static Sandbox.VertexLayout;
+
+using Rinten;
+using Rinten.Citizen;
+using static Rinten.Connection;
+using static Rinten.Diagnostics.PerformanceStats;
+using static Rinten.PhysicsContact;
+using static Rinten.VertexLayout;
 
 namespace GeneralGame;
 
@@ -72,7 +72,7 @@ public partial class Zombie
 		var currentTick = (int)(Time.Now / Time.Delta);
 		if ( currentTick % 20 != NpcId % 20 ) return; // Check every 20 ticks
 
-		var foundAround = Scene.FindInPhysics( new Sphere( WorldPosition, DetectRange * Scale ) ) // Find gameobjects nearby
+		var foundAround = Scene.FindInPhysics( new Sphere( WorldPosition, (DetectRange * Scale) * 0.0254f ) ) // Find gameobjects nearby
 			.Where( x => x.Enabled )
 			.Where( x => EnemyTags != null && x.Tags.HasAny( EnemyTags ) ) // Do they have any of our enemy tags
 			.Where( x => x.Components.GetInAncestorsOrSelf<IHealthComponent>()?.LifeState == LifeState.Alive ); // Are they dead or undead
@@ -161,8 +161,8 @@ public partial class Zombie
 			var randomDistance = Game.Random.Float( minRange, maxRange );
 			var randomPoint = position + randomDirection * randomDistance;
 
-			var groundTrace = Game.ActiveScene.Trace.Ray( randomPoint + Vector3.Up * 64f, randomPoint + Vector3.Down * 64f )
-				.Size( 5f )
+			var groundTrace = Game.ActiveScene.Trace.Ray( (randomPoint) * 0.0254f + (Vector3.Up * 64f) * 0.0254f , (randomPoint) * 0.0254f + (Vector3.Down * 64f) * 0.0254f )
+				.Size( (5f) * 0.0254f )
 				.WithoutTags( "player", "npc", "trigger" )
 				.Run();
 
@@ -189,8 +189,8 @@ public partial class Zombie
 		var offset = FollowingTargetObject ? direction * AttackRange * Scale / 2f : direction * VisionRange * Scale;
 		var wishPos = targetPosition + offset;
 
-		var groundTrace = Scene.Trace.Ray( wishPos + Vector3.Up * 64f, wishPos + Vector3.Down * 64f )
-			.Size( 5f )
+		var groundTrace = Scene.Trace.Ray( wishPos + (Vector3.Up * 64f) * 0.0254f , wishPos + (Vector3.Down * 64f) * 0.0254f )
+			.Size( (5f) * 0.0254f )
 			.IgnoreGameObjectHierarchy( GameObject )
 			.WithoutTags( "player", "npc", "trigger" )
 			.Run();

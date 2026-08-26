@@ -1,9 +1,9 @@
-﻿using Sandbox;
-using Sandbox.Citizen;
+using Rinten;
+using Rinten.Citizen;
 using System.Collections.Generic;
 using System.Linq;
-using static Sandbox.Citizen.CitizenAnimationHelper;
-using static Sandbox.SerializedProperty;
+using static Rinten.Citizen.CitizenAnimationHelper;
+using static Rinten.SerializedProperty;
 
 namespace GeneralGame;
 
@@ -77,7 +77,7 @@ public partial class Gun
 			// Jumping
 			floatMod += 0.75f;
 		}
-		else if ( Owner.MovementController.Velocity.Length > 100 )
+		else if ( Owner.MovementController.Velocity.Length >  (100) * 0.0254f  )
 		{
 			// Moving 
 			floatMod += 0.25f;

@@ -1,0 +1,76 @@
+{
+  "Mesh": "weapons/ammos/762x39.smd",
+  "Meshes": [
+    {
+      "File": "weapons/ammos/762x39.smd",
+      "Scale": 0.0254,
+      "Include": [
+        "762x39"
+      ],
+      "Enabled": true,
+      "Position": "0,0,0",
+      "Rotation": "0,0,0",
+      "Parent": ""
+    }
+  ],
+  "Scale": 0.0254,
+  "MaterialMode": 0,
+  "Material": "",
+  "Materials": [
+    "weapons/ammos/ammo1.mat"
+  ],
+  "MaterialRemaps": [
+    {
+      "Surface": "ammo1",
+      "Material": "weapons/ammos/ammo1.mat"
+    }
+  ],
+  "DefaultMaterial": "",
+  "Clips": [],
+  "Transform": {
+    "Enabled": true,
+    "Position": "0,0,0",
+    "Rotation": "0,0,0",
+    "Scale": "1,1,1",
+    "IsIdentity": true
+  },
+  "Mirror": {
+    "Enabled": false,
+    "Axis": 0,
+    "FlipWinding": true,
+    "RemapLeftRight": true
+  },
+  "Joints": [],
+  "AnimationGraph": "",
+  "LookAtChains": [],
+  "IkChains": [],
+  "BodyGroups": [],
+  "Folders": [],
+  "Lods": [],
+  "MaterialGroups": [],
+  "Hulls": [
+    {
+      "__type": "HullFile",
+      "File": "weapons/ammos/762x39_physics.smd",
+      "Scale": 0.0254,
+      "MaxVertices": 0,
+      "Name": "762x39_physics",
+      "Enabled": true,
+      "Bone": "",
+      "Surface": "",
+      "Tags": "solid",
+      "Folder": ""
+    }
+  ],
+  "Surface": "",
+  "Mass": 0,
+  "OverrideBounds": false,
+  "Bounds": {
+    "Mins": "-16,-16,-16",
+    "Maxs": "16,16,16"
+  },
+  "Attachments": [],
+  "Bones": [],
+  "Constraints": [],
+  "__references": null
+}

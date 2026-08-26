@@ -1,0 +1,107 @@
+{
+  "Mesh": "models/pine_tree/tre1/sm_pinetree_01.fbx",
+  "Meshes": [
+    {
+      "File": "models/pine_tree/tre1/sm_pinetree_01.fbx",
+      "Scale": 2.54,
+      "Include": [
+        "SM_PineTree_01"
+      ],
+      "Enabled": true,
+      "Position": "0,0,0",
+      "Rotation": "0,0,0",
+      "Parent": ""
+    },
+    {
+      "File": "models/pine_tree/tre2/SM_PineTree_02_LOD1.fbx",
+      "Scale": 2.54,
+      "Include": null,
+      "Enabled": true,
+      "Position": "0,0,0",
+      "Rotation": "0,0,0",
+      "Parent": ""
+    }
+  ],
+  "Scale": 2.54,
+  "MaterialMode": 0,
+  "Material": "",
+  "Materials": [
+    "models/pine_tree/mats/t_pinebranch.mat",
+    "models/pine_tree/tre2/pinetreebill.mat"
+  ],
+  "MaterialRemaps": [
+    {
+      "Surface": "m_pinetree",
+      "Material": "models/pine_tree/mats/t_pinebranch.mat"
+    },
+    {
+      "Surface": "material",
+      "Material": "models/pine_tree/tre2/pinetreebill.mat"
+    }
+  ],
+  "DefaultMaterial": "",
+  "Clips": [],
+  "Transform": {
+    "Enabled": true,
+    "Position": "0,0,0",
+    "Rotation": "0,0,0",
+    "Scale": "1,1,1",
+    "IsIdentity": true
+  },
+  "Mirror": {
+    "Enabled": false,
+    "Axis": 0,
+    "FlipWinding": true,
+    "RemapLeftRight": true
+  },
+  "Joints": [],
+  "AnimationGraph": "",
+  "LookAtChains": [],
+  "IkChains": [],
+  "BodyGroups": [],
+  "Folders": [],
+  "Lods": [
+    {
+      "Name": "lod0",
+      "Enabled": true,
+      "Distance": 0,
+      "Meshes": [
+        "lod0"
+      ]
+    },
+    {
+      "Name": "lod1",
+      "Enabled": true,
+      "Distance": 7.62,
+      "Meshes": [
+        "lod1"
+      ]
+    }
+  ],
+  "MaterialGroups": [],
+  "Hulls": [
+    {
+      "__type": "BoxHull",
+      "Center": "0.0862924159,-0.00806589704,12.7928877",
+      "Extents": "0.213292405,0.19268623,12.9198875",
+      "Rotation": "0,0,0",
+      "Name": "",
+      "Enabled": true,
+      "Bone": "",
+      "Surface": "",
+      "Tags": "solid",
+      "Folder": ""
+    }
+  ],
+  "Surface": "",
+  "Mass": 0,
+  "OverrideBounds": false,
+  "Bounds": {
+    "Mins": "-16,-16,-16",
+    "Maxs": "16,16,16"
+  },
+  "Attachments": [],
+  "Bones": [],
+  "Constraints": [],
+  "__references": null
+}

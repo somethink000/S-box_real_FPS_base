@@ -1,6 +1,6 @@
-﻿using System;
+using System;
 using System.Linq;
-using static Sandbox.Component;
+using static Rinten.Component;
 
 namespace GeneralGame;
 
@@ -11,7 +11,7 @@ public class HitScanBullet : IBulletBase
 		var player = weapon.Owner;
 		var forward = player.CameraController.EyeAngles.Forward + spreadOffset;
 		forward = forward.Normal;
-		var endPos = player.CameraController.EyePos + forward * 999999;
+		var endPos = player.CameraController.EyePos + (forward * 999999) * 0.0254f ;
 		var bulletTr = weapon.MakeTrace( player.CameraController.EyePos, endPos );
 		var hitObj = bulletTr.GameObject;
 

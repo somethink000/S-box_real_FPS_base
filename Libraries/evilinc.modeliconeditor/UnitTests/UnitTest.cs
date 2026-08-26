@@ -6,6 +6,6 @@ public class TestInit
 	[AssemblyInitialize]
 	public static void ClassInitialize( TestContext context )
 	{
-		Sandbox.Application.InitUnitTest();
+		Rinten.Application.InitUnitTest();
 	}
 }

@@ -54,16 +54,16 @@
           "Pos": "0,0,0"
         },
         "TuckRange": 30,
-        "ViewModel": "weapons/knife/knif.vmdl",
+        "ViewModel": "weapons/knife/knif.mdl",
         "ViewModelHands": null,
-        "WorldModel": "weapons/knife/w/knif_w.vmdl"
+        "WorldModel": "weapons/knife/w/knif_w.mdl"
       },
       {
-        "__type": "Sandbox.ModelCollider",
+        "__type": "Rinten.ModelCollider",
         "__guid": "db06a5e8-81be-4e4f-8e70-3d4a79dfddec",
         "Friction": null,
         "IsTrigger": false,
-        "Model": "weapons/knife/w/knif_w.vmdl",
+        "Model": "weapons/knife/w/knif_w.mdl",
         "OnComponentDestroy": null,
         "OnComponentDisabled": null,
         "OnComponentEnabled": null,
@@ -79,7 +79,7 @@
         "SurfaceVelocity": "0,0,0"
       },
       {
-        "__type": "Sandbox.Rigidbody",
+        "__type": "Rinten.Rigidbody",
         "__guid": "b72cd90e-ed2f-4650-a0de-d31c6c9510c9",
         "AngularDamping": 0,
         "Gravity": true,
@@ -106,7 +106,7 @@
         "StartAsleep": false
       },
       {
-        "__type": "Sandbox.SkinnedModelRenderer",
+        "__type": "Rinten.SkinnedModelRenderer",
         "__guid": "9d529283-654e-4a5b-9f49-6a3a1a778660",
         "AnimationGraph": null,
         "BodyGroups": 18446744073709551615,
@@ -115,7 +115,7 @@
         "CreateBoneObjects": true,
         "MaterialGroup": null,
         "MaterialOverride": null,
-        "Model": "weapons/knife/w/knif_w.vmdl",
+        "Model": "weapons/knife/w/knif_w.mdl",
         "Morphs": {},
         "OnComponentDestroy": null,
         "OnComponentDisabled": null,

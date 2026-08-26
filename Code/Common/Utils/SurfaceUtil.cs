@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 
 /* 
  * Util class for checking surface properties
@@ -32,7 +32,7 @@ public static class SurfaceUtil
 
 	public static bool IsPointWater( Vector3 pos )
 	{
-		var tr = Game.SceneTrace.Ray( pos, pos + Vector3.Forward )
+		var tr = Game.SceneTrace.Ray( pos, pos + (Vector3.Forward) * 0.0254f )
 			.WithTag( TagsHelper.Water )
 			.Run();
 

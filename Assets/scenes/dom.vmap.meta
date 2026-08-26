@@ -16,7 +16,7 @@
       "Mounts": null,
       "IsStandaloneOnly": false,
       "Metadata": {
-        "SingleAssetSource": "scenes/dom.vmap",
+        "SingleAssetSource": "scenes/dom.prefab",
         "ParentPackage": "evilinc.real_fps_base"
       }
     }

@@ -1,3 +1,0 @@
-﻿<Project>
-  <Import Project="..\build\modeliconeditor.editor.props" />
-</Project>

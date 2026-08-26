@@ -1,0 +1,75 @@
+{
+  "Mesh": "weapons/knife/compil/knif_blue.smd",
+  "Meshes": [
+    {
+      "File": "weapons/knife/compil/knif_blue.smd",
+      "Scale": 0.0254,
+      "Include": null,
+      "Enabled": true,
+      "Position": "-0.254000008,0.101599999,0",
+      "Rotation": "0,0,0",
+      "Parent": ""
+    }
+  ],
+  "Scale": 0.0254,
+  "MaterialMode": 0,
+  "Material": "",
+  "Materials": [
+    "weapons/pallete_metal.mat"
+  ],
+  "MaterialRemaps": [],
+  "DefaultMaterial": "weapons/pallete_metal.mat",
+  "Clips": [],
+  "Transform": {
+    "Enabled": true,
+    "Position": "0,0,0",
+    "Rotation": "0,0,0",
+    "Scale": "1,1,1",
+    "IsIdentity": true
+  },
+  "Mirror": {
+    "Enabled": false,
+    "Axis": 0,
+    "FlipWinding": true,
+    "RemapLeftRight": true
+  },
+  "Joints": [],
+  "AnimationGraph": "",
+  "LookAtChains": [],
+  "IkChains": [],
+  "BodyGroups": [],
+  "Folders": [],
+  "Lods": [],
+  "MaterialGroups": [],
+  "Hulls": [
+    {
+      "__type": "RenderHull",
+      "MaxVertices": 16,
+      "PerElement": false,
+      "Name": "",
+      "Enabled": true,
+      "Bone": "",
+      "Surface": "",
+      "Tags": "solid",
+      "Folder": ""
+    }
+  ],
+  "Surface": "",
+  "Mass": 0,
+  "OverrideBounds": false,
+  "Bounds": {
+    "Mins": "-16,-16,-16",
+    "Maxs": "16,16,16"
+  },
+  "Attachments": [],
+  "Bones": [
+    {
+      "Name": "hold_R",
+      "Parent": "",
+      "Position": "0.0382267721,0.0369262174,-0.088086918",
+      "Rotation": "0,0,-22.7598667"
+    }
+  ],
+  "Constraints": [],
+  "__references": null
+}

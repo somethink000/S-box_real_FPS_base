@@ -1,0 +1,1086 @@
+{
+  "Version": 1,
+  "Model": "weapons/vss/vss.mdl",
+  "Skeleton": "weapons/vss/vss.mdl",
+  "parameters": [
+    {
+      "Identifier": "9e78415e-85eb-42e3-9aed-53179a8c7746",
+      "Type": "Bool",
+      "Name": "shoot",
+      "Group": "",
+      "AutoReset": true,
+      "DefaultBool": false
+    },
+    {
+      "Identifier": "bc9833ca-01ea-4ad3-a856-93d7eb3c3f4e",
+      "Type": "Bool",
+      "Name": "deploy",
+      "Group": "",
+      "AutoReset": true,
+      "DefaultBool": false
+    },
+    {
+      "Identifier": "7a299540-3f40-4b04-8cdb-210c4e1ea804",
+      "Type": "Bool",
+      "Name": "reload",
+      "Group": "",
+      "AutoReset": true,
+      "DefaultBool": false
+    },
+    {
+      "Identifier": "db20cafb-5f54-473c-9dcd-32f827867145",
+      "Type": "Bool",
+      "Name": "empty",
+      "Group": "",
+      "AutoReset": false,
+      "DefaultBool": false
+    },
+    {
+      "Identifier": "9810642d-3753-47d5-b2d8-261ca44a14eb",
+      "Type": "Bool",
+      "Name": "aiming",
+      "Group": "",
+      "AutoReset": false,
+      "DefaultBool": false
+    },
+    {
+      "Identifier": "d0786bd8-e1b4-4d87-95a0-c4142fc03cfb",
+      "Type": "Bool",
+      "Name": "holster",
+      "Group": "",
+      "AutoReset": true,
+      "DefaultBool": false
+    },
+    {
+      "Identifier": "d35780f0-af94-4939-b56b-9d98d16a7d74",
+      "Type": "Bool",
+      "Name": "mode",
+      "Group": "",
+      "AutoReset": true,
+      "DefaultBool": false
+    },
+    {
+      "Identifier": "e85847e1-d4ee-492a-b276-109b5f1f3922",
+      "Type": "Bool",
+      "Name": "fix",
+      "Group": "",
+      "AutoReset": true,
+      "DefaultBool": false
+    },
+    {
+      "Identifier": "f83b4e7a-6fad-4f61-9665-acfad2320fa0",
+      "Type": "Bool",
+      "Name": "inspect",
+      "Group": "",
+      "AutoReset": true,
+      "DefaultBool": false
+    },
+    {
+      "Identifier": "294fdf80-1ab9-41c6-adf4-512050747792",
+      "Type": "Bool",
+      "Name": "ready",
+      "Group": "",
+      "AutoReset": true,
+      "DefaultBool": false
+    }
+  ],
+  "virtualParameters": [],
+  "nodes": [
+    {
+      "_class": "PoseResultNode",
+      "Identifier": "3ac27d26-f9da-4a09-be8d-27b07804f980",
+      "Position": "336,-13.5",
+      "Pose": {
+        "Identifier": "50371303-b164-4f80-86d4-dfc7c5816b99",
+        "Output": "Result"
+      }
+    },
+    {
+      "Loop": true,
+      "DefaultVariationData": {
+        "AnimationName": "idle_iron",
+        "SpeedMultiplier": 1
+      },
+      "_class": "AnimationClipNode",
+      "Identifier": "d14c04a8-8b9c-47a9-937d-a6af38abb1b2",
+      "Position": "-1272,-696"
+    },
+    {
+      "Loop": false,
+      "DefaultVariationData": {
+        "AnimationName": "ready",
+        "SpeedMultiplier": 1
+      },
+      "_class": "AnimationClipNode",
+      "Identifier": "6e0da703-f68d-46fd-b854-950890fcdab8",
+      "Position": "-648,240"
+    },
+    {
+      "Loop": false,
+      "DefaultVariationData": {
+        "AnimationName": "reload_empty_10",
+        "SpeedMultiplier": 1
+      },
+      "_class": "AnimationClipNode",
+      "Identifier": "cdab57cd-518d-44fe-84ae-d8c7c67bb2c5",
+      "Position": "-1920,144"
+    },
+    {
+      "Loop": false,
+      "DefaultVariationData": {
+        "AnimationName": "reload_empty_10_iron",
+        "SpeedMultiplier": 1
+      },
+      "_class": "AnimationClipNode",
+      "Identifier": "c6c9cbc4-af7e-4a5b-8195-e47f822f4b0c",
+      "Position": "-1920,216"
+    },
+    {
+      "Loop": false,
+      "DefaultVariationData": {
+        "AnimationName": "reload_10",
+        "SpeedMultiplier": 1
+      },
+      "_class": "AnimationClipNode",
+      "Identifier": "5b5fcbac-50ae-481f-832e-0d95ccf741d6",
+      "Position": "-1920,-72"
+    },
+    {
+      "BlendTime": 0.2,
+      "SyncCycles": true,
+      "_class": "PoseSwitchNode",
+      "Identifier": "e4aed8c1-40d6-4948-8853-f59b0623e8ed",
+      "Position": "-912,-720",
+      "WhenTrue": {
+        "Identifier": "5e5a5001-7010-4312-9074-0fa191642031",
+        "Output": "Result"
+      },
+      "WhenFalse": {
+        "Identifier": "d14c04a8-8b9c-47a9-937d-a6af38abb1b2",
+        "Output": "Result"
+      },
+      "Condition": {
+        "Identifier": "88a38c75-2b4f-45ef-89c3-2039a0af129c",
+        "Output": "Value"
+      }
+    },
+    {
+      "Loop": false,
+      "DefaultVariationData": {
+        "AnimationName": "fire_02",
+        "SpeedMultiplier": 1
+      },
+      "_class": "AnimationClipNode",
+      "Identifier": "c3f0df94-481e-4088-8e24-3f9d37b753e8",
+      "Position": "-1536,-504"
+    },
+    {
+      "Loop": false,
+      "DefaultVariationData": {
+        "AnimationName": "reload_10_iron",
+        "SpeedMultiplier": 1
+      },
+      "_class": "AnimationClipNode",
+      "Identifier": "5b700ecb-b8a1-4b97-893b-85f4ef8ae672",
+      "Position": "-1920,0"
+    },
+    {
+      "Loop": false,
+      "DefaultVariationData": {
+        "AnimationName": "fire_iron",
+        "SpeedMultiplier": 1
+      },
+      "_class": "AnimationClipNode",
+      "Identifier": "d208950d-ecc6-4459-8974-892946092a84",
+      "Position": "-1560,-312"
+    },
+    {
+      "BlendTime": 0.2,
+      "SyncCycles": true,
+      "_class": "PoseSwitchNode",
+      "Identifier": "4197724c-51f8-4b22-ba5a-1bfb3e86165c",
+      "Position": "-1584,-48",
+      "WhenTrue": {
+        "Identifier": "5b5fcbac-50ae-481f-832e-0d95ccf741d6",
+        "Output": "Result"
+      },
+      "WhenFalse": {
+        "Identifier": "5b700ecb-b8a1-4b97-893b-85f4ef8ae672",
+        "Output": "Result"
+      },
+      "Condition": {
+        "Identifier": "3f5a0e2f-b06d-475b-8d25-e8961d4de8f7",
+        "Output": "Value"
+      }
+    },
+    {
+      "Loop": false,
+      "DefaultVariationData": {
+        "AnimationName": "modeswitch",
+        "SpeedMultiplier": 1
+      },
+      "_class": "AnimationClipNode",
+      "Identifier": "65b6a801-19dd-4074-83f8-cfe60e87a728",
+      "Position": "-648,96"
+    },
+    {
+      "BlendTime": 0.2,
+      "SyncCycles": true,
+      "_class": "PoseSwitchNode",
+      "Identifier": "616fd00d-7a45-453e-b315-732d8c6ffe8f",
+      "Position": "-1584,168",
+      "WhenTrue": {
+        "Identifier": "cdab57cd-518d-44fe-84ae-d8c7c67bb2c5",
+        "Output": "Result"
+      },
+      "WhenFalse": {
+        "Identifier": "c6c9cbc4-af7e-4a5b-8195-e47f822f4b0c",
+        "Output": "Result"
+      },
+      "Condition": {
+        "Identifier": "f18803fc-98a6-4fed-b2ba-8b90a8917cb2",
+        "Output": "Value"
+      }
+    },
+    {
+      "BlendTime": 0.2,
+      "SyncCycles": true,
+      "_class": "PoseSwitchNode",
+      "Identifier": "cafbf036-2b9c-479b-bcb9-87a098c22e61",
+      "Position": "-1224,24",
+      "WhenTrue": {
+        "Identifier": "4197724c-51f8-4b22-ba5a-1bfb3e86165c",
+        "Output": "Result"
+      },
+      "WhenFalse": {
+        "Identifier": "616fd00d-7a45-453e-b315-732d8c6ffe8f",
+        "Output": "Result"
+      },
+      "Condition": {
+        "Identifier": "0f635e3e-3c72-45ff-90e9-8134ab5eb41b",
+        "Output": "Value"
+      }
+    },
+    {
+      "Loop": false,
+      "DefaultVariationData": {
+        "AnimationName": "draw",
+        "SpeedMultiplier": 1
+      },
+      "_class": "AnimationClipNode",
+      "Identifier": "a63ab49b-fbe0-4940-b43c-1964eea0cfd3",
+      "Position": "-1176,-216"
+    },
+    {
+      "BlendTime": 0.2,
+      "SyncCycles": true,
+      "_class": "PoseSwitchNode",
+      "Identifier": "68c10ceb-c5a1-4013-9cf1-bf9da8b8d554",
+      "Position": "-888,-408",
+      "WhenTrue": {
+        "Identifier": "c0bbfbf6-8090-4a14-b41f-9ec0e574026f",
+        "Output": "Result"
+      },
+      "WhenFalse": {
+        "Identifier": "d208950d-ecc6-4459-8974-892946092a84",
+        "Output": "Result"
+      },
+      "Condition": {
+        "Identifier": "126df185-fc1f-41e5-b65b-c15c317ece6e",
+        "Output": "Value"
+      }
+    },
+    {
+      "Loop": false,
+      "DefaultVariationData": {
+        "AnimationName": "fix",
+        "SpeedMultiplier": 1
+      },
+      "_class": "AnimationClipNode",
+      "Identifier": "01756756-aa3c-4cb1-ba19-7a9afec7d23d",
+      "Position": "-648,24"
+    },
+    {
+      "Loop": false,
+      "DefaultVariationData": {
+        "AnimationName": "fire_01",
+        "SpeedMultiplier": 1
+      },
+      "_class": "AnimationClipNode",
+      "Identifier": "c0bbfbf6-8090-4a14-b41f-9ec0e574026f",
+      "Position": "-1536,-576"
+    },
+    {
+      "Loop": false,
+      "DefaultVariationData": {
+        "AnimationName": "fire_03",
+        "SpeedMultiplier": 1
+      },
+      "_class": "AnimationClipNode",
+      "Identifier": "330bcb51-ece7-4847-a3a0-ba143505f116",
+      "Position": "-1536,-432"
+    },
+    {
+      "Loop": false,
+      "DefaultVariationData": {
+        "AnimationName": "holster",
+        "SpeedMultiplier": 1
+      },
+      "_class": "AnimationClipNode",
+      "Identifier": "d43f3d0b-13f5-4c32-a270-ccd8933dd802",
+      "Position": "-648,-48"
+    },
+    {
+      "_class": "StateMachineNode",
+      "Identifier": "50371303-b164-4f80-86d4-dfc7c5816b99",
+      "Position": "-181.5,-403.5",
+      "States": [
+        {
+          "Name": "idle",
+          "Type": "BlendTree",
+          "Position": "-192,-240",
+          "Graph": {
+            "Version": 1,
+            "nodes": [
+              {
+                "_class": "PoseResultNode",
+                "Identifier": "b7b2e191-307b-43ac-b1c7-2d1adb726a41",
+                "Position": "400,0"
+              }
+            ]
+          },
+          "Pose": {
+            "Identifier": "e4aed8c1-40d6-4948-8853-f59b0623e8ed",
+            "Output": "Result"
+          }
+        },
+        {
+          "Name": "fire",
+          "Type": "BlendTree",
+          "Position": "-552,-624",
+          "Graph": {
+            "Version": 1,
+            "nodes": [
+              {
+                "_class": "PoseResultNode",
+                "Identifier": "37463107-e21a-4fe5-ac74-de0fe09225fc",
+                "Position": "400,0"
+              }
+            ]
+          },
+          "Pose": {
+            "Identifier": "68c10ceb-c5a1-4013-9cf1-bf9da8b8d554",
+            "Output": "Result"
+          }
+        },
+        {
+          "Name": "deploy",
+          "Type": "BlendTree",
+          "Position": "-552,-432",
+          "Graph": {
+            "Version": 1,
+            "nodes": [
+              {
+                "_class": "PoseResultNode",
+                "Identifier": "401cf974-5b42-403e-bd2a-31611795cd3f",
+                "Position": "400,0"
+              }
+            ]
+          },
+          "Pose": {
+            "Identifier": "a63ab49b-fbe0-4940-b43c-1964eea0cfd3",
+            "Output": "Result"
+          }
+        },
+        {
+          "Name": "reload",
+          "Type": "BlendTree",
+          "Position": "-552,-792",
+          "Graph": {
+            "Version": 1,
+            "nodes": [
+              {
+                "_class": "PoseResultNode",
+                "Identifier": "d30b05f3-d1d3-4dac-9223-adbab1bb243c",
+                "Position": "400,0"
+              }
+            ]
+          },
+          "Pose": {
+            "Identifier": "cafbf036-2b9c-479b-bcb9-87a098c22e61",
+            "Output": "Result"
+          }
+        },
+        {
+          "Name": "Any",
+          "Type": "Off",
+          "Position": "-888,-264",
+          "Graph": {
+            "Version": 1,
+            "nodes": [
+              {
+                "_class": "PoseResultNode",
+                "Identifier": "67077fc5-f36f-4f16-945a-3f62a68d93aa",
+                "Position": "400,0"
+              }
+            ]
+          }
+        },
+        {
+          "Name": "holster",
+          "Type": "BlendTree",
+          "Position": "-552,-264",
+          "Graph": {
+            "Version": 1,
+            "nodes": [
+              {
+                "_class": "PoseResultNode",
+                "Identifier": "47ab66cb-f4bd-4624-ad24-bd453f8029fb",
+                "Position": "400,0"
+              }
+            ]
+          },
+          "Pose": {
+            "Identifier": "d43f3d0b-13f5-4c32-a270-ccd8933dd802",
+            "Output": "Result"
+          }
+        },
+        {
+          "Name": "fix",
+          "Type": "BlendTree",
+          "Position": "-552,-96",
+          "Graph": {
+            "Version": 1,
+            "nodes": [
+              {
+                "_class": "PoseResultNode",
+                "Identifier": "233c4084-05c8-47ef-84bd-e60f63a8537b",
+                "Position": "400,0"
+              }
+            ]
+          },
+          "Pose": {
+            "Identifier": "01756756-aa3c-4cb1-ba19-7a9afec7d23d",
+            "Output": "Result"
+          }
+        },
+        {
+          "Name": "type",
+          "Type": "BlendTree",
+          "Position": "-552,72",
+          "Graph": {
+            "Version": 1,
+            "nodes": [
+              {
+                "_class": "PoseResultNode",
+                "Identifier": "6cf915df-0721-4bd5-9b55-06cdb17f21b4",
+                "Position": "400,0"
+              }
+            ]
+          },
+          "Pose": {
+            "Identifier": "65b6a801-19dd-4074-83f8-cfe60e87a728",
+            "Output": "Result"
+          }
+        },
+        {
+          "Name": "inspect",
+          "Type": "BlendTree",
+          "Position": "-552,216",
+          "Graph": {
+            "Version": 1,
+            "nodes": [
+              {
+                "_class": "PoseResultNode",
+                "Identifier": "4fba7fe6-0bae-41c6-b884-713505cf0e4c",
+                "Position": "400,0"
+              }
+            ]
+          },
+          "Pose": {
+            "Identifier": "b79e5da4-bef1-45bf-9ac0-1e686af3208e",
+            "Output": "Result"
+          }
+        },
+        {
+          "Name": "ready",
+          "Type": "BlendTree",
+          "Position": "-552,360",
+          "Graph": {
+            "Version": 1,
+            "nodes": [
+              {
+                "_class": "PoseResultNode",
+                "Identifier": "db1ecc24-788d-40ae-831c-4c2fe5b774d9",
+                "Position": "400,0"
+              }
+            ]
+          },
+          "Pose": {
+            "Identifier": "6e0da703-f68d-46fd-b854-950890fcdab8",
+            "Output": "Result"
+          }
+        }
+      ],
+      "Conduits": [
+        {
+          "From": "fire",
+          "To": "idle",
+          "Graph": {
+            "Version": 1,
+            "Kind": "TransitionConduit",
+            "nodes": [
+              {
+                "TransitionName": "fire \u2192 idle",
+                "Duration": 0.1,
+                "CanBeForced": false,
+                "_class": "TransitionNode",
+                "Identifier": "b8aae592-a43e-4e7c-b5b9-dda88f3fad73",
+                "Position": "320,0",
+                "Condition": {
+                  "Identifier": "ffc3fff0-a4a0-4c57-a46c-21118035919a",
+                  "Output": "Result"
+                }
+              },
+              {
+                "AtClipEnd": false,
+                "Invert": false,
+                "Attached": true,
+                "_class": "StateCompletedConditionNode",
+                "Identifier": "ffc3fff0-a4a0-4c57-a46c-21118035919a",
+                "Position": "-360,0"
+              }
+            ]
+          }
+        },
+        {
+          "From": "deploy",
+          "To": "idle",
+          "Graph": {
+            "Version": 1,
+            "Kind": "TransitionConduit",
+            "nodes": [
+              {
+                "TransitionName": "deploy \u2192 idle",
+                "Duration": 0.2,
+                "CanBeForced": false,
+                "_class": "TransitionNode",
+                "Identifier": "f7ad6745-6ec3-49bc-a63a-85a8fd3756d8",
+                "Position": "320,0",
+                "Condition": {
+                  "Identifier": "210ac4d8-e897-48ef-8e9a-c332de38e9a5",
+                  "Output": "Result"
+                }
+              },
+              {
+                "AtClipEnd": false,
+                "Invert": false,
+                "Attached": true,
+                "_class": "StateCompletedConditionNode",
+                "Identifier": "210ac4d8-e897-48ef-8e9a-c332de38e9a5",
+                "Position": "-360,0"
+              }
+            ]
+          }
+        },
+        {
+          "From": "reload",
+          "To": "idle",
+          "Graph": {
+            "Version": 1,
+            "Kind": "TransitionConduit",
+            "nodes": [
+              {
+                "TransitionName": "reload \u2192 idle",
+                "Duration": 0.2,
+                "CanBeForced": false,
+                "_class": "TransitionNode",
+                "Identifier": "b2ad2887-e221-448d-b2f7-a1d53ad8d7c7",
+                "Position": "320,0",
+                "Condition": {
+                  "Identifier": "f4c94b21-2571-4026-9b3f-e3e9f80e6638",
+                  "Output": "Result"
+                }
+              },
+              {
+                "AtClipEnd": false,
+                "Invert": false,
+                "Attached": true,
+                "_class": "StateCompletedConditionNode",
+                "Identifier": "f4c94b21-2571-4026-9b3f-e3e9f80e6638",
+                "Position": "-360,0"
+              }
+            ]
+          }
+        },
+        {
+          "From": "Any",
+          "To": "reload",
+          "Graph": {
+            "Version": 1,
+            "Kind": "TransitionConduit",
+            "nodes": [
+              {
+                "TransitionName": "Any \u2192 reload",
+                "Duration": 0,
+                "CanBeForced": false,
+                "_class": "TransitionNode",
+                "Identifier": "87dd63e7-eaeb-41c6-b6e9-64a0ca972207",
+                "Position": "320,0",
+                "Condition": {
+                  "Identifier": "300794c2-48a0-4d3d-856d-aecc971aa5ac",
+                  "Output": "Value"
+                }
+              },
+              {
+                "ParameterIdentifier": "7a299540-3f40-4b04-8cdb-210c4e1ea804",
+                "ParameterName": "reload",
+                "Attached": true,
+                "_class": "BoolParameterNode",
+                "Identifier": "300794c2-48a0-4d3d-856d-aecc971aa5ac",
+                "Position": "-640,0"
+              }
+            ]
+          }
+        },
+        {
+          "From": "Any",
+          "To": "fire",
+          "Graph": {
+            "Version": 1,
+            "Kind": "TransitionConduit",
+            "nodes": [
+              {
+                "TransitionName": "Any \u2192 fire",
+                "Duration": 0,
+                "CanBeForced": false,
+                "_class": "TransitionNode",
+                "Identifier": "95a6b14a-29f0-474b-8701-260e79618f96",
+                "Position": "320,0",
+                "Condition": {
+                  "Identifier": "e8cdbe65-6a94-4dd2-8a64-ed8318feee73",
+                  "Output": "Value"
+                }
+              },
+              {
+                "ParameterIdentifier": "9e78415e-85eb-42e3-9aed-53179a8c7746",
+                "ParameterName": "shoot",
+                "Attached": true,
+                "_class": "BoolParameterNode",
+                "Identifier": "e8cdbe65-6a94-4dd2-8a64-ed8318feee73",
+                "Position": "-640,0"
+              }
+            ]
+          }
+        },
+        {
+          "From": "Any",
+          "To": "deploy",
+          "Graph": {
+            "Version": 1,
+            "Kind": "TransitionConduit",
+            "nodes": [
+              {
+                "TransitionName": "Any \u2192 deploy",
+                "Duration": 0,
+                "CanBeForced": false,
+                "_class": "TransitionNode",
+                "Identifier": "32972d25-e331-482e-9999-50cd3e7af578",
+                "Position": "320,0",
+                "Condition": {
+                  "Identifier": "7318d2b8-313e-4739-a714-534109ce5057",
+                  "Output": "Value"
+                }
+              },
+              {
+                "ParameterIdentifier": "bc9833ca-01ea-4ad3-a856-93d7eb3c3f4e",
+                "ParameterName": "deploy",
+                "Attached": true,
+                "_class": "BoolParameterNode",
+                "Identifier": "7318d2b8-313e-4739-a714-534109ce5057",
+                "Position": "-640,0"
+              }
+            ]
+          }
+        },
+        {
+          "From": "Any",
+          "To": "holster",
+          "Graph": {
+            "Version": 1,
+            "Kind": "TransitionConduit",
+            "nodes": [
+              {
+                "TransitionName": "Any \u2192 holster",
+                "Duration": 0.2,
+                "CanBeForced": false,
+                "_class": "TransitionNode",
+                "Identifier": "0e49d006-7255-44c3-bdb8-d415bc23d24e",
+                "Position": "320,0",
+                "Condition": {
+                  "Identifier": "e8c545e0-7808-4920-8583-e10e0e926b25",
+                  "Output": "Value"
+                }
+              },
+              {
+                "ParameterIdentifier": "d0786bd8-e1b4-4d87-95a0-c4142fc03cfb",
+                "ParameterName": "holster",
+                "Attached": true,
+                "_class": "BoolParameterNode",
+                "Identifier": "e8c545e0-7808-4920-8583-e10e0e926b25",
+                "Position": "-640,0"
+              }
+            ]
+          }
+        },
+        {
+          "From": "Any",
+          "To": "fix",
+          "Graph": {
+            "Version": 1,
+            "Kind": "TransitionConduit",
+            "nodes": [
+              {
+                "TransitionName": "Any \u2192 fix",
+                "Duration": 0.2,
+                "CanBeForced": false,
+                "_class": "TransitionNode",
+                "Identifier": "9a744d16-abb8-4767-aa5b-a2de1161397a",
+                "Position": "320,0",
+                "Condition": {
+                  "Identifier": "4a2a6c1f-b924-48f7-bc4f-ff1590bbf5db",
+                  "Output": "Value"
+                }
+              },
+              {
+                "ParameterIdentifier": "e85847e1-d4ee-492a-b276-109b5f1f3922",
+                "ParameterName": "fix",
+                "Attached": true,
+                "_class": "BoolParameterNode",
+                "Identifier": "4a2a6c1f-b924-48f7-bc4f-ff1590bbf5db",
+                "Position": "-640,0"
+              }
+            ]
+          }
+        },
+        {
+          "From": "Any",
+          "To": "type",
+          "Graph": {
+            "Version": 1,
+            "Kind": "TransitionConduit",
+            "nodes": [
+              {
+                "TransitionName": "Any \u2192 type",
+                "Duration": 0.2,
+                "CanBeForced": false,
+                "_class": "TransitionNode",
+                "Identifier": "bfdae71e-455a-417d-86d5-2c6774daa4fe",
+                "Position": "320,0",
+                "Condition": {
+                  "Identifier": "4b581126-1faa-4e69-9b7b-f8c45eea4628",
+                  "Output": "Value"
+                }
+              },
+              {
+                "ParameterIdentifier": "d35780f0-af94-4939-b56b-9d98d16a7d74",
+                "ParameterName": "mode",
+                "Attached": true,
+                "_class": "BoolParameterNode",
+                "Identifier": "4b581126-1faa-4e69-9b7b-f8c45eea4628",
+                "Position": "-640,0"
+              }
+            ]
+          }
+        },
+        {
+          "From": "Any",
+          "To": "inspect",
+          "Graph": {
+            "Version": 1,
+            "Kind": "TransitionConduit",
+            "nodes": [
+              {
+                "TransitionName": "Any \u2192 inspect",
+                "Duration": 0.2,
+                "CanBeForced": false,
+                "_class": "TransitionNode",
+                "Identifier": "ff077ab4-7254-47f7-86a1-65835e08d716",
+                "Position": "320,0",
+                "Condition": {
+                  "Identifier": "df4a40b1-fdbe-413a-968d-06db6d20b395",
+                  "Output": "Value"
+                }
+              },
+              {
+                "ParameterIdentifier": "f83b4e7a-6fad-4f61-9665-acfad2320fa0",
+                "ParameterName": "inspect",
+                "Attached": true,
+                "_class": "BoolParameterNode",
+                "Identifier": "df4a40b1-fdbe-413a-968d-06db6d20b395",
+                "Position": "-640,0"
+              }
+            ]
+          }
+        },
+        {
+          "From": "Any",
+          "To": "ready",
+          "Graph": {
+            "Version": 1,
+            "Kind": "TransitionConduit",
+            "nodes": [
+              {
+                "TransitionName": "Any \u2192 ready",
+                "Duration": 0.2,
+                "CanBeForced": false,
+                "_class": "TransitionNode",
+                "Identifier": "0b6a553e-aaa8-449c-8afd-0cd3116d64fa",
+                "Position": "320,0",
+                "Condition": {
+                  "Identifier": "ca6ed595-84de-41bc-9c2b-2c260853e276",
+                  "Output": "Value"
+                }
+              },
+              {
+                "ParameterIdentifier": "294fdf80-1ab9-41c6-adf4-512050747792",
+                "ParameterName": "ready",
+                "Attached": true,
+                "_class": "BoolParameterNode",
+                "Identifier": "ca6ed595-84de-41bc-9c2b-2c260853e276",
+                "Position": "-640,0"
+              }
+            ]
+          }
+        },
+        {
+          "From": "holster",
+          "To": "idle",
+          "Graph": {
+            "Version": 1,
+            "Kind": "TransitionConduit",
+            "nodes": [
+              {
+                "TransitionName": "holster \u2192 idle",
+                "Duration": 0.2,
+                "CanBeForced": false,
+                "_class": "TransitionNode",
+                "Identifier": "17c69b4b-2cd4-4cc0-b9d0-bd2958889cc1",
+                "Position": "320,0",
+                "Condition": {
+                  "Identifier": "0f0bacb2-e2d8-4beb-b8ba-90b8b8cbc468",
+                  "Output": "Result"
+                }
+              },
+              {
+                "AtClipEnd": false,
+                "Invert": false,
+                "Attached": true,
+                "_class": "StateCompletedConditionNode",
+                "Identifier": "0f0bacb2-e2d8-4beb-b8ba-90b8b8cbc468",
+                "Position": "-360,0"
+              }
+            ]
+          }
+        },
+        {
+          "From": "fix",
+          "To": "idle",
+          "Graph": {
+            "Version": 1,
+            "Kind": "TransitionConduit",
+            "nodes": [
+              {
+                "TransitionName": "fix \u2192 idle",
+                "Duration": 0.2,
+                "CanBeForced": false,
+                "_class": "TransitionNode",
+                "Identifier": "1c7fa391-a3b2-46e0-83a6-034cc9b2c17f",
+                "Position": "320,0",
+                "Condition": {
+                  "Identifier": "102b518b-a724-4132-95ab-325e9ce4b50c",
+                  "Output": "Result"
+                }
+              },
+              {
+                "AtClipEnd": false,
+                "Invert": false,
+                "Attached": true,
+                "_class": "StateCompletedConditionNode",
+                "Identifier": "102b518b-a724-4132-95ab-325e9ce4b50c",
+                "Position": "-360,0"
+              }
+            ]
+          }
+        },
+        {
+          "From": "type",
+          "To": "idle",
+          "Graph": {
+            "Version": 1,
+            "Kind": "TransitionConduit",
+            "nodes": [
+              {
+                "TransitionName": "type \u2192 idle",
+                "Duration": 0.2,
+                "CanBeForced": false,
+                "_class": "TransitionNode",
+                "Identifier": "4225a415-c6f5-4790-a350-6773dc8f6a33",
+                "Position": "320,0",
+                "Condition": {
+                  "Identifier": "91747183-7c6d-4e5b-8811-8301b03b33a9",
+                  "Output": "Result"
+                }
+              },
+              {
+                "AtClipEnd": false,
+                "Invert": false,
+                "Attached": true,
+                "_class": "StateCompletedConditionNode",
+                "Identifier": "91747183-7c6d-4e5b-8811-8301b03b33a9",
+                "Position": "-360,0"
+              }
+            ]
+          }
+        },
+        {
+          "From": "inspect",
+          "To": "idle",
+          "Graph": {
+            "Version": 1,
+            "Kind": "TransitionConduit",
+            "nodes": [
+              {
+                "TransitionName": "inspect \u2192 idle",
+                "Duration": 0.2,
+                "CanBeForced": false,
+                "_class": "TransitionNode",
+                "Identifier": "81809475-d7e9-4edf-af9f-0fb7e0e7bb6e",
+                "Position": "320,0",
+                "Condition": {
+                  "Identifier": "4df253ca-a3f0-4b7e-9bc0-8c552140f591",
+                  "Output": "Result"
+                }
+              },
+              {
+                "AtClipEnd": false,
+                "Invert": false,
+                "Attached": true,
+                "_class": "StateCompletedConditionNode",
+                "Identifier": "4df253ca-a3f0-4b7e-9bc0-8c552140f591",
+                "Position": "-360,0"
+              }
+            ]
+          }
+        },
+        {
+          "From": "ready",
+          "To": "idle",
+          "Graph": {
+            "Version": 1,
+            "Kind": "TransitionConduit",
+            "nodes": [
+              {
+                "TransitionName": "ready \u2192 idle",
+                "Duration": 0.2,
+                "CanBeForced": false,
+                "_class": "TransitionNode",
+                "Identifier": "ac616ed2-947f-45f3-86bb-4089af5e078c",
+                "Position": "320,0",
+                "Condition": {
+                  "Identifier": "0a92a282-01bc-453e-a797-e653fef9e959",
+                  "Output": "Result"
+                }
+              },
+              {
+                "AtClipEnd": false,
+                "Invert": false,
+                "Attached": true,
+                "_class": "StateCompletedConditionNode",
+                "Identifier": "0a92a282-01bc-453e-a797-e653fef9e959",
+                "Position": "-360,0"
+              }
+            ]
+          }
+        }
+      ],
+      "DefaultState": "idle",
+      "GlobalGraph": {
+        "Version": 1,
+        "nodes": [],
+        "Kind": "GlobalTransitions"
+      },
+      "EntryGraph": {
+        "Version": 1,
+        "nodes": [
+          {
+            "_class": "EntryStateOverrideConditionsNode",
+            "Identifier": "441edb40-7d9a-4e7f-b2fe-cd0f9408f72f",
+            "Position": "400,0"
+          }
+        ],
+        "Kind": "EntryOverrides"
+      }
+    },
+    {
+      "Loop": false,
+      "DefaultVariationData": {
+        "AnimationName": "inspect",
+        "SpeedMultiplier": 1
+      },
+      "_class": "AnimationClipNode",
+      "Identifier": "b79e5da4-bef1-45bf-9ac0-1e686af3208e",
+      "Position": "-648,168"
+    },
+    {
+      "Loop": true,
+      "DefaultVariationData": {
+        "AnimationName": "idle",
+        "SpeedMultiplier": 1
+      },
+      "_class": "AnimationClipNode",
+      "Identifier": "5e5a5001-7010-4312-9074-0fa191642031",
+      "Position": "-1272,-768"
+    },
+    {
+      "ParameterIdentifier": "9810642d-3753-47d5-b2d8-261ca44a14eb",
+      "ParameterName": "aiming",
+      "Attached": true,
+      "_class": "BoolParameterNode",
+      "Identifier": "88a38c75-2b4f-45ef-89c3-2039a0af129c",
+      "Position": "-1232,-592"
+    },
+    {
+      "ParameterIdentifier": "9810642d-3753-47d5-b2d8-261ca44a14eb",
+      "ParameterName": "aiming",
+      "Attached": true,
+      "_class": "BoolParameterNode",
+      "Identifier": "3f5a0e2f-b06d-475b-8d25-e8961d4de8f7",
+      "Position": "-1904,88"
+    },
+    {
+      "ParameterIdentifier": "9810642d-3753-47d5-b2d8-261ca44a14eb",
+      "ParameterName": "aiming",
+      "Attached": true,
+      "_class": "BoolParameterNode",
+      "Identifier": "f18803fc-98a6-4fed-b2ba-8b90a8917cb2",
+      "Position": "-1904,288"
+    },
+    {
+      "ParameterIdentifier": "db20cafb-5f54-473c-9dcd-32f827867145",
+      "ParameterName": "empty",
+      "Attached": true,
+      "_class": "BoolParameterNode",
+      "Identifier": "0f635e3e-3c72-45ff-90e9-8134ab5eb41b",
+      "Position": "-1544,152"
+    },
+    {
+      "ParameterIdentifier": "9810642d-3753-47d5-b2d8-261ca44a14eb",
+      "ParameterName": "aiming",
+      "Attached": true,
+      "_class": "BoolParameterNode",
+      "Identifier": "126df185-fc1f-41e5-b65b-c15c317ece6e",
+      "Position": "-1208,-272"
+    }
+  ]
+}

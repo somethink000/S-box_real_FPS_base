@@ -1,9 +1,9 @@
 
 
-using Sandbox.Citizen;
+using Rinten.Citizen;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
-using static Sandbox.CursorSettings;
+using static Rinten.CursorSettings;
 
 namespace GeneralGame;
 
@@ -67,7 +67,7 @@ public class CameraController : Component
 		// Set the current camera offset
 		var targetOffset = Vector3.Zero;
 		if ( ply.MovementController.IsCrouching ) targetOffset += Vector3.Down * 32f;
-		EyeOffset = Vector3.Lerp( EyeOffset, targetOffset, Time.Delta * 10f );
+		EyeOffset = Vector3.Lerp( EyeOffset, (targetOffset) * 0.0254f , Time.Delta * 10f );
 
 		// Set position of the camera
 		if ( Scene.Camera is not null )
@@ -78,14 +78,14 @@ public class CameraController : Component
 			{
 
 				var camForward = eyeAngles.ToRotation().Forward + (new Vector3( 0.2f, 0.5f, 0 ) * eyeAngles);
-				var camTrace = Scene.Trace.Ray( camPos, camPos - (camForward) * 20 ) 
+				var camTrace = Scene.Trace.Ray( camPos, camPos - ((camForward) * 20) * 0.0254f ) 
 					.WithoutTags( TagsHelper.Player, TagsHelper.Trigger, TagsHelper.ViewModel, TagsHelper.Weapon )
 					.Run();
 
 				if ( camTrace.Hit )
 				{
 					// Add normal to prevent clipping
-					camPos = camTrace.HitPosition + camTrace.Normal;
+					camPos = camTrace.HitPosition + (camTrace.Normal) * 0.0254f ;
 				}
 				else
 				{
@@ -123,7 +123,7 @@ public class CameraController : Component
 	public void ApplyShake( float multiplyer, float duration )
 	{
 		var random = new Random();
-		CurShakePos = new Vector3( random.Float( 0, multiplyer ), random.Float( 0, multiplyer ), random.Float( 0, multiplyer ) );
+		CurShakePos =  (new Vector3( random.Float( 0, multiplyer ), random.Float( 0, multiplyer ), random.Float( 0, multiplyer ) )) * 0.0254f ;
 		CurShakeRot = new Angles( random.Float( 0, 2 ), random.Float( 0, 2 ), 0 );
 
 	}

@@ -15,7 +15,7 @@
     "OwnerTransfer": 1,
     "Components": [
       {
-        "__type": "Sandbox.ParticleEffect",
+        "__type": "Rinten.ParticleEffect",
         "__guid": "76ffa00a-291e-4edc-b774-93ca8cbab788",
         "__enabled": true,
         "__version": 2,
@@ -123,7 +123,7 @@
         "CollisionPrefabAlign": false,
         "CollisionPrefabChance": 1,
         "CollisionPrefabRotation": 0,
-        "CollisionRadius": 1,
+        "CollisionRadius": 0.02539999969303608,
         "ConstantMovement": {
           "X": 0,
           "Y": 0,
@@ -135,7 +135,7 @@
         "FollowerPrefabChance": 1,
         "FollowerPrefabKill": true,
         "Force": false,
-        "ForceDirection": "0,0,100",
+        "ForceDirection": "0,0,2.54",
         "ForceScale": 1,
         "ForceSpace": "World",
         "Friction": 1,
@@ -264,7 +264,7 @@
         "StartVelocity": {
           "Type": "Range",
           "Evaluation": "Life",
-          "Constants": "50,100,0,0"
+          "Constants": "1.27,2.54,0,0"
         },
         "Stretch": 0,
         "TimeScale": 1,
@@ -274,7 +274,7 @@
         "Yaw": 0
       },
       {
-        "__type": "Sandbox.ParticleSpriteRenderer",
+        "__type": "Rinten.ParticleSpriteRenderer",
         "__guid": "e1eb6d3b-fa21-4c8f-886a-998739478e10",
         "__enabled": true,
         "Additive": true,
@@ -310,7 +310,7 @@
         "TextureFilter": "Bilinear"
       },
       {
-        "__type": "Sandbox.BasicParticleEmiter",
+        "__type": "Rinten.BasicParticleEmiter",
         "__guid": "254213b3-93a2-4d22-ba09-4ee2666ea6d2",
         "__enabled": true,
         "Angle": "0,0,0",
@@ -340,7 +340,7 @@
         "OwnerTransfer": 1,
         "Components": [
           {
-            "__type": "Sandbox.ParticleEffect",
+            "__type": "Rinten.ParticleEffect",
             "__guid": "6b2f921e-10ce-4630-b058-a6cade00cc9d",
             "__enabled": true,
             "__version": 2,
@@ -396,7 +396,7 @@
             "CollisionPrefabAlign": false,
             "CollisionPrefabChance": 1,
             "CollisionPrefabRotation": 0,
-            "CollisionRadius": 1,
+            "CollisionRadius": 0.02539999969303608,
             "ConstantMovement": {
               "X": 0,
               "Y": 0,
@@ -446,7 +446,7 @@
             "FollowerPrefabChance": 1,
             "FollowerPrefabKill": true,
             "Force": false,
-            "ForceDirection": "0,0,100",
+            "ForceDirection": "0,0,2.54",
             "ForceScale": 1,
             "ForceSpace": "World",
             "Friction": 1,
@@ -564,7 +564,7 @@
             "Yaw": 0
           },
           {
-            "__type": "Sandbox.ParticleSpriteRenderer",
+            "__type": "Rinten.ParticleSpriteRenderer",
             "__guid": "1b7490be-aad4-4735-9251-2c99a897ced3",
             "__enabled": true,
             "Additive": false,
@@ -600,7 +600,7 @@
             "TextureFilter": "Bilinear"
           },
           {
-            "__type": "Sandbox.BasicParticleEmiter",
+            "__type": "Rinten.BasicParticleEmiter",
             "__guid": "bb20f180-c655-433e-b42b-d8aca46e3e75",
             "__enabled": true,
             "Angle": "0,0,0",
@@ -631,7 +631,7 @@
         "OwnerTransfer": 1,
         "Components": [
           {
-            "__type": "Sandbox.ParticleEffect",
+            "__type": "Rinten.ParticleEffect",
             "__guid": "eb2bd90c-8500-4ace-9ff4-3d5065bc6597",
             "__enabled": true,
             "__version": 2,
@@ -684,7 +684,7 @@
             "CollisionPrefabAlign": false,
             "CollisionPrefabChance": 1,
             "CollisionPrefabRotation": 0,
-            "CollisionRadius": 0.5,
+            "CollisionRadius": 0.01269999984651804,
             "ConstantMovement": {
               "X": 0,
               "Y": 0,
@@ -696,7 +696,7 @@
             "FollowerPrefabChance": 1,
             "FollowerPrefabKill": true,
             "Force": true,
-            "ForceDirection": "0,0,-900",
+            "ForceDirection": "0,0,-22.86",
             "ForceScale": {
               "Type": "Range",
               "Evaluation": "Frame",
@@ -829,7 +829,7 @@
             "StartVelocity": {
               "Type": "Range",
               "Evaluation": "Seed",
-              "Constants": "100,1000,0,0"
+              "Constants": "2.54,25.4,0,0"
             },
             "Stretch": -1,
             "TimeScale": 1,
@@ -839,7 +839,7 @@
             "Yaw": 0
           },
           {
-            "__type": "Sandbox.ParticleSpriteRenderer",
+            "__type": "Rinten.ParticleSpriteRenderer",
             "__guid": "75877c71-5a78-447b-b7cb-cf46dbd66a7f",
             "__enabled": true,
             "Additive": true,
@@ -875,7 +875,7 @@
             "TextureFilter": "Bilinear"
           },
           {
-            "__type": "Sandbox.BasicParticleEmiter",
+            "__type": "Rinten.BasicParticleEmiter",
             "__guid": "15bd0bd6-e7e8-40b5-b801-1b1cc1a56ea9",
             "__enabled": true,
             "Angle": "0,0,0",

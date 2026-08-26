@@ -1,0 +1,19 @@
+{
+  "Shader": "shaders/complex.slang",
+  "Features": {},
+  "Numbers": {},
+  "Tint": "1,1,1,1",
+  "ColorMap": "weapons/pallete.png",
+  "Normal": "",
+  "RoughMetalAmbient": "",
+  "Emission": "",
+  "Roughness": 0.5,
+  "Metalness": 0.701,
+  "EmissionStrength": 0,
+  "PhysicsSurface": "",
+  "TwoSided": false,
+  "Filtering": 0,
+  "Blend": 0,
+  "AlphaCutoff": 0.5,
+  "__references": null
+}

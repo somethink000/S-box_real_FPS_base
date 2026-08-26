@@ -87,17 +87,17 @@
         "ShootSound": "weapons/sounds/beretta/fire-sup-06.sound",
         "Spread": 0.1,
         "TuckRange": 30,
-        "ViewModel": "weapons/vss/vss.vmdl",
-        "ViewModelHands": "weapons/hands_l/hands_l.vmdl",
+        "ViewModel": "weapons/vss/vss.mdl",
+        "ViewModelHands": "weapons/hands_l/hands_l.mdl",
         "ViewPunch": 5,
-        "WorldModel": "weapons/vss/w_vss.vmdl"
+        "WorldModel": "weapons/vss/w_vss.mdl"
       },
       {
-        "__type": "Sandbox.ModelCollider",
+        "__type": "Rinten.ModelCollider",
         "__guid": "df9cf0b4-81de-4069-b711-37d180f9a241",
         "Friction": null,
         "IsTrigger": false,
-        "Model": "weapons/vss/w_vss.vmdl",
+        "Model": "weapons/vss/w_vss.mdl",
         "OnComponentDestroy": null,
         "OnComponentDisabled": null,
         "OnComponentEnabled": null,
@@ -113,7 +113,7 @@
         "SurfaceVelocity": "0,0,0"
       },
       {
-        "__type": "Sandbox.Rigidbody",
+        "__type": "Rinten.Rigidbody",
         "__guid": "0bb60a56-5b86-4b47-8f39-0649671dc683",
         "AngularDamping": 0,
         "Gravity": true,
@@ -140,7 +140,7 @@
         "StartAsleep": false
       },
       {
-        "__type": "Sandbox.SkinnedModelRenderer",
+        "__type": "Rinten.SkinnedModelRenderer",
         "__guid": "383445c6-7b6a-4b53-9990-3b2d0850f9e1",
         "AnimationGraph": null,
         "BodyGroups": 18446744073709551615,
@@ -149,7 +149,7 @@
         "CreateBoneObjects": false,
         "MaterialGroup": null,
         "MaterialOverride": null,
-        "Model": "weapons/vss/w_vss.vmdl",
+        "Model": "weapons/vss/w_vss.mdl",
         "Morphs": {},
         "OnComponentDestroy": null,
         "OnComponentDisabled": null,

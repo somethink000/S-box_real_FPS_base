@@ -9,13 +9,13 @@
         "__guid": "2b6263db-869a-4205-bd62-015b74d7b6b6",
         "Flags": 0,
         "Name": "Smoke",
-        "Position": "0,0,16",
+        "Position": "0,0,0.4064",
         "Rotation": "0,-0.7071068,0,0.7071068",
         "Tags": "particles",
         "Enabled": true,
         "Components": [
           {
-            "__type": "Sandbox.ParticleEffect",
+            "__type": "Rinten.ParticleEffect",
             "__guid": "9547010f-efda-4e01-a3f5-3f4b7ea8fbf7",
             "__version": 1,
             "Alpha": {
@@ -107,11 +107,11 @@
             "Bumpiness": 0,
             "Collision": false,
             "CollisionIgnore": null,
-            "CollisionRadius": 1,
+            "CollisionRadius": 0.02539999969303608,
             "Damping": 4,
             "DieOnCollisionChance": 0,
             "Force": true,
-            "ForceDirection": "0,0,80",
+            "ForceDirection": "0,0,2.032",
             "ForceScale": 6,
             "ForceSpace": "World",
             "Friction": 1,
@@ -319,7 +319,7 @@
                   "mode": "Mirrored"
                 }
               ],
-              "Constants": "400,800,0,0"
+              "Constants": "10.16,20.32,0,0"
             },
             "Stretch": 0,
             "TimeScale": 1,
@@ -327,7 +327,7 @@
             "Yaw": 0
           },
           {
-            "__type": "Sandbox.ParticleSpriteRenderer",
+            "__type": "Rinten.ParticleSpriteRenderer",
             "__guid": "21d9d113-a735-4dc8-95b1-d705734e98f1",
             "Additive": false,
             "Alignment": "LookAtCamera",
@@ -361,7 +361,7 @@
             "Texture": "materials/particles/smoke/render/smokeloop_i_0.vtex"
           },
           {
-            "__type": "Sandbox.BasicParticleEmiter",
+            "__type": "Rinten.BasicParticleEmiter",
             "__guid": "a1846692-6bef-4a47-bb13-675f36545d80",
             "Angle": "0,0,0",
             "Burst": 25,
@@ -383,7 +383,7 @@
         "Enabled": true,
         "Components": [
           {
-            "__type": "Sandbox.ParticleEffect",
+            "__type": "Rinten.ParticleEffect",
             "__guid": "8d384b85-52c6-45c9-8143-22343612b38a",
             "__version": 1,
             "Alpha": {
@@ -468,7 +468,7 @@
             "Bumpiness": 0,
             "Collision": false,
             "CollisionIgnore": null,
-            "CollisionRadius": 1,
+            "CollisionRadius": 0.02539999969303608,
             "Damping": 2,
             "DieOnCollisionChance": 0,
             "Force": true,
@@ -673,7 +673,7 @@
                   "mode": "Mirrored"
                 }
               ],
-              "Constants": "100,800,0,0"
+              "Constants": "2.54,20.32,0,0"
             },
             "Stretch": 0,
             "TimeScale": 1,
@@ -681,7 +681,7 @@
             "Yaw": 0
           },
           {
-            "__type": "Sandbox.ParticleSpriteRenderer",
+            "__type": "Rinten.ParticleSpriteRenderer",
             "__guid": "64906f65-f49f-4e45-ade9-7675644534c1",
             "Additive": true,
             "Alignment": "LookAtCamera",
@@ -715,7 +715,7 @@
             "Texture": "materials/particles/smoke/render/smokeloop_i_0.vtex"
           },
           {
-            "__type": "Sandbox.BasicParticleEmiter",
+            "__type": "Rinten.BasicParticleEmiter",
             "__guid": "03ddb803-7277-4fa6-9e66-fbc5e814f20b",
             "Angle": "0,0,0",
             "Burst": 20,
@@ -736,7 +736,7 @@
         "Enabled": true,
         "Components": [
           {
-            "__type": "Sandbox.ParticleEffect",
+            "__type": "Rinten.ParticleEffect",
             "__guid": "3e270850-6ac7-4d60-9c92-1114646b3e5c",
             "__version": 1,
             "Alpha": {
@@ -788,7 +788,7 @@
             "Bumpiness": 0,
             "Collision": false,
             "CollisionIgnore": null,
-            "CollisionRadius": 1,
+            "CollisionRadius": 0.02539999969303608,
             "Damping": 0,
             "DieOnCollisionChance": 0,
             "Force": false,
@@ -911,7 +911,7 @@
             "Yaw": 90
           },
           {
-            "__type": "Sandbox.ParticleSpriteRenderer",
+            "__type": "Rinten.ParticleSpriteRenderer",
             "__guid": "7d19cd26-03e8-4291-99d7-418478f75630",
             "Additive": true,
             "Alignment": "Particle",
@@ -945,7 +945,7 @@
             "Texture": "materials/particles/ring_wave_radial.vtex"
           },
           {
-            "__type": "Sandbox.BasicParticleEmiter",
+            "__type": "Rinten.BasicParticleEmiter",
             "__guid": "a8a3c018-b805-4b1b-88dc-d3723becd7f6",
             "Angle": "0,0,0",
             "Burst": 2,

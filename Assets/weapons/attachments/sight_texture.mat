@@ -1,0 +1,19 @@
+{
+  "Shader": "shaders/red_dot.slang",
+  "Features": {},
+  "Numbers": {},
+  "Tint": "1,0,0,1",
+  "ColorMap": "",
+  "Normal": "",
+  "RoughMetalAmbient": "",
+  "Emission": "",
+  "Roughness": 0.5,
+  "Metalness": 0,
+  "EmissionStrength": 0,
+  "PhysicsSurface": "",
+  "TwoSided": false,
+  "Filtering": 0,
+  "Blend": 0,
+  "AlphaCutoff": 0.5,
+  "__references": null
+}

@@ -1,10 +1,10 @@
 
-using Sandbox.Citizen;
-using Sandbox.Services;
-using Sandbox;
+using Rinten.Citizen;
+using Rinten.Services;
+using Rinten;
 using System;
 using System.Linq;
-using static Sandbox.Connection;
+using static Rinten.Connection;
 using GeneralGame.UI;
 
 namespace GeneralGame;
@@ -19,7 +19,7 @@ public partial class Player : Component
 	[RequireComponent] public InventoryController InventoryController { get; set; }
 	
 	
-	//Булка ты чё тут делаешь?
+	//пїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ?
 	[Property, Category( "Relatives" )] public GameObject Head { get; set; }
 	[Property, Category( "Relatives" )] public GameObject Body { get; set; }
 	[Property, Category( "Relatives" )] public SkinnedModelRenderer BodyRenderer { get; set; }

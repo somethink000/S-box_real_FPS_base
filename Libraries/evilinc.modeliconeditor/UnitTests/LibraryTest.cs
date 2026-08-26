@@ -1,4 +1,4 @@
-using Sandbox;
+using Rinten;
 
 [TestClass]
 public partial class LibraryTests

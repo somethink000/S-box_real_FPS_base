@@ -1,4 +1,4 @@
-﻿using Sandbox;
+using Rinten;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -76,11 +76,11 @@ public class HealthController : Component, IHealthComponent
 			ply.InventoryController.Deployed = null;
 		}
 
-		ply.MovementController.CharacterController.Velocity = 0;
+		ply.MovementController.CharacterController.Velocity =  (0) * 0.0254f ;
 
 		var force = damage.Weapon.WorldRotation.Forward * 10 * damage.Damage;
 
-		Ragdoll( force, damage.Attacker.WorldPosition );
+		Ragdoll( (force) * 0.0254f , damage.Attacker.WorldPosition );
 
 		RespawnWithDelay(10);
 	}

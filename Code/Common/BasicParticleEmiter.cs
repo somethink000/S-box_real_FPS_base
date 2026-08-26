@@ -1,11 +1,11 @@
-﻿
+
 using System;
 using GeneralGame;
-using Sandbox.Internal;
-using static Sandbox.PhysicsContact;
-using static Sandbox.Volumes.VolumeSystem;
+using Rinten.Internal;
+using static Rinten.PhysicsContact;
+using static Rinten.Volumes.VolumeSystem;
 
-namespace Sandbox;
+namespace Rinten;
 
 
 [Title( "Basic Emitter" )]
@@ -30,12 +30,12 @@ public sealed class BasicParticleEmiter : Component
 		
 			if ( velocity != null)
 			{
-				particle.Velocity += transform.Rotation * Angle + (Vector3)velocity;
+				particle.Velocity +=  (transform.Rotation * Angle) * 0.0254f + ((Vector3)velocity) * 0.0254f ;
 
 			}
 			else
 			{
-				particle.Velocity += transform.Rotation * Angle;
+				particle.Velocity +=  (transform.Rotation * Angle) * 0.0254f ;
 			}
 
 

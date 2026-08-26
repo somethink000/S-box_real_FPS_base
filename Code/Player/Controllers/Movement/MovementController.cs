@@ -1,4 +1,4 @@
-using Sandbox.Citizen;
+using Rinten.Citizen;
 
 
 namespace GeneralGame;
@@ -102,14 +102,14 @@ public class MovementController : Component
 
 	private void OnGrounded()
 	{
-		if ( fallVelocity > 650)
+		if ( fallVelocity >  (650) * 0.0254f )
 		{
 			var damage = new DamageInfo( fallVelocity / 10, GameObject, GameObject );
 
 			ply.HealthController.OnDamage( damage );
 		}
 
-		fallVelocity = 0;
+		fallVelocity =  (0) * 0.0254f ;
 	}
 
 	
@@ -121,7 +121,7 @@ public class MovementController : Component
 		{
 			// Friction / Acceleration
 			CharacterController.Velocity = CharacterController.Velocity.WithZ( 0 );
-			CharacterController.Accelerate( WishVelocity );
+			CharacterController.Accelerate( (WishVelocity) * 0.0254f );
 			CharacterController.ApplyFriction( GroundControl );
 			
 			if ( !IsGrounded ) {
@@ -134,7 +134,7 @@ public class MovementController : Component
 		{
 			// Air control / Gravity
 			CharacterController.Velocity += gravity * Time.Delta * 0.5f;
-			CharacterController.Accelerate( WishVelocity.ClampLength( MaxForce ) );
+			CharacterController.Accelerate( (WishVelocity.ClampLength( MaxForce )) * 0.0254f );
 			CharacterController.ApplyFriction( AirControl );
 			IsGrounded = false;
 			fallVelocity = CharacterController.Velocity.WithY( 0 ).Length;
@@ -160,7 +160,7 @@ public class MovementController : Component
 		var targetRot = new Angles( 0, ply.CameraController.EyeAngles.ToRotation().Yaw(), 0 ).ToRotation();
 		float rotateDiff = Body.WorldRotation.Distance( targetRot );
 
-		if ( rotateDiff > 20f || CharacterController.Velocity.Length > 10f )
+		if ( rotateDiff > 20f || CharacterController.Velocity.Length >  (10f) * 0.0254f  )
 		{
 			Body.WorldRotation = Rotation.Lerp( Body.WorldRotation, targetRot, Time.Delta * 2f );
 		}
@@ -211,7 +211,7 @@ public class MovementController : Component
 		{
 			// Check we have space to uncrouch
 			var targetHeight = CharacterController.Height * 2f;
-			var upTrace = CharacterController.TraceDirection( Vector3.Up * targetHeight );
+			var upTrace = CharacterController.TraceDirection( (Vector3.Up * targetHeight) * 0.0254f );
 
 			if ( !upTrace.Hit )
 			{
@@ -243,8 +243,8 @@ public class MovementController : Component
 		if ( timeSinceLastFootstep < stepDelay )
 			return;
 
-		var tr = Scene.Trace.Ray( footstepEvent.Transform.Position, footstepEvent.Transform.Position + Vector3.Down * 20 )
-			.Radius( 1 )
+		var tr = Scene.Trace.Ray( footstepEvent.Transform.Position, footstepEvent.Transform.Position + (Vector3.Down * 20) * 0.0254f )
+			.Radius( (1) * 0.0254f )
 			.IgnoreGameObject( this.GameObject )
 			.Run();
 

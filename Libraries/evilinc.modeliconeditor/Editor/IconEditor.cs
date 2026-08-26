@@ -1,5 +1,5 @@
 using Editor;
-using Sandbox;
+using Rinten;
 using System;
 using System.Linq;
 
@@ -86,8 +86,8 @@ public class ModelIconGenerator : Widget
                 _camera = go.AddComponent<CameraComponent>();
                 _camera.BackgroundColor = _backgroundColor;
                 _camera.FieldOfView = 50f;
-                _camera.ZNear = 0.1f;
-                _camera.ZFar = 10000f;
+                _camera.ZNear =  (0.1f) * 0.0254f ;
+                _camera.ZFar =  (10000f) * 0.0254f ;
                 _camera.Enabled = true;
             }
 
@@ -474,7 +474,7 @@ public class ModelIconGenerator : Widget
             MathF.Sin(pitchRad)
         ).Normal;
 
-        _camera.WorldPosition = _cameraTarget + direction * _cameraDistance;
+        _camera.WorldPosition = _cameraTarget + (direction * _cameraDistance) * 0.0254f ;
         _camera.WorldRotation = Rotation.LookAt(-direction, Vector3.Up);
     }
 

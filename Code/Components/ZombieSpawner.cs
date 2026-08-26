@@ -1,6 +1,6 @@
-﻿using System;
+using System;
 using System.Linq;
-using Sandbox;
+using Rinten;
 namespace GeneralGame;
 public sealed class ZombieSpawner : Component
 {
@@ -50,11 +50,11 @@ public sealed class ZombieSpawner : Component
 		const float boxSize = 4f;
 		var bounds = new BBox( Vector3.One * -boxSize, Vector3.One * boxSize );
 
-		Gizmo.Hitbox.BBox( bounds );
+		Gizmo.Hitbox.BBox( (bounds) * 0.0254f );
 
 		Gizmo.Draw.Color = Color.Cyan.WithAlpha( (Gizmo.IsHovered || Gizmo.IsSelected) ? 0.5f : 0.2f );
-		Gizmo.Draw.LineBBox( bounds );
-		Gizmo.Draw.SolidBox( bounds );
+		Gizmo.Draw.LineBBox( (bounds) * 0.0254f );
+		Gizmo.Draw.SolidBox( (bounds) * 0.0254f );
 
 		Gizmo.Draw.Color = Color.Cyan.WithAlpha( (Gizmo.IsHovered || Gizmo.IsSelected) ? 0.8f : 0.6f );
 	}

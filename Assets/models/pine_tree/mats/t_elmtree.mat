@@ -1,0 +1,19 @@
+{
+  "Shader": "map/gen_foliage.slang",
+  "Features": {},
+  "Numbers": {},
+  "Tint": "1,1,1,1",
+  "ColorMap": "models/pine_tree/mats/t_elmtree_diffuse.png",
+  "Normal": "",
+  "RoughMetalAmbient": "",
+  "Emission": "",
+  "Roughness": 0.5,
+  "Metalness": 0,
+  "EmissionStrength": 0,
+  "PhysicsSurface": "",
+  "TwoSided": false,
+  "Filtering": 0,
+  "Blend": 0,
+  "AlphaCutoff": 0.5,
+  "__references": null
+}

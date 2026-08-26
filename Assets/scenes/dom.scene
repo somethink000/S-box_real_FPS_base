@@ -6,7 +6,7 @@
       "__version": 2,
       "Flags": 0,
       "Name": "Spawnpoint (1)",
-      "Position": "357,1036,50.6939392",
+      "Position": "9.0678,26.3144,1.287626",
       "Rotation": "0,0,-0.707106888,-0.70710659",
       "Scale": "1,1,1",
       "Tags": "",
@@ -18,7 +18,7 @@
       "OwnerTransfer": 1,
       "Components": [
         {
-          "__type": "Sandbox.SpawnPoint",
+          "__type": "Rinten.SpawnPoint",
           "__guid": "9dccaa11-1e3c-4edd-9f6d-c55aab7b4529",
           "__enabled": true,
           "Flags": 0,
@@ -38,7 +38,7 @@
       "__version": 2,
       "Flags": 0,
       "Name": "MapObjects",
-      "Position": "-16.7394695,-29.0240097,131.467102",
+      "Position": "-0.425183,-0.73721,3.339264",
       "Rotation": "0,0,0,1",
       "Scale": "1,1,1",
       "Tags": "",
@@ -67,7 +67,7 @@
           "OwnerTransfer": 1,
           "Components": [
             {
-              "__type": "Sandbox.DirectionalLight",
+              "__type": "Rinten.DirectionalLight",
               "__guid": "4aa2ad0b-ba8e-456c-8776-582a6b3fb949",
               "__enabled": true,
               "Flags": 0,
@@ -110,7 +110,7 @@
           "OwnerTransfer": 1,
           "Components": [
             {
-              "__type": "Sandbox.SkyBox2D",
+              "__type": "Rinten.SkyBox2D",
               "__guid": "8bc2a700-5089-4f39-8495-9fa0d58a6475",
               "__enabled": true,
               "Flags": 0,
@@ -132,7 +132,7 @@
           "__version": 2,
           "Flags": 0,
           "Name": "Network",
-          "Position": "16.7394695,29.0240097,-131.467102",
+          "Position": "0.425183,0.73721,-3.339264",
           "Rotation": "0,0,0,1",
           "Scale": "1,1,1",
           "Tags": "",
@@ -179,21 +179,21 @@
           "OwnerTransfer": 1,
           "Components": [
             {
-              "__type": "Sandbox.GradientFog",
+              "__type": "Rinten.GradientFog",
               "__guid": "6a74c2ab-22d3-4c3c-89df-4d44b67f6567",
               "__enabled": true,
               "Flags": 0,
               "Color": "0.27907,0.27907,0.27907,1",
-              "EndDistance": 5000,
+              "EndDistance": 126.9999984651804,
               "FalloffExponent": 1,
-              "Height": 12800,
+              "Height": 325.1199960708618,
               "OnComponentDestroy": null,
               "OnComponentDisabled": null,
               "OnComponentEnabled": null,
               "OnComponentFixedUpdate": null,
               "OnComponentStart": null,
               "OnComponentUpdate": null,
-              "StartDistance": 1500,
+              "StartDistance": 38.09999953955412,
               "VerticalFalloffExponent": -2
             }
           ],
@@ -206,7 +206,7 @@
       "__version": 2,
       "Flags": 0,
       "Name": "Map",
-      "Position": "0,50.4726982,0",
+      "Position": "0,1.282007,0",
       "Rotation": "0,0,0,1",
       "Scale": "1,1,1",
       "Tags": "",
@@ -216,35 +216,51 @@
       "NetworkOrphaned": 0,
       "NetworkTransmit": true,
       "OwnerTransfer": 1,
-      "Components": [
-        {
-          "__type": "Sandbox.MapInstance",
-          "__guid": "ed007304-4acc-4748-b227-5bdf06375760",
-          "__enabled": true,
-          "Flags": 0,
-          "__version": 1,
-          "EnableCollision": true,
-          "MapName": "scenes/dom.vmap",
-          "NoOrigin": false,
-          "OnComponentDestroy": null,
-          "OnComponentDisabled": null,
-          "OnComponentEnabled": null,
-          "OnComponentFixedUpdate": null,
-          "OnComponentStart": null,
-          "OnComponentUpdate": null,
-          "OnMapLoaded": null,
-          "OnMapUnloaded": null,
-          "UseMapFromLaunch": false
-        }
-      ],
+      "Components": [],
       "Children": []
+    },
+    {
+      "__guid": "141458b9-d68e-48c5-a09a-c8ab86c147eb",
+      "__Prefab": "scenes/dom.prefab",
+      "__PrefabInstancePatch": {
+        "AddedObjects": [],
+        "RemovedObjects": [],
+        "PropertyOverrides": [
+          {
+            "Target": {
+              "Type": "GameObject",
+              "IdValue": "d8df6954-d003-482b-bb45-94c274437fb0"
+            },
+            "Property": "Position",
+            "Value": "0,1.28200698,0"
+          },
+          {
+            "Target": {
+              "Type": "GameObject",
+              "IdValue": "d8df6954-d003-482b-bb45-94c274437fb0"
+            },
+            "Property": "Rotation",
+            "Value": "0,0,0,1"
+          },
+          {
+            "Target": {
+              "Type": "GameObject",
+              "IdValue": "d8df6954-d003-482b-bb45-94c274437fb0"
+            },
+            "Property": "Scale",
+            "Value": "1,1,1"
+          }
+        ],
+        "MovedObjects": []
+      },
+      "__PrefabIdToInstanceId": {}
     },
     {
       "__guid": "9267a89c-c938-4490-9454-238a092a09fd",
       "__version": 2,
       "Flags": 0,
       "Name": "Box",
-      "Position": "-359.303802,622.232422,3.99884009",
+      "Position": "-9.126316,15.804703,0.101571",
       "Rotation": "0,0,0,1",
       "Scale": "1,1,1",
       "Tags": "world",
@@ -256,7 +272,7 @@
       "OwnerTransfer": 1,
       "Components": [
         {
-          "__type": "Sandbox.MeshComponent",
+          "__type": "Rinten.MeshComponent",
           "__guid": "093e409b-53d3-46ab-a244-32117fecbb0d",
           "__enabled": true,
           "Flags": 0,
@@ -300,7 +316,7 @@
       "__version": 2,
       "Flags": 0,
       "Name": "Text",
-      "Position": "372.272614,753.696411,114",
+      "Position": "9.455724,19.143889,2.8956",
       "Rotation": "0,0,-0.965925872,0.258819193",
       "Scale": "1,1,1",
       "Tags": "",
@@ -312,7 +328,7 @@
       "OwnerTransfer": 1,
       "Components": [
         {
-          "__type": "Sandbox.TextRenderer",
+          "__type": "Rinten.TextRenderer",
           "__guid": "a29367ac-012f-4a0e-b6e2-d7ecc982500d",
           "__enabled": true,
           "Flags": 0,
@@ -380,7 +396,7 @@
       "__version": 2,
       "Flags": 0,
       "Name": "zombiespawners",
-      "Position": "-247.100403,461.295685,362.958588",
+      "Position": "-6.27635,11.71691,9.219148",
       "Rotation": "0,0,0,1",
       "Scale": "1,1,1",
       "Tags": "",
@@ -397,7 +413,7 @@
           "__version": 2,
           "Flags": 0,
           "Name": "spawner",
-          "Position": "-362.899597,-207.2957,-330.958588",
+          "Position": "-9.21765,-5.265311,-8.406348",
           "Rotation": "0,0,0,1",
           "Scale": "1,1,1",
           "Tags": "",
@@ -438,7 +454,7 @@
           "__version": 2,
           "Flags": 0,
           "Name": "spawner",
-          "Position": "747.100403,1622.70398,-318.958588",
+          "Position": "18.97635,41.216681,-8.101548",
           "Rotation": "0,0,0,1",
           "Scale": "1,1,1",
           "Tags": "",
@@ -479,7 +495,7 @@
           "__version": 2,
           "Flags": 0,
           "Name": "spawner",
-          "Position": "235.100403,-1753.29602,-184.958603",
+          "Position": "5.97155,-44.533718,-4.697948",
           "Rotation": "0,0,0,1",
           "Scale": "1,1,1",
           "Tags": "",
@@ -520,7 +536,7 @@
           "__version": 2,
           "Flags": 0,
           "Name": "Spawm zombies",
-          "Position": "360.100403,502.704315,-288.958588",
+          "Position": "9.14655,12.768689,-7.339548",
           "Rotation": "0,0,0,1",
           "Scale": "0.0535502806,0.119435102,0.119435102",
           "Tags": "",
@@ -532,7 +548,7 @@
           "OwnerTransfer": 1,
           "Components": [
             {
-              "__type": "Sandbox.ModelRenderer",
+              "__type": "Rinten.ModelRenderer",
               "__guid": "29f108d5-7836-4170-b7e9-06ad54ea98b3",
               "__enabled": true,
               "Flags": 0,
@@ -573,7 +589,7 @@
               "OnComponentUpdate": null
             },
             {
-              "__type": "Sandbox.BoxCollider",
+              "__type": "Rinten.BoxCollider",
               "__guid": "12b34c0a-e256-42b6-8594-56887c258822",
               "__enabled": true,
               "Flags": 0,
@@ -593,7 +609,7 @@
               "OnTriggerEnter": null,
               "OnTriggerExit": null,
               "RollingResistance": null,
-              "Scale": "50,50,50",
+              "Scale": "1.27,1.27,1.27",
               "Static": false,
               "Surface": null,
               "SurfaceVelocity": "0,0,0"
@@ -608,7 +624,7 @@
       "__version": 2,
       "Flags": 0,
       "Name": "Soundscape",
-      "Position": "222,1382,168",
+      "Position": "5.6388,35.1028,4.2672",
       "Rotation": "0,0,0,1",
       "Scale": "1,1,0.464515388",
       "Tags": "",
@@ -620,18 +636,18 @@
       "OwnerTransfer": 1,
       "Components": [
         {
-          "__type": "Sandbox.SoundscapeTrigger",
+          "__type": "Rinten.SoundscapeTrigger",
           "__guid": "206d035f-4065-4119-b906-2c6268d87b75",
           "__enabled": true,
           "Flags": 0,
-          "BoxSize": "50,50,50",
+          "BoxSize": "1.27,1.27,1.27",
           "OnComponentDestroy": null,
           "OnComponentDisabled": null,
           "OnComponentEnabled": null,
           "OnComponentFixedUpdate": null,
           "OnComponentStart": null,
           "OnComponentUpdate": null,
-          "Radius": 512,
+          "Radius": 13.004799842834473,
           "Soundscape": "sounds/ambient/construct_outside.sndscape",
           "StayActiveOnExit": true,
           "TargetMixer": {
@@ -649,7 +665,7 @@
       "__version": 2,
       "Flags": 0,
       "Name": "Soundscape (2)",
-      "Position": "738,652,168.000107",
+      "Position": "18.7452,16.5608,4.267203",
       "Rotation": "0,0,0,1",
       "Scale": "1,1,0.464515388",
       "Tags": "",
@@ -661,18 +677,18 @@
       "OwnerTransfer": 1,
       "Components": [
         {
-          "__type": "Sandbox.SoundscapeTrigger",
+          "__type": "Rinten.SoundscapeTrigger",
           "__guid": "5c06d478-c3ca-4803-9e07-ecc755cf1cc8",
           "__enabled": true,
           "Flags": 0,
-          "BoxSize": "50,50,50",
+          "BoxSize": "1.27,1.27,1.27",
           "OnComponentDestroy": null,
           "OnComponentDisabled": null,
           "OnComponentEnabled": null,
           "OnComponentFixedUpdate": null,
           "OnComponentStart": null,
           "OnComponentUpdate": null,
-          "Radius": 512,
+          "Radius": 13.004799842834473,
           "Soundscape": "sounds/ambient/construct_inside.sndscape",
           "StayActiveOnExit": true,
           "TargetMixer": {
@@ -690,7 +706,7 @@
       "__version": 2,
       "Flags": 0,
       "Name": "Soundscape (1)",
-      "Position": "-472,212,168",
+      "Position": "-11.9888,5.3848,4.2672",
       "Rotation": "0,0,0,1",
       "Scale": "2.25040889,2.25040889,0.606697619",
       "Tags": "",
@@ -702,18 +718,18 @@
       "OwnerTransfer": 1,
       "Components": [
         {
-          "__type": "Sandbox.SoundscapeTrigger",
+          "__type": "Rinten.SoundscapeTrigger",
           "__guid": "9bcf0cea-121b-4861-991a-c4938716db07",
           "__enabled": true,
           "Flags": 0,
-          "BoxSize": "50,50,50",
+          "BoxSize": "1.27,1.27,1.27",
           "OnComponentDestroy": null,
           "OnComponentDisabled": null,
           "OnComponentEnabled": null,
           "OnComponentFixedUpdate": null,
           "OnComponentStart": null,
           "OnComponentUpdate": null,
-          "Radius": 512,
+          "Radius": 13.004799842834473,
           "Soundscape": "sounds/ambient/construct_outside.sndscape",
           "StayActiveOnExit": true,
           "TargetMixer": {
@@ -731,7 +747,7 @@
       "__version": 2,
       "Flags": 0,
       "Name": "Door",
-      "Position": "761.733826,550.638184,164",
+      "Position": "19.348039,13.98621,4.1656",
       "Rotation": "0,0,0.258818895,0.965925813",
       "Scale": "1,1,1",
       "Tags": "",
@@ -743,7 +759,7 @@
       "OwnerTransfer": 1,
       "Components": [
         {
-          "__type": "Sandbox.ModelRenderer",
+          "__type": "Rinten.ModelRenderer",
           "__guid": "731c1784-a3b6-4e26-9fcb-5342df54881a",
           "__enabled": true,
           "Flags": 0,
@@ -753,7 +769,7 @@
           "MaterialGroup": null,
           "MaterialOverride": null,
           "Materials": null,
-          "Model": "models/door/door.vmdl",
+          "Model": "models/door/door.mdl",
           "OnComponentDestroy": null,
           "OnComponentDisabled": null,
           "OnComponentEnabled": null,
@@ -770,7 +786,7 @@
           "Tint": "1,1,1,1"
         },
         {
-          "__type": "Sandbox.ModelCollider",
+          "__type": "Rinten.ModelCollider",
           "__guid": "d218afa7-520b-4d1f-badd-b8630e093e65",
           "__enabled": true,
           "Flags": 0,
@@ -778,7 +794,7 @@
           "Elasticity": null,
           "Friction": null,
           "IsTrigger": false,
-          "Model": "models/door/door.vmdl",
+          "Model": "models/door/door.mdl",
           "OnComponentDestroy": null,
           "OnComponentDisabled": null,
           "OnComponentEnabled": null,
@@ -929,7 +945,7 @@
                     "Properties": {
                       "_isStatic": false,
                       "_name": "Get",
-                      "_type": "Sandbox.IComponentLister",
+                      "_type": "Rinten.IComponentLister",
                       "T": "GeneralGame.DoorComponent"
                     },
                     "UserData": {
@@ -996,7 +1012,7 @@
       "__version": 2,
       "Flags": 0,
       "Name": "Door",
-      "Position": "791.227417,563.554016,164",
+      "Position": "20.097176,14.314272,4.1656",
       "Rotation": "0,0,0.965925872,-0.258818805",
       "Scale": "1,1,1",
       "Tags": "",
@@ -1008,7 +1024,7 @@
       "OwnerTransfer": 1,
       "Components": [
         {
-          "__type": "Sandbox.ModelRenderer",
+          "__type": "Rinten.ModelRenderer",
           "__guid": "d1e62086-2446-4f1b-a304-f88f22e31d32",
           "__enabled": true,
           "Flags": 0,
@@ -1018,7 +1034,7 @@
           "MaterialGroup": null,
           "MaterialOverride": null,
           "Materials": null,
-          "Model": "models/door/door.vmdl",
+          "Model": "models/door/door.mdl",
           "OnComponentDestroy": null,
           "OnComponentDisabled": null,
           "OnComponentEnabled": null,
@@ -1035,7 +1051,7 @@
           "Tint": "1,1,1,1"
         },
         {
-          "__type": "Sandbox.ModelCollider",
+          "__type": "Rinten.ModelCollider",
           "__guid": "c1ac7fc8-156d-49ce-9b92-a1b974e7e837",
           "__enabled": true,
           "Flags": 0,
@@ -1043,7 +1059,7 @@
           "Elasticity": null,
           "Friction": null,
           "IsTrigger": false,
-          "Model": "models/door/door.vmdl",
+          "Model": "models/door/door.mdl",
           "OnComponentDestroy": null,
           "OnComponentDisabled": null,
           "OnComponentEnabled": null,
@@ -1194,7 +1210,7 @@
                     "Properties": {
                       "_isStatic": false,
                       "_name": "Get",
-                      "_type": "Sandbox.IComponentLister",
+                      "_type": "Rinten.IComponentLister",
                       "T": "GeneralGame.DoorComponent"
                     },
                     "UserData": {
@@ -1261,7 +1277,7 @@
       "__version": 2,
       "Flags": 0,
       "Name": "Box",
-      "Position": "110,964,53.0006218",
+      "Position": "2.794,24.4856,1.346216",
       "Rotation": "0,0,0,1",
       "Scale": "1,1,1",
       "Tags": "world",
@@ -1273,7 +1289,7 @@
       "OwnerTransfer": 1,
       "Components": [
         {
-          "__type": "Sandbox.MeshComponent",
+          "__type": "Rinten.MeshComponent",
           "__guid": "ea8631d1-c774-4bed-88dd-a44962f53eb4",
           "__enabled": true,
           "Flags": 0,
@@ -1317,7 +1333,7 @@
       "__version": 2,
       "Flags": 0,
       "Name": "Wepans",
-      "Position": "63,981,190",
+      "Position": "1.6002,24.9174,4.826",
       "Rotation": "0,0,0,1",
       "Scale": "1,1,1",
       "Tags": "",
@@ -1351,7 +1367,7 @@
                   "IdValue": "75e8dbf9-98c5-4504-a879-6f6da3f32a1c"
                 },
                 "Property": "Position",
-                "Value": "204.322998,4.4433589,-82.2584534"
+                "Value": "5.189804,0.112861,-2.089365"
               },
               {
                 "Target": {
@@ -1404,7 +1420,7 @@
                   "IdValue": "a3b668c3-acfb-4043-8f7c-93b7df84b5c8"
                 },
                 "Property": "Position",
-                "Value": "153.429306,-16.2665997,-95.0476913"
+                "Value": "3.897104,-0.413172,-2.414211"
               },
               {
                 "Target": {
@@ -1463,7 +1479,7 @@
                   "IdValue": "a3b668c3-acfb-4043-8f7c-93b7df84b5c8"
                 },
                 "Property": "Position",
-                "Value": "184.266205,23.8833008,-90.6731033"
+                "Value": "4.680362,0.606636,-2.303097"
               },
               {
                 "Target": {
@@ -1522,7 +1538,7 @@
                   "IdValue": "a3b668c3-acfb-4043-8f7c-93b7df84b5c8"
                 },
                 "Property": "Position",
-                "Value": "208.477295,-18.56567,-83.1902466"
+                "Value": "5.295323,-0.471568,-2.113032"
               },
               {
                 "Target": {
@@ -1581,7 +1597,7 @@
                   "IdValue": "a3b668c3-acfb-4043-8f7c-93b7df84b5c8"
                 },
                 "Property": "Position",
-                "Value": "148.303802,-44.0227089,-97.6641235"
+                "Value": "3.766917,-1.118177,-2.480669"
               },
               {
                 "Target": {
@@ -1621,7 +1637,7 @@
                   "IdValue": "75e8dbf9-98c5-4504-a879-6f6da3f32a1c"
                 },
                 "Property": "Position",
-                "Value": "122.586197,-15.6286602,-102.223396"
+                "Value": "3.113689,-0.396968,-2.596474"
               },
               {
                 "Target": {
@@ -1658,7 +1674,7 @@
                   "IdValue": "75e8dbf9-98c5-4504-a879-6f6da3f32a1c"
                 },
                 "Property": "Position",
-                "Value": "95.5861969,-55.6287193,-102.319901"
+                "Value": "2.427889,-1.412969,-2.598925"
               }
             ],
             "MovedObjects": []
@@ -1703,7 +1719,7 @@
                   "IdValue": "75e8dbf9-98c5-4504-a879-6f6da3f32a1c"
                 },
                 "Property": "Position",
-                "Value": "134.586197,-35.6286583,-96.3198395"
+                "Value": "3.418489,-0.904968,-2.446524"
               },
               {
                 "Target": {
@@ -1733,7 +1749,7 @@
       "__version": 2,
       "Flags": 0,
       "Name": "Object",
-      "Position": "-190.885971,936.810608,68.0813904",
+      "Position": "-4.848504,23.794989,1.729267",
       "Rotation": "0,0,0,1",
       "Scale": "1,1,1",
       "Tags": "",
@@ -1745,7 +1761,7 @@
       "OwnerTransfer": 1,
       "Components": [
         {
-          "__type": "Sandbox.SkinnedModelRenderer",
+          "__type": "Rinten.SkinnedModelRenderer",
           "__guid": "2ba9935d-686a-4b4f-a652-253d44f67431",
           "__enabled": true,
           "Flags": 0,
@@ -1759,7 +1775,7 @@
           "MaterialGroup": null,
           "MaterialOverride": null,
           "Materials": null,
-          "Model": "models/citizen_human/citizen_human_male.vmdl",
+          "Model": "models/citizen_human/citizen_human_male.mdl",
           "Morphs": {},
           "OnComponentDestroy": null,
           "OnComponentDisabled": null,
@@ -1792,7 +1808,7 @@
           "UseAnimGraph": true
         },
         {
-          "__type": "Sandbox.ModelPhysics",
+          "__type": "Rinten.ModelPhysics",
           "__guid": "0673c216-4987-449b-bff6-ba87d7292506",
           "__enabled": true,
           "Flags": 0,
@@ -1807,7 +1823,7 @@
             "Yaw": false,
             "Roll": false
           },
-          "Model": "models/citizen_human/citizen_human_male.vmdl",
+          "Model": "models/citizen_human/citizen_human_male.mdl",
           "MotionEnabled": true,
           "OnComponentDestroy": null,
           "OnComponentDisabled": null,

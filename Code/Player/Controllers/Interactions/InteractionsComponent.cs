@@ -1,4 +1,4 @@
-﻿
+
 using System.Runtime.InteropServices;
 
 namespace GeneralGame;
@@ -48,7 +48,7 @@ public class Interactions : Component
 			var bbox = new BBox( interaction.Position - interaction.Extents / 2, interaction.Position + interaction.Extents / 2 );
 			Gizmo.Draw.Color = Color.Yellow;
 			Gizmo.Draw.LineThickness = 0.5f;
-			Gizmo.Draw.LineBBox( bbox );
+			Gizmo.Draw.LineBBox( (bbox) * 0.0254f );
 
 			Gizmo.Draw.Color = Color.White;
 			Gizmo.Draw.Text( $"{interaction.Description}", new Transform( interaction.Position ), "Consolas", 12 );
@@ -58,7 +58,7 @@ public class Interactions : Component
 
 			using ( Gizmo.Scope( $"{interaction.Description}", new Transform( interaction.Position ) ) )
 			{
-				Gizmo.Hitbox.BBox( bbox );
+				Gizmo.Hitbox.BBox( (bbox) * 0.0254f );
 				Gizmo.Hitbox.DepthBias = 0.01f;
 
 				if ( Gizmo.IsShiftPressed )
@@ -73,7 +73,7 @@ public class Interactions : Component
 
 				if ( Gizmo.Control.Position( "position", Vector3.Zero, out var pos ) )
 				{
-					interaction.Position += pos;
+					interaction.Position +=  (pos) * 0.0254f ;
 					ObjectInteractions[ObjectInteractions.IndexOf( interaction )] = interaction;
 				}
 			}

@@ -1,8 +1,8 @@
-﻿using Sandbox.Citizen;
+using Rinten.Citizen;
 using System;
-using static Sandbox.Clothing;
-using static Sandbox.SerializedProperty;
-using static Sandbox.Services.Inventory;
+using static Rinten.Clothing;
+using static Rinten.SerializedProperty;
+using static Rinten.Services.Inventory;
 
 namespace GeneralGame;
 

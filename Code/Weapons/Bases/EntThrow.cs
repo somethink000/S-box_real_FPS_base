@@ -1,4 +1,4 @@
-﻿using GeneralGame;
+using GeneralGame;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -34,12 +34,12 @@ public class EntThrow : Component
 
 			GameObject.Components.Get<ModelRenderer>().Destroy();
 
-			var radSphere = new Sphere( WorldPosition, range );
+			var radSphere = new Sphere( WorldPosition, (range) * 0.0254f );
 			var targets = Scene.FindInPhysics( radSphere );
 			foreach ( var target in targets )
 			{
 				
-				var trace = Scene.Trace.Ray( WorldPosition + Vector3.Up * 10, target.WorldPosition )
+				var trace = Scene.Trace.Ray( WorldPosition + (Vector3.Up * 10) * 0.0254f , target.WorldPosition )
 					.IgnoreGameObjectHierarchy( GameObject )
 					.UsePhysicsWorld()
 					.UseHitboxes()

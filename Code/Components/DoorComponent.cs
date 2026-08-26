@@ -1,4 +1,4 @@
-﻿
+
 namespace GeneralGame;
 
 public enum DoorState
@@ -57,7 +57,7 @@ public class DoorComponent : Component
 		if ( !Gizmo.HasSelected )
 			return;
 
-		using ( Gizmo.Scope( $"Door", new Transform( pivot, Rotation.Identity ) ) )
+		using ( Gizmo.Scope( $"Door", new Transform( (pivot) * 0.0254f , Rotation.Identity ) ) )
 		{
 			Gizmo.Hitbox.DepthBias = 0.01f;
 

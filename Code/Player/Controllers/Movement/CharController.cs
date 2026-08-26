@@ -1,4 +1,4 @@
-﻿using Sandbox;
+using Rinten;
 
 
 namespace GeneralGame;
@@ -52,7 +52,7 @@ public class CharController : Component
 
 	protected override void DrawGizmos()
 	{
-		Gizmo.Draw.LineBBox( BoundingBox );
+		Gizmo.Draw.LineBBox( (BoundingBox) * 0.0254f );
 	}
 
 	/// <summary>
@@ -68,11 +68,11 @@ public class CharController : Component
 	/// Apply an amount of friction to the current velocity.
 	/// No need to scale by time delta - it will be done inside.
 	/// </summary>
-	public void ApplyFriction( float frictionAmount, float stopSpeed = 140.0f )
+	public void ApplyFriction( float frictionAmount, float stopSpeed = (140.0f) * 0.0254f)
 	{
 
 		var speed = Velocity.Length;
-		if ( speed < 0.01f ) return;
+		if ( speed <  (0.01f) * 0.0254f  ) return;
 
 		// Bleed off some speed, but if we have less than the bleed
 		//  threshold, bleed the threshold amount.
@@ -83,7 +83,7 @@ public class CharController : Component
 		
 		// scale the velocity
 		float newspeed = speed - drop;
-		if ( newspeed < 0 ) newspeed = 0;
+		if ( newspeed <  (0) * 0.0254f  ) newspeed = 0;
 		if ( newspeed == speed ) return;
 
 		newspeed /= speed;
@@ -94,7 +94,7 @@ public class CharController : Component
 
 	SceneTrace BuildTrace( SceneTrace source )
 	{
-		var trace = source.Size( BoundingBox ).IgnoreGameObjectHierarchy( GameObject );
+		var trace = source.Size( (BoundingBox) * 0.0254f ).IgnoreGameObjectHierarchy( GameObject );
 
 		return UseCollisionRules ? trace.WithCollisionRules( Tags ) : trace.WithoutTags( IgnoreLayers );
 	}
@@ -114,7 +114,7 @@ public class CharController : Component
 			Velocity = Velocity.WithZ( 0 );
 		}
 
-		if ( Velocity.Length < 0.001f )
+		if ( Velocity.Length <  (0.001f) * 0.0254f  )
 		{
 			Velocity = Vector3.Zero;
 			return;
@@ -128,7 +128,7 @@ public class CharController : Component
 
 		if ( step && IsOnGround )
 		{
-			mover.TryMoveWithStep( Time.Delta, StepHeight );
+			mover.TryMoveWithStep( Time.Delta, (StepHeight) * 0.0254f );
 		}
 		else
 		{
@@ -142,12 +142,12 @@ public class CharController : Component
 	void CategorizePosition()
 	{
 		var Position = WorldPosition;
-		var point = Position + Vector3.Down * 2;
+		var point = Position + (Vector3.Down * 2) * 0.0254f ;
 		var vBumpOrigin = Position;
 		var wasOnGround = IsOnGround;
 
 		// We're flying upwards too fast, never land on ground
-		if ( !IsOnGround && Velocity.z > 40.0f )
+		if ( !IsOnGround && Velocity.z >  (40.0f) * 0.0254f  )
 		{
 			ClearGround();
 			return;
@@ -157,7 +157,7 @@ public class CharController : Component
 		// trace down one step height if we're already on the ground "step down". If not, search for floor right below us
 		// because if we do StepHeight we'll snap that many units to the ground
 		//
-		point.z -= wasOnGround ? StepHeight : 0.1f;
+		point.z -=  (wasOnGround ? StepHeight : 0.1f) * 0.0254f ;
 
 
 		var pm = BuildTrace( vBumpOrigin, point ).Run();
@@ -193,7 +193,7 @@ public class CharController : Component
 	public void Punch( in Vector3 amount )
 	{
 		ClearGround();
-		Velocity += amount;
+		Velocity +=  (amount) * 0.0254f ;
 	}
 
 	void ClearGround()
@@ -240,7 +240,7 @@ public class CharController : Component
 
 		if ( useStep )
 		{
-			mover.TryMoveWithStep( 1.0f, StepHeight );
+			mover.TryMoveWithStep( 1.0f, (StepHeight) * 0.0254f );
 		}
 		else
 		{
@@ -273,12 +273,12 @@ public class CharController : Component
 
 		for ( int i = 0; i < AttemptsPerTick; i++ )
 		{
-			var pos = WorldPosition + Vector3.Random.Normal * (((float)_stuckTries) / 2.0f);
+			var pos = WorldPosition + (Vector3.Random.Normal * (((float)_stuckTries) / 2.0f)) * 0.0254f ;
 
 			// First try the up direction for moving platforms
 			if ( i == 0 )
 			{
-				pos = WorldPosition + Vector3.Up * 2;
+				pos = WorldPosition + (Vector3.Up * 2) * 0.0254f ;
 			}
 
 			result = BuildTrace( pos, pos ).Run();

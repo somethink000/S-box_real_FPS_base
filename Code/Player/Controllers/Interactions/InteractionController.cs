@@ -1,9 +1,9 @@
-﻿
+
 
 using Microsoft.VisualBasic;
-using Sandbox;
+using Rinten;
 using System.Diagnostics;
-using static Sandbox.Services.Inventory;
+using static Rinten.Services.Inventory;
 
 namespace GeneralGame;
 
@@ -22,8 +22,8 @@ public class InteractionController : Component
 	protected override void OnFixedUpdate()
 	{
 
-		var thinTrace = Scene.Trace.Ray( ViewRay, _interactDistance )
-			.Size( _interactSize )
+		var thinTrace = Scene.Trace.Ray( ViewRay, (_interactDistance) * 0.0254f )
+			.Size( (_interactSize) * 0.0254f )
 			.IgnoreGameObjectHierarchy( GameObject.Root )
 			//.WithoutTags( "world" )
 			.Run();
@@ -50,8 +50,8 @@ public class InteractionController : Component
 		}
 		else
 		{
-			InteractionTrace = Scene.Trace.Ray( ViewRay, _interactDistance )
-						.Size( _interactSize )
+			InteractionTrace = Scene.Trace.Ray( ViewRay, (_interactDistance) * 0.0254f )
+						.Size( (_interactSize) * 0.0254f )
 						.IgnoreGameObject( GameObject )
 						//.WithoutTags( "world" )
 						.Run();

@@ -8,7 +8,7 @@
       "Enabled": true,
       "Components": [
         {
-          "__type": "Sandbox.SceneInformation",
+          "__type": "Rinten.SceneInformation",
           "__guid": "ddaf088b-b7ea-4b49-9d95-deb97b7c8d40",
           "Author": null,
           "Changes": null,
@@ -30,12 +30,12 @@
       "__guid": "087cc65d-9421-48d6-b051-6adb3cad2e58",
       "Flags": 0,
       "Name": "Camera",
-      "Position": "126.5706,165.5491,-215.7948",
+      "Position": "3.214893,4.204947,-5.481188",
       "Tags": "maincamera",
       "Enabled": true,
       "Components": [
         {
-          "__type": "Sandbox.CameraComponent",
+          "__type": "Rinten.CameraComponent",
           "__guid": "620f5ce6-cac7-41db-b487-cbe3ebf7ec4f",
           "BackgroundColor": "0.33333,0.46275,0.52157,1",
           "ClearFlags": "All",
@@ -49,17 +49,17 @@
           "OnComponentStart": null,
           "OnComponentUpdate": null,
           "Orthographic": false,
-          "OrthographicHeight": 1204,
+          "OrthographicHeight": 30.58159963041544,
           "Priority": 1,
           "RenderExcludeTags": "",
           "RenderTags": "",
           "TargetEye": "None",
           "Viewport": "0,0,1,1",
-          "ZFar": 10000,
-          "ZNear": 10
+          "ZFar": 253.9999969303608,
+          "ZNear": 0.2539999969303608
         },
         {
-          "__type": "Sandbox.ScreenPanel",
+          "__type": "Rinten.ScreenPanel",
           "__guid": "a5a2766f-b205-4b4f-b6bd-cf5cd94a4b4d",
           "AutoScreenScale": true,
           "OnComponentDestroy": null,

@@ -1,12 +1,12 @@
-﻿using Sandbox;
-using Sandbox.Citizen;
+using Rinten;
+using Rinten.Citizen;
 using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics.Contracts;
 using System.Linq;
 using System.Numerics;
-using static Sandbox.Citizen.CitizenAnimationHelper;
-using static Sandbox.SerializedProperty;
+using static Rinten.Citizen.CitizenAnimationHelper;
+using static Rinten.SerializedProperty;
 
 namespace GeneralGame;
 
@@ -89,7 +89,7 @@ public partial class MeleWeapon : Carriable
 		var player = Owner;
 		var forward = player.CameraController.EyeAngles.Forward;
 		forward = forward.Normal;
-		var endPos = player.CameraController.EyePos + forward * 80;
+		var endPos = player.CameraController.EyePos + (forward * 80) * 0.0254f ;
 		var bulletTr = MakeTrace( player.CameraController.EyePos, endPos );
 		var hitObj = bulletTr.GameObject;
 

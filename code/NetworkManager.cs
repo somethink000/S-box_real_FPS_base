@@ -1,4 +1,4 @@
-using Sandbox.Network;
+using Rinten.Network;
 
 namespace GeneralGame;
 

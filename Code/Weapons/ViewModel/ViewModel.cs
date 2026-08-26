@@ -1,7 +1,7 @@
-﻿using Sandbox;
+using Rinten;
 using System;
 using System.Numerics;
-using static Sandbox.CursorSettings;
+using static Rinten.CursorSettings;
 
 namespace GeneralGame;
 
@@ -66,7 +66,7 @@ public partial class ViewModel : Component
 		// Change the angles and positions of the viewmodel with the new vectors
 		WorldRotation *= Rotation.From( finalVectorRot.x, finalVectorRot.y, finalVectorRot.z );
 		// Position has to be set after rotation!
-		WorldPosition += finalVectorPos.z * WorldRotation.Up + finalVectorPos.y * WorldRotation.Forward + finalVectorPos.x * WorldRotation.Right;
+		WorldPosition +=  (finalVectorPos.z * WorldRotation.Up) * 0.0254f + (finalVectorPos.y * WorldRotation.Forward) * 0.0254f + (finalVectorPos.x * WorldRotation.Right) * 0.0254f ;
 		//player.CurFOV = finalPlayerFOV;
 
 		// Initialize the target vectors for this frame

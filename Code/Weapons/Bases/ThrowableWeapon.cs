@@ -1,11 +1,11 @@
-﻿
-using Sandbox;
-using Sandbox.Citizen;
+
+using Rinten;
+using Rinten.Citizen;
 using System.Collections.Generic;
 using System.Linq;
 using System.Numerics;
-using static Sandbox.Citizen.CitizenAnimationHelper;
-using static Sandbox.SerializedProperty;
+using static Rinten.Citizen.CitizenAnimationHelper;
+using static Rinten.SerializedProperty;
 
 namespace GeneralGame;
 
@@ -155,9 +155,9 @@ public partial class ThrowableWeapon : Carriable
 		{
 
 			var obj = ThrowPrefab.Clone( this.Transform.World );
-			obj.WorldPosition = Owner.Camera.WorldPosition + Owner.Camera.WorldRotation.Forward * 50;
+			obj.WorldPosition = Owner.Camera.WorldPosition + (Owner.Camera.WorldRotation.Forward * 50) * 0.0254f ;
 			obj.WorldRotation = Owner.Camera.WorldRotation;
-			obj.Components.Get<Rigidbody>().Velocity = Owner.Camera.WorldRotation.Forward * 1000;
+			obj.Components.Get<Rigidbody>().Velocity =  (Owner.Camera.WorldRotation.Forward * 1000) * 0.0254f ;
 			var thrw = obj.Components.Get<EntThrow>();
 			thrw.Owner = Owner;
 			thrw.ExplodeTime = time;
